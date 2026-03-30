@@ -17,21 +17,21 @@
     --radius: 12px; --radius-sm: 8px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: var(--fv); background: var(--achtergrond); color: var(--tekst); min-height: 100vh; padding: 2rem 1rem; }
-  .container { max-width: 680px; margin: 0 auto; }
-  .naam-blok { background: var(--kaart); border: 0.5px solid var(--rand); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1.75rem; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  body { font-family: var(--fv); background: var(--achtergrond); color: var(--tekst); min-height: 100vh; padding: 2rem 2rem; }
+  .container { max-width: 960px; margin: 0 auto; }
+  .naam-blok { background: var(--kaart); border: 0.5px solid var(--rand); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1.75rem; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; max-width: 480px; }
   .naam-label { font-size: 13px; color: var(--tekst-zacht); white-space: nowrap; }
   .naam-veld { font-family: var(--fv); font-size: 14px; font-weight: 500; color: var(--blauw); border: 0.5px solid var(--rand); border-radius: var(--radius-sm); padding: 7px 12px; background: #f9fafb; outline: none; flex: 1; min-width: 160px; transition: border-color 0.15s; }
   .naam-veld:focus { border-color: var(--blauw); background: #fff; }
   .naam-opgeslagen { font-size: 12px; color: var(--groen); display: none; }
-  .header { padding-bottom: 1.25rem; border-bottom: 2px solid var(--blauw); margin-bottom: 2rem; }
-  .header h1 { font-size: 26px; font-weight: 600; color: var(--blauw); letter-spacing: -0.5px; }
+  .header { padding-bottom: 1.25rem; border-bottom: 2px solid var(--blauw); margin-bottom: 2rem; display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .header h1 { font-size: 30px; font-weight: 600; color: var(--blauw); letter-spacing: -0.5px; }
   .header p { font-size: 13px; color: var(--tekst-zacht); margin-top: 4px; }
   .stats-rij { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 2rem; }
   .stat-kaart { background: var(--kaart); border: 0.5px solid var(--rand); border-radius: var(--radius-sm); padding: 1rem; text-align: center; }
   .stat-getal { font-size: 28px; font-weight: 600; color: var(--blauw); display: block; }
   .stat-label { font-size: 12px; color: var(--tekst-zacht); margin-top: 2px; }
-  .sectie { margin-bottom: 2rem; }
+  .sectie { margin-bottom: 2rem; } #secties-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 0 2rem; }
   .sectie-titel { font-size: 11px; font-weight: 500; color: var(--blauw); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem; padding-bottom: 4px; border-bottom: 0.5px solid var(--rand); }
   .oefening-kaart { background: var(--kaart); border: 0.5px solid var(--rand); border-radius: var(--radius); padding: 0.875rem 1.125rem; margin-bottom: 8px; display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; transition: border-color 0.15s; }
   .oefening-kaart:hover { border-color: var(--blauw); }
