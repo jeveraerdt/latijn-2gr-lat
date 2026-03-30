@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACI — vertaling | Latijn 2GR-LAT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lufga:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blauw: #13427f; --roze: #E6007E;
+    --fv: 'Lufga', Arial, sans-serif; --fo: 'Aptos', Arial, sans-serif;
+    --achtergrond: #f7f8fa; --kaart: #ffffff; --rand: #e2e6ed;
+    --tekst: #1a1a1a; --tekst-zacht: #6b7280;
+    --groen: #2a7a2a; --groen-bg: #f0faf0;
+    --rood: #c0392b; --rood-bg: #fff5f5;
+    --oranje: #b45309; --oranje-bg: #fffbeb;
+    --radius: 12px; --radius-sm: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--fv); background: var(--achtergrond); color: var(--tekst); min-height: 100vh; padding: 2rem 1rem; }
+  .container { max-width: 680px; margin: 0 auto; }
+  .header { padding-bottom: 1.25rem; border-bottom: 2px solid var(--blauw); margin-bottom: 1.75rem; display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .header-links { display: flex; flex-direction: column; gap: 3px; }
+  .terug-link { font-size: 12px; color: var(--tekst-zacht); text-decoration: none; }
+  .terug-link:hover { color: var(--blauw); }
+  .header h1 { font-size: 20px; font-weight: 600; color: var(--blauw); }
+  .header-rechts { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+  .vraag-teller { font-size: 13px; color: var(--tekst-zacht); white-space: nowrap; }
+  .niveau-kransen { display: flex; align-items: center; gap: 2px; }
+  .niveau-kransen img { width: 20px; height: 20px; }
+  .niveau-kransen img.grijs { opacity: 0.18; filter: grayscale(1); }
+
+  .vraag-blok { background: var(--kaart); border: 0.5px solid var(--rand); border-radius: var(--radius); padding: 1.125rem 1.25rem; margin-bottom: 12px; }
+  .vraag-nr { font-size: 11px; font-weight: 500; color: var(--blauw); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .vraag-tekst { font-family: var(--fv); font-size: 15px; color: var(--blauw); line-height: 1.55; margin-bottom: 10px; }
+  .vraag-tekst em { font-style: italic; font-weight: 500; }
+  .invulveld { font-family: var(--fo); font-size: 14px; color: var(--tekst); width: 100%; border: 0.5px solid var(--rand); border-radius: var(--radius-sm); padding: 9px 12px; background: #f9fafb; outline: none; transition: border-color 0.15s, background 0.15s; }
+  .invulveld:focus { border-color: var(--blauw); background: #fff; box-shadow: 0 0 0 2px rgba(19,66,127,0.1); }
+  .invulveld.goed { border-color: var(--groen); background: var(--groen-bg); color: var(--groen); }
+  .invulveld.gedeeltelijk { border-color: var(--oranje); background: var(--oranje-bg); color: var(--oranje); }
+  .invulveld.fout { border-color: var(--rood); background: var(--rood-bg); color: var(--rood); }
+  .invulveld:disabled { opacity: 0.85; cursor: default; }
+  .feedback-wrap { margin-top: 8px; min-height: 20px; }
+  .feedback { font-family: var(--fo); font-size: 13px; line-height: 1.45; }
+  .feedback.goed { color: var(--groen); }
+  .feedback.gedeeltelijk { color: var(--oranje); }
+  .feedback.fout { color: var(--rood); }
+  .feedback.laden { color: var(--tekst-zacht); font-style: italic; }
+  .knop-rij { display: flex; gap: 10px; margin-top: 1.75rem; flex-wrap: wrap; }
+  .knop { font-family: var(--fv); font-size: 13px; font-weight: 500; padding: 9px 20px; border-radius: var(--radius-sm); cursor: pointer; border: 0.5px solid var(--rand); background: transparent; color: var(--tekst); transition: background 0.12s; }
+  .knop:hover { background: #f3f4f6; border-color: #9ca3af; }
+  .knop:disabled { opacity: 0.5; cursor: not-allowed; }
+  .knop-hoofd { background: var(--blauw); color: #fff; border-color: var(--blauw); }
+  .knop-hoofd:hover { background: #0f3568; border-color: #0f3568; }
+  .score-blok { margin-top: 1.5rem; padding: 1.25rem; background: var(--kaart); border: 0.5px solid var(--rand); border-radius: var(--radius); display: none; }
+  .score-rij { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+  .score-getal { font-size: 32px; font-weight: 600; color: var(--blauw); }
+  .score-pct { font-size: 16px; color: var(--tekst-zacht); }
+  .score-balk-wrap { background: #f3f4f6; border-radius: 99px; height: 6px; overflow: hidden; margin-bottom: 10px; }
+  .score-balk { height: 100%; border-radius: 99px; background: var(--roze); transition: width 0.5s ease; width: 0%; }
+  .opgeslagen-label { font-family: var(--fo); font-size: 12px; color: var(--groen); display: none; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="header-links">
+      <a class="terug-link" href="index.html">&#8592; Terug naar dashboard</a>
+      <h1>ACI &#8212; vertaling</h1>
+    </div>
+    <div class="header-rechts">
+      <span class="vraag-teller">4 vragen</span>
+      <div class="niveau-kransen" id="niveau-kransen"></div>
+    </div>
+  </div>
+  <div id="vragen-container"></div>
+  <div class="knop-rij">
+    <button class="knop knop-hoofd" id="knop-controleer" onclick="controleer()">Controleren</button>
+    <button class="knop" onclick="herstel()">Opnieuw proberen</button>
+    <button class="knop" onclick="window.location.href='index.html'">&#8592; Dashboard</button>
+  </div>
+  <div class="score-blok" id="score-blok">
+    <div class="score-rij">
+      <span class="score-getal" id="score-getal">&#8212;</span>
+      <span class="score-pct" id="score-pct">&#8212;</span>
+    </div>
+    <div class="score-balk-wrap"><div class="score-balk" id="score-balk"></div></div>
+    <div class="opgeslagen-label" id="opgeslagen-label">Opgeslagen in je voortgang.</div>
+  </div>
+</div>
+<script>
+const WORKER_URL     = 'https://latijn-api.jens-everaerdt.workers.dev';
+const KRANS_SRC      = 'data:image/png;base64,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';
+const OEFENING_ID    = 'aci-2';
+const OEFENING_NIVEAU = 2;
+const OPSLAG_SLEUTEL = 'latijn-2grLAT';
+
+const VRAGEN = [
+  {
+    vraag: 'Dico <em>Caesarem venire</em>. &#8212; Vertaal de ACI-constructie.',
+    modelantwoord: 'dat Caesar komt',
+    context: 'ACI-constructie (accusativus cum infinitivo). Caesarem (accusatief) = onderwerp van de bijzin, venire (infinitief praes.) = gezegde.'
+  },
+  {
+    vraag: 'Puto <em>milites fortes esse</em>. &#8212; Vertaal de ACI-constructie.',
+    modelantwoord: 'dat de soldaten dapper zijn',
+    context: 'ACI-constructie. milites (acc. mv.) = onderwerp, fortes (acc. mv., attribuut) = dapper/moedig, esse = zijn.'
+  },
+  {
+    vraag: 'Audio <em>pueros ludere</em>. &#8212; Vertaal de ACI-constructie.',
+    modelantwoord: 'dat de jongens spelen',
+    context: 'ACI-constructie. pueros (acc. mv.) = de jongens/kinderen, ludere = spelen. audio + ACI = horen dat...'
+  },
+  {
+    vraag: 'Scio <em>te epistulam scripsisse</em>. &#8212; Vertaal de ACI-constructie.',
+    modelantwoord: 'dat jij de brief hebt geschreven',
+    context: 'ACI-constructie. te (acc.) = jij/jou, epistulam = de brief/een brief, scripsisse = perfectum infinitief actief van scribere. Perfectum infinitief = actie vond plaats vóór het hoofdwerkwoord.'
+  }
+];
+
+const SYSTEEM_PROMPT = `Je bent een Latijn-leerkracht die Nederlandse vertalingen van leerlingen beoordeelt.
+Je beoordeelt ENKEL of de betekenis correct is weergegeven. Varianten in woordvolgorde, lidwoorden (de/een), persoonsvorm (jij/je/u) of synoniemen zijn aanvaardbaar.
+Je antwoordt altijd met een JSON-object met exact deze structuur:
+{"oordeel":"goed"|"gedeeltelijk"|"fout","uitleg":"Korte Nederlandse uitleg in maximaal 2 zinnen."}
+"goed" = betekenis volledig correct, ook al is de formulering anders dan het modelantwoord.
+"gedeeltelijk" = kern correct maar iets ontbreekt of is onnauwkeurig.
+"fout" = betekenis onjuist of onbegrijpelijk.
+Antwoord ENKEL met het JSON-object, niets anders.`;
+
+function renderNiveau() {
+  const el = document.getElementById('niveau-kransen');
+  let html = '';
+  for (let i = 1; i <= 3; i++) {
+    html += `<img src="${KRANS_SRC}" class="${i <= OEFENING_NIVEAU ? '' : 'grijs'}" alt="" />`;
+  }
+  el.innerHTML = html;
+}
+
+async function beoordeelMetAI(vraag, modelantwoord, context, leerlingAntwoord) {
+  const prompt = `Beoordeel deze leerlingvertaling:\n\nLatijnse zin: ${vraag.replace(/<[^>]+>/g, '')}\nContext: ${context}\nModelantwoord: ${modelantwoord}\nLeerlingantwoord: ${leerlingAntwoord}`;
+  const response = await fetch(WORKER_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 200,
+      system: SYSTEEM_PROMPT,
+      messages: [{ role: 'user', content: prompt }]
+    })
+  });
+  if (!response.ok) {
+    const fout = await response.json().catch(() => ({}));
+    throw new Error(fout.error?.message || `API-fout (${response.status})`);
+  }
+  const data = await response.json();
+  const tekst = data.content?.[0]?.text || '{}';
+  return JSON.parse(tekst.replace(/```json|```/g, '').trim());
+}
+
+function render() {
+  renderNiveau();
+  const c = document.getElementById('vragen-container');
+  c.innerHTML = VRAGEN.map((v, i) => `
+    <div class="vraag-blok">
+      <div class="vraag-nr">Vraag ${i + 1}</div>
+      <div class="vraag-tekst">${v.vraag}</div>
+      <input class="invulveld" type="text" id="veld-${i}" placeholder="Jouw vertaling&#8230;" autocomplete="off" autocorrect="off" spellcheck="false" />
+      <div class="feedback-wrap"><div class="feedback" id="fb-${i}"></div></div>
+    </div>
+  `).join('');
+  document.getElementById('score-blok').style.display = 'none';
+}
+
+async function controleer() {
+  const knop = document.getElementById('knop-controleer');
+  knop.disabled = true; knop.textContent = 'Bezig met beoordelen\u2026';
+  VRAGEN.forEach((v, i) => {
+    document.getElementById('veld-' + i).disabled = true;
+    const fb = document.getElementById('fb-' + i);
+    fb.className = 'feedback laden'; fb.textContent = 'Wordt beoordeeld\u2026';
+  });
+  let punten = 0;
+  const resultaten = await Promise.allSettled(
+    VRAGEN.map((v, i) => {
+      const antwoord = document.getElementById('veld-' + i).value.trim();
+      if (!antwoord) return Promise.resolve({ oordeel: 'fout', uitleg: 'Geen antwoord ingevuld.' });
+      return beoordeelMetAI(v.vraag, v.modelantwoord, v.context, antwoord);
+    })
+  );
+  resultaten.forEach((res, i) => {
+    const veld = document.getElementById('veld-' + i);
+    const fb = document.getElementById('fb-' + i);
+    if (res.status === 'rejected') {
+      veld.className = 'invulveld'; veld.disabled = false;
+      fb.className = 'feedback fout'; fb.textContent = 'Fout bij beoordeling: ' + res.reason.message; return;
+    }
+    const { oordeel, uitleg } = res.value;
+    veld.className = 'invulveld ' + (oordeel === 'goed' ? 'goed' : oordeel === 'gedeeltelijk' ? 'gedeeltelijk' : 'fout');
+    fb.className = 'feedback ' + (oordeel === 'goed' ? 'goed' : oordeel === 'gedeeltelijk' ? 'gedeeltelijk' : 'fout');
+    fb.textContent = uitleg;
+    if (oordeel === 'goed') punten += 1;
+    else if (oordeel === 'gedeeltelijk') punten += 0.5;
+  });
+  const pct = Math.round((punten / VRAGEN.length) * 100);
+  const scoreGeheel = Math.round(punten * 2) / 2;
+  const blok = document.getElementById('score-blok');
+  blok.style.display = 'block';
+  document.getElementById('score-getal').textContent = scoreGeheel + '/' + VRAGEN.length;
+  document.getElementById('score-pct').textContent = pct + '% correct';
+  document.getElementById('score-balk').style.width = pct + '%';
+  slaOp(scoreGeheel, VRAGEN.length);
+  blok.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  knop.disabled = false; knop.textContent = 'Opnieuw controleren';
+}
+
+function herstel() {
+  VRAGEN.forEach((v, i) => {
+    const veld = document.getElementById('veld-' + i);
+    veld.value = ''; veld.className = 'invulveld'; veld.disabled = false;
+    document.getElementById('fb-' + i).textContent = '';
+    document.getElementById('fb-' + i).className = 'feedback';
+  });
+  document.getElementById('score-blok').style.display = 'none';
+  const knop = document.getElementById('knop-controleer');
+  knop.disabled = false; knop.textContent = 'Controleren';
+  document.getElementById('veld-0').focus();
+}
+
+function slaOp(score, max) {
+  try {
+    const data = JSON.parse(localStorage.getItem(OPSLAG_SLEUTEL) || '{}');
+    data[OEFENING_ID] = { score, max, datum: new Date().toISOString() };
+    localStorage.setItem(OPSLAG_SLEUTEL, JSON.stringify(data));
+    document.getElementById('opgeslagen-label').style.display = 'block';
+  } catch(e) {}
+}
+
+render();
+</script>
+</body>
+</html>
