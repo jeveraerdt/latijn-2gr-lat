@@ -1,7 +1,7 @@
 // Alfabetische woordenlijst – Athena Campus Pottelberg, 2GR-LAT
-// Volledige lijst A–Z, samengevoegd uit drie deelbestanden
-// Totaal: 2516 lemma's
-// Structuur: { grondvorm, aanvullingen, vertaling }
+// Volledige lijst A–Z | 2516 lemma's | 567 basiswoorden (basis: true)
+// Structuur: { grondvorm, aanvullingen, vertaling, basis? }
+// Basiswoorden (basis: true) verschijnen in #E6007E op de oefensite
 
 const woordenlijst = [
   { grondvorm: "a(b)", aanvullingen: "+ abl. (vz.)", vertaling: "vanaf, vanuit, weg van, van; door" },
@@ -2521,4 +2521,3 @@ const woordenlijst = [
   { grondvorm: "xystus", aanvullingen: "xysti", vertaling: "terras" },
   { grondvorm: "Zoninus", aanvullingen: "Zonini", vertaling: "Zoninus (eigennaam)" }
 ];
-
