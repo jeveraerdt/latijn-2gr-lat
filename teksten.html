@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teksten — 2GR-LAT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lufga:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blauw: #13427f; --roze: #E6007E;
+    --fv: 'Lufga', Arial, sans-serif; --fo: 'Aptos', Arial, sans-serif;
+    --achtergrond: #f7f8fa; --kaart: #ffffff; --rand: #e2e6ed;
+    --tekst: #1a1a1a; --tekst-zacht: #6b7280;
+    --radius: 12px; --radius-sm: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--fv); background: var(--achtergrond); color: var(--tekst); min-height: 100vh; padding: 2rem 2rem; }
+  .container { max-width: 960px; margin: 0 auto; }
+  .header { padding-bottom: 1.25rem; border-bottom: 2px solid var(--blauw); margin-bottom: 2.5rem; display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .header-links { display: flex; flex-direction: column; gap: 3px; }
+  .terug-link { font-size: 12px; color: var(--tekst-zacht); text-decoration: none; }
+  .terug-link:hover { color: var(--blauw); }
+  .header h1 { font-size: 30px; font-weight: 600; color: var(--blauw); letter-spacing: -0.5px; }
+  .placeholder {
+    background: var(--kaart);
+    border: 0.5px solid var(--rand);
+    border-radius: var(--radius);
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .placeholder-icoon {
+    width: 56px; height: 56px;
+    border-radius: var(--radius);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.25rem;
+    background: #fff8e1;
+  }
+  .placeholder-icoon svg { width: 28px; height: 28px; }
+  .placeholder h2 { font-size: 18px; font-weight: 600; color: var(--blauw); margin-bottom: 0.75rem; }
+  .placeholder p { font-family: var(--fo); font-size: 14px; color: var(--tekst-zacht); line-height: 1.65; max-width: 420px; margin: 0 auto; }
+  .voet { text-align: center; margin-top: 3rem; font-family: var(--fo); font-size: 12px; color: #c0c8d4; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="header-links">
+      <a class="terug-link" href="index.html">&#8592; Terug naar home</a>
+      <h1>Teksten</h1>
+    </div>
+  </div>
+  <div class="placeholder">
+    <div class="placeholder-icoon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+    </div>
+    <h2>Binnenkort beschikbaar</h2>
+    <p>Hier komen Latijnse teksten per auteur of reeks, met vertaalhulp en aanklikbare woordanalyse.</p>
+  </div>
+</div>
+<p class="voet">J. Everaerdt &mdash; athena Campus Pottelberg</p>
+</body>
+</html>
