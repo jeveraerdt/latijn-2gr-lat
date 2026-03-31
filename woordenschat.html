@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Woordenschat — 2GR-LAT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lufga:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blauw: #13427f; --roze: #E6007E;
+    --fv: 'Lufga', Arial, sans-serif; --fo: 'Aptos', Arial, sans-serif;
+    --achtergrond: #f7f8fa; --kaart: #ffffff; --rand: #e2e6ed;
+    --tekst: #1a1a1a; --tekst-zacht: #6b7280;
+    --radius: 12px; --radius-sm: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--fv); background: var(--achtergrond); color: var(--tekst); min-height: 100vh; padding: 2rem 2rem; }
+  .container { max-width: 960px; margin: 0 auto; }
+
+  .header { padding-bottom: 1.25rem; border-bottom: 2px solid var(--blauw); margin-bottom: 2rem; display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .header-links { display: flex; flex-direction: column; gap: 3px; }
+  .terug-link { font-size: 12px; color: var(--tekst-zacht); text-decoration: none; }
+  .terug-link:hover { color: var(--blauw); }
+  .header h1 { font-size: 30px; font-weight: 600; color: var(--blauw); letter-spacing: -0.5px; }
+  .header-teller { font-size: 13px; color: var(--tekst-zacht); font-family: var(--fo); white-space: nowrap; }
+
+  .zoek-wrap { margin-bottom: 1.25rem; position: relative; }
+  .zoek-veld {
+    width: 100%; font-family: var(--fo); font-size: 15px;
+    padding: 11px 16px 11px 42px;
+    border: 0.5px solid var(--rand); border-radius: var(--radius);
+    background: var(--kaart); outline: none; color: var(--tekst);
+    transition: border-color 0.15s;
+  }
+  .zoek-veld:focus { border-color: var(--blauw); box-shadow: 0 0 0 2px rgba(19,66,127,0.1); }
+  .zoek-icoon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--tekst-zacht); pointer-events: none; }
+  .zoek-wis { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: var(--tekst-zacht); font-size: 18px; display: none; padding: 0; line-height: 1; }
+  .zoek-wis:hover { color: var(--tekst); }
+
+  .alfabet { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 1.5rem; }
+  .alfabet-knop {
+    font-family: var(--fv); font-size: 12px; font-weight: 500;
+    padding: 4px 9px; border-radius: var(--radius-sm);
+    border: 0.5px solid var(--rand); background: var(--kaart);
+    cursor: pointer; color: var(--tekst-zacht);
+    transition: background 0.12s, border-color 0.12s, color 0.12s;
+  }
+  .alfabet-knop:hover { border-color: var(--blauw); color: var(--blauw); }
+  .alfabet-knop.actief { background: var(--blauw); color: #fff; border-color: var(--blauw); }
+  .alfabet-knop.leeg { opacity: 0.3; cursor: default; pointer-events: none; }
+
+  .tabel-wrap { background: var(--kaart); border: 0.5px solid var(--rand); border-radius: var(--radius); overflow: hidden; }
+  table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  thead th {
+    font-family: var(--fv); font-size: 11px; font-weight: 500;
+    color: var(--blauw); text-transform: uppercase; letter-spacing: 1px;
+    padding: 10px 16px; text-align: left;
+    background: #f0f4fa; border-bottom: 0.5px solid var(--rand);
+  }
+  tbody tr { border-bottom: 0.5px solid var(--rand); transition: background 0.1s; }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: #f7f9fc; }
+  tbody td { padding: 10px 16px; vertical-align: top; overflow-wrap: break-word; }
+  .col-grondvorm { width: 22%; font-family: var(--fv); font-size: 14px; font-weight: 500; color: var(--blauw); }
+  .col-grondvorm.basis { color: var(--roze); font-weight: 600; }
+  .col-aanvullingen { width: 35%; font-family: var(--fo); font-size: 13px; color: var(--tekst-zacht); }
+  .col-vertaling { width: 43%; font-family: var(--fo); font-size: 13px; color: var(--tekst); }
+
+  .geen-resultaat { text-align: center; padding: 3rem 1rem; font-family: var(--fo); font-size: 14px; color: var(--tekst-zacht); }
+  .voet { text-align: center; margin-top: 2rem; font-family: var(--fo); font-size: 12px; color: #c0c8d4; }
+
+  @media (max-width: 600px) {
+    body { padding: 1.5rem 1rem; }
+    .col-aanvullingen { display: none; }
+    .col-grondvorm { width: 35%; }
+    .col-vertaling { width: 65%; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="header-links">
+      <a class="terug-link" href="index.html">&#8592; Terug naar home</a>
+      <h1>Woordenschat</h1>
+    </div>
+    <span class="header-teller" id="teller">laden&#8230;</span>
+  </div>
+
+  <div class="zoek-wrap">
+    <svg class="zoek-icoon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+    <input class="zoek-veld" type="text" id="zoek-veld" placeholder="Zoek op Latijn of Nederlands&#8230;" autocomplete="off" autocorrect="off" spellcheck="false" />
+    <button class="zoek-wis" id="zoek-wis" onclick="wisZoek()">&#215;</button>
+  </div>
+
+  <div class="alfabet" id="alfabet"></div>
+
+  <div class="tabel-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th class="col-grondvorm">Grondvorm</th>
+          <th class="col-aanvullingen">Aanvullingen</th>
+          <th class="col-vertaling">Vertaling</th>
+        </tr>
+      </thead>
+      <tbody id="tabel-body"></tbody>
+    </table>
+    <div class="geen-resultaat" id="geen-resultaat" style="display:none">Geen woorden gevonden.</div>
+  </div>
+
+</div>
+<p class="voet">J. Everaerdt &mdash; athena Campus Pottelberg</p>
+
+<script src="woordenlijst_volledig.js"></script>
+<script>
+let huidigeLetter = '';
+let huidigeZoek   = '';
+
+function normaliseer(s) {
+  return (s || '').toLowerCase()
+    .replace(/[àáâãä]/g,'a').replace(/[èéêë]/g,'e')
+    .replace(/[ìíîï]/g,'i').replace(/[òóôõö]/g,'o')
+    .replace(/[ùúûü]/g,'u');
+}
+
+function escHtml(s) {
+  return (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function renderAlfabet() {
+  const aanwezig = new Set(woordenlijst.map(w => w.grondvorm[0].toUpperCase()));
+  const wrap = document.getElementById('alfabet');
+  let html = '<button class="alfabet-knop actief" data-letter="" onclick="kiesLetter(this,\'\')">Alle</button>';
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(l => {
+    const heeft = aanwezig.has(l);
+    html += `<button class="alfabet-knop${heeft?'':' leeg'}" data-letter="${l}" onclick="kiesLetter(this,'${l}')">${l}</button>`;
+  });
+  wrap.innerHTML = html;
+}
+
+function kiesLetter(el, letter) {
+  document.querySelectorAll('.alfabet-knop').forEach(k => k.classList.remove('actief'));
+  el.classList.add('actief');
+  huidigeLetter = letter;
+  document.getElementById('zoek-veld').value = '';
+  huidigeZoek = '';
+  document.getElementById('zoek-wis').style.display = 'none';
+  render();
+}
+
+function wisZoek() {
+  document.getElementById('zoek-veld').value = '';
+  huidigeZoek = '';
+  document.getElementById('zoek-wis').style.display = 'none';
+  render();
+}
+
+function render() {
+  let gefilterd = woordenlijst;
+
+  if (huidigeZoek.length >= 2) {
+    const q = normaliseer(huidigeZoek);
+    gefilterd = gefilterd.filter(w =>
+      normaliseer(w.grondvorm).includes(q) ||
+      normaliseer(w.vertaling).includes(q) ||
+      normaliseer(w.aanvullingen).includes(q)
+    );
+  } else if (huidigeLetter) {
+    gefilterd = gefilterd.filter(w => w.grondvorm[0].toUpperCase() === huidigeLetter);
+  }
+
+  const body  = document.getElementById('tabel-body');
+  const geen  = document.getElementById('geen-resultaat');
+  const tel   = document.getElementById('teller');
+
+  if (gefilterd.length === 0) {
+    body.innerHTML = '';
+    geen.style.display = 'block';
+    tel.textContent = '0 woorden';
+    return;
+  }
+
+  geen.style.display = 'none';
+  tel.textContent = gefilterd.length === woordenlijst.length
+    ? `${woordenlijst.length.toLocaleString('nl-BE')} woorden`
+    : `${gefilterd.length} van ${woordenlijst.length.toLocaleString('nl-BE')} woorden`;
+
+  body.innerHTML = gefilterd.map(w => `<tr>
+    <td class="col-grondvorm${w.basis ? ' basis' : ''}">${escHtml(w.grondvorm)}</td>
+    <td class="col-aanvullingen">${escHtml(w.aanvullingen)}</td>
+    <td class="col-vertaling">${escHtml(w.vertaling)}</td>
+  </tr>`).join('');
+}
+
+document.getElementById('zoek-veld').addEventListener('input', function() {
+  huidigeZoek = this.value.trim();
+  document.getElementById('zoek-wis').style.display = huidigeZoek ? 'block' : 'none';
+  if (huidigeZoek) {
+    huidigeLetter = '';
+    document.querySelectorAll('.alfabet-knop').forEach(k => k.classList.remove('actief'));
+    document.querySelector('[data-letter=""]').classList.add('actief');
+  }
+  render();
+});
+
+renderAlfabet();
+render();
+</script>
+</body>
+</html>
