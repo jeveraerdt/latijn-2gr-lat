@@ -2521,5 +2521,3 @@ const woordenlijst = [
   { grondvorm: "xystus", aanvullingen: "xysti", vertaling: "terras" },
   { grondvorm: "Zoninus", aanvullingen: "Zonini", vertaling: "Zoninus (eigennaam)" }
 ];
-
-export default woordenlijst;
