@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grieks — athena Campus Pottelberg</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lufga:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blauw: #13427f; --roze: #E6007E; --paars: #6d28d9;
+    --fv: 'Lufga', Arial, sans-serif; --fo: 'Aptos', Arial, sans-serif;
+    --achtergrond: #f7f8fa; --kaart: #ffffff; --rand: #e2e6ed;
+    --tekst: #1a1a1a; --tekst-zacht: #6b7280;
+    --radius: 12px; --radius-sm: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--fv); background: var(--achtergrond); color: var(--tekst); min-height: 100vh; display: flex; flex-direction: column; }
+
+  .hero { width: 100%; position: relative; min-height: auto; background: transparent; flex-shrink: 0; }
+  .hero-inhoud { position: relative; z-index: 1; padding: 3.5rem 2rem 3rem; text-align: center; }
+  .hero h1 { font-size: 38px; font-weight: 600; color: #E6007E; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 5px; }
+  .hero h1 .gamma { font-family: Georgia, serif; }
+  .hero .ondertitel { font-size: 13px; color: #E6007E; font-family: var(--fo); }
+  .school-logo { width: 44px; height: auto; margin-top: 10px; opacity: 0.9; display: block; margin-left: auto; margin-right: auto; }
+
+  .terug-wrap { padding: 1.25rem 2rem 0; max-width: 1100px; width: 100%; margin: 0 auto; }
+  .terug-link { font-size: 12px; color: var(--tekst-zacht); text-decoration: none; }
+  .terug-link:hover { color: var(--paars); }
+
+  .nav-wrap { flex: 1; padding: 1.5rem 2rem 3rem; max-width: 1100px; width: 100%; margin: 0 auto; }
+  .nav-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+  .nav-tegel { background: var(--kaart); border: 0.5px solid var(--rand); border-radius: var(--radius); padding: 1.5rem 1.25rem; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 10px; transition: border-color 0.15s, transform 0.15s; }
+  .nav-tegel:hover { border-color: var(--paars); transform: translateY(-2px); }
+  .nav-tegel-icoon { width: 42px; height: 42px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .nav-tegel-icoon svg { width: 22px; height: 22px; }
+  .icoon-paars { background: #ede7f6; }
+  .icoon-blauw { background: #e6f0fb; }
+  .icoon-groen { background: #e8f5e9; }
+  .icoon-roze  { background: #fce8f3; }
+  .nav-tegel-naam { font-size: 15px; font-weight: 600; color: var(--paars); }
+  .nav-tegel-omschrijving { font-family: var(--fo); font-size: 13px; color: var(--tekst-zacht); line-height: 1.5; }
+  .nav-tegel-pijl { margin-top: auto; font-size: 18px; color: var(--rand); transition: color 0.15s; }
+  .nav-tegel:hover .nav-tegel-pijl { color: var(--paars); }
+
+  .voet { text-align: center; padding: 1rem; font-family: var(--fo); font-size: 12px; color: #c0c8d4; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inhoud">
+    <h1>Grieks</h1>
+    <p class="ondertitel">athena Campus Pottelberg</p>
+    <img class="school-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHAAAABZCAYAAADmQ6C1AAAaE0lEQVR4nO19eXhV1bn3711rnSHzBAGUSXFosWqt1qqtBKz4FYcqXk/UqnWoMxdbbKut9XoSe/tZq/fT2tpPabV4xSkRtA6oF5WhFRyYIRGFClSGzPOZ9l5rvfePfU5IAoEgSSCY3xMeeHj22mdn/c47v/tdQD+iDCEJALMDl037RN25Y6O8U69QM9bO8V9z11kZRwxLXbcAYQWA+vPZBir6bZPKEJLFKDflwSuunOAe/bTPCCRgOA2KrACqqWXrFtnw57Dv1cc/iNRUEwgv4BJZjHLTX884ENEvBIYBUQLmO9Imj7jWOenTESY7vQ0JlhDCglkAnAafCJAPm0RD1SbV+H/PH/WXmdiIBKNMlqCCS1Fq++NZBxr6hUBGWBFK9QLfLb89TY++s54jWkCojtd4RLJJI7+SJLCRGtauldvuutp54TXAU6uTUKr743kHEvqDQCKAJ+SMyX2k7eINo0x+QRQOBGi3n23BTCCbDb+MSBebqeH5OWL1PQ84izcIEAzuETQoje0Qff0BC1AkGcBNse9MGsm5Q+JwbXfkeQ9ERIBsRtyyYXuCOeyy681pK+b6r/qFBUtCqWWUSQw6OQD6gcCJmMYAMNJmnxtkHwPMPVknIIQFRANHTYHJyJysv3LfSt9PFj+cNvWbhGJDIE55tV9m9Pm3mEAYh3GBF+X3PzvSFAxvQdwAUHuSwq5IOjomB2mqWrWaj2XNQ+flPxHGDkQZZZJQbAH06ItxqKFPJZABYjBOKSzIjZDrOEKLPErzpcNPBBgGG+6BRHpkk2pE1GbogJjojPvZqtoZHz4auHjSl10a+8uOUEFBQeaDrZMnHGsLLszmtPNHcPaIoFWIwoULrS0gBGivXyj2BE1nIaAaZRwbRN1DZ+c/9h+oRiTpqRp8iaTxgDgCY3LG5N6X+M6U0Sb3ikKTOekwzk5nZrTBsQbMBAjai4q1sNYHhSwKiA2yft1S9dm0m+NzF3/ZPNX+JJDKEBIhhEAobs+u/CxwxrjJPP7iYTbrykKbdUKuTUMUDpweSCWDQYDORFA1yCgqxfYHzj3hr7/CcrhflrjxgEggA1SOkAihjAnkSUoI8q+vXDrxK6bwqnxOm3qYzcm2zIi2SyUJ6uZ5LaxVkJRNAfpU1Xy4yPfZzT+OvrKSERYlAA7lLM4Bj6XCCIuJgPgu7tU2abpuDJ48eoo9/spjTEFoCGd+PYsDaGMHGkZbQO7Og01JYzaCqkZGEutl7d3nOn9+EDi0szg7NyIcFliY9EoLj2OgHCgfz0BpyiHoa8dgVxUbhph936XnHs3DfpRn084faXNUnA3icIwFk4DYRb1asPGTlGnwYYOsffNJ8cGMPzpL13vBf7GlQ8zB8QgMhwVK96JmOhFcySgvswD1yWYwQAsRlmfhXp30OnF3xtnHT3SO+uFwm3XFaM4ZAUuIILFb9ZqKG3ORprbK5qZVatuM4sTsWcDOqkhfPPeBAAFMAPGQb119slGZx7KxSiq0WMhacmMNQVtfs/2jlxuw228uAaEXJGoqqI9ITUrlTlv5zazDCu5wJl92lM6/dgRnn5xtA2hFAhpWcxf1asEmDUqSIFSoqtl3p70+fVHzlqZDKdwgACj49q2PcPrw6SSEZ0mYAdZg4zAxNTGbKlh3G6xZL5jXCeusJdv4z5oPnq/e9ZZMKCrxguqJsCgtZfTCRqVsZbstY9BTgeIpx/CwWwptxvdGmBwVhYMEtIYXhgjAk0YJsjmUJreIxg1vq4+nTU+8Op/BVIISGugODuV/60cXU87YOdYaCzbWE0oQCASQ8H4EQDJZV2DAJMBWtwprPmPYtWyc1cIklgu37uPaj8qrdvmUMAssLBGelJbvV9orpV47Oj0PZ0z92qnOyBvybfDqUTYvx2WDKFxjYdvtJMPqTARVs4jhE1l77+QzZv4ai6AHuoND+RN++iqC+eeyjjOIuqajOPnjSRGlNp4kSBCEAgnpXWYcsHZaBfPHZN0VRsdXyHjDimDN4sqtW7fGOt01ZU/3k9AyhGRH9XpN8JRRl9tvXH24yb52JOccKa1AG+LWAkwgmQr+M4VfrJVV770crLjut63vfDqQ86mUP/GOf7EvcxSsy9iHBDPAnPTdkyrIE1VKkcoWrOOANf8CO6usdj+UTuuSQMuWNdvXv1Pf6Vb7SWgYYVGC46jdey1A1sttP7zkCDvklhEm55sZ7EMLJ9jCWgaEAEwOpaltsqnpQ9o640r32VkDtYWD8if9qomlLwdsGfsdFzKDyYJSCWqhSChAJNWvSQCuUw921hCbf1AitlTGqpdXr3mppsttCBNL5L4SmlKvHVXif/svv+BYO2T6cJs9uZAz0coJODAGYE6DX7GwWKt2PDkp7/HbOuRTB4xKpbyJv3Sg/L4elum+ANgmJZUBEhBKkJCewBoXrBONgFkNHf9Aus5CGa9dXrWqvLbTLfZdQokREhIvmpSdfCx40ekn2pHTCk3mJSNsTiDKLuJwXQFQLqWrDaKu4mXfulvC8bf+PpBiRso76+4GCJXXOxLYEzCDYZP2VICUIKkAEoBxQDrRyNZdy6wXkdO22G36bGVrV5UbKvNCl0WwyURDtxvd1U7en/X9Y8+Kj70+x6b/6HDOyUtYFzG4iUwEAvUy4qyR1Xdc5Dz5+9Tag12lUn7RnVXwpw9jq/fRBvYWPEI5SSh1IZR1vA5WrwD02xSPLE7fNm/NLk5RUVjtLQ5lhAU62MlbgqeMusicePNIm3ftaJs3IgENZmglhKqQVS/+Z+CtW99s21h7sKtUyiv6+SoEsk+EdthrRznQ6CihJCCkIOH3dIOOA9bZBKs/YDe2EE7dPxo/en49ANNh+R7tZ9d48pzskfm3x7/3w8Ns9m0jTd4RggE/SXwm6v75P2rTjbcnXnqXwaIEhFLgoIsZKW/Cz8opLe8SduNmN2HEQYBOhEoIRSQUAAacmCWb+IRYv2sT8XdFc9XSuvUv7ei0vLO6bSdgF4dnKDJfbrn68iN1wfRhnHX8UJuJz0WTWaG2/WqqM+t+4OBUqZR35m2llF54D7uOAeEgJLALmO3O0EUoSJ8XtlgNdqMtZNyVgP4fdiMLg0tfW7UDO6Id1u4inTvzrqWaASAE+erfrp06wuTcfoTNOz2fMvGB2PzazcHy61a1VdWmelwPxK++O1D+adOmIrNwLrOx6IcutV4Gg9mLRZkIQsp2+6njgElsJjYLOd6ywBerWly9+m+bO60OlXlf2PIKBkqZERICL5pUAv1J/6UXnsDD/328HXH252ho+rv65yXXJ+a849UZSw8KlUrDTrjyCKdgdAWkP63/PNG+Qld16yOSCsQG1m2LE5tl7DoL2Gmen7n97WWdnKEOoUq4vIZ+jcXtqbrHg6GiCXr0XX7ynfMvNN4/yX38FwAQQkiWH2CVSgBk/sRfrORA1vFw4xa098aiAYOUumUilkKS8Hm/Xko6rbOYXGeebtz+ftPHc7d0WlsUVqHaSlFWWaZTIcjz6gcTjqLCkhpq01WITLvOeW5D0nU/YPEiAUBe0U+foLSh17Eb0QCpvS0amNiNMyR9ABuw0xYVjCXQ0fkUb5xft+zpVehASmh82D8eQGllqQMA5f4fTGkVzuSVge2vVjUfvrgM5Qcs6PcI/NZNN4jcMTOtjh3CBHZBB+mEEJKk3/t/NwpYt4J0fIHQsdd1zfKljZ8tbwa8zXq3aIGatHiSBgOX5p/01aqG7A2LsOiAOTUEAEO+fvnRNn9cJQup+i6ldjCjo3QKRVKBhAJbB3BjO6D1361JvCIiVQsbVpdvI3QUzzKJ8RW8146GPkKqIk/5E+9cxf6s46ETh5Yd/CJoD1WSuVupvJSuE2sl6CVWJ16V0ep36pc/t37nIgKK7lG9UfPcFxCKwgqLSnX+mT95EBnDfspu9MujRnuEpHSC4KlaH0AEdtpcYd3lbBOvCrftjbqlT67stKworHqzI6E7EEIhifJyk3/aDWcja+R8ttr75g1iN+igakkqj0wBuFGwcVeTTrwhY3Wv1y5/egk6xog7yex1NUvJPzx0aFGmPu7UDeTLGs7GHVSje0eSTE7aTZ9X99QxkHYqWMfngeNzG9577CO052qTarZLWm9/4AXtoTKJ8mKTN2HGLEov/CG7UTOoRvcRO+2mhPQTCenFm9pZK9zIm+zEy+o/mrms/fpwWKCykvbXXiYJ9NRo3uk3nkdZo15j7Q6MvOjBig5kUpJMdqNg7S4n3TpHRHa8WLdq7ob26z0/5Au1OVKHv3no+KJMM/TUjezPGgbrDtrC3sBOMhWUHwIC1o3Eid23kGh5On3JY/O2AsmUXljsq2rdmfds90Zvn4mModcPqtE+QIpMkgrKD7IGcNs2khN9PO29PzzqEek1Wvf0ljslrLCSAYASLc+TcQgDrzJx8INIAKTAhuHEDGvXsC/rKM4+/IHIpF8szjn+4iM98sI93nvq/G8GxowN5I0NVVAg90geDOr7HsyWAS0CmX6OVFcWbK/8xsaNbzhJanrw+nmHW6GoRGLLlji0+7zXCnjg612HPIgEEfnZaXNF2tDxjQVHhABiFIV75ER2lq5FScLaqp+F02aSbdeD6B8QE9j4gt/el0Vd1GOpRTgsGlc/XwE3voRkAGA+qHpADnEQCbVPocSu9i35DiBz7P97HtEg+gsEMLmtO/Z+5U7sSqAXUIKqlr1uEy01kD7Z0+lKg9gfkGAdJ5VonQ+gPSrYG3bnYTKKwqph44ct0k3MJukDOvZdDqL3wWxIBQhO67qaFc8sAzOhvGe9NrsPEZLOjG2retJrsxh0ZvoURExgokTb/QA0Jpb0eL+7ifE6ODOJyGJSg85Mn8GTPoV404f1H8x8DuGwwKKe9512H6SnnJl48+/BprsRLYPYLzCDJKDjNuC03YwemKqwl6VpJ2MvrIQFUCryJ/x8FYI541k7drBK0ZtgLXzpCs2f31u/9E/hVFmv26uTLYzJnhwCwHtOkxVBANCkWx8lEgPhdbmBA2ZNvgxlIzsW1i/9U0mSvG4zXynypmefPI4BP5KvBeyZwEWlBmBC/ZrZnGjZAekTgyFFL4DZwBdQFK3f6mtcdxmYk+39u5eQMCCAMJ2cd2TOddEzly723foqRiAd4L1WHBhFJbL+kyWt5Lb8maSfMBhS7B/YWii/gNMWcxs+mVqz7t1qFBfvsQ54AW6UhFL729azHjvWDBt6qh59zjt1N71IIN/eKw1eSEFcs2Umx5sjEHIwsP+iYLaQPiKT0KLp8wta1r2yLNUN0d2SZbjRdwpmumX+q37yTTv2smaO6UaOuqfq0VPm+q+6vQelolKLUJlo2PD6NujILJLBQSn8IvDIA1kHXLvhqvqVz7yDorDqCXlPpIWmnmHGPuRabQxYGrDSbO0RZsitPav1efqZbGvzg+y2xEEyORxmED0CWwupiKxD3LDp8sY1L7yAk2/07SneS5H3aPq/nXO2c8yzacZn49DCm+pPlIAWAfhG9bBY60lh8+qnNpMTfZpUgIDBwL5HYDZQfkFGO2jYHGpc+axH3vKZbndLUuQ9lVF89vcSx/wtywSCMTiQEO1hn4SACxPtebU9KYWyrfV3cKIJkBQYlMI9g9lABSTpRDM1fnZew8rZc/ZCHjHC6hTMdJ8Mhi6dGD/6tTyTFojCsR1Ha1pYG4RCg4gu2od2CU8Ka1c+sZGd5udI+cWgFO4JVpM/XQo3slXUfvrddpvXDXlhQDCYCKV6TuCq6ee4X3k+w/gDUTjckTwGcxA+rhUR/lhV3btv/S7lFQwwmciO37AbiYPUoBTuFqzJn6kQbVilti2bULe2fHmq6293V5chJO8FLIHsm4HrH57kHvOI3ygbg+auQ20JpHMoKNfI7b+/NfbS+/vYsFRqESoXLSvLN3K89elBKewCZgZghC9DUaR2DtY9UVT96fxNCIVkd+QtQFgVo9z8n8yjhr6vps870z3yx651tQNNcpe5PewWULpvidr0zkXurJ8zyuS+d5wlpTBQu+M+JNpinhQOxoVgNsm3fiW3bnugfvF/XdLQ0NgChMXuQgVPZZbJSSjVjwQvPPOh+EXvnWgOm9JsY1p3OdnGJge4FlCGb6XaNn9q5gv/xmBTguK95EJ3C08Kqz8t38TxpseECgh8yeNCBmvyBSWsE7UtW69seO8PdyDMwss775phWYAiVQpYQrH5m//qn57nfnXh4Tr36HqOGIBUR7EzZK0fAtkUVEvlludOO/oP5zc1NjWXgMi7xxeC13iaccKSIf78kz+GLyMX1sGXrxWfmRlW+jMkJxrXmrpN1zSvLVvRnb3zKghlglBsfhA8acwMM+GhY83QqXHrsgPT1VkBAJ1FQdUgInat3H73Bc6s+7xJwx55wBfuvi61KIKIrJlfQ27rvSSVAPfNAPSDFswGpEj4AhKx2iflulfP2BN5C1CkvFJQsZmbds3F/+Ge/cFxevjUiHW0C4vOYQIbHyTnUZraLOvWveKrmOiRVyapy8iv/anSEsJhGjNrlr/liNBa+HPHQSf4S9DJzQAbUkEFN97KseqfNS6dORMAdpfX9IbRloBA9sqMEwpvdYvuP1oXXKOsQASOER3aVSyslRCcgzRZJZrNP2Xdf03O/cuvUYu27obu7c9mMyqPoy1btsQpWv9Lr2R/iEshWwsQyJemkGhZgob1pzUunTkzOfGpayMSLUBYlaLUEsiW+6648p74lI9OckdcY6w1bXA5RZ6FtQBMDoJCCiHX+KrefDaw4ozJ7l/upFpqK0NIdjcxcf/7JJJV5PwzZ7yN9MLvshs9SIfm7S9YCxlUbBOa4s331f/j9/cC0LtTmWUIyUuTI7t+kjHpuGJn/P3HmsLzhKVOUmdhrYDgTApITQabZcPyCrXtN1fFyl8CgJ7M8u6F18fKARBUU/UM7c9YAaFo4I/s6gC2FkISqTTF8ea1oqVqWt2KWX/3PMySTg1IHdSlwVBkzmu+4faj4/l3Hm5z0ps5bgxYEIRgsJEgykK6cITGJqpbucFX9+AlFzz9AsphUmc+dTwkrDv0zianXtE+/Zb/J3LGzLCHxMQnLygnFVTQcUa8+cGG9x4pBRDp+kZt16Hr/512aehEZ2TpOJv/1ThrxKENvJYIqyBVJvnRKuLYjtalG0XdH4vdp18AYAQIz+/j4PXekhJCKCQK1mxL58O+s4J92QPaoWFmQ0JJofzgeONHsrV6Ru3yp94DCAhd0u6odAwLAOB3wfNPn2iOvGesyf9ewCq0IaEZDAlBQfhkgCS2ixZdRZG3KvzbH70pOucNAPgixKXQe2ou9Z79t66dQjlj57E1GtwbKrofwdaCCORLF3AizYjXPtCw5PHfAXA7Sl1X4n4RKDrqu3xMeJwecsUwzqIWjrsGDD+kLwN+JMigTrRuqlZtZYvVltm/iry+DuhE3BcedNC7dipp0AvO/PGTnDn8Wk4MFIfGm/9CKijBGpxofVG1bvll7cryjR2lruuU3+vSTjrscn3q7WNs7k0jbHZmhBPaApQJv5RCoIpaEvUitmgzGmZPy33zpdra2jYAYLAoRzH1xvTfXnY0mBAuoZy5y3JkwfHr2J8xIjmL+yBVpZ6dg/ArISTYaV4lIo13130483UA7dMjwgjTxA5zti/I+NqwW51Tpx9hh9xwmM0pdFmDQAiQRC1F0UTRFbWy7cWPArVz7mp9+dPUpy1AWC0EbG+e19T7nmJSlQ455dopnDd2nmXWYHvwqVJmAyElqQA40VIjE82/LVzyp0crAcdzyio4DKCjc3JhcNyoW03R9WPt0OvG2NyRggVi5KKRomgWsXXVFJm3XtXMuS3+8ocphchgARQT7Yea3BP6xtVPqtK80//9EZE7crp1DiKvlNmAhCRfEHAiEXZa/qwaVt9fW7moCiAUFU1Q0xYVcgjjOXWQ8p3Bb48+3xw/bZjNnXY0D8twOIHN1JiIkLOiWcbeWCur3rrtjpeXoTSVnyS8g3t6Xdp2h76K1QihMnFU+V2q/swLl1J6wUnsxg6gPUzOOBNSkvIDTtSwTswSDVsfrF+XnDhYFFahRZXccYTyc8ErzzhS5/18OOdcNAQZ2I7m6nrZtuhzalq8mqve/U/n7Y9T1xII7+IeNRGw/XmCdh8G297QmoLjv38shn7tfSvTsmES8M6y6y8kbRxJRSoAOBEjdOw5N1L1UPPyZ1YAQIeWdgaA32RcMOxrOv/8As64Ko0DXw9Ytb4ZkbfW+2rn35FRvrq+Hq3tdwfTQpTIiR5pfTqVsDv0bbYkaQ8LT7v2bJ05ej6DDKwRfX7ASPtAHZ8i5Qe7rXHoxLMyUv3HumVPe2Mhk3bOm1YPTBn+9SHfiBRMOcoMOWm4yYwatsvm+lf+469tqzqd48QokwtRQQv7QT32BH2f7kpNgDrlhh9TwdiHrXFdsFG9f8xP+yhIgvQLEgpw2mpZx2aLaPXj9cue+QRAR+I6bX7R0PGZJ0aHZzwSebfTqaQMFgtRImpRyaEDOBu7O/RPvrLdqbm5VOSMvsdqR8Ma2QuSyGD2iEh6lDAu4MYryMb+Kuo+eaa2cp53omg3xO16Qy/WO1gJ64r+Szi3k3jLbyh75F3WuEzW2H13bLoOXfWDAFi3rQ3GfUskmp8a9v7MtyoBB0CPiUui0zjsgYD+rRikSk+nXT8dGcMfhkoXrGNezw4R7apWk6eEpuqMRBJCgqQPBAY7bS6MXgoTedFGdrzStLLD2Q/7McJxIKH/Sz5JEnO/ccWZlDPqd6TSTwNJMGt4dc3UfntnMLcfwswMmDisNVvJ6o+Ejr1FrbUL6ta80J7pQJgFKov3e4jqQMKBqdntLILSkDNuKYbKusxKeSIDoyGkJABsDYhtE5j/xex+CquXWaf5Q1SvXtm8ZXVT+71SB1r14hjjgYT/BdbLEPqE73qZAAAAAElFTkSuQmCC" alt="athena" />
+  </div>
+</div>
+
+<div class="terug-wrap">
+  <a class="terug-link" href="index.html">&#8592; Terug naar home</a>
+</div>
+
+<div class="nav-wrap">
+  <div class="nav-grid">
+
+    <a class="nav-tegel" href="grieks-grammatica.html">
+      <div class="nav-tegel-icoon icoon-paars">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#6d28d9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+      </div>
+      <div class="nav-tegel-naam">Grammatica</div>
+      <div class="nav-tegel-omschrijving">Overzichten per onderwerp.</div>
+      <div class="nav-tegel-pijl">›</div>
+    </a>
+
+    <a class="nav-tegel" href="grieks-cultuur.html">
+      <div class="nav-tegel-icoon icoon-blauw">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#13427f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <div class="nav-tegel-naam">Cultuur</div>
+      <div class="nav-tegel-omschrijving">Griekse beschaving en cultuurgeschiedenis.</div>
+      <div class="nav-tegel-pijl">›</div>
+    </a>
+
+    <a class="nav-tegel" href="grieks-woordenschat.html">
+      <div class="nav-tegel-icoon icoon-groen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2a7a2a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      </div>
+      <div class="nav-tegel-naam">Vocabularium</div>
+      <div class="nav-tegel-omschrijving">Doorzoekbare woordenlijst Grieks.</div>
+      <div class="nav-tegel-pijl">›</div>
+    </a>
+
+    <a class="nav-tegel" href="grieks-oefeningen.html">
+      <div class="nav-tegel-icoon icoon-roze">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#E6007E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      </div>
+      <div class="nav-tegel-naam">Oefeningen</div>
+      <div class="nav-tegel-omschrijving">Interactieve oefeningen Grieks.</div>
+      <div class="nav-tegel-pijl">›</div>
+    </a>
+
+  </div>
+</div>
+
+<p class="voet">J. Everaerdt &mdash; athena Campus Pottelberg</p>
+</body>
+</html>
