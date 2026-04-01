@@ -9,255 +9,78 @@
 <link href="https://fonts.googleapis.com/css2?family=Lufga:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --blauw: #13427f;
-    --roze: #E6007E;
-    --fv: 'Lufga', Arial, sans-serif;
-    --fo: 'Aptos', Arial, sans-serif;
-    --achtergrond: #f7f8fa;
-    --kaart: #ffffff;
-    --rand: #e2e6ed;
-    --tekst: #1a1a1a;
-    --tekst-zacht: #6b7280;
-    --groen-bg: #f0f7f0;
-    --groen-rand: #b7d9b7;
-    --radius: 12px;
-    --radius-sm: 8px;
+    --blauw: #13427f; --roze: #E6007E;
+    --fv: 'Lufga', Arial, sans-serif; --fo: 'Aptos', Arial, sans-serif;
+    --achtergrond: #f7f8fa; --kaart: #ffffff; --rand: #e2e6ed;
+    --tekst: #1a1a1a; --tekst-zacht: #6b7280;
+    --groen-bg: #f0f7f0; --groen-rand: #b7d9b7;
+    --radius: 12px; --radius-sm: 8px;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--fv); background: var(--achtergrond); color: var(--tekst); min-height: 100vh; display: flex; flex-direction: column; }
 
-  body {
-    font-family: var(--fv);
-    background: var(--achtergrond);
-    color: var(--tekst);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* HERO */
   .hero { width: 100%; flex-shrink: 0; }
   .hero-inhoud { padding: 3.5rem 2rem 3rem; text-align: center; }
   .hero h1 { font-size: 38px; font-weight: 600; color: var(--blauw); letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 5px; }
-  .hero h1 .accent { color: #f9a8d4; }
   .hero .ondertitel { font-size: 13px; color: var(--blauw); font-family: var(--fo); letter-spacing: 0.3px; }
   .school-logo { width: 44px; height: auto; margin-top: 10px; display: block; margin-left: auto; margin-right: auto; }
 
-  /* NAV */
   .terug-wrap { padding: 1.25rem 2rem 0; max-width: 860px; width: 100%; margin: 0 auto; }
   .terug-link { font-size: 12px; color: var(--tekst-zacht); text-decoration: none; }
   .terug-link:hover { color: var(--blauw); }
 
-  /* HOOFDINHOUD */
   .inhoud { flex: 1; padding: 2rem 2rem 4rem; max-width: 860px; width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
 
-  /* SECTIETITEL */
-  .sectie-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--blauw);
-    color: white;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 4px 12px;
-    border-radius: 4px;
-    font-family: var(--fo);
-    margin-bottom: 1rem;
-  }
-
-  .blok-titel {
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--blauw);
-    margin-bottom: 0.75rem;
-  }
-
-  /* KAART */
-  .kaart {
-    background: var(--kaart);
-    border: 0.5px solid var(--rand);
-    border-radius: var(--radius);
-    padding: 1.75rem;
-  }
-
-  /* GROENE ONTHOUDKAART */
-  .onthoud {
-    background: var(--groen-bg);
-    border: 1px solid var(--groen-rand);
-    border-radius: var(--radius);
-    padding: 1.75rem;
-  }
+  .sectie-label { display: inline-flex; align-items: center; background: var(--blauw); color: white; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 4px; font-family: var(--fo); margin-bottom: 1rem; }
+  .blok-titel { font-size: 20px; font-weight: 600; color: var(--blauw); margin-bottom: 0.75rem; }
+  .kaart { background: var(--kaart); border: 0.5px solid var(--rand); border-radius: var(--radius); padding: 1.75rem; }
+  .onthoud { background: var(--groen-bg); border: 1px solid var(--groen-rand); border-radius: var(--radius); padding: 1.75rem; }
   .onthoud .blok-titel { color: #2d6a2d; }
 
-  /* BULLETLIJST */
   .regel-lijst { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; font-family: var(--fo); font-size: 14px; line-height: 1.6; color: var(--tekst); }
   .regel-lijst li { display: flex; gap: 10px; align-items: flex-start; }
   .regel-lijst li::before { content: '→'; color: var(--blauw); flex-shrink: 0; font-weight: 600; margin-top: 1px; }
 
-  /* HIGHLIGHT */
   .hl { color: var(--roze); font-weight: 600; }
-  .hl-blauw { color: var(--blauw); font-weight: 600; }
 
-  /* TIJDSKENLETTER-SCHEMA */
-  .tkl-grid {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 0.4rem 1.5rem;
-    font-family: var(--fo);
-    font-size: 13.5px;
-    margin-top: 0.5rem;
-  }
-  .tkl-grid .label { color: var(--tekst-zacht); }
-  .tkl-grid .waarde { color: var(--tekst); }
-
-  /* SUBTITEL binnen kaart */
-  .sub-titel {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--tekst-zacht);
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    font-family: var(--fo);
-    margin: 1.25rem 0 0.6rem;
-  }
+  .sub-titel { font-size: 13px; font-weight: 600; color: var(--tekst-zacht); text-transform: uppercase; letter-spacing: 0.6px; font-family: var(--fo); margin: 1.25rem 0 0.6rem; }
   .sub-titel:first-of-type { margin-top: 0; }
 
-  /* PERSOONSVORM TABEL */
-  .pv-tabel {
-    display: grid;
-    grid-template-columns: auto auto 1fr;
-    gap: 0;
-    font-family: var(--fo);
-    font-size: 13.5px;
-    border: 1px solid var(--rand);
-    border-radius: var(--radius-sm);
-    overflow: hidden;
-    margin-top: 0.5rem;
-  }
-  .pv-tabel .cel {
-    padding: 7px 14px;
-    border-bottom: 1px solid var(--rand);
-    display: flex;
-    align-items: center;
-  }
+  .pv-tabel { display: grid; grid-template-columns: auto auto 1fr; gap: 0; font-family: var(--fo); font-size: 13.5px; border: 1px solid var(--rand); border-radius: var(--radius-sm); overflow: hidden; margin-top: 0.5rem; }
+  .pv-tabel .cel { padding: 7px 14px; border-bottom: 1px solid var(--rand); display: flex; align-items: center; }
   .pv-tabel .cel:nth-last-child(-n+3) { border-bottom: none; }
-  .pv-tabel .header {
-    background: var(--blauw);
-    color: white;
-    font-weight: 600;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
+  .pv-tabel .header { background: var(--blauw); color: white; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
   .pv-tabel .cel:nth-child(3n+1) { background: #f4f7fb; color: var(--tekst-zacht); font-weight: 500; }
   .pv-tabel .latijn { font-weight: 600; color: var(--blauw); }
 
-  /* GROTE VERVOEGINGSTABEL */
+  .schema-box { background: #eef3fa; border-left: 3px solid var(--blauw); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 1rem 1.25rem; font-family: var(--fo); font-size: 13.5px; }
+  .schema-box .formule { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .schema-box .deel { background: white; border: 1px solid var(--rand); border-radius: 5px; padding: 2px 10px; font-size: 13px; color: var(--tekst); }
+  .schema-box .deel.tkl { border-color: var(--roze); color: var(--roze); font-weight: 700; }
+  .schema-box .deel.bk { border-color: #b45309; color: #b45309; font-weight: 600; }
+  .schema-box .plus { color: var(--tekst-zacht); font-weight: 600; }
+
   .vtabel-wrap { overflow-x: auto; margin-top: 0.5rem; }
-  .vtabel {
-    border-collapse: collapse;
-    width: 100%;
-    font-family: var(--fo);
-    font-size: 12.5px;
-    min-width: 560px;
-  }
-  .vtabel th {
-    background: var(--blauw);
-    color: white;
-    padding: 8px 10px;
-    text-align: left;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    white-space: nowrap;
-  }
+  .vtabel { border-collapse: collapse; width: 100%; font-family: var(--fo); font-size: 12.5px; min-width: 560px; }
+  .vtabel th { background: var(--blauw); color: white; padding: 8px 10px; text-align: left; font-weight: 600; letter-spacing: 0.3px; white-space: nowrap; }
   .vtabel th.leeg { background: #0e3268; }
-  .vtabel td {
-    padding: 7px 10px;
-    border-bottom: 1px solid var(--rand);
-    color: var(--tekst);
-    vertical-align: top;
-  }
+  .vtabel td { padding: 7px 10px; border-bottom: 1px solid var(--rand); color: var(--tekst); vertical-align: top; }
   .vtabel tr:last-child td { border-bottom: none; }
   .vtabel tr:nth-child(even) td { background: #f9fafb; }
-  .vtabel td.rij-label {
-    background: #eef3fa;
-    color: var(--blauw);
-    font-weight: 600;
-    white-space: nowrap;
-  }
+  .vtabel td.rij-label { background: #eef3fa; color: var(--blauw); font-weight: 600; white-space: nowrap; }
   .vtabel td .nl { font-size: 11px; color: var(--tekst-zacht); display: block; margin-top: 2px; }
   .vtabel .tkl { color: var(--roze); font-weight: 700; }
   .vtabel .bk { color: #b45309; font-weight: 700; }
 
-  /* ESSE/POSSE TABEL */
-  .esse-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-top: 0.5rem;
-  }
-  .esse-blok { }
-  .esse-blok h4 {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--blauw);
-    font-family: var(--fo);
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .esse-tabel {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: var(--fo);
-    font-size: 13px;
-  }
-  .esse-tabel td {
-    padding: 5px 10px;
-    border-bottom: 1px solid var(--rand);
-  }
+  .esse-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem; }
+  .esse-blok h4 { font-size: 13px; font-weight: 600; color: var(--blauw); font-family: var(--fo); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
+  .esse-tabel { width: 100%; border-collapse: collapse; font-family: var(--fo); font-size: 13px; }
+  .esse-tabel td { padding: 5px 10px; border-bottom: 1px solid var(--rand); }
   .esse-tabel tr:last-child td { border-bottom: none; }
   .esse-tabel td:first-child { color: var(--tekst-zacht); font-size: 12px; width: 60px; }
   .esse-tabel td:nth-child(2) { font-weight: 600; color: var(--blauw); }
   .esse-tabel td:nth-child(3) { color: var(--tekst-zacht); font-size: 12px; }
 
-  /* SCHEMA-BOX */
-  .schema-box {
-    background: #eef3fa;
-    border-left: 3px solid var(--blauw);
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    padding: 1rem 1.25rem;
-    font-family: var(--fo);
-    font-size: 13.5px;
-    line-height: 2;
-  }
-  .schema-box .formule {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 0.25rem;
-  }
-  .schema-box .deel {
-    background: white;
-    border: 1px solid var(--rand);
-    border-radius: 5px;
-    padding: 2px 10px;
-    font-size: 13px;
-    color: var(--tekst);
-  }
-  .schema-box .deel.tkl { border-color: var(--roze); color: var(--roze); font-weight: 700; }
-  .schema-box .deel.bk { border-color: #b45309; color: #b45309; font-weight: 600; }
-  .schema-box .plus { color: var(--tekst-zacht); font-weight: 600; }
-  .schema-box .sub-label { font-size: 12px; color: var(--tekst-zacht); margin-left: 2px; font-style: italic; }
-
-  /* DIVIDER */
-  hr { border: none; border-top: 1px solid var(--rand); margin: 0.25rem 0; }
-
-  /* VOET */
   .voet { text-align: center; padding: 1rem; font-family: var(--fo); font-size: 12px; color: #c0c8d4; }
 
   @media (max-width: 600px) {
@@ -282,7 +105,6 @@
 
 <div class="inhoud">
 
-  <!-- SECTIELABEL -->
   <div>
     <div class="sectie-label">Grammatica · Vervoegingen</div>
 
@@ -292,14 +114,17 @@
       <ul class="regel-lijst">
         <li>De verleden tijd (V.T.) heet in het Latijn de <span class="hl">indicatief imperfectum</span> (ind. impf.).</li>
         <li>De imperfectum wordt gevormd op de <span class="hl">praesensstam</span>.</li>
-        <li>We gebruiken dezelfde <span class="hl">praesenspersoonsuitgangen</span> als in het praesens, met uitzondering van de 1e pers. enk. (niet <em>-o</em>, maar <em>-m</em>).</li>
-        <li><em>Esse</em> (en dus ook <em>posse</em>) zijn onregelmatig in het imperfectum.</li>
+        <li>De tijdskenletter is <span class="hl">-BA-</span>. Bij de consonant-, ī- en ĭ-vervoeging wordt vóór -BA- nog de <span class="hl">bindklinker -e-</span> toegevoegd.</li>
+        <li>De <span class="hl">praesenspersoonsuitgangen</span> worden gebruikt, uitzondering: 1 enk. eindigt op <strong>-m</strong> (niet -o).</li>
+        <li><em>Esse</em> en <em>posse</em> zijn onregelmatig in het imperfectum.</li>
       </ul>
     </div>
   </div>
 
+  <!-- BLOK 2: TIJDSKENLETTER -->
   <div class="kaart">
     <div class="blok-titel">De tijdskenletter (TKL)</div>
+
     <div class="sub-titel">ā- en ē-vervoeging</div>
     <div class="schema-box">
       <div class="formule">
@@ -316,14 +141,11 @@
       <div class="formule">
         <span class="deel">praesensstam</span>
         <span class="plus">+</span>
-        <span class="deel bk">-e-</span>
+        <span class="deel bk">e</span>
         <span class="plus">+</span>
         <span class="deel tkl">BA</span>
         <span class="plus">+</span>
         <span class="deel">persoonsuitgang</span>
-      </div>
-      <div style="font-family:var(--fo);font-size:12.5px;color:var(--tekst-zacht);margin-top:0.4rem;">
-        Bindklinker <strong style="color:#b45309;">-e-</strong> wordt ingelast na de stam
       </div>
     </div>
   </div>
@@ -331,12 +153,10 @@
   <!-- BLOK 3: PERSOONSUITGANGEN -->
   <div class="kaart">
     <div class="blok-titel">Persoonsuitgangen</div>
-    <p style="font-family:var(--fo);font-size:13px;color:var(--tekst-zacht);margin-bottom:0.75rem;">Dezelfde als in het praesens, met uitzondering van de 1e pers. enk.</p>
     <div class="pv-tabel">
       <div class="cel header">Persoon</div>
       <div class="cel header">Uitgang</div>
       <div class="cel header">Betekenis</div>
-
       <div class="cel">1 enk.</div><div class="cel latijn">-m</div><div class="cel">ik</div>
       <div class="cel">2 enk.</div><div class="cel latijn">-s</div><div class="cel">jij</div>
       <div class="cel">3 enk.</div><div class="cel latijn">-t</div><div class="cel">hij / zij / het</div>
@@ -344,8 +164,10 @@
       <div class="cel">2 mv.</div><div class="cel latijn">-tis</div><div class="cel">jullie</div>
       <div class="cel">3 mv.</div><div class="cel latijn">-nt</div><div class="cel">zij</div>
     </div>
+    <p style="font-family:var(--fo);font-size:12.5px;color:var(--tekst-zacht);margin-top:0.75rem;">Let op: 1 enk. eindigt op <strong>-m</strong>, niet op -o zoals in het praesens.</p>
   </div>
 
+  <!-- BLOK 4: VERVOEGINGSTABEL -->
   <div class="kaart">
     <div class="blok-titel">Vorming: de vijf regelmatige vervoegingen</div>
     <div class="vtabel-wrap">
@@ -446,19 +268,20 @@
     </div>
   </div>
 
+  <!-- BLOK 6: SAMENVATTING -->
   <div class="onthoud">
     <div class="blok-titel">Samenvatting</div>
     <ul class="regel-lijst">
       <li>Vorming steeds op de <span class="hl">praesensstam</span>.</li>
-      <li><strong>ā- en ē-vervoeging</strong>: TKL = <span class="hl">-BA-</span>.</li>
+      <li><strong>ā- en ē-vervoeging</strong>: TKL = <span class="hl">-BA-</span>, geen bindklinker.</li>
       <li><strong>Consonant-, ī- en ĭ-vervoeging</strong>: bindklinker <span style="color:#b45309;font-weight:600;">-e-</span> + TKL <span class="hl">-BA-</span>.</li>
-      <li>Persoonsuitgangen: <strong>-m, -s, -t, -mus, -tis, -nt</strong> — let op: 1 enk. is <em>-m</em>, niet <em>-o</em>.</li>
-      <li><em>Esse</em> en <em>posse</em> zijn onregelmatig: <strong>eram, eras, erat…</strong> / <strong>pot-eram, pot-eras…</strong></li>
+      <li>Persoonsuitgangen: <strong>-m, -s, -t, -mus, -tis, -nt</strong> — let op: 1 enk. is <strong>-m</strong>, niet -o.</li>
+      <li><em>Esse</em> en <em>posse</em> zijn onregelmatig: <strong>eram, eras, erat…</strong> / <strong>poteram, poteras…</strong></li>
     </ul>
   </div>
 
-</div><!-- /inhoud -->
+</div>
 
-<p class="voet">J. Everaerdt &mdash; athena Campus Pottelberg</p>
+<p class="voet">J. Everaerdt &mdash; athena campus Pottelberg</p>
 </body>
 </html>
