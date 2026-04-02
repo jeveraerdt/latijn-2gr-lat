@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vervoegingen — oefeningen | Latijn 2GR-LAT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lufga:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blauw: #13427f; --roze: #E6007E;
+    --fv: 'Lufga', Arial, sans-serif; --fo: 'Aptos', Arial, sans-serif;
+    --achtergrond: #f7f8fa; --kaart: #ffffff; --rand: #e2e6ed;
+    --tekst: #1a1a1a; --tekst-zacht: #6b7280;
+    --groen: #2a7a2a; --groen-bg: #f0faf0;
+    --radius: 12px; --radius-sm: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--fv); background: var(--achtergrond); color: var(--tekst); min-height: 100vh; padding: 2rem; }
+  .container { max-width: 860px; margin: 0 auto; }
+
+  /* HEADER */
+  .header { padding-bottom: 1.25rem; border-bottom: 2px solid var(--blauw); margin-bottom: 1.75rem; display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .header h1 { font-size: 28px; font-weight: 600; color: var(--blauw); }
+  .header-datum { font-size: 13px; color: var(--tekst-zacht); font-family: var(--fo); margin-top: 4px; }
+
+  /* NAAM INVOER */
+  .naam-kaart { background: var(--kaart); border: 0.5px solid var(--rand); border-radius: var(--radius); padding: 1rem 1.25rem; display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+  .naam-label { font-family: var(--fo); font-size: 14px; color: var(--tekst-zacht); white-space: nowrap; }
+  .naam-veld { font-family: var(--fo); font-size: 14px; color: var(--tekst); flex: 1; min-width: 200px; border: 0.5px solid var(--rand); border-radius: var(--radius-sm); padding: 8px 12px; background: #f9fafb; outline: none; transition: border-color 0.15s; }
+  .naam-veld:focus { border-color: var(--blauw); background: #fff; }
+
+  /* STATISTIEKEN */
+  .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+  .stat-kaart { background: var(--kaart); border: 0.5px solid var(--rand); border-radius: var(--radius); padding: 1.25rem; text-align: center; }
+  .stat-getal { font-size: 32px; font-weight: 600; color: var(--blauw); line-height: 1.1; }
+  .stat-label { font-family: var(--fo); font-size: 13px; color: var(--tekst-zacht); margin-top: 4px; }
+
+  /* LEGENDA */
+  .legenda { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; font-family: var(--fo); font-size: 13px; color: var(--tekst-zacht); align-items: center; }
+  .legenda-item { display: flex; align-items: center; gap: 6px; }
+  .krans-img { width: 18px; height: 18px; }
+  .krans-img.grijs { opacity: 0.2; filter: grayscale(1); }
+
+  /* SECTIE */
+  .sectie { margin-bottom: 1.75rem; }
+  .sectie-kop { display: flex; align-items: baseline; gap: 10px; margin-bottom: 0.75rem; border-bottom: 1.5px solid var(--rand); padding-bottom: 0.5rem; }
+  .sectie-naam { font-size: 13px; font-weight: 600; color: var(--blauw); text-transform: uppercase; letter-spacing: 0.8px; }
+  .sectie-score { font-size: 12px; color: var(--tekst-zacht); font-family: var(--fo); }
+
+  /* OEFENING RIJ */
+  .oef-rij { background: var(--kaart); border: 0.5px solid var(--rand); border-radius: var(--radius); padding: 0.9rem 1.1rem; display: flex; align-items: center; gap: 1rem; margin-bottom: 8px; text-decoration: none; color: inherit; transition: border-color 0.15s, transform 0.1s; cursor: pointer; }
+  .oef-rij:hover { border-color: var(--blauw); transform: translateX(2px); }
+  .oef-rij.binnenkort { opacity: 0.55; pointer-events: none; cursor: default; }
+  .oef-rij.binnenkort:hover { transform: none; border-color: var(--rand); }
+
+  /* SCORE CIRKEL */
+  .score-cirkel { width: 38px; height: 38px; border-radius: 50%; border: 2px dashed #d1d5db; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; font-family: var(--fo); color: var(--tekst-zacht); background: white; }
+  .score-cirkel.goed { border: 2px solid var(--groen); background: var(--groen-bg); color: var(--groen); }
+  .score-cirkel.gedeeltelijk { border: 2px solid #b45309; background: #fffbeb; color: #b45309; }
+
+  .oef-info { flex: 1; min-width: 0; }
+  .oef-naam { font-size: 15px; font-weight: 600; color: var(--blauw); }
+  .oef-naam .binnenkort-label { font-weight: 400; color: var(--tekst-zacht); font-size: 14px; }
+  .oef-detail { font-family: var(--fo); font-size: 12.5px; color: var(--tekst-zacht); margin-top: 2px; }
+
+  .oef-rechts { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+  .kransen { display: flex; gap: 2px; }
+
+  /* KNOPPEN */
+  .knop-rij { display: flex; gap: 10px; margin-top: 1.5rem; flex-wrap: wrap; align-items: center; }
+  .knop { font-family: var(--fv); font-size: 13px; font-weight: 500; padding: 10px 22px; border-radius: var(--radius-sm); cursor: pointer; border: 0.5px solid var(--rand); background: transparent; color: var(--tekst); transition: background 0.12s; }
+  .knop:hover { background: #f3f4f6; }
+  .knop-hoofd { background: var(--blauw); color: #fff; border-color: var(--blauw); }
+  .knop-hoofd:hover { background: #0f3568; }
+  .knop-hoofd:disabled { opacity: 0.5; cursor: not-allowed; }
+  .status-tekst { font-family: var(--fo); font-size: 12px; color: var(--tekst-zacht); }
+  .status-tekst.ok { color: var(--groen); }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div>
+      <a style="font-size:12px;color:var(--tekst-zacht);text-decoration:none;" href="grammatica-keuze.html">&#8592; Terug naar Grammatica</a>
+      <h1>Oefeningen</h1>
+    </div>
+    <div class="header-datum" id="datum"></div>
+  </div>
+
+  <!-- NAAM -->
+  <div class="naam-kaart">
+    <span class="naam-label">Jouw naam:</span>
+    <input class="naam-veld" type="text" id="naam-veld" placeholder="Voornaam Achternaam" autocomplete="name" />
+  </div>
+
+  <!-- STATISTIEKEN -->
+  <div class="stats-grid">
+    <div class="stat-kaart">
+      <div class="stat-getal" id="stat-gemaakt">0/<span id="stat-totaal">0</span></div>
+      <div class="stat-label">oefeningen gemaakt</div>
+    </div>
+    <div class="stat-kaart">
+      <div class="stat-getal" id="stat-pct">0%</div>
+      <div class="stat-label">voltooid</div>
+    </div>
+    <div class="stat-kaart">
+      <div class="stat-getal" id="stat-gem">&#8212;</div>
+      <div class="stat-label">gemiddelde score</div>
+    </div>
+  </div>
+
+  <!-- LEGENDA -->
+  <div class="legenda" id="legenda-wrap"></div>
+
+  <!-- SECTIES MET OEFENINGEN -->
+  <div id="oefeningen-container"></div>
+
+  <!-- KNOPPEN -->
+  <div class="knop-rij">
+    <button class="knop knop-hoofd" id="knop-insturen" onclick="insturen()">Resultaten insturen naar leerkracht</button>
+    <button class="knop" onclick="wisVoortgang()">Voortgang wissen</button>
+    <span class="status-tekst" id="status-tekst">Vul eerst je naam in voor je instuurt.</span>
+  </div>
+
+</div>
+
+<script>
+const KRANS_SRC = 'data:image/png;base64,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';
+const OPSLAG_SLEUTEL = 'latijn-2grLAT';
+const FORMULIER_ID   = '1FAIpQLScCEJFq3G9kw1DsRpeq90hTpsSuVbCs7FMFh1bzOIXKBIKvIQ';
+const ENTRY_NAAM     = 'entry.825151788';
+const ENTRY_RESULTS  = 'entry.1977566684';
+
+// ─── OEFENINGEN DEFINITIE ────────────────────────────────────────────────────
+// Elke oefening heeft een id (= localStorage-sleutel), naam, aantalVragen en niveau (1/2/3)
+const SECTIES = [
+  {
+    naam: 'Praesens',
+    oefeningen: [
+      { id: 'praesens-herkenning', naam: 'Praesens — herkenning', aantalVragen: 10, niveau: 1, url: '#', binnenkort: true },
+      { id: 'praesens-vertaling', naam: 'Praesens — vertaling', aantalVragen: 8, niveau: 2, url: '#', binnenkort: true },
+    ]
+  },
+  {
+    naam: 'Imperfectum',
+    oefeningen: [
+      { id: 'imperfectum-herkenning', naam: 'Imperfectum — herkenning', aantalVragen: 10, niveau: 1, url: '#', binnenkort: true },
+      { id: 'imperfectum-vertaling', naam: 'Imperfectum — vertaling', aantalVragen: 8, niveau: 2, url: '#', binnenkort: true },
+    ]
+  },
+  {
+    naam: 'Futurum simplex',
+    oefeningen: [
+      { id: 'futurum-herkenning', naam: 'Futurum simplex — herkenning', aantalVragen: 10, niveau: 1, url: '#', binnenkort: true },
+      { id: 'futurum-vertaling', naam: 'Futurum simplex — vertaling', aantalVragen: 8, niveau: 2, url: '#', binnenkort: true },
+    ]
+  },
+  {
+    naam: 'Perfectum',
+    oefeningen: [
+      { id: 'perfectum-herkenning', naam: 'Perfectum — herkenning', aantalVragen: 10, niveau: 1, url: '#', binnenkort: true },
+      { id: 'perfectum-vertaling', naam: 'Perfectum — vertaling', aantalVragen: 8, niveau: 2, url: '#', binnenkort: true },
+    ]
+  },
+  {
+    naam: 'Gemengd',
+    oefeningen: [
+      { id: 'grammatica-gemengd-1', naam: 'Gemengde oefening vervoegingen', aantalVragen: 5, niveau: 2, url: 'oefeningen-grammatica.html', binnenkort: false },
+    ]
+  }
+];
+
+// ─── HULPFUNCTIES ─────────────────────────────────────────────────────────────
+function laadVoortgang() {
+  try { return JSON.parse(localStorage.getItem(OPSLAG_SLEUTEL) || '{}'); }
+  catch(e) { return {}; }
+}
+
+function kransenHTML(niveau) {
+  let html = '';
+  for (let i = 1; i <= 3; i++) {
+    html += `<img class="krans-img${i > niveau ? ' grijs' : ''}" src="${KRANS_SRC}" alt="" />`;
+  }
+  return html;
+}
+
+function scoreLabel(oef, data) {
+  if (!data[oef.id]) return '';
+  const { score, max } = data[oef.id];
+  const pct = Math.round((score / max) * 100);
+  return `${score}/${max}`;
+}
+
+function scoreKlasse(oef, data) {
+  if (!data[oef.id]) return '';
+  const { score, max } = data[oef.id];
+  const pct = (score / max) * 100;
+  return pct >= 80 ? 'goed' : pct >= 50 ? 'gedeeltelijk' : '';
+}
+
+// ─── RENDER ───────────────────────────────────────────────────────────────────
+function render() {
+  // Datum
+  const nu = new Date();
+  document.getElementById('datum').textContent = nu.toLocaleDateString('nl-BE', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+
+  // Legenda
+  document.getElementById('legenda-wrap').innerHTML = `
+    <div class="legenda-item"><img class="krans-img" src="${KRANS_SRC}" alt="" /> basis</div>
+    <div class="legenda-item"><img class="krans-img" src="${KRANS_SRC}" alt="" /><img class="krans-img" src="${KRANS_SRC}" alt="" /> gemiddeld</div>
+    <div class="legenda-item"><img class="krans-img" src="${KRANS_SRC}" alt="" /><img class="krans-img" src="${KRANS_SRC}" alt="" /><img class="krans-img" src="${KRANS_SRC}" alt="" /> uitdagend</div>`;
+
+  const data = laadVoortgang();
+  const alleOefeningen = SECTIES.flatMap(s => s.oefeningen);
+  const totaal = alleOefeningen.length;
+  const gemaakt = alleOefeningen.filter(o => data[o.id]).length;
+  const scores = alleOefeningen.filter(o => data[o.id]).map(o => (data[o.id].score / data[o.id].max) * 100);
+  const gemiddeld = scores.length ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : null;
+
+  document.getElementById('stat-gemaakt').innerHTML = `${gemaakt}/<span id="stat-totaal">${totaal}</span>`;
+  document.getElementById('stat-pct').textContent = totaal ? Math.round((gemaakt / totaal) * 100) + '%' : '0%';
+  document.getElementById('stat-gem').textContent = gemiddeld !== null ? gemiddeld + '%' : '—';
+
+  // Oefeningen container
+  const container = document.getElementById('oefeningen-container');
+  let html = '';
+  SECTIES.forEach(sectie => {
+    const gemaaktInSectie = sectie.oefeningen.filter(o => data[o.id]).length;
+    html += `
+      <div class="sectie">
+        <div class="sectie-kop">
+          <span class="sectie-naam">${sectie.naam}</span>
+          <span class="sectie-score">${gemaaktInSectie}/${sectie.oefeningen.length}</span>
+        </div>`;
+    sectie.oefeningen.forEach(oef => {
+      const gedaan = !!data[oef.id];
+      const label = gedaan ? scoreLabel(oef, data) : '';
+      const klasse = gedaan ? scoreKlasse(oef, data) : '';
+      const rij = oef.binnenkort ? 'oef-rij binnenkort' : 'oef-rij';
+      const href = oef.binnenkort ? '' : `href="${oef.url}"`;
+      const tag = oef.binnenkort ? 'div' : 'a';
+      html += `
+        <${tag} class="${rij}" ${href}>
+          <div class="score-cirkel ${klasse}">${label}</div>
+          <div class="oef-info">
+            <div class="oef-naam">${oef.naam}${oef.binnenkort ? ' <span class="binnenkort-label">(binnenkort)</span>' : ''}</div>
+            <div class="oef-detail">${oef.aantalVragen} vragen</div>
+          </div>
+          <div class="oef-rechts">
+            <div class="kransen">${kransenHTML(oef.niveau)}</div>
+            <span style="color:#d1d5db;font-size:16px;">›</span>
+          </div>
+        </${tag}>`;
+    });
+    html += `</div>`;
+  });
+  container.innerHTML = html;
+
+  // Naam laden
+  const opgeslagenNaam = localStorage.getItem('latijn-naam') || '';
+  if (opgeslagenNaam) document.getElementById('naam-veld').value = opgeslagenNaam;
+  updateKnopStatus();
+}
+
+function updateKnopStatus() {
+  const naam = document.getElementById('naam-veld').value.trim();
+  const knop = document.getElementById('knop-insturen');
+  const status = document.getElementById('status-tekst');
+  if (!naam) {
+    knop.disabled = true;
+    status.textContent = 'Vul eerst je naam in voor je instuurt.';
+    status.className = 'status-tekst';
+  } else {
+    knop.disabled = false;
+    status.textContent = '';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('naam-veld').addEventListener('input', () => {
+    localStorage.setItem('latijn-naam', document.getElementById('naam-veld').value.trim());
+    updateKnopStatus();
+  });
+});
+
+// ─── INSTUREN ────────────────────────────────────────────────────────────────
+function insturen() {
+  const naam = document.getElementById('naam-veld').value.trim();
+  if (!naam) return;
+
+  const data = laadVoortgang();
+  const alleOefeningen = SECTIES.flatMap(s => s.oefeningen);
+  const resultatenTekst = alleOefeningen
+    .filter(o => data[o.id])
+    .map(o => `${o.naam}: ${data[o.id].score}/${data[o.id].max}`)
+    .join(' | ');
+
+  const url = `https://docs.google.com/forms/d/e/${FORMULIER_ID}/formResponse?${ENTRY_NAAM}=${encodeURIComponent(naam)}&${ENTRY_RESULTS}=${encodeURIComponent(resultatenTekst || 'Geen oefeningen voltooid')}&submit=Submit`;
+
+  // Stuur via verborgen iframe (geen popup)
+  const iframe = document.createElement('iframe');
+  iframe.style.display = 'none';
+  iframe.src = url;
+  document.body.appendChild(iframe);
+  setTimeout(() => document.body.removeChild(iframe), 3000);
+
+  const status = document.getElementById('status-tekst');
+  status.textContent = '✓ Resultaten ingestuurd!';
+  status.className = 'status-tekst ok';
+  setTimeout(() => { status.textContent = ''; status.className = 'status-tekst'; }, 4000);
+}
+
+// ─── WISSEN ───────────────────────────────────────────────────────────────────
+function wisVoortgang() {
+  if (!confirm('Wil je echt alle opgeslagen voortgang wissen?')) return;
+  localStorage.removeItem(OPSLAG_SLEUTEL);
+  render();
+  const status = document.getElementById('status-tekst');
+  status.textContent = 'Voortgang gewist.';
+  status.className = 'status-tekst';
+}
+
+render();
+</script>
+</body>
+</html>
