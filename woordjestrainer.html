@@ -413,25 +413,42 @@ let lerenSubfase     = {};  // bijhouding per woord in leren-modus
 
 // ══════════════════════════════════════════════
 // INITIALISATIE
+// Woordenlijst gebruikt teksten: ["6a/5", "7b/2"]
+// Formaat: {ludus}/{tekst}, alles lowercase
 // ══════════════════════════════════════════════
-function init() {
-  // Bouw ludus-dropdown op basis van unieke waarden in woordenlijst
-  const ludi = [...new Set(
-    woordenlijst.filter(w => w.ludus).map(w => w.ludus)
-  )].sort((a, b) => sorteerLudus(a, b));
 
+function parseTekstRef(ref) {
+  // "6a/5" → { ludus: "6a", tekst: "5" }
+  const m = ref.match(/^([^/]+)\/(.+)$/);
+  return m ? { ludus: m[1], tekst: m[2] } : null;
+}
+
+function init() {
   const selLudus = document.getElementById('sel-ludus');
 
+  // Verzamel alle unieke ludi uit de teksten-arrays
+  const ludiSet = new Set();
+  woordenlijst.forEach(w => {
+    if (w.teksten) w.teksten.forEach(ref => {
+      const p = parseTekstRef(ref);
+      if (p) ludiSet.add(p.ludus);
+    });
+  });
+
+  const ludi = [...ludiSet].sort(sorteerLudus);
+
   if (ludi.length === 0) {
-    // Geen thematische data aanwezig: toon alfabetische modus
+    // Geen thematische data: alfabetische modus
     selLudus.innerHTML = '<option value="alfabetisch">Volledige alfabetische lijst</option>';
     selLudus.value = 'alfabetisch';
     document.getElementById('sel-tekst').innerHTML = '<option value="alle">Alle teksten</option>';
     laadWoorden();
   } else {
+    selLudus.innerHTML = '<option value="">— Kies ludus —</option>';
     ludi.forEach(l => {
       const opt = document.createElement('option');
-      opt.value = l; opt.textContent = `Ludus ${l}`;
+      opt.value = l;
+      opt.textContent = `Ludus ${l.toUpperCase()}`;
       selLudus.appendChild(opt);
     });
   }
@@ -439,7 +456,6 @@ function init() {
 }
 
 function sorteerLudus(a, b) {
-  // Sorteer bv. "6A" < "6B" < "7A"
   const re = /^(\d+)(.*)$/;
   const ma = a.match(re), mb = b.match(re);
   if (ma && mb) {
@@ -465,9 +481,16 @@ function laadTeksten() {
 
   if (!ludus) { huidigeWoorden = []; renderLijst(); return; }
 
-  const teksten = [...new Set(
-    woordenlijst.filter(w => w.ludus === ludus && w.tekst).map(w => w.tekst)
-  )].sort((a, b) => parseInt(a) - parseInt(b) || a.localeCompare(b));
+  // Verzamel teksten voor deze ludus
+  const tekstSet = new Set();
+  woordenlijst.forEach(w => {
+    if (w.teksten) w.teksten.forEach(ref => {
+      const p = parseTekstRef(ref);
+      if (p && p.ludus === ludus) tekstSet.add(p.tekst);
+    });
+  });
+
+  const teksten = [...tekstSet].sort((a, b) => parseInt(a) - parseInt(b) || a.localeCompare(b));
 
   teksten.forEach(t => {
     const opt = document.createElement('option');
@@ -487,14 +510,18 @@ function laadWoorden() {
 
   let basis = woordenlijst;
 
-  if (ludus === 'alfabetisch' || !ludus) {
-    // geen ludus-filter
-  } else {
-    basis = basis.filter(w => w.ludus === ludus);
-  }
-
-  if (tekst && tekst !== 'alle') {
-    basis = basis.filter(w => w.tekst === tekst);
+  if (ludus && ludus !== 'alfabetisch') {
+    if (tekst && tekst !== 'alle') {
+      // Filter op specifieke ludus + tekst
+      const sleutel = `${ludus}/${tekst}`;
+      basis = basis.filter(w => w.teksten && w.teksten.includes(sleutel));
+    } else {
+      // Filter op ludus, alle teksten
+      basis = basis.filter(w => w.teksten && w.teksten.some(ref => {
+        const p = parseTekstRef(ref);
+        return p && p.ludus === ludus;
+      }));
+    }
   }
 
   if (filter === 'basis') {
