@@ -4,11 +4,6 @@
 // Basiswoorden (basis: true) verschijnen in #E6007E op de oefensite
 
 const woordenlijst = [
-  { grondvorm, aanvullingen, vertaling, basis?, teksten? },
-  { grondvorm, aanvullingen, vertaling, basis?, teksten? },
-  { grondvorm, aanvullingen, vertaling, basis?, teksten? },
-  { grondvorm, aanvullingen, vertaling, basis?, teksten? },
-  { grondvorm, aanvullingen, vertaling, basis? },
   { grondvorm: "a(b)", aanvullingen: "+ abl. (vz.)", vertaling: "vanaf, vanuit, weg van, van; door", basis: true, teksten: ["6a/5", "7a/1", "7a/3", "7a/8", "7b/2", "8a/2", "8a/5", "8b/1", "8b/3", "8b/7", "9a/1", "9b/5", "9b/9"] },
   { grondvorm: "abdere", aanvullingen: "abdo, abdidi, abditum", vertaling: "verbergen", teksten: ["7b/2"] },
   { grondvorm: "abicere", aanvullingen: "abicio, abieci, abiectum", vertaling: "wegwerpen, neergooien, op de grond gooien" },
