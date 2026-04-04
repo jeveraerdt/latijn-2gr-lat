@@ -1,16783 +1,2632 @@
 // Alfabetische woordenlijst – Athena Campus Pottelberg, 2GR-LAT
-// Volledige lijst A–Z | 2516 lemma's | 567 basiswoorden (basis: true)
-// Structuur: { grondvorm, aanvullingen, vertaling, basis?, teksten? }
+// Volledige lijst A–Z | 2625 lemma's | 622 basiswoorden (basis: true)
+// Structuur: { grondvorm, aanvullingen, vertaling, basis?, teksten?, volgorde? }
 // Basiswoorden (basis: true) verschijnen in #E6007E op de oefensite
 
 const woordenlijst = [
-  {
-      grondvorm: "a(b)",
-      aanvullingen: "+ abl. (vz.)",
-      vertaling: "vanaf, vanuit, weg van, van; door",
-      basis: true,
-      teksten: ["6a/4", "7a/1", "7a/3", "7a/8", "7b/2", "8a/2", "8a/3", "8a/5", "8b/6", "9a/1", "9b/5", "9b/5", "9b/9", "9b/9"],
-      volgorde: {"6a/4": 102, "7a/1": 28, "7a/3": 67, "7a/8": 18, "7b/2": 49, "8a/2": 42, "8a/3": 52, "8a/5": 30, "8b/6": 48, "9a/1": 22, "9b/5": 16, "9b/5": 16, "9b/9": 1, "9b/9": 49}
-  },
-  {
-      grondvorm: "abdere",
-      aanvullingen: "abdo, abdidi, abditum",
-      vertaling: "verbergen",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 21}
-  },
-  {
-      grondvorm: "abicere",
-      aanvullingen: "abicio, abieci, abiectum",
-      vertaling: "wegwerpen, neergooien, op de grond gooien"
-  },
-  {
-      grondvorm: "abigere",
-      aanvullingen: "abigo, abegi, abactum",
-      vertaling: "verdrijven, wegleiden, verjagen",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 17}
-  },
-  {
-      grondvorm: "abire",
-      aanvullingen: "abeo, abii, abitum",
-      vertaling: "weggaan",
-      basis: true,
-      teksten: ["6a/7", "7a/6", "7b/2"],
-      volgorde: {"6a/7": 7, "7a/6": 5, "7b/2": 96}
-  },
-  {
-      grondvorm: "abrogare",
-      aanvullingen: "abrogo, abrogavi, abrogatum",
-      vertaling: "afschaffen",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 79}
-  },
-  {
-      grondvorm: "abscindere",
-      aanvullingen: "abscindo, abscidi, abscissum + abl.",
-      vertaling: "losscheuren van, scheiden van"
-  },
-  {
-      grondvorm: "absens",
-      aanvullingen: "absens, absens; absentis",
-      vertaling: "afwezig",
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 51}
-  },
-  {
-      grondvorm: "ac",
-      aanvullingen: "(vgw.)",
-      vertaling: "en",
-      basis: true,
-      teksten: ["6b/5", "7a/6", "7b/6", "8b/1", "8b/5", "10/3", "10/14"],
-      volgorde: {"6b/5": 15, "7a/6": 6, "7b/6": 29, "8b/1": 8, "8b/5": 30, "10/3": 70, "10/14": 21}
-  },
-  {
-      grondvorm: "Acca Larentia",
-      aanvullingen: "Accae Larentiae",
-      vertaling: "Acca Larentia (eigennaam)"
-  },
-  {
-      grondvorm: "accedere",
-      aanvullingen: "accedo, accessi, accessum",
-      vertaling: "gaan naar, naderen",
-      basis: true
-  },
-  {
-      grondvorm: "accendere",
-      aanvullingen: "accendo, accendi, accensum",
-      vertaling: "in brand steken, aansteken",
-      basis: true,
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 82}
-  },
-  {
-      grondvorm: "accensus",
-      aanvullingen: "accensa, accensum",
-      vertaling: "in brand gestoken, aangestoken",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 83}
-  },
-  {
-      grondvorm: "accidere",
-      aanvullingen: "accido, accidi, –",
-      vertaling: "gebeuren",
-      basis: true,
-      teksten: ["9a/4"],
-      volgorde: {"9a/4": 29}
-  },
-  {
-      grondvorm: "accipere",
-      aanvullingen: "accipio, accepi, acceptum",
-      vertaling: "ontvangen, aannemen, krijgen",
-      basis: true,
-      teksten: ["6b/4", "8a/3", "8b/8"],
-      volgorde: {"6b/4": 53, "8a/3": 41, "8b/8": 7}
-  },
-  {
-      grondvorm: "accusator",
-      aanvullingen: "accusatoris, (m.)",
-      vertaling: "aanklager, beschuldiger",
-      teksten: ["7a/5"],
-      volgorde: {"7a/5": 13}
-  },
-  {
-      grondvorm: "acer",
-      aanvullingen: "acris, acre",
-      vertaling: "scherp, puntig; driftig, heftig",
-      basis: true,
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 48}
-  },
-  {
-      grondvorm: "acerbus",
-      aanvullingen: "acerba, acerbum",
-      vertaling: "zuur"
-  },
-  {
-      grondvorm: "acetum",
-      aanvullingen: "aceti, (o.)",
-      vertaling: "azijn"
-  },
-  {
-      grondvorm: "acies",
-      aanvullingen: "aciei, (v.)",
-      vertaling: "slaglinie, slagorde, leger in slagorde",
-      basis: true
-  },
-  {
-      grondvorm: "Actium",
-      aanvullingen: "Actii",
-      vertaling: "(de stad) Actium in West-Griekenland; nu: Punta",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 8}
-  },
-  {
-      grondvorm: "ad",
-      aanvullingen: "+ acc. (vz.)",
-      vertaling: "naar, tot bij, bij",
-      basis: true,
-      teksten: ["6a/2", "6b/2", "6b/3", "7a/1", "7b/2", "7b/4", "8a/2", "8a/3", "8a/5", "8b/6", "8b/9", "9b/7", "10/14", "10/26"],
-      volgorde: {"6a/2": 64, "6b/2": 108, "6b/3": 14, "7a/1": 25, "7b/2": 84, "7b/4": 51, "8a/2": 39, "8a/3": 36, "8a/5": 33, "8b/6": 36, "8b/9": 15, "9b/7": 22, "10/14": 26, "10/26": 76}
-  },
-  {
-      grondvorm: "ad summum",
-      aanvullingen: "",
-      vertaling: "'naar boven'",
-      teksten: ["7b/12"],
-      volgorde: {"7b/12": 17}
-  },
-  {
-      grondvorm: "addere",
-      aanvullingen: "addo, addidi, additum",
-      vertaling: "toevoegen",
-      basis: true
-  },
-  {
-      grondvorm: "adesse",
-      aanvullingen: "adsum, adfui, –",
-      vertaling: "erbij zijn, aanwezig zijn, er zijn",
-      basis: true,
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 25}
-  },
-  {
-      grondvorm: "adferre (afferre)",
-      aanvullingen: "adfero (affero), attuli, allatum",
-      vertaling: "dragen naar, voeren naar, brengen naar",
-      basis: true
-  },
-  {
-      grondvorm: "adhibere",
-      aanvullingen: "adhibeo, adhibui, adhibitum",
-      vertaling: "aanwenden, gebruiken",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 43}
-  },
-  {
-      grondvorm: "adhuc",
-      aanvullingen: "(bijw.)",
-      vertaling: "nog",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 27}
-  },
-  {
-      grondvorm: "adiacere",
-      aanvullingen: "adiaceo, adiacui, –",
-      vertaling: "liggen bij, liggen naast, grenzen aan",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 32}
-  },
-  {
-      grondvorm: "adicere",
-      aanvullingen: "adicio, adieci, adiectum",
-      vertaling: "werpen bij, toevoegen"
-  },
-  {
-      grondvorm: "adire",
-      aanvullingen: "adeo, adii, aditum",
-      vertaling: "gaan naar",
-      basis: true,
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 46}
-  },
-  {
-      grondvorm: "adiungere",
-      aanvullingen: "adiungo, adiunxi, adiunctum",
-      vertaling: "verbinden; toevoegen",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 46}
-  },
-  {
-      grondvorm: "adminiculum",
-      aanvullingen: "adminiculi",
-      vertaling: "hulpmiddel",
-      teksten: ["8b/3"],
-      volgorde: {"8b/3": 39}
-  },
-  {
-      grondvorm: "admirandus",
-      aanvullingen: "admiranda, admirandum",
-      vertaling: "wonderbaarlijk, bewonderenswaardig",
-      teksten: ["10/21"],
-      volgorde: {"10/21": 8}
-  },
-  {
-      grondvorm: "admirari",
-      aanvullingen: "admiror, admiratus sum",
-      vertaling: "bewonderen; zich verwonderen",
-      basis: true
-  },
-  {
-      grondvorm: "admiratio",
-      aanvullingen: "admirationis",
-      vertaling: "bewondering",
-      teksten: ["10/14"],
-      volgorde: {"10/14": 9}
-  },
-  {
-      grondvorm: "admittere",
-      aanvullingen: "admitto, admisi, admissum",
-      vertaling: "toelaten, toestaan",
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 23}
-  },
-  {
-      grondvorm: "admonere",
-      aanvullingen: "admoneo, admonui, admonitum",
-      vertaling: "aanmanen, aansporen, waarschuwen",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 35}
-  },
-  {
-      grondvorm: "admovere",
-      aanvullingen: "admoveo, admovi, admotum + dat.",
-      vertaling: "bewegen naar/tot bij, brengen naar/tot bij",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 93}
-  },
-  {
-      grondvorm: "adolere",
-      aanvullingen: "adoleo, adolui, –",
-      vertaling: "met offers eren, offeren"
-  },
-  {
-      grondvorm: "adornare",
-      aanvullingen: "adorno, adornavi, adornatum + abl.",
-      vertaling: "voorzien van, uitrusten met"
-  },
-  {
-      grondvorm: "adprehendere",
-      aanvullingen: "adprehendo, adprehendi, adprehensum",
-      vertaling: "grijpen, vastgrijpen"
-  },
-  {
-      grondvorm: "adserere",
-      aanvullingen: "adsero, adserui, adsertum",
-      vertaling: "aanspraak maken op, zich toe-eigenen; bevrijden, beschermen",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 102}
-  },
-  {
-      grondvorm: "alacrior",
-      aanvullingen: "alacrior, alacrius; alacriores",
-      vertaling: "opgewekter, levendiger, enthousiaster",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 19}
-  },
-  {
-      grondvorm: "alia mente quam",
-      aanvullingen: "",
-      vertaling: "op een andere manier dan",
-      teksten: ["7b/6"],
-      volgorde: {"7b/6": 35}
-  },
-  {
-      grondvorm: "alia parte ... alia (parte)",
-      aanvullingen: "",
-      vertaling: "aan de ene kant … aan de andere kant",
-    teksten: ["9b/5"],
-    volgorde: {"9b/5": 69}
-  },
-  {
-      grondvorm: "alii",
-      aanvullingen: "alii … alii",
-      vertaling: "de enen … de anderen",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 53}
-  },
-  {
-      grondvorm: "aliqui",
-      aanvullingen: "aliqua, aliquod",
-      vertaling: "een of ander(e), een zekere, een",
-      teksten: ["10/19"],
-      volgorde: {"10/19": 7}
-  },
-  {
-      grondvorm: "altius",
-      aanvullingen: "(bijw.)",
-      vertaling: "hoger; dieper",
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 41}
-  },
-  {
-      grondvorm: "amores mei",
-      aanvullingen: "",
-      vertaling: "'mijn lievelingsplek'",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 62}
-  },
-  {
-      grondvorm: "ardere",
-      aanvullingen: "ardeo, arsi, –",
-      vertaling: "branden, gloeien",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 32}
-  },
-  {
-      grondvorm: "aspectus",
-      aanvullingen: "aspectus, (m.)",
-      vertaling: "blik, aanblik, zicht"
-  },
-  {
-      grondvorm: "adstare",
-      aanvullingen: "adsto, adstiti, –",
-      vertaling: "staan bij, blijven staan",
-      teksten: ["7a/6"],
-      volgorde: {"7a/6": 5}
-  },
-  {
-      grondvorm: "adsurgere",
-      aanvullingen: "adsurgo, adsurrexi, adsurrectum",
-      vertaling: "zich verheffen, oprijzen, gaan staan",
-      teksten: ["6b/5"],
-      volgorde: {"6b/5": 29}
-  },
-  {
-      grondvorm: "adulescens",
-      aanvullingen: "adulescentis (m.)",
-      vertaling: "jongeman (tussen 15 en 30 jaar)",
-      teksten: ["7a/1", "7b/2"],
-      volgorde: {"7a/1": 27, "7b/2": 72}
-  },
-  {
-      grondvorm: "advenire",
-      aanvullingen: "advenio, adveni, adventum",
-      vertaling: "aankomen, arriveren",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 25}
-  },
-  {
-      grondvorm: "adversus",
-      aanvullingen: "+ acc.",
-      vertaling: "tegenover, tegen, ten opzichte van",
-      teksten: ["6a/4", "7b/4"],
-      volgorde: {"6a/4": 60, "7b/4": 40}
-  },
-  {
-      grondvorm: "advocare",
-      aanvullingen: "advoco, advocavi, advocatum",
-      vertaling: "erbij roepen, bijeenroepen",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 30}
-  },
-  {
-      grondvorm: "advocatus",
-      aanvullingen: "advocati",
-      vertaling: "helper; advocaat"
-  },
-  {
-      grondvorm: "Aeacus",
-      aanvullingen: "Aeaci",
-      vertaling: "Aeacus (eigennaam)"
-  },
-  {
-      grondvorm: "aedes",
-      aanvullingen: "aedis, (v.)",
-      vertaling: "tempel; mv.: huis, gebouw",
-      teksten: ["7a/8"],
-      volgorde: {"7a/8": 13}
-  },
-  {
-      grondvorm: "aedificare",
-      aanvullingen: "aedifico, aedificavi, aedificatum",
-      vertaling: "bouwen",
-      basis: true,
-      teksten: ["8a/6"],
-      volgorde: {"8a/6": 12}
-  },
-  {
-      grondvorm: "aedificium",
-      aanvullingen: "aedificii, (o.)",
-      vertaling: "gebouw",
-      teksten: ["6a/1", "10/21"],
-      volgorde: {"6a/1": 27, "10/21": 23}
-  },
-  {
-      grondvorm: "aedilis",
-      aanvullingen: "aedilis (m.)",
-      vertaling: "aediel (= politiek ambt)",
-      teksten: ["7a/8"],
-      volgorde: {"7a/8": 12}
-  },
-  {
-      grondvorm: "aeger",
-      aanvullingen: "aegra, aegrum",
-      vertaling: "ziek",
-      basis: true,
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 2}
-  },
-  {
-      grondvorm: "aegre",
-      aanvullingen: "(bijw.)",
-      vertaling: "met moeite, moeizaam, nauwelijks"
-  },
-  {
-      grondvorm: "Aelia",
-      aanvullingen: "Aeliae",
-      vertaling: "Aelia (eigennaam)"
-  },
-  {
-      grondvorm: "Aemilia Donativa",
-      aanvullingen: "Aemiliae Donativae",
-      vertaling: "Aemilia Donativa (eigennaam)"
-  },
-  {
-      grondvorm: "Aemilius Celer",
-      aanvullingen: "Aemilii Celeris",
-      vertaling: "Aemilius Celer (eigennaam)"
-  },
-  {
-      grondvorm: "Aeneas",
-      aanvullingen: "Aeneae",
-      vertaling: "Aeneas (eigennaam)"
-  },
-  {
-      grondvorm: "aeneus",
-      aanvullingen: "aenea, aeneum",
-      vertaling: "van brons gemaakt, bronzen",
-      teksten: ["6b/9"],
-      volgorde: {"6b/9": 2}
-  },
-  {
-      grondvorm: "aequabilis",
-      aanvullingen: "aequabilis, aequabile",
-      vertaling: "gelijkmatig, gelijk",
-      teksten: ["7a/1"],
-      volgorde: {"7a/1": 6}
-  },
-  {
-      grondvorm: "aequalis",
-      aanvullingen: "aequalis, aequale",
-      vertaling: "gelijk"
-  },
-  {
-      grondvorm: "Aequi",
-      aanvullingen: "Aequorum",
-      vertaling: "de Aequi (een volk in Latium)"
-  },
-  {
-      grondvorm: "aer",
-      aanvullingen: "aeris (m.)",
-      vertaling: "lucht (Grieks leenwoord)",
-      basis: true
-  },
-  {
-      grondvorm: "aerarius",
-      aanvullingen: "aerarii",
-      vertaling: "kopersmid",
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 5}
-  },
-  {
-      grondvorm: "aes",
-      aanvullingen: "aeris (o.)",
-      vertaling: "koper, brons; geld",
-      basis: true,
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 22}
-  },
-  {
-      grondvorm: "aes alienum",
-      aanvullingen: "aeris alieni (o.)",
-      vertaling: "schulden",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 24}
-  },
-  {
-      grondvorm: "aestas",
-      aanvullingen: "aestatis",
-      vertaling: "zomer",
-      basis: true
-  },
-  {
-      grondvorm: "aestus",
-      aanvullingen: "aestus",
-      vertaling: "hitte, gloed",
-      basis: true,
-      teksten: ["10/8"],
-      volgorde: {"10/8": 29}
-  },
-  {
-      grondvorm: "aetas",
-      aanvullingen: "aetatis, (v.)",
-      vertaling: "leeftijd",
-      basis: true,
-      teksten: ["7a/1"],
-      volgorde: {"7a/1": 5}
-  },
-  {
-      grondvorm: "aeternus",
-      aanvullingen: "aeterna, aeternum",
-      vertaling: "eeuwig, eeuwigdurend, onvergankelijk",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 72}
-  },
-  {
-      grondvorm: "Aetna",
-      aanvullingen: "Aetnae",
-      vertaling: "Etna (vulkaan op Sicilië)"
-  },
-  {
-      grondvorm: "aevum",
-      aanvullingen: "aevi, (o.)",
-      vertaling: "tijd; eeuwigheid"
-  },
-  {
-      grondvorm: "Afer",
-      aanvullingen: "Afri",
-      vertaling: "Afrikaan"
-  },
-  {
-      grondvorm: "afficere",
-      aanvullingen: "afficio, affeci, affectum",
-      vertaling: "voorzien van; behandelen met"
-  },
-  {
-      grondvorm: "Africanae",
-      aanvullingen: "arum",
-      vertaling: "wilde dieren uit Africa"
-  },
-  {
-      grondvorm: "Agamemnonius",
-      aanvullingen: "Agamemnonia, Agamemnonium",
-      vertaling: "van Agamemnon"
-  },
-  {
-      grondvorm: "ager",
-      aanvullingen: "agri, (m.)",
-      vertaling: "akker, veld, stuk grond, gebied, grondgebied",
-      basis: true,
-      teksten: ["7b/2", "8a/2", "8a/5", "8b/3", "10/21"],
-      volgorde: {"7b/2": 109, "8a/2": 8, "8a/5": 10, "8b/3": 30, "10/21": 13}
-  },
-  {
-      grondvorm: "agere",
-      aanvullingen: "ago, egi, actum",
-      vertaling: "doen, (voort)drijven",
-      basis: true,
-      teksten: ["6a/4", "6b/4"],
-      volgorde: {"6a/4": 88, "6b/4": 37}
-  },
-  {
-      grondvorm: "agmen",
-      aanvullingen: "agminis, (o.)",
-      vertaling: "troep, groep, menigte; leger op mars, colonne, stoet",
-      basis: true,
-      teksten: ["6a/7", "6b/2", "8b/9"],
-      volgorde: {"6a/7": 6, "6b/2": 34, "8b/9": 140}
-  },
-  {
-      grondvorm: "agnoscere",
-      aanvullingen: "agnosco, agnovi, agnitum",
-      vertaling: "herkennen; inzien"
-  },
-  {
-      grondvorm: "ait",
-      aanvullingen: "",
-      vertaling: "hij/zij zei",
-      basis: true,
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 3}
-  },
-  {
-      grondvorm: "ala",
-      aanvullingen: "alae",
-      vertaling: "vleugel",
-      basis: true
-  },
-  {
-      grondvorm: "alacer",
-      aanvullingen: "alacris, alacre",
-      vertaling: "opgewekt, levendig, enthousiast",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 18}
-  },
-  {
-      grondvorm: "Alba Longa",
-      aanvullingen: "Albae Longae",
-      vertaling: "(de stad) Alba Longa"
-  },
-  {
-      grondvorm: "alba",
-      aanvullingen: "albae",
-      vertaling: "wit kleed"
-  },
-  {
-      grondvorm: "albus",
-      aanvullingen: "alba, album",
-      vertaling: "wit"
-  },
-  {
-      grondvorm: "alea",
-      aanvullingen: "aleae",
-      vertaling: "dobbelsteen"
-  },
-  {
-      grondvorm: "alere",
-      aanvullingen: "alo, alui, al(i)tum",
-      vertaling: "voeden",
-      basis: true,
-      teksten: ["7a/3", "8a/3"],
-      volgorde: {"7a/3": 79, "8a/3": 130}
-  },
-  {
-      grondvorm: "alescere",
-      aanvullingen: "alesco, –",
-      vertaling: "groter worden",
-      teksten: ["7a/1"],
-      volgorde: {"7a/1": 29}
-  },
-  {
-      grondvorm: "alibi",
-      aanvullingen: "(bijw.)",
-      vertaling: "ergens anders, elders",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 65}
-  },
-  {
-      grondvorm: "alibi",
-      aanvullingen: "alibi",
-      vertaling: "hier … daar"
-  },
-  {
-      grondvorm: "alienus",
-      aanvullingen: "aliena, alienum",
-      vertaling: "van een ander, andermans",
-      basis: true,
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 23}
-  },
-  {
-      grondvorm: "aliquando",
-      aanvullingen: "(bijw.)",
-      vertaling: "in het verleden, ooit, eens",
-      teksten: ["8a/5"],
-      volgorde: {"8a/5": 19}
-  },
-  {
-      grondvorm: "(ali)qui",
-      aanvullingen: "(ali)quae, (ali)quod",
-      vertaling: "een of ander(e), een zekere, een",
-      basis: true
-  },
-  {
-      grondvorm: "aliquis",
-      aanvullingen: "aliqua, aliquid (onbepaald vnw.)",
-      vertaling: "iemand, iets; mv.: sommige(n)",
-      basis: true,
-      teksten: ["7b/12"],
-      volgorde: {"7b/12": 11}
-  },
-  {
-      grondvorm: "alius",
-      aanvullingen: "alia, aliud",
-      vertaling: "ander(e)",
-      basis: true,
-      teksten: ["6a/2", "6b/2", "7b/6", "8a/2", "8a/3", "8b/3", "8b/9", "9a/1", "9b/5"],
-      volgorde: {"6a/2": 52, "6b/2": 115, "7b/6": 33, "8a/2": 34, "8a/3": 28, "8b/3": 32, "8b/9": 54, "9a/1": 10, "9b/5": 67}
-  },
-  {
-      grondvorm: "alii … alii",
-      aanvullingen: "",
-      vertaling: "de enen … de anderen",
-      basis: true,
-      teksten: ["8b/3"],
-      volgorde: {"8b/3": 33}
-  },
-  {
-      grondvorm: "alius … alius",
-      aanvullingen: "",
-      vertaling: "de een … de ander",
-      basis: true
-  },
-  {
-      grondvorm: "alius",
-      aanvullingen: "alia, aliud … quam",
-      vertaling: "ander(e) … dan",
-      basis: true,
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 98}
-  },
-  {
-      grondvorm: "Alpes",
-      aanvullingen: "Alpium (enkel mv.)",
-      vertaling: "de Alpen",
-      basis: true,
-      teksten: ["8a/5"],
-      volgorde: {"8a/5": 8}
-  },
-  {
-      grondvorm: "Alpicus",
-      aanvullingen: "Alpici",
-      vertaling: "Alpenbewoner"
-  },
-  {
-      grondvorm: "altaria",
-      aanvullingen: "altarium (enkel mv., onz.)",
-      vertaling: "offerhaard, altaar",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 93}
-  },
-  {
-      grondvorm: "alter",
-      aanvullingen: "altera, alterum",
-      vertaling: "ander (van twee)",
-      basis: true,
-      teksten: ["6a/4", "6b/2", "7a/6", "8a/6"],
-      volgorde: {"6a/4": 103, "6b/2": 42, "7a/6": 22, "8a/6": 31}
-  },
-  {
-      grondvorm: "alter … alter",
-      aanvullingen: "",
-      vertaling: "de een … de ander",
-      basis: true,
-      teksten: ["7a/6"],
-      volgorde: {"7a/6": 23}
-  },
-  {
-      grondvorm: "altitudo",
-      aanvullingen: "altitudinis",
-      vertaling: "hoogte; diepte",
-      basis: true
-  },
-  {
-      grondvorm: "altus",
-      aanvullingen: "alta, altum",
-      vertaling: "hoog; diep",
-      basis: true,
-      teksten: ["6a/4", "6b/2", "6b/4", "7a/7"],
-      volgorde: {"6a/4": 10, "6b/2": 87, "6b/4": 6, "7a/7": 40}
-  },
-  {
-      grondvorm: "amare",
-      aanvullingen: "amo, amavi, amatum",
-      vertaling: "liefhebben, houden van",
-      basis: true
-  },
-  {
-      grondvorm: "amarus",
-      aanvullingen: "amara, amarum",
-      vertaling: "bitter; moeilijk, onaangenaam",
-      basis: true
-  },
-  {
-      grondvorm: "Ambiorix",
-      aanvullingen: "Ambiorigis (m.)",
-      vertaling: "Ambiorix (eigennaam)"
-  },
-  {
-      grondvorm: "ambitio",
-      aanvullingen: "ambitionis",
-      vertaling: "ijdelheid; eerzucht, ambitie"
-  },
-  {
-      grondvorm: "ambo",
-      aanvullingen: "ambae, ambo",
-      vertaling: "beide(n)",
-      basis: true
-  },
-  {
-      grondvorm: "amica",
-      aanvullingen: "amicae",
-      vertaling: "vriendin",
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 52}
-  },
-  {
-      grondvorm: "amicus",
-      aanvullingen: "amici",
-      vertaling: "vriend",
-      basis: true
-  },
-  {
-      grondvorm: "amittere",
-      aanvullingen: "amitto, amisi, amissum",
-      vertaling: "wegsturen; verliezen",
-      basis: true,
-      teksten: ["6a/1"],
-      volgorde: {"6a/1": 37}
-  },
-  {
-      grondvorm: "amor",
-      aanvullingen: "amoris, (m.)",
-      vertaling: "liefde",
-      basis: true,
-      teksten: ["7b/4", "9b/5", "10/26"],
-      volgorde: {"7b/4": 69, "9b/5": 61, "10/26": 33}
-  },
-  {
-      grondvorm: "amovere",
-      aanvullingen: "amoveo, amovi, amotum",
-      vertaling: "verwijderen",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 92}
-  },
-  {
-      grondvorm: "amplecti",
-      aanvullingen: "amplector, amplexus sum",
-      vertaling: "omhelzen, omarmen; liefhebben, houden van",
-      basis: true
-  },
-  {
-      grondvorm: "amplius",
-      aanvullingen: "(bijw.)",
-      vertaling: "meer",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 20}
-  },
-  {
-      grondvorm: "an",
-      aanvullingen: "",
-      vertaling: "of",
-      basis: true,
-      teksten: ["10/3"],
-      volgorde: {"10/3": 2}
-  },
-  {
-      grondvorm: "Anchises",
-      aanvullingen: "Anchisae",
-      vertaling: "Anchises (eigennaam)"
-  },
-  {
-      grondvorm: "ancilla",
-      aanvullingen: "ancillae",
-      vertaling: "slavin",
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 63}
-  },
-  {
-      grondvorm: "angulus",
-      aanvullingen: "anguli",
-      vertaling: "hoek; uithoek",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 111}
-  },
-  {
-      grondvorm: "angustus",
-      aanvullingen: "angusta, angustum",
-      vertaling: "smal",
-      basis: true,
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 45}
-  },
-  {
-      grondvorm: "anima",
-      aanvullingen: "animae, (v.)",
-      vertaling: "adem; ziel",
-      basis: true,
-      teksten: ["7b/12"],
-      volgorde: {"7b/12": 10}
-  },
-  {
-      grondvorm: "animadvertere",
-      aanvullingen: "animadverto, animadverti, animadversum",
-      vertaling: "letten op, waarnemen, zien",
-      basis: true,
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 8}
-  },
-  {
-      grondvorm: "animal",
-      aanvullingen: "animalis, (o.)",
-      vertaling: "levend wezen, dier",
-      basis: true,
-      teksten: ["6a/4", "9a/4"],
-      volgorde: {"6a/4": 98, "9a/4": 14}
-  },
-  {
-      grondvorm: "animus",
-      aanvullingen: "animi, (m.)",
-      vertaling: "geest, verstand, hart; gemoedsgesteld, mv.: gevoelens",
-      basis: true,
-      teksten: ["7b/2", "10/3"],
-      volgorde: {"7b/2": 13, "10/3": 36}
-  },
-  {
-      grondvorm: "animos gerere",
-      aanvullingen: "gero, gessi, gestum in + acc.",
-      vertaling: "gevoelens koesteren tegenover",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 68}
-  },
-  {
-      grondvorm: "annus",
-      aanvullingen: "anni, (m.)",
-      vertaling: "jaar",
-      basis: true,
-      teksten: ["7a/1", "8a/3"],
-      volgorde: {"7a/1": 12, "8a/3": 74}
-  },
-  {
-      grondvorm: "anser",
-      aanvullingen: "anseris",
-      vertaling: "gans (het dier)"
-  },
-  {
-      grondvorm: "ante",
-      aanvullingen: "+ acc. (vz.)",
-      vertaling: "voor",
-      basis: true,
-      teksten: ["6b/2", "7b/2", "9b/5"],
-      volgorde: {"6b/2": 23, "7b/2": 52, "9b/5": 54}
-  },
-  {
-      grondvorm: "ante",
-      aanvullingen: "(bijw.)",
-      vertaling: "eerder, vroeger, voordien",
-      basis: true
-  },
-  {
-      grondvorm: "antea",
-      aanvullingen: "(bijw.)",
-      vertaling: "eerder, vroeger, voordien",
-      basis: true,
-      teksten: ["8a/3", "10/9"],
-      volgorde: {"8a/3": 1, "10/9": 4}
-  },
-  {
-      grondvorm: "anteire",
-      aanvullingen: "anteeo, anteii, anteitum",
-      vertaling: "gaan vóór; voorkomen, beletten, verijdelen",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 106}
-  },
-  {
-      grondvorm: "antequam",
-      aanvullingen: "+ ind. (vgw.)",
-      vertaling: "vooraleer"
-  },
-  {
-      grondvorm: "antiquitas",
-      aanvullingen: "antiquitatis",
-      vertaling: "oudheid, het verre verleden"
-  },
-  {
-      grondvorm: "antrum",
-      aanvullingen: "antri, (o.)",
-      vertaling: "grot",
-      basis: true
-  },
-  {
-      grondvorm: "anus",
-      aanvullingen: "anus (v.)",
-      vertaling: "oude vrouw"
-  },
-  {
-      grondvorm: "apertum",
-      aanvullingen: "aperti",
-      vertaling: "open ruimte, vrije ruimte, open lucht",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 27}
-  },
-  {
-      grondvorm: "apis",
-      aanvullingen: "apis",
-      vertaling: "bij (het insect)",
-      teksten: ["10/14"],
-      volgorde: {"10/14": 5}
-  },
-  {
-      grondvorm: "Apollo",
-      aanvullingen: "Apollinis",
-      vertaling: "(de god) Apollo",
-      basis: true,
-      teksten: ["9a/1", "9b/6"],
-      volgorde: {"9a/1": 38, "9b/6": 25}
-  },
-  {
-      grondvorm: "apparere",
-      aanvullingen: "appareo, apparui, apparitum",
-      vertaling: "verschijnen, zichtbaar worden; blijken, duidelijk zijn",
-      teksten: ["6a/2", "8a/3"],
-      volgorde: {"6a/2": 8, "8a/3": 126}
-  },
-  {
-      grondvorm: "appellare",
-      aanvullingen: "appello, appellavi, appellatum",
-      vertaling: "noemen",
-      basis: true,
-      teksten: ["7a/1", "8b/1", "9a/1", "10/26"],
-      volgorde: {"7a/1": 35, "8b/1": 4, "9a/1": 17, "10/26": 65}
-  },
-  {
-      grondvorm: "Appenninus",
-      aanvullingen: "Appennini",
-      vertaling: "de Apennijnen (bergketen in Italië)",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 84}
-  },
-  {
-      grondvorm: "appetere",
-      aanvullingen: "appeto, appetivi, appetitum",
-      vertaling: "verlangen naar"
-  },
-  {
-      grondvorm: "Appianus",
-      aanvullingen: "Appiani",
-      vertaling: "Appianus (eigennaam)"
-  },
-  {
-      grondvorm: "apponere",
-      aanvullingen: "appono, apposui, appositum",
-      vertaling: "plaatsen bij, zetten bij"
-  },
-  {
-      grondvorm: "approbare",
-      aanvullingen: "approbo, approbavi, approbatum",
-      vertaling: "goedkeuren; bewijzen",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 16}
-  },
-  {
-      grondvorm: "Aprilis",
-      aanvullingen: "Aprilis, Aprile",
-      vertaling: "van de maand april"
-  },
-  {
-      grondvorm: "apud",
-      aanvullingen: "+ acc. (vz.)",
-      vertaling: "bij",
-      basis: true,
-      teksten: ["8b/5", "8b/9", "9a/4"],
-      volgorde: {"8b/5": 5, "8b/9": 87, "9a/4": 35}
-  },
-  {
-      grondvorm: "aqua",
-      aanvullingen: "aquae, (v.)",
-      vertaling: "water",
-      basis: true,
-      teksten: ["9b/4", "10/19", "10/21"],
-      volgorde: {"9b/4": 19, "10/19": 14, "10/21": 30}
-  },
-  {
-      grondvorm: "aquaeductus",
-      aanvullingen: "aquaeductus",
-      vertaling: "waterleiding, aquaduct",
-      teksten: ["8b/3"],
-      volgorde: {"8b/3": 17}
-  },
-  {
-      grondvorm: "aquila",
-      aanvullingen: "aquilae",
-      vertaling: "arend, adelaar"
-  },
-  {
-      grondvorm: "aquilifer",
-      aanvullingen: "aquiliferi",
-      vertaling: "vaandeldrager"
-  },
-  {
-      grondvorm: "Aquilo",
-      aanvullingen: "Aquilonis (m.)",
-      vertaling: "de Noordenwind"
-  },
-  {
-      grondvorm: "aquilo",
-      aanvullingen: "aquilonis (m.)",
-      vertaling: "het noorden"
-  },
-  {
-      grondvorm: "Aquitanus",
-      aanvullingen: "Aquitani",
-      vertaling: "Aquitaniër",
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 11}
-  },
-  {
-      grondvorm: "ara",
-      aanvullingen: "arae, (v.)",
-      vertaling: "altaar",
-      basis: true,
-      teksten: ["10/26"],
-      volgorde: {"10/26": 77}
-  },
-  {
-      grondvorm: "arbiter",
-      aanvullingen: "arbitri",
-      vertaling: "scheidsrechter"
-  },
-  {
-      grondvorm: "arbitrari",
-      aanvullingen: "arbitror, arbitratus sum",
-      vertaling: "oordelen, menen, denken",
-      basis: true,
-      teksten: ["6a/2", "7a/1"],
-      volgorde: {"6a/2": 76, "7a/1": 2}
-  },
-  {
-      grondvorm: "arbitrium",
-      aanvullingen: "arbitrii, (o.)",
-      vertaling: "oordeel; macht, heerschappij"
-  },
-  {
-      grondvorm: "arbor",
-      aanvullingen: "arboris (v.)",
-      vertaling: "boom",
-      basis: true
-  },
-  {
-      grondvorm: "Archimedes",
-      aanvullingen: "Archimedis",
-      vertaling: "Archimedes (eigennaam)",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 3}
-  },
-  {
-      grondvorm: "area",
-      aanvullingen: "areae, (v.)",
-      vertaling: "open plein; binnenplaats (van een huis)"
-  },
-  {
-      grondvorm: "arena",
-      aanvullingen: "arenae, (v.)",
-      vertaling: "zandkorrel, zand; strijdperk",
-      basis: true
-  },
-  {
-      grondvorm: "arescere",
-      aanvullingen: "aresco, arui, –",
-      vertaling: "drogen"
-  },
-  {
-      grondvorm: "argenteus",
-      aanvullingen: "argentea, argenteum",
-      vertaling: "van zilver, zilveren"
-  },
-  {
-      grondvorm: "argentum",
-      aanvullingen: "argenti, (o.)",
-      vertaling: "zilver"
-  },
-  {
-      grondvorm: "Aricia",
-      aanvullingen: "Ariciae",
-      vertaling: "Aricia (stadje ten zuiden van Rome)"
-  },
-  {
-      grondvorm: "arma",
-      aanvullingen: "armorum (enkel mv.), (onz. mv.)",
-      vertaling: "wapens; oorlog",
-      basis: true
-  },
-  {
-      grondvorm: "armare",
-      aanvullingen: "armo, armavi, armatum",
-      vertaling: "bewapenen",
-      basis: true
-  },
-  {
-      grondvorm: "armatus",
-      aanvullingen: "armata, armatum",
-      vertaling: "gewapend",
-      basis: true
-  },
-  {
-      grondvorm: "arripere",
-      aanvullingen: "arripio, arrepi, arreptum",
-      vertaling: "vastgrijpen; beginnen, aanvatten",
-      basis: true
-  },
-  {
-      grondvorm: "Arrius",
-      aanvullingen: "Arrii",
-      vertaling: "Arrius (eigennaam)"
-  },
-  {
-      grondvorm: "ars",
-      aanvullingen: "artis, (v.)",
-      vertaling: "kunst; kunstvaardigheid, bekwaamheid",
-      basis: true,
-      teksten: ["9a/1", "9b/6", "10/3", "10/26"],
-      volgorde: {"9a/1": 31, "9b/6": 55, "10/3": 77, "10/26": 15}
-  },
-  {
-      grondvorm: "artificium",
-      aanvullingen: "artificii",
-      vertaling: "kunstvaardigheid; handwerk, ambacht",
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 53}
-  },
-  {
-      grondvorm: "artus",
-      aanvullingen: "arta, artum",
-      vertaling: "nauw, eng",
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 26}
-  },
-  {
-      grondvorm: "arx",
-      aanvullingen: "arcis, (v.)",
-      vertaling: "burcht, vesting; heuvel",
-      basis: true,
-      teksten: ["9b/7"],
-      volgorde: {"9b/7": 12}
-  },
-  {
-      grondvorm: "Ascanius",
-      aanvullingen: "Ascanii",
-      vertaling: "Ascanius (eigennaam)"
-  },
-  {
-      grondvorm: "ascendere",
-      aanvullingen: "ascendo, ascendi, ascensum",
-      vertaling: "beklimmen",
-      basis: true,
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 85}
-  },
-  {
-      grondvorm: "Asia",
-      aanvullingen: "Asiae",
-      vertaling: "Klein-Azië (het huidige West-Turkije)"
-  },
-  {
-      grondvorm: "asinus",
-      aanvullingen: "asini",
-      vertaling: "ezel",
-      teksten: ["8b/3"],
-      volgorde: {"8b/3": 26}
-  },
-  {
-      grondvorm: "aspergere",
-      aanvullingen: "aspergo, aspersi, aspersum",
-      vertaling: "besprenkelen, bestrooien"
-  },
-  {
-      grondvorm: "aspicere",
-      aanvullingen: "aspicio, aspexi, aspectum",
-      vertaling: "kijken naar, bekijken",
-      basis: true,
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 50}
-  },
-  {
-      grondvorm: "asser",
-      aanvullingen: "asseris",
-      vertaling: "paal, lat",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 40}
-  },
-  {
-      grondvorm: "assidere",
-      aanvullingen: "assideo, assedi, assessum",
-      vertaling: "zitten bij, zitten"
-  },
-  {
-      grondvorm: "assiduus",
-      aanvullingen: "assidua, assiduum",
-      vertaling: "volhardend, vlijtig, werkzaam",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 53}
-  },
-  {
-      grondvorm: "astrum",
-      aanvullingen: "astri, (o.)",
-      vertaling: "ster"
-  },
-  {
-      grondvorm: "at",
-      aanvullingen: "(vgw.)",
-      vertaling: "maar",
-      basis: true,
-      teksten: ["10/3", "10/14"],
-      volgorde: {"10/3": 34, "10/14": 39}
-  },
-  {
-      grondvorm: "ater",
-      aanvullingen: "atra, atrum",
-      vertaling: "zwart, donker, duister",
-      basis: true,
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 106}
-  },
-  {
-      grondvorm: "Athenae",
-      aanvullingen: "Athenarum (enkel mv.)",
-      vertaling: "(de stad) Athene",
-      teksten: ["9b/7"],
-      volgorde: {"9b/7": 1}
-  },
-  {
-      grondvorm: "Athenodorus",
-      aanvullingen: "Athenodori",
-      vertaling: "Athenodorus (eigennaam)"
-  },
-  {
-      grondvorm: "atque",
-      aanvullingen: "(vgw.)",
-      vertaling: "en",
-      basis: true,
-      teksten: ["7a/7", "8b/6", "8b/9", "9a/1", "9b/4", "9b/5", "10/14"],
-      volgorde: {"7a/7": 46, "8b/6": 48, "8b/9": 61, "9a/1": 34, "9b/4": 11, "9b/5": 14, "10/14": 19}
-  },
-  {
-      grondvorm: "atrox",
-      aanvullingen: "atrox, atrox; atrocis",
-      vertaling: "afgrijselijk, gruwelijk, dreigend",
-      basis: true
-  },
-  {
-      grondvorm: "attingere",
-      aanvullingen: "attingo, attigi, attactum",
-      vertaling: "aanraken"
-  },
-  {
-      grondvorm: "attonitus",
-      aanvullingen: "attonita, attonitum",
-      vertaling: "geschokt, verbijsterd, ontsteld",
-      teksten: ["6a/7", "7b/2"],
-      volgorde: {"6a/7": 4, "7b/2": 88}
-  },
-  {
-      grondvorm: "attribuere",
-      aanvullingen: "attribuo, attribui, attributum",
-      vertaling: "toedelen, toewijzen, geven"
-  },
-  {
-      grondvorm: "audacia",
-      aanvullingen: "audaciae, (v.)",
-      vertaling: "moed",
-      basis: true
-  },
-  {
-      grondvorm: "audere",
-      aanvullingen: "audeo, ausus sum",
-      vertaling: "durven",
-      basis: true,
-      teksten: ["7b/2", "9a/4"],
-      volgorde: {"7b/2": 99, "9a/4": 41}
-  },
-  {
-      grondvorm: "audire",
-      aanvullingen: "audio, audivi, auditum",
-      vertaling: "horen, luisteren",
-      basis: true,
-      teksten: ["6a/2", "7b/4", "8a/2"],
-      volgorde: {"6a/2": 45, "7b/4": 23, "8a/2": 57}
-  },
-  {
-      grondvorm: "auditus",
-      aanvullingen: "audita, auditum",
-      vertaling: "gehoord, geluisterd",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 58}
-  },
-  {
-      grondvorm: "auferre",
-      aanvullingen: "aufero, abstuli, ablatum",
-      vertaling: "wegbrengen; wegnemen, afnemen",
-      teksten: ["6b/1", "10/3"],
-      volgorde: {"6b/1": 7, "10/3": 14}
-  },
-  {
-      grondvorm: "Augustus",
-      aanvullingen: "Augusti",
-      vertaling: "(keizer) Augustus"
-  },
-  {
-      grondvorm: "Aulis",
-      aanvullingen: "Aulidis",
-      vertaling: "(de stad) Aulis (in Griekenland)"
-  },
-  {
-      grondvorm: "auratus",
-      aanvullingen: "aurata, auratum",
-      vertaling: "met goud versierd, verguld"
-  },
-  {
-      grondvorm: "Aurelius",
-      aanvullingen: "Aurelii",
-      vertaling: "Aurelius (eigennaam)"
-  },
-  {
-      grondvorm: "aureus",
-      aanvullingen: "aurea, aureum",
-      vertaling: "van goud, gouden",
-      basis: true
-  },
-  {
-      grondvorm: "aureus",
-      aanvullingen: "aurei",
-      vertaling: "aureus (= 400 sestertiën), goudstuk",
-      basis: true
-  },
-  {
-      grondvorm: "auris",
-      aanvullingen: "auris, (v.)",
-      vertaling: "oor",
-      basis: true,
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 18}
-  },
-  {
-      grondvorm: "aurum",
-      aanvullingen: "auri, (o.)",
-      vertaling: "goud, gouden sieraad",
-      basis: true
-  },
-  {
-      grondvorm: "auspicium",
-      aanvullingen: "auspicii, (o.)",
-      vertaling: "het observeren van vogels op zoek naar voortekens"
-  },
-  {
-      grondvorm: "auster",
-      aanvullingen: "austri, (m.)",
-      vertaling: "de Zuidenwind",
-      teksten: ["9b/7"],
-      volgorde: {"9b/7": 38}
-  },
-  {
-      grondvorm: "aut",
-      aanvullingen: "(vgw.)",
-      vertaling: "of, ofwel",
-      basis: true,
-      teksten: ["6b/2", "6b/4", "7a/7", "7b/4", "8a/3", "9b/5"],
-      volgorde: {"6b/2": 17, "6b/4": 51, "7a/7": 14, "7b/4": 58, "8a/3": 58, "9b/5": 9}
-  },
-  {
-      grondvorm: "autem",
-      aanvullingen: "(vgw.)",
-      vertaling: "maar, echter",
-      basis: true,
-      teksten: ["7a/1", "7a/6", "10/19"],
-      volgorde: {"7a/1": 40, "7a/6": 32, "10/19": 23}
-  },
-  {
-      grondvorm: "autumnus",
-      aanvullingen: "autumni",
-      vertaling: "herfst",
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 3}
-  },
-  {
-      grondvorm: "avaritia",
-      aanvullingen: "avaritiae",
-      vertaling: "gierigheid, hebzucht",
-      basis: true
-  },
-  {
-      grondvorm: "ave!",
-      aanvullingen: "",
-      vertaling: "gegroet, hallo"
-  },
-  {
-      grondvorm: "aversari",
-      aanvullingen: "aversor, aversatus sum + acc.",
-      vertaling: "zich afwenden van",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 26}
-  },
-  {
-      grondvorm: "aversatus",
-      aanvullingen: "aversata, aversatum",
-      vertaling: "zich afgewend hebbend van, afgewend van",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 27}
-  },
-  {
-      grondvorm: "avertere",
-      aanvullingen: "averto, averti, aversum",
-      vertaling: "afwenden, afweren, verdrijven",
-      basis: true,
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 43}
-  },
-  {
-      grondvorm: "avia",
-      aanvullingen: "aviae",
-      vertaling: "grootmoeder"
-  },
-  {
-      grondvorm: "avidus",
-      aanvullingen: "avida, avidum",
-      vertaling: "begerig"
-  },
-  {
-      grondvorm: "Aventinus mons",
-      aanvullingen: "Aventini montis",
-      vertaling: "de Aventijn (een van de heuvels in Rome)"
-  },
-  {
-      grondvorm: "avis",
-      aanvullingen: "avis",
-      vertaling: "vogel"
-  },
-  {
-      grondvorm: "avitus",
-      aanvullingen: "avita, avitum",
-      vertaling: "van de grootvader",
-      teksten: ["7a/5", "8a/2"],
-      volgorde: {"7a/5": 33, "8a/2": 30}
-  },
-  {
-      grondvorm: "avunculus",
-      aanvullingen: "avunculi",
-      vertaling: "oom (langs moederskant)",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 77}
-  },
-  {
-      grondvorm: "avus",
-      aanvullingen: "avi",
-      vertaling: "grootvader"
-  },
-  {
-      grondvorm: "baca",
-      aanvullingen: "bacae, (v.)",
-      vertaling: "bes"
-  },
-  {
-      grondvorm: "Baianus",
-      aanvullingen: "Baiana, Baianum",
-      vertaling: "van Baiae, bij Baiae (stad bij Napels)",
-      teksten: ["10/21"],
-      volgorde: {"10/21": 12}
-  },
-  {
-      grondvorm: "balineum",
-      aanvullingen: "balinei",
-      vertaling: "badkamer",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 27}
-  },
-  {
-      grondvorm: "basium",
-      aanvullingen: "basii, (o.)",
-      vertaling: "kus"
-  },
-  {
-      grondvorm: "Bassa",
-      aanvullingen: "Bassae",
-      vertaling: "Bassa (eigennaam)"
-  },
-  {
-      grondvorm: "beatus",
-      aanvullingen: "beata, beatum",
-      vertaling: "gelukkig, blij, tevreden",
-      basis: true
-  },
-  {
-      grondvorm: "Belga",
-      aanvullingen: "Belgae",
-      vertaling: "Belg",
-      basis: true,
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 9}
-  },
-  {
-      grondvorm: "belissimus",
-      aanvullingen: "belissima, belissimum",
-      vertaling: "mooist, leukst; zeer mooi, zeer leuk",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 15}
-  },
-  {
-      grondvorm: "bellicus",
-      aanvullingen: "bellica, bellicum",
-      vertaling: "van de oorlog, oorlogs-"
-  },
-  {
-      grondvorm: "bellum",
-      aanvullingen: "belli, (o.)",
-      vertaling: "oorlog",
-      basis: true,
-      teksten: ["7b/2", "8a/2", "9a/1", "9b/4"],
-      volgorde: {"7b/2": 77, "8a/2": 2, "9a/1": 60, "9b/4": 23}
-  },
-  {
-      grondvorm: "bellum gerere",
-      aanvullingen: "gero, gessi, gestum",
-      vertaling: "oorlog voeren"
-  },
-  {
-      grondvorm: "bellum indicere",
-      aanvullingen: "indico, indixi, indictum",
-      vertaling: "de oorlog verklaren",
-      teksten: ["7b/2", "9b/4"],
-      volgorde: {"7b/2": 78, "9b/4": 25}
-  },
-  {
-      grondvorm: "bellus",
-      aanvullingen: "bella, bellum",
-      vertaling: "mooi, leuk",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 14}
-  },
-  {
-      grondvorm: "belua",
-      aanvullingen: "beluae",
-      vertaling: "beest, monster",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 28}
-  },
-  {
-      grondvorm: "bene",
-      aanvullingen: "(bijw.)",
-      vertaling: "goed",
-      basis: true
-  },
-  {
-      grondvorm: "Berytus",
-      aanvullingen: "Beryti (v.)",
-      vertaling: "(de stad) Beiroet"
-  },
-  {
-      grondvorm: "bibere",
-      aanvullingen: "bibo, bibi, –",
-      vertaling: "drinken",
-      teksten: ["7a/5"],
-      volgorde: {"7a/5": 5}
-  },
-  {
-      grondvorm: "biliosus",
-      aanvullingen: "biliosa, biliosum",
-      vertaling: "van de gal",
-      teksten: ["10/8"],
-      volgorde: {"10/8": 30}
-  },
-  {
-      grondvorm: "bis",
-      aanvullingen: "(telwoord)",
-      vertaling: "tweemaal"
-  },
-  {
-      grondvorm: "blanditia",
-      aanvullingen: "blanditiae, (v.)",
-      vertaling: "vleierij, mv.: lieve woordjes",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 42}
-  },
-  {
-      grondvorm: "bona",
-      aanvullingen: "bonorum (enkel mv.)",
-      vertaling: "deugden, kwaliteiten",
-      teksten: ["7b/6"],
-      volgorde: {"7b/6": 3}
-  },
-  {
-      grondvorm: "bonus",
-      aanvullingen: "bona, bonum",
-      vertaling: "goed",
-      basis: true,
-      teksten: ["6a/2", "7a/5", "7b/6", "8a/6", "8b/6"],
-      volgorde: {"6a/2": 90, "7a/5": 19, "7b/6": 2, "8a/6": 35, "8b/6": 30}
-  },
-  {
-      grondvorm: "bos",
-      aanvullingen: "bovis",
-      vertaling: "rund, os, koe",
-      basis: true,
-      teksten: ["8b/3"],
-      volgorde: {"8b/3": 23}
-  },
-  {
-      grondvorm: "brachium",
-      aanvullingen: "brachii, (o.)",
-      vertaling: "arm",
-      basis: true
-  },
-  {
-      grondvorm: "brevis",
-      aanvullingen: "brevis, breve",
-      vertaling: "kort",
-      basis: true
-  },
-  {
-      grondvorm: "brevitas",
-      aanvullingen: "brevitatis, (v.)",
-      vertaling: "kortheid"
-  },
-  {
-      grondvorm: "Britannia",
-      aanvullingen: "Britanniae",
-      vertaling: "Brittannië"
-  },
-  {
-      grondvorm: "Brundisium",
-      aanvullingen: "Brundisii",
-      vertaling: "(de havenstad) Brundisium (nu: Brindisi)",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 16}
-  },
-  {
-      grondvorm: "Bruttius",
-      aanvullingen: "Bruttia, Bruttium",
-      vertaling: "van Bruttium (ook Calabria genoemd, streek in Zuid-Italië)",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 110}
-  },
-  {
-      grondvorm: "Bruttius",
-      aanvullingen: "Bruttii",
-      vertaling: "Bruttius (eigennaam)"
-  },
-  {
-      grondvorm: "bubalus",
-      aanvullingen: "bubali",
-      vertaling: "buffel"
-  },
-  {
-      grondvorm: "bucella",
-      aanvullingen: "bucellae",
-      vertaling: "hapje, brokje, stukje"
-  },
-  {
-      grondvorm: "bucina",
-      aanvullingen: "bucinae, (v.)",
-      vertaling: "trompet, trompetsignaal"
-  },
-  {
-      grondvorm: "bursa",
-      aanvullingen: "bursae, (v.)",
-      vertaling: "geldbuidel, geldbeurs"
-  },
-  {
-      grondvorm: "caesus",
-      aanvullingen: "caesa, caesum",
-      vertaling: "gedood, vermoord, afgemaakt",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 13}
-  },
-  {
-      grondvorm: "Caius Mucius",
-      aanvullingen: "Caii Mucii",
-      vertaling: "Caius Mucius (eigennaam)",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 58}
-  },
-  {
-      grondvorm: "caballus",
-      aanvullingen: "caballi, (m.)",
-      vertaling: "paard",
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 28}
-  },
-  {
-      grondvorm: "cadere",
-      aanvullingen: "cado, cecidi, –",
-      vertaling: "vallen",
-      basis: true,
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 9}
-  },
-  {
-      grondvorm: "caecus",
-      aanvullingen: "caeca, caecum",
-      vertaling: "blind",
-      basis: true
-  },
-  {
-      grondvorm: "caedere",
-      aanvullingen: "caedo, cecidi, caesum",
-      vertaling: "doden, vermoorden, afmaken",
-      basis: true,
-      teksten: ["7b/4", "8b/9"],
-      volgorde: {"7b/4": 12, "8b/9": 86}
-  },
-  {
-      grondvorm: "caedes",
-      aanvullingen: "caedis, (v.)",
-      vertaling: "moord, slachting, bloedbad",
-      basis: true
-  },
-  {
-      grondvorm: "caelestes",
-      aanvullingen: "caelestium",
-      vertaling: "hemelgoden, goden",
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 58}
-  },
-  {
-      grondvorm: "caelestis",
-      aanvullingen: "caelestis, caeleste",
-      vertaling: "van de hemel, hemels, hemel-",
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 57}
-  },
-  {
-      grondvorm: "caelum",
-      aanvullingen: "caeli, (o.)",
-      vertaling: "hemel; klimaat",
-      basis: true,
-      teksten: ["9b/4", "9b/7"],
-      volgorde: {"9b/4": 31, "9b/7": 41}
-  },
-  {
-      grondvorm: "caementum",
-      aanvullingen: "caementi, (o.)",
-      vertaling: "gehouwen steen; kalkmortel, specie, cement",
-      teksten: ["10/21"],
-      volgorde: {"10/21": 21}
-  },
-  {
-      grondvorm: "Caesar",
-      aanvullingen: "Caesaris",
-      vertaling: "(Caius Julius) Caesar (eigennaam)",
-      basis: true
-  },
-  {
-      grondvorm: "caespes",
-      aanvullingen: "caespitis (m.)",
-      vertaling: "graszode; aarde, grond"
-  },
-  {
-      grondvorm: "Caius Cassius",
-      aanvullingen: "Caii Cassius",
-      vertaling: "Caius Cassius (eigennaam)",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 89}
-  },
-  {
-      grondvorm: "calamitas",
-      aanvullingen: "calamitatis, (v.)",
-      vertaling: "ramp"
-  },
-  {
-      grondvorm: "calcare",
-      aanvullingen: "calco, calcavi, calcatum",
-      vertaling: "trappen op, vertrappen",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 49}
-  },
-  {
-      grondvorm: "calciare",
-      aanvullingen: "calcio, calciavi, calciatum",
-      vertaling: "schoenen aantrekken"
-  },
-  {
-      grondvorm: "calidus",
-      aanvullingen: "calida, calidum",
-      vertaling: "warm, heet; ijverig",
-      teksten: ["6b/2", "9b/5"],
-      volgorde: {"6b/2": 76, "9b/5": 45}
-  },
-  {
-      grondvorm: "caligo",
-      aanvullingen: "caliginis, (v.)",
-      vertaling: "nevel; duisternis",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 32}
-  },
-  {
-      grondvorm: "Callirhoe",
-      aanvullingen: "Callirhoes",
-      vertaling: "Callirhoe (eigennaam)"
-  },
-  {
-      grondvorm: "calvus",
-      aanvullingen: "calva, calvum",
-      vertaling: "kaal"
-  },
-  {
-      grondvorm: "calx",
-      aanvullingen: "calcis",
-      vertaling: "kalk, kalksteen",
-      teksten: ["6b/4", "10/21"],
-      volgorde: {"6b/4": 54, "10/21": 20}
-  },
-  {
-      grondvorm: "calx",
-      aanvullingen: "calcis",
-      vertaling: "hiel; trap, schop"
-  },
-  {
-      grondvorm: "Campania",
-      aanvullingen: "Campaniae",
-      vertaling: "(de streek) Campanië",
-      teksten: ["6a/1", "8b/9"],
-      volgorde: {"6a/1": 5, "8b/9": 59}
-  },
-  {
-      grondvorm: "Campanus",
-      aanvullingen: "Campani",
-      vertaling: "Campaniër"
-  },
-  {
-      grondvorm: "campus Martius",
-      aanvullingen: "campi Martii",
-      vertaling: "het Marsveld (in Rome)"
-  },
-  {
-      grondvorm: "campus",
-      aanvullingen: "campi, (m.)",
-      vertaling: "veld, (open) vlakte",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 84}
-  },
-  {
-      grondvorm: "candidus",
-      aanvullingen: "candida, candidum",
-      vertaling: "wit",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 99}
-  },
-  {
-      grondvorm: "Candidus",
-      aanvullingen: "Candidi",
-      vertaling: "Candidus (eigennaam)"
-  },
-  {
-      grondvorm: "canere",
-      aanvullingen: "cano, cecini, –",
-      vertaling: "zingen"
-  },
-  {
-      grondvorm: "canis",
-      aanvullingen: "canis",
-      vertaling: "hond",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 97}
-  },
-  {
-      grondvorm: "cantare",
-      aanvullingen: "canto, cantavi, cantatum + acc.",
-      vertaling: "zingen, zingen over, bezingen",
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 53}
-  },
-  {
-      grondvorm: "cantica",
-      aanvullingen: "canticae",
-      vertaling: "gezang"
-  },
-  {
-      grondvorm: "canus",
-      aanvullingen: "cana, canum",
-      vertaling: "grijs"
-  },
-  {
-      grondvorm: "capella",
-      aanvullingen: "capellae",
-      vertaling: "geit"
-  },
-  {
-      grondvorm: "capere",
-      aanvullingen: "capio, cepi, captum",
-      vertaling: "nemen, grijpen, vangen; veroveren",
-      basis: true,
-      teksten: ["7b/4", "8a/3", "8b/9", "9a/4", "10/3"],
-      volgorde: {"7b/4": 8, "8a/3": 55, "8b/9": 75, "9a/4": 10, "10/3": 18}
-  },
-  {
-      grondvorm: "capillus",
-      aanvullingen: "capilli",
-      vertaling: "(hoofd)haar"
-  },
-  {
-      grondvorm: "captare",
-      aanvullingen: "capto, captavi, captatum",
-      vertaling: "vangen"
-  },
-  {
-      grondvorm: "captivitas",
-      aanvullingen: "captivitatis",
-      vertaling: "gevangenschap, krijgsgevangenschap",
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 67}
-  },
-  {
-      grondvorm: "captivus",
-      aanvullingen: "captivi",
-      vertaling: "gevangene, krijgsgevangene",
-      teksten: ["8b/1"],
-      volgorde: {"8b/1": 6}
-  },
-  {
-      grondvorm: "captus",
-      aanvullingen: "capta, captum",
-      vertaling: "genomen, gegrepen, gevangen; veroverd",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 9}
-  },
-  {
-      grondvorm: "Capua",
-      aanvullingen: "Capuae",
-      vertaling: "(de stad) Capua",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 12}
-  },
-  {
-      grondvorm: "caput",
-      aanvullingen: "capitis (o.)",
-      vertaling: "hoofd",
-      teksten: ["6a/4", "6b/2", "9b/5", "10/3", "10/8"],
-      volgorde: {"6a/4": 54, "6b/2": 44, "9b/5": 59, "10/3": 32, "10/8": 4}
-  },
-  {
-      grondvorm: "carcer",
-      aanvullingen: "carceris",
-      vertaling: "gevangenis; startblok"
-  },
-  {
-      grondvorm: "carere",
-      aanvullingen: "careo, carui, – + abl.",
-      vertaling: "vrij zijn van, verlost zijn van; niet hebben, missen",
-      teksten: ["7a/5", "8a/2"],
-      volgorde: {"7a/5": 15, "8a/2": 11}
-  },
-  {
-      grondvorm: "carica",
-      aanvullingen: "caricae, (v.)",
-      vertaling: "dadel"
-  },
-  {
-      grondvorm: "caritas",
-      aanvullingen: "caritatis",
-      vertaling: "genegenheid, affectie, liefde",
-      teksten: ["7b/6"],
-      volgorde: {"7b/6": 24}
-  },
-  {
-      grondvorm: "carmen",
-      aanvullingen: "carminis, (o.)",
-      vertaling: "gedicht; lied, gezang, muziek"
-  },
-  {
-      grondvorm: "carnificina",
-      aanvullingen: "carnificinae, (v.)",
-      vertaling: "foltering, marteling",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 47}
-  },
-  {
-      grondvorm: "caro",
-      aanvullingen: "carnis, (v.)",
-      vertaling: "vlees"
-  },
-  {
-      grondvorm: "caroenum",
-      aanvullingen: "caroeni, (o.)",
-      vertaling: "soort druivensap"
-  },
-  {
-      grondvorm: "Carpophorus",
-      aanvullingen: "Carpophori",
-      vertaling: "Carpophorus (eigennaam)"
-  },
-  {
-      grondvorm: "carus",
-      aanvullingen: "cara, carum",
-      vertaling: "dierbaar; duur"
-  },
-  {
-      grondvorm: "caryota",
-      aanvullingen: "caryotae, (v.)",
-      vertaling: "dadel"
-  },
-  {
-      grondvorm: "casa",
-      aanvullingen: "casae, (v.)",
-      vertaling: "hut",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 42}
-  },
-  {
-      grondvorm: "Casca",
-      aanvullingen: "Cascae",
-      vertaling: "Casca (eigennaam)"
-  },
-  {
-      grondvorm: "caseus",
-      aanvullingen: "casei, (m.)",
-      vertaling: "kaas, een stuk kaas"
-  },
-  {
-      grondvorm: "Cassiope",
-      aanvullingen: "Cassiopes",
-      vertaling: "Cassiope (havenstad op het Griekse eiland Corcyra)",
-      teksten: ["9b/7"],
-      volgorde: {"9b/7": 23}
-  },
-  {
-      grondvorm: "Cassius",
-      aanvullingen: "Cassii",
-      vertaling: "Cassius (eigennaam)"
-  },
-  {
-      grondvorm: "castra",
-      aanvullingen: "castrorum (enkel mv.), (onz. mv.)",
-      vertaling: "legerkamp",
-      basis: true,
-      teksten: ["7b/2", "8b/9"],
-      volgorde: {"7b/2": 7, "8b/9": 49}
-  },
-  {
-      grondvorm: "casus",
-      aanvullingen: "casus, (m.)",
-      vertaling: "het vallen, val; toeval, gebeurtenis, ongeluk",
-      basis: true,
-      teksten: ["6a/1", "6a/4"],
-      volgorde: {"6a/1": 41, "6a/4": 45}
-  },
-  {
-      grondvorm: "catellus",
-      aanvullingen: "catelli",
-      vertaling: "hondje"
-  },
-  {
-      grondvorm: "catena",
-      aanvullingen: "catenae, (v.)",
-      vertaling: "ketting"
-  },
-  {
-      grondvorm: "cathedra",
-      aanvullingen: "cathedrae, (v.)",
-      vertaling: "leunstoel, armstoel",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 76}
-  },
-  {
-      grondvorm: "Caucasus",
-      aanvullingen: "Caucasi",
-      vertaling: "het Caucasusgebergte"
-  },
-  {
-      grondvorm: "cauda",
-      aanvullingen: "caudae, (v.)",
-      vertaling: "staart"
-  },
-  {
-      grondvorm: "caupo",
-      aanvullingen: "cauponis (m.)",
-      vertaling: "herbergier",
-      teksten: ["6b/1", "9b/4"],
-      volgorde: {"6b/1": 2, "9b/4": 12}
-  },
-  {
-      grondvorm: "causa",
-      aanvullingen: "causae, (v.)",
-      vertaling: "oorzaak, reden; zaak",
-      basis: true
-  },
-  {
-      grondvorm: "celeberrimus",
-      aanvullingen: "celeberrima, celeberrimum",
-      vertaling: "drukstbezocht, dichtstbevolkt; beroemdst; zeer drukbezocht, zeer dichtbevolkt; zeer beroemd",
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 15}
-  },
-  {
-      grondvorm: "celeriter",
-      aanvullingen: "(bijw.)",
-      vertaling: "snel",
-      teksten: ["10/21"],
-      volgorde: {"10/21": 43}
-  },
-  {
-      grondvorm: "cenatus",
-      aanvullingen: "cenata, cenatum",
-      vertaling: "gegeten hebbend, na het eten",
-      teksten: ["9b/7"],
-      volgorde: {"9b/7": 36}
-  },
-  {
-      grondvorm: "centies sestertium",
-      aanvullingen: "",
-      vertaling: "10 miljoen sestertiën"
-  },
-  {
-      grondvorm: "clausus",
-      aanvullingen: "clausa, clausum",
-      vertaling: "gesloten; opgesloten, ingesloten",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 42}
-  },
-  {
-      grondvorm: "colueris",
-      aanvullingen: "",
-      vertaling: "'jij hebt vereerd'; 'jij hebt bebouwd'; 'jij hebt bewoond'",
-      teksten: ["7b/6"],
-      volgorde: {"7b/6": 32}
-  },
-  {
-      grondvorm: "comprehensus",
-      aanvullingen: "comprehensa, comprehensum",
-      vertaling: "vastgegrepen, gearresteerd",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 51}
-  },
-  {
-      grondvorm: "confectus",
-      aanvullingen: "confecta, confectum",
-      vertaling: "hier: gemalen, gekauwd",
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 133}
-  },
-  {
-      grondvorm: "confertissimus",
-      aanvullingen: "confertissima, confertissimum",
-      vertaling: "zeer dicht opeengepakt, zeer ondoordringbaar",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 27}
-  },
-  {
-      grondvorm: "coniunctior",
-      aanvullingen: "coniunctior, coniunctius; coniunctioris",
-      vertaling: "meer verbonden, meer verenigd, meer vertrouwd",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 32}
-  },
-  {
-      grondvorm: "coniunctus",
-      aanvullingen: "coniuncta, coniunctum",
-      vertaling: "verbonden, verenigd; vertrouwd",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 31}
-  },
-  {
-      grondvorm: "crederes",
-      aanvullingen: "",
-      vertaling: "'je zou geloofd hebben'",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 28}
-  },
-  {
-      grondvorm: "cur",
-      aanvullingen: "(bijw.)",
-      vertaling: "waarom?",
-      teksten: ["7a/7", "7b/6"],
-      volgorde: {"7a/7": 19, "7b/6": 17}
-  },
-  {
-      grondvorm: "curaveris",
-      aanvullingen: "",
-      vertaling: "'jij hebt gezorgd voor', 'jij hebt verzorgd'",
-      teksten: ["7b/6"],
-      volgorde: {"7b/6": 37}
-  },
-  {
-      grondvorm: "datus",
-      aanvullingen: "data, datum",
-      vertaling: "gegeven",
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 43}
-  },
-  {
-      grondvorm: "dextra manus",
-      aanvullingen: "dextrae manus",
-      vertaling: "rechterhand",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 81}
-  },
-  {
-      grondvorm: "di",
-      aanvullingen: "(mv. van deus)",
-      vertaling: "= dei",
-      teksten: ["8a/6"],
-      volgorde: {"8a/6": 3}
-  },
-  {
-      grondvorm: "dicam",
-      aanvullingen: "",
-      vertaling: "'ik zou zeggen'",
-      teksten: ["7b/6"],
-      volgorde: {"7b/6": 21}
-  },
-  {
-      grondvorm: "diligens",
-      aanvullingen: "diligens, diligens; diligentis",
-      vertaling: "zorgvuldig, nauwkeurig",
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 7}
-  },
-  {
-      grondvorm: "doctissimus",
-      aanvullingen: "doctissima, doctissimum",
-      vertaling: "meest/zeer geschoold, meest/zeer ontwikkeld, geleerdst, zeer geleerd",
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 6}
-  },
-  {
-      grondvorm: "ebur",
-      aanvullingen: "eboris",
-      vertaling: "ivoor, ivoren beeld",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 16}
-  },
-  {
-      grondvorm: "efflaverint",
-      aanvullingen: "",
-      vertaling: "'zij hebben uitgeblazen', 'zij hebben uitgeademd'",
-      teksten: ["7b/12"],
-      volgorde: {"7b/12": 13}
-  },
-  {
-      grondvorm: "elegantior",
-      aanvullingen: "elegantior, elegantius; elegantioris",
-      vertaling: "verfijnder, fijner, sierlijker, smaakvоller",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 41}
-  },
-  {
-      grondvorm: "esto",
-      aanvullingen: "",
-      vertaling: "'hij moet zijn'",
-      teksten: ["8b/10"],
-      volgorde: {"8b/10": 7}
-  },
-  {
-      grondvorm: "et ... et",
-      aanvullingen: "",
-      vertaling: "en … en, zowel … als"
-  },
-  {
-      grondvorm: "ex eo quod",
-      aanvullingen: "",
-      vertaling: "op basis hiervan … nl. dat",
-      teksten: ["8b/1"],
-      volgorde: {"8b/1": 3}
-  },
-  {
-      grondvorm: "excessus",
-      aanvullingen: "excessus, (m.)",
-      vertaling: "manhaftigheid, moed; deugd"
-  },
-  {
-      grondvorm: "exemplo",
-      aanvullingen: "(bijw./abl.)",
-      vertaling: "onmiddellijk, dadelijk"
-  },
-  {
-      grondvorm: "expectatissimus",
-      aanvullingen: "expectatissima, expectatissimum",
-      vertaling: "meest verwacht, zeer verwacht",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 29}
-  },
-  {
-      grondvorm: "felicior",
-      aanvullingen: "felicior, felicius; felicioris",
-      vertaling: "gelukkiger, voorspoediger, succesvoller",
-      teksten: ["8a/6"],
-      volgorde: {"8a/6": 38}
-  },
-  {
-      grondvorm: "festus",
-      aanvullingen: "festa, festum",
-      vertaling: "feestelijk, feest-",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 66}
-  },
-  {
-      grondvorm: "firmior",
-      aanvullingen: "firmior, firmius; firmioris",
-      vertaling: "sterker, betrouwbaarder, trouwer",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 29}
-  },
-  {
-      grondvorm: "foculus",
-      aanvullingen: "foculi",
-      vertaling: "haard, haardvuur, (kleine) offerhaard"
-  },
-  {
-      grondvorm: "fortior",
-      aanvullingen: "fortior, fortius; fortioris",
-      vertaling: "dapperder, moediger, sterker",
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 42}
-  },
-  {
-      grondvorm: "fortissimus",
-      aanvullingen: "fortissima, fortissimum",
-      vertaling: "moedigst, dapperst, sterkst; zeer moedig, zeer dapper, zeer sterk",
-      teksten: ["8b/9", "9a/1"],
-      volgorde: {"8b/9": 143, "9a/1": 28}
-  },
-  {
-      grondvorm: "fractus",
-      aanvullingen: "fracta, fractum",
-      vertaling: "gebroken, gebarsten",
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 18}
-  },
-  {
-      grondvorm: "fumare",
-      aanvullingen: "fumo, fumavi, fumatum",
-      vertaling: "roken",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 72}
-  },
-  {
-      grondvorm: "gemma",
-      aanvullingen: "gemmae",
-      vertaling: "edelsteen",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 58}
-  },
-  {
-      grondvorm: "gen. + causa",
-      aanvullingen: "(vz.)",
-      vertaling: "omwille van, ter wille van, wegens",
-      teksten: ["7b/2", "10/14", "9b/9"],
-      volgorde: {"7b/2": 112, "10/14": 13, "9b/9": 57}
-  },
-  {
-      grondvorm: "cautus",
-      aanvullingen: "cauta, cuatum",
-      vertaling: "voorzichtig",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 57}
-  },
-  {
-      grondvorm: "cavere",
-      aanvullingen: "caveo, cavi, cautum",
-      vertaling: "oppassen voor; bepalen, vastleggen (in een wet)",
-      teksten: ["8a/5"],
-      volgorde: {"8a/5": 22}
-  },
-  {
-      grondvorm: "cavus",
-      aanvullingen: "cava, cavum",
-      vertaling: "hol, gewelfd",
-      basis: true
-  },
-  {
-      grondvorm: "cedere",
-      aanvullingen: "cedo, cessi, cessum",
-      vertaling: "uit de weg gaan voor, opzij gaan voor; gaan",
-      basis: true,
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 7}
-  },
-  {
-      grondvorm: "celare",
-      aanvullingen: "celo, celavi, celatum",
-      vertaling: "verbergen"
-  },
-  {
-      grondvorm: "celeber",
-      aanvullingen: "celebris, celebre; celebris",
-      vertaling: "drukbezocht, dichtbevolkt; beroemd",
-      teksten: ["6a/1", "9b/6"],
-      volgorde: {"6a/1": 4, "9b/6": 14}
-  },
-  {
-      grondvorm: "celer",
-      aanvullingen: "celeris, celere",
-      vertaling: "snel",
-      basis: true
-  },
-  {
-      grondvorm: "cella",
-      aanvullingen: "cellae, (v.)",
-      vertaling: "kamer, vertrek",
-      teksten: ["8b/6", "9b/5"],
-      volgorde: {"8b/6": 35, "9b/5": 39}
-  },
-  {
-      grondvorm: "cella frigidaria",
-      aanvullingen: "cellae frigidariae",
-      vertaling: "koudwaterbad",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 29}
-  },
-  {
-      grondvorm: "celsus",
-      aanvullingen: "celsa, celsum",
-      vertaling: "hoog"
-  },
-  {
-      grondvorm: "Celta",
-      aanvullingen: "Celtae (m.)",
-      vertaling: "Kelt",
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 15}
-  },
-  {
-      grondvorm: "cenaculum",
-      aanvullingen: "cenaculi",
-      vertaling: "eetkamer; flat op een verdieping",
-      teksten: ["6b/8"],
-      volgorde: {"6b/8": 11}
-  },
-  {
-      grondvorm: "cenare",
-      aanvullingen: "ceno, cenavi, cenatum",
-      vertaling: "eten, dineren"
-  },
-  {
-      grondvorm: "censere",
-      aanvullingen: "censeo, censui, censum",
-      vertaling: "denken, menen",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 82}
-  },
-  {
-      grondvorm: "centies",
-      aanvullingen: "",
-      vertaling: "honderdmaal"
-  },
-  {
-      grondvorm: "cento",
-      aanvullingen: "centonis",
-      vertaling: "lappendeken, deken",
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 15}
-  },
-  {
-      grondvorm: "centum",
-      aanvullingen: "",
-      vertaling: "honderd"
-  },
-  {
-      grondvorm: "centurio",
-      aanvullingen: "centurionis (m.)",
-      vertaling: "honderdman, centurio (functie in het leger)"
-  },
-  {
-      grondvorm: "cera",
-      aanvullingen: "cerae",
-      vertaling: "bijenwas, was",
-      teksten: ["10/14"],
-      volgorde: {"10/14": 25}
-  },
-  {
-      grondvorm: "cerebrum",
-      aanvullingen: "cerebri, (o.)",
-      vertaling: "hersenen; schedel",
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 11}
-  },
-  {
-      grondvorm: "Ceres",
-      aanvullingen: "Cereris",
-      vertaling: "(de godin) Ceres"
-  },
-  {
-      grondvorm: "certamen",
-      aanvullingen: "certaminis, (o.)",
-      vertaling: "wedstrijd, strijd, gevecht",
-      basis: true
-  },
-  {
-      grondvorm: "certatim",
-      aanvullingen: "(bijw.)",
-      vertaling: "als wedstrijd, om ter meest, om ter luidst",
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 50}
-  },
-  {
-      grondvorm: "certus",
-      aanvullingen: "certa, certum",
-      vertaling: "zeker, bepaald",
-      basis: true,
-      teksten: ["6a/4", "7a/3"],
-      volgorde: {"6a/4": 95, "7a/3": 66}
-  },
-  {
-      grondvorm: "cerussa",
-      aanvullingen: "cerussae",
-      vertaling: "loodwit",
-      teksten: ["10/19"],
-      volgorde: {"10/19": 21}
-  },
-  {
-      grondvorm: "cervical",
-      aanvullingen: "cervicalis",
-      vertaling: "hoofdkussen",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 53}
-  },
-  {
-      grondvorm: "cervix",
-      aanvullingen: "cervicis",
-      vertaling: "hals, nek"
-  },
-  {
-      grondvorm: "ceterum",
-      aanvullingen: "(bijw.)",
-      vertaling: "overigens, trouwens",
-      basis: true
-  },
-  {
-      grondvorm: "ceterus",
-      aanvullingen: "cetera, ceterum (meestal mv.)",
-      vertaling: "overig(e)",
-      basis: true,
-      teksten: ["7b/6", "10/14"],
-      volgorde: {"7b/6": 38, "10/14": 46}
-  },
-  {
-      grondvorm: "Chalcis",
-      aanvullingen: "Chalcidis",
-      vertaling: "(de stad) Chalcis"
-  },
-  {
-      grondvorm: "chaos",
-      aanvullingen: "(geen gen.; onz.)",
-      vertaling: "chaos"
-  },
-  {
-      grondvorm: "cibaria",
-      aanvullingen: "cibariorum (enkel mv.)",
-      vertaling: "levensmiddelen, voedsel",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 50}
-  },
-  {
-      grondvorm: "cibus",
-      aanvullingen: "cibi, (m.)",
-      vertaling: "voedsel",
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 38}
-  },
-  {
-      grondvorm: "cicada",
-      aanvullingen: "cicadae, (v.)",
-      vertaling: "krekel"
-  },
-  {
-      grondvorm: "cinis",
-      aanvullingen: "cineris (m.)",
-      vertaling: "as",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 26}
-  },
-  {
-      grondvorm: "circa",
-      aanvullingen: "+ acc. (vz.)",
-      vertaling: "rondom",
-      teksten: ["8b/9", "10/21"],
-      volgorde: {"8b/9": 109, "10/21": 15}
-  },
-  {
-      grondvorm: "circenses",
-      aanvullingen: "circensium (enkel mv.)",
-      vertaling: "circusspelen"
-  },
-  {
-      grondvorm: "circiter",
-      aanvullingen: "",
-      vertaling: "ongeveer",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 8}
-  },
-  {
-      grondvorm: "circum",
-      aanvullingen: "(bijw.)",
-      vertaling: "in een kring, rondom, rondom … heen",
-      basis: true
-  },
-  {
-      grondvorm: "circumarare",
-      aanvullingen: "circumaro, circumaravi, circumaratum",
-      vertaling: "omploegen"
-  },
-  {
-      grondvorm: "circumdare",
-      aanvullingen: "circumdo, circumdedi, circumdatum",
-      vertaling: "plaatsen rondom, omsingelen",
-      basis: true
-  },
-  {
-      grondvorm: "circumire",
-      aanvullingen: "circumeo, circumii, circumitum",
-      vertaling: "gaan rond(om), rondgaan, rondreizen in",
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 11}
-  },
-  {
-      grondvorm: "circumsonare",
-      aanvullingen: "circumsono, circumsonavi, circumsonatum",
-      vertaling: "rondom weerklinken, weergalmen"
-  },
-  {
-      grondvorm: "circumstare",
-      aanvullingen: "circumsto, circumsteti, –",
-      vertaling: "staan rondom, omsingelen"
-  },
-  {
-      grondvorm: "circumvenire",
-      aanvullingen: "circumvenio, circumveni, circumventum",
-      vertaling: "omsingelen",
-      basis: true
-  },
-  {
-      grondvorm: "Circus Maximus",
-      aanvullingen: "Circi Maximi",
-      vertaling: "Circus Maximus",
-      teksten: ["6b/5"],
-      volgorde: {"6b/5": 5}
-  },
-  {
-      grondvorm: "cithara",
-      aanvullingen: "citharae",
-      vertaling: "citer, lier"
-  },
-  {
-      grondvorm: "citharoedus",
-      aanvullingen: "citharoedi",
-      vertaling: "citerspeler, lierspeler"
-  },
-  {
-      grondvorm: "cito",
-      aanvullingen: "(bijw.)",
-      vertaling: "snel"
-  },
-  {
-      grondvorm: "citus",
-      aanvullingen: "cita, citum",
-      vertaling: "snel",
-      teksten: ["6b/5"],
-      volgorde: {"6b/5": 17}
-  },
-  {
-      grondvorm: "civilis",
-      aanvullingen: "civilis, civile",
-      vertaling: "burgerlijk, van een burger, burger-",
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 68}
-  },
-  {
-      grondvorm: "civis",
-      aanvullingen: "civis",
-      vertaling: "burger",
-      basis: true,
-      teksten: ["7b/2", "8a/5"],
-      volgorde: {"7b/2": 57, "8a/5": 13}
-  },
-  {
-      grondvorm: "civitas",
-      aanvullingen: "civitatis, (v.)",
-      vertaling: "gemeenschap, staat, stad, volk, stam",
-      basis: true,
-      teksten: ["8a/5", "9a/4"],
-      volgorde: {"8a/5": 2, "9a/4": 22}
-  },
-  {
-      grondvorm: "clamare",
-      aanvullingen: "clamo, clamavi, clamatum",
-      vertaling: "roepen, schreeuwen"
-  },
-  {
-      grondvorm: "clamor",
-      aanvullingen: "clamoris, (m.)",
-      vertaling: "geschreeuw, geroep",
-      basis: true,
-      teksten: ["6a/2", "8a/2"],
-      volgorde: {"6a/2": 50, "8a/2": 59}
-  },
-  {
-      grondvorm: "clangor",
-      aanvullingen: "clangoris",
-      vertaling: "gekrijs, gekwaak"
-  },
-  {
-      grondvorm: "claritas",
-      aanvullingen: "claritatis, (v.)",
-      vertaling: "helderheid",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 15}
-  },
-  {
-      grondvorm: "classicum",
-      aanvullingen: "classici",
-      vertaling: "trompetsignaal",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 29}
-  },
-  {
-      grondvorm: "classis",
-      aanvullingen: "classis, (v.)",
-      vertaling: "vloot",
-      basis: true
-  },
-  {
-      grondvorm: "claudere",
-      aanvullingen: "claudo, clausi, clausum",
-      vertaling: "sluiten; opsluiten, insluiten",
-      basis: true,
-      teksten: ["6a/2", "8b/9"],
-      volgorde: {"6a/2": 41, "8b/9": 112}
-  },
-  {
-      grondvorm: "Claudia",
-      aanvullingen: "Claudiae",
-      vertaling: "Claudia (eigennaam)",
-      teksten: ["7a/6"],
-      volgorde: {"7a/6": 15}
-  },
-  {
-      grondvorm: "Claudius Pulcher",
-      aanvullingen: "Claudii Pulchri",
-      vertaling: "Claudius Pulcher (eigennaam)"
-  },
-  {
-      grondvorm: "Claudius",
-      aanvullingen: "Claudii",
-      vertaling: "Claudius (eigennaam)"
-  },
-  {
-      grondvorm: "Claudius",
-      aanvullingen: "Claudii",
-      vertaling: "(keizer) Claudius"
-  },
-  {
-      grondvorm: "clavus",
-      aanvullingen: "clavi, (m.)",
-      vertaling: "spijker, spijker (van een soldatenlaar)",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 52}
-  },
-  {
-      grondvorm: "clipeus",
-      aanvullingen: "clipei, (m.)",
-      vertaling: "schild"
-  },
-  {
-      grondvorm: "Clodius Glaber",
-      aanvullingen: "Clodii Glabri",
-      vertaling: "Clodius Glaber (eigennaam)",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 36}
-  },
-  {
-      grondvorm: "Cloelia",
-      aanvullingen: "Cloeliae",
-      vertaling: "Cloelia (eigennaam)"
-  },
-  {
-      grondvorm: "Cnaeus Plancius",
-      aanvullingen: "Cnaei Plancii",
-      vertaling: "Cnaeus Plancius (eigennaam)",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 25}
-  },
-  {
-      grondvorm: "Cnaeus Alleus Nigidius Maius",
-      aanvullingen: "",
-      vertaling: "Cnaeus Alleus Nigidius Maius (eigennaam)",
-      teksten: ["6b/8"],
-      volgorde: {"6b/8": 3}
-  },
-  {
-      grondvorm: "Cnosiacus",
-      aanvullingen: "Cnosiaca, Cnosiacum",
-      vertaling: "van Knossos",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 6}
-  },
-  {
-      grondvorm: "coemere",
-      aanvullingen: "coemo, coemi, coemptum",
-      vertaling: "opkopen, kopen"
-  },
-  {
-      grondvorm: "coepisse",
-      aanvullingen: "coepi, coeptum",
-      vertaling: "beginnen",
-      basis: true
-  },
-  {
-      grondvorm: "cogere",
-      aanvullingen: "cogo, coegi, coactum",
-      vertaling: "dwingen",
-      basis: true,
-      teksten: ["6b/4", "7b/4"],
-      volgorde: {"6b/4": 40, "7b/4": 57}
-  },
-  {
-      grondvorm: "cogitare",
-      aanvullingen: "cogito, cogitavi, cogitatum",
-      vertaling: "nadenken",
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 42}
-  },
-  {
-      grondvorm: "cohaerere",
-      aanvullingen: "cohaereo, cohaesi, cohaesum",
-      vertaling: "samenhangen, samenkleven; verbonden zijn met, grenzen aan",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 44}
-  },
-  {
-      grondvorm: "cohaerescere",
-      aanvullingen: "cohaeresco, cohaesi, –",
-      vertaling: "samenhangen, samenkleven",
-      teksten: ["10/21"],
-      volgorde: {"10/21": 42}
-  },
-  {
-      grondvorm: "coire",
-      aanvullingen: "coeo, coii, coitum",
-      vertaling: "samenkomen, zich verzamelen",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 23}
-  },
-  {
-      grondvorm: "colere",
-      aanvullingen: "colo, colui, cultum",
-      vertaling: "vereren; bebouwen; bewonen",
-      basis: true,
-      teksten: ["7b/6", "8b/3", "9a/4"],
-      volgorde: {"7b/6": 31, "8b/3": 31, "9a/4": 5}
-  },
-  {
-      grondvorm: "colligere",
-      aanvullingen: "colligo, collegi, collectum",
-      vertaling: "verzamelen",
-      basis: true
-  },
-  {
-      grondvorm: "collis Aventinus",
-      aanvullingen: "collis Aventini",
-      vertaling: "de Aventijnse heuvel, de Aventijn"
-  },
-  {
-      grondvorm: "collis Palatinus",
-      aanvullingen: "collis Palatini",
-      vertaling: "de Palatijnse heuvel, de Palatijn"
-  },
-  {
-      grondvorm: "collis",
-      aanvullingen: "collis (m.)",
-      vertaling: "heuvel",
-      basis: true
-  },
-  {
-      grondvorm: "collocare",
-      aanvullingen: "colloco, collocavi, collocatum",
-      vertaling: "plaatsen, leggen",
-      basis: true
-  },
-  {
-      grondvorm: "collum",
-      aanvullingen: "colli",
-      vertaling: "hals, nek",
-      basis: true,
-      teksten: ["8b/3", "10/26"],
-      volgorde: {"8b/3": 20, "10/26": 61}
-  },
-  {
-      grondvorm: "colonia",
-      aanvullingen: "colonia, (v.)",
-      vertaling: "kolonie, nederzetting",
-      teksten: ["8a/5"],
-      volgorde: {"8a/5": 26}
-  },
-  {
-      grondvorm: "color",
-      aanvullingen: "coloris, (m.)",
-      vertaling: "kleur",
-      basis: true,
-      teksten: ["10/26"],
-      volgorde: {"10/26": 52}
-  },
-  {
-      grondvorm: "columna",
-      aanvullingen: "columnae, (v.)",
-      vertaling: "zuil",
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 33}
-  },
-  {
-      grondvorm: "comedere",
-      aanvullingen: "comedo, comedi, comesum",
-      vertaling: "opeten"
-  },
-  {
-      grondvorm: "comes",
-      aanvullingen: "comitis (m. en vr.), (m./vr.)",
-      vertaling: "begeleider, metgezel(lin), reisgezel(lin)"
-  },
-  {
-      grondvorm: "comitas",
-      aanvullingen: "comitatis, (v.)",
-      vertaling: "vriendelijkheid, beleefdheid",
-      teksten: ["7b/6"],
-      volgorde: {"7b/6": 6}
-  },
-  {
-      grondvorm: "commenticius",
-      aanvullingen: "commenticius, commenticia, commenticium",
-      vertaling: "uitgevonden, verzonnen, vergezocht"
-  },
-  {
-      grondvorm: "commiscere",
-      aanvullingen: "commisceo, commiscui, commixtum",
-      vertaling: "vermengen",
-      teksten: ["10/21"],
-      volgorde: {"10/21": 18}
-  },
-  {
-      grondvorm: "committere",
-      aanvullingen: "committo, commisi, commissum",
-      vertaling: "samenbrengen; organiseren; toevertouwen",
-      basis: true,
-      teksten: ["8b/10"],
-      volgorde: {"8b/10": 15}
-  },
-  {
-      grondvorm: "commodum",
-      aanvullingen: "commodi, (o.)",
-      vertaling: "voordeel, nut",
-      teksten: ["9b/3", "10/19"],
-      volgorde: {"9b/3": 8, "10/19": 3}
-  },
-  {
-      grondvorm: "commodus",
-      aanvullingen: "commoda, commodum",
-      vertaling: "gunstig, voordelig, nuttig, aangenaam",
-      teksten: ["7a/6"],
-      volgorde: {"7a/6": 33}
-  },
-  {
-      grondvorm: "communis",
-      aanvullingen: "communis, commune",
-      vertaling: "gemeenschappelijk",
-      basis: true,
-      teksten: ["6a/4", "7a/5"],
-      volgorde: {"6a/4": 19, "7a/5": 37}
-  },
-  {
-      grondvorm: "comparare",
-      aanvullingen: "comparo, comparavi, comparatum",
-      vertaling: "vergelijken; voorbereiden, klaarmaken"
-  },
-  {
-      grondvorm: "compes",
-      aanvullingen: "compedis",
-      vertaling: "voetboei"
-  },
-  {
-      grondvorm: "completus",
-      aanvullingen: "completa, completum",
-      vertaling: "gevuld, vol"
-  },
-  {
-      grondvorm: "complures",
-      aanvullingen: "complures, complura",
-      vertaling: "verscheidene",
-      basis: true
-  },
-  {
-      grondvorm: "componere",
-      aanvullingen: "compono, composui, compositum",
-      vertaling: "bij elkaar leggen, samenleggen, samenstellen"
-  },
-  {
-      grondvorm: "comprehendere",
-      aanvullingen: "comprehendo, comprehendi, comprehensum",
-      vertaling: "vastgrijpen, arresteren",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 50}
-  },
-  {
-      grondvorm: "concidere",
-      aanvullingen: "concido, concidi, concisum",
-      vertaling: "neerslaan; verslaan, in de pan hakken; in stukken hakken, versnijden"
-  },
-  {
-      grondvorm: "conclamare",
-      aanvullingen: "conclamo, conclamavi, conclamatum",
-      vertaling: "tezamen roepen, luidkeels roepen, luid verkondigen"
-  },
-  {
-      grondvorm: "concubinus",
-      aanvullingen: "concubini",
-      vertaling: "minnaar"
-  },
-  {
-      grondvorm: "concumbere",
-      aanvullingen: "concumbo, concubui, concubitum",
-      vertaling: "naar bed gaan, in bed liggen, slapen"
-  },
-  {
-      grondvorm: "concupiscere",
-      aanvullingen: "concupisco, concupivi, concupitum",
-      vertaling: "verlangen, willen",
-      basis: true,
-      teksten: ["8a/6"],
-      volgorde: {"8a/6": 8}
-  },
-  {
-      grondvorm: "concurrere",
-      aanvullingen: "concurro, concurri, concursum",
-      vertaling: "samenlopen"
-  },
-  {
-      grondvorm: "condere",
-      aanvullingen: "condo, condidi, conditum",
-      vertaling: "stichten; verbergen, opbergen",
-      basis: true
-  },
-  {
-      grondvorm: "condicio",
-      aanvullingen: "condicionis, (v.)",
-      vertaling: "voorwaarde",
-      basis: true
-  },
-  {
-      grondvorm: "condire",
-      aanvullingen: "condio, –, –",
-      vertaling: "kruiden; (voedsel) inleggen, inmaken"
-  },
-  {
-      grondvorm: "conductor",
-      aanvullingen: "conductoris, (m.)",
-      vertaling: "huurder",
-      teksten: ["6b/8"],
-      volgorde: {"6b/8": 14}
-  },
-  {
-      grondvorm: "conectere",
-      aanvullingen: "conecto, conexui, conexum",
-      vertaling: "samenbinden, samenvoegen",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 124}
-  },
-  {
-      grondvorm: "conferre",
-      aanvullingen: "confero, contuli, collatum",
-      vertaling: "samenbrengen, verzamelen",
-      basis: true,
-      teksten: ["9a/4"],
-      volgorde: {"9a/4": 20}
-  },
-  {
-      grondvorm: "confertus",
-      aanvullingen: "conferta, confertum",
-      vertaling: "dicht opeengepakt, ondoordringbaar",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 26}
-  },
-  {
-      grondvorm: "conficere",
-      aanvullingen: "conficio, confeci, confectum",
-      vertaling: "maken, vervaardigen; vermoeien, afmatten; doden",
-      basis: true,
-      teksten: ["8a/3", "10/14"],
-      volgorde: {"8a/3": 45, "10/14": 32}
-  },
-  {
-      grondvorm: "confingere",
-      aanvullingen: "confingo, confinxi, confictum",
-      vertaling: "verzinnen, bedenken; bouwen, construeren, maken",
-      teksten: ["10/14"],
-      volgorde: {"10/14": 24}
-  },
-  {
-      grondvorm: "confodere",
-      aanvullingen: "confodio, confodi, confossum",
-      vertaling: "doorsteken, doorboren"
-  },
-  {
-      grondvorm: "confundere",
-      aanvullingen: "confundo, confudi, confusum",
-      vertaling: "samengieten, vermengen, verenigen; in de war brengen",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 79}
-  },
-  {
-      grondvorm: "conicere",
-      aanvullingen: "conicio, conieci, coniectum",
-      vertaling: "samenwerpen, werpen"
-  },
-  {
-      grondvorm: "coniugium",
-      aanvullingen: "coniugii",
-      vertaling: "huwelijk"
-  },
-  {
-      grondvorm: "coniungere",
-      aanvullingen: "coniungo, coniunxi, coniunctum",
-      vertaling: "verbinden, verenigen"
-  },
-  {
-      grondvorm: "coniunx",
-      aanvullingen: "coniugis (m. en vr.), (m./vr.)",
-      vertaling: "echtgenoot, man; echtgenote, vrouw",
-      teksten: ["6a/2", "7a/3", "10/26"],
-      volgorde: {"6a/2": 56, "7a/3": 17, "10/26": 11}
-  },
-  {
-      grondvorm: "conquirere",
-      aanvullingen: "conquiro, conquisivi, conquisitum",
-      vertaling: "bijeenzoeken, bijeenbrengen",
-      teksten: ["7a/8"],
-      volgorde: {"7a/8": 21}
-  },
-  {
-      grondvorm: "conscius",
-      aanvullingen: "conscia, conscium + gen.",
-      vertaling: "medewetend, op de hoogte van",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 84}
-  },
-  {
-      grondvorm: "consecratus",
-      aanvullingen: "consecrata, consecratum",
-      vertaling: "gewijd aan, ter ere van, heilig",
-      teksten: ["9a/4"],
-      volgorde: {"9a/4": 25}
-  },
-  {
-      grondvorm: "consensus",
-      aanvullingen: "consensus, (m.)",
-      vertaling: "overeenkomst, instemming"
-  },
-  {
-      grondvorm: "consentire",
-      aanvullingen: "consentio, consensi, consensum",
-      vertaling: "overeenstemmen, het eens zijn, in harmonie zijn",
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 10}
-  },
-  {
-      grondvorm: "conserva",
-      aanvullingen: "conservae",
-      vertaling: "medeslavin",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 22}
-  },
-  {
-      grondvorm: "considerare",
-      aanvullingen: "considero, consideravi, consideratum",
-      vertaling: "beschouwen, overwegen"
-  },
-  {
-      grondvorm: "consilium",
-      aanvullingen: "consilii, (o.)",
-      vertaling: "raad, advies; besluit, plan",
-      basis: true,
-      teksten: ["8a/3", "10/14"],
-      volgorde: {"8a/3": 12, "10/14": 35}
-  },
-  {
-      grondvorm: "consilia habere",
-      aanvullingen: "",
-      vertaling: "overleg plegen",
-      teksten: ["10/14"],
-      volgorde: {"10/14": 36}
-  },
-  {
-      grondvorm: "consilium petere",
-      aanvullingen: "a(b) + abl.",
-      vertaling: "raad vragen aan"
-  },
-  {
-      grondvorm: "consistere",
-      aanvullingen: "consisto, constiti, –",
-      vertaling: "gaan staan, zich opstellen; stilstaan, blijven staan",
-      basis: true,
-      teksten: ["6a/4", "7b/2", "10/26"],
-      volgorde: {"6a/4": 71, "7b/2": 32, "10/26": 78}
-  },
-  {
-      grondvorm: "conspicere",
-      aanvullingen: "conspicio, conspexi, conspectum",
-      vertaling: "aanschouwen, bekijken, zien",
-      basis: true,
-      teksten: ["6a/2", "9a/4"],
-      volgorde: {"6a/2": 91, "9a/4": 26}
-  },
-  {
-      grondvorm: "conspiciendus",
-      aanvullingen: "conspicienda, conspiciendum",
-      vertaling: "opvallend",
-      teksten: ["7b/6"],
-      volgorde: {"7b/6": 14}
-  },
-  {
-      grondvorm: "conspirare",
-      aanvullingen: "conspiro, conspiravi, conspiratum",
-      vertaling: "samenzweren",
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 32}
-  },
-  {
-      grondvorm: "conspiratus",
-      aanvullingen: "conspirati, (m.)",
-      vertaling: "samenzweerder"
-  },
-  {
-      grondvorm: "Constantinus",
-      aanvullingen: "Constantini",
-      vertaling: "(keizer) Constantinus"
-  },
-  {
-      grondvorm: "constituere",
-      aanvullingen: "constituo, constitui, constitutum",
-      vertaling: "oprichten, laten bouwen; bepalen, beslissen, besluiten",
-      basis: true,
-      teksten: ["6a/4", "8a/5", "9a/4", "9b/6"],
-      volgorde: {"6a/4": 47, "8a/5": 24, "9a/4": 9, "9b/6": 7}
-  },
-  {
-      grondvorm: "constringere",
-      aanvullingen: "constringo, constrinxi, constrictum",
-      vertaling: "samenbinden, vastbinden",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 58}
-  },
-  {
-      grondvorm: "consuetudo",
-      aanvullingen: "consuetudinis, (v.)",
-      vertaling: "gewoonte",
-      basis: true
-  },
-  {
-      grondvorm: "consul",
-      aanvullingen: "consulis (m.)",
-      vertaling: "consul",
-      basis: true,
-      teksten: ["7a/8", "7b/4"],
-      volgorde: {"7a/8": 1, "7b/4": 24}
-  },
-  {
-      grondvorm: "consularis",
-      aanvullingen: "consularis, consulare",
-      vertaling: "van een consul, consulair",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 36}
-  },
-  {
-      grondvorm: "consulere",
-      aanvullingen: "consulo, consului, consultum + dat.",
-      vertaling: "zorg dragen voor, zorgen voor",
-      teksten: ["6b/2", "7a/8"],
-      volgorde: {"6b/2": 116, "7a/8": 4}
-  },
-  {
-      grondvorm: "consulere",
-      aanvullingen: "consulo, consului, consultum",
-      vertaling: "beraadslagen, overleggen; raadplegen"
-  },
-  {
-      grondvorm: "consultare",
-      aanvullingen: "consulto, consultavi, consultatum",
-      vertaling: "ernstig nadenken, beraadslagen, overleggen",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 21}
-  },
-  {
-      grondvorm: "consulto",
-      aanvullingen: "(bijw.)",
-      vertaling: "met opzet, opzettelijk"
-  },
-  {
-      grondvorm: "consurgere",
-      aanvullingen: "consurgo, consurrexi, onsurrectum",
-      vertaling: "(gezamenlijk) opstaan",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 98}
-  },
-  {
-      grondvorm: "contentus",
-      aanvullingen: "contenta, contentum",
-      vertaling: "tevreden",
-      basis: true,
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 36}
-  },
-  {
-      grondvorm: "conterere",
-      aanvullingen: "contero, contrivi, contritum",
-      vertaling: "samenwrijven, erbij wrijven"
-  },
-  {
-      grondvorm: "contingere",
-      aanvullingen: "contingo, contigi, contactum",
-      vertaling: "aanraken",
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 55}
-  },
-  {
-      grondvorm: "continuo",
-      aanvullingen: "(bijw.)",
-      vertaling: "voortdurend"
-  },
-  {
-      grondvorm: "contio",
-      aanvullingen: "contionis, (v.)",
-      vertaling: "vergadering (van het volk, van soldaten)",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 28}
-  },
-  {
-      grondvorm: "contra",
-      aanvullingen: "+ acc.",
-      vertaling: "tegen, tegenover, aan de andere kant van",
-      basis: true,
-      teksten: ["6b/4", "8b/9"],
-      volgorde: {"6b/4": 30, "8b/9": 95}
-  },
-  {
-      grondvorm: "contrahere",
-      aanvullingen: "contraho, contraxi, contractum",
-      vertaling: "samentrekken; verzamelen",
-      teksten: ["10/14"],
-      volgorde: {"10/14": 16}
-  },
-  {
-      grondvorm: "contrarius",
-      aanvullingen: "contraria, contrarium",
-      vertaling: "tegenoverliggend, tegengesteld",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 86}
-  },
-  {
-      grondvorm: "conubium",
-      aanvullingen: "conubii, (o.)",
-      vertaling: "wettig huwelijk, huwelijk",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 14}
-  },
-  {
-      grondvorm: "convenire",
-      aanvullingen: "convenio, conveni, conventum",
-      vertaling: "samenkomen",
-      basis: true,
-      teksten: ["6b/8"],
-      volgorde: {"6b/8": 15}
-  },
-  {
-      grondvorm: "conversus",
-      aanvullingen: "conversa, conversum ad + acc.",
-      vertaling: "gericht naar"
-  },
-  {
-      grondvorm: "convictio",
-      aanvullingen: "convictionis",
-      vertaling: "het samenleven"
-  },
-  {
-      grondvorm: "convivium",
-      aanvullingen: "convivii, (o.)",
-      vertaling: "gastmaal, feestmaal, banket"
-  },
-  {
-      grondvorm: "convocare",
-      aanvullingen: "convoco, convocavi, convocatum",
-      vertaling: "samenroepen",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 17}
-  },
-  {
-      grondvorm: "cooperire",
-      aanvullingen: "cooperio, cooperui, coopertum",
-      vertaling: "bedekken"
-  },
-  {
-      grondvorm: "copia",
-      aanvullingen: "copiae, (v.)",
-      vertaling: "grote hoeveelheid, voorraad; mv.: (leger)troepen",
-      basis: true
-  },
-  {
-      grondvorm: "coquere",
-      aanvullingen: "coquo, coxi, coctum",
-      vertaling: "koken, bakken, bereiden"
-  },
-  {
-      grondvorm: "coquus",
-      aanvullingen: "coqui, (m.)",
-      vertaling: "kok",
-      teksten: ["6b/1"],
-      volgorde: {"6b/1": 3}
-  },
-  {
-      grondvorm: "cor",
-      aanvullingen: "cordis (o.)",
-      vertaling: "hart",
-      basis: true,
-      teksten: ["7a/6"],
-      volgorde: {"7a/6": 17}
-  },
-  {
-      grondvorm: "Corax",
-      aanvullingen: "Coracis",
-      vertaling: "Corax (eigennaam)",
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 2}
-  },
-  {
-      grondvorm: "Corcyra",
-      aanvullingen: "Corcyrae",
-      vertaling: "(het eiland) Corcyra (nu: Korfoe)"
-  },
-  {
-      grondvorm: "Corcyraeus",
-      aanvullingen: "Corcyraei",
-      vertaling: "inwoner van Corcyra, Corcyreeër",
-      teksten: ["9b/7"],
-      volgorde: {"9b/7": 21}
-  },
-  {
-      grondvorm: "coriandrum",
-      aanvullingen: "coriandri, (o.)",
-      vertaling: "koriander"
-  },
-  {
-      grondvorm: "Cornelius Minicianus",
-      aanvullingen: "Cornelii Miniciani",
-      vertaling: "Cornelius Minicianus (eigennaam)"
-  },
-  {
-      grondvorm: "cornu",
-      aanvullingen: "cornus (o.)",
-      vertaling: "hoorn",
-      basis: true
-  },
-  {
-      grondvorm: "corpus",
-      aanvullingen: "corporis, (o.)",
-      vertaling: "lichaam",
-      basis: true,
-      teksten: ["7a/1", "8a/2", "8a/3", "10/19", "10/26"],
-      volgorde: {"7a/1": 46, "8a/2": 40, "8a/3": 122, "10/19": 26, "10/26": 35}
-  },
-  {
-      grondvorm: "corripere",
-      aanvullingen: "corripio, corripui, correptum",
-      vertaling: "vastgrijpen",
-      basis: true,
-      teksten: ["6b/5"],
-      volgorde: {"6b/5": 20}
-  },
-  {
-      grondvorm: "corrotundare",
-      aanvullingen: "corrotundo, corrotundavi, corrotundatum",
-      vertaling: "afronden"
-  },
-  {
-      grondvorm: "cortina",
-      aanvullingen: "cortinae, (v.)",
-      vertaling: "ketel"
-  },
-  {
-      grondvorm: "corvus",
-      aanvullingen: "corvi",
-      vertaling: "raaf"
-  },
-  {
-      grondvorm: "cotidianus",
-      aanvullingen: "cotidiana, cotidianum",
-      vertaling: "dagelijks"
-  },
-  {
-      grondvorm: "Cratippus",
-      aanvullingen: "Cratippi",
-      vertaling: "Cratippus (eigennaam)"
-  },
-  {
-      grondvorm: "creare",
-      aanvullingen: "creo, creavi, creatum",
-      vertaling: "voortbrengen, ter wereld brengen; kiezen, aanstellen",
-      teksten: ["7a/6"],
-      volgorde: {"7a/6": 21}
-  },
-  {
-      grondvorm: "creber",
-      aanvullingen: "crebra, crebrum",
-      vertaling: "talrijk",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 30}
-  },
-  {
-      grondvorm: "credere",
-      aanvullingen: "credo, credidi, creditum",
-      vertaling: "geloven",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 27}
-  },
-  {
-      grondvorm: "creditor",
-      aanvullingen: "creditoris",
-      vertaling: "schuldeiser",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 43}
-  },
-  {
-      grondvorm: "crepitus",
-      aanvullingen: "crepitus",
-      vertaling: "het ratelen, het klapperen"
-  },
-  {
-      grondvorm: "crescere",
-      aanvullingen: "cresco, crevi, cretum",
-      vertaling: "groeien, toenemen",
-      basis: true
-  },
-  {
-      grondvorm: "crinis",
-      aanvullingen: "crinis (m.)",
-      vertaling: "haar"
-  },
-  {
-      grondvorm: "Crixus",
-      aanvullingen: "Crixi",
-      vertaling: "Crixus (eigennaam)",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 2}
-  },
-  {
-      grondvorm: "cruciatus",
-      aanvullingen: "cruciatus",
-      vertaling: "foltering, marteling",
-      teksten: ["9a/4"],
-      volgorde: {"9a/4": 48}
-  },
-  {
-      grondvorm: "cruentus",
-      aanvullingen: "cruenta, cruentum",
-      vertaling: "bloederig, wreed"
-  },
-  {
-      grondvorm: "crus",
-      aanvullingen: "cruris (o.)",
-      vertaling: "scheenbeen, been",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 102}
-  },
-  {
-      grondvorm: "cryptoporticus",
-      aanvullingen: "cryptoporticus",
-      vertaling: "overdekte wandelalerij, overdekte wandelgang",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 52}
-  },
-  {
-      grondvorm: "cubiculum",
-      aanvullingen: "cubiculi",
-      vertaling: "slaapkamer",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 73}
-  },
-  {
-      grondvorm: "cubile",
-      aanvullingen: "cubilis",
-      vertaling: "bed",
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 15}
-  },
-  {
-      grondvorm: "cubitus",
-      aanvullingen: "(ook: cubitum), cubiti",
-      vertaling: "elleboog",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 39}
-  },
-  {
-      grondvorm: "cucullus",
-      aanvullingen: "cuculli",
-      vertaling: "mantel met kap, capuchon",
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 18}
-  },
-  {
-      grondvorm: "cucurbita",
-      aanvullingen: "cucurbitae",
-      vertaling: "pompoen; courgette"
-  },
-  {
-      grondvorm: "culex",
-      aanvullingen: "culicis (m.)",
-      vertaling: "mug",
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 36}
-  },
-  {
-      grondvorm: "culpa",
-      aanvullingen: "culpae, (v.)",
-      vertaling: "schuld, verantwoordelijkheid",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 84}
-  },
-  {
-      grondvorm: "cultus",
-      aanvullingen: "culta, cultum",
-      vertaling: "verzorgd, bewerkt; ontwikkeld, beschaafd; gekleed, getooid",
-      teksten: ["7b/6"],
-      volgorde: {"7b/6": 15}
-  },
-  {
-      grondvorm: "cultus",
-      aanvullingen: "cultus",
-      vertaling: "zorg, verzorging; kledij; geestelijk ontwikkeling, beschaving"
-  },
-  {
-      grondvorm: "cum",
-      aanvullingen: "+ abl. (vz.)",
-      vertaling: "samen met, met",
-      teksten: ["6a/7", "6b/2", "6b/4", "6b/8", "7a/3", "7a/7", "7b/2", "7b/6", "7b/12", "8a/3", "8b/5", "8b/8", "8b/9", "9a/1", "9a/4", "9b/3", "9b/4", "9b/5", "9b/6", "9b/9", "10/3", "10/14", "10/21", "10/26"],
-      volgorde: {"6a/7": 10, "6b/2": 78, "6b/4": 38, "6b/8": 9, "7a/3": 21, "7a/7": 16, "7b/2": 40, "7b/6": 27, "7b/12": 14, "8a/3": 70, "8b/5": 12, "8b/8": 3, "8b/9": 7, "9a/1": 62, "9a/4": 47, "9b/3": 5, "9b/4": 1, "9b/5": 28, "9b/6": 2, "9b/9": 66, "10/3": 16, "10/14": 47, "10/21": 19, "10/26": 2}
-  },
-  {
-      grondvorm: "cum",
-      aanvullingen: "+ ind. (vgw.)",
-      vertaling: "wanneer, toen",
-      teksten: ["6b/4", "8b/9", "10/21", "10/26"],
-      volgorde: {"6b/4": 66, "8b/9": 14, "10/21": 33, "10/26": 73}
-  },
-  {
-      grondvorm: "cum",
-      aanvullingen: "+ conj. (vgw.)",
-      vertaling: "toen; omdat"
-  },
-  {
-      grondvorm: "cum … tum (etiam)",
-      aanvullingen: "",
-      vertaling: "niet alleen … maar ook, zowel … als"
-  },
-  {
-      grondvorm: "cuminum",
-      aanvullingen: "cumini, (o.)",
-      vertaling: "komijn"
-  },
-  {
-      grondvorm: "cumulare",
-      aanvullingen: "cumulo, cumulavi, cumulatum",
-      vertaling: "opstapelen; vergroten, verergeren",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 26}
-  },
-  {
-      grondvorm: "cunctus",
-      aanvullingen: "cuncta, cunctum",
-      vertaling: "geheel, al, mv.: alle(s)",
-      teksten: ["6b/2", "8b/6", "10/26"],
-      volgorde: {"6b/2": 117, "8b/6": 11, "10/26": 82}
-  },
-  {
-      grondvorm: "cupere",
-      aanvullingen: "cupio, cupivi, cupitum",
-      vertaling: "verlangen, willen",
-      teksten: ["9b/10"],
-      volgorde: {"9b/10": 7}
-  },
-  {
-      grondvorm: "cupidus",
-      aanvullingen: "cupida, cupidum",
-      vertaling: "vol verlangen, verlangend, begerig",
-      teksten: ["9b/7", "9b/10"],
-      volgorde: {"9b/7": 31, "9b/10": 3}
-  },
-  {
-      grondvorm: "cur?",
-      aanvullingen: "(vragend bijw.)",
-      vertaling: "waarom?"
-  },
-  {
-      grondvorm: "cura",
-      aanvullingen: "curae, (v.)",
-      vertaling: "zorg",
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 18}
-  },
-  {
-      grondvorm: "curare",
-      aanvullingen: "curo, curavi, curatum",
-      vertaling: "zorgen voor, verzorgen",
-      teksten: ["7b/6"],
-      volgorde: {"7b/6": 36}
-  },
-  {
-      grondvorm: "currere",
-      aanvullingen: "curro, cucurri, cursum",
-      vertaling: "lopen, rennen",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 11}
-  },
-  {
-      grondvorm: "currus",
-      aanvullingen: "currus, (m.)",
-      vertaling: "wagen"
-  },
-  {
-      grondvorm: "cursus",
-      aanvullingen: "cursus, (m.)",
-      vertaling: "het lopen"
-  },
-  {
-      grondvorm: "curvare",
-      aanvullingen: "curvo, curvavi, curvatum",
-      vertaling: "krom maken, krommen"
-  },
-  {
-      grondvorm: "custodia",
-      aanvullingen: "custodiae, (v.)",
-      vertaling: "bewaking; gevangenschap"
-  },
-  {
-      grondvorm: "custos",
-      aanvullingen: "custodis (m.)",
-      vertaling: "bewaker"
-  },
-  {
-      grondvorm: "dare",
-      aanvullingen: "do, dedi, datum",
-      vertaling: "geven",
-      basis: true,
-      teksten: ["6b/9", "7a/3", "7b/2", "8a/3", "8a/5", "8b/10", "9b/9", "10/3", "10/26"],
-      volgorde: {"6b/9": 9, "7a/3": 56, "7b/2": 37, "8a/3": 42, "8a/5": 1, "8b/10": 4, "9b/9": 32, "10/3": 11, "10/26": 9}
-  },
-  {
-      grondvorm: "de",
-      aanvullingen: "+ abl. (vz.)",
-      vertaling: "vanuit, weg van, uit; over, in verband met",
-      teksten: ["6b/4", "6b/9", "7b/6", "8b/9", "9a/1", "10/8"],
-      volgorde: {"6b/4": 20, "6b/9": 4, "7b/6": 22, "8b/9": 76, "9a/1": 42, "10/8": 3}
-  },
-  {
-      grondvorm: "dea",
-      aanvullingen: "deae, (v.)",
-      vertaling: "godin"
-  },
-  {
-      grondvorm: "debere",
-      aanvullingen: "debeo, debui, debitum",
-      vertaling: "moeten",
-      basis: true
-  },
-  {
-      grondvorm: "debilis",
-      aanvullingen: "debilis, debile",
-      vertaling: "zwak, gebrekkig"
-  },
-  {
-      grondvorm: "decem",
-      aanvullingen: "(telwoord)",
-      vertaling: "tien",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 21}
-  },
-  {
-      grondvorm: "decidere",
-      aanvullingen: "decido, decidi, –",
-      vertaling: "naar beneden vallen, vallen"
-  },
-  {
-      grondvorm: "decimus",
-      aanvullingen: "decima, decimum (telwoord)",
-      vertaling: "tiende",
-      teksten: ["7a/2"],
-      volgorde: {"7a/2": 3}
-  },
-  {
-      grondvorm: "decipere",
-      aanvullingen: "decipio, decepi, deceptum",
-      vertaling: "misleiden, bedriegen"
-  },
-  {
-      grondvorm: "declamitare",
-      aanvullingen: "declamito, declamitavi, declamitatum",
-      vertaling: "voordrachtsoefeningenhouden, zich oefenen in de redenaarskunst"
-  },
-  {
-      grondvorm: "declinare",
-      aanvullingen: "declino, declinavi, declinatum",
-      vertaling: "verbuigen"
-  },
-  {
-      grondvorm: "decurrere",
-      aanvullingen: "decurro, de(cu)curri, decursum",
-      vertaling: "naar beneden lopen"
-  },
-  {
-      grondvorm: "decus",
-      aanvullingen: "decoris",
-      vertaling: "sieraad; schoonheid",
-      basis: true
-  },
-  {
-      grondvorm: "deditio",
-      aanvullingen: "deditionis",
-      vertaling: "overgave"
-  },
-  {
-      grondvorm: "deducere",
-      aanvullingen: "deduco, deduxi, deductum",
-      vertaling: "wegleiden, wegbrengen",
-      basis: true,
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 107}
-  },
-  {
-      grondvorm: "deesse",
-      aanvullingen: "desum, defui, –",
-      vertaling: "ontbreken"
-  },
-  {
-      grondvorm: "deferre",
-      aanvullingen: "defero, detuli, delatum",
-      vertaling: "naar beneden brengen, (weg)brengen",
-      basis: true,
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 82}
-  },
-  {
-      grondvorm: "deficere",
-      aanvullingen: "deficio, defeci, defectum",
-      vertaling: "ontbreken",
-      teksten: ["8a/6"],
-      volgorde: {"8a/6": 29}
-  },
-  {
-      grondvorm: "defigere",
-      aanvullingen: "defigo, defixi, defixum",
-      vertaling: "(de ogen of aandacht) strak richten op",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 40}
-  },
-  {
-      grondvorm: "deflectere",
-      aanvullingen: "deflecto, deflexi, deflectum",
-      vertaling: "ombuigen, afzwenken"
-  },
-  {
-      grondvorm: "defrutum",
-      aanvullingen: "defruti, (o.)",
-      vertaling: "ingekookte most"
-  },
-  {
-      grondvorm: "defundere",
-      aanvullingen: "defundo, defudi, defusum",
-      vertaling: "uitgieten",
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 24}
-  },
-  {
-      grondvorm: "dehiscere",
-      aanvullingen: "dehisco, –, –",
-      vertaling: "openbarsten, splijten",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 15}
-  },
-  {
-      grondvorm: "deicere",
-      aanvullingen: "deicio, deieci, deiectum",
-      vertaling: "naar beneden gooien, neerwerpen, werpen in",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 129}
-  },
-  {
-      grondvorm: "deinde",
-      aanvullingen: "(bijw.)",
-      vertaling: "vervolgens",
-      teksten: ["6a/2", "6b/5", "8a/2", "8b/9", "10/3"],
-      volgorde: {"6a/2": 81, "6b/5": 26, "8a/2": 32, "8b/9": 56, "10/3": 71}
-  },
-  {
-      grondvorm: "delabi",
-      aanvullingen: "delabor, delapsus sum",
-      vertaling: "neerglijden, neerdalen",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 41}
-  },
-  {
-      grondvorm: "delere",
-      aanvullingen: "deleo, delevi, deletum",
-      vertaling: "verwoesten, vernietigen",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 90}
-  },
-  {
-      grondvorm: "delicatus",
-      aanvullingen: "delicata, delicatum",
-      vertaling: "verfijnd, elegant, luxueus",
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 5}
-  },
-  {
-      grondvorm: "deliciae",
-      aanvullingen: "deliciarum (enkel mv.)",
-      vertaling: "genot, genoegens; lieveling"
-  },
-  {
-      grondvorm: "delictum",
-      aanvullingen: "delicti",
-      vertaling: "misdrijf, misdaad"
-  },
-  {
-      grondvorm: "deligare",
-      aanvullingen: "deligo, deligavi, deligatum",
-      vertaling: "vastbinden",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 91}
-  },
-  {
-      grondvorm: "delirare",
-      aanvullingen: "deliro, deliravi, deliratum",
-      vertaling: "krankzinnig zijn, gek zijn, raaskallen"
-  },
-  {
-      grondvorm: "Delphi",
-      aanvullingen: "Delphorum (enkel mv.)",
-      vertaling: "(de stad) Delphi",
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 20}
-  },
-  {
-      grondvorm: "Delus",
-      aanvullingen: "Deli (v.)",
-      vertaling: "(het eiland) Delus"
-  },
-  {
-      grondvorm: "demergere",
-      aanvullingen: "demergo, demersi, demersum",
-      vertaling: "onderdompelen"
-  },
-  {
-      grondvorm: "demetere",
-      aanvullingen: "demeto, demessui, demessum",
-      vertaling: "afsnijden"
-  },
-  {
-      grondvorm: "demigrare",
-      aanvullingen: "demigro, demigravi, demigratum",
-      vertaling: "weggaan"
-  },
-  {
-      grondvorm: "deminuere",
-      aanvullingen: "deminuo, deminui, deminutum",
-      vertaling: "verminderen"
-  },
-  {
-      grondvorm: "demittere",
-      aanvullingen: "demitto, demisi, demissum",
-      vertaling: "naar beneden zenden, doen neerdalen; loslaten"
-  },
-  {
-      grondvorm: "demonstrare",
-      aanvullingen: "demonstro, demonstravi, demonstratum",
-      vertaling: "aanduiden; aantonen, bewijzen; uitleggen",
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 139}
-  },
-  {
-      grondvorm: "denique",
-      aanvullingen: "(bijw.)",
-      vertaling: "uiteindelijk, tenslotte; kortom",
-      teksten: ["8a/5"],
-      volgorde: {"8a/5": 42}
-  },
-  {
-      grondvorm: "dens",
-      aanvullingen: "dentis (m.)",
-      vertaling: "tand",
-      teksten: ["6b/4", "8a/3"],
-      volgorde: {"6b/4": 67, "8a/3": 44}
-  },
-  {
-      grondvorm: "densus",
-      aanvullingen: "densa, densum",
-      vertaling: "opeengehoopt, dicht, compact",
-      basis: true,
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 31}
-  },
-  {
-      grondvorm: "depellere",
-      aanvullingen: "depello, depuli, depulsum",
-      vertaling: "verdrijven, wegjagen, verwijderen",
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 51}
-  },
-  {
-      grondvorm: "deportare",
-      aanvullingen: "deporto, deportavi, deportatum",
-      vertaling: "wegvoeren, wegdragen"
-  },
-  {
-      grondvorm: "deridere",
-      aanvullingen: "derideo, derisi, derisum",
-      vertaling: "uitlachen, spotten met"
-  },
-  {
-      grondvorm: "descendere",
-      aanvullingen: "descendo, descendi, descensum",
-      vertaling: "afdalen, neerdalen, naar beneden gaan",
-      teksten: ["6a/2", "8b/9"],
-      volgorde: {"6a/2": 23, "8b/9": 44}
-  },
-  {
-      grondvorm: "describere",
-      aanvullingen: "describo, descripsi, descriptum",
-      vertaling: "opschrijven, beschrijven",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 42}
-  },
-  {
-      grondvorm: "deserere",
-      aanvullingen: "desero, deserui, desertum",
-      vertaling: "verlaten, in de steek laten",
-      basis: true
-  },
-  {
-      grondvorm: "deses",
-      aanvullingen: "deses, deses; desidis",
-      vertaling: "traag, lui"
-  },
-  {
-      grondvorm: "desilire",
-      aanvullingen: "desilio, desilui, desultum",
-      vertaling: "naar beneden springen"
-  },
-  {
-      grondvorm: "desipere",
-      aanvullingen: "desipio, –, –",
-      vertaling: "dwaas zijn, gek zijn"
-  },
-  {
-      grondvorm: "desperare",
-      aanvullingen: "despero, desperavi, desperatum",
-      vertaling: "wanhopen, geen hoop meer hebben"
-  },
-  {
-      grondvorm: "despicere",
-      aanvullingen: "despicio, despexi, despectum",
-      vertaling: "minachten, neerkijken op"
-  },
-  {
-      grondvorm: "destillare",
-      aanvullingen: "destillo, destillavi, destillatum",
-      vertaling: "naar beneden druppen",
-      teksten: ["10/8"],
-      volgorde: {"10/8": 1}
-  },
-  {
-      grondvorm: "destinare",
-      aanvullingen: "destino, destinavi, destinatum ad + acc.",
-      vertaling: "bestemmen voor",
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 37}
-  },
-  {
-      grondvorm: "detinere",
-      aanvullingen: "detineo, detinui, detentum",
-      vertaling: "vasthouden, tegenhouden"
-  },
-  {
-      grondvorm: "detrahere",
-      aanvullingen: "detraho, detraxi, detractum",
-      vertaling: "naar beneden trekken"
-  },
-  {
-      grondvorm: "detrectare",
-      aanvullingen: "detrecto, detrectavi, detrectatum + acc.",
-      vertaling: "zich onttrekken aan",
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 6}
-  },
-  {
-      grondvorm: "Deucalion",
-      aanvullingen: "Deucalionis",
-      vertaling: "Deucalion (eigennaam)"
-  },
-  {
-      grondvorm: "deurere",
-      aanvullingen: "deuro, deussi, deustum",
-      vertaling: "verbranden"
-  },
-  {
-      grondvorm: "deus",
-      aanvullingen: "dei, (m.)",
-      vertaling: "god",
-      basis: true,
-      teksten: ["6a/2", "7a/5", "7b/2", "8a/6", "9a/4", "9b/6", "10/26"],
-      volgorde: {"6a/2": 65, "7a/5": 27, "7b/2": 10, "8a/6": 2, "9a/4": 1, "9b/6": 48, "10/26": 81}
-  },
-  {
-      grondvorm: "devorare",
-      aanvullingen: "devoro, devoravi, decoratum",
-      vertaling: "verslinden, doorslikken, opslokken",
-      teksten: ["8a/6"],
-      volgorde: {"8a/6": 27}
-  },
-  {
-      grondvorm: "devovere",
-      aanvullingen: "devoveo, devovi, devotum",
-      vertaling: "als offer beloven, beloven",
-      teksten: ["9a/4"],
-      volgorde: {"9a/4": 12}
-  },
-  {
-      grondvorm: "dexter",
-      aanvullingen: "dextra, dextrum",
-      vertaling: "rechts, rechter-",
-      basis: true,
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 80}
-  },
-  {
-      grondvorm: "dextra [manus]",
-      aanvullingen: "dextrae [manus]",
-      vertaling: "rechterhand"
-  },
-  {
-      grondvorm: "Di Manes",
-      aanvullingen: "",
-      vertaling: "de goden Manes (= geesten van de doden)"
-  },
-  {
-      grondvorm: "diaeta",
-      aanvullingen: "diaetae",
-      vertaling: "levenswijze; verblijfplaats, plaats",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 60}
-  },
-  {
-      grondvorm: "Diana",
-      aanvullingen: "Diana",
-      vertaling: "(de godin) Diana"
-  },
-  {
-      grondvorm: "dicere",
-      aanvullingen: "dico, dixi, dictum",
-      vertaling: "zeggen, spreken; noemen",
-      basis: true,
-      teksten: ["6b/4", "7a/1", "7a/3", "7a/6", "7a/8", "7b/6", "8a/3", "8b/3", "8b/9", "9a/1", "10/19", "10/26"],
-      volgorde: {"6b/4": 52, "7a/1": 19, "7a/3": 51, "7a/6": 3, "7a/8": 8, "7b/6": 20, "8a/3": 50, "8b/3": 28, "8b/9": 138, "9a/1": 49, "10/19": 24, "10/26": 85}
-  },
-  {
-      grondvorm: "dictator",
-      aanvullingen: "dictatoris",
-      vertaling: "dictator"
-  },
-  {
-      grondvorm: "dictum",
-      aanvullingen: "dicti",
-      vertaling: "uitspraak, gezegde, woord"
-  },
-  {
-      grondvorm: "dictus",
-      aanvullingen: "dictus",
-      vertaling: "het zeggen, het spreken"
-  },
-  {
-      grondvorm: "dies",
-      aanvullingen: "diei (m. en vr.), (m./vr.)",
-      vertaling: "dag, daglicht",
-      basis: true,
-      teksten: ["6a/4", "6b/3", "7a/2", "7b/4", "8a/6", "8b/6", "9b/7", "10/26"],
-      volgorde: {"6a/4": 64, "6b/3": 7, "7a/2": 2, "7b/4": 52, "8a/6": 21, "8b/6": 22, "9b/7": 18, "10/26": 67}
-  },
-  {
-      grondvorm: "differre",
-      aanvullingen: "differo, distuli, dilatum",
-      vertaling: "uit elkaar dragen, verspreiden; verschillen",
-      basis: true,
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 21}
-  },
-  {
-      grondvorm: "differtus",
-      aanvullingen: "differta, differtum + abl.",
-      vertaling: "vol met, wemelend van",
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 9}
-  },
-  {
-      grondvorm: "difficilis",
-      aanvullingen: "difficilis, difficile",
-      vertaling: "moeilijk",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 63}
-  },
-  {
-      grondvorm: "diffundere",
-      aanvullingen: "diffundo, diffudi, diffusum",
-      vertaling: "uitgieten; verspreiden",
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 32}
-  },
-  {
-      grondvorm: "digitus",
-      aanvullingen: "digiti",
-      vertaling: "vinger, teen",
-      teksten: ["6b/2", "10/26"],
-      volgorde: {"6b/2": 51, "10/26": 57}
-  },
-  {
-      grondvorm: "dignus",
-      aanvullingen: "digna, dignum + abl.",
-      vertaling: "waardig",
-      basis: true,
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 134}
-  },
-  {
-      grondvorm: "dilabi",
-      aanvullingen: "dilabor, dilapsus sum",
-      vertaling: "wegglijden, verdwijnen"
-  },
-  {
-      grondvorm: "diligere",
-      aanvullingen: "diligo, dilexi, dilectum",
-      vertaling: "liefhebben",
-      teksten: ["7a/6"],
-      volgorde: {"7a/6": 18}
-  },
-  {
-      grondvorm: "diluvium",
-      aanvullingen: "diluvii",
-      vertaling: "overstroming, zondvloed"
-  },
-  {
-      grondvorm: "dimicare",
-      aanvullingen: "dimico, dimicavi, dimicatum",
-      vertaling: "strijden, vechten",
-      teksten: ["8b/9", "9a/1"],
-      volgorde: {"8b/9": 144, "9a/1": 64}
-  },
-  {
-      grondvorm: "dimidius",
-      aanvullingen: "dimidia, dimidium",
-      vertaling: "half"
-  },
-  {
-      grondvorm: "dimittere",
-      aanvullingen: "dimitto, dimisi, dimissum",
-      vertaling: "wegsturen",
-      basis: true,
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 103}
-  },
-  {
-      grondvorm: "directus",
-      aanvullingen: "directa, directum",
-      vertaling: "rechtstreeks",
-      teksten: ["8b/10"],
-      volgorde: {"8b/10": 3}
-  },
-  {
-      grondvorm: "direptio",
-      aanvullingen: "direptionos",
-      vertaling: "vernietiging"
-  },
-  {
-      grondvorm: "dirigere",
-      aanvullingen: "dirigo, direxi, directum",
-      vertaling: "richten, mikken, werpen"
-  },
-  {
-      grondvorm: "diripere",
-      aanvullingen: "diripio, diripui, direptum",
-      vertaling: "lostrekken, stelen, plunderen",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 14}
-  },
-  {
-      grondvorm: "dirus",
-      aanvullingen: "dira, dirum",
-      vertaling: "verschrikkelijk"
-  },
-  {
-      grondvorm: "discedere",
-      aanvullingen: "discedo, discessi, discessum",
-      vertaling: "weggaan",
-      basis: true,
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 4}
-  },
-  {
-      grondvorm: "discere",
-      aanvullingen: "disco, didici, –",
-      vertaling: "leren",
-      basis: true
-  },
-  {
-      grondvorm: "disciplina",
-      aanvullingen: "disciplinae, (v.)",
-      vertaling: "orde, tucht, discipline; kennis, wetenschap; onderwijs",
-      basis: true,
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 47}
-  },
-  {
-      grondvorm: "discipulus",
-      aanvullingen: "discipuli, (m.)",
-      vertaling: "leerling"
-  },
-  {
-      grondvorm: "discrimen",
-      aanvullingen: "discriminis, (o.)",
-      vertaling: "onderscheid"
-  },
-  {
-      grondvorm: "discurrere",
-      aanvullingen: "discurro, dis(cu)curri, discursum",
-      vertaling: "uit elkaar rennen, zich verspreiden"
-  },
-  {
-      grondvorm: "disicere",
-      aanvullingen: "disicio, disieci, disiectum",
-      vertaling: "uit elkaar gooien, uiteendrijven; van haren: loshangen"
-  },
-  {
-      grondvorm: "dissolvere",
-      aanvullingen: "dissolvo, dissolvi, dissolutum",
-      vertaling: "losmaken, uiteen doen vallen"
-  },
-  {
-      grondvorm: "distare",
-      aanvullingen: "disto, –, –",
-      vertaling: "verwijderd zijn"
-  },
-  {
-      grondvorm: "distentus",
-      aanvullingen: "distenta, distentum",
-      vertaling: "gespannen; barstensvol"
-  },
-  {
-      grondvorm: "disturbare",
-      aanvullingen: "disturbo, disturbavi, disturbatum",
-      vertaling: "verstoren, storen; vernietigen, verwoesten",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 69}
-  },
-  {
-      grondvorm: "diu",
-      aanvullingen: "(bijw.)",
-      vertaling: "lang (van tijd)",
-      basis: true,
-      teksten: ["10/3"],
-      volgorde: {"10/3": 22}
-  },
-  {
-      grondvorm: "diversus",
-      aanvullingen: "diversa, diversum",
-      vertaling: "naar de tegenovergestelde richting gekeerd, tegenoverliggend; verschillend; vijandelijk",
-      basis: true
-  },
-  {
-      grondvorm: "dives",
-      aanvullingen: "dives, dives; divitis",
-      vertaling: "rijk",
-      basis: true,
-      teksten: ["6b/2", "6b/3"],
-      volgorde: {"6b/2": 4, "6b/3": 36}
-  },
-  {
-      grondvorm: "dividere",
-      aanvullingen: "divido, divisi, divisum",
-      vertaling: "scheiden, verdelen",
-      basis: true,
-      teksten: ["6b/2", "7a/1", "8a/5", "8b/3", "9a/1"],
-      volgorde: {"6b/2": 122, "7a/1": 7, "8a/5": 9, "8b/3": 34, "9a/1": 3}
-  },
-  {
-      grondvorm: "divinus",
-      aanvullingen: "divina, divinum",
-      vertaling: "goddelijk"
-  },
-  {
-      grondvorm: "divitiae",
-      aanvullingen: "divitiarum (enkel mv.), (vr. mv.)",
-      vertaling: "rijkdom",
-      basis: true
-  },
-  {
-      grondvorm: "divum",
-      aanvullingen: "divi, (o.)",
-      vertaling: "de blote hemel, open lucht",
-      teksten: ["6a/4", "8b/6"],
-      volgorde: {"6a/4": 42, "8b/6": 27}
-  },
-  {
-      grondvorm: "divus",
-      aanvullingen: "diva, divum",
-      vertaling: "vergoddelijkt, goddelijk",
-      basis: true
-  },
-  {
-      grondvorm: "divus",
-      aanvullingen: "divi",
-      vertaling: "god",
-      basis: true
-  },
-  {
-      grondvorm: "docere",
-      aanvullingen: "doceo, docui, doctum",
-      vertaling: "aanleren, onderwijzen",
-      basis: true
-  },
-  {
-      grondvorm: "doctus",
-      aanvullingen: "docta, doctum",
-      vertaling: "geschoold, ontwikkeld, geleerd",
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 5}
-  },
-  {
-      grondvorm: "dolere",
-      aanvullingen: "doleo, dolui, –",
-      vertaling: "verdrietig zijn; pijn doen, pijn hebben",
-      basis: true,
-      teksten: ["10/8"],
-      volgorde: {"10/8": 17}
-  },
-  {
-      grondvorm: "dolium",
-      aanvullingen: "dolii",
-      vertaling: "(wijn)vat",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 122}
-  },
-  {
-      grondvorm: "dolor",
-      aanvullingen: "doloris, (m.)",
-      vertaling: "pijn; verdriet",
-      basis: true,
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 31}
-  },
-  {
-      grondvorm: "dolosus",
-      aanvullingen: "dolosa, dolosum",
-      vertaling: "listig, sluw"
-  },
-  {
-      grondvorm: "dolus",
-      aanvullingen: "doli",
-      vertaling: "list",
-      basis: true
-  },
-  {
-      grondvorm: "domare",
-      aanvullingen: "domo, domui, domitum",
-      vertaling: "temmen",
-      teksten: ["8a/3", "8b/3", "8b/9"],
-      volgorde: {"8a/3": 119, "8b/3": 22, "8b/9": 68}
-  },
-  {
-      grondvorm: "domesticus",
-      aanvullingen: "domestica, domesticum",
-      vertaling: "van een huis, huis-; privé-, persoonlijk; binnenlands",
-      teksten: ["7b/6"],
-      volgorde: {"7b/6": 1}
-  },
-  {
-      grondvorm: "dominari",
-      aanvullingen: "dominor, dominatus sum in + acc.",
-      vertaling: "heersen over, de baas zijn over"
-  },
-  {
-      grondvorm: "dominus",
-      aanvullingen: "domini, (m.)",
-      vertaling: "heer, meester",
-      teksten: ["8a/6", "8b/5", "8b/8"],
-      volgorde: {"8a/6": 4, "8b/5": 4, "8b/8": 5}
-  },
-  {
-      grondvorm: "domus",
-      aanvullingen: "domus (v.)",
-      vertaling: "huis",
-      basis: true,
-      teksten: ["6a/1", "6b/5", "6b/8", "7a/6", "8a/6", "8b/3", "10/3"],
-      volgorde: {"6a/1": 36, "6b/5": 35, "6b/8": 13, "7a/6": 34, "8a/6": 6, "8b/3": 13, "10/3": 48}
-  },
-  {
-      grondvorm: "domum servare",
-      aanvullingen: "",
-      vertaling: "het huishouden doen",
-      teksten: ["7a/6"],
-      volgorde: {"7a/6": 1}
-  },
-  {
-      grondvorm: "donare",
-      aanvullingen: "dono, donavi, donatum",
-      vertaling: "geven, schenken",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 83}
-  },
-  {
-      grondvorm: "donec",
-      aanvullingen: "+ ind. (vgw.)",
-      vertaling: "zolang als, totdat"
-  },
-  {
-      grondvorm: "donum",
-      aanvullingen: "doni, (o.)",
-      vertaling: "geschenk",
-      basis: true,
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 114}
-  },
-  {
-      grondvorm: "dono dare",
-      aanvullingen: "do, dedi, datum",
-      vertaling: "ten geschenke geven, als geschenk geven",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 116}
-  },
-  {
-      grondvorm: "dormire",
-      aanvullingen: "dormio, dormivi, dormitum",
-      vertaling: "slapen",
-      teksten: ["6b/2", "6b/3", "9b/4"],
-      volgorde: {"6b/2": 21, "6b/3": 39, "9b/4": 56}
-  },
-  {
-      grondvorm: "dorsum",
-      aanvullingen: "dorsi",
-      vertaling: "rug",
-      teksten: ["8b/3"],
-      volgorde: {"8b/3": 19}
-  },
-  {
-      grondvorm: "draco",
-      aanvullingen: "draconis, (m.)",
-      vertaling: "slang; draak"
-  },
-  {
-      grondvorm: "Druidae",
-      aanvullingen: "Druidarum (m., enkel mv.)",
-      vertaling: "Druïden"
-  },
-  {
-      grondvorm: "dubitare",
-      aanvullingen: "dubito, dubitavi, dubitatum",
-      vertaling: "twijfelen"
-  },
-  {
-      grondvorm: "dubium",
-      aanvullingen: "dubii, (o.)",
-      vertaling: "twijfel",
-      teksten: ["10/19"],
-      volgorde: {"10/19": 31}
-  },
-  {
-      grondvorm: "dubius",
-      aanvullingen: "dubia, dubium",
-      vertaling: "twijfelend, onzeker",
-      basis: true,
-      teksten: ["6a/1"],
-      volgorde: {"6a/1": 24}
-  },
-  {
-      grondvorm: "ducere",
-      aanvullingen: "duco, duxi, ductum",
-      vertaling: "leiden",
-      basis: true,
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 41}
-  },
-  {
-      grondvorm: "ductio",
-      aanvullingen: "ductionis, (v.)",
-      vertaling: "(water)leiding",
-      teksten: ["10/19"],
-      volgorde: {"10/19": 1}
-  },
-  {
-      grondvorm: "dulcis",
-      aanvullingen: "dulcis, dulce",
-      vertaling: "zoet; lief, zacht",
-      basis: true,
-      teksten: ["9b/9", "10/14"],
-      volgorde: {"9b/9": 58, "10/14": 18}
-  },
-  {
-      grondvorm: "dum",
-      aanvullingen: "+ ind. (vgw.)",
-      vertaling: "terwijl",
-      teksten: ["8a/3", "10/3", "10/26"],
-      volgorde: {"8a/3": 117, "10/3": 35, "10/26": 98}
-  },
-  {
-      grondvorm: "duo",
-      aanvullingen: "duae, duo (telwoord)",
-      vertaling: "twee",
-      teksten: ["7a/3", "7a/6", "8b/3", "9b/5"],
-      volgorde: {"7a/3": 27, "7a/6": 20, "8b/3": 36, "9b/5": 38}
-  },
-  {
-      grondvorm: "duodecim",
-      aanvullingen: "(telwoord)",
-      vertaling: "twaalf"
-  },
-  {
-      grondvorm: "durare",
-      aanvullingen: "duro, duravi, duratum",
-      vertaling: "hard maken, verharden, hard worden"
-  },
-  {
-      grondvorm: "durus",
-      aanvullingen: "dura, durum",
-      vertaling: "hard; streng",
-      basis: true,
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 41}
-  },
-  {
-      grondvorm: "dux",
-      aanvullingen: "ducis (m.)",
-      vertaling: "leider",
-      basis: true,
-      teksten: ["8b/9", "9a/1", "10/14"],
-      volgorde: {"8b/9": 48, "9a/1": 36, "10/14": 40}
-  },
-  {
-      grondvorm: "e(x)",
-      aanvullingen: "+ abl. (vz.)",
-      vertaling: "uit, weg van, vanuit, vanaf, van",
-      teksten: ["6a/2", "6a/4", "6b/8", "7b/4", "8a/3", "8b/1", "8b/5", "9b/5", "10/19"],
-      volgorde: {"6a/2": 81, "6a/4": 2, "6b/8": 5, "7b/4": 10, "8a/3": 62, "8b/1": 2, "8b/5": 13, "9b/5": 48, "10/19": 15}
-  },
-  {
-      grondvorm: "ea",
-      aanvullingen: "(bijw.)",
-      vertaling: "daarlangs"
-  },
-  {
-      grondvorm: "ebrius",
-      aanvullingen: "ebria, ebrium",
-      vertaling: "dronken; subst.: dronkelap",
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 26}
-  },
-  {
-      grondvorm: "e composito",
-      aanvullingen: "(vaste uitdrukking)",
-      vertaling: "op afspraak, zoals afgesproken is"
-  },
-  {
-      grondvorm: "edere",
-      aanvullingen: "edo, edi, esum",
-      vertaling: "eten, opeten, opvreten",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 46}
-  },
-  {
-      grondvorm: "edere",
-      aanvullingen: "edo, edidi, editum",
-      vertaling: "voortbrengen, ter wereld brengen; uitgeven; organiseren"
-  },
-  {
-      grondvorm: "edicere",
-      aanvullingen: "edico, edixi, edictum",
-      vertaling: "verkondigen; bepalen, bevelen",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 26}
-  },
-  {
-      grondvorm: "edictum",
-      aanvullingen: "edicti, (o.)",
-      vertaling: "besluit, verordening, edict",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 41}
-  },
-  {
-      grondvorm: "ediscere",
-      aanvullingen: "edisco, edidici, –",
-      vertaling: "uit het hoofd leren"
-  },
-  {
-      grondvorm: "editum",
-      aanvullingen: "editi, (o.)",
-      vertaling: "hoogte",
-      teksten: ["6b/5"],
-      volgorde: {"6b/5": 28}
-  },
-  {
-      grondvorm: "editus",
-      aanvullingen: "edita, editum",
-      vertaling: "hoog",
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 52}
-  },
-  {
-      grondvorm: "educare",
-      aanvullingen: "educo, educavi, educatum",
-      vertaling: "opvoeden"
-  },
-  {
-      grondvorm: "efficere",
-      aanvullingen: "efficio, effeci, effectum",
-      vertaling: "tot stand brengen, teweegbrengen, veroorzaken",
-      basis: true,
-      teksten: ["10/21"],
-      volgorde: {"10/21": 4}
-  },
-  {
-      grondvorm: "effigies",
-      aanvullingen: "effigiei, (v.)",
-      vertaling: "beeld"
-  },
-  {
-      grondvorm: "effingere",
-      aanvullingen: "effingo, effinxi, effictum",
-      vertaling: "afbeelden, nabootsen"
-  },
-  {
-      grondvorm: "efflare",
-      aanvullingen: "efflo, efflavi, efflatum",
-      vertaling: "uitblazen, uitademen",
-      teksten: ["7b/12"],
-      volgorde: {"7b/12": 12}
-  },
-  {
-      grondvorm: "effringere",
-      aanvullingen: "effringo, effregi, effractum",
-      vertaling: "openbreken",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 11}
-  },
-  {
-      grondvorm: "effusus",
-      aanvullingen: "effusa, effusum",
-      vertaling: "uitgestrekt, ruim, wijd, groot",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 31}
-  },
-  {
-      grondvorm: "egere",
-      aanvullingen: "egeo, egui, – + gen.",
-      vertaling: "niet hebben, ontbreken"
-  },
-  {
-      grondvorm: "Egnatius Mecenius",
-      aanvullingen: "Egnatii Mecenii",
-      vertaling: "Egnatius Mecenius (eigennaam)",
-      teksten: ["7a/5"],
-      volgorde: {"7a/5": 1}
-  },
-  {
-      grondvorm: "ego",
-      aanvullingen: "(pers. vnw.)",
-      vertaling: "ik"
-  },
-  {
-      grondvorm: "egredi",
-      aanvullingen: "egredior, egressus sum",
-      vertaling: "gaan uit, weggaan",
-      basis: true
-  },
-  {
-      grondvorm: "eicere",
-      aanvullingen: "eicio, eieci, eiectum",
-      vertaling: "weggooien, buitengooien, verwijderen"
-  },
-  {
-      grondvorm: "elatus",
-      aanvullingen: "elata, elatum",
-      vertaling: "verheven"
-  },
-  {
-      grondvorm: "elegans",
-      aanvullingen: "elegans, elegans; elegantis",
-      vertaling: "verfijnd, fijn, sierlijk, smaakvol",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 40}
-  },
-  {
-      grondvorm: "elegantia",
-      aanvullingen: "elegantiae, (v.)",
-      vertaling: "elegantie, charme"
-  },
-  {
-      grondvorm: "elephantus",
-      aanvullingen: "elephanti, (m.)",
-      vertaling: "olifant"
-  },
-  {
-      grondvorm: "eligere",
-      aanvullingen: "eligo, elegi, electum",
-      vertaling: "uitkiezen, kiezen tot",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 31}
-  },
-  {
-      grondvorm: "elixare",
-      aanvullingen: "elixo, elixavi, elixatum",
-      vertaling: "in water koken"
-  },
-  {
-      grondvorm: "emendare",
-      aanvullingen: "emendo, emendavi, emendare",
-      vertaling: "verbeteren"
-  },
-  {
-      grondvorm: "emere",
-      aanvullingen: "emo, emi, emptum",
-      vertaling: "kopen",
-      basis: true
-  },
-  {
-      grondvorm: "emergere",
-      aanvullingen: "emergo, emersi, emersum",
-      vertaling: "opduiken, te voorschijn komen"
-  },
-  {
-      grondvorm: "emigrare",
-      aanvullingen: "emigro, emigravi, emigratum",
-      vertaling: "verhuizen, wegtrekken",
-      teksten: ["6a/1"],
-      volgorde: {"6a/1": 42}
-  },
-  {
-      grondvorm: "emittere",
-      aanvullingen: "emitto, emisi, emissum",
-      vertaling: "wegzenden"
-  },
-  {
-      grondvorm: "enim",
-      aanvullingen: "(vgw.)",
-      vertaling: "immers, want",
-      basis: true,
-      teksten: ["8a/3", "8b/5"],
-      volgorde: {"8a/3": 132, "8b/5": 26}
-  },
-  {
-      grondvorm: "eo",
-      aanvullingen: "(bijw.)",
-      vertaling: "daarheen",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 24}
-  },
-  {
-      grondvorm: "epulae",
-      aanvullingen: "epularum (enkel mv.)",
-      vertaling: "maaltijd, feestmaal"
-  },
-  {
-      grondvorm: "eques",
-      aanvullingen: "equitis (m.)",
-      vertaling: "ruiter; ridder",
-      basis: true,
-      teksten: ["8a/5"],
-      volgorde: {"8a/5": 34}
-  },
-  {
-      grondvorm: "equester",
-      aanvullingen: "equestris, equestre",
-      vertaling: "van een ruiter, ruiter-",
-      teksten: ["6b/8", "7b/4"],
-      volgorde: {"6b/8": 12, "7b/4": 6}
-  },
-  {
-      grondvorm: "equitatus",
-      aanvullingen: "equitatus",
-      vertaling: "ruiterij, cavalerie",
-      basis: true,
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 74}
-  },
-  {
-      grondvorm: "equus",
-      aanvullingen: "equi",
-      vertaling: "paard",
-      basis: true,
-      teksten: ["8b/3", "9b/9"],
-      volgorde: {"8b/3": 25, "9b/9": 46}
-  },
-  {
-      grondvorm: "erepere",
-      aanvullingen: "erepo, erepsi, ereptum",
-      vertaling: "te voorschijn kruipen, omhoogkruipen",
-      teksten: ["7b/12"],
-      volgorde: {"7b/12": 15}
-  },
-  {
-      grondvorm: "erga",
-      aanvullingen: "+ acc. (vz.)",
-      vertaling: "tegenover; ten opzichte van",
-      basis: true
-  },
-  {
-      grondvorm: "ergastulum",
-      aanvullingen: "ergastuli",
-      vertaling: "privégevangenis (in een villa rustica), slavengevangenis",
-      teksten: ["8a/2", "8b/6"],
-      volgorde: {"8a/2": 46, "8b/6": 42}
-  },
-  {
-      grondvorm: "ergo",
-      aanvullingen: "(vgw.)",
-      vertaling: "dus",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 42}
-  },
-  {
-      grondvorm: "eripere",
-      aanvullingen: "eripio, eripui, ereptum",
-      vertaling: "afpakken, ontnemen, stelen, roven",
-      basis: true,
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 34}
-  },
-  {
-      grondvorm: "Erotion",
-      aanvullingen: "Erotionos",
-      vertaling: "Erotion (eigennaam)"
-  },
-  {
-      grondvorm: "errare",
-      aanvullingen: "erro, erravi, erratum",
-      vertaling: "rondzwerven; zich vergissen"
-  },
-  {
-      grondvorm: "erumpere",
-      aanvullingen: "erumpo, erupi, eruptum",
-      vertaling: "uitbreken, naar buiten stormen, ontsnappen",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 13}
-  },
-  {
-      grondvorm: "eruptio",
-      aanvullingen: "eruptionis",
-      vertaling: "uitbarsting; uitval, aanval",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 131}
-  },
-  {
-      grondvorm: "esse",
-      aanvullingen: "sum, fui, –",
-      vertaling: "zijn",
-      basis: true,
-      teksten: ["6a/1", "6a/2", "10/26"],
-      volgorde: {"6a/1": 15, "6a/2": 60, "10/26": 23}
-  },
-  {
-      grondvorm: "et",
-      aanvullingen: "(vgw.)",
-      vertaling: "en",
-      basis: true,
-      teksten: ["6a/1", "6a/2", "9b/5"],
-      volgorde: {"6a/1": 20, "6a/2": 11, "9b/5": 35}
-  },
-  {
-      grondvorm: "et … et",
-      aanvullingen: "",
-      vertaling: "en … en, zowel … als",
-    teksten: ["9b/6", "10/3"],
-    volgorde: {"9b/6": 53, "10/3": 82}
-  },
-  {
-      grondvorm: "et",
-      aanvullingen: "(bijw.)",
-      vertaling: "ook, zelfs",
-      basis: true
-  },
-  {
-      grondvorm: "etenim",
-      aanvullingen: "(vgw.)",
-      vertaling: "want, immers; en zeker, en inderdaad"
-  },
-  {
-      grondvorm: "etiam",
-      aanvullingen: "(bijw.)",
-      vertaling: "ook, zelfs",
-      basis: true,
-      teksten: ["6a/1", "6b/3", "8a/3", "8b/9", "8b/10", "9b/5", "10/8", "10/19", "10/21"],
-      volgorde: {"6a/1": 26, "6b/3": 32, "8a/3": 48, "8b/9": 70, "8b/10": 2, "9b/5": 72, "10/8": 10, "10/19": 11, "10/21": 1}
-  },
-  {
-      grondvorm: "etiam atque etiam",
-      aanvullingen: "",
-      vertaling: "nogmaals, nog een keer, weer",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 68}
-  },
-  {
-      grondvorm: "etiam si",
-      aanvullingen: "+ ind./conj. (vgw.)",
-      vertaling: "ook al, zelfs al",
-      basis: true,
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 32}
-  },
-  {
-      grondvorm: "Etruscus",
-      aanvullingen: "Etrusci",
-      vertaling: "Etrusk"
-  },
-  {
-      grondvorm: "etsi",
-      aanvullingen: "+ ind. (vgw.)",
-      vertaling: "hoewel, ook al",
-      teksten: ["7a/3", "10/3"],
-      volgorde: {"7a/3": 61, "10/3": 20}
-  },
-  {
-      grondvorm: "evellere",
-      aanvullingen: "evello, evelli, evulsum",
-      vertaling: "uittrekken, uitrukken"
-  },
-  {
-      grondvorm: "exasperare",
-      aanvullingen: "exaspero, exasperavi, exasperatum",
-      vertaling: "ruw maken; doen ontsteken, irriteren",
-      teksten: ["10/8"],
-      volgorde: {"10/8": 22}
-  },
-  {
-      grondvorm: "excedere",
-      aanvullingen: "excedo, excessi, excessum",
-      vertaling: "weggaan uit, verlaten",
-      basis: true,
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 110}
-  },
-  {
-      grondvorm: "excidere",
-      aanvullingen: "excido, excisi, excisum",
-      vertaling: "(om)hakken, (af)snijden; verwoesten, vernielen"
-  },
-  {
-      grondvorm: "excipere",
-      aanvullingen: "excipio, excepi, exceptum",
-      vertaling: "vangen, ontvangen, opvangen",
-      basis: true
-  },
-  {
-      grondvorm: "excitare",
-      aanvullingen: "excito, excitavi, excitatum",
-      vertaling: "ophitsen, aansporen",
-      teksten: ["6a/4", "6b/3", "6b/5"],
-      volgorde: {"6a/4": 18, "6b/3": 13, "6b/5": 12}
-  },
-  {
-      grondvorm: "exclamare",
-      aanvullingen: "exclamo, exclamavi, exclamatum",
-      vertaling: "uitroepen, roepen",
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 47}
-  },
-  {
-      grondvorm: "excolere",
-      aanvullingen: "excolo, excolui, excultum",
-      vertaling: "versieren, verfraaien"
-  },
-  {
-      grondvorm: "excurrere",
-      aanvullingen: "excurro, ex(cu)curri, excursum",
-      vertaling: "uitlopen; zich uitstrekken tot",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 6}
-  },
-  {
-      grondvorm: "excusare",
-      aanvullingen: "excuso, excuso, excusavi",
-      vertaling: "verontschuldigen; rechtvaardigen"
-  },
-  {
-      grondvorm: "exedere",
-      aanvullingen: "exedo, exedi, exesum",
-      vertaling: "opeten, opvreten"
-  },
-  {
-      grondvorm: "exemplum",
-      aanvullingen: "exempli",
-      vertaling: "voorbeeld",
-      teksten: ["7a/5", "7b/4"],
-      volgorde: {"7a/5": 21, "7b/4": 63}
-  },
-  {
-      grondvorm: "exenterare",
-      aanvullingen: "exentero, exenteravi, exenteratum",
-      vertaling: "leegmaken"
-  },
-  {
-      grondvorm: "exercere",
-      aanvullingen: "exerceo, exercui, exercitum",
-      vertaling: "oefenen, beoefenen, uitoefenen",
-      basis: true
-  },
-  {
-      grondvorm: "exercitatus",
-      aanvullingen: "exercitata, exercitatum",
-      vertaling: "geoefend, getraind"
-  },
-  {
-      grondvorm: "exercitium",
-      aanvullingen: "exercitii",
-      vertaling: "oefening, training, drillen"
-  },
-  {
-      grondvorm: "exercitus",
-      aanvullingen: "exercita, exercitum",
-      vertaling: "geoefend, zwaar beproefd, moeilijk, zwaar, vol ongemak",
-      basis: true,
-      teksten: ["7a/8", "7b/2", "8b/9"],
-      volgorde: {"7a/8": 11, "7b/2": 105, "8b/9": 85}
-  },
-  {
-      grondvorm: "exercitus",
-      aanvullingen: "exercitus",
-      vertaling: "leger",
-      basis: true
-  },
-  {
-      grondvorm: "exhibere",
-      aanvullingen: "exhibeo, exhibui, exhibitum",
-      vertaling: "organiseren, opvoeren, laten optreden"
-  },
-  {
-      grondvorm: "exilium",
-      aanvullingen: "exilii",
-      vertaling: "verbanning"
-  },
-  {
-      grondvorm: "eximius",
-      aanvullingen: "eximia, eximium",
-      vertaling: "buitengewoon, uitzonderlijk, uitstekend",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 30}
-  },
-  {
-      grondvorm: "exire",
-      aanvullingen: "exeo, exii, exitum",
-      vertaling: "weggaan, naar buiten gaan, vertrekken",
-      basis: true
-  },
-  {
-      grondvorm: "existimare",
-      aanvullingen: "existimo, existimavi, existimatum",
-      vertaling: "menen, denken",
-      basis: true,
-      teksten: ["7a/5"],
-      volgorde: {"7a/5": 18}
-  },
-  {
-      grondvorm: "exitus",
-      aanvullingen: "exitus, (m.)",
-      vertaling: "uitgang",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 46}
-  },
-  {
-      grondvorm: "exorare",
-      aanvullingen: "exoro, exoravi, exoratum",
-      vertaling: "met aandrang vragen, smeken, bidden"
-  },
-  {
-      grondvorm: "expedire",
-      aanvullingen: "expedio, expedivi, expeditum",
-      vertaling: "regelen, in orde brengen, zorgen voor",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 51}
-  },
-  {
-      grondvorm: "expellere",
-      aanvullingen: "expello, expuli, expulsum",
-      vertaling: "uitdrijven, verdrijven",
-      basis: true
-  },
-  {
-      grondvorm: "experientia",
-      aanvullingen: "experientiae, (v.)",
-      vertaling: "ervaring"
-  },
-  {
-      grondvorm: "experiri",
-      aanvullingen: "experior, expertus sum",
-      vertaling: "proberen, uitproberen",
-      basis: true,
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 129}
-  },
-  {
-      grondvorm: "expositus",
-      aanvullingen: "exposita, expositum ad + acc.",
-      vertaling: "belust op"
-  },
-  {
-      grondvorm: "exprimere",
-      aanvullingen: "exprimo, expressi, espressum",
-      vertaling: "uitdrukken, uitknijpen",
-      basis: true
-  },
-  {
-      grondvorm: "expugnatio",
-      aanvullingen: "expugnationis, (v.)",
-      vertaling: "belegering"
-  },
-  {
-      grondvorm: "exscribere",
-      aanvullingen: "exscribo, exscripsi, exscriptum",
-      vertaling: "opschrijven"
-  },
-  {
-      grondvorm: "exsequi",
-      aanvullingen: "exsequor, exsecutus sum",
-      vertaling: "uitvoeren, voltooien"
-  },
-  {
-      grondvorm: "exspectare",
-      aanvullingen: "exspecto, exspectavi, exspectatum",
-      vertaling: "wachten op, verwachten",
-      basis: true,
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 28}
-  },
-  {
-      grondvorm: "exstruere",
-      aanvullingen: "exstruo, exstruxi, exstructum",
-      vertaling: "oprichten, bouwen",
-      teksten: ["9a/4"],
-      volgorde: {"9a/4": 23}
-  },
-  {
-      grondvorm: "extemplo",
-      aanvullingen: "(bijw.)",
-      vertaling: "onmiddellijk, dadelijk",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 25}
-  },
-  {
-      grondvorm: "extendere",
-      aanvullingen: "extendo, extendi, extensum/extentum",
-      vertaling: "(zich) uitstrekken, uitspreiden",
-      teksten: ["8a/5", "9b/5"],
-      volgorde: {"8a/5": 5, "9b/5": 53}
-  },
-  {
-      grondvorm: "extergere",
-      aanvullingen: "extergeo, extersi, extersum",
-      vertaling: "afvegen, schoonvegen"
-  },
-  {
-      grondvorm: "extra",
-      aanvullingen: "+ acc. (vz.)",
-      vertaling: "buiten",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 42}
-  },
-  {
-      grondvorm: "extremus",
-      aanvullingen: "extrema, extremum",
-      vertaling: "uiterst, verst, laatst",
-      teksten: ["7a/1", "8a/3", "8b/9"],
-      volgorde: {"7a/1": 10, "8a/3": 123, "8b/9": 105}
-  },
-  {
-      grondvorm: "exuere",
-      aanvullingen: "exuo, exui, exutum + abl.",
-      vertaling: "uittrekken; zich ontdoen van",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 31}
-  },
-  {
-      grondvorm: "exurere",
-      aanvullingen: "exuro, exussi, exustum",
-      vertaling: "verbranden"
-  },
-  {
-      grondvorm: "faba",
-      aanvullingen: "fabae, (v.)",
-      vertaling: "boon, bonen"
-  },
-  {
-      grondvorm: "fabricator",
-      aanvullingen: "fabricatoris, (m.)",
-      vertaling: "vervaardiger, maker, ontwerper"
-  },
-  {
-      grondvorm: "fabula",
-      aanvullingen: "fabulae, (v.)",
-      vertaling: "verhaal, fabel",
-      teksten: ["8a/6"],
-      volgorde: {"8a/6": 19}
-  },
-  {
-      grondvorm: "Fabullus",
-      aanvullingen: "Fabulli",
-      vertaling: "Fabullus (eigennaam)"
-  },
-  {
-      grondvorm: "facere",
-      aanvullingen: "facio, feci, factum",
-      vertaling: "maken; doen",
-      basis: true,
-      teksten: ["7a/6", "7b/2", "8a/2", "8a/3", "8a/6", "8b/5", "8b/9", "9b/4", "9b/6", "9b/7", "10/9"],
-      volgorde: {"7a/6": 3, "7b/2": 62, "8a/2": 25, "8a/3": 29, "8a/6": 32, "8b/5": 54, "8b/9": 132, "9b/4": 15, "9b/6": 27, "9b/7": 34, "10/9": 5}
-  },
-  {
-      grondvorm: "facies",
-      aanvullingen: "faciei",
-      vertaling: "gezicht",
-      basis: true,
-      teksten: ["10/26"],
-      volgorde: {"10/26": 25}
-  },
-  {
-      grondvorm: "facilis",
-      aanvullingen: "facilis, facile",
-      vertaling: "gemakkelijk",
-      basis: true
-  },
-  {
-      grondvorm: "facilitas",
-      aanvullingen: "facilitatis",
-      vertaling: "gemakkelijkheid, inschikkelijkheid, toegevendheid",
-      teksten: ["7b/6"],
-      volgorde: {"7b/6": 7}
-  },
-  {
-      grondvorm: "facinus",
-      aanvullingen: "facinoris, (o.)",
-      vertaling: "daad, handeling; misdaad",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 15}
-  },
-  {
-      grondvorm: "factum",
-      aanvullingen: "facti, (o.)",
-      vertaling: "daad, handeling; feit",
-      basis: true,
-      teksten: ["7a/5"],
-      volgorde: {"7a/5": 11}
-  },
-  {
-      grondvorm: "facultas",
-      aanvullingen: "facultatis, (v.)",
-      vertaling: "mogelijkheid; kwaliteit, talent"
-  },
-  {
-      grondvorm: "fallere",
-      aanvullingen: "fallo, fefelli, –",
-      vertaling: "bedriegen, misleiden",
-      basis: true,
-      teksten: ["7a/5", "10/26"],
-      volgorde: {"7a/5": 39, "10/26": 101}
-  },
-  {
-      grondvorm: "falx",
-      aanvullingen: "falcis, (v.)",
-      vertaling: "zeis"
-  },
-  {
-      grondvorm: "fama",
-      aanvullingen: "famae, (v.)",
-      vertaling: "gerucht, roddel; naam, reputatie; roem",
-      basis: true,
-      teksten: ["9b/7"],
-      volgorde: {"9b/7": 7}
-  },
-  {
-      grondvorm: "famelicus",
-      aanvullingen: "famelica, famelicum",
-      vertaling: "hongerig"
-  },
-  {
-      grondvorm: "fames",
-      aanvullingen: "famis, (v.)",
-      vertaling: "honger",
-      basis: true,
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 118}
-  },
-  {
-      grondvorm: "familia",
-      aanvullingen: "familiae, (v.)",
-      vertaling: "familie",
-      teksten: ["7b/6", "8b/6"],
-      volgorde: {"7b/6": 25, "8b/6": 2}
-  },
-  {
-      grondvorm: "famosus",
-      aanvullingen: "famosa, famosum",
-      vertaling: "beroemd, bekend, berucht"
-  },
-  {
-      grondvorm: "fanaticus",
-      aanvullingen: "fanatica, fanaticum",
-      vertaling: "door een godheid tot razernij gebracht, razend"
-  },
-  {
-      grondvorm: "fasces",
-      aanvullingen: "fascium (enkel mv., m.), (m. mv.)",
-      vertaling: "fasces, roedenbundel (= bijl met twijgen omgord, gedragen door lictoren; symbool van het gezag van hogere magistraten)",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 79}
-  },
-  {
-      grondvorm: "fateri",
-      aanvullingen: "fateor, fassus sum",
-      vertaling: "bekennen, toegeven"
-  },
-  {
-      grondvorm: "fatum",
-      aanvullingen: "fati, (o.)",
-      vertaling: "Noodlot, Lot",
-      basis: true
-  },
-  {
-      grondvorm: "fauces",
-      aanvullingen: "faucium (enkel mv.), (vr. mv.)",
-      vertaling: "keel; bergpas; doorgang, passage",
-      teksten: ["8b/9", "10/8"],
-      volgorde: {"8b/9": 38, "10/8": 9}
-  },
-  {
-      grondvorm: "Faustulus",
-      aanvullingen: "Faustuli",
-      vertaling: "Faustulus (eigennaam)"
-  },
-  {
-      grondvorm: "favere",
-      aanvullingen: "faveo, favi, fautum + dat.",
-      vertaling: "iemand gunstig gezind zijn, begunstigen, steunen, toegewijd zijn aan",
-      basis: true
-  },
-  {
-      grondvorm: "favor",
-      aanvullingen: "favoris, (m.)",
-      vertaling: "gunst, begunstiging"
-  },
-  {
-      grondvorm: "favus",
-      aanvullingen: "favi, (m.)",
-      vertaling: "honingraat, honing",
-      teksten: ["10/14"],
-      volgorde: {"10/14": 23}
-  },
-  {
-      grondvorm: "fax",
-      aanvullingen: "facis, (v.)",
-      vertaling: "fakkel"
-  },
-  {
-      grondvorm: "Februarius",
-      aanvullingen: "Februaria, Februarium",
-      vertaling: "van februari",
-      teksten: ["6a/1", "7a/2"],
-      volgorde: {"6a/1": 2, "7a/2": 5}
-  },
-  {
-      grondvorm: "fecunditas",
-      aanvullingen: "fecunditatis, (v.)",
-      vertaling: "vruchtbaarheid"
-  },
-  {
-      grondvorm: "Felicissimus",
-      aanvullingen: "Felicissimi",
-      vertaling: "Felicissimus (eigennaam)"
-  },
-  {
-      grondvorm: "felix",
-      aanvullingen: "felix, felix; felicis",
-      vertaling: "gelukkig, voorspoedig, succesvol",
-      basis: true,
-      teksten: ["6b/4", "8a/6"],
-      volgorde: {"6b/4": 62, "8a/6": 37}
-  },
-  {
-      grondvorm: "femina",
-      aanvullingen: "feminae",
-      vertaling: "vrouw",
-      teksten: ["6a/2", "6b/2", "7a/3", "7a/6", "10/26"],
-      volgorde: {"6a/2": 47, "6b/2": 111, "7a/3": 45, "7a/6": 12, "10/26": 8}
-  },
-  {
-      grondvorm: "fenerare",
-      aanvullingen: "fenero, feneravi, feneratum + acc.",
-      vertaling: "geld lenen aan, financieren"
-  },
-  {
-      grondvorm: "fenestra",
-      aanvullingen: "fenestrae, (v.)",
-      vertaling: "raam",
-      teksten: ["6b/4", "8b/6", "9b/5"],
-      volgorde: {"6b/4": 21, "8b/6": 47, "9b/5": 10}
-  },
-  {
-      grondvorm: "feniculum",
-      aanvullingen: "feniculi, (o.)",
-      vertaling: "venkel"
-  },
-  {
-      grondvorm: "fera",
-      aanvullingen: "ferae, (v.)",
-      vertaling: "wild dier, wild beest"
-  },
-  {
-      grondvorm: "feralis",
-      aanvullingen: "feralis, ferale",
-      vertaling: "behorend tot de doden, doden-, rouw-"
-  },
-  {
-      grondvorm: "fere",
-      aanvullingen: "(bijw.)",
-      vertaling: "bijna, ongeveer; omstreeks",
-      teksten: ["6a/2", "7b/2", "9a/1", "9b/6"],
-      volgorde: {"6a/2": 6, "7b/2": 44, "9a/1": 44, "9b/6": 4}
-  },
-  {
-      grondvorm: "ferire",
-      aanvullingen: "ferio, –, –",
-      vertaling: "slaan, stoten",
-      teksten: ["6b/2", "6b/4"],
-      volgorde: {"6b/2": 38, "6b/4": 12}
-  },
-  {
-      grondvorm: "ferox",
-      aanvullingen: "ferox, ferox; ferocis",
-      vertaling: "woest, wild, onstuimig"
-  },
-  {
-      grondvorm: "fermentum",
-      aanvullingen: "fermenti, (o.)",
-      vertaling: "gist, gisting"
-  },
-  {
-      grondvorm: "ferre",
-      aanvullingen: "fero, tuli, latum",
-      vertaling: "dragen, voeren, brengen; zeggen, vertellen",
-      basis: true,
-      teksten: ["6b/2", "7b/4", "8a/3", "8b/9", "9a/1", "10/26"],
-      volgorde: {"6b/2": 73, "7b/4": 21, "8a/3": 39, "8b/9": 45, "9a/1": 32, "10/26": 47}
-  },
-  {
-      grondvorm: "ferreus",
-      aanvullingen: "ferrea, ferreum",
-      vertaling: "van ijzer, ijzeren"
-  },
-  {
-      grondvorm: "ferrum",
-      aanvullingen: "ferri, (o.)",
-      vertaling: "ijzer; zwaard",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 18}
-  },
-  {
-      grondvorm: "ferula",
-      aanvullingen: "ferulae, (v.)",
-      vertaling: "rietstok"
-  },
-  {
-      grondvorm: "ferus",
-      aanvullingen: "fera, ferum",
-      vertaling: "wild",
-      teksten: ["10/14"],
-      volgorde: {"10/14": 50}
-  },
-  {
-      grondvorm: "fervere",
-      aanvullingen: "ferveo, ferbui, –",
-      vertaling: "koken"
-  },
-  {
-      grondvorm: "fessus",
-      aanvullingen: "fessa, fessum",
-      vertaling: "vermoeid, uitgeput",
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 55}
-  },
-  {
-      grondvorm: "festinare",
-      aanvullingen: "festino, festinavi, festinatum",
-      vertaling: "zich haasten, zich spoeden",
-      teksten: ["6b/2", "9b/9"],
-      volgorde: {"6b/2": 75, "9b/9": 54}
-  },
-  {
-      grondvorm: "fibra",
-      aanvullingen: "fibrae, (v.)",
-      vertaling: "vezel; mv.: ingewanden"
-  },
-  {
-      grondvorm: "fideicommissum",
-      aanvullingen: "fideicommissi, (o.)",
-      vertaling: "testamentaire beschikking",
-      teksten: ["8b/10"],
-      volgorde: {"8b/10": 11}
-  },
-  {
-      grondvorm: "fidelis",
-      aanvullingen: "fidelis, fidele",
-      vertaling: "trouw"
-  },
-  {
-      grondvorm: "fidere",
-      aanvullingen: "fido, fisus sum + dat.",
-      vertaling: "vertrouwen op"
-  },
-  {
-      grondvorm: "fides",
-      aanvullingen: "fidei, (v.)",
-      vertaling: "vertrouwen, geloof; trouw; bescherming, hulp",
-      basis: true,
-      teksten: ["7a/3", "8b/10"],
-      volgorde: {"7a/3": 13, "8b/10": 14}
-  },
-  {
-      grondvorm: "fieri",
-      aanvullingen: "fio, factus sum",
-      vertaling: "gemaakt worden; ontstaan; worden; gebeuren",
-      basis: true,
-      teksten: ["6b/1", "8a/3", "8a/6", "8b/5", "8b/6", "10/3"],
-      volgorde: {"6b/1": 21, "8a/3": 61, "8a/6": 7, "8b/5": 27, "8b/6": 20, "10/3": 80}
-  },
-  {
-      grondvorm: "figura",
-      aanvullingen: "figurae, (v.)",
-      vertaling: "gestalte, uiterlijk, vorm",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 14}
-  },
-  {
-      grondvorm: "filia",
-      aanvullingen: "filiae, (v.)",
-      vertaling: "dochter",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 37}
-  },
-  {
-      grondvorm: "filius",
-      aanvullingen: "filii, (m.)",
-      vertaling: "zoon",
-      basis: true,
-      teksten: ["7a/3", "7b/4"],
-      volgorde: {"7a/3": 33, "7b/4": 4}
-  },
-  {
-      grondvorm: "finis",
-      aanvullingen: "finis (m.)",
-      vertaling: "einde, grens; mv.: grondgebied",
-      basis: true,
-      teksten: ["7a/1"],
-      volgorde: {"7a/1": 49}
-  },
-  {
-      grondvorm: "finitimus",
-      aanvullingen: "finitima, finitimum",
-      vertaling: "naburig"
-  },
-  {
-      grondvorm: "firmitas",
-      aanvullingen: "firmitatis, (v.)",
-      vertaling: "sterkte, stevigheid",
-      teksten: ["10/21"],
-      volgorde: {"10/21": 25}
-  },
-  {
-      grondvorm: "firmus",
-      aanvullingen: "firma, firmum",
-      vertaling: "sterk; betrouwbaar, trouw",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 28}
-  },
-  {
-      grondvorm: "fiscus",
-      aanvullingen: "fisci, (m.)",
-      vertaling: "mandje"
-  },
-  {
-      grondvorm: "fistula",
-      aanvullingen: "fistulae, (v.)",
-      vertaling: "pijp, buis",
-      teksten: ["10/19"],
-      volgorde: {"10/19": 16}
-  },
-  {
-      grondvorm: "flamen",
-      aanvullingen: "flaminis (m.)",
-      vertaling: "priester"
-  },
-  {
-      grondvorm: "flamma",
-      aanvullingen: "flammae, (v.)",
-      vertaling: "vlam, vuur",
-      basis: true,
-      teksten: ["6a/4", "6b/5"],
-      volgorde: {"6a/4": 9, "6b/5": 10}
-  },
-  {
-      grondvorm: "flectere",
-      aanvullingen: "flecto, flexi, flectum",
-      vertaling: "buigen, ombuigen",
-      basis: true,
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 144}
-  },
-  {
-      grondvorm: "flexus",
-      aanvullingen: "flexus, (m.)",
-      vertaling: "buiging, bocht",
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 27}
-  },
-  {
-      grondvorm: "flos",
-      aanvullingen: "floris (m.)",
-      vertaling: "bloem",
-      basis: true,
-      teksten: ["7b/12", "10/26"],
-      volgorde: {"7b/12": 8, "10/26": 50}
-  },
-  {
-      grondvorm: "fluctus",
-      aanvullingen: "fluctus, (m.)",
-      vertaling: "golf, vloed",
-      basis: true
-  },
-  {
-      grondvorm: "fluere",
-      aanvullingen: "fluo, fluxi, fluctum",
-      vertaling: "vloeien, voortvloeien"
-  },
-  {
-      grondvorm: "flumen",
-      aanvullingen: "fluminis, (o.)",
-      vertaling: "stroom, rivier",
-      basis: true,
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 24}
-  },
-  {
-      grondvorm: "fluvius",
-      aanvullingen: "fluvii, (m.)",
-      vertaling: "stroom, rivier"
-  },
-  {
-      grondvorm: "foculum",
-      aanvullingen: "foculi, (o.)",
-      vertaling: "haard, haardvuur, (kleine) offerhaard",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 86}
-  },
-  {
-      grondvorm: "foedus",
-      aanvullingen: "foeda, foedum",
-      vertaling: "lelijk, afstotelijk",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 51}
-  },
-  {
-      grondvorm: "folium",
-      aanvullingen: "folii, (o.)",
-      vertaling: "blad"
-  },
-  {
-      grondvorm: "follis",
-      aanvullingen: "follis, (m.)",
-      vertaling: "geldbuidel, beurs"
-  },
-  {
-      grondvorm: "fons",
-      aanvullingen: "fontis (m.)",
-      vertaling: "bron",
-      basis: true
-  },
-  {
-      grondvorm: "foras",
-      aanvullingen: "(bijw.)",
-      vertaling: "naar buiten"
-  },
-  {
-      grondvorm: "foris",
-      aanvullingen: "(bijw.)",
-      vertaling: "buiten, aan de buitenkant"
-  },
-  {
-      grondvorm: "forma",
-      aanvullingen: "formae, (v.)",
-      vertaling: "vorm, figuur",
-      basis: true,
-      teksten: ["10/3", "10/26"],
-      volgorde: {"10/3": 41, "10/26": 19}
-  },
-  {
-      grondvorm: "formare",
-      aanvullingen: "formo, formavi, formatum",
-      vertaling: "vormen"
-  },
-  {
-      grondvorm: "formica",
-      aanvullingen: "formicae, (v.)",
-      vertaling: "mier"
-  },
-  {
-      grondvorm: "formido",
-      aanvullingen: "formidinis, (v.)",
-      vertaling: "angst",
-      basis: true,
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 76}
-  },
-  {
-      grondvorm: "forte",
-      aanvullingen: "(bijw.)",
-      vertaling: "toevallig",
-      teksten: ["7a/3", "7b/2"],
-      volgorde: {"7a/3": 44, "7b/2": 34}
-  },
-  {
-      grondvorm: "fortis",
-      aanvullingen: "fortis, forte",
-      vertaling: "moedig, dapper, sterk",
-      basis: true,
-      teksten: ["6b/4", "7b/2", "8b/9", "9a/1"],
-      volgorde: {"6b/4": 41, "7b/2": 64, "8b/9": 142, "9a/1": 27}
-  },
-  {
-      grondvorm: "fortitudo",
-      aanvullingen: "fortitudinis, (v.)",
-      vertaling: "moed, dapperheid, sterkte",
-      basis: true
-  },
-  {
-      grondvorm: "fortuna",
-      aanvullingen: "fortunae, (v.)",
-      vertaling: "lot, toeval, geluk; mv.: bezittingen, eigendom",
-      basis: true,
-      teksten: ["7a/3", "8a/2"],
-      volgorde: {"7a/3": 40, "8a/2": 33}
-  },
-  {
-      grondvorm: "Fortuna",
-      aanvullingen: "Fortunae",
-      vertaling: "(de godin) Fortuna"
-  },
-  {
-      grondvorm: "Fortunata",
-      aanvullingen: "Fortunatae",
-      vertaling: "Fortunata (eigennaam)"
-  },
-  {
-      grondvorm: "Forum Appii",
-      aanvullingen: "Fori Appii",
-      vertaling: "Forum Appii (stadje ten zuiden van Rome)",
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 8}
-  },
-  {
-      grondvorm: "forum",
-      aanvullingen: "fori, (o.)",
-      vertaling: "markt(plaats)",
-      basis: true
-  },
-  {
-      grondvorm: "fossa",
-      aanvullingen: "fossae, (v.)",
-      vertaling: "gracht",
-      basis: true
-  },
-  {
-      grondvorm: "fovea",
-      aanvullingen: "foveae, (v.)",
-      vertaling: "kuil, valkuil"
-  },
-  {
-      grondvorm: "frangere",
-      aanvullingen: "frango, fregi, fractum",
-      vertaling: "breken, barsten",
-      basis: true,
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 17}
-  },
-  {
-      grondvorm: "frater",
-      aanvullingen: "fratris, (m.)",
-      vertaling: "broer",
-      basis: true
-  },
-  {
-      grondvorm: "frequens",
-      aanvullingen: "frequens, frequens; frequentis",
-      vertaling: "talrijk, veelvuldig; vaak, dikwijls",
-      teksten: ["10/8"],
-      volgorde: {"10/8": 20}
-  },
-  {
-      grondvorm: "frequenter",
-      aanvullingen: "(bijw.)",
-      vertaling: "vaak"
-  },
-  {
-      grondvorm: "frequentius",
-      aanvullingen: "(bijw.)",
-      vertaling: "vaker, nogal vaak, al te vaak",
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 7}
-  },
-  {
-      grondvorm: "fretum",
-      aanvullingen: "freti, (o.)",
-      vertaling: "zee-engte, zeestraat, zee",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 127}
-  },
-  {
-      grondvorm: "frigere",
-      aanvullingen: "frigo, frixi, frictum",
-      vertaling: "roosteren, bakken",
-      teksten: ["6b/9"],
-      volgorde: {"6b/9": 12}
-  },
-  {
-      grondvorm: "frigidus",
-      aanvullingen: "frigida, frigidum",
-      vertaling: "koud"
-  },
-  {
-      grondvorm: "frigus",
-      aanvullingen: "frigoris",
-      vertaling: "koude",
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 9}
-  },
-  {
-      grondvorm: "frons",
-      aanvullingen: "frondis, (v.)",
-      vertaling: "gebladerte, lover",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 18}
-  },
-  {
-      grondvorm: "frons",
-      aanvullingen: "frontis, (v.)",
-      vertaling: "voorhoofd; voorkant"
-  },
-  {
-      grondvorm: "fructuosus",
-      aanvullingen: "fructuosa, fructuosum",
-      vertaling: "lonend, voordelig, nuttig",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 6}
-  },
-  {
-      grondvorm: "fructus",
-      aanvullingen: "fructus, (m.)",
-      vertaling: "vrucht; opbrengst",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 10}
-  },
-  {
-      grondvorm: "frugi",
-      aanvullingen: "(onverbuigbaar adj.)",
-      vertaling: "sober, zuinig; eerlijk, braaf"
-  },
-  {
-      grondvorm: "frui",
-      aanvullingen: "fruor, fructus sum + abl.",
-      vertaling: "genieten van",
-      basis: true,
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 31}
-  },
-  {
-      grondvorm: "frumentum",
-      aanvullingen: "frumenti, (o.)",
-      vertaling: "graan",
-      basis: true,
-      teksten: ["8a/5"],
-      volgorde: {"8a/5": 35}
-  },
-  {
-      grondvorm: "frustra",
-      aanvullingen: "(bijw.)",
-      vertaling: "tevergeefs",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 128}
-  },
-  {
-      grondvorm: "frux",
-      aanvullingen: "frugis, (v.)",
-      vertaling: "vrucht"
-  },
-  {
-      grondvorm: "Fucinus lacus",
-      aanvullingen: "Fucini lacus",
-      vertaling: "het Fucinusmeer (in Italië)"
-  },
-  {
-      grondvorm: "fuga",
-      aanvullingen: "fugae, (v.)",
-      vertaling: "vlucht",
-      basis: true,
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 113}
-  },
-  {
-      grondvorm: "fugare",
-      aanvullingen: "fugo, fugavi, fugatum",
-      vertaling: "op de vlucht jagen, verdrijven",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 104}
-  },
-  {
-      grondvorm: "fugere",
-      aanvullingen: "fugio, fugi, –",
-      vertaling: "vluchten, ontvluchten",
-      basis: true,
-      teksten: ["6b/2", "7a/7", "8b/8"],
-      volgorde: {"6b/2": 96, "7a/7": 18, "8b/8": 1}
-  },
-  {
-      grondvorm: "fulgor",
-      aanvullingen: "fulgoris, (m.)",
-      vertaling: "bliksem, bliksemschicht; glans, schittering, gloed",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 14}
-  },
-  {
-      grondvorm: "fulgur",
-      aanvullingen: "fulguris, (o.)",
-      vertaling: "bliksem, bliksemschicht",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 16}
-  },
-  {
-      grondvorm: "fulmen",
-      aanvullingen: "fulminis, (o.)",
-      vertaling: "bliksem, bliksemschicht"
-  },
-  {
-      grondvorm: "fumus",
-      aanvullingen: "fumi, (m.)",
-      vertaling: "rook"
-  },
-  {
-      grondvorm: "fundere",
-      aanvullingen: "fundo, fudi, fusum",
-      vertaling: "gieten, uitgieten",
-      basis: true
-  },
-  {
-      grondvorm: "fundus",
-      aanvullingen: "fundi, (m.)",
-      vertaling: "grond, bodem; landgoed, boerderij",
-      teksten: ["8b/3", "8b/5"],
-      volgorde: {"8b/3": 11, "8b/5": 33}
-  },
-  {
-      grondvorm: "funebris",
-      aanvullingen: "funebris, funebre",
-      vertaling: "begrafenis-"
-  },
-  {
-      grondvorm: "funus",
-      aanvullingen: "funeris, (o.)",
-      vertaling: "begrafenis, begrafenisstoet",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 90}
-  },
-  {
-      grondvorm: "furiosus",
-      aanvullingen: "furiosa, furiosum",
-      vertaling: "razend, waanzinnig",
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 39}
-  },
-  {
-      grondvorm: "fustis",
-      aanvullingen: "fustis (m.)",
-      vertaling: "knuppel, stok",
-      teksten: ["7a/5"],
-      volgorde: {"7a/5": 6}
-  },
-  {
-      grondvorm: "Gallia",
-      aanvullingen: "Galliae",
-      vertaling: "Gallië",
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 1}
-  },
-  {
-      grondvorm: "Gallus",
-      aanvullingen: "Galli",
-      vertaling: "Galliër",
-      teksten: ["9a/1", "9a/4"],
-      volgorde: {"9a/1": 16, "9a/4": 4}
-  },
-  {
-      grondvorm: "Garunna",
-      aanvullingen: "Garunae",
-      vertaling: "(de rivier) Garonne",
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 23}
-  },
-  {
-      grondvorm: "gaudere",
-      aanvullingen: "gaudeo, gavisus sum",
-      vertaling: "zich verheugen, blij zijn",
-      basis: true,
-      teksten: ["7a/5", "10/26"],
-      volgorde: {"7a/5": 35, "10/26": 100}
-  },
-  {
-      grondvorm: "gaudium",
-      aanvullingen: "gaudii, (o.)",
-      vertaling: "vreugde"
-  },
-  {
-      grondvorm: "geminus",
-      aanvullingen: "gemina, geminum",
-      vertaling: "tweeling-",
-      basis: true
-  },
-  {
-      grondvorm: "geminus",
-      aanvullingen: "gemini",
-      vertaling: "tweeling",
-      basis: true
-  },
-  {
-      grondvorm: "gens",
-      aanvullingen: "gentis, (v.)",
-      vertaling: "volk",
-      basis: true,
-      teksten: ["8a/3", "8b/5", "9a/1"],
-      volgorde: {"8a/3": 65, "8b/5": 7, "9a/1": 48}
-  },
-  {
-      grondvorm: "genus",
-      aanvullingen: "generis, (o.)",
-      vertaling: "geboorte, afstamming, geslacht; soort",
-      basis: true,
-      teksten: ["8b/3", "9b/6", "10/14", "10/21"],
-      volgorde: {"8b/3": 42, "9b/6": 51, "10/14": 3, "10/21": 2}
-  },
-  {
-      grondvorm: "gerere",
-      aanvullingen: "gero, gessi, gestum",
-      vertaling: "dragen, voeren",
-      basis: true,
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 67}
-  },
-  {
-      grondvorm: "Germanus",
-      aanvullingen: "Germani",
-      vertaling: "Germaan"
-  },
-  {
-      grondvorm: "gerulus",
-      aanvullingen: "geruli",
-      vertaling: "drager, sjouwer",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 80}
-  },
-  {
-      grondvorm: "gignere",
-      aanvullingen: "gigno, genui, genitum",
-      vertaling: "verwekken, voortbrengen, scheppen",
-      teksten: ["10/14"],
-      volgorde: {"10/14": 14}
-  },
-  {
-      grondvorm: "gladiator",
-      aanvullingen: "gladiatoris, (m.)",
-      vertaling: "gladiator"
-  },
-  {
-      grondvorm: "gladiatorius",
-      aanvullingen: "gladiatoria, gladiatorium",
-      vertaling: "van een gladiator, gladiatoren-"
-  },
-  {
-      grondvorm: "gladius",
-      aanvullingen: "gladii",
-      vertaling: "zwaard",
-      basis: true,
-      teksten: ["10/3"],
-      volgorde: {"10/3": 52}
-  },
-  {
-      grondvorm: "glomerare",
-      aanvullingen: "glomero, glomeravi, glomeratum",
-      vertaling: "kneden"
-  },
-  {
-      grondvorm: "gradus",
-      aanvullingen: "gradus, (m.)",
-      vertaling: "stap, trede",
-      basis: true,
-      teksten: ["7a/1"],
-      volgorde: {"7a/1": 4}
-  },
-  {
-      grondvorm: "Graecia",
-      aanvullingen: "Graeciae",
-      vertaling: "Griekenland",
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 10}
-  },
-  {
-      grondvorm: "Graecus",
-      aanvullingen: "Graeca, Graecum",
-      vertaling: "Grieks",
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 3}
-  },
-  {
-      grondvorm: "Graecus",
-      aanvullingen: "Graeci",
-      vertaling: "Griek"
-  },
-  {
-      grondvorm: "gramen",
-      aanvullingen: "graminis, (o.)",
-      vertaling: "gras, kruid"
-  },
-  {
-      grondvorm: "granum",
-      aanvullingen: "grani, (o.)",
-      vertaling: "graankorrel, graan"
-  },
-  {
-      grondvorm: "graphium",
-      aanvullingen: "graphii, (o.)",
-      vertaling: "schrijfstift"
-  },
-  {
-      grondvorm: "gratia",
-      aanvullingen: "gratiae, (v.)",
-      vertaling: "charme, bekoorlijkheid; dank",
-      basis: true
-  },
-  {
-      grondvorm: "gen. + gratia",
-      aanvullingen: "(vz.)",
-      vertaling: "omwille van, ter wille van, wegens",
-    teksten: ["10/3"],
-    volgorde: {"10/3": 46}
-  },
-  {
-      grondvorm: "gratulatio",
-      aanvullingen: "gratulationis, (v.)",
-      vertaling: "gelukwens, felicitatie"
-  },
-  {
-      grondvorm: "gratus",
-      aanvullingen: "grata, gratum",
-      vertaling: "dankbaar; aangenaam",
-      basis: true,
-      teksten: ["10/26"],
-      volgorde: {"10/26": 44}
-  },
-  {
-      grondvorm: "gravidus",
-      aanvullingen: "gravida, gravidum",
-      vertaling: "zwanger",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 16}
-  },
-  {
-      grondvorm: "gravis",
-      aanvullingen: "gravis, grave",
-      vertaling: "zwaar; ernstig",
-      basis: true,
-      teksten: ["7a/3", "9a/4"],
-      volgorde: {"7a/3": 38, "9a/4": 44}
-  },
-  {
-      grondvorm: "gravissimus",
-      aanvullingen: "gravissima, gravissimum",
-      vertaling: "zwaarst, zeer zwaar; ernstigst, zeer ernstig",
-      teksten: ["9a/4"],
-      volgorde: {"9a/4": 45}
-  },
-  {
-      grondvorm: "gravitas",
-      aanvullingen: "gravitatis, (v.)",
-      vertaling: "zwaarte, gewicht; ongemak; ernst",
-      teksten: ["10/8"],
-      volgorde: {"10/8": 18}
-  },
-  {
-      grondvorm: "gregatim",
-      aanvullingen: "(bijw.)",
-      vertaling: "in groep, gezamenlijk",
-      teksten: ["10/14"],
-      volgorde: {"10/14": 41}
-  },
-  {
-      grondvorm: "grex",
-      aanvullingen: "gregis (m.)",
-      vertaling: "kudde; troep, groep",
-      basis: true,
-      teksten: ["8b/5", "8b/9"],
-      volgorde: {"8b/5": 48, "8b/9": 71}
-  },
-  {
-      grondvorm: "gula",
-      aanvullingen: "gulae, (v.)",
-      vertaling: "keel, strot"
-  },
-  {
-      grondvorm: "guttur",
-      aanvullingen: "gutturis (m.)",
-      vertaling: "keel, strot"
-  },
-  {
-      grondvorm: "habere",
-      aanvullingen: "habeo, habui, habitum",
-      vertaling: "hebben; houden",
-      basis: true,
-      teksten: ["7a/3", "8a/3", "8a/5", "8b/5", "9a/1", "9b/5", "9b/7", "10/14", "10/19"],
-      volgorde: {"7a/3": 81, "8a/3": 14, "8a/5": 17, "8b/5": 11, "9a/1": 45, "9b/5": 77, "9b/7": 11, "10/14": 34, "10/19": 4}
-  },
-  {
-      grondvorm: "habitare",
-      aanvullingen: "habito, habitavi, habitatum",
-      vertaling: "wonen, bewonen"
-  },
-  {
-      grondvorm: "hac",
-      aanvullingen: "(bijw.)",
-      vertaling: "hierlangs … daarlangs, hier … daar"
-  },
-  {
-      grondvorm: "hac … hac",
-      aanvullingen: "(bijw.)",
-      vertaling: "hierlangs … daarlangs, hier … daar",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 75}
-  },
-  {
-      grondvorm: "haerere",
-      aanvullingen: "haereo, haesi, haesum + dat.",
-      vertaling: "blijven hangen aan, blijven steken in",
-      basis: true,
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 54}
-  },
-  {
-      grondvorm: "Hannibal",
-      aanvullingen: "Hannibalis (m.)",
-      vertaling: "Hannibal (eigennaam)"
-  },
-  {
-      grondvorm: "harena",
-      aanvullingen: "harenae",
-      vertaling: "zandkorrel, zand; strijdperk",
-      basis: true,
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 100}
-  },
-  {
-      grondvorm: "haud",
-      aanvullingen: "(bijw.)",
-      vertaling: "helemaal niet, niet",
-      teksten: ["7a/6"],
-      volgorde: {"7a/6": 10}
-  },
-  {
-      grondvorm: "heliocaminus",
-      aanvullingen: "heliocamini",
-      vertaling: "kamer aan de zonkant, zonneprieel",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 65}
-  },
-  {
-      grondvorm: "Heliodorus",
-      aanvullingen: "Heliodori",
-      vertaling: "Heliodorus (Griekse eigennaam)"
-  },
-  {
-      grondvorm: "Henna",
-      aanvullingen: "Hennae",
-      vertaling: "Henna (stad op Sicilië)"
-  },
-  {
-      grondvorm: "Hennensis",
-      aanvullingen: "Hennensis",
-      vertaling: "inwoner van Henna"
-  },
-  {
-      grondvorm: "herba",
-      aanvullingen: "herbae",
-      vertaling: "kruid, gras",
-      basis: true
-  },
-  {
-      grondvorm: "Herculaneum",
-      aanvullingen: "Herculanei",
-      vertaling: "(de stad) Herculaneum",
-      teksten: ["6a/1"],
-      volgorde: {"6a/1": 21}
-  },
-  {
-      grondvorm: "Hercule",
-      aanvullingen: "",
-      vertaling: "bij Hercules!, warempel!, waarachtig!, verdomd!"
-  },
-  {
-      grondvorm: "Hercules",
-      aanvullingen: "Herculis (m.)",
-      vertaling: "(de halfgod/held) Hercules"
-  },
-  {
-      grondvorm: "heres",
-      aanvullingen: "heredis",
-      vertaling: "erfgenaam",
-      teksten: ["8b/10"],
-      volgorde: {"8b/10": 16}
-  },
-  {
-      grondvorm: "hic",
-      aanvullingen: "(bijw.)",
-      vertaling: "hier, op deze plaats",
-      basis: true,
-      teksten: ["6b/3", "7a/6", "9b/3", "9b/4"],
-      volgorde: {"6b/3": 38, "7a/6": 8, "9b/3": 2, "9b/4": 17}
-  },
-  {
-      grondvorm: "hic",
-      aanvullingen: "haec, hoc (aanw. vnw.)",
-      vertaling: "deze, dit; hij, zij, het",
-      basis: true
-  },
-  {
-      grondvorm: "hiems",
-      aanvullingen: "hiemis",
-      vertaling: "winter",
-      basis: true
-  },
-  {
-      grondvorm: "hinc",
-      aanvullingen: "(bijw.)",
-      vertaling: "vanaf deze plaats, hiervandaan, van hier",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 102}
-  },
-  {
-      grondvorm: "Hispanus",
-      aanvullingen: "Hispani",
-      vertaling: "Spanjaard"
-  },
-  {
-      grondvorm: "homo",
-      aanvullingen: "hominis (m.)",
-      vertaling: "man, mens",
-      basis: true,
-      teksten: ["6a/7", "7a/7", "8a/3", "8b/3", "9b/6", "10/14"],
-      volgorde: {"6a/7": 3, "7a/7": 24, "8a/3": 3, "8b/3": 38, "9b/6": 49, "10/14": 12}
-  },
-  {
-      grondvorm: "honor",
-      aanvullingen: "honoris, (m.)",
-      vertaling: "eer",
-      basis: true
-  },
-  {
-      grondvorm: "honorare",
-      aanvullingen: "honoro, honoravi, honoratum",
-      vertaling: "eren"
-  },
-  {
-      grondvorm: "hora",
-      aanvullingen: "horae, (v.)",
-      vertaling: "uur",
-      basis: true,
-      teksten: ["6a/2", "9b/7"],
-      volgorde: {"6a/2": 5, "9b/7": 48}
-  },
-  {
-      grondvorm: "Horatius Cocles",
-      aanvullingen: "Horatii Coclitis",
-      vertaling: "Horatius Cocles (eigennaam)"
-  },
-  {
-      grondvorm: "horrendus",
-      aanvullingen: "horrenda, horrendum",
-      vertaling: "angstaanjagend, gruwelijk, vreselijk",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 107}
-  },
-  {
-      grondvorm: "horrere",
-      aanvullingen: "horreo, horrui, –",
-      vertaling: "verstijfd staan, stijf staan (van angst)"
-  },
-  {
-      grondvorm: "horrescere",
-      aanvullingen: "horresco, horrui, –",
-      vertaling: "bang worden van, bang zijn voor"
-  },
-  {
-      grondvorm: "horribilis",
-      aanvullingen: "horribilis, horribile",
-      vertaling: "huiveringwekkend, verschrikkelijk"
-  },
-  {
-      grondvorm: "hortus",
-      aanvullingen: "horti",
-      vertaling: "tuin",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 51}
-  },
-  {
-      grondvorm: "hospes",
-      aanvullingen: "hospitis (m.)",
-      vertaling: "gast; gastheer, herbergier; vreemdeling",
-      teksten: ["7a/6"],
-      volgorde: {"7a/6": 1}
-  },
-  {
-      grondvorm: "hospitium",
-      aanvullingen: "hospitii, (o.)",
-      vertaling: "gastvrijheid; herberg, hotel",
-      teksten: ["9b/3"],
-      volgorde: {"9b/3": 1}
-  },
-  {
-      grondvorm: "hostia",
-      aanvullingen: "hostiae, (v.)",
-      vertaling: "offerdier"
-  },
-  {
-      grondvorm: "hostilis",
-      aanvullingen: "hostilis, hostile",
-      vertaling: "van de vijand, vijandelijk",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 98}
-  },
-  {
-      grondvorm: "hostis",
-      aanvullingen: "hostis (m.)",
-      vertaling: "vijand",
-      basis: true,
-      teksten: ["7b/2", "7b/4", "8a/3"],
-      volgorde: {"7b/2": 8, "7b/4": 11, "8a/3": 53}
-  },
-  {
-      grondvorm: "huc",
-      aanvullingen: "(bijw.)",
-      vertaling: "hierheen, naar hier",
-      teksten: ["6a/4", "9b/10"],
-      volgorde: {"6a/4": 37, "9b/10": 2}
-  },
-  {
-      grondvorm: "humanus",
-      aanvullingen: "humana, humanum",
-      vertaling: "menselijk",
-      basis: true,
-      teksten: ["10/19"],
-      volgorde: {"10/19": 27}
-  },
-  {
-      grondvorm: "humus",
-      aanvullingen: "humi",
-      vertaling: "grond",
-      basis: true,
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 10}
-  },
-  {
-      grondvorm: "humi",
-      aanvullingen: "",
-      vertaling: "op de grond",
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 11}
-  },
-  {
-      grondvorm: "Hydrus",
-      aanvullingen: "Hydruntis",
-      vertaling: "(de stad) Hydrus (in Zuid-Italië)",
-      teksten: ["9b/7"],
-      volgorde: {"9b/7": 45}
-  },
-  {
-      grondvorm: "hypocaustum",
-      aanvullingen: "hypocausti",
-      vertaling: "stookkamer, hypocaustum",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 34}
-  },
-  {
-      grondvorm: "iacere",
-      aanvullingen: "iacio, ieci, iactum",
-      vertaling: "werpen",
-      basis: true
-  },
-  {
-      grondvorm: "iactare",
-      aanvullingen: "iacto, iactavi, iactatum",
-      vertaling: "werpen",
-      basis: true
-  },
-  {
-      grondvorm: "iam",
-      aanvullingen: "(bijw.)",
-      vertaling: "reeds, al",
-      basis: true,
-      teksten: ["6a/2", "6a/4", "7a/1", "7a/3", "9b/4"],
-      volgorde: {"6a/2": 25, "6a/4": 63, "7a/1": 55, "7a/3": 22, "9b/4": 26}
-  },
-  {
-      grondvorm: "Ianiculum",
-      aanvullingen: "Ianiculi",
-      vertaling: "de Janiculusheuvel (net buiten Rome)",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 106}
-  },
-  {
-      grondvorm: "ibi",
-      aanvullingen: "(bijw.)",
-      vertaling: "daar, op die plaats",
-      teksten: ["6a/4", "7b/2", "8b/9", "9b/9"],
-      volgorde: {"6a/4": 73, "7b/2": 33, "8b/9": 32, "9b/9": 9}
-  },
-  {
-      grondvorm: "ibidem",
-      aanvullingen: "(bijw.)",
-      vertaling: "op dezelfde plaats"
-  },
-  {
-      grondvorm: "ictus",
-      aanvullingen: "ictus, (m.)",
-      vertaling: "slag, stoot, aanval"
-  },
-  {
-      grondvorm: "id est",
-      aanvullingen: "",
-      vertaling: "dat is, dat wil zeggen, namelijk",
-      teksten: ["7a/1", "8a/3"],
-      volgorde: {"7a/1": 22, "8a/3": 66}
-  },
-  {
-      grondvorm: "idem",
-      aanvullingen: "eadem, idem",
-      vertaling: "dezelfde, hetzelfde",
-      basis: true
-  },
-  {
-      grondvorm: "idem",
-      aanvullingen: "eadem, idem … quam",
-      vertaling: "dezelfde, hetzelfde … als",
-      basis: true
-  },
-  {
-      grondvorm: "idem, eadem, idem ... quam",
-      aanvullingen: "",
-      vertaling: "dezelfde, hetzelfde … als",
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 43}
-  },
-  {
-      grondvorm: "idolum",
-      aanvullingen: "idoli, (o.)",
-      vertaling: "schim, spook"
-  },
-  {
-      grondvorm: "Idus",
-      aanvullingen: "Iduum (enkel mv.)",
-      vertaling: "de Iden (= in maart, mei, juli en oktober de 15e dag, in de andere maanden de 13e)"
-  },
-  {
-      grondvorm: "ignarus",
-      aanvullingen: "ignara, ignarum",
-      vertaling: "onwetend, onervaren",
-      basis: true,
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 70}
-  },
-  {
-      grondvorm: "ignis",
-      aanvullingen: "ignis (m.)",
-      vertaling: "vuur",
-      basis: true,
-      teksten: ["6b/5"],
-      volgorde: {"6b/5": 13}
-  },
-  {
-      grondvorm: "ignorare",
-      aanvullingen: "ignoro, ignoravi, ignoratum",
-      vertaling: "niet weten"
-  },
-  {
-      grondvorm: "ignoscere",
-      aanvullingen: "ignosco, ignovi, ignotum",
-      vertaling: "vergiffenis schenken, vergeven",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 48}
-  },
-  {
-      grondvorm: "ille",
-      aanvullingen: "illa, illud (aanw. vnw.)",
-      vertaling: "die, dat; hij, zij, het",
-      basis: true
-  },
-  {
-      grondvorm: "illic",
-      aanvullingen: "(bijw.)",
-      vertaling: "op die plaats, daar",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 66}
-  },
-  {
-      grondvorm: "illuc",
-      aanvullingen: "(bijw.)",
-      vertaling: "daarheen, naar daar",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 38}
-  },
-  {
-      grondvorm: "illustrare",
-      aanvullingen: "illustro, illustravi, illustratum",
-      vertaling: "verlichten",
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 46}
-  },
-  {
-      grondvorm: "imber",
-      aanvullingen: "imbris",
-      vertaling: "stortregen, regenbui, regenvlaag",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 44}
-  },
-  {
-      grondvorm: "immensus",
-      aanvullingen: "immensa, immensum",
-      vertaling: "onmeetbaar, zeer groot, gigantisch",
-      basis: true
-  },
-  {
-      grondvorm: "imminere",
-      aanvullingen: "immineo, –, – + dat.",
-      vertaling: "hangen over/boven; bedreigen",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 37}
-  },
-  {
-      grondvorm: "immobilis",
-      aanvullingen: "immobilis, immobile",
-      vertaling: "onbeweeglijk"
-  },
-  {
-      grondvorm: "immolare",
-      aanvullingen: "immolo, immolavi, immolatum",
-      vertaling: "offeren",
-      teksten: ["9a/4"],
-      volgorde: {"9a/4": 15}
-  },
-  {
-      grondvorm: "immortalis",
-      aanvullingen: "immortalis, immortale",
-      vertaling: "onsterfelijk"
-  },
-  {
-      grondvorm: "immotus",
-      aanvullingen: "immota, immotum",
-      vertaling: "onbewogen, onbeweeglijk, ongestoord, rustig",
-      teksten: ["8a/5"],
-      volgorde: {"8a/5": 39}
-  },
-  {
-      grondvorm: "impar",
-      aanvullingen: "impar, impar; imparis",
-      vertaling: "ongelijk"
-  },
-  {
-      grondvorm: "impedire",
-      aanvullingen: "impedio, impedi(v)i, impeditum",
-      vertaling: "belemmeren, verhinderen",
-      basis: true,
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 118}
-  },
-  {
-      grondvorm: "impellere",
-      aanvullingen: "impello, impuli, impulsum",
-      vertaling: "stoten tegen, duwen tegen, voortdrijven",
-      basis: true,
-      teksten: ["6a/7"],
-      volgorde: {"6a/7": 9}
-  },
-  {
-      grondvorm: "imperare",
-      aanvullingen: "impero, imperavi, imperatum",
-      vertaling: "bevelen, opdracht geven",
-      basis: true,
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 21}
-  },
-  {
-      grondvorm: "imperator",
-      aanvullingen: "imperatoris",
-      vertaling: "bevelhebber; keizer",
-      basis: true,
-      teksten: ["8b/1", "9b/6"],
-      volgorde: {"8b/1": 5, "9b/6": 46}
-  },
-  {
-      grondvorm: "imperatum",
-      aanvullingen: "imperati, (o.)",
-      vertaling: "bevel"
-  },
-  {
-      grondvorm: "imperium",
-      aanvullingen: "imperii, (o.)",
-      vertaling: "macht, gezag, heerschappij, rijk",
-      basis: true,
-      teksten: ["7b/4", "8b/9", "9a/1", "10/3"],
-      volgorde: {"7b/4": 35, "8b/9": 93, "9a/1": 56, "10/3": 73}
-  },
-  {
-      grondvorm: "impetrare",
-      aanvullingen: "impetro, impetravi, impetratum",
-      vertaling: "bereiken, gedaan krijgen, toestemming krijgen"
-  },
-  {
-      grondvorm: "impetus",
-      aanvullingen: "impetus, (m.)",
-      vertaling: "aanval",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 51}
-  },
-  {
-      grondvorm: "impetum facere",
-      aanvullingen: "in + acc.",
-      vertaling: "een aanval doen op, aanvallen"
-  },
-  {
-      grondvorm: "implere",
-      aanvullingen: "impleo, implevi, impletum",
-      vertaling: "vullen, vol maken",
-      basis: true,
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 49}
-  },
-  {
-      grondvorm: "imponere",
-      aanvullingen: "impono, imposui, impositum + dat.",
-      vertaling: "plaatsen op, leggen op; toekennen, geven",
-      basis: true,
-      teksten: ["6a/4", "6b/2", "7a/5", "9b/6"],
-      volgorde: {"6a/4": 55, "6b/2": 66, "7a/5": 32, "9b/6": 39}
-  },
-  {
-      grondvorm: "impositus",
-      aanvullingen: "imposita, impositum",
-      vertaling: "gelegd op, gezet op",
-      teksten: ["6a/4", "6b/2"],
-      volgorde: {"6a/4": 56, "6b/2": 67}
-  },
-  {
-      grondvorm: "imprimis",
-      aanvullingen: "(bijw.)",
-      vertaling: "vooral"
-  },
-  {
-      grondvorm: "impudicus",
-      aanvullingen: "impudica, impudicum",
-      vertaling: "schaamteloos, onfatsoenlijk"
-  },
-  {
-      grondvorm: "impunitas",
-      aanvullingen: "impunitatis, (v.)",
-      vertaling: "het niet straffen, vergiffenis",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 76}
-  },
-  {
-      grondvorm: "imus",
-      aanvullingen: "ima, imum",
-      vertaling: "onderste, laagste, benedenste",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 42}
-  },
-  {
-      grondvorm: "in",
-      aanvullingen: "+ abl. (vz.)",
-      vertaling: "in, op; tijdens",
-      basis: true,
-      teksten: ["6a/1", "6a/4", "6b/1", "6b/2", "6b/3", "6b/5", "7a/1", "7a/6", "7b/2", "7b/4", "7b/12", "8a/2", "8a/3", "8a/5", "8a/6", "8b/3", "8b/5", "8b/9", "9a/1", "9a/4", "9b/5", "9b/6", "9b/7", "10/3", "10/8", "10/21"],
-      volgorde: {"6a/1": 43, "6a/4": 26, "6b/1": 8, "6b/2": 50, "6b/3": 3, "6b/5": 3, "7a/1": 11, "7a/6": 24, "7b/2": 12, "7b/4": 44, "7b/12": 2, "8a/2": 44, "8a/3": 2, "8a/5": 43, "8a/6": 5, "8b/3": 5, "8b/5": 1, "8b/9": 83, "9a/1": 4, "9a/4": 17, "9b/5": 4, "9b/6": 31, "9b/7": 19, "10/3": 38, "10/8": 6, "10/21": 10}
-  },
-  {
-      grondvorm: "in",
-      aanvullingen: "+ acc. (vz.)",
-      vertaling: "naar, tot in, in",
-      basis: true,
-      teksten: ["6a/4", "6b/3", "6b/5", "7a/1", "8a/3", "8b/3", "9a/4", "9b/5", "10/21"],
-      volgorde: {"6a/4": 50, "6b/3": 46, "6b/5": 27, "7a/1": 31, "8a/3": 8, "8b/3": 35, "9a/4": 21, "9b/5": 58, "10/21": 35}
-  },
-  {
-      grondvorm: "in animo esse",
-      aanvullingen: "",
-      vertaling: "van plan zijn",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 14}
-  },
-  {
-      grondvorm: "in commune",
-      aanvullingen: "(vaste uitdrukking)",
-      vertaling: "gezamenlijk",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 20}
-  },
-  {
-      grondvorm: "in exilium eicere",
-      aanvullingen: "",
-      vertaling: "iemand verbannen"
-  },
-  {
-      grondvorm: "in perpetuum",
-      aanvullingen: "(vaste uitdrukking)",
-      vertaling: "voor eeuwig, voor altijd, voorgoed",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 78}
-  },
-  {
-      grondvorm: "in posterum",
-      aanvullingen: "(vaste uitdrukking)",
-      vertaling: "voor/in de toekomst, naar de toekomst toe",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 65}
-  },
-  {
-      grondvorm: "in regnum restituere",
-      aanvullingen: "",
-      vertaling: "terug aan de macht helpen"
-  },
-  {
-      grondvorm: "in superiorem partem referre",
-      aanvullingen: "",
-      vertaling: "omhoog brengen"
-  },
-  {
-      grondvorm: "incendere",
-      aanvullingen: "incendo, incendi, incensum",
-      vertaling: "in brand steken",
-      basis: true,
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 13}
-  },
-  {
-      grondvorm: "incendium",
-      aanvullingen: "incendii, (o.)",
-      vertaling: "brand",
-      teksten: ["6a/4", "6b/5"],
-      volgorde: {"6a/4": 11, "6b/5": 1}
-  },
-  {
-      grondvorm: "incertus",
-      aanvullingen: "incerta, incertum",
-      vertaling: "onzeker, onbepaald",
-      basis: true
-  },
-  {
-      grondvorm: "incessus",
-      aanvullingen: "incessus, (m.)",
-      vertaling: "stap, gang, manier van lopen",
-      teksten: ["7a/6"],
-      volgorde: {"7a/6": 31}
-  },
-  {
-      grondvorm: "inchoarc",
-      aanvullingen: "inchoo, inchoavi, inchoatum",
-      vertaling: "beginnen, een begin maken met"
-  },
-  {
-      grondvorm: "inchoare",
-      aanvullingen: "inchoo, inchoavi, inchoatum",
-      vertaling: "beginnen, een begin maken met",
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 29}
-  },
-  {
-      grondvorm: "inchoatus",
-      aanvullingen: "inchoata, inchoatum",
-      vertaling: "hier: onafgewerkt",
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 30}
-  },
-  {
-      grondvorm: "incidere",
-      aanvullingen: "incido, incidi, incisum",
-      vertaling: "vallen op, neervallen op",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 61}
-  },
-  {
-      grondvorm: "incipere",
-      aanvullingen: "incipio, incepi, inceptum",
-      vertaling: "beginnen",
-      basis: true,
-      teksten: ["7a/1", "9b/4"],
-      volgorde: {"7a/1": 47, "9b/4": 57}
-  },
-  {
-      grondvorm: "incitare",
-      aanvullingen: "incito, incitavi, incitatum",
-      vertaling: "ophitsen, aansporen"
-  },
-  {
-      grondvorm: "inclutus",
-      aanvullingen: "incluta, inclutum",
-      vertaling: "bekend, beroemd",
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 21}
-  },
-  {
-      grondvorm: "incognitus",
-      aanvullingen: "incognita, incognitum",
-      vertaling: "onbekend"
-  },
-  {
-      grondvorm: "incola",
-      aanvullingen: "incolae (m.)",
-      vertaling: "inwoner, bewoner"
-  },
-  {
-      grondvorm: "incolere",
-      aanvullingen: "incolo, incolui, incultum",
-      vertaling: "bewonen",
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 8}
-  },
-  {
-      grondvorm: "incolumis",
-      aanvullingen: "incolumis, incolume",
-      vertaling: "ongedeerd",
-      basis: true
-  },
-  {
-      grondvorm: "inconditus",
-      aanvullingen: "incondita, inconditum",
-      vertaling: "eenvoudig, sober, ruw"
-  },
-  {
-      grondvorm: "inculpatus",
-      aanvullingen: "inculpata, inculpatum",
-      vertaling: "onberispelijk",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 15}
-  },
-  {
-      grondvorm: "incumbere",
-      aanvullingen: "incumbo, incubui, incubitum + dat.",
-      vertaling: "gaan liggen op",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 90}
-  },
-  {
-      grondvorm: "incutere",
-      aanvullingen: "incutio, incussi, incussum + dat.",
-      vertaling: "slaan op/tegen, stoten tegen",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 45}
-  },
-  {
-      grondvorm: "inde",
-      aanvullingen: "(bijw.)",
-      vertaling: "vandaar, daarom; vervolgens",
-      teksten: ["7a/1", "8a/2", "8a/3", "8b/9", "9b/4", "9b/5", "9b/7", "9b/9"],
-      volgorde: {"7a/1": 48, "8a/2": 48, "8a/3": 33, "8b/9": 53, "9b/4": 7, "9b/5": 26, "9b/7": 2, "9b/9": 13}
-  },
-  {
-      grondvorm: "indicare",
-      aanvullingen: "indico, indicavi, indicatum",
-      vertaling: "aanwijzen, tonen; melden, bekendmaken",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 56}
-  },
-  {
-      grondvorm: "indicere",
-      aanvullingen: "indico, indixi, indictum",
-      vertaling: "aankondigen",
-      teksten: ["7b/2", "9b/4"],
-      volgorde: {"7b/2": 76, "9b/4": 24}
-  },
-  {
-      grondvorm: "indigestus",
-      aanvullingen: "indigesta, indigestum",
-      vertaling: "ongeordend, verward"
-  },
-  {
-      grondvorm: "indignari",
-      aanvullingen: "indignor, indignatus sum",
-      vertaling: "verontwaardigd zijn, protesteren"
-  },
-  {
-      grondvorm: "indoctus",
-      aanvullingen: "indocta, indoctum",
-      vertaling: "ongeschoold, onervaren"
-  },
-  {
-      grondvorm: "inducere",
-      aanvullingen: "induco, induxi, inductum + dat.",
-      vertaling: "leiden in/naar, invoeren",
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 28}
-  },
-  {
-      grondvorm: "induere",
-      aanvullingen: "induo, indui, indutum",
-      vertaling: "aandoen, aantrekken"
-  },
-  {
-      grondvorm: "industria",
-      aanvullingen: "industriae",
-      vertaling: "werkzaamheid, ijver, vlijt, toewijding",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 4}
-  },
-  {
-      grondvorm: "inermis",
-      aanvullingen: "inermis, inerme",
-      vertaling: "ongewapend"
-  },
-  {
-      grondvorm: "infamis",
-      aanvullingen: "infamis, infame",
-      vertaling: "berucht"
-  },
-  {
-      grondvorm: "infandus",
-      aanvullingen: "infanda, infandum",
-      vertaling: "gruwelijk, schandalig"
-  },
-  {
-      grondvorm: "infans",
-      aanvullingen: "infantis (m. en vr.)",
-      vertaling: "kind",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 48}
-  },
-  {
-      grondvorm: "infantarius",
-      aanvullingen: "infantaria, infantarium",
-      vertaling: "graag kinderen hebbend, kindgezind"
-  },
-  {
-      grondvorm: "infelix",
-      aanvullingen: "infelix, infelix; infelicis",
-      vertaling: "ongelukkig",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 61}
-  },
-  {
-      grondvorm: "infercire",
-      aanvullingen: "infercio, infersi, infersum",
-      vertaling: "proppen in, volproppen"
-  },
-  {
-      grondvorm: "inferior",
-      aanvullingen: "inferior, inferius; inferioris",
-      vertaling: "lager gelegen, lager",
-      teksten: ["6b/5"],
-      volgorde: {"6b/5": 34}
-  },
-  {
-      grondvorm: "inferre",
-      aanvullingen: "infero, intuli, illatum",
-      vertaling: "brengen in/naar, dragen in/naar",
-      basis: true,
-      teksten: ["6b/9"],
-      volgorde: {"6b/9": 16}
-  },
-  {
-      grondvorm: "inferus",
-      aanvullingen: "infera, inferum",
-      vertaling: "zich beneden bevindend, onder-",
-      basis: true
-  },
-  {
-      grondvorm: "infinitus",
-      aanvullingen: "infinita, infinitum",
-      vertaling: "oneindig"
-  },
-  {
-      grondvorm: "infra",
-      aanvullingen: "+ acc. (vz.)",
-      vertaling: "onder"
-  },
-  {
-      grondvorm: "infundere",
-      aanvullingen: "infundo, infudi, infusum",
-      vertaling: "gieten in; weken",
-      teksten: ["6b/9"],
-      volgorde: {"6b/9": 11}
-  },
-  {
-      grondvorm: "ingemere",
-      aanvullingen: "ingemo, ingemui, –",
-      vertaling: "zuchten, klagen"
-  },
-  {
-      grondvorm: "ingenium",
-      aanvullingen: "ingenii, (o.)",
-      vertaling: "karakter; talent",
-      basis: true
-  },
-  {
-      grondvorm: "ingens",
-      aanvullingen: "ingens, ingens; ingentis",
-      vertaling: "reusachtig",
-      basis: true,
-      teksten: ["6a/1", "6a/2", "6a/7", "6b/2", "8a/2"],
-      volgorde: {"6a/1": 32, "6a/2": 93, "6a/7": 5, "6b/2": 8, "8a/2": 60}
-  },
-  {
-      grondvorm: "ingenuus",
-      aanvullingen: "ingenua, ingenuum",
-      vertaling: "vrijgeboren",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 10}
-  },
-  {
-      grondvorm: "ingredi",
-      aanvullingen: "ingredior, ingressus sum",
-      vertaling: "binnengaan; beginnen; aanvallen",
-      basis: true
-  },
-  {
-      grondvorm: "inhabitare",
-      aanvullingen: "inhabito, inhabitavi, inhabitatum",
-      vertaling: "bewonen"
-  },
-  {
-      grondvorm: "inhibere",
-      aanvullingen: "inhibeo, inhibui, inhibitum",
-      vertaling: "tegenhouden, verhinderen",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 24}
-  },
-  {
-      grondvorm: "inicere",
-      aanvullingen: "inicio, inieci, iniectum",
-      vertaling: "werpen in",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 87}
-  },
-  {
-      grondvorm: "iniquus",
-      aanvullingen: "iniqua, iniquum",
-      vertaling: "ongelijk; ongunstig, nadelig, ongelegen",
-      basis: true,
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 19}
-  },
-  {
-      grondvorm: "inire",
-      aanvullingen: "ineo, inii, initum",
-      vertaling: "gaan naar, binnengaan; beginnen",
-      basis: true
-  },
-  {
-      grondvorm: "initium",
-      aanvullingen: "initii, (o.)",
-      vertaling: "begin",
-      basis: true,
-      teksten: ["9a/1", "9b/6"],
-      volgorde: {"9a/1": 54, "9b/6": 9}
-  },
-  {
-      grondvorm: "iniuria",
-      aanvullingen: "iniuriae, (v.)",
-      vertaling: "onrecht",
-      basis: true
-  },
-  {
-      grondvorm: "innabilis",
-      aanvullingen: "innabilis, innabile",
-      vertaling: "onbezwembaar"
-  },
-  {
-      grondvorm: "innocuus",
-      aanvullingen: "innocua, innocuum",
-      vertaling: "onschuldig"
-  },
-  {
-      grondvorm: "innuere",
-      aanvullingen: "innuo, innui, –",
-      vertaling: "toeknikken, wenken"
-  },
-  {
-      grondvorm: "innumerabilis",
-      aanvullingen: "innumerabilis, innumerabile",
-      vertaling: "ontelbaar",
-      teksten: ["7b/6"],
-      volgorde: {"7b/6": 39}
-  },
-  {
-      grondvorm: "inpubes",
-      aanvullingen: "inpubis, inpube; inpuberis",
-      vertaling: "onvolwassen, jong",
-      teksten: ["7a/1"],
-      volgorde: {"7a/1": 23}
-  },
-  {
-      grondvorm: "inquit",
-      aanvullingen: "",
-      vertaling: "hij/zij zegt, hij/zij zei",
-      basis: true,
-      teksten: ["7b/2", "7b/4", "10/3"],
-      volgorde: {"7b/2": 3, "7b/4": 3, "10/3": 67}
-  },
-  {
-      grondvorm: "insciens",
-      aanvullingen: "insciens, insciens; inscientis",
-      vertaling: "niet wetend, zonder het te weten"
-  },
-  {
-      grondvorm: "inserere",
-      aanvullingen: "insero, inserui, insertum",
-      vertaling: "vlechten in, verstrengelen in"
-  },
-  {
-      grondvorm: "inservire",
-      aanvullingen: "io, –, – + dat.",
-      vertaling: "dienstbaar zijn, ten dienste staan van, dienst doen"
-  },
-  {
-      grondvorm: "insidere",
-      aanvullingen: "insideo, insedi, insessum",
-      vertaling: "zitten op"
-  },
-  {
-      grondvorm: "insidiae",
-      aanvullingen: "insidiarum (enkel mv.), (vr. mv.)",
-      vertaling: "hinderlaag, aanslag, complot"
-  },
-  {
-      grondvorm: "insigne",
-      aanvullingen: "insignis, (o.)",
-      vertaling: "onderscheidingsteken, kenteken",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 78}
-  },
-  {
-      grondvorm: "insignis",
-      aanvullingen: "insignis, insigne",
-      vertaling: "versierd; opvallend, opmerkelijk, buitengewoon",
-      basis: true,
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 56}
-  },
-  {
-      grondvorm: "instabilis",
-      aanvullingen: "instabilis, instabile",
-      vertaling: "onstabiel, onvast, onbegaanbaar",
-      basis: true
-  },
-  {
-      grondvorm: "instituere",
-      aanvullingen: "instituo, institui, institutum",
-      vertaling: "inrichten, organiseren; bepalen, beslissen",
-      basis: true,
-      teksten: ["8a/5"],
-      volgorde: {"8a/5": 37}
-  },
-  {
-      grondvorm: "institutum",
-      aanvullingen: "instituti, (o.)",
-      vertaling: "instelling, zede, gewoonte, gebruik",
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 18}
-  },
-  {
-      grondvorm: "instrumentum",
-      aanvullingen: "instrumenti, (o.)",
-      vertaling: "werktuig",
-      teksten: ["8b/3"],
-      volgorde: {"8b/3": 41}
-  },
-  {
-      grondvorm: "insula",
-      aanvullingen: "insulae, (v.)",
-      vertaling: "eiland; flatgebouw",
-      basis: true,
-      teksten: ["6b/8"],
-      volgorde: {"6b/8": 1}
-  },
-  {
-      grondvorm: "intactus",
-      aanvullingen: "intacta, intactum",
-      vertaling: "onaangeraakt, onaangeroerd, ongedeerd",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 100}
-  },
-  {
-      grondvorm: "integer",
-      aanvullingen: "integra, integrum",
-      vertaling: "onbeschadigd, onaangeroerd",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 124}
-  },
-  {
-      grondvorm: "intellegere",
-      aanvullingen: "intellego, intellexi, intellectum",
-      vertaling: "begrijpen",
-      basis: true
-  },
-  {
-      grondvorm: "inter",
-      aanvullingen: "+ acc. (vz.)",
-      vertaling: "tussen; tijdens",
-      basis: true,
-      teksten: ["10/14"],
-      volgorde: {"10/14": 1}
-  },
-  {
-      grondvorm: "inter se",
-      aanvullingen: "(vaste uitdrukking)",
-      vertaling: "onderling",
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 20}
-  },
-  {
-      grondvorm: "intercursare",
-      aanvullingen: "intercurso, intercursavi, intercursatum",
-      vertaling: "lopen tussen, rennen tussen"
-  },
-  {
-      grondvorm: "interdum",
-      aanvullingen: "(bijw.)",
-      vertaling: "soms",
-      teksten: ["6a/2", "10/8"],
-      volgorde: {"6a/2": 100, "10/8": 5}
-  },
-  {
-      grondvorm: "interea",
-      aanvullingen: "(bijw.)",
-      vertaling: "ondertussen",
-      teksten: ["9b/7", "10/26"],
-      volgorde: {"9b/7": 29, "10/26": 13}
-  },
-  {
-      grondvorm: "interficere",
-      aanvullingen: "interficio, interfeci, interfectum",
-      vertaling: "doden",
-      basis: true
-  },
-  {
-      grondvorm: "intericere",
-      aanvullingen: "intericio, interieci, interiectum",
-      vertaling: "ertussen gooien, inschuiven, invoegen"
-  },
-  {
-      grondvorm: "interim",
-      aanvullingen: "(bijw.)",
-      vertaling: "ondertussen",
-      teksten: ["6a/4", "6b/2"],
-      volgorde: {"6a/4": 1, "6b/2": 14}
-  },
-  {
-      grondvorm: "interimere",
-      aanvullingen: "interimo, interemi, interemptum",
-      vertaling: "doden",
-      teksten: ["7a/5"],
-      volgorde: {"7a/5": 9}
-  },
-  {
-      grondvorm: "interire",
-      aanvullingen: "intereo, interii, interitum",
-      vertaling: "omkomen, vergaan"
-  },
-  {
-      grondvorm: "interpretamentum",
-      aanvullingen: "interpretamenti, (o.)",
-      vertaling: "verklaring, uitleg"
-  },
-  {
-      grondvorm: "interrogare",
-      aanvullingen: "interrogo, interrogavi, interrogatum",
-      vertaling: "vragen; ondervragen, verhoren",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 53}
-  },
-  {
-      grondvorm: "interrumpere",
-      aanvullingen: "interrumpo, interrumpi, interruptum",
-      vertaling: "onderbreken; afbreken"
-  },
-  {
-      grondvorm: "intolerabilis",
-      aanvullingen: "intolerabilis, intolerabile",
-      vertaling: "ondraaglijk",
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 24}
-  },
-  {
-      grondvorm: "intra",
-      aanvullingen: "+ acc. (vz.)",
-      vertaling: "binnen, naar … binnen",
-      teksten: ["6a/4", "7b/2"],
-      volgorde: {"6a/4": 23, "7b/2": 19}
-  },
-  {
-      grondvorm: "intrare",
-      aanvullingen: "intro, intravi, intratum",
-      vertaling: "naar binnen gaan, binnengaan",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 5}
-  },
-  {
-      grondvorm: "introire",
-      aanvullingen: "introeo, introii, introitum",
-      vertaling: "naar binnen gaan, binnengaan",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 21}
-  },
-  {
-      grondvorm: "introïre",
-      aanvullingen: "introeo, introii, introitum",
-      vertaling: "naar binnen gaan, binnengaan"
-  },
-  {
-      grondvorm: "inturbidus",
-      aanvullingen: "inturbida, inturbidum",
-      vertaling: "ongestoord, rustig",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 18}
-  },
-  {
-      grondvorm: "intus",
-      aanvullingen: "(bijw.)",
-      vertaling: "vanbinnen, binnenin, binnen",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 22}
-  },
-  {
-      grondvorm: "inusitatus",
-      aanvullingen: "inusitata, inusitatum",
-      vertaling: "ongewoon, abnormaal",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 10}
-  },
-  {
-      grondvorm: "invenire",
-      aanvullingen: "invenio, inveni, inventum",
-      vertaling: "vinden, aantreffen",
-      basis: true
-  },
-  {
-      grondvorm: "inventor",
-      aanvullingen: "inventoris",
-      vertaling: "uitvinder",
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 30}
-  },
-  {
-      grondvorm: "investigare",
-      aanvullingen: "investigo, investigavi, investigatum",
-      vertaling: "uitzoeken, onderzoeken, trachten te weten te komen",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 59}
-  },
-  {
-      grondvorm: "invicem",
-      aanvullingen: "(bijw.)",
-      vertaling: "beurtelings, om de beurt"
-  },
-  {
-      grondvorm: "invidere",
-      aanvullingen: "invideo, invidi, invisum",
-      vertaling: "jaloers zijn"
-  },
-  {
-      grondvorm: "inviolatus",
-      aanvullingen: "inviolata, inviolatum",
-      vertaling: "ongeschonden, ongedeerd",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 101}
-  },
-  {
-      grondvorm: "invisus",
-      aanvullingen: "invisa, invisum",
-      vertaling: "ongezien, onbemert, verborgen",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 47}
-  },
-  {
-      grondvorm: "invitare",
-      aanvullingen: "invito, invitavi, invitatum",
-      vertaling: "uitnodigen"
-  },
-  {
-      grondvorm: "involvere",
-      aanvullingen: "involvo, involui, involutum",
-      vertaling: "wentelen in, wikkelen in"
-  },
-  {
-      grondvorm: "iocari",
-      aanvullingen: "iocor, iocatus sum",
-      vertaling: "grappen maken, plezier maken"
-  },
-  {
-      grondvorm: "Iolaus",
-      aanvullingen: "Iolai",
-      vertaling: "Jolaüs (eigennaam)"
-  },
-  {
-      grondvorm: "Ionius",
-      aanvullingen: "Ionia, Ionium",
-      vertaling: "Ionisch"
-  },
-  {
-      grondvorm: "Iphis",
-      aanvullingen: "Iphis",
-      vertaling: "Iphis (eigennaam)",
-      teksten: ["7a/5"],
-      volgorde: {"7a/5": 34}
-  },
-  {
-      grondvorm: "ipse",
-      aanvullingen: "ipsa, ipsum (aanw. vnw.)",
-      vertaling: "zelf",
-      teksten: ["8a/3", "9a/1"],
-      volgorde: {"8a/3": 120, "9a/1": 13}
-  },
-  {
-      grondvorm: "ira",
-      aanvullingen: "irae, (v.)",
-      vertaling: "woede",
-      basis: true,
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 116}
-  },
-  {
-      grondvorm: "iratus",
-      aanvullingen: "irata, iratum",
-      vertaling: "kwaad, woedend"
-  },
-  {
-      grondvorm: "ire",
-      aanvullingen: "eo, ii, itum",
-      vertaling: "gaan",
-      basis: true,
-      teksten: ["6a/4", "7b/4", "9b/7", "9b/10"],
-      volgorde: {"6a/4": 52, "7b/4": 89, "9b/7": 3, "9b/10": 6}
-  },
-  {
-      grondvorm: "inrumpere",
-      aanvullingen: "inrumpo, inrupi, inruptum",
-      vertaling: "binnendringen, binnenvallen, binnenstormen",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 49}
-  },
-  {
-      grondvorm: "is",
-      aanvullingen: "ea, id (aanw. vnw.)",
-      vertaling: "die, dat; hij, zij, het",
-      basis: true
-  },
-  {
-      grondvorm: "iste",
-      aanvullingen: "ista, istud (aanw. vnw.)",
-      vertaling: "die, dat; hij, zij, het"
-  },
-  {
-      grondvorm: "istic",
-      aanvullingen: "(bijw.)",
-      vertaling: "daar, op die plaats"
-  },
-  {
-      grondvorm: "ita",
-      aanvullingen: "(bijw.)",
-      vertaling: "zo, op die manier",
-      basis: true,
-      teksten: ["9b/4", "9b/5"],
-      volgorde: {"9b/4": 39, "9b/5": 15}
-  },
-  {
-      grondvorm: "ita … ut",
-      aanvullingen: "+ conj.",
-      vertaling: "zo … dat",
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 41}
-  },
-  {
-      grondvorm: "Italia",
-      aanvullingen: "Italiae",
-      vertaling: "Italië",
-      teksten: ["8b/9", "9b/7"],
-      volgorde: {"8b/9": 106, "9b/7": 44}
-  },
-  {
-      grondvorm: "Italicus",
-      aanvullingen: "Italica, Italicum",
-      vertaling: "Italisch",
-      teksten: ["8a/5", "8b/3"],
-      volgorde: {"8a/5": 4, "8b/3": 6}
-  },
-  {
-      grondvorm: "Italicus",
-      aanvullingen: "Italici",
-      vertaling: "inwoner van Italië, Italiaan"
-  },
-  {
-      grondvorm: "itaque",
-      aanvullingen: "(vgw.)",
-      vertaling: "dus",
-      basis: true,
-      teksten: ["7a/1", "10/19"],
-      volgorde: {"7a/1": 14, "10/19": 28}
-  },
-  {
-      grondvorm: "item",
-      aanvullingen: "",
-      vertaling: "ook, eveneens",
-      teksten: ["8b/3"],
-      volgorde: {"8b/3": 14}
-  },
-  {
-      grondvorm: "iter",
-      aanvullingen: "itineris (o.)",
-      vertaling: "weg; reis",
-      basis: true,
-      teksten: ["9a/1", "9b/4"],
-      volgorde: {"9a/1": 35, "9b/4": 14}
-  },
-  {
-      grondvorm: "iter facere",
-      aanvullingen: "",
-      vertaling: "op reis gaan, reizen",
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 16}
-  },
-  {
-      grondvorm: "iterum",
-      aanvullingen: "(bijw.)",
-      vertaling: "opnieuw",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 95}
-  },
-  {
-      grondvorm: "iubere",
-      aanvullingen: "iubeo, iussi, iussum",
-      vertaling: "bevelen",
-      basis: true,
-      teksten: ["6b/4", "7a/3", "7b/2", "7b/4", "8b/10"],
-      volgorde: {"6b/4": 32, "7a/3": 76, "7b/2": 95, "7b/4": 31, "8b/10": 9}
-  },
-  {
-      grondvorm: "iucundus",
-      aanvullingen: "iucunda, iucundum",
-      vertaling: "aangenaam, prettig, leuk",
-      basis: true
-  },
-  {
-      grondvorm: "iudex",
-      aanvullingen: "iudicis (m.)",
-      vertaling: "rechter"
-  },
-  {
-      grondvorm: "iudicium",
-      aanvullingen: "iudicii, (o.)",
-      vertaling: "oordeel, vonnis; proces; rechtspraak",
-      teksten: ["8a/5"],
-      volgorde: {"8a/5": 29}
-  },
-  {
-      grondvorm: "iugerum",
-      aanvullingen: "iugeri, (o.)",
-      vertaling: "een morgen land (= ¼ hectare)",
-      teksten: ["8a/5"],
-      volgorde: {"8a/5": 16}
-  },
-  {
-      grondvorm: "iugulum",
-      aanvullingen: "iuguli, (o.)",
-      vertaling: "keel, hals"
-  },
-  {
-      grondvorm: "iugum",
-      aanvullingen: "iugi, (o.)",
-      vertaling: "juk"
-  },
-  {
-      grondvorm: "Iulianus",
-      aanvullingen: "Iuliani",
-      vertaling: "Iulianus (eigennaam)"
-  },
-  {
-      grondvorm: "Iulius",
-      aanvullingen: "Iulia, Iulium",
-      vertaling: "van de maand juli",
-      teksten: ["6b/8"],
-      volgorde: {"6b/8": 7}
-  },
-  {
-      grondvorm: "Iulius",
-      aanvullingen: "Iulii",
-      vertaling: "Iulius (eigennaam)"
-  },
-  {
-      grondvorm: "iumentum",
-      aanvullingen: "iumenti",
-      vertaling: "lastdier",
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 21}
-  },
-  {
-      grondvorm: "iungere",
-      aanvullingen: "iungo, iunxi, iunctum",
-      vertaling: "verbinden",
-      basis: true,
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 42}
-  },
-  {
-      grondvorm: "Iuno",
-      aanvullingen: "Iunonis",
-      vertaling: "(de godin) Juno"
-  },
-  {
-      grondvorm: "Iupiter",
-      aanvullingen: "Iovis",
-      vertaling: "(de god) Jupiter",
-      teksten: ["7a/2", "9a/1"],
-      volgorde: {"7a/2": 8, "9a/1": 40}
-  },
-  {
-      grondvorm: "iure",
-      aanvullingen: "(bijw.)",
-      vertaling: "met recht, terecht",
-      teksten: ["10/14"],
-      volgorde: {"10/14": 7}
-  },
-  {
-      grondvorm: "ius",
-      aanvullingen: "iuris (o.)",
-      vertaling: "recht, rechtspraak",
-      teksten: ["7a/8", "8a/3", "10/14"],
-      volgorde: {"7a/8": 10, "8a/3": 64, "10/14": 6}
-  },
-  {
-      grondvorm: "iussus",
-      aanvullingen: "iussus, (m.)",
-      vertaling: "bevel"
-  },
-  {
-      grondvorm: "iustitia",
-      aanvullingen: "iustitiae, (v.)",
-      vertaling: "rechtvaardigheid, gerechtigheid",
-      basis: true
-  },
-  {
-      grondvorm: "iustus",
-      aanvullingen: "iusta, iustum",
-      vertaling: "rechtvaardig; wettig; eerlijk, juist",
-      basis: true
-  },
-  {
-      grondvorm: "iuvare",
-      aanvullingen: "iuvo, iuvi, iutum",
-      vertaling: "helpen",
-      teksten: ["7a/1", "7b/2"],
-      volgorde: {"7a/1": 38, "7b/2": 11}
-  },
-  {
-      grondvorm: "iuvencus",
-      aanvullingen: "iuvenci",
-      vertaling: "(jonge) stier"
-  },
-  {
-      grondvorm: "iuvenescere",
-      aanvullingen: "iuvenesco, –, –",
-      vertaling: "terug jong worden, verjongen"
-  },
-  {
-      grondvorm: "iuvenis",
-      aanvullingen: "iuvenis (m.)",
-      vertaling: "jongeman (tussen 30 en 45 jaar)",
-      teksten: ["7a/1", "7b/2"],
-      volgorde: {"7a/1": 34, "7b/2": 94}
-  },
-  {
-      grondvorm: "iuventus",
-      aanvullingen: "iuventutis, (v.)",
-      vertaling: "jeugd",
-      teksten: ["7b/2", "7b/4"],
-      volgorde: {"7b/2": 75, "7b/4": 67}
-  },
-  {
-      grondvorm: "Kal.",
-      aanvullingen: "Kalendae, Kalendarum (enkel mv.)",
-      vertaling: "Kalenden (= 1e dag van de maand)",
-      teksten: ["6a/2", "6b/8", "7a/2"],
-      volgorde: {"6a/2": 2, "6b/8": 6, "7a/2": 4}
-  },
-  {
-      grondvorm: "labes",
-      aanvullingen: "labis, (v.)",
-      vertaling: "gebrek"
-  },
-  {
-      grondvorm: "labi",
-      aanvullingen: "labor, lapsus sum",
-      vertaling: "glijden"
-  },
-  {
-      grondvorm: "labium",
-      aanvullingen: "labii, (o.)",
-      vertaling: "lip"
-  },
-  {
-      grondvorm: "labor",
-      aanvullingen: "laboris, (m.)",
-      vertaling: "moeite, inspanning; werk, arbeid",
-      basis: true,
-      teksten: ["8a/3", "10/14"],
-      volgorde: {"8a/3": 19, "10/14": 29}
-  },
-  {
-      grondvorm: "laborare",
-      aanvullingen: "laboro, laboravi, laboratum",
-      vertaling: "werken, zwoegen",
-      teksten: ["7a/1", "8b/6"],
-      volgorde: {"7a/1": 57, "8b/6": 28}
-  },
-  {
-      grondvorm: "lac",
-      aanvullingen: "lactis, (o.)",
-      vertaling: "melk"
-  },
-  {
-      grondvorm: "lacer",
-      aanvullingen: "lacera, lacerum",
-      vertaling: "verscheurd",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 136}
-  },
-  {
-      grondvorm: "lacrima",
-      aanvullingen: "lacrimae, (v.)",
-      vertaling: "traan",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 58}
-  },
-  {
-      grondvorm: "lacus",
-      aanvullingen: "lacus, (m.)",
-      vertaling: "meer"
-  },
-  {
-      grondvorm: "Laecania",
-      aanvullingen: "Laecaniae",
-      vertaling: "Laecania (eigennaam)"
-  },
-  {
-      grondvorm: "laetus",
-      aanvullingen: "laeta, laetum",
-      vertaling: "blij, verheugd"
-  },
-  {
-      grondvorm: "lamenta",
-      aanvullingen: "lamentorum (enkel mv.)",
-      vertaling: "gejammer, gehuil",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 109}
-  },
-  {
-      grondvorm: "lana",
-      aanvullingen: "lanae, (v.)",
-      vertaling: "wol",
-      teksten: ["7a/6"],
-      volgorde: {"7a/6": 2}
-  },
-  {
-      grondvorm: "lanificium",
-      aanvullingen: "lanificii, (o.)",
-      vertaling: "het maken van wol, het spinnen",
-      teksten: ["7b/6"],
-      volgorde: {"7b/6": 8}
-  },
-  {
-      grondvorm: "lanius",
-      aanvullingen: "lanii",
-      vertaling: "slager",
-      teksten: ["6b/1"],
-      volgorde: {"6b/1": 4}
-  },
-  {
-      grondvorm: "lapidarius",
-      aanvullingen: "lapidaria, lapidarium",
-      vertaling: "steen-, die stenen vervoert",
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 22}
-  },
-  {
-      grondvorm: "lapidosus",
-      aanvullingen: "lapidosa, lapidosum",
-      vertaling: "vol met stenen"
-  },
-  {
-      grondvorm: "lapillus",
-      aanvullingen: "lapilli, (m.)",
-      vertaling: "steentje",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 62}
-  },
-  {
-      grondvorm: "lapis",
-      aanvullingen: "lapidis (m.)",
-      vertaling: "steen",
-      basis: true,
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 84}
-  },
-  {
-      grondvorm: "lapsus",
-      aanvullingen: "lapsus, (m.)",
-      vertaling: "misstap, fout, vergissing"
-  },
-  {
-      grondvorm: "lar",
-      aanvullingen: "laris (m.)",
-      vertaling: "huisgod",
-      basis: true,
-      teksten: ["9b/10"],
-      volgorde: {"9b/10": 12}
-  },
-  {
-      grondvorm: "lardum",
-      aanvullingen: "lardi, (o.)",
-      vertaling: "spek"
-  },
-  {
-      grondvorm: "laser",
-      aanvullingen: "laseris (o.)",
-      vertaling: "silphium (= soort plant)"
-  },
-  {
-      grondvorm: "lassitudo",
-      aanvullingen: "lassitudinis, (v.)",
-      vertaling: "vermoeidheid",
-      teksten: ["10/8"],
-      volgorde: {"10/8": 27}
-  },
-  {
-      grondvorm: "Latinus",
-      aanvullingen: "Latina, Latinum",
-      vertaling: "Latijns"
-  },
-  {
-      grondvorm: "latissimus",
-      aanvullingen: "latissima, latissimum",
-      vertaling: "breedst, zeer breed, wijdst, zeer wijd",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 8}
-  },
-  {
-      grondvorm: "Latium",
-      aanvullingen: "Latii",
-      vertaling: "(de streek) Latium"
-  },
-  {
-      grondvorm: "Latona",
-      aanvullingen: "Latonae",
-      vertaling: "Latona (eigennaam)"
-  },
-  {
-      grondvorm: "latrare",
-      aanvullingen: "latro, latravi, latratum",
-      vertaling: "blaffen"
-  },
-  {
-      grondvorm: "latro",
-      aanvullingen: "latronis",
-      vertaling: "rover, bandiet"
-  },
-  {
-      grondvorm: "latus",
-      aanvullingen: "lata, latum, (o.)",
-      vertaling: "breed, wijd",
-      teksten: ["6a/4", "9b/5"],
-      volgorde: {"6a/4": 7, "9b/5": 17}
-  },
-  {
-      grondvorm: "latus",
-      aanvullingen: "lateris, (o.)",
-      vertaling: "zijde, flank, kant, zijkant",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 104}
-  },
-  {
-      grondvorm: "lavare",
-      aanvullingen: "lavo, lavi, lautum",
-      vertaling: "wassen",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 60}
-  },
-  {
-      grondvorm: "Lavinium",
-      aanvullingen: "Lavinii",
-      vertaling: "(de stad) Lavinium"
-  },
-  {
-      grondvorm: "lectica",
-      aanvullingen: "lecticae",
-      vertaling: "draagstoel",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 9}
-  },
-  {
-      grondvorm: "lectus",
-      aanvullingen: "lecti, (m.)",
-      vertaling: "bed",
-      teksten: ["9b/3", "9b/5"],
-      volgorde: {"9b/3": 7, "9b/5": 75}
-  },
-  {
-      grondvorm: "legatus",
-      aanvullingen: "legati, (m.)",
-      vertaling: "gezant"
-  },
-  {
-      grondvorm: "legere",
-      aanvullingen: "lego, legi, lectum",
-      vertaling: "verzamelen; lezen; kiezen",
-      basis: true,
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 16}
-  },
-  {
-      grondvorm: "legio",
-      aanvullingen: "legionis, (v.)",
-      vertaling: "legioen",
-      basis: true
-  },
-  {
-      grondvorm: "legitimus",
-      aanvullingen: "legitima, legitimum",
-      vertaling: "wettelijk, door de wet toegestaan"
-  },
-  {
-      grondvorm: "lenis",
-      aanvullingen: "lenis, lene",
-      vertaling: "zacht, mild, kalm",
-      teksten: ["9b/7"],
-      volgorde: {"9b/7": 39}
-  },
-  {
-      grondvorm: "lenissimus",
-      aanvullingen: "lenissima, lenissimum",
-      vertaling: "zachts, mildst, kalmst; zeer zacht, zeer mild, zeer kalm",
-      teksten: ["9b/7"],
-      volgorde: {"9b/7": 40}
-  },
-  {
-      grondvorm: "Lentulus",
-      aanvullingen: "Lentuli",
-      vertaling: "Lentulus (eigennaam)",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 5}
-  },
-  {
-      grondvorm: "lentus",
-      aanvullingen: "lenta, lentum",
-      vertaling: "traag"
-  },
-  {
-      grondvorm: "leo",
-      aanvullingen: "leonis (m.)",
-      vertaling: "leeuw"
-  },
-  {
-      grondvorm: "Leontius",
-      aanvullingen: "Leontii",
-      vertaling: "Leontius (eigennaam)"
-  },
-  {
-      grondvorm: "lepidus",
-      aanvullingen: "lepida, lepidum",
-      vertaling: "lief, charmant; grappig, geestig",
-      teksten: ["7a/6"],
-      volgorde: {"7a/6": 30}
-  },
-  {
-      grondvorm: "lepus",
-      aanvullingen: "leporis (m.)",
-      vertaling: "haas"
-  },
-  {
-      grondvorm: "Leucas",
-      aanvullingen: "Leucadis",
-      vertaling: "(het eiland) Leucas (nu: Lefkadia)",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 5}
-  },
-  {
-      grondvorm: "levare",
-      aanvullingen: "levo, levavi, levatum + abl.",
-      vertaling: "verlichten van, bevrijden van",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 35}
-  },
-  {
-      grondvorm: "levis",
-      aanvullingen: "levis, leve",
-      vertaling: "licht, mild, zacht",
-      teksten: ["6a/1", "10/8"],
-      volgorde: {"6a/1": 31, "10/8": 8}
-  },
-  {
-      grondvorm: "lex",
-      aanvullingen: "legis, (v.)",
-      vertaling: "wet",
-      basis: true,
-      teksten: ["8a/5", "9a/1"],
-      volgorde: {"8a/5": 20, "9a/1": 19}
-  },
-  {
-      grondvorm: "lex Licinia",
-      aanvullingen: "legis Liciniae",
-      vertaling: "de Licinische wet",
-      teksten: ["8a/5"],
-      volgorde: {"8a/5": 21}
-  },
-  {
-      grondvorm: "libens",
-      aanvullingen: "libens, libens; libentis",
-      vertaling: "graag, gewillig, met veel plezier"
-  },
-  {
-      grondvorm: "libenter",
-      aanvullingen: "(bijw.)",
-      vertaling: "graag, gewillig, met veel plezier",
-      basis: true
-  },
-  {
-      grondvorm: "liber",
-      aanvullingen: "libera, liberum",
-      vertaling: "vrij",
-      basis: true,
-      teksten: ["7a/7", "8a/3", "8b/10"],
-      volgorde: {"7a/7": 31, "8a/3": 59, "8b/10": 6}
-  },
-  {
-      grondvorm: "liber",
-      aanvullingen: "libri",
-      vertaling: "boek",
-      basis: true
-  },
-  {
-      grondvorm: "Libera",
-      aanvullingen: "Liberae",
-      vertaling: "Libera (andere naam voor de godin Proserpina)"
-  },
-  {
-      grondvorm: "liberare",
-      aanvullingen: "libero, liberavi, liberatum",
-      vertaling: "bevrijden",
-      basis: true
-  },
-  {
-      grondvorm: "liberator",
-      aanvullingen: "liberatoris",
-      vertaling: "bevrijder"
-  },
-  {
-      grondvorm: "liberi",
-      aanvullingen: "liberorum (enkel mv.)",
-      vertaling: "kinderen",
-      basis: true,
-      teksten: ["6a/2", "6b/2", "7b/4", "8b/5"],
-      volgorde: {"6a/2": 55, "6b/2": 113, "7b/4": 70, "8b/5": 25}
-  },
-  {
-      grondvorm: "libertas",
-      aanvullingen: "libertatis",
-      vertaling: "vrijheid",
-      basis: true,
-      teksten: ["8b/10"],
-      volgorde: {"8b/10": 1}
-  },
-  {
-      grondvorm: "libertus",
-      aanvullingen: "liberti",
-      vertaling: "vrijgelatene, ex-slaaf"
-  },
-  {
-      grondvorm: "libido",
-      aanvullingen: "libidinis, (v.)",
-      vertaling: "wellust, losbandigheid"
-  },
-  {
-      grondvorm: "liceat",
-      aanvullingen: "",
-      vertaling: "het is toegelaten, het mag; het is mogelijk; het kan",
-      teksten: ["9b/10"],
-      volgorde: {"9b/10": 10}
-  },
-  {
-      grondvorm: "licens",
-      aanvullingen: "licens, licens; licentis",
-      vertaling: "vrij; brutaal, arrogant"
-  },
-  {
-      grondvorm: "licet",
-      aanvullingen: "",
-      vertaling: "het is toegelaten, het mag; het is mogelijk; het kan",
-      teksten: ["9b/10"],
-      volgorde: {"9b/10": 9}
-  },
-  {
-      grondvorm: "lictor",
-      aanvullingen: "lictoris, (m.)",
-      vertaling: "lictor (soort van bodyguard van de consuls, zij droegen de fasces)",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 90}
-  },
-  {
-      grondvorm: "Ligdus",
-      aanvullingen: "Ligdi",
-      vertaling: "Ligdus (eigennaam)",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 9}
-  },
-  {
-      grondvorm: "ligneus",
-      aanvullingen: "lignea, ligneum",
-      vertaling: "van hout gemaakt, houten"
-  },
-  {
-      grondvorm: "limen",
-      aanvullingen: "liminis, (o.)",
-      vertaling: "drempel",
-      teksten: ["6b/1"],
-      volgorde: {"6b/1": 9}
-  },
-  {
-      grondvorm: "lineamentum",
-      aanvullingen: "lineamenti, (o.)",
-      vertaling: "streep, lijn; omtrek, schets",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 78}
-  },
-  {
-      grondvorm: "lingere",
-      aanvullingen: "lingo, linxi, linctum",
-      vertaling: "likken, aflikken"
-  },
-  {
-      grondvorm: "lingua",
-      aanvullingen: "linguae, (v.)",
-      vertaling: "tong; taal",
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 14}
-  },
-  {
-      grondvorm: "linteum",
-      aanvullingen: "lintei, (o.)",
-      vertaling: "linnen doek, linnen laken",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 57}
-  },
-  {
-      grondvorm: "liquamen",
-      aanvullingen: "liquaminis, (o.)",
-      vertaling: "ook garum genaamd: een soort vissaus, die bereid werd uit gepekelde vissen"
-  },
-  {
-      grondvorm: "liquor",
-      aanvullingen: "liquoris, (m.)",
-      vertaling: "vloeistof, vocht",
-      teksten: ["10/21"],
-      volgorde: {"10/21": 40}
-  },
-  {
-      grondvorm: "littera",
-      aanvullingen: "litterae, (v.)",
-      vertaling: "letter; mv.: letters, brief",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 30}
-  },
-  {
-      grondvorm: "litus",
-      aanvullingen: "litoris, (o.)",
-      vertaling: "kust, strand",
-      teksten: ["6a/4", "9b/5"],
-      volgorde: {"6a/4": 51, "9b/5": 5}
-  },
-  {
-      grondvorm: "locare",
-      aanvullingen: "loco, locavi, locatum",
-      vertaling: "plaatsen; verhuren",
-      teksten: ["6b/8", "7a/6", "7a/7", "9b/3", "10/26"],
-      volgorde: {"6b/8": 4, "7a/6": 28, "7a/7": 26, "9b/3": 3, "10/26": 62}
-  },
-  {
-      grondvorm: "locare operas",
-      aanvullingen: "locare operas + gen.",
-      vertaling: "zich verhuren als",
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 27}
-  },
-  {
-      grondvorm: "locus",
-      aanvullingen: "loci (in het mv. onz.), (m.)",
-      vertaling: "plaats",
-      basis: true,
-      teksten: ["6a/2", "6a/4", "6b/3", "8b/5", "9a/4", "9b/6"],
-      volgorde: {"6a/2": 40, "6a/4": 6, "6b/3": 48, "8b/5": 39, "9a/4": 19, "9b/6": 16}
-  },
-  {
-      grondvorm: "longinquus",
-      aanvullingen: "longinqua, longinquum",
-      vertaling: "lang, ver",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 23}
-  },
-  {
-      grondvorm: "longitudo",
-      aanvullingen: "longitudinis, (v.)",
-      vertaling: "lengte",
-      teksten: ["6b/5"],
-      volgorde: {"6b/5": 18}
-  },
-  {
-      grondvorm: "longus",
-      aanvullingen: "longa, longum",
-      vertaling: "lang, ver",
-      basis: true,
-      teksten: ["6a/4", "7b/2", "9b/4", "10/26"],
-      volgorde: {"6a/4": 108, "7b/2": 69, "9b/4": 4, "10/26": 59}
-  },
-  {
-      grondvorm: "loqui",
-      aanvullingen: "loquor, locutus sum",
-      vertaling: "spreken",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 39}
-  },
-  {
-      grondvorm: "Lucius Aemilius Paulus",
-      aanvullingen: "Lucii Aemilii Pauli",
-      vertaling: "Lucius Aemilius Paulus (eigennaam)",
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 1}
-  },
-  {
-      grondvorm: "Lucius Cotta",
-      aanvullingen: "Lucii Cottae",
-      vertaling: "Lucius Cotta (eigennaam)"
-  },
-  {
-      grondvorm: "Lucius Iunius Brutus",
-      aanvullingen: "Lucii Iunii Bruti",
-      vertaling: "Lucius Junius Brutus (eigennaam)"
-  },
-  {
-      grondvorm: "Lucius Petrosidius",
-      aanvullingen: "Lucii Petrosidii",
-      vertaling: "Lucius Petrosidius (eigennaam)"
-  },
-  {
-      grondvorm: "Lucretia",
-      aanvullingen: "Lucretiae",
-      vertaling: "Lucretia (eigennaam)"
-  },
-  {
-      grondvorm: "luctari",
-      aanvullingen: "luctor, luctatus sum + dat.",
-      vertaling: "worstelen met",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 93}
-  },
-  {
-      grondvorm: "luculentus",
-      aanvullingen: "luculenta, luculentum",
-      vertaling: "licht, helder"
-  },
-  {
-      grondvorm: "lucus",
-      aanvullingen: "luci, (m.)",
-      vertaling: "aan een god gewijd bos, heilig bos, bos"
-  },
-  {
-      grondvorm: "ludi magister",
-      aanvullingen: "ludi magistri",
-      vertaling: "onderwijzer, leraar",
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 52}
-  },
-  {
-      grondvorm: "ludibundus",
-      aanvullingen: "ludibunda, ludibundum",
-      vertaling: "spelend, plezier makend, zonder zorgen",
-      teksten: ["9b/7"],
-      volgorde: {"9b/7": 46}
-  },
-  {
-      grondvorm: "ludus",
-      aanvullingen: "ludi, (m.)",
-      vertaling: "spel; mv.: (publieke) spelen; school, gladiatorenschool",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 6}
-  },
-  {
-      grondvorm: "lumbus",
-      aanvullingen: "lumbi (meestal mv.), (m.)",
-      vertaling: "lende(nen)",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 36}
-  },
-  {
-      grondvorm: "lumen",
-      aanvullingen: "luminis, (o.)",
-      vertaling: "licht; oog",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 44}
-  },
-  {
-      grondvorm: "luna",
-      aanvullingen: "lunae, (v.)",
-      vertaling: "maan"
-  },
-  {
-      grondvorm: "lupa",
-      aanvullingen: "lupae, (v.)",
-      vertaling: "wolvin"
-  },
-  {
-      grondvorm: "lusus",
-      aanvullingen: "lusus, (m.)",
-      vertaling: "spel"
-  },
-  {
-      grondvorm: "lutulentus",
-      aanvullingen: "lutulenta, lutulentum",
-      vertaling: "modderig, vuil",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 98}
-  },
-  {
-      grondvorm: "lutum",
-      aanvullingen: "luti, (o.)",
-      vertaling: "modder, slijk",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 103}
-  },
-  {
-      grondvorm: "lux",
-      aanvullingen: "lucis, (v.)",
-      vertaling: "licht, daglicht, dag",
-      basis: true
-  },
-  {
-      grondvorm: "machina",
-      aanvullingen: "machinae, (v.)",
-      vertaling: "machine, hijskraan",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 81}
-  },
-  {
-      grondvorm: "machinatio",
-      aanvullingen: "machinationis, (v.)",
-      vertaling: "machine, hijskraan",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 21}
-  },
-  {
-      grondvorm: "macies",
-      aanvullingen: "maciei",
-      vertaling: "magerheid"
-  },
-  {
-      grondvorm: "maculosus",
-      aanvullingen: "maculosa, maculosum",
-      vertaling: "gevlekt, bevlekt, besmeurd",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 102}
-  },
-  {
-      grondvorm: "magis",
-      aanvullingen: "(bijw.)",
-      vertaling: "meer",
-      teksten: ["8b/5", "9b/10"],
-      volgorde: {"8b/5": 52, "9b/10": 5}
-  },
-  {
-      grondvorm: "magis quam",
-      aanvullingen: "(bijw.)",
-      vertaling: "meer … dan",
-      teksten: ["7b/2", "8b/6"],
-      volgorde: {"7b/2": 97, "8b/6": 3}
-  },
-  {
-      grondvorm: "magis … quam",
-      aanvullingen: "",
-      vertaling: "meer … dan"
-  },
-  {
-      grondvorm: "magister",
-      aanvullingen: "magistri",
-      vertaling: "meester, leraar",
-      basis: true
-  },
-  {
-      grondvorm: "magnificus",
-      aanvullingen: "magnifica, magnificum",
-      vertaling: "luisterrijk, prachtig, sjiek"
-  },
-  {
-      grondvorm: "magnitudo",
-      aanvullingen: "magnitudinis, (v.)",
-      vertaling: "grootte, omvang",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 12}
-  },
-  {
-      grondvorm: "magnus",
-      aanvullingen: "magna, magnum",
-      vertaling: "groot",
-      basis: true,
-      teksten: ["6a/1", "6a/2", "6b/1", "6b/2", "6b/5", "7b/2", "8a/3", "8a/6", "9b/4", "9b/6", "9b/9"],
-      volgorde: {"6a/1": 16, "6a/2": 18, "6b/1": 15, "6b/2": 35, "6b/5": 21, "7b/2": 9, "8a/3": 71, "8a/6": 33, "9b/4": 2, "9b/6": 45, "9b/9": 62}
-  },
-  {
-      grondvorm: "maiestas",
-      aanvullingen: "maiestatis, (v.)",
-      vertaling: "verhevenheid, waardigheid, aanzien, gezag",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 37}
-  },
-  {
-      grondvorm: "maior",
-      aanvullingen: "maior, maius; maioris",
-      vertaling: "groter",
-      teksten: ["6a/2", "8a/3", "8a/6"],
-      volgorde: {"6a/2": 19, "8a/3": 72, "8a/6": 34}
-  },
-  {
-      grondvorm: "maledicere",
-      aanvullingen: "maledico, maledixi, maledictum + dat.",
-      vertaling: "kwaad spreken over, uitschelden, vervloeken",
-      basis: true,
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 12}
-  },
-  {
-      grondvorm: "maledictum",
-      aanvullingen: "maledicti, (o.)",
-      vertaling: "vervloeking; scheldwoord",
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 37}
-  },
-  {
-      grondvorm: "malignus",
-      aanvullingen: "maligna, malignum",
-      vertaling: "slecht, kwaadaardig, onbetrouwbaar",
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 13}
-  },
-  {
-      grondvorm: "malle",
-      aanvullingen: "malo, malui, –",
-      vertaling: "liever willen, verkiezen",
-      basis: true
-  },
-  {
-      grondvorm: "malum",
-      aanvullingen: "mali, (o.)",
-      vertaling: "kwaad, ellende, onheil, ramp",
-      teksten: ["6a/1"],
-      volgorde: {"6a/1": 14}
-  },
-  {
-      grondvorm: "malus",
-      aanvullingen: "mala, malum",
-      vertaling: "slecht, kwaadaardig",
-      basis: true,
-      teksten: ["9b/4", "10/8"],
-      volgorde: {"9b/4": 20, "10/8": 11}
-  },
-  {
-      grondvorm: "mancipium",
-      aanvullingen: "mancipii, (o.)",
-      vertaling: "eigendom, bezit; slaaf",
-      teksten: ["8a/3", "8b/3"],
-      volgorde: {"8a/3": 49, "8b/3": 1}
-  },
-  {
-      grondvorm: "mandare",
-      aanvullingen: "mando, mandavi, mandatum",
-      vertaling: "toevertouwen, opdragen, bevelen",
-      basis: true,
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 52}
-  },
-  {
-      grondvorm: "mandatum",
-      aanvullingen: "mandati, (o.)",
-      vertaling: "opdracht, bevel",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 55}
-  },
-  {
-      grondvorm: "mandra",
-      aanvullingen: "mandrae, (v.)",
-      vertaling: "kudde",
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 31}
-  },
-  {
-      grondvorm: "manducare",
-      aanvullingen: "manduco, manducavi, manducatum",
-      vertaling: "eten, opeten"
-  },
-  {
-      grondvorm: "mane",
-      aanvullingen: "(bijw.)",
-      vertaling: "'s morgens",
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 53}
-  },
-  {
-      grondvorm: "manere",
-      aanvullingen: "maneo, mansi, mansum",
-      vertaling: "blijven; wachten",
-      basis: true,
-      teksten: ["6b/2", "9b/7"],
-      volgorde: {"6b/2": 125, "9b/7": 27}
-  },
-  {
-      grondvorm: "Manes",
-      aanvullingen: "Manium (enkel mv.)",
-      vertaling: "de Manes (= geesten van de doden)"
-  },
-  {
-      grondvorm: "manes",
-      aanvullingen: "manium (enkel mv.)",
-      vertaling: "geest(en)"
-  },
-  {
-      grondvorm: "manicatus",
-      aanvullingen: "manicata, manicatum",
-      vertaling: "van lange mouwen voorzien, met lange mouwen",
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 14}
-  },
-  {
-      grondvorm: "manifestus",
-      aanvullingen: "manifesta, manifestum",
-      vertaling: "duidelijk, overduidelijk"
-  },
-  {
-      grondvorm: "Manlius",
-      aanvullingen: "Manlii",
-      vertaling: "Manlius (eigennaam)"
-  },
-  {
-      grondvorm: "Manneia",
-      aanvullingen: "Manneiae",
-      vertaling: "Manneia (eigennaam)"
-  },
-  {
-      grondvorm: "mansuetus",
-      aanvullingen: "mansueta, mansuetum",
-      vertaling: "getemd, tam",
-      teksten: ["10/14"],
-      volgorde: {"10/14": 49}
-  },
-  {
-      grondvorm: "manum de tabula",
-      aanvullingen: "",
-      vertaling: "'de hand van de tafel opheffen' → ergens mee ophouden, ergens mee stoppen"
-  },
-  {
-      grondvorm: "manumittere",
-      aanvullingen: "manumitto, manumisi, manumissum",
-      vertaling: "(een slaaf) vrijlaten",
-      teksten: ["8b/10"],
-      volgorde: {"8b/10": 18}
-  },
-  {
-      grondvorm: "manus",
-      aanvullingen: "manus (v.)",
-      vertaling: "hand",
-      basis: true,
-      teksten: ["6a/2", "8a/3", "8b/6", "10/3", "10/26"],
-      volgorde: {"6a/2": 66, "8a/3": 35, "8b/6": 54, "10/3": 62, "10/26": 96}
-  },
-  {
-      grondvorm: "Marcellus",
-      aanvullingen: "Marcelli",
-      vertaling: "Marcellus (eigennaam)",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 19}
-  },
-  {
-      grondvorm: "marculus",
-      aanvullingen: "marculi",
-      vertaling: "hamertje",
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 6}
-  },
-  {
-      grondvorm: "Marcus Licinius Crassus",
-      aanvullingen: "Marci Licinii Crassi",
-      vertaling: "Marcus Licinius Crassus (eigennaam)",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 101}
-  },
-  {
-      grondvorm: "Marcus",
-      aanvullingen: "Marci",
-      vertaling: "Marcus (eigennaam)"
-  },
-  {
-      grondvorm: "mare",
-      aanvullingen: "maris, (o.)",
-      vertaling: "zee",
-      basis: true,
-      teksten: ["6a/4", "9b/5", "9b/9", "10/21"],
-      volgorde: {"6a/4": 90, "9b/5": 19, "9b/9": 61, "10/21": 28}
-  },
-  {
-      grondvorm: "maritus",
-      aanvullingen: "mariti, (m.)",
-      vertaling: "echtgenoot, man",
-      teksten: ["7a/3", "7a/6"],
-      volgorde: {"7a/3": 62, "7a/6": 16}
-  },
-  {
-      grondvorm: "marmoreus",
-      aanvullingen: "marmorea, marmoreum",
-      vertaling: "van marmer gemaakt, marmeren"
-  },
-  {
-      grondvorm: "Mars",
-      aanvullingen: "Martis",
-      vertaling: "(de god) Mars",
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 39}
-  },
-  {
-      grondvorm: "matella",
-      aanvullingen: "matellae, (v.)",
-      vertaling: "pispot"
-  },
-  {
-      grondvorm: "mater",
-      aanvullingen: "matris (v.)",
-      vertaling: "moeder",
-      basis: true,
-      teksten: ["7a/3", "7b/6"],
-      volgorde: {"7a/3": 73, "7b/6": 28}
-  },
-  {
-      grondvorm: "materia",
-      aanvullingen: "materiae, (v.)",
-      vertaling: "stof, bouwmateriaal, materie",
-      basis: true,
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 54}
-  },
-  {
-      grondvorm: "maternus",
-      aanvullingen: "materna, maternumum",
-      vertaling: "langs moederskant"
-  },
-  {
-      grondvorm: "matrimus",
-      aanvullingen: "matrima, matrimum",
-      vertaling: "wiens moeder nog in leven is"
-  },
-  {
-      grondvorm: "matrona",
-      aanvullingen: "matronae",
-      vertaling: "getrouwde vrouw, matrone",
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 25}
-  },
-  {
-      grondvorm: "Matrona",
-      aanvullingen: "Matronae",
-      vertaling: "(de rivier) Marne"
-  },
-  {
-      grondvorm: "maturus",
-      aanvullingen: "matura, maturum",
-      vertaling: "rijp"
-  },
-  {
-      grondvorm: "maxime",
-      aanvullingen: "(bijw.)",
-      vertaling: "het meest, vooral",
-      teksten: ["9a/4", "10/14"],
-      volgorde: {"9a/4": 2, "10/14": 42}
-  },
-  {
-      grondvorm: "maximus",
-      aanvullingen: "maxima, maximum",
-      vertaling: "grootst, zeer groot",
-      basis: true
-  },
-  {
-      grondvorm: "Maximus",
-      aanvullingen: "Maximi",
-      vertaling: "Maximus (eigennaam)"
-  },
-  {
-      grondvorm: "mecum",
-      aanvullingen: "",
-      vertaling: "= cum me"
-  },
-  {
-      grondvorm: "medicamentum",
-      aanvullingen: "medicamenti",
-      vertaling: "geneesmiddel"
-  },
-  {
-      grondvorm: "medicus",
-      aanvullingen: "medici",
-      vertaling: "dokter, arts",
-      basis: true,
-      teksten: ["10/9"],
-      volgorde: {"10/9": 6}
-  },
-  {
-      grondvorm: "medium",
-      aanvullingen: "medii",
-      vertaling: "midden",
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 25}
-  },
-  {
-      grondvorm: "medius",
-      aanvullingen: "media, medium",
-      vertaling: "middelste",
-      basis: true,
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 24}
-  },
-  {
-      grondvorm: "medulla",
-      aanvullingen: "medullae",
-      vertaling: "merg; het binnenste"
-  },
-  {
-      grondvorm: "mehercule",
-      aanvullingen: "",
-      vertaling: "bij Hercules!, warempel!, waarachtig!, verdomd!",
-      teksten: ["8a/6"],
-      volgorde: {"8a/6": 30}
-  },
-  {
-      grondvorm: "mel",
-      aanvullingen: "mellis (o.)",
-      vertaling: "honing",
-      teksten: ["6b/9", "10/14"],
-      volgorde: {"6b/9": 14, "10/14": 15}
-  },
-  {
-      grondvorm: "melior",
-      aanvullingen: "melior, melius; melioris",
-      vertaling: "beter",
-      teksten: ["8a/6"],
-      volgorde: {"8a/6": 36}
-  },
-  {
-      grondvorm: "membra",
-      aanvullingen: "membrorum (mv.)",
-      vertaling: "ledematen",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 56}
-  },
-  {
-      grondvorm: "membrum",
-      aanvullingen: "membri, (o.)",
-      vertaling: "lid, mv.: ledematen",
-      basis: true,
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 7}
-  },
-  {
-      grondvorm: "meminisse",
-      aanvullingen: "memini",
-      vertaling: "zich herinneren",
-      basis: true
-  },
-  {
-      grondvorm: "memorare",
-      aanvullingen: "memoro, memoravi, memoratum",
-      vertaling: "in herinnering brengen, vermelden",
-      basis: true,
-      teksten: ["7b/6"],
-      volgorde: {"7b/6": 18}
-  },
-  {
-      grondvorm: "memorem",
-      aanvullingen: "",
-      vertaling: "'ik zou in herinnering brengen', 'ik zou vermelden'",
-      teksten: ["7b/6"],
-      volgorde: {"7b/6": 19}
-  },
-  {
-      grondvorm: "memoria",
-      aanvullingen: "memoriae, (v.)",
-      vertaling: "geheugen, herinnering, nagedachtenis",
-      basis: true
-  },
-  {
-      grondvorm: "mendacium",
-      aanvullingen: "mendacii, (o.)",
-      vertaling: "leugen",
-      teksten: ["7a/5"],
-      volgorde: {"7a/5": 26}
-  },
-  {
-      grondvorm: "mendicare",
-      aanvullingen: "mendico, mendicavi, mendicatum",
-      vertaling: "bedelen om, smeken om"
-  },
-  {
-      grondvorm: "Menenius Agrippa",
-      aanvullingen: "Menenii Agrippae",
-      vertaling: "Menenius Agrippa (eigennaam)",
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 138}
-  },
-  {
-      grondvorm: "mens",
-      aanvullingen: "mentis, (v.)",
-      vertaling: "geest, verstand; manier",
-      basis: true,
-      teksten: ["7b/6", "8a/3", "10/26"],
-      volgorde: {"7b/6": 34, "8a/3": 145, "10/26": 7}
-  },
-  {
-      grondvorm: "mensis",
-      aanvullingen: "mensis (m.)",
-      vertaling: "maand"
-  },
-  {
-      grondvorm: "menta",
-      aanvullingen: "mentae, (v.)",
-      vertaling: "munt (= plant)"
-  },
-  {
-      grondvorm: "mercennarius",
-      aanvullingen: "mercennarii",
-      vertaling: "dagloner",
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 1}
-  },
-  {
-      grondvorm: "mercimonium",
-      aanvullingen: "mercimonii, (o.)",
-      vertaling: "koopwaar, handelswaar",
-      teksten: ["6b/5"],
-      volgorde: {"6b/5": 9}
-  },
-  {
-      grondvorm: "Mercurius",
-      aanvullingen: "Mercurii",
-      vertaling: "(de god) Mercurius",
-      basis: true,
-      teksten: ["9a/4"],
-      volgorde: {"9a/4": 3}
-  },
-  {
-      grondvorm: "merda",
-      aanvullingen: "merdae, (v.)",
-      vertaling: "stront"
-  },
-  {
-      grondvorm: "merere",
-      aanvullingen: "mereo, merui, meritum",
-      vertaling: "verdienen"
-  },
-  {
-      grondvorm: "meridies",
-      aanvullingen: "meridiei",
-      vertaling: "middag; zuiden",
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 37}
-  },
-  {
-      grondvorm: "meritorium",
-      aanvullingen: "meritorii, (o.)",
-      vertaling: "gehuurde woning, huurwoning",
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 21}
-  },
-  {
-      grondvorm: "Mescinius",
-      aanvullingen: "Mescinii",
-      vertaling: "Mescinius (eigennaam)",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 67}
-  },
-  {
-      grondvorm: "messis",
-      aanvullingen: "messis, (v.)",
-      vertaling: "oogst"
-  },
-  {
-      grondvorm: "meta",
-      aanvullingen: "metae, (v.)",
-      vertaling: "eindpaal"
-  },
-  {
-      grondvorm: "metallum",
-      aanvullingen: "metalli, (o.)",
-      vertaling: "erts, metaal; mijn"
-  },
-  {
-      grondvorm: "Metapontum",
-      aanvullingen: "Metaponti",
-      vertaling: "Metapontum (stad in Zuid-Italië)",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 64}
-  },
-  {
-      grondvorm: "metreta",
-      aanvullingen: "metretae, (v.)",
-      vertaling: "(grote) kruik",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 46}
-  },
-  {
-      grondvorm: "metuere",
-      aanvullingen: "metuo, metui, –",
-      vertaling: "vrezen, bang zijn voor",
-      basis: true,
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 46}
-  },
-  {
-      grondvorm: "metus",
-      aanvullingen: "metus, (m.)",
-      vertaling: "vrees, angst",
-      basis: true,
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 61}
-  },
-  {
-      grondvorm: "meus",
-      aanvullingen: "mea, meum (bezit. vnw.)",
-      vertaling: "mijn",
-      basis: true,
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 60}
-  },
-  {
-      grondvorm: "mi",
-      aanvullingen: "",
-      vertaling: "= vocatief van meus: mijn, m'n",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 59}
-  },
-  {
-      grondvorm: "miles",
-      aanvullingen: "militis (m.)",
-      vertaling: "soldaat",
-      basis: true,
-      teksten: ["6b/2", "7b/2", "10/3"],
-      volgorde: {"6b/2": 53, "7b/2": 35, "10/3": 43}
-  },
-  {
-      grondvorm: "militare",
-      aanvullingen: "milito, militavi, militatum",
-      vertaling: "als soldaat dienen, soldaat zijn",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 5}
-  },
-  {
-      grondvorm: "militaris",
-      aanvullingen: "militaris, militare",
-      vertaling: "van een soldaat, militair",
-      basis: true,
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 48}
-  },
-  {
-      grondvorm: "militia",
-      aanvullingen: "militiae, (v.)",
-      vertaling: "krijgsdienst"
-  },
-  {
-      grondvorm: "mille",
-      aanvullingen: "mv.: milia, milium",
-      vertaling: "duizend",
-      basis: true,
-      teksten: ["8b/9", "10/14", "10/26"],
-      volgorde: {"8b/9": 22, "10/14": 27, "10/26": 51}
-  },
-  {
-      grondvorm: "minari",
-      aanvullingen: "minor, minatus sum + dat.",
-      vertaling: "bedreigen",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 88}
-  },
-  {
-      grondvorm: "Minerva",
-      aanvullingen: "Minervae",
-      vertaling: "(de godin) Minerva",
-      basis: true,
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 41}
-  },
-  {
-      grondvorm: "mingere",
-      aanvullingen: "mingo, mixi, mictum",
-      vertaling: "plassen, pissen"
-  },
-  {
-      grondvorm: "minime",
-      aanvullingen: "(bijw.)",
-      vertaling: "allerminst, helemaal niet, zeker niet"
-  },
-  {
-      grondvorm: "minimus",
-      aanvullingen: "minima, minimum",
-      vertaling: "minst, kleinst",
-      basis: true,
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 30}
-  },
-  {
-      grondvorm: "minister",
-      aanvullingen: "ministri",
-      vertaling: "dienaar, helper",
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 128}
-  },
-  {
-      grondvorm: "ministerium",
-      aanvullingen: "ministerii",
-      vertaling: "hulp, dienst, taak, werk",
-      teksten: ["7a/7", "8a/3"],
-      volgorde: {"7a/7": 5, "8a/3": 20}
-  },
-  {
-      grondvorm: "minor",
-      aanvullingen: "minor, minus; minoris",
-      vertaling: "kleiner; minder",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 12}
-  },
-  {
-      grondvorm: "Minos",
-      aanvullingen: "Minois (m.)",
-      vertaling: "Minos (eigennaam)"
-  },
-  {
-      grondvorm: "Minucius",
-      aanvullingen: "Minucii",
-      vertaling: "Minucius (eigennaam)"
-  },
-  {
-      grondvorm: "minus",
-      aanvullingen: "(bijw.)",
-      vertaling: "minder … dan"
-  },
-  {
-      grondvorm: "minus … quam",
-      aanvullingen: "",
-      vertaling: "minder … dan",
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 30}
-  },
-  {
-      grondvorm: "mirabilis",
-      aanvullingen: "mirabilis, mirabile",
-      vertaling: "wonderbaarlijk, bewonderenswaardig"
-  },
-  {
-      grondvorm: "miraculum",
-      aanvullingen: "miraculi",
-      vertaling: "wonder, wonderbaarlijke/verbazingwekkende gebeurtenis",
-      teksten: ["6a/2", "7b/2"],
-      volgorde: {"6a/2": 89, "7b/2": 89}
-  },
-  {
-      grondvorm: "mirandus",
-      aanvullingen: "miranda, mirandum",
-      vertaling: "wonderbaarlijk, bewonderenswaardig",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 74}
-  },
-  {
-      grondvorm: "mirari",
-      aanvullingen: "miror, miratus sum",
-      vertaling: "bewonderen; zich verwonderen over",
-      basis: true,
-      teksten: ["10/26"],
-      volgorde: {"10/26": 30}
-  },
-  {
-      grondvorm: "mirificus",
-      aanvullingen: "mirifica, mirificum",
-      vertaling: "wonderbaarlijk, bewonderenswaardig",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 47}
-  },
-  {
-      grondvorm: "mirus",
-      aanvullingen: "mira, mirum",
-      vertaling: "wonderbaarlijk, bewonderenswaardig",
-      teksten: ["10/14", "10/26"],
-      volgorde: {"10/14": 43, "10/26": 14}
-  },
-  {
-      grondvorm: "miser",
-      aanvullingen: "misera, miserum",
-      vertaling: "arm, ellendig",
-      basis: true
-  },
-  {
-      grondvorm: "miserabilis",
-      aanvullingen: "miserabilis, miserabile",
-      vertaling: "ellendig"
-  },
-  {
-      grondvorm: "miseria",
-      aanvullingen: "miseriae, (v.)",
-      vertaling: "ellende, verdriet"
-  },
-  {
-      grondvorm: "missus",
-      aanvullingen: "missi",
-      vertaling: "ex-soldaat"
-  },
-  {
-      grondvorm: "missus",
-      aanvullingen: "missus",
-      vertaling: "ronde"
-  },
-  {
-      grondvorm: "mittere",
-      aanvullingen: "mitto, misi, missum",
-      vertaling: "zenden, sturen",
-      basis: true,
-      teksten: ["8a/6"],
-      volgorde: {"8a/6": 15}
-  },
-  {
-      grondvorm: "mixtio",
-      aanvullingen: "mixtionis, (v.)",
-      vertaling: "vermenging, mengsel",
-      teksten: ["10/21"],
-      volgorde: {"10/21": 32}
-  },
-  {
-      grondvorm: "modestus",
-      aanvullingen: "modesta, modestum",
-      vertaling: "bescheiden"
-  },
-  {
-      grondvorm: "modicus",
-      aanvullingen: "modica, modicum",
-      vertaling: "matig; bescheiden, nederig, eenvoudig",
-      teksten: ["7b/6"],
-      volgorde: {"7b/6": 16}
-  },
-  {
-      grondvorm: "modo",
-      aanvullingen: "(bijw.)",
-      vertaling: "kort geleden, onlangs, pas; slechts",
-      basis: true,
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 59}
-  },
-  {
-      grondvorm: "modo ... modo",
-      aanvullingen: "",
-      vertaling: "nu eens … dan weer",
-    teksten: ["10/26"],
-    volgorde: {"10/26": 41}
-  },
-  {
-      grondvorm: "modo … modo",
-      aanvullingen: "",
-      vertaling: "nu eens … dan weer"
-  },
-  {
-      grondvorm: "modus",
-      aanvullingen: "modi, (m.)",
-      vertaling: "maat; wijze, manier",
-      basis: true,
-      teksten: ["6a/2", "8b/10"],
-      volgorde: {"6a/2": 35, "8b/10": 5}
-  },
-  {
-      grondvorm: "moles",
-      aanvullingen: "molis, (v.)",
-      vertaling: "massa, gewicht",
-      teksten: ["10/21"],
-      volgorde: {"10/21": 26}
-  },
-  {
-      grondvorm: "molestia",
-      aanvullingen: "molestiae, (v.)",
-      vertaling: "moeilijkheid, last; verdriet, ergernis",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 33}
-  },
-  {
-      grondvorm: "mollescere",
-      aanvullingen: "mollesco, –, –",
-      vertaling: "zacht worden",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 91}
-  },
-  {
-      grondvorm: "mollis",
-      aanvullingen: "mollis, molle",
-      vertaling: "zacht",
-      basis: true
-  },
-  {
-      grondvorm: "monere",
-      aanvullingen: "moneo, monui, monitum",
-      vertaling: "waarschuwen; aansporen",
-      basis: true,
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 20}
-  },
-  {
-      grondvorm: "monile",
-      aanvullingen: "monilis",
-      vertaling: "halssnoer",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 60}
-  },
-  {
-      grondvorm: "mons",
-      aanvullingen: "montis (m.)",
-      vertaling: "berg",
-      basis: true,
-      teksten: ["6a/2", "6a/4", "8b/9", "9b/5", "10/21"],
-      volgorde: {"6a/2": 97, "6a/4": 4, "8b/9": 29, "9b/5": 24, "10/21": 17}
-  },
-  {
-      grondvorm: "monstrare",
-      aanvullingen: "monstro, monstravi, monstratum",
-      vertaling: "tonen"
-  },
-  {
-      grondvorm: "monumentum",
-      aanvullingen: "monumenti, (o.)",
-      vertaling: "herinneringsteken, overwinningsteken, monument",
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 44}
-  },
-  {
-      grondvorm: "morari",
-      aanvullingen: "moror, moratus sum",
-      vertaling: "halt houden, stoppen, pauzeren",
-      basis: true,
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 12}
-  },
-  {
-      grondvorm: "morbus",
-      aanvullingen: "morbi, (m.)",
-      vertaling: "ziekte",
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 50}
-  },
-  {
-      grondvorm: "mordere",
-      aanvullingen: "mordeo, momordi, morsum",
-      vertaling: "bijten"
-  },
-  {
-      grondvorm: "mori",
-      aanvullingen: "morior, mortuus sum",
-      vertaling: "sterven",
-      basis: true,
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 17}
-  },
-  {
-      grondvorm: "mors",
-      aanvullingen: "mortis, (v.)",
-      vertaling: "dood",
-      basis: true,
-      teksten: ["6a/2", "7b/4", "8b/9"],
-      volgorde: {"6a/2": 62, "7b/4": 74, "8b/9": 136}
-  },
-  {
-      grondvorm: "mortalis",
-      aanvullingen: "mortalis, mortale",
-      vertaling: "sterfelijk",
-      basis: true
-  },
-  {
-      grondvorm: "mortuus",
-      aanvullingen: "mortui",
-      vertaling: "dode"
-  },
-  {
-      grondvorm: "mos",
-      aanvullingen: "moris (m.)",
-      vertaling: "zede, gewoonte, gebruik",
-      basis: true,
-      teksten: ["10/14"],
-      volgorde: {"10/14": 45}
-  },
-  {
-      grondvorm: "moturus",
-      aanvullingen: "motura, moturum",
-      vertaling: "die de angst aanjaagt, die doet schrikken"
-  },
-  {
-      grondvorm: "motus",
-      aanvullingen: "motus, (m.)",
-      vertaling: "beweging; opstand",
-      basis: true,
-      teksten: ["6a/1"],
-      volgorde: {"6a/1": 8}
-  },
-  {
-      grondvorm: "movere",
-      aanvullingen: "moveo, movi, motum",
-      vertaling: "bewegen; ontroeren",
-      basis: true,
-      teksten: ["6a/4", "7b/4", "10/8"],
-      volgorde: {"6a/4": 39, "7b/4": 72, "10/8": 24}
-  },
-  {
-      grondvorm: "mox",
-      aanvullingen: "(bijw.)",
-      vertaling: "weldra, later; daarna, vervolgens",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 37}
-  },
-  {
-      grondvorm: "mulier",
-      aanvullingen: "mulieris (v.)",
-      vertaling: "vrouw"
-  },
-  {
-      grondvorm: "multiplex",
-      aanvullingen: "multiplex, multiplex; multiplicis",
-      vertaling: "veelvoudig, veelsoortig, talrijk"
-  },
-  {
-      grondvorm: "multitudo",
-      aanvullingen: "multitudinis, (v.)",
-      vertaling: "menigte, groot aantal, massa",
-      basis: true
-  },
-  {
-      grondvorm: "multo",
-      aanvullingen: "(bijw.)",
-      vertaling: "veel",
-      basis: true,
-      teksten: ["6a/2", "6b/5", "9b/10", "10/19"],
-      volgorde: {"6a/2": 21, "6b/5": 31, "9b/10": 4, "10/19": 12}
-  },
-  {
-      grondvorm: "multus",
-      aanvullingen: "multa, multum",
-      vertaling: "veel",
-      basis: true,
-      teksten: ["6a/1", "6a/4", "7a/3", "8b/5", "9a/4", "9b/4", "9b/5", "9b/7"],
-      volgorde: {"6a/1": 34, "6a/4": 72, "7a/3": 57, "8b/5": 34, "9a/4": 6, "9b/4": 45, "9b/5": 74, "9b/7": 8}
-  },
-  {
-      grondvorm: "mulus",
-      aanvullingen: "muli",
-      vertaling: "muilezel",
-      teksten: ["6b/2", "8b/3", "9b/9"],
-      volgorde: {"6b/2": 79, "8b/3": 24, "9b/9": 47}
-  },
-  {
-      grondvorm: "mundus",
-      aanvullingen: "mundi",
-      vertaling: "heelal, wereld",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 75}
-  },
-  {
-      grondvorm: "municipium",
-      aanvullingen: "municipii, (o.)",
-      vertaling: "stad",
-      teksten: ["10/21"],
-      volgorde: {"10/21": 14}
-  },
-  {
-      grondvorm: "munimentum",
-      aanvullingen: "munimenti, (o.)",
-      vertaling: "bescherming",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 59}
-  },
-  {
-      grondvorm: "munire",
-      aanvullingen: "munio, munivi, munitum",
-      vertaling: "versterken, beschermen",
-      basis: true,
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 6}
-  },
-  {
-      grondvorm: "munus",
-      aanvullingen: "muneris, (o.)",
-      vertaling: "geschenk; taak, opdracht; spel",
-      basis: true,
-      teksten: ["10/26"],
-      volgorde: {"10/26": 46}
-  },
-  {
-      grondvorm: "murmillo",
-      aanvullingen: "murmillonis",
-      vertaling: "zwaardvechter, gladiator",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 96}
-  },
-  {
-      grondvorm: "murrina",
-      aanvullingen: "murrinorum (enkel mv.)",
-      vertaling: "agaatsieraad (agaat was een duur gesteente)"
-  },
-  {
-      grondvorm: "murus",
-      aanvullingen: "muri",
-      vertaling: "muur",
-      basis: true,
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 40}
-  },
-  {
-      grondvorm: "musca",
-      aanvullingen: "muscae",
-      vertaling: "vlieg"
-  },
-  {
-      grondvorm: "mutare",
-      aanvullingen: "muto, mutavi, mutatum",
-      vertaling: "veranderen, (om-)wisselen; zich omkleden",
-      basis: true
-  },
-  {
-      grondvorm: "Mutina",
-      aanvullingen: "Mutinae",
-      vertaling: "Mutina (stad in Noord-Italië)",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 88}
-  },
-  {
-      grondvorm: "mutus",
-      aanvullingen: "muta, mutum",
-      vertaling: "geen stem hebbend, stom",
-      teksten: ["8b/3"],
-      volgorde: {"8b/3": 45}
-  },
-  {
-      grondvorm: "myrta",
-      aanvullingen: "myrtae, (v.)",
-      vertaling: "mirte (= plant)"
-  },
-  {
-      grondvorm: "nam",
-      aanvullingen: "(vgw.)",
-      vertaling: "want, immers",
-      teksten: ["6a/1", "6a/4", "6b/3", "6b/4", "7a/3", "7b/2", "10/19"],
-      volgorde: {"6a/1": 19, "6a/4": 29, "6b/3": 19, "6b/4": 35, "7a/3": 35, "7b/2": 61, "10/19": 17}
-  },
-  {
-      grondvorm: "naris",
-      aanvullingen: "naris, (v.)",
-      vertaling: "neusvleugel, neusgat",
-      teksten: ["10/8"],
-      volgorde: {"10/8": 7}
-  },
-  {
-      grondvorm: "narrare",
-      aanvullingen: "narro, narravi, narratum",
-      vertaling: "vertellen"
-  },
-  {
-      grondvorm: "nasci",
-      aanvullingen: "nascor, natus sum",
-      vertaling: "geboren worden, ontstaan",
-      basis: true,
-      teksten: ["7a/3", "8a/3", "10/19", "10/21", "10/26"],
-      volgorde: {"7a/3": 72, "8a/3": 60, "10/19": 22, "10/21": 9, "10/26": 21}
-  },
-  {
-      grondvorm: "natare",
-      aanvullingen: "nato, natavi, natatum",
-      vertaling: "zwemmen",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 49}
-  },
-  {
-      grondvorm: "natura",
-      aanvullingen: "naturae, (v.)",
-      vertaling: "natuur",
-      basis: true,
-      teksten: ["10/26"],
-      volgorde: {"10/26": 6}
-  },
-  {
-      grondvorm: "naturalis",
-      aanvullingen: "naturalis, naturale",
-      vertaling: "natuurlijk, natuur-",
-      basis: true,
-      teksten: ["10/21"],
-      volgorde: {"10/21": 5}
-  },
-  {
-      grondvorm: "naturaliter",
-      aanvullingen: "(bijw.)",
-      vertaling: "van nature",
-      teksten: ["10/21"],
-      volgorde: {"10/21": 6}
-  },
-  {
-      grondvorm: "natus",
-      aanvullingen: "nati",
-      vertaling: "zoon",
-      teksten: ["7a/6"],
-      volgorde: {"7a/6": 19}
-  },
-  {
-      grondvorm: "naufragare",
-      aanvullingen: "naufrago, naufragavi, naufragatum",
-      vertaling: "schipbreuk lijden, vergaan",
-      teksten: ["8a/6"],
-      volgorde: {"8a/6": 18}
-  },
-  {
-      grondvorm: "naufragium",
-      aanvullingen: "naufragii",
-      vertaling: "schipbreuk",
-      teksten: ["9b/7"],
-      volgorde: {"9b/7": 33}
-  },
-  {
-      grondvorm: "naufragia facere",
-      aanvullingen: "",
-      vertaling: "schipbreuk lijden",
-      teksten: ["9b/7"],
-      volgorde: {"9b/7": 35}
-  },
-  {
-      grondvorm: "naumachia",
-      aanvullingen: "naumachiae",
-      vertaling: "zeegevecht, zeeslag"
-  },
-  {
-      grondvorm: "nauta",
-      aanvullingen: "nautae (m.)",
-      vertaling: "schipper, matroos",
-      teksten: ["9b/4", "9b/9"],
-      volgorde: {"9b/4": 10, "9b/9": 53}
-  },
-  {
-      grondvorm: "navale",
-      aanvullingen: "navalis, (o.)",
-      vertaling: "ligplaats van schepen, dok, werf, haven",
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 43}
-  },
-  {
-      grondvorm: "navalis",
-      aanvullingen: "navalis, navale",
-      vertaling: "bij een schip horend, scheeps-; zee-"
-  },
-  {
-      grondvorm: "navigare",
-      aanvullingen: "navigo, navigavi, navigatum",
-      vertaling: "zeilen, varen",
-      teksten: ["9b/7"],
-      volgorde: {"9b/7": 13}
-  },
-  {
-      grondvorm: "navigium",
-      aanvullingen: "navigii, (o.)",
-      vertaling: "schip",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 117}
-  },
-  {
-      grondvorm: "navis",
-      aanvullingen: "navis, (v.)",
-      vertaling: "schip",
-      basis: true,
-      teksten: ["7a/7", "8a/6"],
-      volgorde: {"7a/7": 23, "8a/6": 11}
-  },
-  {
-      grondvorm: "-ne",
-      aanvullingen: "(vraagpartikel)",
-      vertaling: "(duidt op een vraag, niet vertalen)"
-  },
-  {
-      grondvorm: "ne",
-      aanvullingen: "+ conj. (vgw.)",
-      vertaling: "dat niet; opdat niet, om niet, om te vermijden dat",
-      teksten: ["8a/3", "8b/6", "9b/9"],
-      volgorde: {"8a/3": 34, "8b/6": 53, "9b/9": 43}
-  },
-  {
-      grondvorm: "Neapolis",
-      aanvullingen: "Neapolis",
-      vertaling: "(de stad) Napels",
-      teksten: ["6a/1"],
-      volgorde: {"6a/1": 29}
-  },
-  {
-      grondvorm: "nebula",
-      aanvullingen: "nebulae, (v.)",
-      vertaling: "nevel, mist"
-  },
-  {
-      grondvorm: "nec",
-      aanvullingen: "(vgw.)",
-      vertaling: "(en) niet, (en) evenmin, noch",
-      teksten: ["6a/2", "6b/3", "6b/5", "7a/7", "7b/2", "7b/4", "8a/3", "8b/1"],
-      volgorde: {"6a/2": 20, "6b/3": 41, "6b/5": 30, "7a/7": 29, "7b/2": 65, "7b/4": 80, "8a/3": 40, "8b/1": 11}
-  },
-  {
-      grondvorm: "necare",
-      aanvullingen: "neco, necavi, necatum",
-      vertaling: "doden",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 49}
-  },
-  {
-      grondvorm: "necesse",
-      aanvullingen: "(onverbuigbaar)",
-      vertaling: "noodzakelijk, onvermijdelijk",
-      basis: true,
-      teksten: ["6b/4", "7b/4"],
-      volgorde: {"6b/4": 34, "7b/4": 73}
-  },
-  {
-      grondvorm: "necessitas",
-      aanvullingen: "necessitatis, (v.)",
-      vertaling: "noodzaak",
-      basis: true,
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 56}
-  },
-  {
-      grondvorm: "negare",
-      aanvullingen: "nego, negavi, negatum",
-      vertaling: "nee zeggen, weigeren, ontkennen",
-      basis: true,
-      teksten: ["6b/3", "7a/3"],
-      volgorde: {"6b/3": 49, "7a/3": 41}
-  },
-  {
-      grondvorm: "neglegere",
-      aanvullingen: "neglego, neglexi, neglectum",
-      vertaling: "verwaarlozen, zich niets aantrekken van, geen rekening houden met",
-      teksten: ["9a/4", "10/3"],
-      volgorde: {"9a/4": 33, "10/3": 72}
-  },
-  {
-      grondvorm: "negotiari",
-      aanvullingen: "negotior, negotiatus sum",
-      vertaling: "handel drijven, handelen",
-      teksten: ["8a/6"],
-      volgorde: {"8a/6": 9}
-  },
-  {
-      grondvorm: "negotiatio",
-      aanvullingen: "negotiationis, (v.)",
-      vertaling: "handel"
-  },
-  {
-      grondvorm: "negotium",
-      aanvullingen: "negotii, (o.)",
-      vertaling: "bezigheid, werk, taak",
-      basis: true
-  },
-  {
-      grondvorm: "nemo",
-      aanvullingen: "neminis/nullius",
-      vertaling: "niemand",
-      basis: true,
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 82}
-  },
-  {
-      grondvorm: "nepos",
-      aanvullingen: "nepotis (m. en vr.), (m./vr.)",
-      vertaling: "kleinzoon, kleindochter",
-      basis: true
-  },
-  {
-      grondvorm: "Neptunus",
-      aanvullingen: "Neptuni",
-      vertaling: "(de god) Neptunus",
-      basis: true,
-      teksten: ["8a/6"],
-      volgorde: {"8a/6": 22}
-  },
-  {
-      grondvorm: "neque",
-      aanvullingen: "(vgw.)",
-      vertaling: "en niet, en evenmin, noch",
-      basis: true,
-      teksten: ["7b/4", "8b/9", "9a/4", "10/14"],
-      volgorde: {"7b/4": 34, "8b/9": 116, "9a/4": 27, "10/14": 48}
-  },
-  {
-      grondvorm: "Nero",
-      aanvullingen: "Neronis (m.)",
-      vertaling: "(keizer) Nero"
-  },
-  {
-      grondvorm: "neuter",
-      aanvullingen: "neutra, neutrum",
-      vertaling: "geen van beide(n)"
-  },
-  {
-      grondvorm: "nex",
-      aanvullingen: "necis, (v.)",
-      vertaling: "dood",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 10}
-  },
-  {
-      grondvorm: "niger",
-      aanvullingen: "nigra, nigrum",
-      vertaling: "zwart; duister",
-      basis: true,
-      teksten: ["6a/4", "6b/1"],
-      volgorde: {"6a/4": 69, "6b/1": 12}
-  },
-  {
-      grondvorm: "nigrior",
-      aanvullingen: "nigrior, nigrius; nigrioris",
-      vertaling: "zwarter",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 70}
-  },
-  {
-      grondvorm: "nihil",
-      aanvullingen: "",
-      vertaling: "niets",
-      basis: true,
-      teksten: ["6b/4", "8a/3", "8a/5"],
-      volgorde: {"6b/4": 49, "8a/3": 27, "8a/5": 38}
-  },
-  {
-      grondvorm: "nihilo minor … quam",
-      aanvullingen: "",
-      vertaling: "niet minder … dan"
-  },
-  {
-      grondvorm: "nimium",
-      aanvullingen: "(bijw.)",
-      vertaling: "te groot, te veel, te",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 58}
-  },
-  {
-      grondvorm: "nimius",
-      aanvullingen: "nimia, nimium",
-      vertaling: "te groot, te veel"
-  },
-  {
-      grondvorm: "nisi",
-      aanvullingen: "+ ind./conj. (vgw.)",
-      vertaling: "indien niet, tenzij",
-      basis: true,
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 83}
-  },
-  {
-      grondvorm: "nitor",
-      aanvullingen: "nitoris",
-      vertaling: "schittering, glans"
-  },
-  {
-      grondvorm: "niveus",
-      aanvullingen: "nivea, niveum",
-      vertaling: "sneeuwwit, wit",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 17}
-  },
-  {
-      grondvorm: "nobiscum",
-      aanvullingen: "",
-      vertaling: "= cum nobis",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 19}
-  },
-  {
-      grondvorm: "nocens",
-      aanvullingen: "nocens, nocens; nocentis",
-      vertaling: "schadelijk",
-      teksten: ["10/19"],
-      volgorde: {"10/19": 25}
-  },
-  {
-      grondvorm: "noctu",
-      aanvullingen: "(bijw.)",
-      vertaling: "'s nachts"
-  },
-  {
-      grondvorm: "Nola",
-      aanvullingen: "Nolae",
-      vertaling: "Nola (stad in Campania)"
-  },
-  {
-      grondvorm: "noli",
-      aanvullingen: "",
-      vertaling: "'wil niet', 'gelieve niet'",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 66}
-  },
-  {
-      grondvorm: "noli(te)",
-      aanvullingen: "",
-      vertaling: "'wil niet', 'gelieve niet'"
-  },
-  {
-      grondvorm: "nolle",
-      aanvullingen: "nolo, nolui, –",
-      vertaling: "niet willen",
-      basis: true,
-      teksten: ["10/3"],
-      volgorde: {"10/3": 65}
-  },
-  {
-      grondvorm: "nomen",
-      aanvullingen: "nominis, (o.)",
-      vertaling: "naam",
-      basis: true,
-      teksten: ["7a/5", "10/3"],
-      volgorde: {"7a/5": 31, "10/3": 55}
-  },
-  {
-      grondvorm: "nominare",
-      aanvullingen: "nomino, nominavi, nominatum",
-      vertaling: "noemen",
-      teksten: ["7a/1", "7a/6", "7a/8", "7b/2"],
-      volgorde: {"7a/1": 30, "7a/6": 14, "7a/8": 2, "7b/2": 59}
-  },
-  {
-      grondvorm: "non",
-      aanvullingen: "(bijw.)",
-      vertaling: "niet",
-      basis: true
-  },
-  {
-      grondvorm: "non iam",
-      aanvullingen: "(bijw.)",
-      vertaling: "niet meer"
-  },
-  {
-      grondvorm: "non modo sed etiam",
-      aanvullingen: "",
-      vertaling: "niet alleen … maar ook, zowel … als",
-      teksten: ["8a/2", "10/21"],
-      volgorde: {"8a/2": 9, "10/21": 22}
-  },
-  {
-      grondvorm: "non modo … sed etiam",
-      aanvullingen: "",
-      vertaling: "niet alleen … maar ook, zowel … als"
-  },
-  {
-      grondvorm: "non solum sed etiam",
-      aanvullingen: "",
-      vertaling: "niet alleen … maar ook; zowel … als",
-      teksten: ["8a/3", "10/3"],
-      volgorde: {"8a/3": 129, "10/3": 10}
-  },
-  {
-      grondvorm: "non solum … sed etiam",
-      aanvullingen: "",
-      vertaling: "niet alleen … maar ook, zowel … als"
-  },
-  {
-      grondvorm: "non tantum sed etiam",
-      aanvullingen: "",
-      vertaling: "niet alleen … maar ook",
-      teksten: ["7a/5"],
-      volgorde: {"7a/5": 12}
-  },
-  {
-      grondvorm: "Nonae",
-      aanvullingen: "Nonarum",
-      vertaling: "de Nonen (= de 7e dag van de maand in maart, mei, juli en oktober; de 5e in de overige maanden)",
-      teksten: ["6a/1"],
-      volgorde: {"6a/1": 1}
-  },
-  {
-      grondvorm: "nondum",
-      aanvullingen: "(bijw.)",
-      vertaling: "nog niet"
-  },
-  {
-      grondvorm: "nonne",
-      aanvullingen: "(vraagpartikel)",
-      vertaling: "(leidt een vraag in waarop een ja-antwoord verwacht wordt)"
-  },
-  {
-      grondvorm: "nonnumquam",
-      aanvullingen: "(bijw.)",
-      vertaling: "soms"
-  },
-  {
-      grondvorm: "nonus",
-      aanvullingen: "nona, nonum",
-      vertaling: "negende",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 1}
-  },
-  {
-      grondvorm: "nos",
-      aanvullingen: "(pers. vnw.)",
-      vertaling: "wij",
-      teksten: ["6a/7", "6b/2", "6b/3"],
-      volgorde: {"6a/7": 2, "6b/2": 29, "6b/3": 12}
-  },
-  {
-      grondvorm: "noscere",
-      aanvullingen: "nosco, novi, notum",
-      vertaling: "leren kennen",
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 17}
-  },
-  {
-      grondvorm: "noscitare",
-      aanvullingen: "noscito, noscitavi, noscitatum",
-      vertaling: "proberen te herkennen, herkennen",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 59}
-  },
-  {
-      grondvorm: "noster",
-      aanvullingen: "nostra, nostrum (bezit. vnw.)",
-      vertaling: "ons, onze"
-  },
-  {
-      grondvorm: "novem",
-      aanvullingen: "(telwoord)",
-      vertaling: "negen"
-  },
-  {
-      grondvorm: "novissimus",
-      aanvullingen: "novissima, novissimum",
-      vertaling: "laatste",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 74}
-  },
-  {
-      grondvorm: "novus",
-      aanvullingen: "nova, novum",
-      vertaling: "nieuw",
-      teksten: ["6a/2", "8a/5"],
-      volgorde: {"6a/2": 73, "8a/5": 23}
-  },
-  {
-      grondvorm: "nox",
-      aanvullingen: "noctis, (v.)",
-      vertaling: "nacht, duisternis",
-      basis: true,
-      teksten: ["6a/2", "6a/4", "6b/3", "6b/4", "9b/4", "9b/7"],
-      volgorde: {"6a/2": 38, "6a/4": 17, "6b/3": 54, "6b/4": 4, "9b/4": 27, "9b/7": 43}
-  },
-  {
-      grondvorm: "nubere",
-      aanvullingen: "nubo, nupsi, nuptum + dat.",
-      vertaling: "trouwen met"
-  },
-  {
-      grondvorm: "nubes",
-      aanvullingen: "nubis",
-      vertaling: "wolk",
-      teksten: ["6a/2", "6a/4"],
-      volgorde: {"6a/2": 9, "6a/4": 105}
-  },
-  {
-      grondvorm: "Nuceria",
-      aanvullingen: "Nuceriae",
-      vertaling: "Nuceria (stad in Campania)"
-  },
-  {
-      grondvorm: "nucleus",
-      aanvullingen: "nuclei, (m.)",
-      vertaling: "pit"
-  },
-  {
-      grondvorm: "nullus",
-      aanvullingen: "nulla, nullum",
-      vertaling: "geen enkel",
-      basis: true,
-      teksten: ["6a/1", "6b/1", "8b/5", "8b/6", "10/26"],
-      volgorde: {"6a/1": 39, "6b/1": 10, "8b/5": 13, "8b/6": 21, "10/26": 20}
-  },
-  {
-      grondvorm: "numerus",
-      aanvullingen: "numeri, (m.)",
-      vertaling: "aantal"
-  },
-  {
-      grondvorm: "Numitor",
-      aanvullingen: "Numitoris",
-      vertaling: "Numitor (eigennaam)"
-  },
-  {
-      grondvorm: "nummus",
-      aanvullingen: "nummi, (m.)",
-      vertaling: "geldstuk"
-  },
-  {
-      grondvorm: "numquam",
-      aanvullingen: "(bijw.)",
-      vertaling: "nooit, nooit meer",
-      teksten: ["6a/1"],
-      volgorde: {"6a/1": 12}
-  },
-  {
-      grondvorm: "nunc",
-      aanvullingen: "(bijw.)",
-      vertaling: "nu",
-      teksten: ["6a/4", "6b/1", "6b/2", "6b/4", "8a/3", "8b/3", "10/9"],
-      volgorde: {"6a/4": 35, "6b/1": 16, "6b/2": 82, "6b/4": 2, "8a/3": 5, "8b/3": 27, "10/9": 2}
-  },
-  {
-      grondvorm: "nunc … nunc",
-      aanvullingen: "",
-      vertaling: "nu eens … dan weer",
-      teksten: ["6a/4", "6b/2"],
-      volgorde: {"6a/4": 36, "6b/2": 44}
-  },
-  {
-      grondvorm: "nuntius",
-      aanvullingen: "nuntii, (m.)",
-      vertaling: "boodschapper; bericht"
-  },
-  {
-      grondvorm: "nusquam",
-      aanvullingen: "(bijw.)",
-      vertaling: "nergens",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 69}
-  },
-  {
-      grondvorm: "nusquam iam",
-      aanvullingen: "(bijw.)",
-      vertaling: "nergens meer",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 70}
-  },
-  {
-      grondvorm: "nutare",
-      aanvullingen: "nuto, nutavi, nutatum",
-      vertaling: "knikken; heen en weer bewegen, wankelen",
-      teksten: ["6a/4", "6b/2"],
-      volgorde: {"6a/4": 34, "6b/2": 86}
-  },
-  {
-      grondvorm: "nutrire",
-      aanvullingen: "nutrio, nutrivi, nutritum",
-      vertaling: "voeden"
-  },
-  {
-      grondvorm: "nutrix",
-      aanvullingen: "nutricis, (v.)",
-      vertaling: "voedster",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 78}
-  },
-  {
-      grondvorm: "nux",
-      aanvullingen: "nucis, (v.)",
-      vertaling: "noot (walnoot, hazelnoot, amandel)"
-  },
-  {
-      grondvorm: "ob",
-      aanvullingen: "+ acc. (vz.)",
-      vertaling: "voor; wegens"
-  },
-  {
-      grondvorm: "obire",
-      aanvullingen: "obeo, obii, obitum",
-      vertaling: "gaan naar, tegemoet gaan",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 137}
-  },
-  {
-      grondvorm: "oblivisci",
-      aanvullingen: "obliviscor, oblitus sum + gen.",
-      vertaling: "vergeten, geen rekening houden met",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 61}
-  },
-  {
-      grondvorm: "obrepere",
-      aanvullingen: "obrepo, obrepsi, obreptum + dat.",
-      vertaling: "naderbij sluipen; verrassen"
-  },
-  {
-      grondvorm: "obruere",
-      aanvullingen: "obruo, obrui, obrutum",
-      vertaling: "bedekken"
-  },
-  {
-      grondvorm: "obscenus",
-      aanvullingen: "obscena, obscenum",
-      vertaling: "obsceen, onfatsoenlijk, schandalig",
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 44}
-  },
-  {
-      grondvorm: "obsecrare",
-      aanvullingen: "obsecro, obsecravi, obsecratum",
-      vertaling: "met aandrang vragen, smeken",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 68}
-  },
-  {
-      grondvorm: "obsequium",
-      aanvullingen: "obsequii",
-      vertaling: "gehoorzaamheid",
-      teksten: ["7b/6"],
-      volgorde: {"7b/6": 5}
-  },
-  {
-      grondvorm: "obses",
-      aanvullingen: "obsidis",
-      vertaling: "gijzelaar"
-  },
-  {
-      grondvorm: "obsidere",
-      aanvullingen: "obsideo, obsedi, obsessum",
-      vertaling: "bezetten; belegeren",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 33}
-  },
-  {
-      grondvorm: "obstare",
-      aanvullingen: "obsto, obstiti, – + dat.",
-      vertaling: "in de weg staan, verhinderen, hinderen",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 31}
-  },
-  {
-      grondvorm: "obstringere",
-      aanvullingen: "obstringo, obstrinxi, obstrictum",
-      vertaling: "binden, vastbinden"
-  },
-  {
-      grondvorm: "obstupefacere",
-      aanvullingen: "obstupefacio, obstupefeci, obstupefactum",
-      vertaling: "verstomd doen staan, verbazen, verbijsteren"
-  },
-  {
-      grondvorm: "obtruncare",
-      aanvullingen: "obtruno, obtruncavi, obtruncatum",
-      vertaling: "doden",
-      teksten: ["7b/2", "10/3"],
-      volgorde: {"7b/2": 48, "10/3": 75}
-  },
-  {
-      grondvorm: "obturare",
-      aanvullingen: "obturo, obturavi, obturatum",
-      vertaling: "dichtstoppen, afsluiten"
-  },
-  {
-      grondvorm: "obvius",
-      aanvullingen: "obvia, obvium",
-      vertaling: "tegenkomend, tegemoetkomend, passerend",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 69}
-  },
-  {
-      grondvorm: "occidere",
-      aanvullingen: "occido, occidi, occisum",
-      vertaling: "doden, vermoorden",
-      teksten: ["7b/2", "8a/3", "8b/9"],
-      volgorde: {"7b/2": 60, "8a/3": 46, "8b/9": 145}
-  },
-  {
-      grondvorm: "occultare",
-      aanvullingen: "occulto, occultavi, occultatum",
-      vertaling: "verbergen",
-      teksten: ["9a/4"],
-      volgorde: {"9a/4": 37}
-  },
-  {
-      grondvorm: "occupare",
-      aanvullingen: "occupo, occupavi, occupatum",
-      vertaling: "bezetten",
-      teksten: ["6b/1"],
-      volgorde: {"6b/1": 14}
-  },
-  {
-      grondvorm: "Octobris",
-      aanvullingen: "Octobris, Octobre",
-      vertaling: "van de maand oktober"
-  },
-  {
-      grondvorm: "oculus",
-      aanvullingen: "oculi",
-      vertaling: "oog",
-      teksten: ["9b/6", "10/3"],
-      volgorde: {"9b/6": 12, "10/3": 37}
-  },
-  {
-      grondvorm: "odor",
-      aanvullingen: "odoris, (m.)",
-      vertaling: "geur, stank",
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 47}
-  },
-  {
-      grondvorm: "odorare",
-      aanvullingen: "odoro, odoravi, odoratum",
-      vertaling: "parfumeren",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 57}
-  },
-  {
-      grondvorm: "Oenomaus",
-      aanvullingen: "Oenomai",
-      vertaling: "Oenomaus (eigennaam)",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 3}
-  },
-  {
-      grondvorm: "offendere",
-      aanvullingen: "offendo, offendi, offensum",
-      vertaling: "tegen iets stoten; passief: onstemd zijn, misnoegd zijn",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 3}
-  },
-  {
-      grondvorm: "officere",
-      aanvullingen: "officio, offeci, offectum + dat.",
-      vertaling: "in de weg staan, hinderen"
-  },
-  {
-      grondvorm: "officium",
-      aanvullingen: "officii, (o.)",
-      vertaling: "plicht, taak",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 3}
-  },
-  {
-      grondvorm: "olea",
-      aanvullingen: "oleae, (v.)",
-      vertaling: "olijfboom, olijf"
-  },
-  {
-      grondvorm: "olere",
-      aanvullingen: "oleo, olui, –",
-      vertaling: "stinken, ruiken"
-  },
-  {
-      grondvorm: "oleum",
-      aanvullingen: "olei, (o.)",
-      vertaling: "olijfolie",
-      teksten: ["6b/9"],
-      volgorde: {"6b/9": 13}
-  },
-  {
-      grondvorm: "olim",
-      aanvullingen: "(bijw.)",
-      vertaling: "lang geleden, ooit, eens",
-      teksten: ["6b/1"],
-      volgorde: {"6b/1": 19}
-  },
-  {
-      grondvorm: "oliva",
-      aanvullingen: "olivae, (v.)",
-      vertaling: "olijfboom, olijf"
-  },
-  {
-      grondvorm: "omentum",
-      aanvullingen: "omenti, (o.)",
-      vertaling: "darmnet"
-  },
-  {
-      grondvorm: "omittere",
-      aanvullingen: "omitto, ommisi, ommissum",
-      vertaling: "laten vallen"
-  },
-  {
-      grondvorm: "omni genere",
-      aanvullingen: "",
-      vertaling: "'op elke vlak', 'in elk opzicht'",
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 52}
-  },
-  {
-      grondvorm: "omnino",
-      aanvullingen: "(bijw.)",
-      vertaling: "helemaal, geheel en al, volledig"
-  },
-  {
-      grondvorm: "omnis",
-      aanvullingen: "omnis, omne",
-      vertaling: "geheel, al, ieder, elk",
-      basis: true,
-      teksten: ["6a/4", "7b/4", "8a/2", "8a/3", "8a/5", "8a/6", "8b/5", "9a/1", "9b/6", "9b/9", "10/14"],
-      volgorde: {"6a/4": 68, "7b/4": 17, "8a/2": 15, "8a/3": 6, "8a/5": 3, "8a/6": 17, "8b/5": 6, "9a/1": 2, "9b/6": 13, "9b/9": 36, "10/14": 2}
-  },
-  {
-      grondvorm: "onerare",
-      aanvullingen: "onero, oneravi, oneratum",
-      vertaling: "beladen, inladen",
-      teksten: ["8a/6"],
-      volgorde: {"8a/6": 13}
-  },
-  {
-      grondvorm: "onus",
-      aanvullingen: "oneris",
-      vertaling: "last, lading, gewicht, bagage",
-      teksten: ["7a/3", "7a/7"],
-      volgorde: {"7a/3": 36, "7a/7": 17}
-  },
-  {
-      grondvorm: "onustus",
-      aanvullingen: "onusta, onustum + abl.",
-      vertaling: "beladen met"
-  },
-  {
-      grondvorm: "opera",
-      aanvullingen: "operae, (v.)",
-      vertaling: "werk, inspanning, moeite; dienst, hulp",
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 25}
-  },
-  {
-      grondvorm: "operire",
-      aanvullingen: "operio, operui, opertum",
-      vertaling: "bedekken",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 24}
-  },
-  {
-      grondvorm: "ophthalmicus",
-      aanvullingen: "ophthalmici",
-      vertaling: "oogarts",
-      teksten: ["10/9"],
-      volgorde: {"10/9": 3}
-  },
-  {
-      grondvorm: "opinio",
-      aanvullingen: "opinionis, (v.)",
-      vertaling: "mening",
-      basis: true,
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 46}
-  },
-  {
-      grondvorm: "oplomachus",
-      aanvullingen: "oplomachi",
-      vertaling: "zwaarbewapend gladiator",
-      teksten: ["10/9"],
-      volgorde: {"10/9": 1}
-  },
-  {
-      grondvorm: "oportet",
-      aanvullingen: "oportuit, –",
-      vertaling: "het is nodig, het moet",
-      basis: true,
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 55}
-  },
-  {
-      grondvorm: "oppidum",
-      aanvullingen: "oppidi",
-      vertaling: "vesting, stad",
-      basis: true,
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 20}
-  },
-  {
-      grondvorm: "opprimere",
-      aanvullingen: "opprimo, oppressi, oppressum",
-      vertaling: "neerdrukken",
-      basis: true,
-      teksten: ["7b/12"],
-      volgorde: {"7b/12": 1}
-  },
-  {
-      grondvorm: "oppugnare",
-      aanvullingen: "oppugno, oppugnavi, oppugnatum",
-      vertaling: "belegeren",
-      basis: true
-  },
-  {
-      grondvorm: "optare",
-      aanvullingen: "opto, optavi, optatum",
-      vertaling: "kiezen; wensen"
-  },
-  {
-      grondvorm: "Optata",
-      aanvullingen: "Optatae",
-      vertaling: "Optata (eigennaam)"
-  },
-  {
-      grondvorm: "optimus",
-      aanvullingen: "optima, optimum",
-      vertaling: "best(e), zeer goed",
-      basis: true,
-      teksten: ["7a/5", "8b/6"],
-      volgorde: {"7a/5": 20, "8b/6": 31}
-  },
-  {
-      grondvorm: "opus esse",
-      aanvullingen: "+ abl.",
-      vertaling: "nodig zijn, nodig hebben"
-  },
-  {
-      grondvorm: "opus",
-      aanvullingen: "operis, (o.)",
-      vertaling: "bezigheid, arbeid; werk, bouwwerk",
-      basis: true,
-      teksten: ["9a/1", "10/14"],
-      volgorde: {"9a/1": 52, "10/14": 31}
-  },
-  {
-      grondvorm: "oraculum",
-      aanvullingen: "oraculi, (o.)",
-      vertaling: "orakel, orakelspreuk",
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 22}
-  },
-  {
-      grondvorm: "orare",
-      aanvullingen: "oro, oravi, oratum",
-      vertaling: "bidden, smeken"
-  },
-  {
-      grondvorm: "oratio",
-      aanvullingen: "orationis, (v.)",
-      vertaling: "redevoering, toespraak, speech",
-      basis: true
-  },
-  {
-      grondvorm: "orbis",
-      aanvullingen: "orbis (m.)",
-      vertaling: "kring, cirkel",
-      basis: true
-  },
-  {
-      grondvorm: "orbis terrarum",
-      aanvullingen: "orbis terrarum",
-      vertaling: "wereld"
-  },
-  {
-      grondvorm: "orcua",
-      aanvullingen: "orcuae",
-      vertaling: "potje"
-  },
-  {
-      grondvorm: "ordo",
-      aanvullingen: "ordinis (m.)",
-      vertaling: "rij; stand, klasse",
-      basis: true,
-      teksten: ["7b/2", "7b/4"],
-      volgorde: {"7b/2": 71, "7b/4": 43}
-  },
-  {
-      grondvorm: "oriri",
-      aanvullingen: "orior, ortus sum",
-      vertaling: "ontstaan; afstammen van",
-      basis: true,
-      teksten: ["6a/2", "6b/5", "7b/4", "8a/2"],
-      volgorde: {"6a/2": 98, "6b/5": 2, "7b/4": 20, "8a/2": 61}
-  },
-  {
-      grondvorm: "ornamentum",
-      aanvullingen: "ornamenti, (o.)",
-      vertaling: "sierraad; eer"
-  },
-  {
-      grondvorm: "ornare",
-      aanvullingen: "orno, ornavi, ornatum",
-      vertaling: "versieren, tooien",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 53}
-  },
-  {
-      grondvorm: "ornatus",
-      aanvullingen: "ornata, ornatum, (m.)",
-      vertaling: "versierd; beladen, opgetuigd",
-      teksten: ["7b/2", "7b/6"],
-      volgorde: {"7b/2": 45, "7b/6": 13}
-  },
-  {
-      grondvorm: "ornatus",
-      aanvullingen: "ornatus, (m.)",
-      vertaling: "uitrusting, kleding; versiering, sieraad; elegantie"
-  },
-  {
-      grondvorm: "Ortygia",
-      aanvullingen: "Ortygiae",
-      vertaling: "Ortygia (eigennaam)"
-  },
-  {
-      grondvorm: "os",
-      aanvullingen: "oris (o.)",
-      vertaling: "mond, muil; gezicht",
-      teksten: ["6b/2", "8a/3", "10/26"],
-      volgorde: {"6b/2": 13, "8a/3": 37, "10/26": 94}
-  },
-  {
-      grondvorm: "os",
-      aanvullingen: "ossis (o.)",
-      vertaling: "been (van een skelet)",
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 107}
-  },
-  {
-      grondvorm: "osculum",
-      aanvullingen: "osculi, (o.)",
-      vertaling: "kus",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 36}
-  },
-  {
-      grondvorm: "ostendere",
-      aanvullingen: "ostendo, ostendi, ostentum",
-      vertaling: "laten zien, tonen"
-  },
-  {
-      grondvorm: "ostentare",
-      aanvullingen: "ostento, ostentavi, ostentatum",
-      vertaling: "laten zien, tonen",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 49}
-  },
-  {
-      grondvorm: "otiosus",
-      aanvullingen: "otiosa, otiosum",
-      vertaling: "vrij van werk, rustig, zorgeloos",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 15}
-  },
-  {
-      grondvorm: "otium",
-      aanvullingen: "otii, (o.)",
-      vertaling: "vrije tijd; rust; vrede",
-      basis: true
-  },
-  {
-      grondvorm: "ovum",
-      aanvullingen: "ovi, (o.)",
-      vertaling: "ei"
-  },
-  {
-      grondvorm: "paedagogus",
-      aanvullingen: "paedagogi, (m.)",
-      vertaling: "opvoeder"
-  },
-  {
-      grondvorm: "paene",
-      aanvullingen: "(bijw.)",
-      vertaling: "bijna",
-      teksten: ["8a/5"],
-      volgorde: {"8a/5": 6}
-  },
-  {
-      grondvorm: "paenula",
-      aanvullingen: "paenulae, (v.)",
-      vertaling: "mantel met een kap"
-  },
-  {
-      grondvorm: "Palatinus mons",
-      aanvullingen: "Palatii montis",
-      vertaling: "de Palatijn"
-  },
-  {
-      grondvorm: "palla",
-      aanvullingen: "pallae, (v.)",
-      vertaling: "lang overkleed, kleed"
-  },
-  {
-      grondvorm: "palmula",
-      aanvullingen: "palmulae, (v.)",
-      vertaling: "dadel"
-  },
-  {
-      grondvorm: "paludatus",
-      aanvullingen: "paludata, paludatum",
-      vertaling: "in een militaire mantel gekleed"
-  },
-  {
-      grondvorm: "palus",
-      aanvullingen: "pali",
-      vertaling: "paal",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 92}
-  },
-  {
-      grondvorm: "palustris",
-      aanvullingen: "palustris, palustre",
-      vertaling: "van een moeras, moeras-",
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 38}
-  },
-  {
-      grondvorm: "panis",
-      aanvullingen: "panis (m.)",
-      vertaling: "brood"
-  },
-  {
-      grondvorm: "par",
-      aanvullingen: "par, par; paris",
-      vertaling: "gelijk",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 43}
-  },
-  {
-      grondvorm: "parare",
-      aanvullingen: "paro, paravi, paratum",
-      vertaling: "voorbereiden, klaarmaken, in gereedheid brengen",
-      basis: true,
-      teksten: ["8b/9", "9b/4"],
-      volgorde: {"8b/9": 73, "9b/4": 34}
-  },
-  {
-      grondvorm: "parasitus",
-      aanvullingen: "parasiti, (m.)",
-      vertaling: "klaploper; tafelgenoot, gast",
-      teksten: ["7b/12"],
-      volgorde: {"7b/12": 6}
-  },
-  {
-      grondvorm: "parcere",
-      aanvullingen: "parco, peperci, – + dat.",
-      vertaling: "sparen",
-      basis: true,
-      teksten: ["10/3"],
-      volgorde: {"10/3": 33}
-  },
-  {
-      grondvorm: "parens",
-      aanvullingen: "parentis, (m./vr.)",
-      vertaling: "vader, moeder; mv.: ouders",
-      basis: true,
-      teksten: ["6a/2", "7a/6", "7b/6"],
-      volgorde: {"6a/2": 54, "7a/6": 13, "7b/6": 30}
-  },
-  {
-      grondvorm: "parere",
-      aanvullingen: "pareo, parui, –",
-      vertaling: "gehoorzamen",
-      teksten: ["6b/4", "7a/2", "7a/3"],
-      volgorde: {"6b/4": 33, "7a/2": 7, "7a/3": 34}
-  },
-  {
-      grondvorm: "parere",
-      aanvullingen: "pario, peperi, partum",
-      vertaling: "baren, een kind ter wereld brengen"
-  },
-  {
-      grondvorm: "paria",
-      aanvullingen: "parium (mv.)",
-      vertaling: "paar, koppel"
-  },
-  {
-      grondvorm: "pariter",
-      aanvullingen: "(bijw.)",
-      vertaling: "op gelijke wijze, evenzeer; tegelijk",
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 61}
-  },
-  {
-      grondvorm: "Parnassus",
-      aanvullingen: "Parnassi",
-      vertaling: "Parnassus (gebergte in Griekenland)"
-  },
-  {
-      grondvorm: "pars",
-      aanvullingen: "partis, (v.)",
-      vertaling: "deel",
-      basis: true,
-      teksten: ["6a/4", "6b/5", "8a/3", "8b/3", "9a/1", "9b/5"],
-      volgorde: {"6a/4": 87, "6b/5": 4, "8a/3": 16, "8b/3": 37, "9a/1": 5, "9b/5": 68}
-  },
-  {
-      grondvorm: "participare",
-      aanvullingen: "participo, participavi, participatum",
-      vertaling: "deelnemen aan; delen"
-  },
-  {
-      grondvorm: "partim",
-      aanvullingen: "(bijw.)",
-      vertaling: "gedeeltelijk",
-      teksten: ["6a/1"],
-      volgorde: {"6a/1": 22}
-  },
-  {
-      grondvorm: "partire",
-      aanvullingen: "partio, partivi, partitum",
-      vertaling: "verdelen, indelen, splitsen"
-  },
-  {
-      grondvorm: "partus",
-      aanvullingen: "partus, (m.)",
-      vertaling: "geboorte",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 24}
-  },
-  {
-      grondvorm: "parvulus",
-      aanvullingen: "parvula, parvulum",
-      vertaling: "zeer klein, erg klein"
-  },
-  {
-      grondvorm: "parvus",
-      aanvullingen: "parva, parvum",
-      vertaling: "klein",
-      basis: true,
-      teksten: ["7a/3", "9b/5", "10/26"],
-      volgorde: {"7a/3": 29, "9b/5": 11, "10/26": 48}
-  },
-  {
-      grondvorm: "pascere",
-      aanvullingen: "pasco, pavi, pastum",
-      vertaling: "weiden, laten grazen",
-      basis: true,
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 40}
-  },
-  {
-      grondvorm: "pastor",
-      aanvullingen: "pastoris, (m.)",
-      vertaling: "herder",
-      basis: true,
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 36}
-  },
-  {
-      grondvorm: "patefacere",
-      aanvullingen: "patefacio, patefeci, patefactum",
-      vertaling: "openen; begaanbaar maken"
-  },
-  {
-      grondvorm: "pater",
-      aanvullingen: "patris",
-      vertaling: "vader; mv. ook: patriciërs, senatoren",
-      basis: true,
-      teksten: ["7a/3", "7a/7", "7b/2", "7b/4", "8a/3"],
-      volgorde: {"7a/3": 69, "7a/7": 34, "7b/2": 4, "7b/4": 14, "8a/3": 143}
-  },
-  {
-      grondvorm: "paternus",
-      aanvullingen: "paterna, paternum",
-      vertaling: "van de vader, vaderlijk",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 29}
-  },
-  {
-      grondvorm: "pati",
-      aanvullingen: "patior, passus sum",
-      vertaling: "lijden, ondergaan, dulden, verdragen; toestaan",
-      basis: true,
-      teksten: ["6a/4", "7b/2", "8a/3"],
-      volgorde: {"6a/4": 77, "7b/2": 63, "8a/3": 77}
-  },
-  {
-      grondvorm: "patina",
-      aanvullingen: "patinae, (v.)",
-      vertaling: "pan, schotel"
-  },
-  {
-      grondvorm: "patre ignaro",
-      aanvullingen: "",
-      vertaling: "'zonder dat de vader het wist'",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 71}
-  },
-  {
-      grondvorm: "patria",
-      aanvullingen: "patriae, (v.)",
-      vertaling: "vaderland"
-  },
-  {
-      grondvorm: "patrimus",
-      aanvullingen: "patrima, patrimum",
-      vertaling: "wiens vader nog in leven is"
-  },
-  {
-      grondvorm: "patrius",
-      aanvullingen: "patria, patrium",
-      vertaling: "van een vader, vaderlijk",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 38}
-  },
-  {
-      grondvorm: "patronus",
-      aanvullingen: "patroni, (m.)",
-      vertaling: "beschermheer, patronus"
-  },
-  {
-      grondvorm: "patronus",
-      aanvullingen: "patroni, (m.)",
-      vertaling: "beschermheer"
-  },
-  {
-      grondvorm: "patulus",
-      aanvullingen: "patula, patulum",
-      vertaling: "wijd, breed",
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 22}
-  },
-  {
-      grondvorm: "paucitas",
-      aanvullingen: "paucitatis, (v.)",
-      vertaling: "gering aantal, klein aantal"
-  },
-  {
-      grondvorm: "paucus",
-      aanvullingen: "pauca, paucum",
-      vertaling: "weinig, mv.: enkele",
-      teksten: ["6b/2", "6b/4"],
-      volgorde: {"6b/2": 132, "6b/4": 65}
-  },
-  {
-      grondvorm: "Paula",
-      aanvullingen: "Paulae",
-      vertaling: "Paula (eigennaam)"
-  },
-  {
-      grondvorm: "paulatim",
-      aanvullingen: "(bijw.)",
-      vertaling: "langzaamaan, geleidelijk"
-  },
-  {
-      grondvorm: "Paulinus",
-      aanvullingen: "Paulini",
-      vertaling: "Paulinus (eigennaam)"
-  },
-  {
-      grondvorm: "paulo post",
-      aanvullingen: "(bijw.)",
-      vertaling: "een beetje later, kort daarop"
-  },
-  {
-      grondvorm: "paulum",
-      aanvullingen: "(bijw.)",
-      vertaling: "een beetje; even",
-      teksten: ["7a/6"],
-      volgorde: {"7a/6": 4}
-  },
-  {
-      grondvorm: "pauper",
-      aanvullingen: "pauper, pauper; pauperis",
-      vertaling: "arm",
-      teksten: ["6b/3", "7a/7"],
-      volgorde: {"6b/3": 40, "7a/7": 33}
-  },
-  {
-      grondvorm: "pavere",
-      aanvullingen: "paveo, pavi, –",
-      vertaling: "beven, in paniek zijn, panikeren",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 110}
-  },
-  {
-      grondvorm: "pavor",
-      aanvullingen: "pavoris",
-      vertaling: "angst"
-  },
-  {
-      grondvorm: "pax",
-      aanvullingen: "pacis, (v.)",
-      vertaling: "vrede",
-      basis: true
-  },
-  {
-      grondvorm: "peccare",
-      aanvullingen: "pecco, peccavi, peccatum",
-      vertaling: "een fout begaan"
-  },
-  {
-      grondvorm: "pectinare",
-      aanvullingen: "pectino, pectinavi, pectinatum",
-      vertaling: "kammen"
-  },
-  {
-      grondvorm: "pectus",
-      aanvullingen: "pectoris, (o.)",
-      vertaling: "borst, hart",
-      basis: true,
-      teksten: ["10/26"],
-      volgorde: {"10/26": 31}
-  },
-  {
-      grondvorm: "peculium",
-      aanvullingen: "peculii, (o.)",
-      vertaling: "spaargeld, kapitaal",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 21}
-  },
-  {
-      grondvorm: "pecunia",
-      aanvullingen: "pecuniae, (v.)",
-      vertaling: "geld",
-      basis: true,
-      teksten: ["7a/8"],
-      volgorde: {"7a/8": 22}
-  },
-  {
-      grondvorm: "pecus",
-      aanvullingen: "pecoris",
-      vertaling: "dier, vee",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 16}
-  },
-  {
-      grondvorm: "pedere",
-      aanvullingen: "pedo, pepedi, peditum",
-      vertaling: "scheten laten"
-  },
-  {
-      grondvorm: "pellere",
-      aanvullingen: "pello, pepuli, pulsum",
-      vertaling: "voortdrijven, verdrijven, verjagen",
-      basis: true,
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 103}
-  },
-  {
-      grondvorm: "pellis",
-      aanvullingen: "pellis, (v.)",
-      vertaling: "huid, pels, leer",
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 13}
-  },
-  {
-      grondvorm: "pelvis",
-      aanvullingen: "pelvis, (v.)",
-      vertaling: "schaal",
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 23}
-  },
-  {
-      grondvorm: "pendere",
-      aanvullingen: "pendeo, pependi, – e(x) + abl.",
-      vertaling: "hangen aan",
-      teksten: ["7a/5"],
-      volgorde: {"7a/5": 40}
-  },
-  {
-      grondvorm: "pendere",
-      aanvullingen: "pendo, pependi, pensum",
-      vertaling: "betalen"
-  },
-  {
-      grondvorm: "penetrare",
-      aanvullingen: "penetro, penetravi, penetratum",
-      vertaling: "binnendringen"
-  },
-  {
-      grondvorm: "penna",
-      aanvullingen: "pennae, (v.)",
-      vertaling: "veer; vleugel"
-  },
-  {
-      grondvorm: "per",
-      aanvullingen: "+ acc. (vz.)",
-      vertaling: "doorheen; door middel van; gedurende",
-      basis: true,
-      teksten: ["6b/2", "6b/5", "8b/1", "8b/9", "8b/10", "9b/6"],
-      volgorde: {"6b/2": 5, "6b/5": 7, "8b/1": 9, "8b/9": 37, "8b/10": 10, "9b/6": 18}
-  },
-  {
-      grondvorm: "peragrare",
-      aanvullingen: "peragro, peragravi, peragratum",
-      vertaling: "doorzwerven, zwerven doorheen"
-  },
-  {
-      grondvorm: "perbibere",
-      aanvullingen: "perbibo, perbibi, –",
-      vertaling: "helemaal opdrinken, helemaal in zich opnemen"
-  },
-  {
-      grondvorm: "percipere",
-      aanvullingen: "percipio, percepi, perceptum",
-      vertaling: "grijpen; in zich opnemen, waarnemen, leren"
-  },
-  {
-      grondvorm: "percussus",
-      aanvullingen: "percussa, percussum",
-      vertaling: "(hevig) geslagen",
-      teksten: ["7a/5"],
-      volgorde: {"7a/5": 8}
-  },
-  {
-      grondvorm: "percutere",
-      aanvullingen: "percutio, percussi, percussum",
-      vertaling: "(hevig) slaan",
-      teksten: ["7a/5"],
-      volgorde: {"7a/5": 7}
-  },
-  {
-      grondvorm: "perdere",
-      aanvullingen: "perdo, perdidi, perditum",
-      vertaling: "verliezen; vernietigen"
-  },
-  {
-      grondvorm: "perequitare",
-      aanvullingen: "perequito, perequitavi, perequitatum",
-      vertaling: "te paard ergens doorheen rijden"
-  },
-  {
-      grondvorm: "perferre",
-      aanvullingen: "perfero, pertuli, perlatum",
-      vertaling: "brengen naar, dragen naar"
-  },
-  {
-      grondvorm: "perfugere",
-      aanvullingen: "perfugio, perfugi, –",
-      vertaling: "zijn toevlucht zoeken in"
-  },
-  {
-      grondvorm: "perfundere",
-      aanvullingen: "perfundo, perfusi, perfusum",
-      vertaling: "gieten doorheen/over"
-  },
-  {
-      grondvorm: "pergula",
-      aanvullingen: "pergulae",
-      vertaling: "bijkamer, extra kamer, annex-kamer",
-      teksten: ["6b/8"],
-      volgorde: {"6b/8": 10}
-  },
-  {
-      grondvorm: "periculum",
-      aanvullingen: "periculi, (o.)",
-      vertaling: "gevaar",
-      basis: true,
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 3}
-  },
-  {
-      grondvorm: "perire",
-      aanvullingen: "pereo, perii, peritum",
-      vertaling: "verloren gaan, verdwijnen, vergaan",
-      basis: true,
-      teksten: ["6b/9"],
-      volgorde: {"6b/9": 3}
-  },
-  {
-      grondvorm: "perlegere",
-      aanvullingen: "perlego, perlegi, perlectum",
-      vertaling: "helemaal lezen, doorlezen",
-      teksten: ["7a/6"],
-      volgorde: {"7a/6": 7}
-  },
-  {
-      grondvorm: "perpetuus",
-      aanvullingen: "perpetua, perpetuum",
-      vertaling: "voortdurend, levenslang, eeuwig",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 77}
-  },
-  {
-      grondvorm: "persequi",
-      aanvullingen: "persequor, persecutus sum",
-      vertaling: "achtervolgen"
-  },
-  {
-      grondvorm: "Perseus",
-      aanvullingen: "Persei",
-      vertaling: "Perseus (eigennaam)",
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 36}
-  },
-  {
-      grondvorm: "perstringere",
-      aanvullingen: "perstringo, perstrinxi, perstrictum",
-      vertaling: "zacht aanraken, beroeren; treffen",
-      teksten: ["6a/1"],
-      volgorde: {"6a/1": 33}
-  },
-  {
-      grondvorm: "perterrere",
-      aanvullingen: "peterreo, perterrui, perterritum",
-      vertaling: "hevig doen schrikken, hevige schrik aanjagen"
-  },
-  {
-      grondvorm: "perturbare",
-      aanvullingen: "perturbo, perturbavi, perturbatum",
-      vertaling: "in verwarring brengen, verwarren"
-  },
-  {
-      grondvorm: "pervagari",
-      aanvullingen: "pervagor, pervagatus sum",
-      vertaling: "ronddwalen doorheen, rondtrekken doorheen",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 60}
-  },
-  {
-      grondvorm: "pervenire",
-      aanvullingen: "pervenio, perveni, perventum",
-      vertaling: "aankomen, arriveren",
-      teksten: ["8a/2", "9b/7", "10/21"],
-      volgorde: {"8a/2": 38, "9b/7": 47, "10/21": 38}
-  },
-  {
-      grondvorm: "pes",
-      aanvullingen: "pedis (m.)",
-      vertaling: "voet, poot",
-      basis: true,
-      teksten: ["7a/7", "9b/5"],
-      volgorde: {"7a/7": 42, "9b/5": 78}
-  },
-  {
-      grondvorm: "pessimus",
-      aanvullingen: "pessima, pessimum",
-      vertaling: "slechtst, zeer slecht",
-      basis: true,
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 21}
-  },
-  {
-      grondvorm: "pestilens",
-      aanvullingen: "pestilens, pestilens",
-      vertaling: "verderfelijk, rampzalig"
-  },
-  {
-      grondvorm: "petere",
-      aanvullingen: "peto, peti(v)i, petitum",
-      vertaling: "zoeken; vragen; verlangen; gaan",
-      basis: true,
-      teksten: ["7b/2", "9b/6", "10/26"],
-      volgorde: {"7b/2": 74, "9b/6": 23, "10/26": 89}
-  },
-  {
-      grondvorm: "petere",
-      aanvullingen: "peto, peti(v)i, petitum a(b) + abl.",
-      vertaling: "vragen aan",
-      basis: true
-  },
-  {
-      grondvorm: "Phaestius",
-      aanvullingen: "Phaestia, Phaestium",
-      vertaling: "van Phaestus (= stad in het zuiden van Kreta)",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 2}
-  },
-  {
-      grondvorm: "philosophia",
-      aanvullingen: "philosophiae, (v.)",
-      vertaling: "filosofie",
-      basis: true
-  },
-  {
-      grondvorm: "philosophus",
-      aanvullingen: "philosophi",
-      vertaling: "filosoof"
-  },
-  {
-      grondvorm: "pietas",
-      aanvullingen: "pietatis, (v.)",
-      vertaling: "plichtsgevoel, vroomheid, respect, eerbied",
-      basis: true,
-      teksten: ["7a/3", "7b/6"],
-      volgorde: {"7a/3": 47, "7b/6": 26}
-  },
-  {
-      grondvorm: "pinguis",
-      aanvullingen: "pinguis, pingue",
-      vertaling: "vet, vettig",
-      basis: true,
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 101}
-  },
-  {
-      grondvorm: "pinus",
-      aanvullingen: "pinus, (v.)",
-      vertaling: "pijnboom",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 94}
-  },
-  {
-      grondvorm: "piper",
-      aanvullingen: "piperis (o.)",
-      vertaling: "peper"
-  },
-  {
-      grondvorm: "Piraeus",
-      aanvullingen: "Piraei",
-      vertaling: "Piraeus (haven van Athene)",
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 41}
-  },
-  {
-      grondvorm: "piscina",
-      aanvullingen: "piscinae, (v.)",
-      vertaling: "zwembad",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 46}
-  },
-  {
-      grondvorm: "piscis",
-      aanvullingen: "piscis",
-      vertaling: "vis"
-  },
-  {
-      grondvorm: "pistor",
-      aanvullingen: "pistoris",
-      vertaling: "bakker",
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 55}
-  },
-  {
-      grondvorm: "pituita",
-      aanvullingen: "pituitae, (v.)",
-      vertaling: "slijm, etter; verkoudheid",
-      teksten: ["10/8"],
-      volgorde: {"10/8": 15}
-  },
-  {
-      grondvorm: "pius",
-      aanvullingen: "pia, pium",
-      vertaling: "plichtsgetrouw; vroom; liefdevol"
-  },
-  {
-      grondvorm: "placere",
-      aanvullingen: "placeo, placui, placitum",
-      vertaling: "behagen, bevallen, leuk zijn/vinden"
-  },
-  {
-      grondvorm: "placidus",
-      aanvullingen: "placida, placidum",
-      vertaling: "rustig"
-  },
-  {
-      grondvorm: "plaga",
-      aanvullingen: "plagae",
-      vertaling: "slag, stoot"
-  },
-  {
-      grondvorm: "planissimus",
-      aanvullingen: "planissima, planissimum",
-      vertaling: "vlakst, zeer vlak, het meest effen, zeer effen",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 83}
-  },
-  {
-      grondvorm: "planta",
-      aanvullingen: "plantae, (v.)",
-      vertaling: "voetzool, voet",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 47}
-  },
-  {
-      grondvorm: "planum",
-      aanvullingen: "plani, (o.)",
-      vertaling: "vlakte",
-      teksten: ["6b/5"],
-      volgorde: {"6b/5": 24}
-  },
-  {
-      grondvorm: "planus",
-      aanvullingen: "plana, planum",
-      vertaling: "vlak, effen",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 82}
-  },
-  {
-      grondvorm: "plaustrum",
-      aanvullingen: "plaustri, (o.)",
-      vertaling: "wagen, transportwagen",
-      teksten: ["6b/2", "8b/3"],
-      volgorde: {"6b/2": 92, "8b/3": 46}
-  },
-  {
-      grondvorm: "plebs",
-      aanvullingen: "plebis, (v.)",
-      vertaling: "het gewone volk, volk",
-      teksten: ["8a/3", "8a/5"],
-      volgorde: {"8a/3": 142, "8a/5": 36}
-  },
-  {
-      grondvorm: "plenus",
-      aanvullingen: "plena, plenum + gen.",
-      vertaling: "vol van",
-      teksten: ["9b/7"],
-      volgorde: {"9b/7": 5}
-  },
-  {
-      grondvorm: "plerumque",
-      aanvullingen: "(bijw.)",
-      vertaling: "meestal, gewoonlijk",
-      teksten: ["9a/4"],
-      volgorde: {"9a/4": 11}
-  },
-  {
-      grondvorm: "plerique",
-      aanvullingen: "pleraeque, pleraque (enkel mv.)",
-      vertaling: "de meeste"
-  },
-  {
-      grondvorm: "plumbum",
-      aanvullingen: "plumbi, (o.)",
-      vertaling: "lood",
-      teksten: ["10/19"],
-      volgorde: {"10/19": 18}
-  },
-  {
-      grondvorm: "plures",
-      aanvullingen: "plures, plura (enkel mv.)",
-      vertaling: "meer, meerdere, verscheidene",
-      teksten: ["6a/2", "6a/4"],
-      volgorde: {"6a/2": 68, "6a/4": 5}
-  },
-  {
-      grondvorm: "plurimi",
-      aanvullingen: "plurimae, plurima (meestal mv.)",
-      vertaling: "zeer veel",
-      teksten: ["6b/3", "8b/6", "9a/4"],
-      volgorde: {"6b/3": 1, "8b/6": 44, "9a/4": 7}
-  },
-  {
-      grondvorm: "plurimi facere",
-      aanvullingen: "",
-      vertaling: "iemand zeer hoogachten, zeer waarderen",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 23}
-  },
-  {
-      grondvorm: "plurimus",
-      aanvullingen: "plurima, plurimum (meestal mv.)",
-      vertaling: "zeer veel"
-  },
-  {
-      grondvorm: "plus",
-      aanvullingen: "(bijw.)",
-      vertaling: "meer",
-      teksten: ["8a/5"],
-      volgorde: {"8a/5": 14}
-  },
-  {
-      grondvorm: "plus quam",
-      aanvullingen: "",
-      vertaling: "meer … dan"
-  },
-  {
-      grondvorm: "plus … quam",
-      aanvullingen: "",
-      vertaling: "meer … dan"
-  },
-  {
-      grondvorm: "Pluto",
-      aanvullingen: "Plutonis",
-      vertaling: "(de god) Pluto"
-  },
-  {
-      grondvorm: "pluvia",
-      aanvullingen: "pluviae",
-      vertaling: "regen",
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 10}
-  },
-  {
-      grondvorm: "poena",
-      aanvullingen: "poenae, (v.)",
-      vertaling: "straf; boete",
-      basis: true,
-      teksten: ["7a/5", "7b/4"],
-      volgorde: {"7a/5": 25, "7b/4": 87}
-  },
-  {
-      grondvorm: "poenas dare",
-      aanvullingen: "+ gen.",
-      vertaling: "gestraft worden voor"
-  },
-  {
-      grondvorm: "poenas pendere",
-      aanvullingen: "",
-      vertaling: "boete betalen, boeten, gestraft worden",
-      teksten: ["7a/5"],
-      volgorde: {"7a/5": 41}
-  },
-  {
-      grondvorm: "polliceri",
-      aanvullingen: "polliceor, pollicitus sum",
-      vertaling: "beloven"
-  },
-  {
-      grondvorm: "Polus",
-      aanvullingen: "Poli",
-      vertaling: "Polus (eigennaam)"
-  },
-  {
-      grondvorm: "Pompeii",
-      aanvullingen: "Pompeiorum (enkel mv.)",
-      vertaling: "(de stad) Pompeji",
-      teksten: ["6a/1"],
-      volgorde: {"6a/1": 3}
-  },
-  {
-      grondvorm: "pondus",
-      aanvullingen: "ponderis",
-      vertaling: "gewicht, last"
-  },
-  {
-      grondvorm: "ponere",
-      aanvullingen: "pono, posui, positum",
-      vertaling: "plaatsen, zetten, leggen",
-      teksten: ["7a/7", "9a/4", "9b/5"],
-      volgorde: {"7a/7": 9, "9a/4": 39, "9b/5": 64}
-  },
-  {
-      grondvorm: "pons",
-      aanvullingen: "pontis (m.)",
-      vertaling: "brug"
-  },
-  {
-      grondvorm: "pontifex",
-      aanvullingen: "pontificis (m.)",
-      vertaling: "opperpriester"
-  },
-  {
-      grondvorm: "popina",
-      aanvullingen: "popinae, (v.)",
-      vertaling: "kroeg",
-      teksten: ["6b/1"],
-      volgorde: {"6b/1": 13}
-  },
-  {
-      grondvorm: "populari",
-      aanvullingen: "populor, populatus sum",
-      vertaling: "verwoesten; plunderen",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 62}
-  },
-  {
-      grondvorm: "populatio",
-      aanvullingen: "populationis, (v.)",
-      vertaling: "verwoesting, vernietiging",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 7}
-  },
-  {
-      grondvorm: "populus",
-      aanvullingen: "populi, (m.)",
-      vertaling: "volk",
-      teksten: ["6b/2", "7a/8"],
-      volgorde: {"6b/2": 28, "7a/8": 5}
-  },
-  {
-      grondvorm: "porrigere",
-      aanvullingen: "porrigo, porrexi, porrectum",
-      vertaling: "aanreiken, aanbieden, geven"
-  },
-  {
-      grondvorm: "Porsenna",
-      aanvullingen: "Porsennae (m.)",
-      vertaling: "Porsenna (eigennaam)",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 108}
-  },
-  {
-      grondvorm: "porta",
-      aanvullingen: "portae, (v.)",
-      vertaling: "poort"
-  },
-  {
-      grondvorm: "portare",
-      aanvullingen: "porto, portavi, portatum",
-      vertaling: "dragen, vervoeren",
-      teksten: ["6b/2", "7b/4"],
-      volgorde: {"6b/2": 68, "7b/4": 15}
-  },
-  {
-      grondvorm: "portorium",
-      aanvullingen: "portorii, (o.)",
-      vertaling: "tol, belasting",
-      teksten: ["8a/5"],
-      volgorde: {"8a/5": 25}
-  },
-  {
-      grondvorm: "portus",
-      aanvullingen: "portus, (m.)",
-      vertaling: "haven",
-      teksten: ["9b/7"],
-      volgorde: {"9b/7": 20}
-  },
-  {
-      grondvorm: "poscere",
-      aanvullingen: "posco, poposci, –",
-      vertaling: "(met aandrang) vragen, eisen",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 80}
-  },
-  {
-      grondvorm: "posse",
-      aanvullingen: "possum, potui, –",
-      vertaling: "kunnen",
-      basis: true,
-      teksten: ["6a/2", "6b/2", "6b/4"],
-      volgorde: {"6a/2": 92, "6b/2": 74, "6b/4": 64}
-  },
-  {
-      grondvorm: "possent",
-      aanvullingen: "",
-      vertaling: "'zij konden'",
-      teksten: ["7b/12"],
-      volgorde: {"7b/12": 18}
-  },
-  {
-      grondvorm: "post",
-      aanvullingen: "+ acc. (vz.)",
-      vertaling: "na, achter",
-      basis: true,
-      teksten: ["6a/1", "6a/2", "6b/5", "7b/2", "9a/1"],
-      volgorde: {"6a/1": 40, "6a/2": 22, "6b/5": 32, "7b/2": 70, "9a/1": 37}
-  },
-  {
-      grondvorm: "post",
-      aanvullingen: "(bijw.)",
-      vertaling: "daarna, later, nadien",
-      basis: true,
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 84}
-  },
-  {
-      grondvorm: "postea",
-      aanvullingen: "(bijw.)",
-      vertaling: "daarna, later, nadien",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 104}
-  },
-  {
-      grondvorm: "posterus",
-      aanvullingen: "postera, posterum",
-      vertaling: "volgend, later",
-      teksten: ["7b/4", "9b/7"],
-      volgorde: {"7b/4": 64, "9b/7": 17}
-  },
-  {
-      grondvorm: "posthac",
-      aanvullingen: "(bijw.)",
-      vertaling: "nadien, later"
-  },
-  {
-      grondvorm: "postquam",
-      aanvullingen: "(soms post … quam) + ind. (vgw.)",
-      vertaling: "nadat",
-      teksten: ["7b/2", "8b/9"],
-      volgorde: {"7b/2": 17, "8b/9": 4}
-  },
-  {
-      grondvorm: "postremo",
-      aanvullingen: "(bijw.)",
-      vertaling: "kortom, ten slotte",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 35}
-  },
-  {
-      grondvorm: "postridie",
-      aanvullingen: "(bijw.)",
-      vertaling: "'s anderendaags",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 7}
-  },
-  {
-      grondvorm: "Postumus",
-      aanvullingen: "Postumi",
-      vertaling: "Postumus (eigennaam)"
-  },
-  {
-      grondvorm: "potestas",
-      aanvullingen: "potestatis, (v.)",
-      vertaling: "macht, gezag, kracht",
-      basis: true,
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 2}
-  },
-  {
-      grondvorm: "potius",
-      aanvullingen: "(bijw.)",
-      vertaling: "eerder, liever"
-  },
-  {
-      grondvorm: "potius … quam",
-      aanvullingen: "",
-      vertaling: "eerder … dan, liever … dan"
-  },
-  {
-      grondvorm: "potus",
-      aanvullingen: "potus, (m.)",
-      vertaling: "het drinken, drank"
-  },
-  {
-      grondvorm: "praebere",
-      aanvullingen: "praebeo, praebui, praebitum",
-      vertaling: "verschaffen",
-      basis: true
-  },
-  {
-      grondvorm: "praeceps",
-      aanvullingen: "praeceps, praeceps; praecipitis",
-      vertaling: "halsoverkop"
-  },
-  {
-      grondvorm: "praecingere",
-      aanvullingen: "praecingo, praecinxi, praecinctum",
-      vertaling: "omgorden (met een riem)"
-  },
-  {
-      grondvorm: "praecipuus",
-      aanvullingen: "praecipua, praecipuum",
-      vertaling: "bijzonder, voornaam, uitstekend",
-      teksten: ["10/14"],
-      volgorde: {"10/14": 8}
-  },
-  {
-      grondvorm: "praeda",
-      aanvullingen: "praedae, (v.)",
-      vertaling: "buit"
-  },
-  {
-      grondvorm: "praedandi gratia",
-      aanvullingen: "",
-      vertaling: "'omwille van het stelen' → 'om te stelen'",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 47}
-  },
-  {
-      grondvorm: "praedare",
-      aanvullingen: "praedo, praedavi, praedatum",
-      vertaling: "buit binnenhalen, stelen, roven",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 45}
-  },
-  {
-      grondvorm: "praedium",
-      aanvullingen: "praedii, (o.)",
-      vertaling: "landgoed, boerderij",
-      teksten: ["8b/3"],
-      volgorde: {"8b/3": 4}
-  },
-  {
-      grondvorm: "praeductorium",
-      aanvullingen: "praeductorii",
-      vertaling: "lat, lineaal"
-  },
-  {
-      grondvorm: "praefectus praetorio",
-      aanvullingen: "praefecti praetorio",
-      vertaling: "commandant (van de keizerlijke lijfwacht)"
-  },
-  {
-      grondvorm: "praeferre",
-      aanvullingen: "praefero, praetuli, praelatum",
-      vertaling: "voor zich uitdragen"
-  },
-  {
-      grondvorm: "praeire",
-      aanvullingen: "praeeo, praeii, praeitum",
-      vertaling: "voorgaan, de leiding nemen",
-      teksten: ["7a/8"],
-      volgorde: {"7a/8": 9}
-  },
-  {
-      grondvorm: "praemium",
-      aanvullingen: "praemii, (o.)",
-      vertaling: "beloning"
-  },
-  {
-      grondvorm: "praesidere",
-      aanvullingen: "praesideo, praesedi, –",
-      vertaling: "zitten voor; leiden, commanderen"
-  },
-  {
-      grondvorm: "praesidium",
-      aanvullingen: "praesidii, (o.)",
-      vertaling: "bescherming, hulp, bezettingstroep"
-  },
-  {
-      grondvorm: "praestare",
-      aanvullingen: "praesto, praestiti, –",
-      vertaling: "verschaffen, geven, verlenen",
-      teksten: ["10/21"],
-      volgorde: {"10/21": 24}
-  },
-  {
-      grondvorm: "praestare",
-      aanvullingen: "praesto, praestiti, – + dat.",
-      vertaling: "overtreffen, superieur zijn aan"
-  },
-  {
-      grondvorm: "praeter",
-      aanvullingen: "+ acc. (vz.)",
-      vertaling: "langs; behalve",
-      teksten: ["7a/1", "10/8"],
-      volgorde: {"7a/1": 9, "10/8": 25}
-  },
-  {
-      grondvorm: "praeterea",
-      aanvullingen: "(bijw.)",
-      vertaling: "bovendien",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 89}
-  },
-  {
-      grondvorm: "praeterire",
-      aanvullingen: "praetereo, praeterii, praeteritum",
-      vertaling: "gaan langs, voorbijgaan, passeren",
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 14}
-  },
-  {
-      grondvorm: "praetor",
-      aanvullingen: "praetoris",
-      vertaling: "praetor",
-      teksten: ["7a/8", "8b/9"],
-      volgorde: {"7a/8": 7, "8b/9": 77}
-  },
-  {
-      grondvorm: "prandere",
-      aanvullingen: "prandeo, prandi, pransum",
-      vertaling: "eten, lunchen"
-  },
-  {
-      grondvorm: "prandium",
-      aanvullingen: "prandii",
-      vertaling: "lunch"
-  },
-  {
-      grondvorm: "precari",
-      aanvullingen: "precor, precatus sum + acc.",
-      vertaling: "smeken om, bidden om",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 63}
-  },
-  {
-      grondvorm: "premere",
-      aanvullingen: "premo, pressi, pressum",
-      vertaling: "drukken, duwen",
-      teksten: ["6a/7", "6b/2"],
-      volgorde: {"6a/7": 8, "6b/2": 37}
-  },
-  {
-      grondvorm: "pretium",
-      aanvullingen: "pretii",
-      vertaling: "prijs"
-  },
-  {
-      grondvorm: "prex",
-      aanvullingen: "precis, (v.)",
-      vertaling: "smeekbede, gebed; vervloeking",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 64}
-  },
-  {
-      grondvorm: "pridie",
-      aanvullingen: "(bijw.)",
-      vertaling: "de dag voor"
-  },
-  {
-      grondvorm: "primo",
-      aanvullingen: "(bijw.)",
-      vertaling: "eerst",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 28}
-  },
-  {
-      grondvorm: "primum",
-      aanvullingen: "(bijw.)",
-      vertaling: "ten eerste, eerst",
-      teksten: ["6a/2", "6b/5", "10/19"],
-      volgorde: {"6a/2": 78, "6b/5": 23, "10/19": 5}
-  },
-  {
-      grondvorm: "primus",
-      aanvullingen: "prima, primum (telwoord)",
-      vertaling: "eerste",
-      teksten: ["6b/8", "7a/1", "8b/9"],
-      volgorde: {"6b/8": 17, "7a/1": 15, "8b/9": 24}
-  },
-  {
-      grondvorm: "Primus",
-      aanvullingen: "Primi",
-      vertaling: "Primus (eigennaam)",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 139}
-  },
-  {
-      grondvorm: "principatus",
-      aanvullingen: "principatus, (m.)",
-      vertaling: "de eerste plaats, hoogste positie, heerschappij",
-      teksten: ["10/14"],
-      volgorde: {"10/14": 4}
-  },
-  {
-      grondvorm: "principium",
-      aanvullingen: "principii, (o.)",
-      vertaling: "begin",
-      basis: true
-  },
-  {
-      grondvorm: "prior",
-      aanvullingen: "prior, prius; prioris",
-      vertaling: "eerder, vroeger",
-      basis: true
-  },
-  {
-      grondvorm: "Priscus",
-      aanvullingen: "Prisci",
-      vertaling: "Priscus (eigennaam)"
-  },
-  {
-      grondvorm: "prius",
-      aanvullingen: "(bijw.)",
-      vertaling: "eerder, vroeger"
-  },
-  {
-      grondvorm: "privatim",
-      aanvullingen: "(bijw.)",
-      vertaling: "persoonlijk, onderling",
-      teksten: ["10/14"],
-      volgorde: {"10/14": 37}
-  },
-  {
-      grondvorm: "privatus",
-      aanvullingen: "privata, privatum",
-      vertaling: "privé-",
-      teksten: ["6a/1"],
-      volgorde: {"6a/1": 35}
-  },
-  {
-      grondvorm: "pro",
-      aanvullingen: "+ abl. (vz.)",
-      vertaling: "voor; ter verdediging van; in de plaats van",
-      basis: true,
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 47}
-  },
-  {
-      grondvorm: "probare",
-      aanvullingen: "probo, probavi, probatum",
-      vertaling: "goedkeuren; bewijzen",
-      basis: true
-  },
-  {
-      grondvorm: "procedere",
-      aanvullingen: "procedo, processi, processum",
-      vertaling: "voorwaarts gaan, voortgaan, vorderen",
-      basis: true,
-      teksten: ["6a/4", "9b/7"],
-      volgorde: {"6a/4": 96, "9b/7": 26}
-  },
-  {
-      grondvorm: "proceritas",
-      aanvullingen: "proceritatis",
-      vertaling: "hoogte, lengte"
-  },
-  {
-      grondvorm: "procreare",
-      aanvullingen: "procreo, procreavi, procreatum",
-      vertaling: "verwekken, doen ontstaan",
-      teksten: ["10/19"],
-      volgorde: {"10/19": 29}
-  },
-  {
-      grondvorm: "procurare",
-      aanvullingen: "procuro, procuravi, procuratum",
-      vertaling: "zorgen voor, verzorgen",
-      teksten: ["7a/8"],
-      volgorde: {"7a/8": 16}
-  },
-  {
-      grondvorm: "prodesse",
-      aanvullingen: "prosum, profui, –",
-      vertaling: "tot voordeel strekken, nuttig zijn"
-  },
-  {
-      grondvorm: "prodigiosus",
-      aanvullingen: "prodigiosa, prodigiosum",
-      vertaling: "monsterachtig"
-  },
-  {
-      grondvorm: "proelium",
-      aanvullingen: "proelii, (o.)",
-      vertaling: "strijd, gevecht",
-      basis: true,
-      teksten: ["7b/4", "9a/1"],
-      volgorde: {"7b/4": 5, "9a/1": 63}
-  },
-  {
-      grondvorm: "proficisci",
-      aanvullingen: "proficiscor, profectus sum",
-      vertaling: "vertrekken",
-      basis: true,
-      teksten: ["7b/2", "9b/7"],
-      volgorde: {"7b/2": 22, "9b/7": 32}
-  },
-  {
-      grondvorm: "profluere",
-      aanvullingen: "profluo, profluxi, –",
-      vertaling: "voortstomen, tevoorschijn stromen, tevoorschijn komen",
-      teksten: ["10/8"],
-      volgorde: {"10/8": 16}
-  },
-  {
-      grondvorm: "progignere",
-      aanvullingen: "progigno, progenui, progenitum",
-      vertaling: "voortbrengen, verwekken",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 8}
-  },
-  {
-      grondvorm: "prohibere",
-      aanvullingen: "prohibeo, prohibui, prohibitum",
-      vertaling: "verbieden; verhinderen, afhouden van, afweren",
-      basis: true,
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 12}
-  },
-  {
-      grondvorm: "proicere",
-      aanvullingen: "proicio, proieci, proiectum",
-      vertaling: "op de grond gooien, neerwerpen, weggooien",
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 15}
-  },
-  {
-      grondvorm: "prolabi",
-      aanvullingen: "prolabor, prolapsus sum",
-      vertaling: "vooruitglijden, instorten, vernietigen",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 85}
-  },
-  {
-      grondvorm: "prolapsus",
-      aanvullingen: "prolapsa, prolapsam",
-      vertaling: "vooruitgegleden, ingestort, vernietigd",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 86}
-  },
-  {
-      grondvorm: "proluere",
-      aanvullingen: "proluo, prolui, prolutum",
-      vertaling: "overgieten, wegspoelen, berochtigen",
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 47}
-  },
-  {
-      grondvorm: "Prometheus",
-      aanvullingen: "Promethei",
-      vertaling: "Prometheus (eigennaam)"
-  },
-  {
-      grondvorm: "promiscuus",
-      aanvullingen: "promiscua, promiscuum",
-      vertaling: "gescheiden, niet gemengd"
-  },
-  {
-      grondvorm: "promptus",
-      aanvullingen: "prompta, promptum ad + acc.",
-      vertaling: "gereed voor, klaar voor; bereidwillig tot, geneigd tot"
-  },
-  {
-      grondvorm: "prope",
-      aanvullingen: "(bijw.)",
-      vertaling: "dichtbij",
-      teksten: ["7a/3", "7b/2"],
-      volgorde: {"7a/3": 23, "7b/2": 29}
-  },
-  {
-      grondvorm: "prope",
-      aanvullingen: "+ acc. (vz.)",
-      vertaling: "dichtbij, bij"
-  },
-  {
-      grondvorm: "properare",
-      aanvullingen: "propero, properavi, properatum",
-      vertaling: "zich haasten, zich spoeden",
-      teksten: ["6b/2", "7a/7", "9b/9"],
-      volgorde: {"6b/2": 30, "7a/7": 13, "9b/9": 44}
-  },
-  {
-      grondvorm: "propnigeum",
-      aanvullingen: "propnigei",
-      vertaling: "zweetkamer",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 36}
-  },
-  {
-      grondvorm: "proponere",
-      aanvullingen: "propono, proposui, propositum",
-      vertaling: "voorstellen; uitvaardigen"
-  },
-  {
-      grondvorm: "proprius",
-      aanvullingen: "propria, proprium",
-      vertaling: "eigen, kenmerkend, typisch"
-  },
-  {
-      grondvorm: "propter",
-      aanvullingen: "+ acc. (vz.)",
-      vertaling: "wegens",
-      basis: true,
-      teksten: ["8a/2", "9b/4", "9b/9", "10/3"],
-      volgorde: {"8a/2": 6, "9b/4": 18, "9b/9": 10, "10/3": 29}
-  },
-  {
-      grondvorm: "Proserpina",
-      aanvullingen: "Proserpinae",
-      vertaling: "(de godin) Proserpina"
-  },
-  {
-      grondvorm: "prosilire",
-      aanvullingen: "prosilio, prosilui, –",
-      vertaling: "naar voren springen, opspringen",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 91}
-  },
-  {
-      grondvorm: "prospectare",
-      aanvullingen: "prospecto, prospectavi, prospectatum",
-      vertaling: "bekijken, observeren; van een plaats: uitzicht bieden op",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 20}
-  },
-  {
-      grondvorm: "prosperus",
-      aanvullingen: "prospera, prosperum",
-      vertaling: "gunstig, voorspoedig"
-  },
-  {
-      grondvorm: "protegere",
-      aanvullingen: "protego, protexi, protectum",
-      vertaling: "beschermen",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 63}
-  },
-  {
-      grondvorm: "providere",
-      aanvullingen: "provideo, providi, provisum",
-      vertaling: "voorzien, van tevoren regelen",
-      basis: true
-  },
-  {
-      grondvorm: "provincia",
-      aanvullingen: "provinciae",
-      vertaling: "provincie",
-      basis: true,
-      teksten: ["8a/5"],
-      volgorde: {"8a/5": 28}
-  },
-  {
-      grondvorm: "provocare",
-      aanvullingen: "provoco, provocavi, provocatum",
-      vertaling: "aansporen, uitlokken, uitdagen (tot een gevecht)",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 1}
-  },
-  {
-      grondvorm: "provocatus",
-      aanvullingen: "provocata, provocatum",
-      vertaling: "aangespoord, uitgelokt, uitgedaagd (tot een gevecht)",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 2}
-  },
-  {
-      grondvorm: "proximus",
-      aanvullingen: "proxima, proximum + dat.",
-      vertaling: "zeer dichtbij, dichtst bij",
-      basis: true,
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 5}
-  },
-  {
-      grondvorm: "prudentia",
-      aanvullingen: "prudentiae, (v.)",
-      vertaling: "kennis, ervaring, verstand, inzicht, wijsheid",
-      basis: true,
-      teksten: ["10/3"],
-      volgorde: {"10/3": 31}
-  },
-  {
-      grondvorm: "publicus",
-      aanvullingen: "publica, publicum",
-      vertaling: "openbaar, officieel",
-      basis: true,
-      teksten: ["6a/1", "7a/8"],
-      volgorde: {"6a/1": 38, "7a/8": 15}
-  },
-  {
-      grondvorm: "pudendus",
-      aanvullingen: "pudenda, pudendum",
-      vertaling: "beschamend, schandalig, schandalig"
-  },
-  {
-      grondvorm: "pudicitia",
-      aanvullingen: "pudicitiae",
-      vertaling: "zedigheid, kuisheid",
-      teksten: ["7b/6"],
-      volgorde: {"7b/6": 4}
-  },
-  {
-      grondvorm: "pudor",
-      aanvullingen: "pudoris",
-      vertaling: "schaamte; eergevoel, eerbied, eer",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 99}
-  },
-  {
-      grondvorm: "puella",
-      aanvullingen: "puellae",
-      vertaling: "meisje",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 45}
-  },
-  {
-      grondvorm: "puer scriniarius",
-      aanvullingen: "pueri scriniarii",
-      vertaling: "slaafje dat een schrijfkoker draagt"
-  },
-  {
-      grondvorm: "puer",
-      aanvullingen: "pueri, (m.)",
-      vertaling: "jongen; slaaf",
-      basis: true,
-      teksten: ["7a/1", "7a/3"],
-      volgorde: {"7a/1": 18, "7a/3": 74}
-  },
-  {
-      grondvorm: "pugio",
-      aanvullingen: "pugionis (m.)",
-      vertaling: "dolk"
-  },
-  {
-      grondvorm: "pugnare",
-      aanvullingen: "pugno, pugnavi, pugnatum",
-      vertaling: "vechten, strijden",
-      basis: true,
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 46}
-  },
-  {
-      grondvorm: "pulcher",
-      aanvullingen: "pulchra, pulchrum",
-      vertaling: "mooi",
-      basis: true,
-      teksten: ["7a/6", "9b/5"],
-      volgorde: {"7a/6": 11, "9b/5": 3}
-  },
-  {
-      grondvorm: "pullus",
-      aanvullingen: "pulli",
-      vertaling: "kip"
-  },
-  {
-      grondvorm: "pulmo",
-      aanvullingen: "pulmonis (m.)",
-      vertaling: "long",
-      teksten: ["10/8"],
-      volgorde: {"10/8": 12}
-  },
-  {
-      grondvorm: "pulpa",
-      aanvullingen: "pulpae",
-      vertaling: "vlees"
-  },
-  {
-      grondvorm: "pulvis",
-      aanvullingen: "pulveris (m.)",
-      vertaling: "stof, zand, aarde, grond",
-      teksten: ["10/3", "10/21"],
-      volgorde: {"10/3": 61, "10/21": 3}
-  },
-  {
-      grondvorm: "pumex",
-      aanvullingen: "pumicis (m.)",
-      vertaling: "puimsteen",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 44}
-  },
-  {
-      grondvorm: "purus",
-      aanvullingen: "pura, purum",
-      vertaling: "rein, zuiver",
-      teksten: ["7a/1"],
-      volgorde: {"7a/1": 21}
-  },
-  {
-      grondvorm: "pusillus",
-      aanvullingen: "pusilla, pusillum",
-      vertaling: "klein"
-  },
-  {
-      grondvorm: "putare",
-      aanvullingen: "puto, putavi, putatum",
-      vertaling: "menen, denken; beschouwen als",
-      basis: true,
-      teksten: ["6b/4", "7a/1", "7a/7", "8a/6", "10/3", "10/26"],
-      volgorde: {"6b/4": 63, "7a/1": 52, "7a/7": 20, "8a/6": 28, "10/3": 25, "10/26": 38}
-  },
-  {
-      grondvorm: "Pyrrha",
-      aanvullingen: "Pyrrhae",
-      vertaling: "Pyrrha (eigennaam)"
-  },
-  {
-      grondvorm: "Pythius",
-      aanvullingen: "Pythia, Pythium",
-      vertaling: "Pythisch"
-  },
-  {
-      grondvorm: "Python",
-      aanvullingen: "Pythonis (m.)",
-      vertaling: "Python (eigennaam)"
-  },
-  {
-      grondvorm: "qua",
-      aanvullingen: "(bijw.)",
-      vertaling: "waarlangs"
-  },
-  {
-      grondvorm: "qua",
-      aanvullingen: "(bijw.)",
-      vertaling: "ergens"
-  },
-  {
-      grondvorm: "quadraginta",
-      aanvullingen: "(telwoord)",
-      vertaling: "veertig",
-      teksten: ["7a/1"],
-      volgorde: {"7a/1": 33}
-  },
-  {
-      grondvorm: "quadriga",
-      aanvullingen: "quadrigae",
-      vertaling: "vierspan"
-  },
-  {
-      grondvorm: "quadriremis",
-      aanvullingen: "quadriremis",
-      vertaling: "vierdekker (= schip met vier verdiepingen roeiers)"
-  },
-  {
-      grondvorm: "quadrupes",
-      aanvullingen: "quadrupedis",
-      vertaling: "viervoeter",
-      teksten: ["8b/3"],
-      volgorde: {"8b/3": 18}
-  },
-  {
-      grondvorm: "quaerere",
-      aanvullingen: "quaero, quaesivi, quaesitum",
-      vertaling: "zoeken; vragen",
-      basis: true,
-      teksten: ["6b/4", "7a/8", "8a/3"],
-      volgorde: {"6b/4": 28, "7a/8": 19, "8a/3": 22}
-  },
-  {
-      grondvorm: "quaestor",
-      aanvullingen: "quaestoris",
-      vertaling: "quaestor (= politiek ambt)",
-      teksten: ["7a/8"],
-      volgorde: {"7a/8": 17}
-  },
-  {
-      grondvorm: "quaestus",
-      aanvullingen: "quaestus, (m.)",
-      vertaling: "voordeel, winst",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 55}
-  },
-  {
-      grondvorm: "qualis",
-      aanvullingen: "qualis, quale",
-      vertaling: "wat voor een?; (zodanig) als, zoals",
-      basis: true,
-      teksten: ["6a/2", "8b/3"],
-      volgorde: {"6a/2": 39, "8b/3": 10}
-  },
-  {
-      grondvorm: "quam",
-      aanvullingen: "(na comparatief)",
-      vertaling: "dan",
-      teksten: ["6b/4", "8a/3", "9b/5"],
-      volgorde: {"6b/4": 5, "8a/3": 30, "9b/5": 13}
-  },
-  {
-      grondvorm: "quam",
-      aanvullingen: "+ adj.!",
-      vertaling: "hoe",
-      teksten: ["6b/4", "8a/3", "9b/5"],
-      volgorde: {"6b/4": 44, "8a/3": 100, "9b/5": 42}
-  },
-  {
-      grondvorm: "quam primum",
-      aanvullingen: "",
-      vertaling: "zo vlug mogelijk, zo spoedig mogelijk",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 40}
-  },
-  {
-      grondvorm: "quam saepissime",
-      aanvullingen: "",
-      vertaling: "zo vaak mogelijk"
-  },
-  {
-      grondvorm: "quamquam",
-      aanvullingen: "+ ind./conj.",
-      vertaling: "hoewel, ook al",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 80}
-  },
-  {
-      grondvorm: "quando?",
-      aanvullingen: "(vragend bijw.)",
-      vertaling: "wanneer?"
-  },
-  {
-      grondvorm: "quando",
-      aanvullingen: "+ ind. (vgw.)",
-      vertaling: "wanneer; aangezien"
-  },
-  {
-      grondvorm: "quantum?",
-      aanvullingen: "(bijw.)",
-      vertaling: "hoeveel?"
-  },
-  {
-      grondvorm: "quapropter",
-      aanvullingen: "(bijw.)",
-      vertaling: "daarom"
-  },
-  {
-      grondvorm: "quare",
-      aanvullingen: "(vragend bijw.)",
-      vertaling: "waarom?"
-  },
-  {
-      grondvorm: "quartus",
-      aanvullingen: "quarta, quartum (telwoord)",
-      vertaling: "vierde",
-      teksten: ["7a/1"],
-      volgorde: {"7a/1": 39}
-  },
-  {
-      grondvorm: "quasi",
-      aanvullingen: "+ conj. (vgw.)",
-      vertaling: "alsof",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 93}
-  },
-  {
-      grondvorm: "quasi",
-      aanvullingen: "(bijw.)",
-      vertaling: "als het ware, om zo te zeggen"
-  },
-  {
-      grondvorm: "quatere",
-      aanvullingen: "quatio, –, quassum",
-      vertaling: "schudden"
-  },
-  {
-      grondvorm: "quattuor",
-      aanvullingen: "(telwoord)",
-      vertaling: "vier",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 123}
-  },
-  {
-      grondvorm: "quattuordecim",
-      aanvullingen: "(telwoord)",
-      vertaling: "veertien",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 120}
-  },
-  {
-      grondvorm: "-que",
-      aanvullingen: "(vgw.)",
-      vertaling: "en",
-      teksten: ["7a/3", "7a/5"],
-      volgorde: {"7a/3": 14, "7a/5": 10}
-  },
-  {
-      grondvorm: "quemadmodum",
-      aanvullingen: "(vragend bijw.)",
-      vertaling: "hoe?",
-      teksten: ["8a/6"],
-      volgorde: {"8a/6": 1}
-  },
-  {
-      grondvorm: "quemadmodum",
-      aanvullingen: "(vragend vgw.)",
-      vertaling: "zoals"
-  },
-  {
-      grondvorm: "queri",
-      aanvullingen: "queor, questus sum",
-      vertaling: "klagen",
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 17}
-  },
-  {
-      grondvorm: "qui",
-      aanvullingen: "quae, quod (betr. vnw.)",
-      vertaling: "die, dat",
-      basis: true,
-      teksten: ["6a/1", "6a/2", "6a/4", "6b/1", "6b/2", "6b/3", "7a/3", "7a/6", "7a/7", "7a/8", "7b/2", "7b/4", "8a/3", "8a/5", "8b/3", "8b/5", "10/26"],
-      volgorde: {"6a/1": 11, "6a/2": 33, "6a/4": 13, "6b/1": 18, "6b/2": 33, "6b/3": 20, "7a/3": 4, "7a/6": 2, "7a/7": 3, "7a/8": 3, "7b/2": 73, "7b/4": 49, "8a/3": 134, "8a/5": 18, "8b/3": 29, "8b/5": 24, "10/26": 5}
-  },
-  {
-      grondvorm: "qui",
-      aanvullingen: "quae, quod? (vragend vnw.)",
-      vertaling: "welk?, wat voor een?",
-      basis: true,
-      teksten: ["6a/2", "6b/2", "7a/3"],
-      volgorde: {"6a/2": 88, "6b/2": 114, "7a/3": 54}
-  },
-  {
-      grondvorm: "quia",
-      aanvullingen: "+ ind. (vgw.)",
-      vertaling: "omdat",
-      basis: true,
-      teksten: ["6a/2", "6b/2", "7a/5", "7a/8", "7b/4", "9a/4", "10/3", "10/14"],
-      volgorde: {"6a/2": 103, "6b/2": 26, "7a/5": 16, "7a/8": 20, "7b/4": 32, "9a/4": 43, "10/3": 57, "10/14": 10}
-  },
-  {
-      grondvorm: "quicumque",
-      aanvullingen: "quaecumque, quodcumque",
-      vertaling: "om het even wie/wat, om het even welk, wie ook/wat ook, alwie/alwat",
-      basis: true
-  },
-  {
-      grondvorm: "quidam",
-      aanvullingen: "quaedam, quiddam (onbep. vnw., subst.)",
-      vertaling: "iemand, iets",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 44}
-  },
-  {
-      grondvorm: "quidam",
-      aanvullingen: "quaedam, quoddam (onbep. vnw., adj.)",
-      vertaling: "een, een zekere"
-  },
-  {
-      grondvorm: "quidem",
-      aanvullingen: "(bijw.)",
-      vertaling: "zeker, ongetwijfeld; (legt nadruk op voorgaande woord)",
-      teksten: ["6b/4", "7b/4", "9b/5"],
-      volgorde: {"6b/4": 43, "7b/4": 68, "9b/5": 66}
-  },
-  {
-      grondvorm: "quies",
-      aanvullingen: "quietis, (v.)",
-      vertaling: "rust, ontspanning, slaap",
-      basis: true
-  },
-  {
-      grondvorm: "quiescere",
-      aanvullingen: "quiesco, quievi, quietum",
-      vertaling: "rusten",
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 44}
-  },
-  {
-      grondvorm: "quietus",
-      aanvullingen: "quieta, quietum",
-      vertaling: "rustig, kalm, ongestoord",
-      teksten: ["8a/3", "8a/5"],
-      volgorde: {"8a/3": 26, "8a/5": 41}
-  },
-  {
-      grondvorm: "quilibet",
-      aanvullingen: "quaelibet, quidlibet (onbep. vnw.)",
-      vertaling: "om het even wie/wat",
-      teksten: ["10/19"],
-      volgorde: {"10/19": 9}
-  },
-  {
-      grondvorm: "quilibet",
-      aanvullingen: "quaelibet, quodlibet (onbep. vnw.)",
-      vertaling: "om het even welk"
-  },
-  {
-      grondvorm: "quin",
-      aanvullingen: "+ conj.",
-      vertaling: "dat",
-      basis: true,
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 83}
-  },
-  {
-      grondvorm: "Quinctius Cincinnatus",
-      aanvullingen: "Quinctii Cincinnati",
-      vertaling: "Quinctius Cincinnatus (eigennaam)"
-  },
-  {
-      grondvorm: "quindecim",
-      aanvullingen: "(telwoord)",
-      vertaling: "vijftien",
-      teksten: ["7a/1"],
-      volgorde: {"7a/1": 13}
-  },
-  {
-      grondvorm: "quindecimus",
-      aanvullingen: "quindecima, quindecimum (telwoord)",
-      vertaling: "vijftiende",
-      teksten: ["7a/1"],
-      volgorde: {"7a/1": 17}
-  },
-  {
-      grondvorm: "quingenti",
-      aanvullingen: "quingentae, quingenta (telwoord)",
-      vertaling: "vijfhonderd",
-      teksten: ["8a/5"],
-      volgorde: {"8a/5": 15}
-  },
-  {
-      grondvorm: "quinque",
-      aanvullingen: "(telwoord)",
-      vertaling: "vijf",
-      teksten: ["7a/1", "8a/6"],
-      volgorde: {"7a/1": 3, "8a/6": 10}
-  },
-  {
-      grondvorm: "quintus",
-      aanvullingen: "quinta, quintum",
-      vertaling: "vijfde",
-      teksten: ["7a/1"],
-      volgorde: {"7a/1": 51}
-  },
-  {
-      grondvorm: "quippe",
-      aanvullingen: "",
-      vertaling: "want, namelijk",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 119}
-  },
-  {
-      grondvorm: "Quirinus",
-      aanvullingen: "Quirini",
-      vertaling: "(de god) Quirinus"
-  },
-  {
-      grondvorm: "quiritatus",
-      aanvullingen: "quiritatus, (m.)",
-      vertaling: "hulpgeroep, geschreeuw",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 49}
-  },
-  {
-      grondvorm: "quis",
-      aanvullingen: "qua, quid = aliquis, aliqua, aliquid (na si of nisi)",
-      vertaling: "iemand, iets",
-      basis: true,
-      teksten: ["6b/4", "6b/9"],
-      volgorde: {"6b/4": 36, "6b/9": 7}
-  },
-  {
-      grondvorm: "quis",
-      aanvullingen: "quis, quid? (vragend vnw.)",
-      vertaling: "wie?, wat?",
-      basis: true,
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 56}
-  },
-  {
-      grondvorm: "quisnam",
-      aanvullingen: "quisnam, quidnam? (vragend vnw.)",
-      vertaling: "wie?, wat?",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 54}
-  },
-  {
-      grondvorm: "quisquam",
-      aanvullingen: "quaequam/ulla, quicquam/quidquam",
-      vertaling: "subst.: iemand, iets; adj.: een",
-      teksten: ["7a/5", "8a/5", "9a/4"],
-      volgorde: {"7a/5": 38, "8a/5": 12, "9a/4": 31}
-  },
-  {
-      grondvorm: "quisquis",
-      aanvullingen: "quisquis, quidquid/quicquid",
-      vertaling: "alwie, alwat; wie ook, wat ook"
-  },
-  {
-      grondvorm: "quo?",
-      aanvullingen: "(vragend bijw.)",
-      vertaling: "waarheen?"
-  },
-  {
-      grondvorm: "quod",
-      aanvullingen: "+ ind. (vgw.)",
-      vertaling: "omdat",
-      basis: true,
-      teksten: ["7a/1", "7a/5", "8a/3"],
-      volgorde: {"7a/1": 20, "7a/5": 3, "8a/3": 51}
-  },
-  {
-      grondvorm: "quomodo",
-      aanvullingen: "(bijw.)",
-      vertaling: "hoe?",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 9}
-  },
-  {
-      grondvorm: "quomodo?",
-      aanvullingen: "(vragend bijw.)",
-      vertaling: "hoe?"
-  },
-  {
-      grondvorm: "quondam",
-      aanvullingen: "(bijw.)",
-      vertaling: "lang geleden, ooit, eens",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 1}
-  },
-  {
-      grondvorm: "quoniam",
-      aanvullingen: "+ ind. (vgw.)",
-      vertaling: "omdat, aangezien",
-      basis: true,
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 38}
-  },
-  {
-      grondvorm: "quoque",
-      aanvullingen: "(bijw.)",
-      vertaling: "ook",
-      basis: true,
-      teksten: ["6a/1", "8a/3", "10/3", "10/14", "10/26"],
-      volgorde: {"6a/1": 30, "8a/3": 127, "10/3": 5, "10/14": 38, "10/26": 54}
-  },
-  {
-      grondvorm: "quot?",
-      aanvullingen: "(bijw.)",
-      vertaling: "hoeveel?"
-  },
-  {
-      grondvorm: "quotiens",
-      aanvullingen: "(bijw.)",
-      vertaling: "hoe vaak",
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 13}
-  },
-  {
-      grondvorm: "rabidus",
-      aanvullingen: "rabida, rabidum",
-      vertaling: "razend, woest",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 27}
-  },
-  {
-      grondvorm: "rabiosus",
-      aanvullingen: "rabiosa, rabiosum",
-      vertaling: "hondsdol, razend",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 95}
-  },
-  {
-      grondvorm: "radere",
-      aanvullingen: "rado, rasi, rasum",
-      vertaling: "krabben; scheren"
-  },
-  {
-      grondvorm: "radix",
-      aanvullingen: "radicis",
-      vertaling: "wortel; onderste deel",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 43}
-  },
-  {
-      grondvorm: "raeda",
-      aanvullingen: "raedae, (v.)",
-      vertaling: "reiswagen",
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 24}
-  },
-  {
-      grondvorm: "rana",
-      aanvullingen: "ranae, (v.)",
-      vertaling: "kikker",
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 37}
-  },
-  {
-      grondvorm: "rapere",
-      aanvullingen: "rapio, rapui, raptum",
-      vertaling: "grijpen, stelen, roven",
-      basis: true,
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 52}
-  },
-  {
-      grondvorm: "rapidus",
-      aanvullingen: "rapida, rapidum",
-      vertaling: "meesleurend, snelstromend, snel",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 125}
-  },
-  {
-      grondvorm: "rarus",
-      aanvullingen: "rara, rarum",
-      vertaling: "verstrooid, niet dicht opeen; zeldzaam, schaars",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 29}
-  },
-  {
-      grondvorm: "ratio",
-      aanvullingen: "rationis, (v.)",
-      vertaling: "redenering; verstand; reden",
-      basis: true
-  },
-  {
-      grondvorm: "ratis",
-      aanvullingen: "ratis, (v.)",
-      vertaling: "vlot, schip",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 120}
-  },
-  {
-      grondvorm: "recedere",
-      aanvullingen: "recedo, recessi, recessum",
-      vertaling: "achteruitgaan, weggaan",
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 59}
-  },
-  {
-      grondvorm: "recens",
-      aanvullingen: "recens, recens; recentis",
-      vertaling: "nog fris, nog vers, recent",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 52}
-  },
-  {
-      grondvorm: "recipere",
-      aanvullingen: "recipio, recepi, receptum",
-      vertaling: "terugnemen, terugtrekken; ontvangen"
-  },
-  {
-      grondvorm: "recoquere",
-      aanvullingen: "recoquo, recoxi, recoctum",
-      vertaling: "omsmelten, ommeden"
-  },
-  {
-      grondvorm: "rectus",
-      aanvullingen: "recta, rectum",
-      vertaling: "recht; juist, rechtvaardig, eerlijk",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 70}
-  },
-  {
-      grondvorm: "recusare",
-      aanvullingen: "recuso, recusavi, recusatum",
-      vertaling: "afwijzen, weigeren, zich verzetten tegen",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 81}
-  },
-  {
-      grondvorm: "reddere",
-      aanvullingen: "reddo, reddidi, redditum",
-      vertaling: "teruggeven",
-      teksten: ["8a/3", "9b/9", "10/26"],
-      volgorde: {"8a/3": 131, "9b/9": 31, "10/26": 37}
-  },
-  {
-      grondvorm: "redemptor",
-      aanvullingen: "redemptoris",
-      vertaling: "opkoper, leverancier",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 77}
-  },
-  {
-      grondvorm: "redimere",
-      aanvullingen: "redimo, redemi, redemptum",
-      vertaling: "terugkopen, kopen"
-  },
-  {
-      grondvorm: "redire",
-      aanvullingen: "redeo, redii, reditum",
-      vertaling: "teruggaan, terugkeren",
-      teksten: ["6a/1", "10/26"],
-      volgorde: {"6a/1": 45, "10/26": 86}
-  },
-  {
-      grondvorm: "Reditus",
-      aanvullingen: "Rediti",
-      vertaling: "Reditus (eigennaam)"
-  },
-  {
-      grondvorm: "referre",
-      aanvullingen: "refero, rettuli, relatum",
-      vertaling: "terugbrengen",
-      teksten: ["6b/9"],
-      volgorde: {"6b/9": 8}
-  },
-  {
-      grondvorm: "reficere",
-      aanvullingen: "reficio, refeci, refectum",
-      vertaling: "hermaken, herstellen",
-      teksten: ["10/19"],
-      volgorde: {"10/19": 10}
-  },
-  {
-      grondvorm: "refugere",
-      aanvullingen: "refugio, refugi, –",
-      vertaling: "ontvluchten; zijn toevlucht nemen tot",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 107}
-  },
-  {
-      grondvorm: "regere",
-      aanvullingen: "rego, rexi, rectum",
-      vertaling: "heersen over, besturen",
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 61}
-  },
-  {
-      grondvorm: "regio",
-      aanvullingen: "regionis, (v.)",
-      vertaling: "streek",
-      teksten: ["6a/1", "6b/2", "10/21"],
-      volgorde: {"6a/1": 44, "6b/2": 121, "10/21": 11}
-  },
-  {
-      grondvorm: "regius",
-      aanvullingen: "regia, regium",
-      vertaling: "van koninklijke afkomst, koninklijk",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 30}
-  },
-  {
-      grondvorm: "regnare",
-      aanvullingen: "regno, regnavi, regnatum",
-      vertaling: "heersen, regeren"
-  },
-  {
-      grondvorm: "regnum",
-      aanvullingen: "regni, (o.)",
-      vertaling: "koningschap, heerschappij, macht; koninkrijk, rijk",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 7}
-  },
-  {
-      grondvorm: "Regula",
-      aanvullingen: "Regulae",
-      vertaling: "Regula (eigennaam)"
-  },
-  {
-      grondvorm: "relevare",
-      aanvullingen: "relevo, relevavi, relevatum",
-      vertaling: "licht maken, verlichten",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 32}
-  },
-  {
-      grondvorm: "religio",
-      aanvullingen: "religionis, (v.)",
-      vertaling: "godsdienst; godsdienstigheid, vroomheid",
-      teksten: ["7b/6", "9a/4"],
-      volgorde: {"7b/6": 10, "9a/4": 32}
-  },
-  {
-      grondvorm: "relinquere",
-      aanvullingen: "relinquo, reliqui, relictum",
-      vertaling: "achterlaten, verlaten",
-      teksten: ["6a/1", "6a/4", "6a/7", "7a/6", "7a/7", "8a/5", "9b/9"],
-      volgorde: {"6a/1": 28, "6a/4": 101, "6a/7": 12, "7a/6": 26, "7a/7": 35, "8a/5": 45, "9b/9": 48}
-  },
-  {
-      grondvorm: "reliquus",
-      aanvullingen: "reliqua, reliquum",
-      vertaling: "resterend, overig",
-      teksten: ["6b/2", "8a/3", "9a/1"],
-      volgorde: {"6b/2": 131, "8a/3": 15, "9a/1": 47}
-  },
-  {
-      grondvorm: "relucere",
-      aanvullingen: "reluceo, reluxi, –",
-      vertaling: "oplichten, opflakkeren, schitteren, stralen",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 12}
-  },
-  {
-      grondvorm: "remedium",
-      aanvullingen: "remedii, (o.)",
-      vertaling: "redmiddel",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 107}
-  },
-  {
-      grondvorm: "remittere",
-      aanvullingen: "remitto, remisi, remissum",
-      vertaling: "terugzenden, terugsturen"
-  },
-  {
-      grondvorm: "Remus",
-      aanvullingen: "Remi",
-      vertaling: "Remus (eigennaam)"
-  },
-  {
-      grondvorm: "renovare",
-      aanvullingen: "renovo, renovavi, renovatum",
-      vertaling: "vernieuwen, herstellen, verjongen"
-  },
-  {
-      grondvorm: "repellere",
-      aanvullingen: "repello, reppuli, repulsum",
-      vertaling: "terugdrijven, verdrijven",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 94}
-  },
-  {
-      grondvorm: "repente",
-      aanvullingen: "(bijw.)",
-      vertaling: "plots, plotseling",
-      teksten: ["10/21"],
-      volgorde: {"10/21": 39}
-  },
-  {
-      grondvorm: "repentinus",
-      aanvullingen: "repentina, repentinum",
-      vertaling: "plots, onverwacht",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 43}
-  },
-  {
-      grondvorm: "repere",
-      aanvullingen: "repo, repsi, reptum",
-      vertaling: "kruipen"
-  },
-  {
-      grondvorm: "reperire",
-      aanvullingen: "reperio, repperi, repertum",
-      vertaling: "vinden, aantreffen"
-  },
-  {
-      grondvorm: "repetere",
-      aanvullingen: "repeto, repeti(v)i, repetitum",
-      vertaling: "opnieuw zoeken; herbeginnen, herhalen"
-  },
-  {
-      grondvorm: "repetitio",
-      aanvullingen: "repetitionis, (v.)",
-      vertaling: "herhaling"
-  },
-  {
-      grondvorm: "replere",
-      aanvullingen: "repleo, replevi, repletum",
-      vertaling: "opnieuw vullen, vullen",
-      teksten: ["8a/5"],
-      volgorde: {"8a/5": 27}
-  },
-  {
-      grondvorm: "reponere",
-      aanvullingen: "repono, reposui, repositum",
-      vertaling: "wegleggen, bewaren"
-  },
-  {
-      grondvorm: "reprehensor",
-      aanvullingen: "reprehensoris",
-      vertaling: "iemand die afkeurt, berisper",
-      teksten: ["7a/5"],
-      volgorde: {"7a/5": 14}
-  },
-  {
-      grondvorm: "requiescere",
-      aanvullingen: "requiesco, requievi, requietum",
-      vertaling: "rusten, tot rust komen"
-  },
-  {
-      grondvorm: "requirere",
-      aanvullingen: "requiro, requisivi, requisitum",
-      vertaling: "zoeken, opzoeken",
-      teksten: ["6a/2", "10/3"],
-      volgorde: {"6a/2": 58, "10/3": 60}
-  },
-  {
-      grondvorm: "res",
-      aanvullingen: "rei, (v.)",
-      vertaling: "zaak, ding",
-      teksten: ["6b/2", "7a/3", "7b/4", "8b/3", "9a/4", "10/21"],
-      volgorde: {"6b/2": 65, "7a/3": 80, "7b/4": 54, "8b/3": 2, "9a/4": 16, "10/21": 7}
-  },
-  {
-      grondvorm: "res mancipii",
-      aanvullingen: "rei mancipii",
-      vertaling: "zaak waarover men volledig eigendomsrecht heeft, bezit, eigendom",
-      teksten: ["8b/3"],
-      volgorde: {"8b/3": 3}
-  },
-  {
-      grondvorm: "res militaris",
-      aanvullingen: "rei militaris",
-      vertaling: "krijgswezen, krijgsdienst",
-      teksten: ["7a/1"],
-      volgorde: {"7a/1": 37}
-  },
-  {
-      grondvorm: "res publica",
-      aanvullingen: "rei publicae",
-      vertaling: "staat",
-      teksten: ["7a/1", "7b/4", "10/14"],
-      volgorde: {"7a/1": 36, "7b/4": 59, "10/14": 33}
-  },
-  {
-      grondvorm: "resalutare",
-      aanvullingen: "resaluto, resalutavi, resalutatum",
-      vertaling: "teruggroeten"
-  },
-  {
-      grondvorm: "rescindere",
-      aanvullingen: "rescindo, rescidi, rescissum",
-      vertaling: "verscheuren, vernietigen, ongedaan maken"
-  },
-  {
-      grondvorm: "resciscere",
-      aanvullingen: "rescisco, rescii, rescitum",
-      vertaling: "te weten komen"
-  },
-  {
-      grondvorm: "respicere",
-      aanvullingen: "respicio, respexi, respectum",
-      vertaling: "omkijken",
-      teksten: ["6a/2", "6b/4", "9b/5", "10/3"],
-      volgorde: {"6a/2": 30, "6b/4": 1, "9b/5": 25, "10/3": 8}
-  },
-  {
-      grondvorm: "respondere",
-      aanvullingen: "respondeo, respondi, responsum",
-      vertaling: "antwoorden",
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 50}
-  },
-  {
-      grondvorm: "responsum",
-      aanvullingen: "responsi",
-      vertaling: "antwoord"
-  },
-  {
-      grondvorm: "restare",
-      aanvullingen: "resto, restiti, –",
-      vertaling: "achterblijven, overblijven; nog te wachten staan",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 64}
-  },
-  {
-      grondvorm: "restituere",
-      aanvullingen: "restituo, restitui, restitutum",
-      vertaling: "terugplaatsen, herstellen",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 88}
-  },
-  {
-      grondvorm: "retinere",
-      aanvullingen: "retineo, retinui, retentum",
-      vertaling: "vasthouden, tegenhouden",
-      teksten: ["9b/7"],
-      volgorde: {"9b/7": 16}
-  },
-  {
-      grondvorm: "retractare",
-      aanvullingen: "retracto, retractavi, retractatum",
-      vertaling: "opnieuw betasten",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 105}
-  },
-  {
-      grondvorm: "revera",
-      aanvullingen: "(soms re vera) (bijw.)",
-      vertaling: "inderdaad",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 63}
-  },
-  {
-      grondvorm: "reverentia",
-      aanvullingen: "reverentiae",
-      vertaling: "fatsoen, respect"
-  },
-  {
-      grondvorm: "reverti",
-      aanvullingen: "revertor, reverti",
-      vertaling: "teruggaan, terugkeren",
-      teksten: ["6b/5"],
-      volgorde: {"6b/5": 36}
-  },
-  {
-      grondvorm: "revocare",
-      aanvullingen: "revoco, revocavi, revocatum",
-      vertaling: "terugroepen",
-      teksten: ["8b/8"],
-      volgorde: {"8b/8": 4}
-  },
-  {
-      grondvorm: "rex",
-      aanvullingen: "regis (m.)",
-      vertaling: "koning",
-      teksten: ["7b/2", "9b/6"],
-      volgorde: {"7b/2": 41, "9b/6": 35}
-  },
-  {
-      grondvorm: "Rhadamanthus",
-      aanvullingen: "Rhadamanthi",
-      vertaling: "Rhadamanthus (eigennaam)"
-  },
-  {
-      grondvorm: "Rhea Silvia",
-      aanvullingen: "Rheae Silviae",
-      vertaling: "Rhea Silvia (eigennaam)"
-  },
-  {
-      grondvorm: "rhetor",
-      aanvullingen: "rhetoris",
-      vertaling: "leraar in de welsprekendheid, redenaar"
-  },
-  {
-      grondvorm: "Rhodius",
-      aanvullingen: "Rhodia, Rhodium",
-      vertaling: "van Rhodos"
-  },
-  {
-      grondvorm: "ridere",
-      aanvullingen: "rideo, risi, risum",
-      vertaling: "lachen"
-  },
-  {
-      grondvorm: "rigidus",
-      aanvullingen: "rigida, rigidum",
-      vertaling: "ruw, hard, stekelig"
-  },
-  {
-      grondvorm: "rimosus",
-      aanvullingen: "rimosa, rimosum",
-      vertaling: "vol spleten, vol barsten, lek",
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 16}
-  },
-  {
-      grondvorm: "ripa",
-      aanvullingen: "ripae, (v.)",
-      vertaling: "oever"
-  },
-  {
-      grondvorm: "risus",
-      aanvullingen: "risus, (m.)",
-      vertaling: "gelach",
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 9}
-  },
-  {
-      grondvorm: "rite",
-      aanvullingen: "(bijw.)",
-      vertaling: "volgens juist religieus gebruik, op ceremoniële wijze"
-  },
-  {
-      grondvorm: "rixa",
-      aanvullingen: "rixae, (v.)",
-      vertaling: "ruzie",
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 27}
-  },
-  {
-      grondvorm: "roborare",
-      aanvullingen: "roboro, roboravi, roboratum",
-      vertaling: "hard maken, harden, sterk maken"
-  },
-  {
-      grondvorm: "robustus",
-      aanvullingen: "robusta, robustum",
-      vertaling: "stevig",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 91}
-  },
-  {
-      grondvorm: "rogare",
-      aanvullingen: "rogo, rogavi, rogatum",
-      vertaling: "vragen",
-      basis: true,
-      teksten: ["8b/10", "10/3"],
-      volgorde: {"8b/10": 13, "10/3": 1}
-  },
-  {
-      grondvorm: "Roma",
-      aanvullingen: "Romae",
-      vertaling: "Rome",
-      basis: true,
-      teksten: ["8a/6"],
-      volgorde: {"8a/6": 16}
-  },
-  {
-      grondvorm: "Romanus",
-      aanvullingen: "Romana, Romanum",
-      vertaling: "Romeins",
-      basis: true,
-      teksten: ["7b/2", "7b/4", "8b/9"],
-      volgorde: {"7b/2": 55, "7b/4": 53, "8b/9": 97}
-  },
-  {
-      grondvorm: "Romanus",
-      aanvullingen: "Romani",
-      vertaling: "Romein",
-      basis: true,
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 100}
-  },
-  {
-      grondvorm: "Romulus",
-      aanvullingen: "Romuli",
-      vertaling: "Romulus (eigennaam)"
-  },
-  {
-      grondvorm: "rosa",
-      aanvullingen: "rosa, (v.)",
-      vertaling: "roos"
-  },
-  {
-      grondvorm: "rudis",
-      aanvullingen: "rudis, rude",
-      vertaling: "ruw, onbewerkt; onervaren, jong; ongedisciplineerd"
-  },
-  {
-      grondvorm: "ruere",
-      aanvullingen: "ruo, rui, rutum",
-      vertaling: "neerstorten, instorten; zich haasten, rennen",
-      basis: true,
-      teksten: ["6a/1", "6b/2"],
-      volgorde: {"6a/1": 23, "6b/2": 99}
-  },
-  {
-      grondvorm: "rumor",
-      aanvullingen: "rumoris, (m.)",
-      vertaling: "gerucht; roddel"
-  },
-  {
-      grondvorm: "rursus",
-      aanvullingen: "(bijw.)",
-      vertaling: "opnieuw",
-      basis: true,
-      teksten: ["6a/4", "6b/5", "9b/7", "10/26"],
-      volgorde: {"6a/4": 43, "6b/5": 33, "9b/7": 15, "10/26": 103}
-  },
-  {
-      grondvorm: "rus",
-      aanvullingen: "ruris (o.)",
-      vertaling: "platteland"
-  },
-  {
-      grondvorm: "rusticus",
-      aanvullingen: "rustica, rusticum",
-      vertaling: "landelijk, van het platteland",
-      teksten: ["8b/3"],
-      volgorde: {"8b/3": 9}
-  },
-  {
-      grondvorm: "ruta",
-      aanvullingen: "rutae, (v.)",
-      vertaling: "wijnruit (= plant)"
-  },
-  {
-      grondvorm: "Sabinus",
-      aanvullingen: "Sabina, Sabinum",
-      vertaling: "Sabijns",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 1}
-  },
-  {
-      grondvorm: "Sabinus",
-      aanvullingen: "Sabini",
-      vertaling: "Sabijn"
-  },
-  {
-      grondvorm: "sacer",
-      aanvullingen: "sacra, sacrum",
-      vertaling: "heilig, gewijd aan",
-      basis: true,
-      teksten: ["7a/8"],
-      volgorde: {"7a/8": 14}
-  },
-  {
-      grondvorm: "sacerdos",
-      aanvullingen: "sacerdotis",
-      vertaling: "priester, priesteres"
-  },
-  {
-      grondvorm: "sacrarium",
-      aanvullingen: "sacrarii, (o.)",
-      vertaling: "bewaarplaats (van heilige voorwerpen)"
-  },
-  {
-      grondvorm: "sacrificium",
-      aanvullingen: "sacrificii, (o.)",
-      vertaling: "offer",
-      teksten: ["7b/2", "9b/6"],
-      volgorde: {"7b/2": 85, "9b/6": 26}
-  },
-  {
-      grondvorm: "sacrificium facere",
-      aanvullingen: "",
-      vertaling: "een offer brengen",
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 28}
-  },
-  {
-      grondvorm: "sacrum",
-      aanvullingen: "sacri, (o.)",
-      vertaling: "heiligdom; godsdienstige handeling, ritueel; offerhandeling, offer"
-  },
-  {
-      grondvorm: "saepe",
-      aanvullingen: "(bijw.)",
-      vertaling: "vaak, dikwijls",
-      basis: true,
-      teksten: ["6b/4", "9a/4"],
-      volgorde: {"6b/4": 25, "9a/4": 28}
-  },
-  {
-      grondvorm: "saepire",
-      aanvullingen: "saepio, saepsi, saeptum",
-      vertaling: "omgeven, omringen, insluiten"
-  },
-  {
-      grondvorm: "saevire",
-      aanvullingen: "saevio, –, –",
-      vertaling: "woeden, razen, hevig tekeergaan"
-  },
-  {
-      grondvorm: "saevus",
-      aanvullingen: "saeva, saevum",
-      vertaling: "woedend, razend; hard, wreed",
-      basis: true
-  },
-  {
-      grondvorm: "sagitta",
-      aanvullingen: "sagittae, (v.)",
-      vertaling: "pijl"
-  },
-  {
-      grondvorm: "sagum",
-      aanvullingen: "sagi, (o.)",
-      vertaling: "(korte wollen) mantel",
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 16}
-  },
-  {
-      grondvorm: "sal",
-      aanvullingen: "salis (soms m., soms onz.)",
-      vertaling: "zout"
-  },
-  {
-      grondvorm: "salire",
-      aanvullingen: "salio, salui/salii, –",
-      vertaling: "springen"
-  },
-  {
-      grondvorm: "saltus",
-      aanvullingen: "saltus",
-      vertaling: "(berg)woud, (berg)weide",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 37}
-  },
-  {
-      grondvorm: "saluber",
-      aanvullingen: "salubris, salubre",
-      vertaling: "goed voor de gezondheid, gezond; nuttig, voordelig",
-      teksten: ["7b/4", "8b/6", "10/14", "10/19"],
-      volgorde: {"7b/4": 66, "8b/6": 41, "10/14": 22, "10/19": 13}
-  },
-  {
-      grondvorm: "salus",
-      aanvullingen: "salutis, (v.)",
-      vertaling: "gezondheid; geluk; redding",
-      basis: true
-  },
-  {
-      grondvorm: "salutare",
-      aanvullingen: "saluto, salutavi, salutatum",
-      vertaling: "groeten, begroeten"
-  },
-  {
-      grondvorm: "salvere",
-      aanvullingen: "salveo, –, –",
-      vertaling: "gezond zijn, krachtig zijn",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 70}
-  },
-  {
-      grondvorm: "sancire",
-      aanvullingen: "sancio, sanxi, sanctum",
-      vertaling: "bekrachtigen, bevestigen, goedkeuren",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 75}
-  },
-  {
-      grondvorm: "sanguis",
-      aanvullingen: "sanguinis (m.)",
-      vertaling: "bloed",
-      basis: true,
-      teksten: ["7b/4", "10/3"],
-      volgorde: {"7b/4": 19, "10/3": 76}
-  },
-  {
-      grondvorm: "sanus",
-      aanvullingen: "sana, sanum",
-      vertaling: "gezond",
-      basis: true
-  },
-  {
-      grondvorm: "sapire",
-      aanvullingen: "sapio, sapivi, –",
-      vertaling: "verstandig zijn, wijs zijn"
-  },
-  {
-      grondvorm: "sarcina",
-      aanvullingen: "sarcinae, (v.)",
-      vertaling: "last, lading, gewicht, bagage",
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 8}
-  },
-  {
-      grondvorm: "sarcire",
-      aanvullingen: "sarcio, sarsi, sartum",
-      vertaling: "oplappen, repareren",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 57}
-  },
-  {
-      grondvorm: "sartus",
-      aanvullingen: "sarta, sartum",
-      vertaling: "opgelapt, gerepareerd",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 58}
-  },
-  {
-      grondvorm: "satis",
-      aanvullingen: "(bijw.)",
-      vertaling: "voldoende, genoeg",
-      basis: true,
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 2}
-  },
-  {
-      grondvorm: "saxum",
-      aanvullingen: "saxi, (o.)",
-      vertaling: "rots, steen",
-      basis: true
-  },
-  {
-      grondvorm: "scandere",
-      aanvullingen: "scando, scansi, scansum",
-      vertaling: "beklimmen, klimmen"
-  },
-  {
-      grondvorm: "scelus",
-      aanvullingen: "sceleris, (o.)",
-      vertaling: "misdaad",
-      basis: true
-  },
-  {
-      grondvorm: "schola",
-      aanvullingen: "scholae, (v.)",
-      vertaling: "school"
-  },
-  {
-      grondvorm: "scientia",
-      aanvullingen: "scientiae, (v.)",
-      vertaling: "kennis, inzicht",
-      basis: true
-  },
-  {
-      grondvorm: "scindere",
-      aanvullingen: "scindo, scidi, scissum",
-      vertaling: "scheuren",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 55}
-  },
-  {
-      grondvorm: "scire",
-      aanvullingen: "scio, scivi, scitum",
-      vertaling: "weten",
-      basis: true,
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 3}
-  },
-  {
-      grondvorm: "scriba",
-      aanvullingen: "scriba (m.)",
-      vertaling: "schrijver, secretaris",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 39}
-  },
-  {
-      grondvorm: "scribere",
-      aanvullingen: "scribo, scripsi, scriptum",
-      vertaling: "schrijven",
-      basis: true,
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 19}
-  },
-  {
-      grondvorm: "scriptum",
-      aanvullingen: "scripti, (o.)",
-      vertaling: "het geschrevene, dat wat geschreven is"
-  },
-  {
-      grondvorm: "sculpere",
-      aanvullingen: "sculpo, sculpsi, sculptum",
-      vertaling: "beeldhouwen",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 18}
-  },
-  {
-      grondvorm: "se",
-      aanvullingen: "(pers. vnw.)",
-      vertaling: "hij, zij; zich",
-      teksten: ["8a/2", "9a/4"],
-      volgorde: {"8a/2": 4, "9a/4": 36}
-  },
-  {
-      grondvorm: "secum",
-      aanvullingen: "",
-      vertaling: "= cum se"
-  },
-  {
-      grondvorm: "secundus",
-      aanvullingen: "secunda, secundum",
-      vertaling: "tweede",
-      teksten: ["7a/1"],
-      volgorde: {"7a/1": 24}
-  },
-  {
-      grondvorm: "securus",
-      aanvullingen: "secura, securum + gen.",
-      vertaling: "veilig, zorgeloos",
-      teksten: ["6a/1"],
-      volgorde: {"6a/1": 13}
-  },
-  {
-      grondvorm: "sed",
-      aanvullingen: "(vgw.)",
-      vertaling: "maar",
-      basis: true
-  },
-  {
-      grondvorm: "sedere",
-      aanvullingen: "sedeo, sedi, sessum",
-      vertaling: "zitten",
-      basis: true,
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 42}
-  },
-  {
-      grondvorm: "sedes",
-      aanvullingen: "sedis, (v.)",
-      vertaling: "zitplaats, zetel; woonplaats, verblijfplaats",
-      basis: true,
-      teksten: ["7b/2", "8b/9"],
-      volgorde: {"7b/2": 90, "8b/9": 25}
-  },
-  {
-      grondvorm: "seditio",
-      aanvullingen: "seditionis, (v.)",
-      vertaling: "ruzie, conflict, opstand",
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 140}
-  },
-  {
-      grondvorm: "semen",
-      aanvullingen: "seminis, (o.)",
-      vertaling: "zaad"
-  },
-  {
-      grondvorm: "semita",
-      aanvullingen: "semitae, (v.)",
-      vertaling: "smalle weg, pad",
-      teksten: ["6b/1"],
-      volgorde: {"6b/1": 20}
-  },
-  {
-      grondvorm: "semivocalis",
-      aanvullingen: "semivocalis, semivocale",
-      vertaling: "een halve stem hebbend, een onduidelijke stem hebbend",
-      teksten: ["8b/3"],
-      volgorde: {"8b/3": 44}
-  },
-  {
-      grondvorm: "semper",
-      aanvullingen: "(bijw.)",
-      vertaling: "altijd",
-      basis: true,
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 4}
-  },
-  {
-      grondvorm: "sempiturnus",
-      aanvullingen: "sempiterna, sempiternum",
-      vertaling: "eeuwig"
-  },
-  {
-      grondvorm: "semustus",
-      aanvullingen: "semusta, semustum",
-      vertaling: "halfverbrand",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 137}
-  },
-  {
-      grondvorm: "senator",
-      aanvullingen: "senatoris",
-      vertaling: "senator"
-  },
-  {
-      grondvorm: "senatus",
-      aanvullingen: "senatus, (m.)",
-      vertaling: "senaat",
-      basis: true,
-      teksten: ["7a/8", "8a/5"],
-      volgorde: {"7a/8": 6, "8a/5": 31}
-  },
-  {
-      grondvorm: "senecta",
-      aanvullingen: "senectae, (v.)",
-      vertaling: "ouderdom"
-  },
-  {
-      grondvorm: "senescere",
-      aanvullingen: "senesco, senui, –",
-      vertaling: "oud worden",
-      teksten: ["7a/1"],
-      volgorde: {"7a/1": 45}
-  },
-  {
-      grondvorm: "senex",
-      aanvullingen: "senis (m.)",
-      vertaling: "oude man, bejaarde",
-      basis: true,
-      teksten: ["6b/2", "7a/1"],
-      volgorde: {"6b/2": 112, "7a/1": 53}
-  },
-  {
-      grondvorm: "senior",
-      aanvullingen: "senioris",
-      vertaling: "oudere man",
-      teksten: ["7a/1"],
-      volgorde: {"7a/1": 42}
-  },
-  {
-      grondvorm: "senium",
-      aanvullingen: "senii, (o.)",
-      vertaling: "ouderdom; aftakeling",
-      teksten: ["7a/1"],
-      volgorde: {"7a/1": 56}
-  },
-  {
-      grondvorm: "sensus",
-      aanvullingen: "sensus, (m.)",
-      vertaling: "waarneming; gevoel",
-      basis: true
-  },
-  {
-      grondvorm: "sententia",
-      aanvullingen: "sententiae, (v.)",
-      vertaling: "mening, gedachte; zin, spreuk; vonnis",
-      basis: true,
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 68}
-  },
-  {
-      grondvorm: "sentire",
-      aanvullingen: "sentio, sensi, sensum",
-      vertaling: "voelen, merken",
-      basis: true,
-      teksten: ["10/8"],
-      volgorde: {"10/8": 19}
-  },
-  {
-      grondvorm: "sepelire",
-      aanvullingen: "sepelio, sepelivi, sepultum",
-      vertaling: "begraven"
-  },
-  {
-      grondvorm: "seplasium",
-      aanvullingen: "seplasii",
-      vertaling: "zalf"
-  },
-  {
-      grondvorm: "septem",
-      aanvullingen: "(telwoord)",
-      vertaling: "zeven",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 130}
-  },
-  {
-      grondvorm: "Septembris",
-      aanvullingen: "Septembris, Septembre",
-      vertaling: "van de maand september",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 3}
-  },
-  {
-      grondvorm: "septimus",
-      aanvullingen: "septima, septimum (telwoord)",
-      vertaling: "zevende",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 7}
-  },
-  {
-      grondvorm: "sepulcrum",
-      aanvullingen: "sepulcri, (o.)",
-      vertaling: "graf",
-      teksten: ["7a/6"],
-      volgorde: {"7a/6": 9}
-  },
-  {
-      grondvorm: "Sequana",
-      aanvullingen: "Sequanae",
-      vertaling: "(de rivier) Seine",
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 26}
-  },
-  {
-      grondvorm: "sequi",
-      aanvullingen: "sequor, secutus sum",
-      vertaling: "volgen",
-      basis: true,
-      teksten: ["6a/7", "6b/2", "8b/5"],
-      volgorde: {"6a/7": 1, "6b/2": 32, "8b/5": 47}
-  },
-  {
-      grondvorm: "serenus",
-      aanvullingen: "serena, serenum",
-      vertaling: "helder, onbewolkt; rustig, kalm",
-      teksten: ["9b/7"],
-      volgorde: {"9b/7": 42}
-  },
-  {
-      grondvorm: "sermo",
-      aanvullingen: "sermonis (m.)",
-      vertaling: "gesprek; taal",
-      teksten: ["7a/6", "8a/3"],
-      volgorde: {"7a/6": 29, "8a/3": 13}
-  },
-  {
-      grondvorm: "servare",
-      aanvullingen: "servo, servavi, servatum",
-      vertaling: "bewaken, beschermen; bewaren",
-      basis: true,
-      teksten: ["7a/6", "8b/1"],
-      volgorde: {"7a/6": 35, "8b/1": 10}
-  },
-  {
-      grondvorm: "servire",
-      aanvullingen: "servio, servi, servitum",
-      vertaling: "slaaf zijn, (als slaaf) dienen",
-      basis: true
-  },
-  {
-      grondvorm: "servitium",
-      aanvullingen: "servitii, (o.)",
-      vertaling: "slavernij",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 45}
-  },
-  {
-      grondvorm: "servitus",
-      aanvullingen: "servitutis, (v.)",
-      vertaling: "slavernij"
-  },
-  {
-      grondvorm: "servulus",
-      aanvullingen: "servuli",
-      vertaling: "slaafje",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 60}
-  },
-  {
-      grondvorm: "servus",
-      aanvullingen: "servi",
-      vertaling: "slaaf",
-      basis: true,
-      teksten: ["6b/8", "8b/1", "8b/5", "8b/6", "8b/9", "9b/9"],
-      volgorde: {"6b/8": 18, "8b/1": 1, "8b/5": 3, "8b/6": 34, "8b/9": 10, "9b/9": 24}
-  },
-  {
-      grondvorm: "sese",
-      aanvullingen: "",
-      vertaling: "hij, zij; zich",
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 75}
-  },
-  {
-      grondvorm: "sestertium",
-      aanvullingen: "",
-      vertaling: "= 100 000 sestertiën",
-      teksten: ["8a/6"],
-      volgorde: {"8a/6": 25}
-  },
-  {
-      grondvorm: "sestertius",
-      aanvullingen: "sestertii, (m.)",
-      vertaling: "sestertie (Romeinse munt)",
-      teksten: ["8a/6"],
-      volgorde: {"8a/6": 24}
-  },
-  {
-      grondvorm: "severitas",
-      aanvullingen: "severitatis, (v.)",
-      vertaling: "strengheid, ernst"
-  },
-  {
-      grondvorm: "severus",
-      aanvullingen: "severa, severum",
-      vertaling: "streng, ernstig"
-  },
-  {
-      grondvorm: "sex",
-      aanvullingen: "(telwoord)",
-      vertaling: "zes"
-  },
-  {
-      grondvorm: "sexagesimus",
-      aanvullingen: "sexagesima, sexagesimum (telwoord)",
-      vertaling: "zestigste",
-      teksten: ["7a/1"],
-      volgorde: {"7a/1": 41}
-  },
-  {
-      grondvorm: "Sextus Tarquinius",
-      aanvullingen: "Sexti Tarquinii",
-      vertaling: "Sextus Tarquinius (eigennaam)"
-  },
-  {
-      grondvorm: "si",
-      aanvullingen: "+ ind./conj. (vgw.)",
-      vertaling: "als, indien",
-      basis: true,
-      teksten: ["6b/2", "6b/4", "6b/9", "7a/3", "7b/2", "8b/6", "9b/9", "10/8", "10/19", "10/26"],
-      volgorde: {"6b/2": 1, "6b/4": 55, "6b/9": 6, "7a/3": 43, "7b/2": 6, "8b/6": 19, "9b/9": 65, "10/8": 13, "10/19": 6, "10/26": 80}
-  },
-  {
-      grondvorm: "Sibyllinus",
-      aanvullingen: "Sibyllina, Sibyllinum",
-      vertaling: "Sibillijns"
-  },
-  {
-      grondvorm: "sic",
-      aanvullingen: "(bijw.)",
-      vertaling: "zo, op die manier",
-      basis: true,
-      teksten: ["6b/2", "7a/3", "8a/3", "8b/6"],
-      volgorde: {"6b/2": 105, "7a/3": 50, "8a/3": 137, "8b/6": 51}
-  },
-  {
-      grondvorm: "sic … ut",
-      aanvullingen: "+ conj.",
-      vertaling: "zo … dat, op die manier … dat",
-      teksten: ["7b/12"],
-      volgorde: {"7b/12": 9}
-  },
-  {
-      grondvorm: "siccus",
-      aanvullingen: "sicca, siccum",
-      vertaling: "droog",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 99}
-  },
-  {
-      grondvorm: "Sicilia",
-      aanvullingen: "Siciliae",
-      vertaling: "Sicilië",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 114}
-  },
-  {
-      grondvorm: "Siculus",
-      aanvullingen: "Sicula, Siculum",
-      vertaling: "van Sicilië, Siciliaans"
-  },
-  {
-      grondvorm: "sidere",
-      aanvullingen: "sido, sedi, sessum",
-      vertaling: "zich neerzetten, gaan zitten"
-  },
-  {
-      grondvorm: "signum",
-      aanvullingen: "signi, (o.)",
-      vertaling: "teken; veldteken, banier",
-      basis: true,
-      teksten: ["9b/4", "10/26"],
-      volgorde: {"9b/4": 33, "10/26": 104}
-  },
-  {
-      grondvorm: "signa inferre",
-      aanvullingen: "",
-      vertaling: "oprukken tegen, aanvallen"
-  },
-  {
-      grondvorm: "silentium",
-      aanvullingen: "silentii, (o.)",
-      vertaling: "stilte"
-  },
-  {
-      grondvorm: "silere",
-      aanvullingen: "sileo, silui, –",
-      vertaling: "zwijgen, stil zijn"
-  },
-  {
-      grondvorm: "siligineus",
-      aanvullingen: "siliginei",
-      vertaling: "wit tarwebrood"
-  },
-  {
-      grondvorm: "silva",
-      aanvullingen: "silvae, (v.)",
-      vertaling: "bos",
-      basis: true,
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 22}
-  },
-  {
-      grondvorm: "silvestris",
-      aanvullingen: "silvestris, silvestre",
-      vertaling: "van een bos, bebost, met een bos, bos-",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 38}
-  },
-  {
-      grondvorm: "similis",
-      aanvullingen: "similis, simile + dat.",
-      vertaling: "gelijkend op",
-      basis: true,
-      teksten: ["6a/2", "8a/3", "10/26"],
-      volgorde: {"6a/2": 17, "8a/3": 141, "10/26": 84}
-  },
-  {
-      grondvorm: "simul",
-      aanvullingen: "(bijw.)",
-      vertaling: "tegelijkertijd, tegelijk",
-      teksten: ["7a/7", "9b/9"],
-      volgorde: {"7a/7": 45, "9b/9": 18}
-  },
-  {
-      grondvorm: "simulacrum",
-      aanvullingen: "simulacri, (o.)",
-      vertaling: "beeld",
-      teksten: ["9a/4", "9b/6", "10/26"],
-      volgorde: {"9a/4": 8, "9b/6": 47, "10/26": 87}
-  },
-  {
-      grondvorm: "simulare",
-      aanvullingen: "simulo, simulavi, simulatum",
-      vertaling: "doen alsof, voorwenden, veinzen",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 75}
-  },
-  {
-      grondvorm: "simulatus",
-      aanvullingen: "simulata, simulatum",
-      vertaling: "vals, niet echt",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 34}
-  },
-  {
-      grondvorm: "sine",
-      aanvullingen: "+ abl. (vz.)",
-      vertaling: "zonder",
-      basis: true,
-      teksten: ["6a/2", "7b/6", "10/19", "10/26"],
-      volgorde: {"6a/2": 43, "7b/6": 11, "10/19": 30, "10/26": 10}
-  },
-  {
-      grondvorm: "singulus",
-      aanvullingen: "singula, singulum",
-      vertaling: "(elk) afzonderlijk, individueel, alleen",
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 11}
-  },
-  {
-      grondvorm: "sint",
-      aanvullingen: "",
-      vertaling: "'zij zijn'",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 20}
-  },
-  {
-      grondvorm: "sit",
-      aanvullingen: "",
-      vertaling: "'hij moet zijn'",
-      teksten: ["8b/10", "10/26"],
-      volgorde: {"8b/10": 8, "10/26": 83}
-  },
-  {
-      grondvorm: "sitis",
-      aanvullingen: "sitis, (v.)",
-      vertaling: "dorst",
-      teksten: ["10/8"],
-      volgorde: {"10/8": 28}
-  },
-  {
-      grondvorm: "situs",
-      aanvullingen: "sita, situm",
-      vertaling: "gelegen"
-  },
-  {
-      grondvorm: "sobrietas",
-      aanvullingen: "sobrietatis, (v.)",
-      vertaling: "nuchterheid; soberheid",
-      teksten: ["7a/5"],
-      volgorde: {"7a/5": 24}
-  },
-  {
-      grondvorm: "socia",
-      aanvullingen: "sociae, (v.)",
-      vertaling: "bondgenote, gezellin",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 64}
-  },
-  {
-      grondvorm: "sol",
-      aanvullingen: "solis (m.)",
-      vertaling: "zon",
-      basis: true,
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 71}
-  },
-  {
-      grondvorm: "solea",
-      aanvullingen: "soleae, (v.)",
-      vertaling: "sandaal",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 79}
-  },
-  {
-      grondvorm: "solere",
-      aanvullingen: "soleo, solitus sum",
-      vertaling: "gewoon zijn, de gewoonte hebben",
-      basis: true,
-      teksten: ["8a/3", "9b/9"],
-      volgorde: {"8a/3": 47, "9b/9": 52}
-  },
-  {
-      grondvorm: "solidare",
-      aanvullingen: "solido, solidavi, solidatum",
-      vertaling: "stevig maken, sterk maken, verstevigen, versterken"
-  },
-  {
-      grondvorm: "solidescere",
-      aanvullingen: "solidesco, –, –",
-      vertaling: "hard worden, stevig worden",
-      teksten: ["10/21"],
-      volgorde: {"10/21": 31}
-  },
-  {
-      grondvorm: "solidus",
-      aanvullingen: "solidi, (m.)",
-      vertaling: "een solidus (gouden muntstuk, geïntroduceerd in de 4e eeuw n.C.)",
-      teksten: ["8b/8"],
-      volgorde: {"8b/8": 8}
-  },
-  {
-      grondvorm: "solitudo",
-      aanvullingen: "solitudinis, (v.)",
-      vertaling: "eenzaamheid"
-  },
-  {
-      grondvorm: "solitus",
-      aanvullingen: "solita, solitum",
-      vertaling: "gewoon"
-  },
-  {
-      grondvorm: "sollers",
-      aanvullingen: "sollers, sollers; sollertis",
-      vertaling: "vaardig, slim, met inzicht"
-  },
-  {
-      grondvorm: "sollicitare",
-      aanvullingen: "sollicito, sollicitavi, sollicitatum",
-      vertaling: "ophitsen, aansporen",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 65}
-  },
-  {
-      grondvorm: "solum",
-      aanvullingen: "soli",
-      vertaling: "bodem, grond",
-      teksten: ["6b/2", "8b/3"],
-      volgorde: {"6b/2": 127, "8b/3": 7}
-  },
-  {
-      grondvorm: "solus",
-      aanvullingen: "sola, solum",
-      vertaling: "alleen, enig",
-      basis: true,
-      teksten: ["10/14"],
-      volgorde: {"10/14": 11}
-  },
-  {
-      grondvorm: "solutus",
-      aanvullingen: "soluta, solutum",
-      vertaling: "losgemaakt; hier: niet geboeid, niet vastgebonden",
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 33}
-  },
-  {
-      grondvorm: "solvere",
-      aanvullingen: "solvo, solvi, solutum",
-      vertaling: "losmaken, bevrijden; betalen",
-      basis: true,
-      teksten: ["7a/5", "7b/4", "8b/6", "9b/7"],
-      volgorde: {"7a/5": 29, "7b/4": 55, "8b/6": 32, "9b/7": 37}
-  },
-  {
-      grondvorm: "somnus",
-      aanvullingen: "somni",
-      vertaling: "slaap",
-      basis: true,
-      teksten: ["6b/3", "9b/4"],
-      volgorde: {"6b/3": 22, "9b/4": 44}
-  },
-  {
-      grondvorm: "sonare",
-      aanvullingen: "sono, sonavi, sonatum",
-      vertaling: "geluid geven, weerklinken",
-      basis: true
-  },
-  {
-      grondvorm: "sonitus",
-      aanvullingen: "sonitus, (m.)",
-      vertaling: "geluid, klank",
-      basis: true
-  },
-  {
-      grondvorm: "sordidus",
-      aanvullingen: "sordida, sordidum",
-      vertaling: "vuil, vies; armzalig, minderwaardig",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 101}
-  },
-  {
-      grondvorm: "Spartacus",
-      aanvullingen: "Spartaci",
-      vertaling: "Spartacus (eigennaam)",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 1}
-  },
-  {
-      grondvorm: "spatiosus",
-      aanvullingen: "spatiosa, spatiosum",
-      vertaling: "ruim, wijd, groot",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 30}
-  },
-  {
-      grondvorm: "spatium",
-      aanvullingen: "spatii, (o.)",
-      vertaling: "ruimte, afstand"
-  },
-  {
-      grondvorm: "species",
-      aanvullingen: "speciei, (v.)",
-      vertaling: "aanblik, uiterlijk; soort",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 13}
-  },
-  {
-      grondvorm: "spectaculum",
-      aanvullingen: "spectaculi, (o.)",
-      vertaling: "spektakel, schouwspel"
-  },
-  {
-      grondvorm: "spectare",
-      aanvullingen: "specto, spectavi, spectatum",
-      vertaling: "zien, aanschouwen, toekijken",
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 38}
-  },
-  {
-      grondvorm: "speculum",
-      aanvullingen: "speculi, (o.)",
-      vertaling: "spiegel; weerspiegeling"
-  },
-  {
-      grondvorm: "spelunca",
-      aanvullingen: "speluncae, (v.)",
-      vertaling: "grot"
-  },
-  {
-      grondvorm: "sperare",
-      aanvullingen: "spero, speravi, speratum",
-      vertaling: "hopen",
-      basis: true
-  },
-  {
-      grondvorm: "spes",
-      aanvullingen: "spei, (v.)",
-      vertaling: "hoop",
-      basis: true
-  },
-  {
-      grondvorm: "spoliare",
-      aanvullingen: "spolio, spoliavi, spoliatum",
-      vertaling: "beroven, roven, ontnemen",
-      basis: true,
-      teksten: ["10/3"],
-      volgorde: {"10/3": 84}
-  },
-  {
-      grondvorm: "spolium",
-      aanvullingen: "spolii, (o.)",
-      vertaling: "afgestroopte huid (van een dier); mv.: buit, buitgemaakte wapenuitrusting",
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 7}
-  },
-  {
-      grondvorm: "squalor",
-      aanvullingen: "squaloris, (m.)",
-      vertaling: "smerigheid; verdriet, rouw"
-  },
-  {
-      grondvorm: "stadium",
-      aanvullingen: "stadii, (o.)",
-      vertaling: "stadie (= lengtemaat, ca. 180 m)",
-      teksten: ["9b/7"],
-      volgorde: {"9b/7": 25}
-  },
-  {
-      grondvorm: "stagnum",
-      aanvullingen: "stagni, (o.)",
-      vertaling: "moeras"
-  },
-  {
-      grondvorm: "stare",
-      aanvullingen: "sto, steti, statum",
-      vertaling: "staan",
-      basis: true,
-      teksten: ["6a/1", "6b/3", "6b/4", "7b/4"],
-      volgorde: {"6a/1": 25, "6b/3": 30, "6b/4": 29, "7b/4": 50}
-  },
-  {
-      grondvorm: "statim",
-      aanvullingen: "(bijw.)",
-      vertaling: "dadelijk, onmiddellijk",
-      teksten: ["6b/5", "7b/2", "8b/9"],
-      volgorde: {"6b/5": 19, "7b/2": 79, "8b/9": 19}
-  },
-  {
-      grondvorm: "statio",
-      aanvullingen: "stationis, (v.)",
-      vertaling: "het stilstaan; positie; wacht post"
-  },
-  {
-      grondvorm: "statua",
-      aanvullingen: "statuae, (v.)",
-      vertaling: "standbeeld",
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 34}
-  },
-  {
-      grondvorm: "status",
-      aanvullingen: "status, (m.)",
-      vertaling: "staat, toestand, situatie",
-      teksten: ["8a/5"],
-      volgorde: {"8a/5": 44}
-  },
-  {
-      grondvorm: "sterilis",
-      aanvullingen: "sterilis, sterile",
-      vertaling: "onvruchtbaar"
-  },
-  {
-      grondvorm: "sternere",
-      aanvullingen: "sterno, stravi, stratum",
-      vertaling: "uitstrooien, uitspreiden; neerwerpen, neermaaien"
-  },
-  {
-      grondvorm: "sternumentum",
-      aanvullingen: "sternumenti",
-      vertaling: "het niezen, nies, niesbui",
-      teksten: ["10/8"],
-      volgorde: {"10/8": 21}
-  },
-  {
-      grondvorm: "stimulare",
-      aanvullingen: "stimulo, stimulavi, stimulatum",
-      vertaling: "aansporen, aanvuren, ophitsen"
-  },
-  {
-      grondvorm: "stipendium",
-      aanvullingen: "stipendii, (o.)",
-      vertaling: "soldij",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 36}
-  },
-  {
-      grondvorm: "strages",
-      aanvullingen: "stragis, (v.)",
-      vertaling: "verwoesting, vernieling",
-      teksten: ["6a/1", "8b/9"],
-      volgorde: {"6a/1": 17, "8b/9": 66}
-  },
-  {
-      grondvorm: "strepere",
-      aanvullingen: "strepo, strepui, strepitum",
-      vertaling: "lawaai maken; weerklinken, schetteren",
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 42}
-  },
-  {
-      grondvorm: "strepitus",
-      aanvullingen: "strepitus, (m.)",
-      vertaling: "lawaai",
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 43}
-  },
-  {
-      grondvorm: "stringere",
-      aanvullingen: "stringo, strinxi, strictum",
-      vertaling: "strak aantrekken; (een wapen) trekken",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 50}
-  },
-  {
-      grondvorm: "struere",
-      aanvullingen: "struo, struxi, structum",
-      vertaling: "oprichten, bouwen",
-      teksten: ["10/21"],
-      volgorde: {"10/21": 27}
-  },
-  {
-      grondvorm: "studium",
-      aanvullingen: "studii, (o.)",
-      vertaling: "interesse, enthousiasme, ijver; studie",
-      teksten: ["7b/6", "10/3"],
-      volgorde: {"7b/6": 9, "10/3": 81}
-  },
-  {
-      grondvorm: "stupere",
-      aanvullingen: "stupeo, stupui, –",
-      vertaling: "verstomd staan",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 99}
-  },
-  {
-      grondvorm: "stuprum",
-      aanvullingen: "stupri, (o.)",
-      vertaling: "verkrachting"
-  },
-  {
-      grondvorm: "suavitas",
-      aanvullingen: "suavitatis, (v.)",
-      vertaling: "vriendelijkheid"
-  },
-  {
-      grondvorm: "sub",
-      aanvullingen: "+ abl. (vz.)",
-      vertaling: "onder",
-      basis: true,
-      teksten: ["6a/4", "7a/6", "8b/6", "10/21"],
-      volgorde: {"6a/4": 41, "7a/6": 27, "8b/6": 26, "10/21": 29}
-  },
-  {
-      grondvorm: "sub",
-      aanvullingen: "+ acc. (vz.)",
-      vertaling: "tot onder, onder",
-      basis: true
-  },
-  {
-      grondvorm: "subassare",
-      aanvullingen: "subasso, subassavi, subassatum",
-      vertaling: "koken, braden, roosteren"
-  },
-  {
-      grondvorm: "subigere",
-      aanvullingen: "subigo, subegi, subactum",
-      vertaling: "onderwerpen"
-  },
-  {
-      grondvorm: "subinde",
-      aanvullingen: "(bijw.)",
-      vertaling: "onmiddellijk daarna",
-      teksten: ["7a/7"],
-      volgorde: {"7a/7": 39}
-  },
-  {
-      grondvorm: "subito",
-      aanvullingen: "(bijw.)",
-      vertaling: "plots, plotseling"
-  },
-  {
-      grondvorm: "subitus",
-      aanvullingen: "subita, subitum",
-      vertaling: "plots",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 50}
-  },
-  {
-      grondvorm: "sulicius",
-      aanvullingen: "sublicia, sublicium",
-      vertaling: "op palen rustend"
-  },
-  {
-      grondvorm: "subridere",
-      aanvullingen: "subrideo, –, –",
-      vertaling: "glimlachen"
-  },
-  {
-      grondvorm: "subsequi",
-      aanvullingen: "subsequor, subsecutus sum",
-      vertaling: "op de voet volgen/onmiddellijk volgen"
-  },
-  {
-      grondvorm: "subsidere",
-      aanvullingen: "subsido, subsedi, subsessum",
-      vertaling: "gaan zitten; zinken, zakken"
-  },
-  {
-      grondvorm: "subsistere",
-      aanvullingen: "subsisto, substiti, –",
-      vertaling: "stilstaan, blijven staan, blijven",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 25}
-  },
-  {
-      grondvorm: "subterraneus",
-      aanvullingen: "subterranea, subterraneum",
-      vertaling: "onderaards, ondergronds",
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 43}
-  },
-  {
-      grondvorm: "subtilis",
-      aanvullingen: "subtilis, subtile",
-      vertaling: "dun, fijn",
-      teksten: ["10/14"],
-      volgorde: {"10/14": 20}
-  },
-  {
-      grondvorm: "sucus",
-      aanvullingen: "suci",
-      vertaling: "sap",
-      teksten: ["10/14"],
-      volgorde: {"10/14": 17}
-  },
-  {
-      grondvorm: "suffundere",
-      aanvullingen: "suffundo, suffudi, suffusum",
-      vertaling: "gieten onder, gieten bij"
-  },
-  {
-      grondvorm: "sumere",
-      aanvullingen: "sumo, sumpsi, sumptum",
-      vertaling: "nemen; verbuiken, eten",
-      basis: true
-  },
-  {
-      grondvorm: "summus",
-      aanvullingen: "summa, summum",
-      vertaling: "hoogst, opperst",
-      basis: true,
-      teksten: ["7b/12"],
-      volgorde: {"7b/12": 16}
-  },
-  {
-      grondvorm: "sumptuosus",
-      aanvullingen: "sumptuosa, sumptuosum",
-      vertaling: "kostbaar, duur, luxueus",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 43}
-  },
-  {
-      grondvorm: "super",
-      aanvullingen: "+ acc./abl. (vz.)",
-      vertaling: "boven, bovenop",
-      teksten: ["6b/2", "10/3"],
-      volgorde: {"6b/2": 12, "10/3": 51}
-  },
-  {
-      grondvorm: "superare",
-      aanvullingen: "supero, superavi, superatum",
-      vertaling: "overwinnen, overtreffen",
-      basis: true,
-      teksten: ["9a/4"],
-      volgorde: {"9a/4": 13}
-  },
-  {
-      grondvorm: "superarius",
-      aanvullingen: "superaria, superarium",
-      vertaling: "aan de bovenkant, boven-"
-  },
-  {
-      grondvorm: "superbia",
-      aanvullingen: "superbiae, (v.)",
-      vertaling: "overmoed, arrogantie"
-  },
-  {
-      grondvorm: "superesse",
-      aanvullingen: "supersum, superfui, –",
-      vertaling: "over zijn, overblijven",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 135}
-  },
-  {
-      grondvorm: "superfundere",
-      aanvullingen: "superfundo, superfudi, superfusum",
-      vertaling: "gieten op/over",
-      teksten: ["6b/9"],
-      volgorde: {"6b/9": 15}
-  },
-  {
-      grondvorm: "superior",
-      aanvullingen: "superior, superius; superioris",
-      vertaling: "hogergelegen"
-  },
-  {
-      grondvorm: "superstitio",
-      aanvullingen: "superstitionis, (v.)",
-      vertaling: "bijgeloof",
-      teksten: ["7b/6"],
-      volgorde: {"7b/6": 12}
-  },
-  {
-      grondvorm: "superus",
-      aanvullingen: "supera, superum",
-      vertaling: "zich boven bevindend, boven-"
-  },
-  {
-      grondvorm: "suppetere",
-      aanvullingen: "suppeto, suppetivi, suppetitum",
-      vertaling: "voorhanden zijn, ter beschikking staan",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 118}
-  },
-  {
-      grondvorm: "supplicium",
-      aanvullingen: "supplicii, (o.)",
-      vertaling: "straf, terechtstelling",
-      teksten: ["9a/4"],
-      volgorde: {"9a/4": 46}
-  },
-  {
-      grondvorm: "supra",
-      aanvullingen: "(bijw.)",
-      vertaling: "boven, erboven, daarboven"
-  },
-  {
-      grondvorm: "surgere",
-      aanvullingen: "surgo, surrexi, surrectum",
-      vertaling: "opstaan; oprijzen"
-  },
-  {
-      grondvorm: "sus",
-      aanvullingen: "suis, (m./vr.)",
-      vertaling: "zwijn, varken",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 100}
-  },
-  {
-      grondvorm: "sustinere",
-      aanvullingen: "sustineo, sustinui, sustentum",
-      vertaling: "vasthouden, houden; uithouden"
-  },
-  {
-      grondvorm: "suus",
-      aanvullingen: "sua, suum (bezit. vnw.)",
-      vertaling: "zijn, haar, hun",
-      basis: true
-  },
-  {
-      grondvorm: "Syracusae",
-      aanvullingen: "Syracusarum (enkel mv.)",
-      vertaling: "(de havenstad) Syracuse",
-      teksten: ["10/3"],
-      volgorde: {"10/3": 17}
-  },
-  {
-      grondvorm: "Syria",
-      aanvullingen: "Syriae",
-      vertaling: "Syrië"
-  },
-  {
-      grondvorm: "taberna",
-      aanvullingen: "tabernae, (v.)",
-      vertaling: "winkel",
-      teksten: ["6b/1", "6b/5", "6b/8", "6b/9"],
-      volgorde: {"6b/1": 17, "6b/5": 8, "6b/8": 8, "6b/9": 5}
-  },
-  {
-      grondvorm: "tabes",
-      aanvullingen: "tabis, (v.)",
-      vertaling: "ziekte",
-      teksten: ["8a/2", "8a/3"],
-      volgorde: {"8a/2": 37, "8a/3": 124}
-  },
-  {
-      grondvorm: "tabula",
-      aanvullingen: "tabulae, (v.)",
-      vertaling: "plank; schrijftafeltje, wastafeltje"
-  },
-  {
-      grondvorm: "tacitus",
-      aanvullingen: "tacita, tacitum",
-      vertaling: "zwijgend, stil",
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 58}
-  },
-  {
-      grondvorm: "tam",
-      aanvullingen: "(bijw.)",
-      vertaling: "zo, zozeer",
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 23}
-  },
-  {
-      grondvorm: "tam … quam",
-      aanvullingen: "",
-      vertaling: "zo … als, zowel … als",
-      teksten: ["8b/3"],
-      volgorde: {"8b/3": 3}
-  },
-  {
-      grondvorm: "tamen",
-      aanvullingen: "(bijw.)",
-      vertaling: "toch, nochtans, desalniettemin",
-      basis: true,
-      teksten: ["6a/2", "6a/4", "6b/2", "7a/3", "8b/9", "9b/7", "9b/9", "10/3"],
-      volgorde: {"6a/2": 28, "6a/4": 48, "6b/2": 24, "7a/3": 67, "8b/9": 130, "9b/7": 9, "9b/9": 42, "10/3": 27}
-  },
-  {
-      grondvorm: "tamquam",
-      aanvullingen: "(vgw./bijw.)",
-      vertaling: "zoals, als, alsof; als het ware"
-  },
-  {
-      grondvorm: "tandem",
-      aanvullingen: "(bijw.)",
-      vertaling: "ten slotte, uiteindelijk",
-      teksten: ["8b/9", "9b/4", "9b/9"],
-      volgorde: {"8b/9": 91, "9b/4": 54, "9b/9": 27}
-  },
-  {
-      grondvorm: "tangere",
-      aanvullingen: "tango, tetigi, tactum",
-      vertaling: "aanraken",
-      basis: true
-  },
-  {
-      grondvorm: "tantum",
-      aanvullingen: "(bijw.)",
-      vertaling: "enkel, alleen, slechts, uitsluitend",
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 37}
-  },
-  {
-      grondvorm: "tantum … quantum",
-      aanvullingen: "",
-      vertaling: "zoveel … als"
-  },
-  {
-      grondvorm: "tantundem",
-      aanvullingen: "(bijw.)",
-      vertaling: "evenveel",
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 60}
-  },
-  {
-      grondvorm: "tantus",
-      aanvullingen: "tanta, tantum",
-      vertaling: "zo veel, zo groot",
-      basis: true
-  },
-  {
-      grondvorm: "tardare",
-      aanvullingen: "tardo, tardavi, tardatum",
-      vertaling: "vertragen, ophouden, belemmeren"
-  },
-  {
-      grondvorm: "Tarquinius Superbus",
-      aanvullingen: "Tarquinii Superbi",
-      vertaling: "Tarquinius Superbus (eigennaam)"
-  },
-  {
-      grondvorm: "Tartareus",
-      aanvullingen: "Tartarea, Tartareum",
-      vertaling: "behorend tot de Tartarus, van de Tartarus"
-  },
-  {
-      grondvorm: "Tartarus",
-      aanvullingen: "Tartari",
-      vertaling: "Tartarus, Onderwereld"
-  },
-  {
-      grondvorm: "Taurea",
-      aanvullingen: "Taureae",
-      vertaling: "Taurea (eigennaam)"
-  },
-  {
-      grondvorm: "taurus",
-      aanvullingen: "tauri",
-      vertaling: "stier"
-  },
-  {
-      grondvorm: "tectum",
-      aanvullingen: "tecti, (o.)",
-      vertaling: "dak, huis",
-      teksten: ["6a/4", "6b/2", "6b/4"],
-      volgorde: {"6a/4": 24, "6b/2": 133, "6b/4": 7}
-  },
-  {
-      grondvorm: "tegere",
-      aanvullingen: "tego, texi, tectum",
-      vertaling: "bedekken, toedekken",
-      basis: true
-  },
-  {
-      grondvorm: "tegumentum",
-      aanvullingen: "tegumenti, (o.)",
-      vertaling: "bedekking, bekleding, huid"
-  },
-  {
-      grondvorm: "Telethusa",
-      aanvullingen: "Telethusae",
-      vertaling: "Telethusa (eigennaam)",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 53}
-  },
-  {
-      grondvorm: "tellus",
-      aanvullingen: "telluris, (v.)",
-      vertaling: "aarde, land",
-      basis: true,
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 3}
-  },
-  {
-      grondvorm: "telum",
-      aanvullingen: "teli, (o.)",
-      vertaling: "werpspies, speer, wapen",
-      basis: true
-  },
-  {
-      grondvorm: "temere",
-      aanvullingen: "(bijw.)",
-      vertaling: "onbezonnen, zonder nadenken, zonder plan",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 50}
-  },
-  {
-      grondvorm: "temperare",
-      aanvullingen: "tempero, temperavi, temperatum",
-      vertaling: "in de juiste verhouding brengen"
-  },
-  {
-      grondvorm: "tempestas",
-      aanvullingen: "tempestatis, (v.)",
-      vertaling: "tijd; storm",
-      basis: true,
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 11}
-  },
-  {
-      grondvorm: "templum",
-      aanvullingen: "templi, (o.)",
-      vertaling: "tempel",
-      basis: true,
-      teksten: ["10/26"],
-      volgorde: {"10/26": 74}
-  },
-  {
-      grondvorm: "temptare",
-      aanvullingen: "tempto, temptavi, temptatum",
-      vertaling: "proberen",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 97}
-  },
-  {
-      grondvorm: "tempus",
-      aanvullingen: "temporis, (o.)",
-      vertaling: "tijd, moment, ogenblik",
-      basis: true,
-      teksten: ["8a/2", "9b/6", "9b/9"],
-      volgorde: {"8a/2": 20, "9b/6": 5, "9b/9": 17}
-  },
-  {
-      grondvorm: "tenax",
-      aanvullingen: "tenax, tenax; tenacis + gen.",
-      vertaling: "vasthoudend aan, koppig"
-  },
-  {
-      grondvorm: "tenebrae",
-      aanvullingen: "tenebrarum (enkel mv.), (vr. mv.)",
-      vertaling: "duisternis",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 16}
-  },
-  {
-      grondvorm: "tenebricosus",
-      aanvullingen: "tenebricosa, tenebricosum",
-      vertaling: "donker, duister"
-  },
-  {
-      grondvorm: "tener",
-      aanvullingen: "tenera, tenerum",
-      vertaling: "zacht; jong"
-  },
-  {
-      grondvorm: "tenere",
-      aanvullingen: "teneo, tenui, tentum",
-      vertaling: "vasthouden, houden",
-      basis: true,
-      teksten: ["8b/8", "9a/1", "10/26"],
-      volgorde: {"8b/8": 2, "9a/1": 59, "10/26": 40}
-  },
-  {
-      grondvorm: "tentare",
-      aanvullingen: "tento, tentavi, tentatum",
-      vertaling: "proberen",
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 57}
-  },
-  {
-      grondvorm: "tenuis",
-      aanvullingen: "tenuis, tenue",
-      vertaling: "dun, fijn, tenger, mager",
-      basis: true,
-      teksten: ["10/8"],
-      volgorde: {"10/8": 14}
-  },
-  {
-      grondvorm: "tenus",
-      aanvullingen: "+ abl. (maar het subst. in abl. staat voor het vz.)",
-      vertaling: "tot aan, tot op",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 128}
-  },
-  {
-      grondvorm: "Terentia",
-      aanvullingen: "Terentia",
-      vertaling: "Terentia (de vrouw van Cicero)",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 22}
-  },
-  {
-      grondvorm: "terere",
-      aanvullingen: "tero, trivi, tritum",
-      vertaling: "wrijven, stukwrijven, fijnwrijven"
-  },
-  {
-      grondvorm: "tergum",
-      aanvullingen: "tergi, (o.)",
-      vertaling: "rug",
-      teksten: ["6a/2", "8a/2", "9b/5"],
-      volgorde: {"6a/2": 36, "8a/2": 50, "9b/5": 21}
-  },
-  {
-      grondvorm: "terra",
-      aanvullingen: "terrae, (v.)",
-      vertaling: "land, aarde, grond",
-      basis: true,
-      teksten: ["6a/1", "6a/2", "6a/4", "7a/6", "8b/6", "9b/4", "10/3"],
-      volgorde: {"6a/1": 7, "6a/2": 104, "6a/4": 92, "7a/6": 25, "8b/6": 50, "9b/4": 29, "10/3": 39}
-  },
-  {
-      grondvorm: "Terra",
-      aanvullingen: "Terrae",
-      vertaling: "(de godin) Aarde"
-  },
-  {
-      grondvorm: "terrere",
-      aanvullingen: "terreo, terrui, territum",
-      vertaling: "doen schrikken, angst aanjagen",
-      basis: true
-  },
-  {
-      grondvorm: "terribilis",
-      aanvullingen: "terribilis, terribile",
-      vertaling: "vreselijk",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 65}
-  },
-  {
-      grondvorm: "tertius",
-      aanvullingen: "tertia, tertium (telwoord)",
-      vertaling: "derde",
-      teksten: ["7a/1", "9a/1"],
-      volgorde: {"7a/1": 32, "9a/1": 12}
-  },
-  {
-      grondvorm: "testa",
-      aanvullingen: "testae, (v.)",
-      vertaling: "tegel, dakpan",
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 10}
-  },
-  {
-      grondvorm: "testudo",
-      aanvullingen: "testudinis",
-      vertaling: "schildpad"
-  },
-  {
-      grondvorm: "Thais",
-      aanvullingen: "Thaidis",
-      vertaling: "Thais (Griekse meisjesnaam)"
-  },
-  {
-      grondvorm: "theca graphiaria",
-      aanvullingen: "thecae graphiariae",
-      vertaling: "koker voor schrijfgerief"
-  },
-  {
-      grondvorm: "Thessalia",
-      aanvullingen: "Thessaliae",
-      vertaling: "Thessalië (streek in Noord-Griekenland)",
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 19}
-  },
-  {
-      grondvorm: "Thessalus",
-      aanvullingen: "Thessala, Thessalum",
-      vertaling: "Thessalisch"
-  },
-  {
-      grondvorm: "Thoranus",
-      aanvullingen: "Thorani",
-      vertaling: "Thoranus (eigennaam)",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 57}
-  },
-  {
-      grondvorm: "Thurii",
-      aanvullingen: "Thuriorum (enkel mv.)",
-      vertaling: "Thurii (stad in Zuid-Italië)",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 63}
-  },
-  {
-      grondvorm: "Tiberinus pater",
-      aanvullingen: "Tiberini patris",
-      vertaling: "(de riviergod) Tiber"
-  },
-  {
-      grondvorm: "Tiberinus",
-      aanvullingen: "Tiberini",
-      vertaling: "Tiber"
-  },
-  {
-      grondvorm: "Tiberis",
-      aanvullingen: "Tiberis (m.)",
-      vertaling: "Tiber",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 2}
-  },
-  {
-      grondvorm: "tigillum",
-      aanvullingen: "tigilli, (o.)",
-      vertaling: "balkje; hutje"
-  },
-  {
-      grondvorm: "tignum",
-      aanvullingen: "tigni, (o.)",
-      vertaling: "balk, paal",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 43}
-  },
-  {
-      grondvorm: "Tillius Cimber",
-      aanvullingen: "Tillii Cimbri",
-      vertaling: "Tillius Cimber (eigennaam)"
-  },
-  {
-      grondvorm: "timere",
-      aanvullingen: "timeo, timui, –",
-      vertaling: "bang zijn, vrezen",
-      basis: true,
-      teksten: ["10/26"],
-      volgorde: {"10/26": 102}
-  },
-  {
-      grondvorm: "timidus",
-      aanvullingen: "timida, timidum",
-      vertaling: "angstig; schuchter",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 79}
-  },
-  {
-      grondvorm: "tiro",
-      aanvullingen: "tironis (m.)",
-      vertaling: "rekruut, beginnende soldaat",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 60}
-  },
-  {
-      grondvorm: "Tiro",
-      aanvullingen: "Tironis (m.)",
-      vertaling: "Tiro (eigennaam)"
-  },
-  {
-      grondvorm: "tofinus",
-      aanvullingen: "tofina, tofinum",
-      vertaling: "van tufsteen gemaakt, tufsteen"
-  },
-  {
-      grondvorm: "toga",
-      aanvullingen: "togae, (v.)",
-      vertaling: "toga",
-      basis: true
-  },
-  {
-      grondvorm: "tolerare",
-      aanvullingen: "tolero, toleravi, toleratum",
-      vertaling: "uithouden, verdragen",
-      teksten: ["10/14"],
-      volgorde: {"10/14": 30}
-  },
-  {
-      grondvorm: "tollere",
-      aanvullingen: "tollo, sustuli, sublatum",
-      vertaling: "opheffen, optillen; wegnemen, verwijderen",
-      basis: true,
-      teksten: ["6a/2", "7a/7", "9a/4"],
-      volgorde: {"6a/2": 67, "7a/7": 38, "9a/4": 40}
-  },
-  {
-      grondvorm: "tonitruum",
-      aanvullingen: "tonitrui, (o.)",
-      vertaling: "donderslag, donderwolk, donder"
-  },
-  {
-      grondvorm: "tonsor",
-      aanvullingen: "tonsoris, (m.)",
-      vertaling: "kapper",
-      teksten: ["6b/1"],
-      volgorde: {"6b/1": 1}
-  },
-  {
-      grondvorm: "torquere",
-      aanvullingen: "torqueo, torsi, tortum",
-      vertaling: "draaien, omdraaien; zwaaien, slingeren",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 85}
-  },
-  {
-      grondvorm: "torrens",
-      aanvullingen: "torrentis, (m.)",
-      vertaling: "bergrivier, snelstromende rivier; stortvloed",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 34}
-  },
-  {
-      grondvorm: "torus",
-      aanvullingen: "tori, (m.)",
-      vertaling: "kussen, bed",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 63}
-  },
-  {
-      grondvorm: "tot",
-      aanvullingen: "(onverbuigbaar adj.)",
-      vertaling: "zoveel",
-      basis: true,
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 62}
-  },
-  {
-      grondvorm: "totus",
-      aanvullingen: "tota, totum",
-      vertaling: "geheel, al",
-      basis: true,
-      teksten: ["6b/1", "6b/3", "8a/3", "8b/9"],
-      volgorde: {"6b/1": 5, "6b/3": 8, "8a/3": 121, "8b/9": 58}
-  },
-  {
-      grondvorm: "trabs",
-      aanvullingen: "trabis, (v.)",
-      vertaling: "balk, boomstam",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 121}
-  },
-  {
-      grondvorm: "tractus",
-      aanvullingen: "tracta, tractum",
-      vertaling: "getrokken, gesleept",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 54}
-  },
-  {
-      grondvorm: "tradere",
-      aanvullingen: "trado, tradidi, traditum",
-      vertaling: "doorgeven, overleveren",
-      basis: true,
-      teksten: ["9a/1"],
-      volgorde: {"9a/1": 55}
-  },
-  {
-      grondvorm: "traducere",
-      aanvullingen: "traduco, traduxi, traductum",
-      vertaling: "leiden over, overbrengen"
-  },
-  {
-      grondvorm: "trahere",
-      aanvullingen: "traho, traxi, tractum",
-      vertaling: "trekken, slepen",
-      basis: true,
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 53}
-  },
-  {
-      grondvorm: "traicere",
-      aanvullingen: "traicio, traieci, traiectum",
-      vertaling: "doorboren, doorsteken; oversteken"
-  },
-  {
-      grondvorm: "tranare",
-      aanvullingen: "trano, tranavi, tranatum",
-      vertaling: "overzwemmen, zwemmen"
-  },
-  {
-      grondvorm: "tranquillus",
-      aanvullingen: "tranquilla, tranquillum",
-      vertaling: "rustig, kalm, vredig, stil",
-      teksten: ["8a/5"],
-      volgorde: {"8a/5": 40}
-  },
-  {
-      grondvorm: "trans",
-      aanvullingen: "+ acc. (vz.)",
-      vertaling: "over, over … heen, naar/aan de overkant van",
-      basis: true,
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 113}
-  },
-  {
-      grondvorm: "transferre",
-      aanvullingen: "transfero, transtuli, translatum",
-      vertaling: "overbrengen",
-      teksten: ["8a/5"],
-      volgorde: {"8a/5": 32}
-  },
-  {
-      grondvorm: "transilire",
-      aanvullingen: "transilio, transilui, –",
-      vertaling: "springen over"
-  },
-  {
-      grondvorm: "transire",
-      aanvullingen: "transeo, transii, transitum",
-      vertaling: "oversteken; voorbijgaan, passeren",
-      basis: true,
-      teksten: ["6b/3", "7b/2"],
-      volgorde: {"6b/3": 10, "7b/2": 1}
-  },
-  {
-      grondvorm: "transitus",
-      aanvullingen: "transitus",
-      vertaling: "overtocht, oversteek, doortocht",
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 25}
-  },
-  {
-      grondvorm: "trecenties",
-      aanvullingen: "(telwoord)",
-      vertaling: "driehonderdmaal",
-      teksten: ["8a/6"],
-      volgorde: {"8a/6": 23}
-  },
-  {
-      grondvorm: "trecenties sestertium",
-      aanvullingen: "",
-      vertaling: "= 30 miljoen sestertiën",
-      teksten: ["8a/6"],
-      volgorde: {"8a/6": 26}
-  },
-  {
-      grondvorm: "tremor",
-      aanvullingen: "tremoris, (m.)",
-      vertaling: "beving, schok",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 32}
-  },
-  {
-      grondvorm: "trepidare",
-      aanvullingen: "trepido, trepidavi, trepidatum",
-      vertaling: "beven, bang zijn"
-  },
-  {
-      grondvorm: "trepidus",
-      aanvullingen: "trepida, trepidum",
-      vertaling: "angstig"
-  },
-  {
-      grondvorm: "tres",
-      aanvullingen: "tres, tria (telwoord)",
-      vertaling: "drie",
-      basis: true,
-      teksten: ["6b/2", "8b/3", "9a/1", "9b/3", "10/21"],
-      volgorde: {"6b/2": 126, "8b/3": 40, "9a/1": 6, "9b/3": 6, "10/21": 34}
-  },
-  {
-      grondvorm: "tribunal",
-      aanvullingen: "tribunalis, (o.)",
-      vertaling: "verhoog, tribune",
-      teksten: ["7b/2"],
-      volgorde: {"7b/2": 31}
-  },
-  {
-      grondvorm: "tributum",
-      aanvullingen: "tributi, (o.)",
-      vertaling: "belasting",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 18}
-  },
-  {
-      grondvorm: "tricesimus",
-      aanvullingen: "tricesima, tricesimum (telwoord)",
-      vertaling: "dertigste",
-      teksten: ["7a/1"],
-      volgorde: {"7a/1": 26}
-  },
-  {
-      grondvorm: "triclinium",
-      aanvullingen: "triclinii, (o.)",
-      vertaling: "aanligbed; eetkamer",
-      teksten: ["7b/12", "9b/3", "9b/5"],
-      volgorde: {"7b/12": 3, "9b/3": 4, "9b/5": 1}
-  },
-  {
-      grondvorm: "triclinium versatile",
-      aanvullingen: "triclinii versatilis",
-      vertaling: "eetkamer met draaibaar plafond",
-      teksten: ["7b/12"],
-      volgorde: {"7b/12": 5}
-  },
-  {
-      grondvorm: "triginta",
-      aanvullingen: "(telwoord)",
-      vertaling: "dertig",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 9}
-  },
-  {
-      grondvorm: "triremis",
-      aanvullingen: "triremis",
-      vertaling: "driedekker (= schip met drie verdiepingen roeiers)"
-  },
-  {
-      grondvorm: "tristis",
-      aanvullingen: "tristis, triste",
-      vertaling: "droevig",
-      basis: true,
-      teksten: ["6b/2", "7b/4"],
-      volgorde: {"6b/2": 89, "7b/4": 62}
-  },
-  {
-      grondvorm: "Triton",
-      aanvullingen: "onis (m.)",
-      vertaling: "Triton (= zoon van Neptunus)"
-  },
-  {
-      grondvorm: "tritus",
-      aanvullingen: "trita, tritum",
-      vertaling: "gemalen"
-  },
-  {
-      grondvorm: "triumphare",
-      aanvullingen: "triumpho, triumphavi, triumphatum",
-      vertaling: "triomferen, zegevieren"
-  },
-  {
-      grondvorm: "Troia",
-      aanvullingen: "Troiae",
-      vertaling: "Troje"
-  },
-  {
-      grondvorm: "tu",
-      aanvullingen: "(pers. vnw.)",
-      vertaling: "jij",
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 31}
-  },
-  {
-      grondvorm: "tubulus",
-      aanvullingen: "tubuli",
-      vertaling: "buis (van aardewerk)",
-      teksten: ["10/19"],
-      volgorde: {"10/19": 2}
-  },
-  {
-      grondvorm: "tueri",
-      aanvullingen: "tueor, tuitus sum",
-      vertaling: "beschermen, zorg dragen voor"
-  },
-  {
-      grondvorm: "tum",
-      aanvullingen: "(bijw.)",
-      vertaling: "toen, op dat moment, dan"
-  },
-  {
-      grondvorm: "tumescere",
-      aanvullingen: "tumesco, tumui, –",
-      vertaling: "aanzwellen, zwellen"
-  },
-  {
-      grondvorm: "tumulus",
-      aanvullingen: "tumuli, (m.)",
-      vertaling: "heuvel, verhoging; grafheuvel",
-      teksten: ["9a/4"],
-      volgorde: {"9a/4": 24}
-  },
-  {
-      grondvorm: "tunc",
-      aanvullingen: "(bijw.)",
-      vertaling: "toen, op dat moment, dan",
-      teksten: ["7a/1"],
-      volgorde: {"7a/1": 44}
-  },
-  {
-      grondvorm: "tunica",
-      aanvullingen: "tunicae, (v.)",
-      vertaling: "tunica",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 56}
-  },
-  {
-      grondvorm: "turba",
-      aanvullingen: "turbae, (v.)",
-      vertaling: "menigte",
-      teksten: ["6b/2", "6b/3", "7b/2"],
-      volgorde: {"6b/2": 6, "6b/3": 11, "7b/2": 28}
-  },
-  {
-      grondvorm: "turbidus",
-      aanvullingen: "turbida, turbidum",
-      vertaling: "onrustig, woelig"
-  },
-  {
-      grondvorm: "Turnus",
-      aanvullingen: "Turni",
-      vertaling: "Turnus (eigennaam)"
-  },
-  {
-      grondvorm: "turpis",
-      aanvullingen: "turpis, turpe",
-      vertaling: "lelijk; schandelijk",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 56}
-  },
-  {
-      grondvorm: "turris",
-      aanvullingen: "turris, (v.)",
-      vertaling: "toren"
-  },
-  {
-      grondvorm: "tus",
-      aanvullingen: "turis (onz.)",
-      vertaling: "wierook",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 71}
-  },
-  {
-      grondvorm: "tussicula",
-      aanvullingen: "tussiculae, (v.)",
-      vertaling: "lichte hoestbui",
-      teksten: ["10/8"],
-      volgorde: {"10/8": 23}
-  },
-  {
-      grondvorm: "tussire",
-      aanvullingen: "tussio, –, –",
-      vertaling: "hoesten"
-  },
-  {
-      grondvorm: "tussis",
-      aanvullingen: "tussis, (v.)",
-      vertaling: "hoest, hoestbui",
-      teksten: ["10/8"],
-      volgorde: {"10/8": 26}
-  },
-  {
-      grondvorm: "tuus",
-      aanvullingen: "tua, tuum",
-      vertaling: "jouw",
-      teksten: ["7b/6"],
-      volgorde: {"7b/6": 23}
-  },
-  {
-      grondvorm: "uber",
-      aanvullingen: "uberis (o.)",
-      vertaling: "uier"
-  },
-  {
-      grondvorm: "ubi?",
-      aanvullingen: "(vragend bijw.)",
-      vertaling: "waar?"
-  },
-  {
-      grondvorm: "ubi",
-      aanvullingen: "+ ind. perf. (vgw.)",
-      vertaling: "zodra; wanneer, toen",
-      teksten: ["6b/5", "7b/2", "7b/4", "9b/6", "9b/7"],
-      volgorde: {"6b/5": 6, "7b/2": 23, "7b/4": 22, "9b/6": 24, "9b/7": 14}
-  },
-  {
-      grondvorm: "ullus",
-      aanvullingen: "ulla, ullum",
-      vertaling: "een; mv.: enige",
-      teksten: ["6a/2"],
-      volgorde: {"6a/2": 71}
-  },
-  {
-      grondvorm: "ultimus",
-      aanvullingen: "ultima, ultimum",
-      vertaling: "laatste"
-  },
-  {
-      grondvorm: "ululatus",
-      aanvullingen: "ululatus, (m.)",
-      vertaling: "gehuil, gegil, geschreeuw, gebrul",
-      teksten: ["6a/2", "6b/3"],
-      volgorde: {"6a/2": 46, "6b/3": 29}
-  },
-  {
-      grondvorm: "umbra",
-      aanvullingen: "umbrae, (v.)",
-      vertaling: "schaduw, schim",
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 30}
-  },
-  {
-      grondvorm: "umerus",
-      aanvullingen: "umeri, (m.)",
-      vertaling: "schouder"
-  },
-  {
-      grondvorm: "umor",
-      aanvullingen: "umoris, (m.)",
-      vertaling: "vochtigheid, vocht",
-      teksten: ["10/8", "10/21"],
-      volgorde: {"10/8": 2, "10/21": 44}
-  },
-  {
-      grondvorm: "umquam",
-      aanvullingen: "(bijw.)",
-      vertaling: "ooit"
-  },
-  {
-      grondvorm: "una",
-      aanvullingen: "(bijw.)",
-      vertaling: "tezamen, tegelijk",
-      teksten: ["10/21"],
-      volgorde: {"10/21": 41}
-  },
-  {
-      grondvorm: "unctorium",
-      aanvullingen: "unctorii, (o.)",
-      vertaling: "massageruimte",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 33}
-  },
-  {
-      grondvorm: "unda",
-      aanvullingen: "undae, (v.)",
-      vertaling: "golf, water",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 27}
-  },
-  {
-      grondvorm: "unde",
-      aanvullingen: "(bijw.)",
-      vertaling: "vanwaar",
-      teksten: ["6b/4"],
-      volgorde: {"6b/4": 8}
-  },
-  {
-      grondvorm: "undique",
-      aanvullingen: "(bijw.)",
-      vertaling: "van overal; overal, aan alle kanten",
-      teksten: ["6b/2", "9b/5", "10/26"],
-      volgorde: {"6b/2": 48, "9b/5": 7, "10/26": 70}
-  },
-  {
-      grondvorm: "ungere",
-      aanvullingen: "ungo, unxi, unctum",
-      vertaling: "zalven, insmeren"
-  },
-  {
-      grondvorm: "unicus",
-      aanvullingen: "unica, unicum",
-      vertaling: "enig(e)"
-  },
-  {
-      grondvorm: "unus",
-      aanvullingen: "una, unum (telwoord)",
-      vertaling: "één",
-      teksten: ["7b/2", "8a/3", "8a/6", "9a/1", "9a/4", "10/21"],
-      volgorde: {"7b/2": 66, "8a/3": 9, "8a/6": 20, "9a/1": 7, "9a/4": 18, "10/21": 36}
-  },
-  {
-      grondvorm: "unusquisque",
-      aanvullingen: "unaquaeque, unumquidque (subst.)",
-      vertaling: "elk afzonderlijk, iedereen",
-      teksten: ["7a/1", "7a/5"],
-      volgorde: {"7a/1": 8, "7a/5": 17}
-  },
-  {
-      grondvorm: "unusquisque",
-      aanvullingen: "unaquaeque, unumquodque (adj.)",
-      vertaling: "elk afzonderlijk, ieder"
-  },
-  {
-      grondvorm: "urbanus",
-      aanvullingen: "urbana, urbanum",
-      vertaling: "van de stad, uit de stad, stedelijk",
-      teksten: ["8b/3"],
-      volgorde: {"8b/3": 12}
-  },
-  {
-      grondvorm: "urbs",
-      aanvullingen: "urbis",
-      vertaling: "stad",
-      basis: true,
-      teksten: ["6a/1", "6a/7", "6b/1", "6b/3", "9b/7"],
-      volgorde: {"6a/1": 6, "6a/7": 11, "6b/1": 6, "6b/3": 4, "9b/7": 4}
-  },
-  {
-      grondvorm: "urina",
-      aanvullingen: "urinae",
-      vertaling: "urine",
-      teksten: ["10/8"],
-      volgorde: {"10/8": 31}
-  },
-  {
-      grondvorm: "urna",
-      aanvullingen: "urnae",
-      vertaling: "kruik, urne (voor assen)",
-      teksten: ["6b/9"],
-      volgorde: {"6b/9": 1}
-  },
-  {
-      grondvorm: "Ursa",
-      aanvullingen: "Ursae",
-      vertaling: "Ursa (eigennaam)",
-      teksten: ["7a/2"],
-      volgorde: {"7a/2": 6}
-  },
-  {
-      grondvorm: "usitatus",
-      aanvullingen: "usitata, usitatum",
-      vertaling: "gebruikelijk, gewoon, normaal"
-  },
-  {
-      grondvorm: "usque",
-      aanvullingen: "+ acc. (vz.)",
-      vertaling: "tot aan",
-      teksten: ["7a/1", "8a/5"],
-      volgorde: {"7a/1": 16, "8a/5": 7}
-  },
-  {
-      grondvorm: "usque ad",
-      aanvullingen: "+ acc. (vz.)",
-      vertaling: "tot aan"
-  },
-  {
-      grondvorm: "usura",
-      aanvullingen: "usurae, (v.)",
-      vertaling: "rente (op een lening)",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 27}
-  },
-  {
-      grondvorm: "usus",
-      aanvullingen: "usus, (m.)",
-      vertaling: "gebruik, toepassing; oefening, praktijk",
-      teksten: ["10/14"],
-      volgorde: {"10/14": 28}
-  },
-  {
-      grondvorm: "ut",
-      aanvullingen: "+ ind. (vgw.)",
-      vertaling: "toen, wanneer; zoals",
-      teksten: ["6a/4", "6b/2", "7a/3", "7b/4", "8a/3", "8b/5", "8b/6", "8b/10", "9a/4", "9b/4", "9b/6", "9b/9", "9b/10", "10/3", "10/26"],
-      volgorde: {"6a/4": 49, "6b/2": 69, "7a/3": 28, "7b/4": 16, "8a/3": 4, "8b/5": 17, "8b/6": 25, "8b/10": 17, "9a/4": 30, "9b/4": 40, "9b/6": 8, "9b/9": 2, "9b/10": 8, "10/3": 28, "10/26": 26}
-  },
-  {
-      grondvorm: "ut",
-      aanvullingen: "+ conj. (vgw.)",
-      vertaling: "opdat, om te; zodat; dat",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 38}
-  },
-  {
-      grondvorm: "ut puta",
-      aanvullingen: "",
-      vertaling: "zoals bijvoorbeeld",
-      teksten: ["8b/10"],
-      volgorde: {"8b/10": 12}
-  },
-  {
-      grondvorm: "uter",
-      aanvullingen: "utra, utrum? (vragend vnw.)",
-      vertaling: "welk(e) van beide?"
-  },
-  {
-      grondvorm: "uterque",
-      aanvullingen: "utraque, utrumque",
-      vertaling: "elk van beide(n)",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 70}
-  },
-  {
-      grondvorm: "uti",
-      aanvullingen: "utor, usus sum + abl.",
-      vertaling: "gebruiken",
-      basis: true
-  },
-  {
-      grondvorm: "utilis",
-      aanvullingen: "utilis, utile",
-      vertaling: "nuttig, bruikbaar, voordelig",
-      basis: true,
-      teksten: ["8b/5", "8b/6"],
-      volgorde: {"8b/5": 15, "8b/6": 4}
-  },
-  {
-      grondvorm: "utrimque",
-      aanvullingen: "(bijw.)",
-      vertaling: "langs beide kanten"
-  },
-  {
-      grondvorm: "utrum",
-      aanvullingen: "… an …",
-      vertaling: "of … of …",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 22}
-  },
-  {
-      grondvorm: "utrum … an …",
-      aanvullingen: "(vraagwoord)",
-      vertaling: "of … of …"
-  },
-  {
-      grondvorm: "uva",
-      aanvullingen: "uvae, (v.)",
-      vertaling: "druif"
-  },
-  {
-      grondvorm: "uxor",
-      aanvullingen: "uxoris (v.)",
-      vertaling: "echtgenote, vrouw",
-      teksten: ["7a/5"],
-      volgorde: {"7a/5": 2}
-  },
-  {
-      grondvorm: "vadere",
-      aanvullingen: "vado, –, –",
-      vertaling: "gaan"
-  },
-  {
-      grondvorm: "vagabundus",
-      aanvullingen: "vagabunda, vagabundum",
-      vertaling: "rondzwervend"
-  },
-  {
-      grondvorm: "vagari",
-      aanvullingen: "vagor, vagatus sum",
-      vertaling: "ronddwalen, rondtrekken",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 28}
-  },
-  {
-      grondvorm: "valde",
-      aanvullingen: "(bijw.)",
-      vertaling: "zeer, erg",
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 34}
-  },
-  {
-      grondvorm: "vale",
-      aanvullingen: "",
-      vertaling: "vaarwel"
-  },
-  {
-      grondvorm: "valere",
-      aanvullingen: "valeo, valui, –",
-      vertaling: "gezond zijn, krachtig zijn; kunnen",
-      basis: true,
-      teksten: ["9b/9"],
-      volgorde: {"9b/9": 69}
-  },
-  {
-      grondvorm: "Valerius",
-      aanvullingen: "Valerii",
-      vertaling: "Valerius (eigennaam)"
-  },
-  {
-      grondvorm: "valetudo",
-      aanvullingen: "valetudinis",
-      vertaling: "gezondheid"
-  },
-  {
-      grondvorm: "validus",
-      aanvullingen: "valida, validum",
-      vertaling: "krachtig, sterk, gezond",
-      teksten: ["6b/5"],
-      volgorde: {"6b/5": 14}
-  },
-  {
-      grondvorm: "vallis",
-      aanvullingen: "vallis, (v.)",
-      vertaling: "dal, vallei"
-  },
-  {
-      grondvorm: "vallum",
-      aanvullingen: "valli, (o.)",
-      vertaling: "verschansing (van een legerkamp), wal",
-      basis: true
-  },
-  {
-      grondvorm: "valvae",
-      aanvullingen: "valvarum (enkel mv.), (vr. mv.)",
-      vertaling: "vleugeldeur, deur",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 8}
-  },
-  {
-      grondvorm: "vanus",
-      aanvullingen: "vana, vanum",
-      vertaling: "ijdel; vergeefs, zinloos",
-      basis: true,
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 63}
-  },
-  {
-      grondvorm: "Varenius",
-      aanvullingen: "Varenii",
-      vertaling: "Varenius (eigennaam)",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 55}
-  },
-  {
-      grondvorm: "varius",
-      aanvullingen: "varia, varium",
-      vertaling: "verschillend",
-      basis: true
-  },
-  {
-      grondvorm: "Varro",
-      aanvullingen: "Varronis",
-      vertaling: "Varro (eigennaam)",
-      teksten: ["7a/1"],
-      volgorde: {"7a/1": 1}
-  },
-  {
-      grondvorm: "vastare",
-      aanvullingen: "vasto, vastavi, vastatum",
-      vertaling: "vernielen, verwoesten",
-      teksten: ["6a/1", "6b/2", "8b/9"],
-      volgorde: {"6a/1": 18, "6b/2": 104, "8b/9": 67}
-  },
-  {
-      grondvorm: "vastatio",
-      aanvullingen: "vastationis, (v.)",
-      vertaling: "verwoesting"
-  },
-  {
-      grondvorm: "vastus",
-      aanvullingen: "vasta, vastum",
-      vertaling: "onmetelijk (groot), reusachtig, enorm",
-      basis: true,
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 31}
-  },
-  {
-      grondvorm: "vasum",
-      aanvullingen: "vasi, (o.)",
-      vertaling: "vaas",
-      teksten: ["6b/2", "6b/4"],
-      volgorde: {"6b/2": 63, "6b/4": 19}
-  },
-  {
-      grondvorm: "Vaticanus",
-      aanvullingen: "Vaticani",
-      vertaling: "de Vaticaan (heuvel in Rome)"
-  },
-  {
-      grondvorm: "-ve",
-      aanvullingen: "(vgw.)",
-      vertaling: "of, ofwel",
-      teksten: ["6a/2", "8b/3"],
-      volgorde: {"6a/2": 106, "8b/3": 21}
-  },
-  {
-      grondvorm: "vehemens",
-      aanvullingen: "vehemens, vehemens; vehementis",
-      vertaling: "heftig, krachtig",
-      teksten: ["6a/1", "6a/4", "6b/5"],
-      volgorde: {"6a/1": 9, "6a/4": 33, "6b/5": 11}
-  },
-  {
-      grondvorm: "vehere",
-      aanvullingen: "veho, vexi, vectum",
-      vertaling: "voeren, dragen",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 10}
-  },
-  {
-      grondvorm: "vehiculum",
-      aanvullingen: "vehiculi, (o.)",
-      vertaling: "wagen",
-      teksten: ["6a/4"],
-      volgorde: {"6a/4": 79}
-  },
-  {
-      grondvorm: "vel",
-      aanvullingen: "(vgw.)",
-      vertaling: "of, ofwel",
-      basis: true,
-      teksten: ["6b/2", "8b/6"],
-      volgorde: {"6b/2": 20, "8b/6": 17}
-  },
-  {
-      grondvorm: "velle",
-      aanvullingen: "volo, volui, –",
-      vertaling: "willen",
-      basis: true,
-      teksten: ["6a/1"],
-      volgorde: {"6a/1": 46}
-  },
-  {
-      grondvorm: "velocitas",
-      aanvullingen: "velocitatis, (v.)",
-      vertaling: "snelheid",
-      teksten: ["6b/5"],
-      volgorde: {"6b/5": 22}
-  },
-  {
-      grondvorm: "velum",
-      aanvullingen: "veli, (o.)",
-      vertaling: "zeil"
-  },
-  {
-      grondvorm: "velut",
-      aanvullingen: "(vgw.)",
-      vertaling: "zoals, als, alsof",
-      teksten: ["8a/2", "8a/3", "8b/3", "8b/9"],
-      volgorde: {"8a/2": 36, "8a/3": 69, "8b/3": 15, "8b/9": 26}
-  },
-  {
-      grondvorm: "velut",
-      aanvullingen: "(bijw.)",
-      vertaling: "als het ware"
-  },
-  {
-      grondvorm: "venabulum",
-      aanvullingen: "venabuli, (o.)",
-      vertaling: "jachtspies"
-  },
-  {
-      grondvorm: "venalicia",
-      aanvullingen: "venaliciorum (enkel mv.), (onz. mv.)",
-      vertaling: "koopwaar, handelswaar; slaven"
-  },
-  {
-      grondvorm: "venatio",
-      aanvullingen: "venationis, (v.)",
-      vertaling: "jachtpartij"
-  },
-  {
-      grondvorm: "vendere",
-      aanvullingen: "vendo, vendidi, venditum",
-      vertaling: "verkopen",
-      teksten: ["8b/1"],
-      volgorde: {"8b/1": 7}
-  },
-  {
-      grondvorm: "venenum",
-      aanvullingen: "veneni, (o.)",
-      vertaling: "gif"
-  },
-  {
-      grondvorm: "venire",
-      aanvullingen: "venio, veni, ventum",
-      vertaling: "komen",
-      basis: true,
-      teksten: ["6b/4", "7b/2", "8a/3", "9b/9", "9b/10", "10/26"],
-      volgorde: {"6b/4": 46, "7b/2": 25, "8a/3": 125, "9b/9": 6, "9b/10": 1, "10/26": 69}
-  },
-  {
-      grondvorm: "venter",
-      aanvullingen: "ventris, (m.)",
-      vertaling: "buik; maag",
-      teksten: ["8a/3", "9b/4"],
-      volgorde: {"8a/3": 21, "9b/4": 22}
-  },
-  {
-      grondvorm: "ventus",
-      aanvullingen: "venti, (m.)",
-      vertaling: "wind",
-      basis: true,
-      teksten: ["6b/5", "8b/6", "9b/7"],
-      volgorde: {"6b/5": 16, "8b/6": 8, "9b/7": 28}
-  },
-  {
-      grondvorm: "venum dare",
-      aanvullingen: "do, dedi, datum",
-      vertaling: "verkopen",
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 76}
-  },
-  {
-      grondvorm: "Venus",
-      aanvullingen: "Veneris",
-      vertaling: "(de godin) Venus",
-      basis: true,
-      teksten: ["10/26"],
-      volgorde: {"10/26": 68}
-  },
-  {
-      grondvorm: "verber",
-      aanvullingen: "verberis (o.)",
-      vertaling: "zweep, zweepslag",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 54}
-  },
-  {
-      grondvorm: "verbum",
-      aanvullingen: "verbi, (o.)",
-      vertaling: "woord",
-      basis: true
-  },
-  {
-      grondvorm: "vereri",
-      aanvullingen: "vereor, veritus sum",
-      vertaling: "vrezen; eerbiedigen, respect hebben voor",
-      basis: true,
-      teksten: ["7b/4"],
-      volgorde: {"7b/4": 39}
-  },
-  {
-      grondvorm: "veritas",
-      aanvullingen: "veritatis, (v.)",
-      vertaling: "waarheid",
-      basis: true
-  },
-  {
-      grondvorm: "vermis",
-      aanvullingen: "vermis (m.)",
-      vertaling: "worm"
-  },
-  {
-      grondvorm: "vero",
-      aanvullingen: "(vgw.)",
-      vertaling: "maar, echter"
-  },
-  {
-      grondvorm: "versatilis",
-      aanvullingen: "versatilis, versatile",
-      vertaling: "draaibaar, beweeglijk",
-      teksten: ["7b/12"],
-      volgorde: {"7b/12": 4}
-  },
-  {
-      grondvorm: "versus",
-      aanvullingen: "versus, (m.)",
-      vertaling: "versregel"
-  },
-  {
-      grondvorm: "vertex",
-      aanvullingen: "verticis (m.)",
-      vertaling: "draaikolk, wervelwind; kruin (van een hoofd), hoofd",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 71}
-  },
-  {
-      grondvorm: "verus",
-      aanvullingen: "vera, verum",
-      vertaling: "waar, echt",
-      basis: true,
-      teksten: ["7b/4", "10/26"],
-      volgorde: {"7b/4": 18, "10/26": 24}
-  },
-  {
-      grondvorm: "Vesta",
-      aanvullingen: "Vestae",
-      vertaling: "(de godin) Vesta"
-  },
-  {
-      grondvorm: "vestibulum",
-      aanvullingen: "vestibuli",
-      vertaling: "voorportaal (van een huis of een tempel), ingang",
-      teksten: ["9b/6"],
-      volgorde: {"9b/6": 32}
-  },
-  {
-      grondvorm: "vestigium",
-      aanvullingen: "vestigii, (o.)",
-      vertaling: "spoor",
-      teksten: ["6b/2", "8a/2"],
-      volgorde: {"6b/2": 134, "8a/2": 53}
-  },
-  {
-      grondvorm: "vestimentum",
-      aanvullingen: "vestimenti, (o.)",
-      vertaling: "kleed, kledingstuk, kledij"
-  },
-  {
-      grondvorm: "vestis",
-      aanvullingen: "vestis, (v.)",
-      vertaling: "kleed, kledingstuk, kledij",
-      teksten: ["7b/2", "8b/6", "10/26"],
-      volgorde: {"7b/2": 20, "8b/6": 1, "10/26": 55}
-  },
-  {
-      grondvorm: "Vesuvius",
-      aanvullingen: "Vesuvii",
-      vertaling: "(de vulkaan) Vesuvius",
-      teksten: ["6a/2", "6a/4", "8b/9", "10/21"],
-      volgorde: {"6a/2": 96, "6a/4": 3, "8b/9": 30, "10/21": 16}
-  },
-  {
-      grondvorm: "vetare",
-      aanvullingen: "veto, vetui, vetitum",
-      vertaling: "verbieden, verhinderen",
-      teksten: ["8a/5"],
-      volgorde: {"8a/5": 11}
-  },
-  {
-      grondvorm: "vetustus",
-      aanvullingen: "vetusta, vetustum",
-      vertaling: "oud, al lang bestaand",
-      teksten: ["9b/7"],
-      volgorde: {"9b/7": 6}
-  },
-  {
-      grondvorm: "vexare",
-      aanvullingen: "vexo, vexavi, vexatum",
-      vertaling: "(hevig) bewegen; teisteren, kwellen",
-      teksten: ["6a/1", "6b/5"],
-      volgorde: {"6a/1": 10, "6b/5": 25}
-  },
-  {
-      grondvorm: "vexillum",
-      aanvullingen: "vexilli, (o.)",
-      vertaling: "vaandel, vlag",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 16}
-  },
-  {
-      grondvorm: "via",
-      aanvullingen: "viae, (v.)",
-      vertaling: "weg",
-      basis: true,
-      teksten: ["6b/1", "7a/7", "8b/3", "9a/1"],
-      volgorde: {"6b/1": 11, "7a/7": 48, "8b/3": 16, "9a/1": 33}
-  },
-  {
-      grondvorm: "viator",
-      aanvullingen: "viatoris",
-      vertaling: "reiziger",
-      teksten: ["9b/4"],
-      volgorde: {"9b/4": 49}
-  },
-  {
-      grondvorm: "vicinus",
-      aanvullingen: "vicina, vicinum",
-      vertaling: "naburig"
-  },
-  {
-      grondvorm: "victima",
-      aanvullingen: "victimae",
-      vertaling: "offerdier, (slacht)offer"
-  },
-  {
-      grondvorm: "victor",
-      aanvullingen: "victoris, (m.)",
-      vertaling: "overwinnaar",
-      basis: true,
-      teksten: ["9b/6", "10/3"],
-      volgorde: {"9b/6": 38, "10/3": 74}
-  },
-  {
-      grondvorm: "victoria",
-      aanvullingen: "victoriae, (v.)",
-      vertaling: "overwinning",
-      basis: true,
-      teksten: ["10/3"],
-      volgorde: {"10/3": 23}
-  },
-  {
-      grondvorm: "vicus",
-      aanvullingen: "vici, (m.)",
-      vertaling: "dorp, gehucht; stadswijk",
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 28}
-  },
-  {
-      grondvorm: "videre",
-      aanvullingen: "video, vidi, visum",
-      vertaling: "zien",
-      basis: true,
-      teksten: ["6a/4", "8a/2", "9b/5", "9b/10"],
-      volgorde: {"6a/4": 75, "8a/2": 55, "9b/5": 80, "9b/10": 11}
-  },
-  {
-      grondvorm: "videri",
-      aanvullingen: "videor, visus sum",
-      vertaling: "lijken, schijnen",
-      teksten: ["6a/4", "6b/3", "10/19", "10/26"],
-      volgorde: {"6a/4": 40, "6b/3": 16, "10/19": 20, "10/26": 92}
-  },
-  {
-      grondvorm: "vigere",
-      aanvullingen: "vigeo, vigui, –",
-      vertaling: "krachtig zijn, vitaal zijn, bloeien",
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 136}
-  },
-  {
-      grondvorm: "vigilare",
-      aanvullingen: "vigilo, vigilavi, vigilatum",
-      vertaling: "wakker zijn, niet kunnen slapen"
-  },
-  {
-      grondvorm: "vigilia",
-      aanvullingen: "vigiliae, (v.)",
-      vertaling: "het wakker zijn, slapeloosheid",
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 18}
-  },
-  {
-      grondvorm: "viginti",
-      aanvullingen: "(telwoord)",
-      vertaling: "twintig",
-      teksten: ["8a/3"],
-      volgorde: {"8a/3": 73}
-  },
-  {
-      grondvorm: "vilicus",
-      aanvullingen: "vilici",
-      vertaling: "opzichter, beheerder (van een landgoed)",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 16}
-  },
-  {
-      grondvorm: "villa",
-      aanvullingen: "villae, (v.)",
-      vertaling: "landhuis, boerderij; landgoed",
-      teksten: ["8a/2", "8b/5", "9b/5"],
-      volgorde: {"8a/2": 12, "8b/5": 41, "9b/5": 79}
-  },
-  {
-      grondvorm: "vimen",
-      aanvullingen: "viminis, (o.)",
-      vertaling: "twijg"
-  },
-  {
-      grondvorm: "vincere",
-      aanvullingen: "vinco, vici, victum",
-      vertaling: "overwinnen",
-      basis: true
-  },
-  {
-      grondvorm: "vincire",
-      aanvullingen: "vincio, vinxi, vinctum",
-      vertaling: "vastbinden, boeien",
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 39}
-  },
-  {
-      grondvorm: "vinctus",
-      aanvullingen: "vincta, vinctum",
-      vertaling: "vastgebonden, geboeid",
-      teksten: ["8b/6"],
-      volgorde: {"8b/6": 40}
-  },
-  {
-      grondvorm: "vinculum",
-      aanvullingen: "vinculi, (o.)",
-      vertaling: "boei",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 40}
-  },
-  {
-      grondvorm: "vindicare",
-      aanvullingen: "vindico, vindicavi, vindicatum",
-      vertaling: "bestraffen, vergelden, wreken"
-  },
-  {
-      grondvorm: "vinea",
-      aanvullingen: "vineae, (v.)",
-      vertaling: "wijngaard"
-  },
-  {
-      grondvorm: "vinum",
-      aanvullingen: "vini, (o.)",
-      vertaling: "wijn",
-      teksten: ["7a/5", "8a/6", "9b/4"],
-      volgorde: {"7a/5": 4, "8a/6": 14, "9b/4": 46}
-  },
-  {
-      grondvorm: "viola",
-      aanvullingen: "violae, (v.)",
-      vertaling: "viool (de bloem, niet het muziekinstrument)",
-      teksten: ["7b/12", "9b/5"],
-      volgorde: {"7b/12": 7, "9b/5": 56}
-  },
-  {
-      grondvorm: "violare",
-      aanvullingen: "violo, violavi, violatum",
-      vertaling: "mishandelen; schenden",
-      teksten: ["7a/5"],
-      volgorde: {"7a/5": 22}
-  },
-  {
-      grondvorm: "violatus",
-      aanvullingen: "violata, violatum",
-      vertaling: "mishandeld; geschonden",
-      teksten: ["7a/5"],
-      volgorde: {"7a/5": 23}
-  },
-  {
-      grondvorm: "violentus",
-      aanvullingen: "violenta, violentum",
-      vertaling: "gewelddadig, agressief, heftig"
-  },
-  {
-      grondvorm: "vir",
-      aanvullingen: "viri, (m.)",
-      vertaling: "man",
-      teksten: ["6a/2", "7a/3", "8b/9"],
-      volgorde: {"6a/2": 51, "7a/3": 11, "8b/9": 135}
-  },
-  {
-      grondvorm: "virgo",
-      aanvullingen: "virginis",
-      vertaling: "maagd, jong meisje",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 22}
-  },
-  {
-      grondvorm: "virgula",
-      aanvullingen: "virgulae, (v.)",
-      vertaling: "tak, twijg",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 123}
-  },
-  {
-      grondvorm: "viridis",
-      aanvullingen: "viridis, viride",
-      vertaling: "groen; fris, vers"
-  },
-  {
-      grondvorm: "virtus",
-      aanvullingen: "virtutis, (v.)",
-      vertaling: "manhaftigheid, moed; deugd",
-      basis: true,
-      teksten: ["7b/2", "7b/4"],
-      volgorde: {"7b/2": 111, "7b/4": 71}
-  },
-  {
-      grondvorm: "vis",
-      aanvullingen: "(geen gen., gem. verb.)",
-      vertaling: "kracht, macht, geweld",
-      basis: true,
-      teksten: ["7a/3", "8b/9"],
-      volgorde: {"7a/3": 39, "8b/9": 94}
-  },
-  {
-      grondvorm: "viscum",
-      aanvullingen: "visci, (o.)",
-      vertaling: "mistel, maretak"
-  },
-  {
-      grondvorm: "visendus",
-      aanvullingen: "visenda, visendum",
-      vertaling: "bezienswaardig",
-      teksten: ["9b/7"],
-      volgorde: {"9b/7": 10}
-  },
-  {
-      grondvorm: "visere",
-      aanvullingen: "viso, visi, –",
-      vertaling: "bekijken, bezichtigen, bezoeken"
-  },
-  {
-      grondvorm: "vison",
-      aanvullingen: "visontis (m.)",
-      vertaling: "bizon"
-  },
-  {
-      grondvorm: "visus",
-      aanvullingen: "visa, visum",
-      vertaling: "gezien",
-      teksten: ["8a/2"],
-      volgorde: {"8a/2": 56}
-  },
-  {
-      grondvorm: "vita",
-      aanvullingen: "vitae, (v.)",
-      vertaling: "leven",
-      basis: true,
-      teksten: ["6b/3", "7a/1", "7a/3", "8b/5", "10/3"],
-      volgorde: {"6b/3": 50, "7a/1": 50, "7a/3": 12, "8b/5": 9, "10/3": 13}
-  },
-  {
-      grondvorm: "vitare",
-      aanvullingen: "vito, vitavi, vitatum",
-      vertaling: "vermijden, ontwijken, ontvluchten",
-      teksten: ["8b/5"],
-      volgorde: {"8b/5": 45}
-  },
-  {
-      grondvorm: "vitineus",
-      aanvullingen: "vitinea, vitineum",
-      vertaling: "van een wijnrank",
-      teksten: ["8b/9"],
-      volgorde: {"8b/9": 39}
-  },
-  {
-      grondvorm: "vitiosus",
-      aanvullingen: "vitiosa, vitiosum",
-      vertaling: "gebrekkig, ongezond, schadelijk",
-      teksten: ["10/19"],
-      volgorde: {"10/19": 19}
-  },
-  {
-      grondvorm: "vitium",
-      aanvullingen: "vitii, (o.)",
-      vertaling: "gebrek, mankement; fout, vergissing",
-      teksten: ["10/19", "10/26"],
-      volgorde: {"10/19": 8, "10/26": 4}
-  },
-  {
-      grondvorm: "vitulus marinus",
-      aanvullingen: "vituli marini",
-      vertaling: "zeehond",
-      teksten: ["6b/3"],
-      volgorde: {"6b/3": 33}
-  },
-  {
-      grondvorm: "vivere",
-      aanvullingen: "vivo, vixi, –",
-      vertaling: "leven",
-      basis: true,
-      teksten: ["8a/3", "10/26"],
-      volgorde: {"8a/3": 135, "10/26": 12}
-  },
-  {
-      grondvorm: "vix",
-      aanvullingen: "(bijw.)",
-      vertaling: "nauwelijks",
-      teksten: ["6b/2"],
-      volgorde: {"6b/2": 72}
-  },
-  {
-      grondvorm: "vocalis",
-      aanvullingen: "vocalis, vocale",
-      vertaling: "een stem hebbend, stem-; klinkend, welluidend",
-      teksten: ["8b/3"],
-      volgorde: {"8b/3": 43}
-  },
-  {
-      grondvorm: "vocare",
-      aanvullingen: "voco, vocavi, vocatum",
-      vertaling: "noemen, roepen",
-      teksten: ["6b/2", "7a/1"],
-      volgorde: {"6b/2": 2, "7a/1": 43}
-  },
-  {
-      grondvorm: "volare",
-      aanvullingen: "volo, volavi, volatum",
-      vertaling: "vliegen"
-  },
-  {
-      grondvorm: "volucer",
-      aanvullingen: "volucris",
-      vertaling: "vogel",
-      teksten: ["10/26"],
-      volgorde: {"10/26": 49}
-  },
-  {
-      grondvorm: "votum",
-      aanvullingen: "voti, (o.)",
-      vertaling: "gelofte, beloofd offer",
-      teksten: ["7a/5"],
-      volgorde: {"7a/5": 28}
-  },
-  {
-      grondvorm: "vota solvere",
-      aanvullingen: "",
-      vertaling: "geloften inlossen, danken",
-      teksten: ["7a/5"],
-      volgorde: {"7a/5": 30}
-  },
-  {
-      grondvorm: "vovere",
-      aanvullingen: "voveo, vovi, votum",
-      vertaling: "beloven; wensen",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 26}
-  },
-  {
-      grondvorm: "vox",
-      aanvullingen: "vocis, (v.)",
-      vertaling: "geluid; woord; stem",
-      basis: true,
-      teksten: ["6a/2", "7a/3"],
-      volgorde: {"6a/2": 57, "7a/3": 19}
-  },
-  {
-      grondvorm: "Vulcanus",
-      aanvullingen: "Vulcani",
-      vertaling: "(de god) Vulcanus"
-  },
-  {
-      grondvorm: "vulnerare",
-      aanvullingen: "vulnero, vulneravi, vulneratum",
-      vertaling: "verwonden",
-      basis: true
-  },
-  {
-      grondvorm: "vulnus",
-      aanvullingen: "vulneris, (o.)",
-      vertaling: "wonde",
-      basis: true
-  },
-  {
-      grondvorm: "vulpes",
-      aanvullingen: "vulpis, (v.)",
-      vertaling: "vos"
-  },
-  {
-      grondvorm: "vulturius",
-      aanvullingen: "vulturii, (m.)",
-      vertaling: "gier"
-  },
-  {
-      grondvorm: "vultus",
-      aanvullingen: "vultus, (m.)",
-      vertaling: "gezicht",
-      teksten: ["7a/3"],
-      volgorde: {"7a/3": 59}
-  },
-  {
-      grondvorm: "xystus",
-      aanvullingen: "xysti, (m.)",
-      vertaling: "terras",
-      teksten: ["9b/5"],
-      volgorde: {"9b/5": 55}
-  },
-  {
-      grondvorm: "Zoninus",
-      aanvullingen: "Zonini",
-      vertaling: "Zoninus (eigennaam)",
-      teksten: ["8b/8"],
-      volgorde: {"8b/8": 6}
-  }
+  { grondvorm: "a(b)", aanvullingen: "+ abl. (vz.)", vertaling: "vanaf, vanuit, weg van, van; door", basis: true, teksten: ["7a/1","7a/3","7a/8","7b/2","8a/2","8a/3","8a/5","8b/6","9a/1","9b/5","9b/5","9b/9","9b/9"], volgorde: {"7a/1":28,"7a/3":67,"7a/8":18,"7b/2":49,"8a/2":42,"8a/3":52,"8a/5":30,"8b/6":48,"9a/1":22,"9b/5":16,"9b/9":49} },
+  { grondvorm: "abdere", aanvullingen: "abdo, abdidi, abditum", vertaling: "verbergen", teksten: ["7b/2"], volgorde: {"7b/2":21} },
+  { grondvorm: "abicere", aanvullingen: "abicio, abieci, abiectum", vertaling: "wegwerpen, neergooien, op de grond gooien" },
+  { grondvorm: "abigere", aanvullingen: "abigo, abegi, abactum", vertaling: "verdrijven, wegleiden, verjagen", teksten: ["8a/2"], volgorde: {"8a/2":17} },
+  { grondvorm: "abire", aanvullingen: "abeo, abii, abitum", vertaling: "weggaan", basis: true, teksten: ["6a/7","7a/6","7b/2"], volgorde: {"6a/7":7,"7a/6":5,"7b/2":96} },
+  { grondvorm: "abrogare", aanvullingen: "abrogo, abrogavi, abrogatum", vertaling: "afschaffen", teksten: ["7b/4"], volgorde: {"7b/4":79} },
+  { grondvorm: "abscindere", aanvullingen: "abscindo, abscidi, abscissum + abl.", vertaling: "losscheuren van, scheiden van" },
+  { grondvorm: "absens", aanvullingen: "absens, absens; absentis", vertaling: "afwezig", teksten: ["9b/4"], volgorde: {"9b/4":51} },
+  { grondvorm: "ac", aanvullingen: "(vgw.)", vertaling: "en", basis: true, teksten: ["6b/5","7a/6","7b/6","8b/1","8b/5","10/3","10/14"], volgorde: {"6b/5":15,"7a/6":6,"7b/6":29,"8b/1":8,"8b/5":30,"10/3":70,"10/14":21} },
+  { grondvorm: "Acca Larentia", aanvullingen: "Accae Larentiae", vertaling: "Acca Larentia (eigennaam)" },
+  { grondvorm: "accedere", aanvullingen: "accedo, accessi, accessum", vertaling: "gaan naar, naderen", basis: true },
+  { grondvorm: "accendere", aanvullingen: "accendo, accendi, accensum", vertaling: "in brand steken, aansteken", basis: true, teksten: ["7b/2"], volgorde: {"7b/2":82} },
+  { grondvorm: "accensus", aanvullingen: "accensa, accensum", vertaling: "in brand gestoken, aangestoken", teksten: ["7b/2"], volgorde: {"7b/2":83} },
+  { grondvorm: "accidere", aanvullingen: "accido, accidi, –", vertaling: "gebeuren", basis: true, teksten: ["9a/4"], volgorde: {"9a/4":29} },
+  { grondvorm: "accipere", aanvullingen: "accipio, accepi, acceptum", vertaling: "ontvangen, aannemen, krijgen", basis: true, teksten: ["6b/4","8a/3","8b/8"], volgorde: {"6b/4":53,"8a/3":41,"8b/8":7} },
+  { grondvorm: "accusator", aanvullingen: "accusatoris, (m.)", vertaling: "aanklager, beschuldiger", teksten: ["7a/5"], volgorde: {"7a/5":13} },
+  { grondvorm: "acer", aanvullingen: "acris, acre", vertaling: "scherp, puntig; driftig, heftig", basis: true, teksten: ["6b/4"], volgorde: {"6b/4":48} },
+  { grondvorm: "acerbus", aanvullingen: "acerba, acerbum", vertaling: "zuur" },
+  { grondvorm: "acetum", aanvullingen: "aceti, (o.)", vertaling: "azijn" },
+  { grondvorm: "acies", aanvullingen: "aciei, (v.)", vertaling: "slaglinie, slagorde, leger in slagorde", basis: true },
+  { grondvorm: "Actium", aanvullingen: "Actii", vertaling: "(de stad) Actium in West-Griekenland; nu: Punta", teksten: ["9b/9"], volgorde: {"9b/9":8} },
+  { grondvorm: "ad", aanvullingen: "+ acc. (vz.)", vertaling: "naar, tot bij, bij", basis: true, teksten: ["6b/2","6b/3","7a/1","7b/2","7b/4","8a/2","8a/3","8a/5","8b/6","8b/9","9b/7","10/14","10/26"], volgorde: {"6b/2":108,"6b/3":14,"7a/1":25,"7b/2":84,"7b/4":51,"8a/2":39,"8a/3":36,"8a/5":33,"8b/6":36,"8b/9":15,"9b/7":22,"10/14":26,"10/26":76} },
+  { grondvorm: "ad summum", aanvullingen: "", vertaling: "'naar boven'", teksten: ["7b/12"], volgorde: {"7b/12":17} },
+  { grondvorm: "addere", aanvullingen: "addo, addidi, additum", vertaling: "toevoegen", basis: true },
+  { grondvorm: "adesse", aanvullingen: "adsum, adfui, –", vertaling: "erbij zijn, aanwezig zijn, er zijn", basis: true, teksten: ["7a/3"], volgorde: {"7a/3":25} },
+  { grondvorm: "adferre (afferre)", aanvullingen: "adfero (affero), attuli, allatum", vertaling: "dragen naar, voeren naar, brengen naar", basis: true },
+  { grondvorm: "adhibere", aanvullingen: "adhibeo, adhibui, adhibitum", vertaling: "aanwenden, gebruiken", teksten: ["10/26"], volgorde: {"10/26":43} },
+  { grondvorm: "adhuc", aanvullingen: "(bijw.)", vertaling: "nog", teksten: ["6a/7"], volgorde: {"6a/7":58} },
+  { grondvorm: "adiacere", aanvullingen: "adiaceo, adiacui, –", vertaling: "liggen bij, liggen naast, grenzen aan", teksten: ["9b/5"], volgorde: {"9b/5":32} },
+  { grondvorm: "adicere", aanvullingen: "adicio, adieci, adiectum", vertaling: "werpen bij, toevoegen" },
+  { grondvorm: "adire", aanvullingen: "adeo, adii, aditum", vertaling: "gaan naar", basis: true, teksten: ["7b/2"], volgorde: {"7b/2":46} },
+  { grondvorm: "adiungere", aanvullingen: "adiungo, adiunxi, adiunctum", vertaling: "verbinden; toevoegen", teksten: ["8b/5"], volgorde: {"8b/5":46} },
+  { grondvorm: "adminiculum", aanvullingen: "adminiculi", vertaling: "hulpmiddel", teksten: ["8b/3"], volgorde: {"8b/3":39} },
+  { grondvorm: "admirandus", aanvullingen: "admiranda, admirandum", vertaling: "wonderbaarlijk, bewonderenswaardig", teksten: ["10/21"], volgorde: {"10/21":8} },
+  { grondvorm: "admirari", aanvullingen: "admiror, admiratus sum", vertaling: "bewonderen; zich verwonderen", basis: true },
+  { grondvorm: "admiratio", aanvullingen: "admirationis", vertaling: "bewondering", teksten: ["10/14"], volgorde: {"10/14":9} },
+  { grondvorm: "admittere", aanvullingen: "admitto, admisi, admissum", vertaling: "toelaten, toestaan", teksten: ["6b/3"], volgorde: {"6b/3":23} },
+  { grondvorm: "admonere", aanvullingen: "admoneo, admonui, admonitum", vertaling: "aanmanen, aansporen, waarschuwen", teksten: ["8b/5"], volgorde: {"8b/5":35} },
+  { grondvorm: "admovere", aanvullingen: "admoveo, admovi, admotum + dat.", vertaling: "bewegen naar/tot bij, brengen naar/tot bij", teksten: ["10/26"], volgorde: {"10/26":93} },
+  { grondvorm: "adolere", aanvullingen: "adoleo, adolui, –", vertaling: "met offers eren, offeren" },
+  { grondvorm: "adornare", aanvullingen: "adorno, adornavi, adornatum + abl.", vertaling: "voorzien van, uitrusten met" },
+  { grondvorm: "adprehendere", aanvullingen: "adprehendo, adprehendi, adprehensum", vertaling: "grijpen, vastgrijpen" },
+  { grondvorm: "adserere", aanvullingen: "adsero, adserui, adsertum", vertaling: "aanspraak maken op, zich toe-eigenen; bevrijden, beschermen", teksten: ["8b/9"], volgorde: {"8b/9":102} },
+  { grondvorm: "alacrior", aanvullingen: "alacrior, alacrius; alacriores", vertaling: "opgewekter, levendiger, enthousiaster", teksten: ["8b/5"], volgorde: {"8b/5":19} },
+  { grondvorm: "alia mente quam", aanvullingen: "", vertaling: "op een andere manier dan", teksten: ["7b/6"], volgorde: {"7b/6":35} },
+  { grondvorm: "alia parte ... alia (parte)", aanvullingen: "", vertaling: "aan de ene kant … aan de andere kant", teksten: ["9b/5"], volgorde: {"9b/5":69} },
+  { grondvorm: "alii", aanvullingen: "alii … alii", vertaling: "de enen … de anderen" },
+  { grondvorm: "aliqui", aanvullingen: "aliqua, aliquod", vertaling: "een of ander(e), een zekere, een", teksten: ["10/19"], volgorde: {"10/19":7} },
+  { grondvorm: "altius", aanvullingen: "(bijw.)", vertaling: "hoger; dieper", teksten: ["7a/7"], volgorde: {"7a/7":41} },
+  { grondvorm: "amores mei", aanvullingen: "", vertaling: "'mijn lievelingsplek'", teksten: ["9b/5"], volgorde: {"9b/5":62} },
+  { grondvorm: "ardere", aanvullingen: "ardeo, arsi, –", vertaling: "branden, gloeien", teksten: ["10/26"], volgorde: {"10/26":32} },
+  { grondvorm: "aspectus", aanvullingen: "aspectus, (m.)", vertaling: "blik, aanblik, zicht" },
+  { grondvorm: "adstare", aanvullingen: "adsto, adstiti, –", vertaling: "staan bij, blijven staan", teksten: ["7a/6"], volgorde: {"7a/6":5} },
+  { grondvorm: "adsurgere", aanvullingen: "adsurgo, adsurrexi, adsurrectum", vertaling: "zich verheffen, oprijzen, gaan staan", teksten: ["6b/5"], volgorde: {"6b/5":29} },
+  { grondvorm: "adulescens", aanvullingen: "adulescentis (m.)", vertaling: "jongeman (tussen 15 en 30 jaar)", teksten: ["7a/1","7b/2"], volgorde: {"7a/1":27,"7b/2":72} },
+  { grondvorm: "advenire", aanvullingen: "advenio, adveni, adventum", vertaling: "aankomen, arriveren", teksten: ["6b/2"], volgorde: {"6b/2":25} },
+  { grondvorm: "adversus", aanvullingen: "+ acc.", vertaling: "tegenover, tegen, ten opzichte van", teksten: ["6a/4","7b/4"], volgorde: {"6a/4":60,"7b/4":40} },
+  { grondvorm: "advocare", aanvullingen: "advoco, advocavi, advocatum", vertaling: "erbij roepen, bijeenroepen", teksten: ["7b/4"], volgorde: {"7b/4":30} },
+  { grondvorm: "advocatus", aanvullingen: "advocati", vertaling: "helper; advocaat" },
+  { grondvorm: "Aeacus", aanvullingen: "Aeaci", vertaling: "Aeacus (eigennaam)" },
+  { grondvorm: "aedes", aanvullingen: "aedis, (v.)", vertaling: "tempel; mv.: huis, gebouw", teksten: ["7a/8"], volgorde: {"7a/8":13} },
+  { grondvorm: "aedificare", aanvullingen: "aedifico, aedificavi, aedificatum", vertaling: "bouwen", basis: true, teksten: ["8a/6"], volgorde: {"8a/6":12} },
+  { grondvorm: "aedificium", aanvullingen: "aedificii, (o.)", vertaling: "gebouw", teksten: ["6a/1","10/21"], volgorde: {"6a/1":27,"10/21":23} },
+  { grondvorm: "aedilis", aanvullingen: "aedilis (m.)", vertaling: "aediel (= politiek ambt)", teksten: ["7a/8"], volgorde: {"7a/8":12} },
+  { grondvorm: "aeger", aanvullingen: "aegra, aegrum", vertaling: "ziek", basis: true, teksten: ["6b/3"], volgorde: {"6b/3":2} },
+  { grondvorm: "aegre", aanvullingen: "(bijw.)", vertaling: "met moeite, moeizaam, nauwelijks" },
+  { grondvorm: "Aelia", aanvullingen: "Aeliae", vertaling: "Aelia (eigennaam)" },
+  { grondvorm: "Aemilia Donativa", aanvullingen: "Aemiliae Donativae", vertaling: "Aemilia Donativa (eigennaam)" },
+  { grondvorm: "Aemilius Celer", aanvullingen: "Aemilii Celeris", vertaling: "Aemilius Celer (eigennaam)" },
+  { grondvorm: "Aeneas", aanvullingen: "Aeneae", vertaling: "Aeneas (eigennaam)" },
+  { grondvorm: "aeneus", aanvullingen: "aenea, aeneum", vertaling: "van brons gemaakt, bronzen", teksten: ["6b/9"], volgorde: {"6b/9":2} },
+  { grondvorm: "aequabilis", aanvullingen: "aequabilis, aequabile", vertaling: "gelijkmatig, gelijk", teksten: ["7a/1"], volgorde: {"7a/1":6} },
+  { grondvorm: "aequalis", aanvullingen: "aequalis, aequale", vertaling: "gelijk" },
+  { grondvorm: "Aequi", aanvullingen: "Aequorum", vertaling: "de Aequi (een volk in Latium)" },
+  { grondvorm: "aer", aanvullingen: "aeris (m.)", vertaling: "lucht (Grieks leenwoord)", basis: true },
+  { grondvorm: "aerarius", aanvullingen: "aerarii", vertaling: "kopersmid", teksten: ["6b/3"], volgorde: {"6b/3":5} },
+  { grondvorm: "aes", aanvullingen: "aeris (o.)", vertaling: "koper, brons; geld", basis: true, teksten: ["8a/2"], volgorde: {"8a/2":22} },
+  { grondvorm: "aes alienum", aanvullingen: "aeris alieni (o.)", vertaling: "schulden", teksten: ["8a/2"], volgorde: {"8a/2":24} },
+  { grondvorm: "aestas", aanvullingen: "aestatis", vertaling: "zomer", basis: true },
+  { grondvorm: "aestus", aanvullingen: "aestus", vertaling: "hitte, gloed", basis: true, teksten: ["10/8"], volgorde: {"10/8":29} },
+  { grondvorm: "aetas", aanvullingen: "aetatis, (v.)", vertaling: "leeftijd", basis: true, teksten: ["7a/1"], volgorde: {"7a/1":5} },
+  { grondvorm: "aeternus", aanvullingen: "aeterna, aeternum", vertaling: "eeuwig, eeuwigdurend, onvergankelijk" },
+  { grondvorm: "Aetna", aanvullingen: "Aetnae", vertaling: "Etna (vulkaan op Sicilië)" },
+  { grondvorm: "aevum", aanvullingen: "aevi, (o.)", vertaling: "tijd; eeuwigheid" },
+  { grondvorm: "Afer", aanvullingen: "Afri", vertaling: "Afrikaan" },
+  { grondvorm: "afficere", aanvullingen: "afficio, affeci, affectum", vertaling: "voorzien van; behandelen met" },
+  { grondvorm: "Africanae", aanvullingen: "arum", vertaling: "wilde dieren uit Africa" },
+  { grondvorm: "Agamemnonius", aanvullingen: "Agamemnonia, Agamemnonium", vertaling: "van Agamemnon" },
+  { grondvorm: "ager", aanvullingen: "agri, (m.)", vertaling: "akker, veld, stuk grond, gebied, grondgebied", basis: true, teksten: ["7b/2","8a/2","8a/5","8b/3","10/21"], volgorde: {"7b/2":109,"8a/2":8,"8a/5":10,"8b/3":30,"10/21":13} },
+  { grondvorm: "agere", aanvullingen: "ago, egi, actum", vertaling: "doen, (voort)drijven", basis: true, teksten: ["6b/4","6a/7"], volgorde: {"6b/4":37,"6a/7":27} },
+  { grondvorm: "agmen", aanvullingen: "agminis, (o.)", vertaling: "troep, groep, menigte; leger op mars, colonne, stoet", basis: true, teksten: ["6a/7","6b/2","8b/9"], volgorde: {"6a/7":6,"6b/2":34,"8b/9":140} },
+  { grondvorm: "agnoscere", aanvullingen: "agnosco, agnovi, agnitum", vertaling: "herkennen; inzien" },
+  { grondvorm: "ait", aanvullingen: "", vertaling: "hij/zij zei", basis: true, teksten: ["8a/2"], volgorde: {"8a/2":3} },
+  { grondvorm: "ala", aanvullingen: "alae", vertaling: "vleugel", basis: true },
+  { grondvorm: "alacer", aanvullingen: "alacris, alacre", vertaling: "opgewekt, levendig, enthousiast", teksten: ["8b/5"], volgorde: {"8b/5":18} },
+  { grondvorm: "Alba Longa", aanvullingen: "Albae Longae", vertaling: "(de stad) Alba Longa" },
+  { grondvorm: "alba", aanvullingen: "albae", vertaling: "wit kleed" },
+  { grondvorm: "albus", aanvullingen: "alba, album", vertaling: "wit" },
+  { grondvorm: "alea", aanvullingen: "aleae", vertaling: "dobbelsteen" },
+  { grondvorm: "alere", aanvullingen: "alo, alui, al(i)tum", vertaling: "voeden", basis: true, teksten: ["7a/3","8a/3"], volgorde: {"7a/3":79,"8a/3":130} },
+  { grondvorm: "alescere", aanvullingen: "alesco, –", vertaling: "groter worden", teksten: ["7a/1"], volgorde: {"7a/1":29} },
+  { grondvorm: "alibi", aanvullingen: "(bijw.)", vertaling: "ergens anders, elders", teksten: ["6a/4"], volgorde: {"6a/4":65} },
+  { grondvorm: "alibi", aanvullingen: "alibi", vertaling: "hier … daar" },
+  { grondvorm: "alienus", aanvullingen: "aliena, alienum", vertaling: "van een ander, andermans", basis: true, teksten: ["8a/2"], volgorde: {"8a/2":23} },
+  { grondvorm: "aliquando", aanvullingen: "(bijw.)", vertaling: "in het verleden, ooit, eens", teksten: ["8a/5"], volgorde: {"8a/5":19} },
+  { grondvorm: "(ali)qui", aanvullingen: "(ali)quae, (ali)quod", vertaling: "een of ander(e), een zekere, een", basis: true },
+  { grondvorm: "aliquis", aanvullingen: "aliqua, aliquid (onbepaald vnw.)", vertaling: "iemand, iets; mv.: sommige(n)", basis: true, teksten: ["7b/12"], volgorde: {"7b/12":11} },
+  { grondvorm: "alius", aanvullingen: "alia, aliud", vertaling: "ander(e)", basis: true, teksten: ["6b/2","7b/6","8a/2","8a/3","8b/3","8b/9","9a/1","9b/5"], volgorde: {"6b/2":115,"7b/6":33,"8a/2":34,"8a/3":28,"8b/3":32,"8b/9":54,"9a/1":10,"9b/5":67} },
+  { grondvorm: "alii … alii", aanvullingen: "", vertaling: "de enen … de anderen", basis: true, teksten: ["8b/3"], volgorde: {"8b/3":33} },
+  { grondvorm: "alius … alius", aanvullingen: "", vertaling: "de een … de ander", basis: true },
+  { grondvorm: "alius", aanvullingen: "alia, aliud … quam", vertaling: "ander(e) … dan", basis: true, teksten: ["8a/3"], volgorde: {"8a/3":98} },
+  { grondvorm: "Alpes", aanvullingen: "Alpium (enkel mv.)", vertaling: "de Alpen", basis: true, teksten: ["8a/5"], volgorde: {"8a/5":8} },
+  { grondvorm: "Alpicus", aanvullingen: "Alpici", vertaling: "Alpenbewoner" },
+  { grondvorm: "altaria", aanvullingen: "altarium (enkel mv., onz.)", vertaling: "offerhaard, altaar", teksten: ["7b/2"], volgorde: {"7b/2":93} },
+  { grondvorm: "alter", aanvullingen: "altera, alterum", vertaling: "ander (van twee)", basis: true, teksten: ["6b/2","7a/6","8a/6","6a/7"], volgorde: {"6b/2":42,"7a/6":22,"8a/6":31,"6a/7":38} },
+  { grondvorm: "alter … alter", aanvullingen: "", vertaling: "de een … de ander", basis: true, teksten: ["7a/6"], volgorde: {"7a/6":23} },
+  { grondvorm: "altitudo", aanvullingen: "altitudinis", vertaling: "hoogte; diepte", basis: true },
+  { grondvorm: "altus", aanvullingen: "alta, altum", vertaling: "hoog; diep", basis: true, teksten: ["6a/4","6b/2","6b/4","7a/7"], volgorde: {"6a/4":10,"6b/2":87,"6b/4":6,"7a/7":40} },
+  { grondvorm: "amare", aanvullingen: "amo, amavi, amatum", vertaling: "liefhebben, houden van", basis: true },
+  { grondvorm: "amarus", aanvullingen: "amara, amarum", vertaling: "bitter; moeilijk, onaangenaam", basis: true },
+  { grondvorm: "Ambiorix", aanvullingen: "Ambiorigis (m.)", vertaling: "Ambiorix (eigennaam)" },
+  { grondvorm: "ambitio", aanvullingen: "ambitionis", vertaling: "ijdelheid; eerzucht, ambitie" },
+  { grondvorm: "ambo", aanvullingen: "ambae, ambo", vertaling: "beide(n)", basis: true },
+  { grondvorm: "amica", aanvullingen: "amicae", vertaling: "vriendin", teksten: ["9b/4"], volgorde: {"9b/4":52} },
+  { grondvorm: "amicus", aanvullingen: "amici", vertaling: "vriend", basis: true },
+  { grondvorm: "amittere", aanvullingen: "amitto, amisi, amissum", vertaling: "wegsturen; verliezen", basis: true, teksten: ["6a/1"], volgorde: {"6a/1":37} },
+  { grondvorm: "amor", aanvullingen: "amoris, (m.)", vertaling: "liefde", basis: true, teksten: ["7b/4","9b/5","10/26"], volgorde: {"7b/4":69,"9b/5":61,"10/26":33} },
+  { grondvorm: "amovere", aanvullingen: "amoveo, amovi, amotum", vertaling: "verwijderen", teksten: ["7b/2"], volgorde: {"7b/2":92} },
+  { grondvorm: "amplecti", aanvullingen: "amplector, amplexus sum", vertaling: "omhelzen, omarmen; liefhebben, houden van", basis: true },
+  { grondvorm: "amplius", aanvullingen: "(bijw.)", vertaling: "meer", teksten: ["8b/9"], volgorde: {"8b/9":20} },
+  { grondvorm: "an", aanvullingen: "", vertaling: "of", basis: true, teksten: ["10/3"], volgorde: {"10/3":2} },
+  { grondvorm: "Anchises", aanvullingen: "Anchisae", vertaling: "Anchises (eigennaam)" },
+  { grondvorm: "ancilla", aanvullingen: "ancillae", vertaling: "slavin", teksten: ["8a/3"], volgorde: {"8a/3":63} },
+  { grondvorm: "angulus", aanvullingen: "anguli", vertaling: "hoek; uithoek", teksten: ["8b/9"], volgorde: {"8b/9":111} },
+  { grondvorm: "angustus", aanvullingen: "angusta, angustum", vertaling: "smal", basis: true, teksten: ["8b/6"], volgorde: {"8b/6":45} },
+  { grondvorm: "anima", aanvullingen: "animae, (v.)", vertaling: "adem; ziel", basis: true, teksten: ["7b/12"], volgorde: {"7b/12":10} },
+  { grondvorm: "animadvertere", aanvullingen: "animadverto, animadverti, animadversum", vertaling: "letten op, waarnemen, zien", basis: true, teksten: ["8b/5"], volgorde: {"8b/5":8} },
+  { grondvorm: "animal", aanvullingen: "animalis, (o.)", vertaling: "levend wezen, dier", basis: true, teksten: ["9a/4","6a/7"], volgorde: {"9a/4":14,"6a/7":35} },
+  { grondvorm: "animus", aanvullingen: "animi, (m.)", vertaling: "geest, verstand, hart; gemoedsgesteld, mv.: gevoelens", basis: true, teksten: ["7b/2","10/3"], volgorde: {"7b/2":13,"10/3":36} },
+  { grondvorm: "animos gerere", aanvullingen: "gero, gessi, gestum in + acc.", vertaling: "gevoelens koesteren tegenover", teksten: ["7b/2"], volgorde: {"7b/2":68} },
+  { grondvorm: "annus", aanvullingen: "anni, (m.)", vertaling: "jaar", basis: true, teksten: ["7a/1","8a/3"], volgorde: {"7a/1":12,"8a/3":74} },
+  { grondvorm: "anser", aanvullingen: "anseris", vertaling: "gans (het dier)" },
+  { grondvorm: "ante", aanvullingen: "+ acc. (vz.)", vertaling: "voor", basis: true, teksten: ["6b/2","7b/2","9b/5"], volgorde: {"6b/2":23,"7b/2":52,"9b/5":54} },
+  { grondvorm: "ante", aanvullingen: "(bijw.)", vertaling: "eerder, vroeger, voordien", basis: true },
+  { grondvorm: "antea", aanvullingen: "(bijw.)", vertaling: "eerder, vroeger, voordien", basis: true, teksten: ["8a/3","10/9"], volgorde: {"8a/3":1,"10/9":4} },
+  { grondvorm: "anteire", aanvullingen: "anteeo, anteii, anteitum", vertaling: "gaan vóór; voorkomen, beletten, verijdelen", teksten: ["6b/2"], volgorde: {"6b/2":106} },
+  { grondvorm: "antequam", aanvullingen: "+ ind. (vgw.)", vertaling: "vooraleer" },
+  { grondvorm: "antiquitas", aanvullingen: "antiquitatis", vertaling: "oudheid, het verre verleden" },
+  { grondvorm: "antrum", aanvullingen: "antri, (o.)", vertaling: "grot", basis: true },
+  { grondvorm: "anus", aanvullingen: "anus (v.)", vertaling: "oude vrouw" },
+  { grondvorm: "apertum", aanvullingen: "aperti", vertaling: "open ruimte, vrije ruimte, open lucht", teksten: ["6a/4"], volgorde: {"6a/4":27} },
+  { grondvorm: "apis", aanvullingen: "apis", vertaling: "bij (het insect)", teksten: ["10/14"], volgorde: {"10/14":5} },
+  { grondvorm: "Apollo", aanvullingen: "Apollinis", vertaling: "(de god) Apollo", basis: true, teksten: ["9a/1","9b/6"], volgorde: {"9a/1":38,"9b/6":25} },
+  { grondvorm: "apparere", aanvullingen: "appareo, apparui, apparitum", vertaling: "verschijnen, zichtbaar worden; blijken, duidelijk zijn", teksten: ["6a/2","8a/3"], volgorde: {"6a/2":8,"8a/3":126} },
+  { grondvorm: "appellare", aanvullingen: "appello, appellavi, appellatum", vertaling: "noemen", basis: true, teksten: ["7a/1","8b/1","9a/1","10/26"], volgorde: {"7a/1":35,"8b/1":4,"9a/1":17,"10/26":65} },
+  { grondvorm: "Appenninus", aanvullingen: "Appennini", vertaling: "de Apennijnen (bergketen in Italië)", teksten: ["8b/9"], volgorde: {"8b/9":84} },
+  { grondvorm: "appetere", aanvullingen: "appeto, appetivi, appetitum", vertaling: "verlangen naar" },
+  { grondvorm: "Appianus", aanvullingen: "Appiani", vertaling: "Appianus (eigennaam)" },
+  { grondvorm: "apponere", aanvullingen: "appono, apposui, appositum", vertaling: "plaatsen bij, zetten bij" },
+  { grondvorm: "approbare", aanvullingen: "approbo, approbavi, approbatum", vertaling: "goedkeuren; bewijzen", teksten: ["7b/2"], volgorde: {"7b/2":16} },
+  { grondvorm: "Aprilis", aanvullingen: "Aprilis, Aprile", vertaling: "van de maand april" },
+  { grondvorm: "apud", aanvullingen: "+ acc. (vz.)", vertaling: "bij", basis: true, teksten: ["8b/5","8b/9","9a/4"], volgorde: {"8b/5":5,"8b/9":87,"9a/4":35} },
+  { grondvorm: "aqua", aanvullingen: "aquae, (v.)", vertaling: "water", basis: true, teksten: ["9b/4","10/19","10/21"], volgorde: {"9b/4":19,"10/19":14,"10/21":30} },
+  { grondvorm: "aquaeductus", aanvullingen: "aquaeductus", vertaling: "waterleiding, aquaduct", teksten: ["8b/3"], volgorde: {"8b/3":17} },
+  { grondvorm: "aquila", aanvullingen: "aquilae", vertaling: "arend, adelaar" },
+  { grondvorm: "aquilifer", aanvullingen: "aquiliferi", vertaling: "vaandeldrager" },
+  { grondvorm: "Aquilo", aanvullingen: "Aquilonis (m.)", vertaling: "de Noordenwind" },
+  { grondvorm: "aquilo", aanvullingen: "aquilonis (m.)", vertaling: "het noorden" },
+  { grondvorm: "Aquitanus", aanvullingen: "Aquitani", vertaling: "Aquitaniër", teksten: ["9a/1"], volgorde: {"9a/1":11} },
+  { grondvorm: "ara", aanvullingen: "arae, (v.)", vertaling: "altaar", basis: true, teksten: ["10/26"], volgorde: {"10/26":77} },
+  { grondvorm: "arbiter", aanvullingen: "arbitri", vertaling: "scheidsrechter" },
+  { grondvorm: "arbitrari", aanvullingen: "arbitror, arbitratus sum", vertaling: "oordelen, menen, denken", basis: true, teksten: ["6a/2","7a/1"], volgorde: {"6a/2":77,"7a/1":2} },
+  { grondvorm: "arbitrium", aanvullingen: "arbitrii, (o.)", vertaling: "oordeel; macht, heerschappij" },
+  { grondvorm: "arbor", aanvullingen: "arboris (v.)", vertaling: "boom", basis: true },
+  { grondvorm: "Archimedes", aanvullingen: "Archimedis", vertaling: "Archimedes (eigennaam)", teksten: ["10/3"], volgorde: {"10/3":3} },
+  { grondvorm: "area", aanvullingen: "areae, (v.)", vertaling: "open plein; binnenplaats (van een huis)" },
+  { grondvorm: "arena", aanvullingen: "arenae, (v.)", vertaling: "zandkorrel, zand; strijdperk", basis: true },
+  { grondvorm: "arescere", aanvullingen: "aresco, arui, –", vertaling: "drogen" },
+  { grondvorm: "argenteus", aanvullingen: "argentea, argenteum", vertaling: "van zilver, zilveren" },
+  { grondvorm: "argentum", aanvullingen: "argenti, (o.)", vertaling: "zilver" },
+  { grondvorm: "Aricia", aanvullingen: "Ariciae", vertaling: "Aricia (stadje ten zuiden van Rome)" },
+  { grondvorm: "arma", aanvullingen: "armorum (enkel mv.), (onz. mv.)", vertaling: "wapens; oorlog", basis: true },
+  { grondvorm: "armare", aanvullingen: "armo, armavi, armatum", vertaling: "bewapenen", basis: true },
+  { grondvorm: "armatus", aanvullingen: "armata, armatum", vertaling: "gewapend", basis: true },
+  { grondvorm: "arripere", aanvullingen: "arripio, arrepi, arreptum", vertaling: "vastgrijpen; beginnen, aanvatten", basis: true },
+  { grondvorm: "Arrius", aanvullingen: "Arrii", vertaling: "Arrius (eigennaam)" },
+  { grondvorm: "ars", aanvullingen: "artis, (v.)", vertaling: "kunst; kunstvaardigheid, bekwaamheid", basis: true, teksten: ["9a/1","9b/6","10/3","10/26"], volgorde: {"9a/1":31,"9b/6":55,"10/3":77,"10/26":15} },
+  { grondvorm: "artificium", aanvullingen: "artificii", vertaling: "kunstvaardigheid; handwerk, ambacht", teksten: ["9a/1"], volgorde: {"9a/1":53} },
+  { grondvorm: "artus", aanvullingen: "arta, artum", vertaling: "nauw, eng", teksten: ["6b/3"], volgorde: {"6b/3":26} },
+  { grondvorm: "arx", aanvullingen: "arcis, (v.)", vertaling: "burcht, vesting; heuvel", basis: true, teksten: ["9b/7"], volgorde: {"9b/7":12} },
+  { grondvorm: "Ascanius", aanvullingen: "Ascanii", vertaling: "Ascanius (eigennaam)" },
+  { grondvorm: "ascendere", aanvullingen: "ascendo, ascendi, ascensum", vertaling: "beklimmen", teksten: ["6a/2"], volgorde: {"6a/2":86} },
+  { grondvorm: "Asia", aanvullingen: "Asiae", vertaling: "Klein-Azië (het huidige West-Turkije)" },
+  { grondvorm: "asinus", aanvullingen: "asini", vertaling: "ezel", teksten: ["8b/3"], volgorde: {"8b/3":26} },
+  { grondvorm: "aspergere", aanvullingen: "aspergo, aspersi, aspersum", vertaling: "besprenkelen, bestrooien" },
+  { grondvorm: "aspicere", aanvullingen: "aspicio, aspexi, aspectum", vertaling: "kijken naar, bekijken", basis: true, teksten: ["9b/5"], volgorde: {"9b/5":50} },
+  { grondvorm: "asser", aanvullingen: "asseris", vertaling: "paal, lat", teksten: ["6b/2"], volgorde: {"6b/2":40} },
+  { grondvorm: "assidere", aanvullingen: "assideo, assedi, assessum", vertaling: "zitten bij, zitten" },
+  { grondvorm: "assiduus", aanvullingen: "assidua, assiduum", vertaling: "volhardend, vlijtig, werkzaam", teksten: ["8b/5"], volgorde: {"8b/5":53} },
+  { grondvorm: "astrum", aanvullingen: "astri, (o.)", vertaling: "ster" },
+  { grondvorm: "at", aanvullingen: "(vgw.)", vertaling: "maar", basis: true, teksten: ["10/3","10/14"], volgorde: {"10/3":34,"10/14":39} },
+  { grondvorm: "ater", aanvullingen: "atra, atrum", vertaling: "zwart, donker, duister", basis: true, teksten: ["6a/7"], volgorde: {"6a/7":41} },
+  { grondvorm: "Athenae", aanvullingen: "Athenarum (enkel mv.)", vertaling: "(de stad) Athene", teksten: ["9b/7"], volgorde: {"9b/7":1} },
+  { grondvorm: "Athenodorus", aanvullingen: "Athenodori", vertaling: "Athenodorus (eigennaam)" },
+  { grondvorm: "atque", aanvullingen: "(vgw.)", vertaling: "en", basis: true, teksten: ["7a/7","8b/6","8b/9","9a/1","9b/4","9b/5","10/14"], volgorde: {"7a/7":46,"8b/6":48,"8b/9":61,"9a/1":34,"9b/4":11,"9b/5":14,"10/14":19} },
+  { grondvorm: "atrox", aanvullingen: "atrox, atrox; atrocis", vertaling: "afgrijselijk, gruwelijk, dreigend", basis: true },
+  { grondvorm: "attingere", aanvullingen: "attingo, attigi, attactum", vertaling: "aanraken" },
+  { grondvorm: "attonitus", aanvullingen: "attonita, attonitum", vertaling: "geschokt, verbijsterd, ontsteld", teksten: ["6a/7","7b/2"], volgorde: {"6a/7":4,"7b/2":88} },
+  { grondvorm: "attribuere", aanvullingen: "attribuo, attribui, attributum", vertaling: "toedelen, toewijzen, geven" },
+  { grondvorm: "audacia", aanvullingen: "audaciae, (v.)", vertaling: "moed", basis: true },
+  { grondvorm: "audere", aanvullingen: "audeo, ausus sum", vertaling: "durven", basis: true, teksten: ["7b/2","9a/4"], volgorde: {"7b/2":99,"9a/4":41} },
+  { grondvorm: "audire", aanvullingen: "audio, audivi, auditum", vertaling: "horen, luisteren", basis: true, teksten: ["7b/4","8a/2"], volgorde: {"7b/4":23,"8a/2":57} },
+  { grondvorm: "auditus", aanvullingen: "audita, auditum", vertaling: "gehoord, geluisterd", teksten: ["8a/2"], volgorde: {"8a/2":58} },
+  { grondvorm: "auferre", aanvullingen: "aufero, abstuli, ablatum", vertaling: "wegbrengen; wegnemen, afnemen", teksten: ["6b/1","10/3"], volgorde: {"6b/1":7,"10/3":14} },
+  { grondvorm: "Augustus", aanvullingen: "Augusti", vertaling: "(keizer) Augustus" },
+  { grondvorm: "Aulis", aanvullingen: "Aulidis", vertaling: "(de stad) Aulis (in Griekenland)" },
+  { grondvorm: "auratus", aanvullingen: "aurata, auratum", vertaling: "met goud versierd, verguld" },
+  { grondvorm: "Aurelius", aanvullingen: "Aurelii", vertaling: "Aurelius (eigennaam)" },
+  { grondvorm: "aureus", aanvullingen: "aurea, aureum", vertaling: "van goud, gouden", basis: true },
+  { grondvorm: "aureus", aanvullingen: "aurei", vertaling: "aureus (= 400 sestertiën), goudstuk", basis: true },
+  { grondvorm: "auris", aanvullingen: "auris, (v.)", vertaling: "oor", basis: true, teksten: ["7a/3"], volgorde: {"7a/3":18} },
+  { grondvorm: "aurum", aanvullingen: "auri, (o.)", vertaling: "goud, gouden sieraad", basis: true },
+  { grondvorm: "auspicium", aanvullingen: "auspicii, (o.)", vertaling: "het observeren van vogels op zoek naar voortekens" },
+  { grondvorm: "auster", aanvullingen: "austri, (m.)", vertaling: "de Zuidenwind", teksten: ["9b/7"], volgorde: {"9b/7":38} },
+  { grondvorm: "aut", aanvullingen: "(vgw.)", vertaling: "of, ofwel", basis: true, teksten: ["6b/2","6b/4","7a/7","7b/4","8a/3","9b/5"], volgorde: {"6b/2":17,"6b/4":51,"7a/7":14,"7b/4":58,"8a/3":58,"9b/5":9} },
+  { grondvorm: "autem", aanvullingen: "(vgw.)", vertaling: "maar, echter", basis: true, teksten: ["7a/1","7a/6","10/19"], volgorde: {"7a/1":40,"7a/6":32,"10/19":23} },
+  { grondvorm: "autumnus", aanvullingen: "autumni", vertaling: "herfst", teksten: ["9b/6"], volgorde: {"9b/6":3} },
+  { grondvorm: "avaritia", aanvullingen: "avaritiae", vertaling: "gierigheid, hebzucht", basis: true },
+  { grondvorm: "ave!", aanvullingen: "", vertaling: "gegroet, hallo" },
+  { grondvorm: "aversari", aanvullingen: "aversor, aversatus sum + acc.", vertaling: "zich afwenden van", teksten: ["7b/4"], volgorde: {"7b/4":26} },
+  { grondvorm: "aversatus", aanvullingen: "aversata, aversatum", vertaling: "zich afgewend hebbend van, afgewend van", teksten: ["7b/4"], volgorde: {"7b/4":27} },
+  { grondvorm: "avertere", aanvullingen: "averto, averti, aversum", vertaling: "afwenden, afweren, verdrijven", basis: true, teksten: ["9b/4"], volgorde: {"9b/4":43} },
+  { grondvorm: "avia", aanvullingen: "aviae", vertaling: "grootmoeder" },
+  { grondvorm: "avidus", aanvullingen: "avida, avidum", vertaling: "begerig" },
+  { grondvorm: "Aventinus mons", aanvullingen: "Aventini montis", vertaling: "de Aventijn (een van de heuvels in Rome)" },
+  { grondvorm: "avis", aanvullingen: "avis", vertaling: "vogel" },
+  { grondvorm: "avitus", aanvullingen: "avita, avitum", vertaling: "van de grootvader", teksten: ["7a/5","8a/2"], volgorde: {"7a/5":33,"8a/2":30} },
+  { grondvorm: "avunculus", aanvullingen: "avunculi", vertaling: "oom (langs moederskant)", teksten: ["6a/2"], volgorde: {"6a/2":78} },
+  { grondvorm: "avus", aanvullingen: "avi", vertaling: "grootvader" },
+  { grondvorm: "baca", aanvullingen: "bacae, (v.)", vertaling: "bes" },
+  { grondvorm: "Baianus", aanvullingen: "Baiana, Baianum", vertaling: "van Baiae, bij Baiae (stad bij Napels)", teksten: ["10/21"], volgorde: {"10/21":12} },
+  { grondvorm: "balineum", aanvullingen: "balinei", vertaling: "badkamer", teksten: ["9b/5"], volgorde: {"9b/5":27} },
+  { grondvorm: "basium", aanvullingen: "basii, (o.)", vertaling: "kus" },
+  { grondvorm: "Bassa", aanvullingen: "Bassae", vertaling: "Bassa (eigennaam)" },
+  { grondvorm: "beatus", aanvullingen: "beata, beatum", vertaling: "gelukkig, blij, tevreden", basis: true },
+  { grondvorm: "Belga", aanvullingen: "Belgae", vertaling: "Belg", basis: true, teksten: ["9a/1"], volgorde: {"9a/1":9} },
+  { grondvorm: "belissimus", aanvullingen: "belissima, belissimum", vertaling: "mooist, leukst; zeer mooi, zeer leuk", teksten: ["9b/9"], volgorde: {"9b/9":15} },
+  { grondvorm: "bellicus", aanvullingen: "bellica, bellicum", vertaling: "van de oorlog, oorlogs-" },
+  { grondvorm: "bellum", aanvullingen: "belli, (o.)", vertaling: "oorlog", basis: true, teksten: ["7b/2","8a/2","9a/1","9b/4"], volgorde: {"7b/2":77,"8a/2":2,"9a/1":60,"9b/4":23} },
+  { grondvorm: "bellum gerere", aanvullingen: "gero, gessi, gestum", vertaling: "oorlog voeren" },
+  { grondvorm: "bellum indicere", aanvullingen: "indico, indixi, indictum", vertaling: "de oorlog verklaren", teksten: ["7b/2","9b/4"], volgorde: {"7b/2":78,"9b/4":25} },
+  { grondvorm: "bellus", aanvullingen: "bella, bellum", vertaling: "mooi, leuk", teksten: ["9b/9"], volgorde: {"9b/9":14} },
+  { grondvorm: "belua", aanvullingen: "beluae", vertaling: "beest, monster", teksten: ["8b/9"], volgorde: {"8b/9":28} },
+  { grondvorm: "bene", aanvullingen: "(bijw.)", vertaling: "goed", basis: true },
+  { grondvorm: "Berytus", aanvullingen: "Beryti (v.)", vertaling: "(de stad) Beiroet" },
+  { grondvorm: "bibere", aanvullingen: "bibo, bibi, –", vertaling: "drinken", teksten: ["7a/5"], volgorde: {"7a/5":5} },
+  { grondvorm: "biliosus", aanvullingen: "biliosa, biliosum", vertaling: "van de gal", teksten: ["10/8"], volgorde: {"10/8":30} },
+  { grondvorm: "bis", aanvullingen: "(telwoord)", vertaling: "tweemaal" },
+  { grondvorm: "blanditia", aanvullingen: "blanditiae, (v.)", vertaling: "vleierij, mv.: lieve woordjes", teksten: ["10/26"], volgorde: {"10/26":42} },
+  { grondvorm: "bona", aanvullingen: "bonorum (enkel mv.)", vertaling: "deugden, kwaliteiten", teksten: ["7b/6"], volgorde: {"7b/6":3} },
+  { grondvorm: "bonus", aanvullingen: "bona, bonum", vertaling: "goed", basis: true, teksten: ["6a/2","7a/5","7b/6","8a/6","8b/6"], volgorde: {"6a/2":92,"7a/5":19,"7b/6":2,"8a/6":35,"8b/6":30} },
+  { grondvorm: "bos", aanvullingen: "bovis", vertaling: "rund, os, koe", basis: true, teksten: ["8b/3"], volgorde: {"8b/3":23} },
+  { grondvorm: "brachium", aanvullingen: "brachii, (o.)", vertaling: "arm", basis: true },
+  { grondvorm: "brevis", aanvullingen: "brevis, breve", vertaling: "kort", basis: true },
+  { grondvorm: "brevitas", aanvullingen: "brevitatis, (v.)", vertaling: "kortheid" },
+  { grondvorm: "Britannia", aanvullingen: "Britanniae", vertaling: "Brittannië" },
+  { grondvorm: "Brundisium", aanvullingen: "Brundisii", vertaling: "(de havenstad) Brundisium (nu: Brindisi)", teksten: ["9b/9"], volgorde: {"9b/9":16} },
+  { grondvorm: "Bruttius", aanvullingen: "Bruttia, Bruttium", vertaling: "van Bruttium (ook Calabria genoemd, streek in Zuid-Italië)", teksten: ["8b/9"], volgorde: {"8b/9":110} },
+  { grondvorm: "Bruttius", aanvullingen: "Bruttii", vertaling: "Bruttius (eigennaam)" },
+  { grondvorm: "bubalus", aanvullingen: "bubali", vertaling: "buffel" },
+  { grondvorm: "bucella", aanvullingen: "bucellae", vertaling: "hapje, brokje, stukje" },
+  { grondvorm: "bucina", aanvullingen: "bucinae, (v.)", vertaling: "trompet, trompetsignaal" },
+  { grondvorm: "bursa", aanvullingen: "bursae, (v.)", vertaling: "geldbuidel, geldbeurs" },
+  { grondvorm: "caesus", aanvullingen: "caesa, caesum", vertaling: "gedood, vermoord, afgemaakt", teksten: ["7b/4"], volgorde: {"7b/4":13} },
+  { grondvorm: "Caius Mucius", aanvullingen: "Caii Mucii", vertaling: "Caius Mucius (eigennaam)", teksten: ["7b/2"], volgorde: {"7b/2":58} },
+  { grondvorm: "caballus", aanvullingen: "caballi, (m.)", vertaling: "paard", teksten: ["7a/7"], volgorde: {"7a/7":28} },
+  { grondvorm: "cadere", aanvullingen: "cado, cecidi, –", vertaling: "vallen", basis: true, teksten: ["6b/4"], volgorde: {"6b/4":9} },
+  { grondvorm: "caecus", aanvullingen: "caeca, caecum", vertaling: "blind", basis: true },
+  { grondvorm: "caedere", aanvullingen: "caedo, cecidi, caesum", vertaling: "doden, vermoorden, afmaken", basis: true, teksten: ["7b/4","8b/9"], volgorde: {"7b/4":12,"8b/9":86} },
+  { grondvorm: "caedes", aanvullingen: "caedis, (v.)", vertaling: "moord, slachting, bloedbad", basis: true },
+  { grondvorm: "caelestes", aanvullingen: "caelestium", vertaling: "hemelgoden, goden", teksten: ["9a/1"], volgorde: {"9a/1":58} },
+  { grondvorm: "caelestis", aanvullingen: "caelestis, caeleste", vertaling: "van de hemel, hemels, hemel-", teksten: ["9a/1"], volgorde: {"9a/1":57} },
+  { grondvorm: "caelum", aanvullingen: "caeli, (o.)", vertaling: "hemel; klimaat", basis: true, teksten: ["9b/4","9b/7"], volgorde: {"9b/4":31,"9b/7":41} },
+  { grondvorm: "caementum", aanvullingen: "caementi, (o.)", vertaling: "gehouwen steen; kalkmortel, specie, cement", teksten: ["10/21"], volgorde: {"10/21":21} },
+  { grondvorm: "Caesar", aanvullingen: "Caesaris", vertaling: "(Caius Julius) Caesar (eigennaam)", basis: true },
+  { grondvorm: "caespes", aanvullingen: "caespitis (m.)", vertaling: "graszode; aarde, grond" },
+  { grondvorm: "Caius Cassius", aanvullingen: "Caii Cassius", vertaling: "Caius Cassius (eigennaam)", teksten: ["8b/9"], volgorde: {"8b/9":89} },
+  { grondvorm: "calamitas", aanvullingen: "calamitatis, (v.)", vertaling: "ramp" },
+  { grondvorm: "calcare", aanvullingen: "calco, calcavi, calcatum", vertaling: "trappen op, vertrappen", teksten: ["6b/2"], volgorde: {"6b/2":49} },
+  { grondvorm: "calciare", aanvullingen: "calcio, calciavi, calciatum", vertaling: "schoenen aantrekken" },
+  { grondvorm: "calidus", aanvullingen: "calida, calidum", vertaling: "warm, heet; ijverig", teksten: ["6b/2","9b/5"], volgorde: {"6b/2":76,"9b/5":45} },
+  { grondvorm: "caligo", aanvullingen: "caliginis, (v.)", vertaling: "nevel; duisternis", teksten: ["6a/7"], volgorde: {"6a/7":63} },
+  { grondvorm: "Callirhoe", aanvullingen: "Callirhoes", vertaling: "Callirhoe (eigennaam)" },
+  { grondvorm: "calvus", aanvullingen: "calva, calvum", vertaling: "kaal" },
+  { grondvorm: "calx", aanvullingen: "calcis", vertaling: "kalk, kalksteen", teksten: ["6b/4","10/21"], volgorde: {"6b/4":54,"10/21":20} },
+  { grondvorm: "calx", aanvullingen: "calcis", vertaling: "hiel; trap, schop" },
+  { grondvorm: "Campania", aanvullingen: "Campaniae", vertaling: "(de streek) Campanië", teksten: ["6a/1","8b/9"], volgorde: {"6a/1":5,"8b/9":59} },
+  { grondvorm: "Campanus", aanvullingen: "Campani", vertaling: "Campaniër" },
+  { grondvorm: "campus Martius", aanvullingen: "campi Martii", vertaling: "het Marsveld (in Rome)" },
+  { grondvorm: "campus", aanvullingen: "campi, (m.)", vertaling: "veld, (open) vlakte", teksten: ["6a/7"], volgorde: {"6a/7":24} },
+  { grondvorm: "candidus", aanvullingen: "candida, candidum", vertaling: "wit", teksten: ["6a/2"], volgorde: {"6a/2":102} },
+  { grondvorm: "Candidus", aanvullingen: "Candidi", vertaling: "Candidus (eigennaam)" },
+  { grondvorm: "canere", aanvullingen: "cano, cecini, –", vertaling: "zingen" },
+  { grondvorm: "canis", aanvullingen: "canis", vertaling: "hond", teksten: ["6b/2"], volgorde: {"6b/2":97} },
+  { grondvorm: "cantare", aanvullingen: "canto, cantavi, cantatum + acc.", vertaling: "zingen, zingen over, bezingen", teksten: ["9b/4"], volgorde: {"9b/4":53} },
+  { grondvorm: "cantica", aanvullingen: "canticae", vertaling: "gezang" },
+  { grondvorm: "canus", aanvullingen: "cana, canum", vertaling: "grijs" },
+  { grondvorm: "capella", aanvullingen: "capellae", vertaling: "geit" },
+  { grondvorm: "capere", aanvullingen: "capio, cepi, captum", vertaling: "nemen, grijpen, vangen; veroveren", basis: true, teksten: ["7b/4","8a/3","8b/9","9a/4","10/3"], volgorde: {"7b/4":8,"8a/3":55,"8b/9":75,"9a/4":10,"10/3":18} },
+  { grondvorm: "capillus", aanvullingen: "capilli", vertaling: "(hoofd)haar" },
+  { grondvorm: "captare", aanvullingen: "capto, captavi, captatum", vertaling: "vangen" },
+  { grondvorm: "captivitas", aanvullingen: "captivitatis", vertaling: "gevangenschap, krijgsgevangenschap", teksten: ["8a/3"], volgorde: {"8a/3":67} },
+  { grondvorm: "captivus", aanvullingen: "captivi", vertaling: "gevangene, krijgsgevangene", teksten: ["8b/1"], volgorde: {"8b/1":6} },
+  { grondvorm: "captus", aanvullingen: "capta, captum", vertaling: "genomen, gegrepen, gevangen; veroverd", teksten: ["7b/4"], volgorde: {"7b/4":9} },
+  { grondvorm: "Capua", aanvullingen: "Capuae", vertaling: "(de stad) Capua", teksten: ["8b/9"], volgorde: {"8b/9":12} },
+  { grondvorm: "caput", aanvullingen: "capitis (o.)", vertaling: "hoofd", basis: true, teksten: ["6a/4","6b/2","9b/5","10/3","10/8"], volgorde: {"6a/4":54,"6b/2":44,"9b/5":59,"10/3":32,"10/8":4} },
+  { grondvorm: "carcer", aanvullingen: "carceris", vertaling: "gevangenis; startblok" },
+  { grondvorm: "carere", aanvullingen: "careo, carui, – + abl.", vertaling: "vrij zijn van, verlost zijn van; niet hebben, missen", teksten: ["7a/5","8a/2"], volgorde: {"7a/5":15,"8a/2":11} },
+  { grondvorm: "carica", aanvullingen: "caricae, (v.)", vertaling: "dadel" },
+  { grondvorm: "caritas", aanvullingen: "caritatis", vertaling: "genegenheid, affectie, liefde", teksten: ["7b/6"], volgorde: {"7b/6":24} },
+  { grondvorm: "carmen", aanvullingen: "carminis, (o.)", vertaling: "gedicht; lied, gezang, muziek" },
+  { grondvorm: "carnificina", aanvullingen: "carnificinae, (v.)", vertaling: "foltering, marteling", teksten: ["8a/2"], volgorde: {"8a/2":47} },
+  { grondvorm: "caro", aanvullingen: "carnis, (v.)", vertaling: "vlees" },
+  { grondvorm: "caroenum", aanvullingen: "caroeni, (o.)", vertaling: "soort druivensap" },
+  { grondvorm: "Carpophorus", aanvullingen: "Carpophori", vertaling: "Carpophorus (eigennaam)" },
+  { grondvorm: "carus", aanvullingen: "cara, carum", vertaling: "dierbaar; duur" },
+  { grondvorm: "caryota", aanvullingen: "caryotae, (v.)", vertaling: "dadel" },
+  { grondvorm: "casa", aanvullingen: "casae, (v.)", vertaling: "hut", teksten: ["8b/5"], volgorde: {"8b/5":42} },
+  { grondvorm: "Casca", aanvullingen: "Cascae", vertaling: "Casca (eigennaam)" },
+  { grondvorm: "caseus", aanvullingen: "casei, (m.)", vertaling: "kaas, een stuk kaas" },
+  { grondvorm: "Cassiope", aanvullingen: "Cassiopes", vertaling: "Cassiope (havenstad op het Griekse eiland Corcyra)", teksten: ["9b/7"], volgorde: {"9b/7":23} },
+  { grondvorm: "Cassius", aanvullingen: "Cassii", vertaling: "Cassius (eigennaam)" },
+  { grondvorm: "castra", aanvullingen: "castrorum (enkel mv.), (onz. mv.)", vertaling: "legerkamp", basis: true, teksten: ["7b/2","8b/9"], volgorde: {"7b/2":7,"8b/9":49} },
+  { grondvorm: "casus", aanvullingen: "casus, (m.)", vertaling: "het vallen, val; toeval, gebeurtenis, ongeluk", basis: true, teksten: ["6a/1","6a/4"], volgorde: {"6a/1":41,"6a/4":45} },
+  { grondvorm: "catellus", aanvullingen: "catelli", vertaling: "hondje" },
+  { grondvorm: "catena", aanvullingen: "catenae, (v.)", vertaling: "ketting" },
+  { grondvorm: "cathedra", aanvullingen: "cathedrae, (v.)", vertaling: "leunstoel, armstoel", teksten: ["9b/5"], volgorde: {"9b/5":76} },
+  { grondvorm: "Caucasus", aanvullingen: "Caucasi", vertaling: "het Caucasusgebergte" },
+  { grondvorm: "cauda", aanvullingen: "caudae, (v.)", vertaling: "staart" },
+  { grondvorm: "caupo", aanvullingen: "cauponis (m.)", vertaling: "herbergier", teksten: ["6b/1","9b/4"], volgorde: {"6b/1":2,"9b/4":12} },
+  { grondvorm: "causa", aanvullingen: "causae, (v.)", vertaling: "oorzaak, reden; zaak", basis: true },
+  { grondvorm: "celeberrimus", aanvullingen: "celeberrima, celeberrimum", vertaling: "drukstbezocht, dichtstbevolkt; beroemdst; zeer drukbezocht, zeer dichtbevolkt; zeer beroemd", teksten: ["9b/6"], volgorde: {"9b/6":15} },
+  { grondvorm: "celeriter", aanvullingen: "(bijw.)", vertaling: "snel", teksten: ["10/21"], volgorde: {"10/21":43} },
+  { grondvorm: "cenatus", aanvullingen: "cenata, cenatum", vertaling: "gegeten hebbend, na het eten", teksten: ["9b/7"], volgorde: {"9b/7":36} },
+  { grondvorm: "centies sestertium", aanvullingen: "", vertaling: "10 miljoen sestertiën" },
+  { grondvorm: "clausus", aanvullingen: "clausa, clausum", vertaling: "gesloten; opgesloten, ingesloten", teksten: ["6a/7"], volgorde: {"6a/7":73} },
+  { grondvorm: "colueris", aanvullingen: "", vertaling: "'jij hebt vereerd'; 'jij hebt bebouwd'; 'jij hebt bewoond'", teksten: ["7b/6"], volgorde: {"7b/6":32} },
+  { grondvorm: "comprehensus", aanvullingen: "comprehensa, comprehensum", vertaling: "vastgegrepen, gearresteerd", teksten: ["7b/2"], volgorde: {"7b/2":51} },
+  { grondvorm: "confectus", aanvullingen: "confecta, confectum", vertaling: "hier: gemalen, gekauwd", teksten: ["8a/3"], volgorde: {"8a/3":133} },
+  { grondvorm: "confertissimus", aanvullingen: "confertissima, confertissimum", vertaling: "zeer dicht opeengepakt, zeer ondoordringbaar", teksten: ["7b/2"], volgorde: {"7b/2":27} },
+  { grondvorm: "coniunctior", aanvullingen: "coniunctior, coniunctius; coniunctioris", vertaling: "meer verbonden, meer verenigd, meer vertrouwd", teksten: ["8b/5"], volgorde: {"8b/5":32} },
+  { grondvorm: "coniunctus", aanvullingen: "coniuncta, coniunctum", vertaling: "verbonden, verenigd; vertrouwd", teksten: ["8b/5"], volgorde: {"8b/5":31} },
+  { grondvorm: "crederes", aanvullingen: "", vertaling: "'je zou geloofd hebben'", teksten: ["10/26"], volgorde: {"10/26":28} },
+  { grondvorm: "cur", aanvullingen: "(bijw.)", vertaling: "waarom?", teksten: ["7a/7","7b/6"], volgorde: {"7a/7":19,"7b/6":17} },
+  { grondvorm: "curaveris", aanvullingen: "", vertaling: "'jij hebt gezorgd voor', 'jij hebt verzorgd'", teksten: ["7b/6"], volgorde: {"7b/6":37} },
+  { grondvorm: "datus", aanvullingen: "data, datum", vertaling: "gegeven", teksten: ["8a/3"], volgorde: {"8a/3":43} },
+  { grondvorm: "dextra manus", aanvullingen: "dextrae manus", vertaling: "rechterhand", teksten: ["7b/2"], volgorde: {"7b/2":81} },
+  { grondvorm: "di", aanvullingen: "(mv. van deus)", vertaling: "= dei", teksten: ["8a/6"], volgorde: {"8a/6":3} },
+  { grondvorm: "dicam", aanvullingen: "", vertaling: "'ik zou zeggen'", teksten: ["7b/6"], volgorde: {"7b/6":21} },
+  { grondvorm: "diligens", aanvullingen: "diligens, diligens; diligentis", vertaling: "zorgvuldig, nauwkeurig", teksten: ["8b/6"], volgorde: {"8b/6":7} },
+  { grondvorm: "doctissimus", aanvullingen: "doctissima, doctissimum", vertaling: "meest/zeer geschoold, meest/zeer ontwikkeld, geleerdst, zeer geleerd", teksten: ["9b/4"], volgorde: {"9b/4":6} },
+  { grondvorm: "ebur", aanvullingen: "eboris", vertaling: "ivoor, ivoren beeld", teksten: ["10/26"], volgorde: {"10/26":16} },
+  { grondvorm: "efflaverint", aanvullingen: "", vertaling: "'zij hebben uitgeblazen', 'zij hebben uitgeademd'", teksten: ["7b/12"], volgorde: {"7b/12":13} },
+  { grondvorm: "elegantior", aanvullingen: "elegantior, elegantius; elegantioris", vertaling: "verfijnder, fijner, sierlijker, smaakvоller", teksten: ["9b/5"], volgorde: {"9b/5":41} },
+  { grondvorm: "esto", aanvullingen: "", vertaling: "'hij moet zijn'", teksten: ["8b/10"], volgorde: {"8b/10":7} },
+  { grondvorm: "et ... et", aanvullingen: "", vertaling: "en … en, zowel … als" },
+  { grondvorm: "ex eo quod", aanvullingen: "", vertaling: "op basis hiervan … nl. dat", teksten: ["8b/1"], volgorde: {"8b/1":3} },
+  { grondvorm: "excessus", aanvullingen: "excessus, (m.)", vertaling: "manhaftigheid, moed; deugd" },
+  { grondvorm: "exemplo", aanvullingen: "(bijw./abl.)", vertaling: "onmiddellijk, dadelijk" },
+  { grondvorm: "expectatissimus", aanvullingen: "expectatissima, expectatissimum", vertaling: "meest verwacht, zeer verwacht", teksten: ["9b/9"], volgorde: {"9b/9":29} },
+  { grondvorm: "felicior", aanvullingen: "felicior, felicius; felicioris", vertaling: "gelukkiger, voorspoediger, succesvoller", teksten: ["8a/6"], volgorde: {"8a/6":38} },
+  { grondvorm: "festus", aanvullingen: "festa, festum", vertaling: "feestelijk, feest-", teksten: ["10/26"], volgorde: {"10/26":66} },
+  { grondvorm: "firmior", aanvullingen: "firmior, firmius; firmioris", vertaling: "sterker, betrouwbaarder, trouwer", teksten: ["8b/5"], volgorde: {"8b/5":29} },
+  { grondvorm: "foculus", aanvullingen: "foculi", vertaling: "haard, haardvuur, (kleine) offerhaard" },
+  { grondvorm: "fortior", aanvullingen: "fortior, fortius; fortioris", vertaling: "dapperder, moediger, sterker", teksten: ["6b/4"], volgorde: {"6b/4":42} },
+  { grondvorm: "fortissimus", aanvullingen: "fortissima, fortissimum", vertaling: "moedigst, dapperst, sterkst; zeer moedig, zeer dapper, zeer sterk", teksten: ["8b/9","9a/1"], volgorde: {"8b/9":143,"9a/1":28} },
+  { grondvorm: "fractus", aanvullingen: "fracta, fractum", vertaling: "gebroken, gebarsten", teksten: ["6b/4"], volgorde: {"6b/4":18} },
+  { grondvorm: "fumare", aanvullingen: "fumo, fumavi, fumatum", vertaling: "roken", teksten: ["10/26"], volgorde: {"10/26":72} },
+  { grondvorm: "gemma", aanvullingen: "gemmae", vertaling: "edelsteen", teksten: ["10/26"], volgorde: {"10/26":58} },
+  { grondvorm: "gen. + causa", aanvullingen: "(vz.)", vertaling: "omwille van, ter wille van, wegens", teksten: ["7b/2","10/14","9b/9"], volgorde: {"7b/2":112,"10/14":13,"9b/9":57} },
+  { grondvorm: "cautus", aanvullingen: "cauta, cuatum", vertaling: "voorzichtig", teksten: ["9b/9"], volgorde: {"9b/9":57} },
+  { grondvorm: "cavere", aanvullingen: "caveo, cavi, cautum", vertaling: "oppassen voor; bepalen, vastleggen (in een wet)", teksten: ["8a/5"], volgorde: {"8a/5":22} },
+  { grondvorm: "cavus", aanvullingen: "cava, cavum", vertaling: "hol, gewelfd", basis: true },
+  { grondvorm: "cedere", aanvullingen: "cedo, cessi, cessum", vertaling: "uit de weg gaan voor, opzij gaan voor; gaan", basis: true, teksten: ["6b/2"], volgorde: {"6b/2":7} },
+  { grondvorm: "celare", aanvullingen: "celo, celavi, celatum", vertaling: "verbergen" },
+  { grondvorm: "celeber", aanvullingen: "celebris, celebre; celebris", vertaling: "drukbezocht, dichtbevolkt; beroemd", teksten: ["6a/1","9b/6"], volgorde: {"6a/1":4,"9b/6":14} },
+  { grondvorm: "celer", aanvullingen: "celeris, celere", vertaling: "snel", basis: true },
+  { grondvorm: "cella", aanvullingen: "cellae, (v.)", vertaling: "kamer, vertrek", teksten: ["8b/6","9b/5"], volgorde: {"8b/6":35,"9b/5":39} },
+  { grondvorm: "cella frigidaria", aanvullingen: "cellae frigidariae", vertaling: "koudwaterbad", teksten: ["9b/5"], volgorde: {"9b/5":29} },
+  { grondvorm: "celsus", aanvullingen: "celsa, celsum", vertaling: "hoog" },
+  { grondvorm: "Celta", aanvullingen: "Celtae (m.)", vertaling: "Kelt", teksten: ["9a/1"], volgorde: {"9a/1":15} },
+  { grondvorm: "cenaculum", aanvullingen: "cenaculi", vertaling: "eetkamer; flat op een verdieping", teksten: ["6b/8"], volgorde: {"6b/8":11} },
+  { grondvorm: "cenare", aanvullingen: "ceno, cenavi, cenatum", vertaling: "eten, dineren" },
+  { grondvorm: "censere", aanvullingen: "censeo, censui, censum", vertaling: "denken, menen", teksten: ["7b/4"], volgorde: {"7b/4":82} },
+  { grondvorm: "centies", aanvullingen: "", vertaling: "honderdmaal" },
+  { grondvorm: "cento", aanvullingen: "centonis", vertaling: "lappendeken, deken", teksten: ["8b/6"], volgorde: {"8b/6":15} },
+  { grondvorm: "centum", aanvullingen: "", vertaling: "honderd" },
+  { grondvorm: "centurio", aanvullingen: "centurionis (m.)", vertaling: "honderdman, centurio (functie in het leger)" },
+  { grondvorm: "cera", aanvullingen: "cerae", vertaling: "bijenwas, was", teksten: ["10/14"], volgorde: {"10/14":25} },
+  { grondvorm: "cerebrum", aanvullingen: "cerebri, (o.)", vertaling: "hersenen; schedel", teksten: ["6b/4"], volgorde: {"6b/4":11} },
+  { grondvorm: "Ceres", aanvullingen: "Cereris", vertaling: "(de godin) Ceres" },
+  { grondvorm: "certamen", aanvullingen: "certaminis, (o.)", vertaling: "wedstrijd, strijd, gevecht", basis: true },
+  { grondvorm: "certatim", aanvullingen: "(bijw.)", vertaling: "als wedstrijd, om ter meest, om ter luidst", teksten: ["9b/4"], volgorde: {"9b/4":50} },
+  { grondvorm: "certus", aanvullingen: "certa, certum", vertaling: "zeker, bepaald", basis: true, teksten: ["7a/3","6a/7"], volgorde: {"7a/3":66,"6a/7":33} },
+  { grondvorm: "cerussa", aanvullingen: "cerussae", vertaling: "loodwit", teksten: ["10/19"], volgorde: {"10/19":21} },
+  { grondvorm: "cervical", aanvullingen: "cervicalis", vertaling: "hoofdkussen", teksten: ["6a/4"], volgorde: {"6a/4":53} },
+  { grondvorm: "cervix", aanvullingen: "cervicis", vertaling: "hals, nek" },
+  { grondvorm: "ceterum", aanvullingen: "(bijw.)", vertaling: "overigens, trouwens", basis: true },
+  { grondvorm: "ceterus", aanvullingen: "cetera, ceterum (meestal mv.)", vertaling: "overig(e)", basis: true, teksten: ["7b/6","10/14"], volgorde: {"7b/6":38,"10/14":46} },
+  { grondvorm: "Chalcis", aanvullingen: "Chalcidis", vertaling: "(de stad) Chalcis" },
+  { grondvorm: "chaos", aanvullingen: "(geen gen.; onz.)", vertaling: "chaos" },
+  { grondvorm: "cibaria", aanvullingen: "cibariorum (enkel mv.)", vertaling: "levensmiddelen, voedsel", teksten: ["8b/5"], volgorde: {"8b/5":50} },
+  { grondvorm: "cibus", aanvullingen: "cibi, (m.)", vertaling: "voedsel", teksten: ["8a/3"], volgorde: {"8a/3":38} },
+  { grondvorm: "cicada", aanvullingen: "cicadae, (v.)", vertaling: "krekel" },
+  { grondvorm: "cinis", aanvullingen: "cineris (m.)", vertaling: "as", teksten: ["6a/2","6a/7"], volgorde: {"6a/2":108,"6a/7":57} },
+  { grondvorm: "circa", aanvullingen: "+ acc. (vz.)", vertaling: "rondom", teksten: ["8b/9","10/21"], volgorde: {"8b/9":109,"10/21":15} },
+  { grondvorm: "circenses", aanvullingen: "circensium (enkel mv.)", vertaling: "circusspelen" },
+  { grondvorm: "circiter", aanvullingen: "", vertaling: "ongeveer", teksten: ["8b/9"], volgorde: {"8b/9":8} },
+  { grondvorm: "circum", aanvullingen: "(bijw.)", vertaling: "in een kring, rondom, rondom … heen", basis: true },
+  { grondvorm: "circumarare", aanvullingen: "circumaro, circumaravi, circumaratum", vertaling: "omploegen" },
+  { grondvorm: "circumdare", aanvullingen: "circumdo, circumdedi, circumdatum", vertaling: "plaatsen rondom, omsingelen", basis: true },
+  { grondvorm: "circumire", aanvullingen: "circumeo, circumii, circumitum", vertaling: "gaan rond(om), rondgaan, rondreizen in", teksten: ["9b/6"], volgorde: {"9b/6":11} },
+  { grondvorm: "circumsonare", aanvullingen: "circumsono, circumsonavi, circumsonatum", vertaling: "rondom weerklinken, weergalmen" },
+  { grondvorm: "circumstare", aanvullingen: "circumsto, circumsteti, –", vertaling: "staan rondom, omsingelen" },
+  { grondvorm: "circumvenire", aanvullingen: "circumvenio, circumveni, circumventum", vertaling: "omsingelen", basis: true },
+  { grondvorm: "Circus Maximus", aanvullingen: "Circi Maximi", vertaling: "Circus Maximus", teksten: ["6b/5"], volgorde: {"6b/5":5} },
+  { grondvorm: "cithara", aanvullingen: "citharae", vertaling: "citer, lier" },
+  { grondvorm: "citharoedus", aanvullingen: "citharoedi", vertaling: "citerspeler, lierspeler" },
+  { grondvorm: "cito", aanvullingen: "(bijw.)", vertaling: "snel" },
+  { grondvorm: "citus", aanvullingen: "cita, citum", vertaling: "snel", teksten: ["6b/5"], volgorde: {"6b/5":17} },
+  { grondvorm: "civilis", aanvullingen: "civilis, civile", vertaling: "burgerlijk, van een burger, burger-", teksten: ["8a/3"], volgorde: {"8a/3":68} },
+  { grondvorm: "civis", aanvullingen: "civis", vertaling: "burger", basis: true, teksten: ["7b/2","8a/5"], volgorde: {"7b/2":57,"8a/5":13} },
+  { grondvorm: "civitas", aanvullingen: "civitatis, (v.)", vertaling: "gemeenschap, staat, stad, volk, stam", basis: true, teksten: ["8a/5","9a/4"], volgorde: {"8a/5":2,"9a/4":22} },
+  { grondvorm: "clamare", aanvullingen: "clamo, clamavi, clamatum", vertaling: "roepen, schreeuwen" },
+  { grondvorm: "clamor", aanvullingen: "clamoris, (m.)", vertaling: "geschreeuw, geroep", basis: true, teksten: ["8a/2"], volgorde: {"8a/2":59} },
+  { grondvorm: "clangor", aanvullingen: "clangoris", vertaling: "gekrijs, gekwaak" },
+  { grondvorm: "claritas", aanvullingen: "claritatis, (v.)", vertaling: "helderheid", teksten: ["6a/4"], volgorde: {"6a/4":15} },
+  { grondvorm: "classicum", aanvullingen: "classici", vertaling: "trompetsignaal", teksten: ["7b/4"], volgorde: {"7b/4":29} },
+  { grondvorm: "classis", aanvullingen: "classis, (v.)", vertaling: "vloot", basis: true },
+  { grondvorm: "claudere", aanvullingen: "claudo, clausi, clausum", vertaling: "sluiten; opsluiten, insluiten", basis: true, teksten: ["8b/9","6a/7"], volgorde: {"8b/9":112,"6a/7":72} },
+  { grondvorm: "Claudia", aanvullingen: "Claudiae", vertaling: "Claudia (eigennaam)", teksten: ["7a/6"], volgorde: {"7a/6":15} },
+  { grondvorm: "Claudius Pulcher", aanvullingen: "Claudii Pulchri", vertaling: "Claudius Pulcher (eigennaam)" },
+  { grondvorm: "Claudius", aanvullingen: "Claudii", vertaling: "Claudius (eigennaam)" },
+  { grondvorm: "Claudius", aanvullingen: "Claudii", vertaling: "(keizer) Claudius" },
+  { grondvorm: "clavus", aanvullingen: "clavi, (m.)", vertaling: "spijker, spijker (van een soldatenlaar)", teksten: ["6b/2"], volgorde: {"6b/2":52} },
+  { grondvorm: "clipeus", aanvullingen: "clipei, (m.)", vertaling: "schild" },
+  { grondvorm: "Clodius Glaber", aanvullingen: "Clodii Glabri", vertaling: "Clodius Glaber (eigennaam)", teksten: ["8b/9"], volgorde: {"8b/9":36} },
+  { grondvorm: "Cloelia", aanvullingen: "Cloeliae", vertaling: "Cloelia (eigennaam)" },
+  { grondvorm: "Cnaeus Plancius", aanvullingen: "Cnaei Plancii", vertaling: "Cnaeus Plancius (eigennaam)", teksten: ["9b/9"], volgorde: {"9b/9":25} },
+  { grondvorm: "Cnaeus Alleus Nigidius Maius", aanvullingen: "", vertaling: "Cnaeus Alleus Nigidius Maius (eigennaam)", teksten: ["6b/8"], volgorde: {"6b/8":3} },
+  { grondvorm: "Cnosiacus", aanvullingen: "Cnosiaca, Cnosiacum", vertaling: "van Knossos", teksten: ["7a/3"], volgorde: {"7a/3":6} },
+  { grondvorm: "coemere", aanvullingen: "coemo, coemi, coemptum", vertaling: "opkopen, kopen" },
+  { grondvorm: "coepisse", aanvullingen: "coepi, coeptum", vertaling: "beginnen", basis: true },
+  { grondvorm: "cogere", aanvullingen: "cogo, coegi, coactum", vertaling: "dwingen", basis: true, teksten: ["6b/4","7b/4"], volgorde: {"6b/4":40,"7b/4":57} },
+  { grondvorm: "cogitare", aanvullingen: "cogito, cogitavi, cogitatum", vertaling: "nadenken", teksten: ["6b/3"], volgorde: {"6b/3":42} },
+  { grondvorm: "cohaerere", aanvullingen: "cohaereo, cohaesi, cohaesum", vertaling: "samenhangen, samenkleven; verbonden zijn met, grenzen aan", teksten: ["9b/5"], volgorde: {"9b/5":44} },
+  { grondvorm: "cohaerescere", aanvullingen: "cohaeresco, cohaesi, –", vertaling: "samenhangen, samenkleven", teksten: ["10/21"], volgorde: {"10/21":42} },
+  { grondvorm: "coire", aanvullingen: "coeo, coii, coitum", vertaling: "samenkomen, zich verzamelen", teksten: ["8b/9"], volgorde: {"8b/9":23} },
+  { grondvorm: "colere", aanvullingen: "colo, colui, cultum", vertaling: "vereren; bebouwen; bewonen", basis: true, teksten: ["7b/6","8b/3","9a/4"], volgorde: {"7b/6":31,"8b/3":31,"9a/4":5} },
+  { grondvorm: "colligere", aanvullingen: "colligo, collegi, collectum", vertaling: "verzamelen", basis: true },
+  { grondvorm: "collis Aventinus", aanvullingen: "collis Aventini", vertaling: "de Aventijnse heuvel, de Aventijn" },
+  { grondvorm: "collis Palatinus", aanvullingen: "collis Palatini", vertaling: "de Palatijnse heuvel, de Palatijn" },
+  { grondvorm: "collis", aanvullingen: "collis (m.)", vertaling: "heuvel", basis: true },
+  { grondvorm: "collocare", aanvullingen: "colloco, collocavi, collocatum", vertaling: "plaatsen, leggen", basis: true },
+  { grondvorm: "collum", aanvullingen: "colli", vertaling: "hals, nek", basis: true, teksten: ["8b/3","10/26"], volgorde: {"8b/3":20,"10/26":61} },
+  { grondvorm: "colonia", aanvullingen: "colonia, (v.)", vertaling: "kolonie, nederzetting", teksten: ["8a/5"], volgorde: {"8a/5":26} },
+  { grondvorm: "color", aanvullingen: "coloris, (m.)", vertaling: "kleur", basis: true, teksten: ["10/26"], volgorde: {"10/26":52} },
+  { grondvorm: "columna", aanvullingen: "columnae, (v.)", vertaling: "zuil", teksten: ["9b/6"], volgorde: {"9b/6":33} },
+  { grondvorm: "comedere", aanvullingen: "comedo, comedi, comesum", vertaling: "opeten" },
+  { grondvorm: "comes", aanvullingen: "comitis (m. en vr.), (m./vr.)", vertaling: "begeleider, metgezel(lin), reisgezel(lin)" },
+  { grondvorm: "comitas", aanvullingen: "comitatis, (v.)", vertaling: "vriendelijkheid, beleefdheid", teksten: ["7b/6"], volgorde: {"7b/6":6} },
+  { grondvorm: "commenticius", aanvullingen: "commenticius, commenticia, commenticium", vertaling: "uitgevonden, verzonnen, vergezocht" },
+  { grondvorm: "commiscere", aanvullingen: "commisceo, commiscui, commixtum", vertaling: "vermengen", teksten: ["10/21"], volgorde: {"10/21":18} },
+  { grondvorm: "committere", aanvullingen: "committo, commisi, commissum", vertaling: "samenbrengen; organiseren; toevertouwen", basis: true, teksten: ["8b/10"], volgorde: {"8b/10":15} },
+  { grondvorm: "commodum", aanvullingen: "commodi, (o.)", vertaling: "voordeel, nut", teksten: ["9b/3","10/19"], volgorde: {"9b/3":8,"10/19":3} },
+  { grondvorm: "commodus", aanvullingen: "commoda, commodum", vertaling: "gunstig, voordelig, nuttig, aangenaam", teksten: ["7a/6"], volgorde: {"7a/6":33} },
+  { grondvorm: "communis", aanvullingen: "communis, commune", vertaling: "gemeenschappelijk", basis: true, teksten: ["6a/4","7a/5"], volgorde: {"6a/4":19,"7a/5":37} },
+  { grondvorm: "comparare", aanvullingen: "comparo, comparavi, comparatum", vertaling: "vergelijken; voorbereiden, klaarmaken" },
+  { grondvorm: "compes", aanvullingen: "compedis", vertaling: "voetboei" },
+  { grondvorm: "completus", aanvullingen: "completa, completum", vertaling: "gevuld, vol" },
+  { grondvorm: "complures", aanvullingen: "complures, complura", vertaling: "verscheidene", basis: true },
+  { grondvorm: "componere", aanvullingen: "compono, composui, compositum", vertaling: "bij elkaar leggen, samenleggen, samenstellen" },
+  { grondvorm: "comprehendere", aanvullingen: "comprehendo, comprehendi, comprehensum", vertaling: "vastgrijpen, arresteren", teksten: ["7b/2"], volgorde: {"7b/2":50} },
+  { grondvorm: "concidere", aanvullingen: "concido, concidi, concisum", vertaling: "neerslaan; verslaan, in de pan hakken; in stukken hakken, versnijden" },
+  { grondvorm: "conclamare", aanvullingen: "conclamo, conclamavi, conclamatum", vertaling: "tezamen roepen, luidkeels roepen, luid verkondigen" },
+  { grondvorm: "concubinus", aanvullingen: "concubini", vertaling: "minnaar" },
+  { grondvorm: "concumbere", aanvullingen: "concumbo, concubui, concubitum", vertaling: "naar bed gaan, in bed liggen, slapen" },
+  { grondvorm: "concupiscere", aanvullingen: "concupisco, concupivi, concupitum", vertaling: "verlangen, willen", basis: true, teksten: ["8a/6"], volgorde: {"8a/6":8} },
+  { grondvorm: "concurrere", aanvullingen: "concurro, concurri, concursum", vertaling: "samenlopen" },
+  { grondvorm: "condere", aanvullingen: "condo, condidi, conditum", vertaling: "stichten; verbergen, opbergen", basis: true },
+  { grondvorm: "condicio", aanvullingen: "condicionis, (v.)", vertaling: "voorwaarde", basis: true },
+  { grondvorm: "condire", aanvullingen: "condio, –, –", vertaling: "kruiden; (voedsel) inleggen, inmaken" },
+  { grondvorm: "conductor", aanvullingen: "conductoris, (m.)", vertaling: "huurder", teksten: ["6b/8"], volgorde: {"6b/8":14} },
+  { grondvorm: "conectere", aanvullingen: "conecto, conexui, conexum", vertaling: "samenbinden, samenvoegen", teksten: ["8b/9"], volgorde: {"8b/9":124} },
+  { grondvorm: "conferre", aanvullingen: "confero, contuli, collatum", vertaling: "samenbrengen, verzamelen", basis: true, teksten: ["9a/4"], volgorde: {"9a/4":20} },
+  { grondvorm: "confertus", aanvullingen: "conferta, confertum", vertaling: "dicht opeengepakt, ondoordringbaar", teksten: ["7b/2"], volgorde: {"7b/2":26} },
+  { grondvorm: "conficere", aanvullingen: "conficio, confeci, confectum", vertaling: "maken, vervaardigen; vermoeien, afmatten; doden", basis: true, teksten: ["8a/3","10/14"], volgorde: {"8a/3":45,"10/14":32} },
+  { grondvorm: "confingere", aanvullingen: "confingo, confinxi, confictum", vertaling: "verzinnen, bedenken; bouwen, construeren, maken", teksten: ["10/14"], volgorde: {"10/14":24} },
+  { grondvorm: "confodere", aanvullingen: "confodio, confodi, confossum", vertaling: "doorsteken, doorboren" },
+  { grondvorm: "confundere", aanvullingen: "confundo, confudi, confusum", vertaling: "samengieten, vermengen, verenigen; in de war brengen", teksten: ["10/3"], volgorde: {"10/3":79} },
+  { grondvorm: "conicere", aanvullingen: "conicio, conieci, coniectum", vertaling: "samenwerpen, werpen" },
+  { grondvorm: "coniugium", aanvullingen: "coniugii", vertaling: "huwelijk" },
+  { grondvorm: "coniungere", aanvullingen: "coniungo, coniunxi, coniunctum", vertaling: "verbinden, verenigen" },
+  { grondvorm: "coniunx", aanvullingen: "coniugis (m. en vr.), (m./vr.)", vertaling: "echtgenoot, man; echtgenote, vrouw", teksten: ["7a/3","10/26"], volgorde: {"7a/3":17,"10/26":11} },
+  { grondvorm: "conquirere", aanvullingen: "conquiro, conquisivi, conquisitum", vertaling: "bijeenzoeken, bijeenbrengen", teksten: ["7a/8"], volgorde: {"7a/8":21} },
+  { grondvorm: "conscius", aanvullingen: "conscia, conscium + gen.", vertaling: "medewetend, op de hoogte van", teksten: ["7a/3"], volgorde: {"7a/3":84} },
+  { grondvorm: "consecratus", aanvullingen: "consecrata, consecratum", vertaling: "gewijd aan, ter ere van, heilig", teksten: ["9a/4"], volgorde: {"9a/4":25} },
+  { grondvorm: "consensus", aanvullingen: "consensus, (m.)", vertaling: "overeenkomst, instemming" },
+  { grondvorm: "consentire", aanvullingen: "consentio, consensi, consensum", vertaling: "overeenstemmen, het eens zijn, in harmonie zijn", teksten: ["8a/3"], volgorde: {"8a/3":10} },
+  { grondvorm: "conserva", aanvullingen: "conservae", vertaling: "medeslavin", teksten: ["8b/5"], volgorde: {"8b/5":22} },
+  { grondvorm: "considerare", aanvullingen: "considero, consideravi, consideratum", vertaling: "beschouwen, overwegen" },
+  { grondvorm: "consilium", aanvullingen: "consilii, (o.)", vertaling: "raad, advies; besluit, plan", basis: true, teksten: ["8a/3","10/14"], volgorde: {"8a/3":12,"10/14":35} },
+  { grondvorm: "consilia habere", aanvullingen: "", vertaling: "overleg plegen", teksten: ["10/14"], volgorde: {"10/14":36} },
+  { grondvorm: "consilium petere", aanvullingen: "a(b) + abl.", vertaling: "raad vragen aan" },
+  { grondvorm: "consistere", aanvullingen: "consisto, constiti, –", vertaling: "gaan staan, zich opstellen; stilstaan, blijven staan", basis: true, teksten: ["7b/2","10/26","6a/7"], volgorde: {"7b/2":32,"10/26":78,"6a/7":13} },
+  { grondvorm: "conspicere", aanvullingen: "conspicio, conspexi, conspectum", vertaling: "aanschouwen, bekijken, zien", basis: true, teksten: ["6a/2","9a/4"], volgorde: {"6a/2":93,"9a/4":26} },
+  { grondvorm: "conspiciendus", aanvullingen: "conspicienda, conspiciendum", vertaling: "opvallend", teksten: ["7b/6"], volgorde: {"7b/6":14} },
+  { grondvorm: "conspirare", aanvullingen: "conspiro, conspiravi, conspiratum", vertaling: "samenzweren", teksten: ["8a/3"], volgorde: {"8a/3":32} },
+  { grondvorm: "conspiratus", aanvullingen: "conspirati, (m.)", vertaling: "samenzweerder" },
+  { grondvorm: "Constantinus", aanvullingen: "Constantini", vertaling: "(keizer) Constantinus" },
+  { grondvorm: "constituere", aanvullingen: "constituo, constitui, constitutum", vertaling: "oprichten, laten bouwen; bepalen, beslissen, besluiten", basis: true, teksten: ["6a/4","8a/5","9a/4","9b/6"], volgorde: {"6a/4":47,"8a/5":24,"9a/4":9,"9b/6":7} },
+  { grondvorm: "constringere", aanvullingen: "constringo, constrinxi, constrictum", vertaling: "samenbinden, vastbinden", teksten: ["6a/4"], volgorde: {"6a/4":58} },
+  { grondvorm: "consuetudo", aanvullingen: "consuetudinis, (v.)", vertaling: "gewoonte", basis: true },
+  { grondvorm: "consul", aanvullingen: "consulis (m.)", vertaling: "consul", basis: true, teksten: ["7a/8","7b/4"], volgorde: {"7a/8":1,"7b/4":24} },
+  { grondvorm: "consularis", aanvullingen: "consularis, consulare", vertaling: "van een consul, consulair", teksten: ["7b/4"], volgorde: {"7b/4":36} },
+  { grondvorm: "consulere", aanvullingen: "consulo, consului, consultum + dat.", vertaling: "zorg dragen voor, zorgen voor", teksten: ["6b/2","7a/8"], volgorde: {"6b/2":116,"7a/8":4} },
+  { grondvorm: "consulere", aanvullingen: "consulo, consului, consultum", vertaling: "beraadslagen, overleggen; raadplegen" },
+  { grondvorm: "consultare", aanvullingen: "consulto, consultavi, consultatum", vertaling: "ernstig nadenken, beraadslagen, overleggen", teksten: ["6a/4"], volgorde: {"6a/4":21} },
+  { grondvorm: "consulto", aanvullingen: "(bijw.)", vertaling: "met opzet, opzettelijk" },
+  { grondvorm: "consurgere", aanvullingen: "consurgo, consurrexi, onsurrectum", vertaling: "(gezamenlijk) opstaan", teksten: ["8b/9"], volgorde: {"8b/9":98} },
+  { grondvorm: "contentus", aanvullingen: "contenta, contentum", vertaling: "tevreden", basis: true, teksten: ["7a/7"], volgorde: {"7a/7":36} },
+  { grondvorm: "conterere", aanvullingen: "contero, contrivi, contritum", vertaling: "samenwrijven, erbij wrijven" },
+  { grondvorm: "contingere", aanvullingen: "contingo, contigi, contactum", vertaling: "aanraken", teksten: ["8b/6"], volgorde: {"8b/6":55} },
+  { grondvorm: "continuo", aanvullingen: "(bijw.)", vertaling: "voortdurend" },
+  { grondvorm: "contio", aanvullingen: "contionis, (v.)", vertaling: "vergadering (van het volk, van soldaten)", teksten: ["7b/4"], volgorde: {"7b/4":28} },
+  { grondvorm: "contra", aanvullingen: "+ acc.", vertaling: "tegen, tegenover, aan de andere kant van", basis: true, teksten: ["6b/4","8b/9"], volgorde: {"6b/4":30,"8b/9":95} },
+  { grondvorm: "contrahere", aanvullingen: "contraho, contraxi, contractum", vertaling: "samentrekken; verzamelen", teksten: ["10/14"], volgorde: {"10/14":16} },
+  { grondvorm: "contrarius", aanvullingen: "contraria, contrarium", vertaling: "tegenoverliggend, tegengesteld", teksten: ["6a/7"], volgorde: {"6a/7":25} },
+  { grondvorm: "conubium", aanvullingen: "conubii, (o.)", vertaling: "wettig huwelijk, huwelijk", teksten: ["8b/5"], volgorde: {"8b/5":14} },
+  { grondvorm: "convenire", aanvullingen: "convenio, conveni, conventum", vertaling: "samenkomen", basis: true, teksten: ["6b/8"], volgorde: {"6b/8":15} },
+  { grondvorm: "conversus", aanvullingen: "conversa, conversum ad + acc.", vertaling: "gericht naar" },
+  { grondvorm: "convictio", aanvullingen: "convictionis", vertaling: "het samenleven" },
+  { grondvorm: "convivium", aanvullingen: "convivii, (o.)", vertaling: "gastmaal, feestmaal, banket" },
+  { grondvorm: "convocare", aanvullingen: "convoco, convocavi, convocatum", vertaling: "samenroepen", teksten: ["8b/9"], volgorde: {"8b/9":17} },
+  { grondvorm: "cooperire", aanvullingen: "cooperio, cooperui, coopertum", vertaling: "bedekken" },
+  { grondvorm: "copia", aanvullingen: "copiae, (v.)", vertaling: "grote hoeveelheid, voorraad; mv.: (leger)troepen", basis: true },
+  { grondvorm: "coquere", aanvullingen: "coquo, coxi, coctum", vertaling: "koken, bakken, bereiden" },
+  { grondvorm: "coquus", aanvullingen: "coqui, (m.)", vertaling: "kok", teksten: ["6b/1"], volgorde: {"6b/1":3} },
+  { grondvorm: "cor", aanvullingen: "cordis (o.)", vertaling: "hart", basis: true, teksten: ["7a/6"], volgorde: {"7a/6":17} },
+  { grondvorm: "Corax", aanvullingen: "Coracis", vertaling: "Corax (eigennaam)", teksten: ["7a/7"], volgorde: {"7a/7":2} },
+  { grondvorm: "Corcyra", aanvullingen: "Corcyrae", vertaling: "(het eiland) Corcyra (nu: Korfoe)" },
+  { grondvorm: "Corcyraeus", aanvullingen: "Corcyraei", vertaling: "inwoner van Corcyra, Corcyreeër", teksten: ["9b/7"], volgorde: {"9b/7":21} },
+  { grondvorm: "coriandrum", aanvullingen: "coriandri, (o.)", vertaling: "koriander" },
+  { grondvorm: "Cornelius Minicianus", aanvullingen: "Cornelii Miniciani", vertaling: "Cornelius Minicianus (eigennaam)" },
+  { grondvorm: "cornu", aanvullingen: "cornus (o.)", vertaling: "hoorn", basis: true },
+  { grondvorm: "corpus", aanvullingen: "corporis, (o.)", vertaling: "lichaam", basis: true, teksten: ["7a/1","8a/2","8a/3","10/19","10/26"], volgorde: {"7a/1":46,"8a/2":40,"8a/3":122,"10/19":26,"10/26":35} },
+  { grondvorm: "corripere", aanvullingen: "corripio, corripui, correptum", vertaling: "vastgrijpen", basis: true, teksten: ["6b/5"], volgorde: {"6b/5":20} },
+  { grondvorm: "corrotundare", aanvullingen: "corrotundo, corrotundavi, corrotundatum", vertaling: "afronden" },
+  { grondvorm: "cortina", aanvullingen: "cortinae, (v.)", vertaling: "ketel" },
+  { grondvorm: "corvus", aanvullingen: "corvi", vertaling: "raaf" },
+  { grondvorm: "cotidianus", aanvullingen: "cotidiana, cotidianum", vertaling: "dagelijks" },
+  { grondvorm: "Cratippus", aanvullingen: "Cratippi", vertaling: "Cratippus (eigennaam)" },
+  { grondvorm: "creare", aanvullingen: "creo, creavi, creatum", vertaling: "voortbrengen, ter wereld brengen; kiezen, aanstellen", teksten: ["7a/6"], volgorde: {"7a/6":21} },
+  { grondvorm: "creber", aanvullingen: "crebra, crebrum", vertaling: "talrijk", basis: true, teksten: ["6a/4"], volgorde: {"6a/4":30} },
+  { grondvorm: "credere", aanvullingen: "credo, credidi, creditum", vertaling: "geloven", teksten: ["10/26"], volgorde: {"10/26":27} },
+  { grondvorm: "creditor", aanvullingen: "creditoris", vertaling: "schuldeiser", teksten: ["8a/2"], volgorde: {"8a/2":43} },
+  { grondvorm: "crepitus", aanvullingen: "crepitus", vertaling: "het ratelen, het klapperen" },
+  { grondvorm: "crescere", aanvullingen: "cresco, crevi, cretum", vertaling: "groeien, toenemen", basis: true },
+  { grondvorm: "crinis", aanvullingen: "crinis (m.)", vertaling: "haar" },
+  { grondvorm: "Crixus", aanvullingen: "Crixi", vertaling: "Crixus (eigennaam)", teksten: ["8b/9"], volgorde: {"8b/9":2} },
+  { grondvorm: "cruciatus", aanvullingen: "cruciatus", vertaling: "foltering, marteling", teksten: ["9a/4"], volgorde: {"9a/4":48} },
+  { grondvorm: "cruentus", aanvullingen: "cruenta, cruentum", vertaling: "bloederig, wreed" },
+  { grondvorm: "crus", aanvullingen: "cruris (o.)", vertaling: "scheenbeen, been", teksten: ["6b/2"], volgorde: {"6b/2":102} },
+  { grondvorm: "cryptoporticus", aanvullingen: "cryptoporticus", vertaling: "overdekte wandelalerij, overdekte wandelgang", teksten: ["9b/5"], volgorde: {"9b/5":52} },
+  { grondvorm: "cubiculum", aanvullingen: "cubiculi", vertaling: "slaapkamer", teksten: ["9b/5"], volgorde: {"9b/5":73} },
+  { grondvorm: "cubile", aanvullingen: "cubilis", vertaling: "bed", teksten: ["6b/3"], volgorde: {"6b/3":15} },
+  { grondvorm: "cubitus", aanvullingen: "(ook: cubitum), cubiti", vertaling: "elleboog", teksten: ["6b/2"], volgorde: {"6b/2":39} },
+  { grondvorm: "cucullus", aanvullingen: "cuculli", vertaling: "mantel met kap, capuchon", teksten: ["8b/6"], volgorde: {"8b/6":18} },
+  { grondvorm: "cucurbita", aanvullingen: "cucurbitae", vertaling: "pompoen; courgette" },
+  { grondvorm: "culex", aanvullingen: "culicis (m.)", vertaling: "mug", teksten: ["9b/4"], volgorde: {"9b/4":36} },
+  { grondvorm: "culpa", aanvullingen: "culpae, (v.)", vertaling: "schuld, verantwoordelijkheid", teksten: ["7b/4"], volgorde: {"7b/4":84} },
+  { grondvorm: "cultus", aanvullingen: "culta, cultum", vertaling: "verzorgd, bewerkt; ontwikkeld, beschaafd; gekleed, getooid", teksten: ["7b/6"], volgorde: {"7b/6":15} },
+  { grondvorm: "cultus", aanvullingen: "cultus", vertaling: "zorg, verzorging; kledij; geestelijk ontwikkeling, beschaving" },
+  { grondvorm: "cum", aanvullingen: "+ abl. (vz.)", vertaling: "samen met, met", teksten: ["6b/2","6b/4","6b/8","7a/3","7a/7","7b/2","7b/6","7b/12","8a/3","8b/5","8b/8","8b/9","9a/1","9a/4","9b/3","9b/4","9b/5","9b/6","9b/9","10/3","10/14","10/21","10/26"], volgorde: {"6b/2":78,"6b/4":38,"6b/8":9,"7a/3":21,"7a/7":16,"7b/2":40,"7b/6":27,"7b/12":14,"8a/3":70,"8b/5":12,"8b/8":3,"8b/9":7,"9a/1":62,"9a/4":47,"9b/3":5,"9b/4":1,"9b/5":28,"9b/6":2,"9b/9":66,"10/3":16,"10/14":47,"10/21":19,"10/26":2} },
+  { grondvorm: "cum", aanvullingen: "+ ind. (vgw.)", vertaling: "wanneer, toen", teksten: ["6b/4","8b/9","10/21","10/26"], volgorde: {"6b/4":66,"8b/9":14,"10/21":33,"10/26":73} },
+  { grondvorm: "cum", aanvullingen: "+ conj. (vgw.)", vertaling: "toen; omdat", teksten: ["6a/7"], volgorde: {"6a/7":10} },
+  { grondvorm: "cum … tum (etiam)", aanvullingen: "", vertaling: "niet alleen … maar ook, zowel … als" },
+  { grondvorm: "cuminum", aanvullingen: "cumini, (o.)", vertaling: "komijn" },
+  { grondvorm: "cumulare", aanvullingen: "cumulo, cumulavi, cumulatum", vertaling: "opstapelen; vergroten, verergeren", teksten: ["8a/2"], volgorde: {"8a/2":26} },
+  { grondvorm: "cunctus", aanvullingen: "cuncta, cunctum", vertaling: "geheel, al, mv.: alle(s)", teksten: ["6b/2","8b/6","10/26"], volgorde: {"6b/2":117,"8b/6":11,"10/26":82} },
+  { grondvorm: "cupere", aanvullingen: "cupio, cupivi, cupitum", vertaling: "verlangen, willen", teksten: ["9b/10"], volgorde: {"9b/10":7} },
+  { grondvorm: "cupidus", aanvullingen: "cupida, cupidum", vertaling: "vol verlangen, verlangend, begerig", teksten: ["9b/7","9b/10"], volgorde: {"9b/7":31,"9b/10":3} },
+  { grondvorm: "cur?", aanvullingen: "(vragend bijw.)", vertaling: "waarom?" },
+  { grondvorm: "cura", aanvullingen: "curae, (v.)", vertaling: "zorg", teksten: ["8a/3"], volgorde: {"8a/3":18} },
+  { grondvorm: "curare", aanvullingen: "curo, curavi, curatum", vertaling: "zorgen voor, verzorgen", teksten: ["7b/6"], volgorde: {"7b/6":36} },
+  { grondvorm: "currere", aanvullingen: "curro, cucurri, cursum", vertaling: "lopen, rennen", teksten: ["6b/2"], volgorde: {"6b/2":11} },
+  { grondvorm: "currus", aanvullingen: "currus, (m.)", vertaling: "wagen" },
+  { grondvorm: "cursus", aanvullingen: "cursus, (m.)", vertaling: "het lopen" },
+  { grondvorm: "curvare", aanvullingen: "curvo, curvavi, curvatum", vertaling: "krom maken, krommen" },
+  { grondvorm: "custodia", aanvullingen: "custodiae, (v.)", vertaling: "bewaking; gevangenschap" },
+  { grondvorm: "custos", aanvullingen: "custodis (m.)", vertaling: "bewaker" },
+  { grondvorm: "dare", aanvullingen: "do, dedi, datum", vertaling: "geven", basis: true, teksten: ["6b/9","7a/3","7b/2","8a/3","8a/5","8b/10","9b/9","10/3","10/26"], volgorde: {"6b/9":9,"7a/3":56,"7b/2":37,"8a/3":42,"8a/5":1,"8b/10":4,"9b/9":32,"10/3":11,"10/26":9} },
+  { grondvorm: "de", aanvullingen: "+ abl. (vz.)", vertaling: "vanuit, weg van, uit; over, in verband met", teksten: ["6b/4","6b/9","7b/6","8b/9","9a/1","10/8"], volgorde: {"6b/4":20,"6b/9":4,"7b/6":22,"8b/9":76,"9a/1":42,"10/8":3} },
+  { grondvorm: "dea", aanvullingen: "deae, (v.)", vertaling: "godin" },
+  { grondvorm: "debere", aanvullingen: "debeo, debui, debitum", vertaling: "moeten", basis: true },
+  { grondvorm: "debilis", aanvullingen: "debilis, debile", vertaling: "zwak, gebrekkig" },
+  { grondvorm: "decem", aanvullingen: "(telwoord)", vertaling: "tien", teksten: ["8b/9"], volgorde: {"8b/9":21} },
+  { grondvorm: "decidere", aanvullingen: "decido, decidi, –", vertaling: "naar beneden vallen, vallen" },
+  { grondvorm: "decimus", aanvullingen: "decima, decimum (telwoord)", vertaling: "tiende", teksten: ["7a/2"], volgorde: {"7a/2":3} },
+  { grondvorm: "decipere", aanvullingen: "decipio, decepi, deceptum", vertaling: "misleiden, bedriegen" },
+  { grondvorm: "declamitare", aanvullingen: "declamito, declamitavi, declamitatum", vertaling: "voordrachtsoefeningenhouden, zich oefenen in de redenaarskunst" },
+  { grondvorm: "declinare", aanvullingen: "declino, declinavi, declinatum", vertaling: "verbuigen" },
+  { grondvorm: "decurrere", aanvullingen: "decurro, de(cu)curri, decursum", vertaling: "naar beneden lopen" },
+  { grondvorm: "decus", aanvullingen: "decoris", vertaling: "sieraad; schoonheid", basis: true },
+  { grondvorm: "deditio", aanvullingen: "deditionis", vertaling: "overgave" },
+  { grondvorm: "deducere", aanvullingen: "deduco, deduxi, deductum", vertaling: "wegleiden, wegbrengen", basis: true, teksten: ["7b/2"], volgorde: {"7b/2":107} },
+  { grondvorm: "deesse", aanvullingen: "desum, defui, –", vertaling: "ontbreken" },
+  { grondvorm: "deferre", aanvullingen: "defero, detuli, delatum", vertaling: "naar beneden brengen, (weg)brengen", basis: true, teksten: ["8b/9"], volgorde: {"8b/9":82} },
+  { grondvorm: "deficere", aanvullingen: "deficio, defeci, defectum", vertaling: "ontbreken", teksten: ["8a/6"], volgorde: {"8a/6":29} },
+  { grondvorm: "defigere", aanvullingen: "defigo, defixi, defixum", vertaling: "(de ogen of aandacht) strak richten op", teksten: ["10/3"], volgorde: {"10/3":40} },
+  { grondvorm: "deflectere", aanvullingen: "deflecto, deflexi, deflectum", vertaling: "ombuigen, afzwenken" },
+  { grondvorm: "defrutum", aanvullingen: "defruti, (o.)", vertaling: "ingekookte most" },
+  { grondvorm: "defundere", aanvullingen: "defundo, defudi, defusum", vertaling: "uitgieten", teksten: ["6b/4"], volgorde: {"6b/4":24} },
+  { grondvorm: "dehiscere", aanvullingen: "dehisco, –, –", vertaling: "openbarsten, splijten", teksten: ["6a/7"], volgorde: {"6a/7":46} },
+  { grondvorm: "deicere", aanvullingen: "deicio, deieci, deiectum", vertaling: "naar beneden gooien, neerwerpen, werpen in", teksten: ["6b/2"], volgorde: {"6b/2":129} },
+  { grondvorm: "deinde", aanvullingen: "(bijw.)", vertaling: "vervolgens", basis: true, teksten: ["6a/2","6b/5","8a/2","8b/9","10/3"], volgorde: {"6a/2":82,"6b/5":26,"8a/2":32,"8b/9":56,"10/3":71} },
+  { grondvorm: "delabi", aanvullingen: "delabor, delapsus sum", vertaling: "neerglijden, neerdalen", teksten: ["8b/9"], volgorde: {"8b/9":41} },
+  { grondvorm: "delere", aanvullingen: "deleo, delevi, deletum", vertaling: "verwoesten, vernietigen", teksten: ["8b/9"], volgorde: {"8b/9":90} },
+  { grondvorm: "delicatus", aanvullingen: "delicata, delicatum", vertaling: "verfijnd, elegant, luxueus", teksten: ["8b/6"], volgorde: {"8b/6":5} },
+  { grondvorm: "deliciae", aanvullingen: "deliciarum (enkel mv.)", vertaling: "genot, genoegens; lieveling" },
+  { grondvorm: "delictum", aanvullingen: "delicti", vertaling: "misdrijf, misdaad" },
+  { grondvorm: "deligare", aanvullingen: "deligo, deligavi, deligatum", vertaling: "vastbinden", teksten: ["7b/4"], volgorde: {"7b/4":91} },
+  { grondvorm: "delirare", aanvullingen: "deliro, deliravi, deliratum", vertaling: "krankzinnig zijn, gek zijn, raaskallen" },
+  { grondvorm: "Delphi", aanvullingen: "Delphorum (enkel mv.)", vertaling: "(de stad) Delphi", teksten: ["9b/6"], volgorde: {"9b/6":20} },
+  { grondvorm: "Delus", aanvullingen: "Deli (v.)", vertaling: "(het eiland) Delus" },
+  { grondvorm: "demergere", aanvullingen: "demergo, demersi, demersum", vertaling: "onderdompelen" },
+  { grondvorm: "demetere", aanvullingen: "demeto, demessui, demessum", vertaling: "afsnijden" },
+  { grondvorm: "demigrare", aanvullingen: "demigro, demigravi, demigratum", vertaling: "weggaan" },
+  { grondvorm: "deminuere", aanvullingen: "deminuo, deminui, deminutum", vertaling: "verminderen" },
+  { grondvorm: "demittere", aanvullingen: "demitto, demisi, demissum", vertaling: "naar beneden zenden, doen neerdalen; loslaten" },
+  { grondvorm: "demonstrare", aanvullingen: "demonstro, demonstravi, demonstratum", vertaling: "aanduiden; aantonen, bewijzen; uitleggen", teksten: ["8a/3"], volgorde: {"8a/3":139} },
+  { grondvorm: "denique", aanvullingen: "(bijw.)", vertaling: "uiteindelijk, tenslotte; kortom", teksten: ["8a/5"], volgorde: {"8a/5":42} },
+  { grondvorm: "dens", aanvullingen: "dentis (m.)", vertaling: "tand", teksten: ["6b/4","8a/3"], volgorde: {"6b/4":67,"8a/3":44} },
+  { grondvorm: "densus", aanvullingen: "densa, densum", vertaling: "opeengehoopt, dicht, compact", basis: true, teksten: ["6a/7"], volgorde: {"6a/7":62} },
+  { grondvorm: "depellere", aanvullingen: "depello, depuli, depulsum", vertaling: "verdrijven, wegjagen, verwijderen", teksten: ["9a/1"], volgorde: {"9a/1":51} },
+  { grondvorm: "deportare", aanvullingen: "deporto, deportavi, deportatum", vertaling: "wegvoeren, wegdragen" },
+  { grondvorm: "deridere", aanvullingen: "derideo, derisi, derisum", vertaling: "uitlachen, spotten met" },
+  { grondvorm: "descendere", aanvullingen: "descendo, descendi, descensum", vertaling: "afdalen, neerdalen, naar beneden gaan", teksten: ["8b/9","6a/7"], volgorde: {"8b/9":44,"6a/7":54} },
+  { grondvorm: "describere", aanvullingen: "describo, descripsi, descriptum", vertaling: "opschrijven, beschrijven", teksten: ["10/3"], volgorde: {"10/3":42} },
+  { grondvorm: "deserere", aanvullingen: "desero, deserui, desertum", vertaling: "verlaten, in de steek laten", basis: true },
+  { grondvorm: "deses", aanvullingen: "deses, deses; desidis", vertaling: "traag, lui" },
+  { grondvorm: "desilire", aanvullingen: "desilio, desilui, desultum", vertaling: "naar beneden springen" },
+  { grondvorm: "desipere", aanvullingen: "desipio, –, –", vertaling: "dwaas zijn, gek zijn" },
+  { grondvorm: "desperare", aanvullingen: "despero, desperavi, desperatum", vertaling: "wanhopen, geen hoop meer hebben" },
+  { grondvorm: "despicere", aanvullingen: "despicio, despexi, despectum", vertaling: "minachten, neerkijken op" },
+  { grondvorm: "destillare", aanvullingen: "destillo, destillavi, destillatum", vertaling: "naar beneden druppen", teksten: ["10/8"], volgorde: {"10/8":1} },
+  { grondvorm: "destinare", aanvullingen: "destino, destinavi, destinatum ad + acc.", vertaling: "bestemmen voor", teksten: ["9b/6"], volgorde: {"9b/6":37} },
+  { grondvorm: "detinere", aanvullingen: "detineo, detinui, detentum", vertaling: "vasthouden, tegenhouden" },
+  { grondvorm: "detrahere", aanvullingen: "detraho, detraxi, detractum", vertaling: "naar beneden trekken" },
+  { grondvorm: "detrectare", aanvullingen: "detrecto, detrectavi, detrectatum + acc.", vertaling: "zich onttrekken aan", teksten: ["7a/7"], volgorde: {"7a/7":6} },
+  { grondvorm: "Deucalion", aanvullingen: "Deucalionis", vertaling: "Deucalion (eigennaam)" },
+  { grondvorm: "deurere", aanvullingen: "deuro, deussi, deustum", vertaling: "verbranden" },
+  { grondvorm: "deus", aanvullingen: "dei, (m.)", vertaling: "god", basis: true, teksten: ["7a/5","7b/2","8a/6","9a/4","9b/6","10/26"], volgorde: {"7a/5":27,"7b/2":10,"8a/6":2,"9a/4":1,"9b/6":48,"10/26":81} },
+  { grondvorm: "devorare", aanvullingen: "devoro, devoravi, decoratum", vertaling: "verslinden, doorslikken, opslokken", teksten: ["8a/6"], volgorde: {"8a/6":27} },
+  { grondvorm: "devovere", aanvullingen: "devoveo, devovi, devotum", vertaling: "als offer beloven, beloven", teksten: ["9a/4"], volgorde: {"9a/4":12} },
+  { grondvorm: "dexter", aanvullingen: "dextra, dextrum", vertaling: "rechts, rechter-", basis: true, teksten: ["7b/2"], volgorde: {"7b/2":80} },
+  { grondvorm: "dextra [manus]", aanvullingen: "dextrae [manus]", vertaling: "rechterhand" },
+  { grondvorm: "Di Manes", aanvullingen: "", vertaling: "de goden Manes (= geesten van de doden)" },
+  { grondvorm: "diaeta", aanvullingen: "diaetae", vertaling: "levenswijze; verblijfplaats, plaats", teksten: ["9b/5"], volgorde: {"9b/5":60} },
+  { grondvorm: "Diana", aanvullingen: "Diana", vertaling: "(de godin) Diana" },
+  { grondvorm: "dicere", aanvullingen: "dico, dixi, dictum", vertaling: "zeggen, spreken; noemen", basis: true, teksten: ["6b/4","7a/1","7a/3","7a/6","7a/8","7b/6","8a/3","8b/3","8b/9","9a/1","10/19","10/26"], volgorde: {"6b/4":52,"7a/1":19,"7a/3":51,"7a/6":3,"7a/8":8,"7b/6":20,"8a/3":50,"8b/3":28,"8b/9":138,"9a/1":49,"10/19":24,"10/26":85} },
+  { grondvorm: "dictator", aanvullingen: "dictatoris", vertaling: "dictator" },
+  { grondvorm: "dictum", aanvullingen: "dicti", vertaling: "uitspraak, gezegde, woord" },
+  { grondvorm: "dictus", aanvullingen: "dictus", vertaling: "het zeggen, het spreken" },
+  { grondvorm: "dies", aanvullingen: "diei (m. en vr.), (m./vr.)", vertaling: "dag, daglicht", basis: true, teksten: ["6a/4","6b/3","7a/2","7b/4","8a/6","8b/6","9b/7","10/26"], volgorde: {"6a/4":64,"6b/3":7,"7a/2":2,"7b/4":52,"8a/6":21,"8b/6":22,"9b/7":18,"10/26":67} },
+  { grondvorm: "differre", aanvullingen: "differo, distuli, dilatum", vertaling: "uit elkaar dragen, verspreiden; verschillen", basis: true, teksten: ["9a/1"], volgorde: {"9a/1":21} },
+  { grondvorm: "differtus", aanvullingen: "differta, differtum + abl.", vertaling: "vol met, wemelend van", teksten: ["9b/4"], volgorde: {"9b/4":9} },
+  { grondvorm: "difficilis", aanvullingen: "difficilis, difficile", vertaling: "moeilijk", teksten: ["9b/9"], volgorde: {"9b/9":63} },
+  { grondvorm: "diffundere", aanvullingen: "diffundo, diffudi, diffusum", vertaling: "uitgieten; verspreiden", teksten: ["9b/4"], volgorde: {"9b/4":32} },
+  { grondvorm: "digitus", aanvullingen: "digiti", vertaling: "vinger, teen", teksten: ["6b/2","10/26"], volgorde: {"6b/2":51,"10/26":57} },
+  { grondvorm: "dignus", aanvullingen: "digna, dignum + abl.", vertaling: "waardig", basis: true, teksten: ["8b/9"], volgorde: {"8b/9":134} },
+  { grondvorm: "dilabi", aanvullingen: "dilabor, dilapsus sum", vertaling: "wegglijden, verdwijnen" },
+  { grondvorm: "diligere", aanvullingen: "diligo, dilexi, dilectum", vertaling: "liefhebben", teksten: ["7a/6"], volgorde: {"7a/6":18} },
+  { grondvorm: "diluvium", aanvullingen: "diluvii", vertaling: "overstroming, zondvloed" },
+  { grondvorm: "dimicare", aanvullingen: "dimico, dimicavi, dimicatum", vertaling: "strijden, vechten", teksten: ["8b/9","9a/1"], volgorde: {"8b/9":144,"9a/1":64} },
+  { grondvorm: "dimidius", aanvullingen: "dimidia, dimidium", vertaling: "half" },
+  { grondvorm: "dimittere", aanvullingen: "dimitto, dimisi, dimissum", vertaling: "wegsturen", basis: true, teksten: ["7b/2"], volgorde: {"7b/2":103} },
+  { grondvorm: "directus", aanvullingen: "directa, directum", vertaling: "rechtstreeks", teksten: ["8b/10"], volgorde: {"8b/10":3} },
+  { grondvorm: "direptio", aanvullingen: "direptionos", vertaling: "vernietiging" },
+  { grondvorm: "dirigere", aanvullingen: "dirigo, direxi, directum", vertaling: "richten, mikken, werpen" },
+  { grondvorm: "diripere", aanvullingen: "diripio, diripui, direptum", vertaling: "lostrekken, stelen, plunderen", teksten: ["8a/2"], volgorde: {"8a/2":14} },
+  { grondvorm: "dirus", aanvullingen: "dira, dirum", vertaling: "verschrikkelijk" },
+  { grondvorm: "discedere", aanvullingen: "discedo, discessi, discessum", vertaling: "weggaan", basis: true, teksten: ["9b/9"], volgorde: {"9b/9":4} },
+  { grondvorm: "discere", aanvullingen: "disco, didici, –", vertaling: "leren", basis: true },
+  { grondvorm: "disciplina", aanvullingen: "disciplinae, (v.)", vertaling: "orde, tucht, discipline; kennis, wetenschap; onderwijs", basis: true, teksten: ["7b/4"], volgorde: {"7b/4":47} },
+  { grondvorm: "discipulus", aanvullingen: "discipuli, (m.)", vertaling: "leerling" },
+  { grondvorm: "discrimen", aanvullingen: "discriminis, (o.)", vertaling: "onderscheid" },
+  { grondvorm: "discurrere", aanvullingen: "discurro, dis(cu)curri, discursum", vertaling: "uit elkaar rennen, zich verspreiden" },
+  { grondvorm: "disicere", aanvullingen: "disicio, disieci, disiectum", vertaling: "uit elkaar gooien, uiteendrijven; van haren: loshangen" },
+  { grondvorm: "dissolvere", aanvullingen: "dissolvo, dissolvi, dissolutum", vertaling: "losmaken, uiteen doen vallen" },
+  { grondvorm: "distare", aanvullingen: "disto, –, –", vertaling: "verwijderd zijn" },
+  { grondvorm: "distentus", aanvullingen: "distenta, distentum", vertaling: "gespannen; barstensvol" },
+  { grondvorm: "disturbare", aanvullingen: "disturbo, disturbavi, disturbatum", vertaling: "verstoren, storen; vernietigen, verwoesten", teksten: ["10/3"], volgorde: {"10/3":69} },
+  { grondvorm: "diu", aanvullingen: "(bijw.)", vertaling: "lang (van tijd)", basis: true, teksten: ["10/3"], volgorde: {"10/3":22} },
+  { grondvorm: "diversus", aanvullingen: "diversa, diversum", vertaling: "naar de tegenovergestelde richting gekeerd, tegenoverliggend; verschillend; vijandelijk", basis: true },
+  { grondvorm: "dives", aanvullingen: "dives, dives; divitis", vertaling: "rijk", basis: true, teksten: ["6b/2","6b/3"], volgorde: {"6b/2":4,"6b/3":36} },
+  { grondvorm: "dividere", aanvullingen: "divido, divisi, divisum", vertaling: "scheiden, verdelen", basis: true, teksten: ["6b/2","7a/1","8a/5","8b/3","9a/1"], volgorde: {"6b/2":122,"7a/1":7,"8a/5":9,"8b/3":34,"9a/1":3} },
+  { grondvorm: "divinus", aanvullingen: "divina, divinum", vertaling: "goddelijk" },
+  { grondvorm: "divitiae", aanvullingen: "divitiarum (enkel mv.), (vr. mv.)", vertaling: "rijkdom", basis: true },
+  { grondvorm: "divum", aanvullingen: "divi, (o.)", vertaling: "de blote hemel, open lucht", teksten: ["6a/4","8b/6"], volgorde: {"6a/4":42,"8b/6":27} },
+  { grondvorm: "divus", aanvullingen: "diva, divum", vertaling: "vergoddelijkt, goddelijk", basis: true },
+  { grondvorm: "divus", aanvullingen: "divi", vertaling: "god", basis: true },
+  { grondvorm: "docere", aanvullingen: "doceo, docui, doctum", vertaling: "aanleren, onderwijzen", basis: true },
+  { grondvorm: "doctus", aanvullingen: "docta, doctum", vertaling: "geschoold, ontwikkeld, geleerd", teksten: ["9b/4"], volgorde: {"9b/4":5} },
+  { grondvorm: "dolere", aanvullingen: "doleo, dolui, –", vertaling: "verdrietig zijn; pijn doen, pijn hebben", basis: true, teksten: ["10/8"], volgorde: {"10/8":17} },
+  { grondvorm: "dolium", aanvullingen: "dolii", vertaling: "(wijn)vat", teksten: ["8b/9"], volgorde: {"8b/9":122} },
+  { grondvorm: "dolor", aanvullingen: "doloris, (m.)", vertaling: "pijn; verdriet", basis: true, teksten: ["7a/3"], volgorde: {"7a/3":31} },
+  { grondvorm: "dolosus", aanvullingen: "dolosa, dolosum", vertaling: "listig, sluw" },
+  { grondvorm: "dolus", aanvullingen: "doli", vertaling: "list", basis: true },
+  { grondvorm: "domare", aanvullingen: "domo, domui, domitum", vertaling: "temmen", teksten: ["8a/3","8b/3","8b/9"], volgorde: {"8a/3":119,"8b/3":22,"8b/9":68} },
+  { grondvorm: "domesticus", aanvullingen: "domestica, domesticum", vertaling: "van een huis, huis-; privé-, persoonlijk; binnenlands", teksten: ["7b/6"], volgorde: {"7b/6":1} },
+  { grondvorm: "dominari", aanvullingen: "dominor, dominatus sum in + acc.", vertaling: "heersen over, de baas zijn over" },
+  { grondvorm: "dominus", aanvullingen: "domini, (m.)", vertaling: "heer, meester", teksten: ["8a/6","8b/5","8b/8"], volgorde: {"8a/6":4,"8b/5":4,"8b/8":5} },
+  { grondvorm: "domus", aanvullingen: "domus (v.)", vertaling: "huis", basis: true, teksten: ["6a/1","6b/5","6b/8","7a/6","8a/6","8b/3","10/3"], volgorde: {"6a/1":36,"6b/5":35,"6b/8":13,"7a/6":34,"8a/6":6,"8b/3":13,"10/3":48} },
+  { grondvorm: "domum servare", aanvullingen: "", vertaling: "het huishouden doen", teksten: ["7a/6"], volgorde: {"7a/6":1} },
+  { grondvorm: "donare", aanvullingen: "dono, donavi, donatum", vertaling: "geven, schenken", teksten: ["10/3"], volgorde: {"10/3":83} },
+  { grondvorm: "donec", aanvullingen: "+ ind. (vgw.)", vertaling: "zolang als, totdat" },
+  { grondvorm: "donum", aanvullingen: "doni, (o.)", vertaling: "geschenk", basis: true, teksten: ["7b/2"], volgorde: {"7b/2":114} },
+  { grondvorm: "dono dare", aanvullingen: "do, dedi, datum", vertaling: "ten geschenke geven, als geschenk geven", teksten: ["7b/2"], volgorde: {"7b/2":116} },
+  { grondvorm: "dormire", aanvullingen: "dormio, dormivi, dormitum", vertaling: "slapen", teksten: ["6b/2","6b/3","9b/4"], volgorde: {"6b/2":21,"6b/3":39,"9b/4":56} },
+  { grondvorm: "dorsum", aanvullingen: "dorsi", vertaling: "rug", teksten: ["8b/3"], volgorde: {"8b/3":19} },
+  { grondvorm: "draco", aanvullingen: "draconis, (m.)", vertaling: "slang; draak" },
+  { grondvorm: "Druidae", aanvullingen: "Druidarum (m., enkel mv.)", vertaling: "Druïden" },
+  { grondvorm: "dubitare", aanvullingen: "dubito, dubitavi, dubitatum", vertaling: "twijfelen" },
+  { grondvorm: "dubium", aanvullingen: "dubii, (o.)", vertaling: "twijfel", teksten: ["10/19"], volgorde: {"10/19":31} },
+  { grondvorm: "dubius", aanvullingen: "dubia, dubium", vertaling: "twijfelend, onzeker", basis: true, teksten: ["6a/1"], volgorde: {"6a/1":24} },
+  { grondvorm: "ducere", aanvullingen: "duco, duxi, ductum", vertaling: "leiden", basis: true, teksten: ["8a/2"], volgorde: {"8a/2":41} },
+  { grondvorm: "ductio", aanvullingen: "ductionis, (v.)", vertaling: "(water)leiding", teksten: ["10/19"], volgorde: {"10/19":1} },
+  { grondvorm: "dulcis", aanvullingen: "dulcis, dulce", vertaling: "zoet; lief, zacht", basis: true, teksten: ["9b/9","10/14"], volgorde: {"9b/9":58,"10/14":18} },
+  { grondvorm: "dum", aanvullingen: "+ ind. (vgw.)", vertaling: "terwijl", teksten: ["8a/3","10/3","10/26"], volgorde: {"8a/3":117,"10/3":35,"10/26":98} },
+  { grondvorm: "duo", aanvullingen: "duae, duo (telwoord)", vertaling: "twee", teksten: ["7a/3","7a/6","8b/3","9b/5"], volgorde: {"7a/3":27,"7a/6":20,"8b/3":36,"9b/5":38} },
+  { grondvorm: "duodecim", aanvullingen: "(telwoord)", vertaling: "twaalf" },
+  { grondvorm: "durare", aanvullingen: "duro, duravi, duratum", vertaling: "hard maken, verharden, hard worden" },
+  { grondvorm: "durus", aanvullingen: "dura, durum", vertaling: "hard; streng", basis: true, teksten: ["6b/2"], volgorde: {"6b/2":41} },
+  { grondvorm: "dux", aanvullingen: "ducis (m.)", vertaling: "leider", basis: true, teksten: ["8b/9","9a/1","10/14"], volgorde: {"8b/9":48,"9a/1":36,"10/14":40} },
+  { grondvorm: "e(x)", aanvullingen: "+ abl. (vz.)", vertaling: "uit, weg van, vanuit, vanaf, van", basis: true, teksten: ["6a/2","6a/4","6b/8","7b/4","8a/3","8b/1","8b/5","9b/5","10/19"], volgorde: {"6a/2":82,"6a/4":2,"6b/8":5,"7b/4":10,"8a/3":62,"8b/1":2,"8b/5":13,"9b/5":48,"10/19":15} },
+  { grondvorm: "ea", aanvullingen: "(bijw.)", vertaling: "daarlangs" },
+  { grondvorm: "ebrius", aanvullingen: "ebria, ebrium", vertaling: "dronken; subst.: dronkelap", teksten: ["6b/4"], volgorde: {"6b/4":26} },
+  { grondvorm: "e composito", aanvullingen: "(vaste uitdrukking)", vertaling: "op afspraak, zoals afgesproken is" },
+  { grondvorm: "edere", aanvullingen: "edo, edi, esum", vertaling: "eten, opeten, opvreten", teksten: ["7a/3"], volgorde: {"7a/3":46} },
+  { grondvorm: "edere", aanvullingen: "edo, edidi, editum", vertaling: "voortbrengen, ter wereld brengen; uitgeven; organiseren" },
+  { grondvorm: "edicere", aanvullingen: "edico, edixi, edictum", vertaling: "verkondigen; bepalen, bevelen", teksten: ["10/3"], volgorde: {"10/3":26} },
+  { grondvorm: "edictum", aanvullingen: "edicti, (o.)", vertaling: "besluit, verordening, edict", teksten: ["7b/4"], volgorde: {"7b/4":41} },
+  { grondvorm: "ediscere", aanvullingen: "edisco, edidici, –", vertaling: "uit het hoofd leren" },
+  { grondvorm: "editum", aanvullingen: "editi, (o.)", vertaling: "hoogte", teksten: ["6b/5"], volgorde: {"6b/5":28} },
+  { grondvorm: "editus", aanvullingen: "edita, editum", vertaling: "hoog", teksten: ["8b/6"], volgorde: {"8b/6":52} },
+  { grondvorm: "educare", aanvullingen: "educo, educavi, educatum", vertaling: "opvoeden" },
+  { grondvorm: "efficere", aanvullingen: "efficio, effeci, effectum", vertaling: "tot stand brengen, teweegbrengen, veroorzaken", basis: true, teksten: ["10/21"], volgorde: {"10/21":4} },
+  { grondvorm: "effigies", aanvullingen: "effigiei, (v.)", vertaling: "beeld" },
+  { grondvorm: "effingere", aanvullingen: "effingo, effinxi, effictum", vertaling: "afbeelden, nabootsen" },
+  { grondvorm: "efflare", aanvullingen: "efflo, efflavi, efflatum", vertaling: "uitblazen, uitademen", teksten: ["7b/12"], volgorde: {"7b/12":12} },
+  { grondvorm: "effringere", aanvullingen: "effringo, effregi, effractum", vertaling: "openbreken", teksten: ["8b/9"], volgorde: {"8b/9":11} },
+  { grondvorm: "effusus", aanvullingen: "effusa, effusum", vertaling: "uitgestrekt, ruim, wijd, groot", teksten: ["9b/5"], volgorde: {"9b/5":31} },
+  { grondvorm: "egere", aanvullingen: "egeo, egui, – + gen.", vertaling: "niet hebben, ontbreken" },
+  { grondvorm: "Egnatius Mecenius", aanvullingen: "Egnatii Mecenii", vertaling: "Egnatius Mecenius (eigennaam)", teksten: ["7a/5"], volgorde: {"7a/5":1} },
+  { grondvorm: "ego", aanvullingen: "(pers. vnw.)", vertaling: "ik" },
+  { grondvorm: "egredi", aanvullingen: "egredior, egressus sum", vertaling: "gaan uit, weggaan", basis: true },
+  { grondvorm: "eicere", aanvullingen: "eicio, eieci, eiectum", vertaling: "weggooien, buitengooien, verwijderen" },
+  { grondvorm: "elatus", aanvullingen: "elata, elatum", vertaling: "verheven" },
+  { grondvorm: "elegans", aanvullingen: "elegans, elegans; elegantis", vertaling: "verfijnd, fijn, sierlijk, smaakvol", teksten: ["9b/5"], volgorde: {"9b/5":40} },
+  { grondvorm: "elegantia", aanvullingen: "elegantiae, (v.)", vertaling: "elegantie, charme" },
+  { grondvorm: "elephantus", aanvullingen: "elephanti, (m.)", vertaling: "olifant" },
+  { grondvorm: "eligere", aanvullingen: "eligo, elegi, electum", vertaling: "uitkiezen, kiezen tot", teksten: ["8b/9"], volgorde: {"8b/9":31} },
+  { grondvorm: "elixare", aanvullingen: "elixo, elixavi, elixatum", vertaling: "in water koken" },
+  { grondvorm: "emendare", aanvullingen: "emendo, emendavi, emendare", vertaling: "verbeteren" },
+  { grondvorm: "emere", aanvullingen: "emo, emi, emptum", vertaling: "kopen", basis: true },
+  { grondvorm: "emergere", aanvullingen: "emergo, emersi, emersum", vertaling: "opduiken, te voorschijn komen" },
+  { grondvorm: "emigrare", aanvullingen: "emigro, emigravi, emigratum", vertaling: "verhuizen, wegtrekken", teksten: ["6a/1"], volgorde: {"6a/1":42} },
+  { grondvorm: "emittere", aanvullingen: "emitto, emisi, emissum", vertaling: "wegzenden" },
+  { grondvorm: "enim", aanvullingen: "(vgw.)", vertaling: "immers, want", basis: true, teksten: ["8a/3","8b/5"], volgorde: {"8a/3":132,"8b/5":26} },
+  { grondvorm: "eo", aanvullingen: "(bijw.)", vertaling: "daarheen", teksten: ["7b/2"], volgorde: {"7b/2":24} },
+  { grondvorm: "epulae", aanvullingen: "epularum (enkel mv.)", vertaling: "maaltijd, feestmaal" },
+  { grondvorm: "eques", aanvullingen: "equitis (m.)", vertaling: "ruiter; ridder", basis: true, teksten: ["8a/5"], volgorde: {"8a/5":34} },
+  { grondvorm: "equester", aanvullingen: "equestris, equestre", vertaling: "van een ruiter, ruiter-", teksten: ["6b/8","7b/4"], volgorde: {"6b/8":12,"7b/4":6} },
+  { grondvorm: "equitatus", aanvullingen: "equitatus", vertaling: "ruiterij, cavalerie", basis: true, teksten: ["8b/9"], volgorde: {"8b/9":74} },
+  { grondvorm: "equus", aanvullingen: "equi", vertaling: "paard", basis: true, teksten: ["8b/3","9b/9"], volgorde: {"8b/3":25,"9b/9":46} },
+  { grondvorm: "erepere", aanvullingen: "erepo, erepsi, ereptum", vertaling: "te voorschijn kruipen, omhoogkruipen", teksten: ["7b/12"], volgorde: {"7b/12":15} },
+  { grondvorm: "erga", aanvullingen: "+ acc. (vz.)", vertaling: "tegenover; ten opzichte van", basis: true },
+  { grondvorm: "ergastulum", aanvullingen: "ergastuli", vertaling: "privégevangenis (in een villa rustica), slavengevangenis", teksten: ["8a/2","8b/6"], volgorde: {"8a/2":46,"8b/6":42} },
+  { grondvorm: "ergo", aanvullingen: "(vgw.)", vertaling: "dus", teksten: ["7a/3"], volgorde: {"7a/3":42} },
+  { grondvorm: "eripere", aanvullingen: "eripio, eripui, ereptum", vertaling: "afpakken, ontnemen, stelen, roven", basis: true, teksten: ["6b/3"], volgorde: {"6b/3":34} },
+  { grondvorm: "Erotion", aanvullingen: "Erotionos", vertaling: "Erotion (eigennaam)" },
+  { grondvorm: "errare", aanvullingen: "erro, erravi, erratum", vertaling: "rondzwerven; zich vergissen" },
+  { grondvorm: "erumpere", aanvullingen: "erumpo, erupi, eruptum", vertaling: "uitbreken, naar buiten stormen, ontsnappen", teksten: ["8b/9"], volgorde: {"8b/9":13} },
+  { grondvorm: "eruptio", aanvullingen: "eruptionis", vertaling: "uitbarsting; uitval, aanval", teksten: ["8b/9"], volgorde: {"8b/9":131} },
+  { grondvorm: "esse", aanvullingen: "sum, fui, –", vertaling: "zijn", basis: true, teksten: ["6a/1","10/26"], volgorde: {"6a/1":15,"10/26":23} },
+  { grondvorm: "et", aanvullingen: "(vgw.)", vertaling: "en", basis: true, teksten: ["6a/1","6a/2","9b/5"], volgorde: {"6a/1":20,"6a/2":11,"9b/5":35} },
+  { grondvorm: "et … et", aanvullingen: "", vertaling: "en … en, zowel … als", teksten: ["9b/6","10/3","6a/2"], volgorde: {"9b/6":53,"10/3":82,"6a/2":12} },
+  { grondvorm: "et", aanvullingen: "(bijw.)", vertaling: "ook, zelfs", basis: true },
+  { grondvorm: "etenim", aanvullingen: "(vgw.)", vertaling: "want, immers; en zeker, en inderdaad" },
+  { grondvorm: "etiam", aanvullingen: "(bijw.)", vertaling: "ook, zelfs", basis: true, teksten: ["6a/1","6b/3","8a/3","8b/9","8b/10","9b/5","10/8","10/19","10/21"], volgorde: {"6a/1":26,"6b/3":32,"8a/3":48,"8b/9":70,"8b/10":2,"9b/5":72,"10/8":10,"10/19":11,"10/21":1} },
+  { grondvorm: "etiam atque etiam", aanvullingen: "", vertaling: "nogmaals, nog een keer, weer", teksten: ["9b/9"], volgorde: {"9b/9":68} },
+  { grondvorm: "etiam si", aanvullingen: "+ ind./conj. (vgw.)", vertaling: "ook al, zelfs al", basis: true, teksten: ["7a/7"], volgorde: {"7a/7":32} },
+  { grondvorm: "Etruscus", aanvullingen: "Etrusci", vertaling: "Etrusk" },
+  { grondvorm: "etsi", aanvullingen: "+ ind. (vgw.)", vertaling: "hoewel, ook al", teksten: ["7a/3","10/3"], volgorde: {"7a/3":61,"10/3":20} },
+  { grondvorm: "evellere", aanvullingen: "evello, evelli, evulsum", vertaling: "uittrekken, uitrukken" },
+  { grondvorm: "exasperare", aanvullingen: "exaspero, exasperavi, exasperatum", vertaling: "ruw maken; doen ontsteken, irriteren", teksten: ["10/8"], volgorde: {"10/8":22} },
+  { grondvorm: "excedere", aanvullingen: "excedo, excessi, excessum", vertaling: "weggaan uit, verlaten", basis: true, teksten: ["7b/2"], volgorde: {"7b/2":110} },
+  { grondvorm: "excidere", aanvullingen: "excido, excisi, excisum", vertaling: "(om)hakken, (af)snijden; verwoesten, vernielen" },
+  { grondvorm: "excipere", aanvullingen: "excipio, excepi, exceptum", vertaling: "vangen, ontvangen, opvangen", basis: true },
+  { grondvorm: "excitare", aanvullingen: "excito, excitavi, excitatum", vertaling: "ophitsen, aansporen", teksten: ["6a/4","6b/3","6b/5"], volgorde: {"6a/4":18,"6b/3":13,"6b/5":12} },
+  { grondvorm: "exclamare", aanvullingen: "exclamo, exclamavi, exclamatum", vertaling: "uitroepen, roepen", teksten: ["6b/4"], volgorde: {"6b/4":47} },
+  { grondvorm: "excolere", aanvullingen: "excolo, excolui, excultum", vertaling: "versieren, verfraaien" },
+  { grondvorm: "excurrere", aanvullingen: "excurro, ex(cu)curri, excursum", vertaling: "uitlopen; zich uitstrekken tot", teksten: ["9b/5"], volgorde: {"9b/5":6} },
+  { grondvorm: "excusare", aanvullingen: "excuso, excuso, excusavi", vertaling: "verontschuldigen; rechtvaardigen" },
+  { grondvorm: "exedere", aanvullingen: "exedo, exedi, exesum", vertaling: "opeten, opvreten" },
+  { grondvorm: "exemplum", aanvullingen: "exempli", vertaling: "voorbeeld", teksten: ["7a/5","7b/4"], volgorde: {"7a/5":21,"7b/4":63} },
+  { grondvorm: "exenterare", aanvullingen: "exentero, exenteravi, exenteratum", vertaling: "leegmaken" },
+  { grondvorm: "exercere", aanvullingen: "exerceo, exercui, exercitum", vertaling: "oefenen, beoefenen, uitoefenen", basis: true },
+  { grondvorm: "exercitatus", aanvullingen: "exercitata, exercitatum", vertaling: "geoefend, getraind" },
+  { grondvorm: "exercitium", aanvullingen: "exercitii", vertaling: "oefening, training, drillen" },
+  { grondvorm: "exercitus", aanvullingen: "exercita, exercitum", vertaling: "geoefend, zwaar beproefd, moeilijk, zwaar, vol ongemak", basis: true, teksten: ["7a/8","7b/2","8b/9"], volgorde: {"7a/8":11,"7b/2":105,"8b/9":85} },
+  { grondvorm: "exercitus", aanvullingen: "exercitus", vertaling: "leger", basis: true },
+  { grondvorm: "exhibere", aanvullingen: "exhibeo, exhibui, exhibitum", vertaling: "organiseren, opvoeren, laten optreden" },
+  { grondvorm: "exilium", aanvullingen: "exilii", vertaling: "verbanning" },
+  { grondvorm: "eximius", aanvullingen: "eximia, eximium", vertaling: "buitengewoon, uitzonderlijk, uitstekend", teksten: ["10/3"], volgorde: {"10/3":30} },
+  { grondvorm: "exire", aanvullingen: "exeo, exii, exitum", vertaling: "weggaan, naar buiten gaan, vertrekken", basis: true },
+  { grondvorm: "existimare", aanvullingen: "existimo, existimavi, existimatum", vertaling: "menen, denken", basis: true, teksten: ["7a/5"], volgorde: {"7a/5":18} },
+  { grondvorm: "exitus", aanvullingen: "exitus, (m.)", vertaling: "uitgang", teksten: ["8b/9"], volgorde: {"8b/9":46} },
+  { grondvorm: "exorare", aanvullingen: "exoro, exoravi, exoratum", vertaling: "met aandrang vragen, smeken, bidden" },
+  { grondvorm: "expedire", aanvullingen: "expedio, expedivi, expeditum", vertaling: "regelen, in orde brengen, zorgen voor", teksten: ["8b/5"], volgorde: {"8b/5":51} },
+  { grondvorm: "expellere", aanvullingen: "expello, expuli, expulsum", vertaling: "uitdrijven, verdrijven", basis: true },
+  { grondvorm: "experientia", aanvullingen: "experientiae, (v.)", vertaling: "ervaring" },
+  { grondvorm: "experiri", aanvullingen: "experior, expertus sum", vertaling: "proberen, uitproberen", basis: true, teksten: ["8b/9"], volgorde: {"8b/9":129} },
+  { grondvorm: "expositus", aanvullingen: "exposita, expositum ad + acc.", vertaling: "belust op" },
+  { grondvorm: "exprimere", aanvullingen: "exprimo, expressi, espressum", vertaling: "uitdrukken, uitknijpen", basis: true },
+  { grondvorm: "expugnatio", aanvullingen: "expugnationis, (v.)", vertaling: "belegering" },
+  { grondvorm: "exscribere", aanvullingen: "exscribo, exscripsi, exscriptum", vertaling: "opschrijven" },
+  { grondvorm: "exsequi", aanvullingen: "exsequor, exsecutus sum", vertaling: "uitvoeren, voltooien" },
+  { grondvorm: "exspectare", aanvullingen: "exspecto, exspectavi, exspectatum", vertaling: "wachten op, verwachten", basis: true, teksten: ["9b/9"], volgorde: {"9b/9":28} },
+  { grondvorm: "exstruere", aanvullingen: "exstruo, exstruxi, exstructum", vertaling: "oprichten, bouwen", teksten: ["9a/4"], volgorde: {"9a/4":23} },
+  { grondvorm: "extemplo", aanvullingen: "(bijw.)", vertaling: "onmiddellijk, dadelijk", teksten: ["7b/4"], volgorde: {"7b/4":25} },
+  { grondvorm: "extendere", aanvullingen: "extendo, extendi, extensum/extentum", vertaling: "(zich) uitstrekken, uitspreiden", teksten: ["8a/5","9b/5"], volgorde: {"8a/5":5,"9b/5":53} },
+  { grondvorm: "extergere", aanvullingen: "extergeo, extersi, extersum", vertaling: "afvegen, schoonvegen" },
+  { grondvorm: "extra", aanvullingen: "+ acc. (vz.)", vertaling: "buiten", teksten: ["7b/4"], volgorde: {"7b/4":42} },
+  { grondvorm: "extremus", aanvullingen: "extrema, extremum", vertaling: "uiterst, verst, laatst", teksten: ["7a/1","8a/3","8b/9"], volgorde: {"7a/1":10,"8a/3":123,"8b/9":105} },
+  { grondvorm: "exuere", aanvullingen: "exuo, exui, exutum + abl.", vertaling: "uittrekken; zich ontdoen van", teksten: ["8a/2"], volgorde: {"8a/2":31} },
+  { grondvorm: "exurere", aanvullingen: "exuro, exussi, exustum", vertaling: "verbranden" },
+  { grondvorm: "faba", aanvullingen: "fabae, (v.)", vertaling: "boon, bonen" },
+  { grondvorm: "fabricator", aanvullingen: "fabricatoris, (m.)", vertaling: "vervaardiger, maker, ontwerper" },
+  { grondvorm: "fabula", aanvullingen: "fabulae, (v.)", vertaling: "verhaal, fabel", teksten: ["8a/6"], volgorde: {"8a/6":19} },
+  { grondvorm: "Fabullus", aanvullingen: "Fabulli", vertaling: "Fabullus (eigennaam)" },
+  { grondvorm: "facere", aanvullingen: "facio, feci, factum", vertaling: "maken; doen", basis: true, teksten: ["7a/6","7b/2","8a/2","8a/3","8a/6","8b/5","8b/9","9b/4","9b/6","9b/7","10/9"], volgorde: {"7a/6":3,"7b/2":62,"8a/2":25,"8a/3":29,"8a/6":32,"8b/5":54,"8b/9":132,"9b/4":15,"9b/6":27,"9b/7":34,"10/9":5} },
+  { grondvorm: "facies", aanvullingen: "faciei", vertaling: "gezicht", basis: true, teksten: ["10/26"], volgorde: {"10/26":25} },
+  { grondvorm: "facilis", aanvullingen: "facilis, facile", vertaling: "gemakkelijk", basis: true },
+  { grondvorm: "facilitas", aanvullingen: "facilitatis", vertaling: "gemakkelijkheid, inschikkelijkheid, toegevendheid", teksten: ["7b/6"], volgorde: {"7b/6":7} },
+  { grondvorm: "facinus", aanvullingen: "facinoris, (o.)", vertaling: "daad, handeling; misdaad", teksten: ["7b/2"], volgorde: {"7b/2":15} },
+  { grondvorm: "factum", aanvullingen: "facti, (o.)", vertaling: "daad, handeling; feit", basis: true, teksten: ["7a/5"], volgorde: {"7a/5":11} },
+  { grondvorm: "facultas", aanvullingen: "facultatis, (v.)", vertaling: "mogelijkheid; kwaliteit, talent" },
+  { grondvorm: "fallere", aanvullingen: "fallo, fefelli, –", vertaling: "bedriegen, misleiden", basis: true, teksten: ["7a/5","10/26"], volgorde: {"7a/5":39,"10/26":101} },
+  { grondvorm: "falx", aanvullingen: "falcis, (v.)", vertaling: "zeis" },
+  { grondvorm: "fama", aanvullingen: "famae, (v.)", vertaling: "gerucht, roddel; naam, reputatie; roem", basis: true, teksten: ["9b/7"], volgorde: {"9b/7":7} },
+  { grondvorm: "famelicus", aanvullingen: "famelica, famelicum", vertaling: "hongerig" },
+  { grondvorm: "fames", aanvullingen: "famis, (v.)", vertaling: "honger", basis: true, teksten: ["8a/3"], volgorde: {"8a/3":118} },
+  { grondvorm: "familia", aanvullingen: "familiae, (v.)", vertaling: "familie", teksten: ["7b/6","8b/6"], volgorde: {"7b/6":25,"8b/6":2} },
+  { grondvorm: "famosus", aanvullingen: "famosa, famosum", vertaling: "beroemd, bekend, berucht" },
+  { grondvorm: "fanaticus", aanvullingen: "fanatica, fanaticum", vertaling: "door een godheid tot razernij gebracht, razend" },
+  { grondvorm: "fasces", aanvullingen: "fascium (enkel mv., m.), (m. mv.)", vertaling: "fasces, roedenbundel (= bijl met twijgen omgord, gedragen door lictoren; symbool van het gezag van hogere magistraten)", teksten: ["8b/9"], volgorde: {"8b/9":79} },
+  { grondvorm: "fateri", aanvullingen: "fateor, fassus sum", vertaling: "bekennen, toegeven" },
+  { grondvorm: "fatum", aanvullingen: "fati, (o.)", vertaling: "Noodlot, Lot", basis: true },
+  { grondvorm: "fauces", aanvullingen: "faucium (enkel mv.), (vr. mv.)", vertaling: "keel; bergpas; doorgang, passage", teksten: ["8b/9","10/8"], volgorde: {"8b/9":38,"10/8":9} },
+  { grondvorm: "Faustulus", aanvullingen: "Faustuli", vertaling: "Faustulus (eigennaam)" },
+  { grondvorm: "favere", aanvullingen: "faveo, favi, fautum + dat.", vertaling: "iemand gunstig gezind zijn, begunstigen, steunen, toegewijd zijn aan", basis: true },
+  { grondvorm: "favor", aanvullingen: "favoris, (m.)", vertaling: "gunst, begunstiging" },
+  { grondvorm: "favus", aanvullingen: "favi, (m.)", vertaling: "honingraat, honing", teksten: ["10/14"], volgorde: {"10/14":23} },
+  { grondvorm: "fax", aanvullingen: "facis, (v.)", vertaling: "fakkel" },
+  { grondvorm: "Februarius", aanvullingen: "Februaria, Februarium", vertaling: "van februari", teksten: ["6a/1","7a/2"], volgorde: {"6a/1":2,"7a/2":5} },
+  { grondvorm: "fecunditas", aanvullingen: "fecunditatis, (v.)", vertaling: "vruchtbaarheid" },
+  { grondvorm: "Felicissimus", aanvullingen: "Felicissimi", vertaling: "Felicissimus (eigennaam)" },
+  { grondvorm: "felix", aanvullingen: "felix, felix; felicis", vertaling: "gelukkig, voorspoedig, succesvol", basis: true, teksten: ["6b/4","8a/6"], volgorde: {"6b/4":62,"8a/6":37} },
+  { grondvorm: "femina", aanvullingen: "feminae", vertaling: "vrouw", teksten: ["6b/2","7a/3","7a/6","10/26"], volgorde: {"6b/2":111,"7a/3":45,"7a/6":12,"10/26":8} },
+  { grondvorm: "fenerare", aanvullingen: "fenero, feneravi, feneratum + acc.", vertaling: "geld lenen aan, financieren" },
+  { grondvorm: "fenestra", aanvullingen: "fenestrae, (v.)", vertaling: "raam", teksten: ["6b/4","8b/6","9b/5"], volgorde: {"6b/4":21,"8b/6":47,"9b/5":10} },
+  { grondvorm: "feniculum", aanvullingen: "feniculi, (o.)", vertaling: "venkel" },
+  { grondvorm: "fera", aanvullingen: "ferae, (v.)", vertaling: "wild dier, wild beest" },
+  { grondvorm: "feralis", aanvullingen: "feralis, ferale", vertaling: "behorend tot de doden, doden-, rouw-" },
+  { grondvorm: "fere", aanvullingen: "(bijw.)", vertaling: "bijna, ongeveer; omstreeks", basis: true, teksten: ["6a/2","7b/2","9a/1","9b/6"], volgorde: {"6a/2":6,"7b/2":44,"9a/1":44,"9b/6":4} },
+  { grondvorm: "ferire", aanvullingen: "ferio, –, –", vertaling: "slaan, stoten", teksten: ["6b/2","6b/4"], volgorde: {"6b/2":38,"6b/4":12} },
+  { grondvorm: "ferox", aanvullingen: "ferox, ferox; ferocis", vertaling: "woest, wild, onstuimig" },
+  { grondvorm: "fermentum", aanvullingen: "fermenti, (o.)", vertaling: "gist, gisting" },
+  { grondvorm: "ferre", aanvullingen: "fero, tuli, latum", vertaling: "dragen, voeren, brengen; zeggen, vertellen", basis: true, teksten: ["6b/2","7b/4","8a/3","8b/9","9a/1","10/26"], volgorde: {"6b/2":73,"7b/4":21,"8a/3":39,"8b/9":45,"9a/1":32,"10/26":47} },
+  { grondvorm: "ferreus", aanvullingen: "ferrea, ferreum", vertaling: "van ijzer, ijzeren" },
+  { grondvorm: "ferrum", aanvullingen: "ferri, (o.)", vertaling: "ijzer; zwaard", teksten: ["7b/2"], volgorde: {"7b/2":18} },
+  { grondvorm: "ferula", aanvullingen: "ferulae, (v.)", vertaling: "rietstok" },
+  { grondvorm: "ferus", aanvullingen: "fera, ferum", vertaling: "wild", teksten: ["10/14"], volgorde: {"10/14":50} },
+  { grondvorm: "fervere", aanvullingen: "ferveo, ferbui, –", vertaling: "koken" },
+  { grondvorm: "fessus", aanvullingen: "fessa, fessum", vertaling: "vermoeid, uitgeput", teksten: ["9b/4"], volgorde: {"9b/4":55} },
+  { grondvorm: "festinare", aanvullingen: "festino, festinavi, festinatum", vertaling: "zich haasten, zich spoeden", teksten: ["6b/2","9b/9"], volgorde: {"6b/2":75,"9b/9":54} },
+  { grondvorm: "fibra", aanvullingen: "fibrae, (v.)", vertaling: "vezel; mv.: ingewanden" },
+  { grondvorm: "fideicommissum", aanvullingen: "fideicommissi, (o.)", vertaling: "testamentaire beschikking", teksten: ["8b/10"], volgorde: {"8b/10":11} },
+  { grondvorm: "fidelis", aanvullingen: "fidelis, fidele", vertaling: "trouw" },
+  { grondvorm: "fidere", aanvullingen: "fido, fisus sum + dat.", vertaling: "vertrouwen op" },
+  { grondvorm: "fides", aanvullingen: "fidei, (v.)", vertaling: "vertrouwen, geloof; trouw; bescherming, hulp", basis: true, teksten: ["7a/3","8b/10"], volgorde: {"7a/3":13,"8b/10":14} },
+  { grondvorm: "fieri", aanvullingen: "fio, factus sum", vertaling: "gemaakt worden; ontstaan; worden; gebeuren", basis: true, teksten: ["6b/1","8a/3","8a/6","8b/5","8b/6","10/3"], volgorde: {"6b/1":21,"8a/3":61,"8a/6":7,"8b/5":27,"8b/6":20,"10/3":80} },
+  { grondvorm: "figura", aanvullingen: "figurae, (v.)", vertaling: "gestalte, uiterlijk, vorm", teksten: ["6a/7"], volgorde: {"6a/7":45} },
+  { grondvorm: "filia", aanvullingen: "filiae, (v.)", vertaling: "dochter", teksten: ["7a/3"], volgorde: {"7a/3":37} },
+  { grondvorm: "filius", aanvullingen: "filii, (m.)", vertaling: "zoon", basis: true, teksten: ["7a/3","7b/4"], volgorde: {"7a/3":33,"7b/4":4} },
+  { grondvorm: "finis", aanvullingen: "finis (m.)", vertaling: "einde, grens; mv.: grondgebied", basis: true, teksten: ["7a/1"], volgorde: {"7a/1":49} },
+  { grondvorm: "finitimus", aanvullingen: "finitima, finitimum", vertaling: "naburig" },
+  { grondvorm: "firmitas", aanvullingen: "firmitatis, (v.)", vertaling: "sterkte, stevigheid", teksten: ["10/21"], volgorde: {"10/21":25} },
+  { grondvorm: "firmus", aanvullingen: "firma, firmum", vertaling: "sterk; betrouwbaar, trouw", teksten: ["8b/5"], volgorde: {"8b/5":28} },
+  { grondvorm: "fiscus", aanvullingen: "fisci, (m.)", vertaling: "mandje" },
+  { grondvorm: "fistula", aanvullingen: "fistulae, (v.)", vertaling: "pijp, buis", teksten: ["10/19"], volgorde: {"10/19":16} },
+  { grondvorm: "flamen", aanvullingen: "flaminis (m.)", vertaling: "priester" },
+  { grondvorm: "flamma", aanvullingen: "flammae, (v.)", vertaling: "vlam, vuur", basis: true, teksten: ["6a/4","6b/5","6a/7"], volgorde: {"6a/4":9,"6b/5":10,"6a/7":44} },
+  { grondvorm: "flectere", aanvullingen: "flecto, flexi, flectum", vertaling: "buigen, ombuigen", basis: true, teksten: ["8a/3"], volgorde: {"8a/3":144} },
+  { grondvorm: "flexus", aanvullingen: "flexus, (m.)", vertaling: "buiging, bocht", teksten: ["6b/3"], volgorde: {"6b/3":27} },
+  { grondvorm: "flos", aanvullingen: "floris (m.)", vertaling: "bloem", basis: true, teksten: ["7b/12","10/26"], volgorde: {"7b/12":8,"10/26":50} },
+  { grondvorm: "fluctus", aanvullingen: "fluctus, (m.)", vertaling: "golf, vloed", basis: true },
+  { grondvorm: "fluere", aanvullingen: "fluo, fluxi, fluctum", vertaling: "vloeien, voortvloeien" },
+  { grondvorm: "flumen", aanvullingen: "fluminis, (o.)", vertaling: "stroom, rivier", basis: true, teksten: ["9a/1"], volgorde: {"9a/1":24} },
+  { grondvorm: "fluvius", aanvullingen: "fluvii, (m.)", vertaling: "stroom, rivier" },
+  { grondvorm: "foculum", aanvullingen: "foculi, (o.)", vertaling: "haard, haardvuur, (kleine) offerhaard", teksten: ["7b/2"], volgorde: {"7b/2":86} },
+  { grondvorm: "foedus", aanvullingen: "foeda, foedum", vertaling: "lelijk, afstotelijk", teksten: ["8a/2"], volgorde: {"8a/2":51} },
+  { grondvorm: "folium", aanvullingen: "folii, (o.)", vertaling: "blad" },
+  { grondvorm: "follis", aanvullingen: "follis, (m.)", vertaling: "geldbuidel, beurs" },
+  { grondvorm: "fons", aanvullingen: "fontis (m.)", vertaling: "bron", basis: true },
+  { grondvorm: "foras", aanvullingen: "(bijw.)", vertaling: "naar buiten" },
+  { grondvorm: "foris", aanvullingen: "(bijw.)", vertaling: "buiten, aan de buitenkant" },
+  { grondvorm: "forma", aanvullingen: "formae, (v.)", vertaling: "vorm, figuur", basis: true, teksten: ["10/3","10/26"], volgorde: {"10/3":41,"10/26":19} },
+  { grondvorm: "formare", aanvullingen: "formo, formavi, formatum", vertaling: "vormen" },
+  { grondvorm: "formica", aanvullingen: "formicae, (v.)", vertaling: "mier" },
+  { grondvorm: "formido", aanvullingen: "formidinis, (v.)", vertaling: "angst", basis: true, teksten: ["6a/7"], volgorde: {"6a/7":18} },
+  { grondvorm: "forte", aanvullingen: "(bijw.)", vertaling: "toevallig", teksten: ["7a/3","7b/2"], volgorde: {"7a/3":44,"7b/2":34} },
+  { grondvorm: "fortis", aanvullingen: "fortis, forte", vertaling: "moedig, dapper, sterk", basis: true, teksten: ["6b/4","7b/2","8b/9","9a/1"], volgorde: {"6b/4":41,"7b/2":64,"8b/9":142,"9a/1":27} },
+  { grondvorm: "fortitudo", aanvullingen: "fortitudinis, (v.)", vertaling: "moed, dapperheid, sterkte", basis: true },
+  { grondvorm: "fortuna", aanvullingen: "fortunae, (v.)", vertaling: "lot, toeval, geluk; mv.: bezittingen, eigendom", basis: true, teksten: ["7a/3","8a/2"], volgorde: {"7a/3":40,"8a/2":33} },
+  { grondvorm: "Fortuna", aanvullingen: "Fortunae", vertaling: "(de godin) Fortuna" },
+  { grondvorm: "Fortunata", aanvullingen: "Fortunatae", vertaling: "Fortunata (eigennaam)" },
+  { grondvorm: "Forum Appii", aanvullingen: "Fori Appii", vertaling: "Forum Appii (stadje ten zuiden van Rome)", teksten: ["9b/4"], volgorde: {"9b/4":8} },
+  { grondvorm: "forum", aanvullingen: "fori, (o.)", vertaling: "markt(plaats)", basis: true },
+  { grondvorm: "fossa", aanvullingen: "fossae, (v.)", vertaling: "gracht", basis: true },
+  { grondvorm: "fovea", aanvullingen: "foveae, (v.)", vertaling: "kuil, valkuil" },
+  { grondvorm: "frangere", aanvullingen: "frango, fregi, fractum", vertaling: "breken, barsten", basis: true, teksten: ["6b/4"], volgorde: {"6b/4":17} },
+  { grondvorm: "frater", aanvullingen: "fratris, (m.)", vertaling: "broer", basis: true },
+  { grondvorm: "frequens", aanvullingen: "frequens, frequens; frequentis", vertaling: "talrijk, veelvuldig; vaak, dikwijls", teksten: ["10/8"], volgorde: {"10/8":20} },
+  { grondvorm: "frequenter", aanvullingen: "(bijw.)", vertaling: "vaak" },
+  { grondvorm: "frequentius", aanvullingen: "(bijw.)", vertaling: "vaker, nogal vaak, al te vaak", teksten: ["7a/7"], volgorde: {"7a/7":7} },
+  { grondvorm: "fretum", aanvullingen: "freti, (o.)", vertaling: "zee-engte, zeestraat, zee", teksten: ["8b/9"], volgorde: {"8b/9":127} },
+  { grondvorm: "frigere", aanvullingen: "frigo, frixi, frictum", vertaling: "roosteren, bakken", teksten: ["6b/9"], volgorde: {"6b/9":12} },
+  { grondvorm: "frigidus", aanvullingen: "frigida, frigidum", vertaling: "koud" },
+  { grondvorm: "frigus", aanvullingen: "frigoris", vertaling: "koude", teksten: ["8b/6"], volgorde: {"8b/6":9} },
+  { grondvorm: "frons", aanvullingen: "frondis, (v.)", vertaling: "gebladerte, lover", teksten: ["9b/5"], volgorde: {"9b/5":18} },
+  { grondvorm: "frons", aanvullingen: "frontis, (v.)", vertaling: "voorhoofd; voorkant" },
+  { grondvorm: "fructuosus", aanvullingen: "fructuosa, fructuosum", vertaling: "lonend, voordelig, nuttig", teksten: ["10/3"], volgorde: {"10/3":6} },
+  { grondvorm: "fructus", aanvullingen: "fructus, (m.)", vertaling: "vrucht; opbrengst", teksten: ["8a/2"], volgorde: {"8a/2":10} },
+  { grondvorm: "frugi", aanvullingen: "(onverbuigbaar adj.)", vertaling: "sober, zuinig; eerlijk, braaf" },
+  { grondvorm: "frui", aanvullingen: "fruor, fructus sum + abl.", vertaling: "genieten van", basis: true, teksten: ["8a/3"], volgorde: {"8a/3":31} },
+  { grondvorm: "frumentum", aanvullingen: "frumenti, (o.)", vertaling: "graan", basis: true, teksten: ["8a/5"], volgorde: {"8a/5":35} },
+  { grondvorm: "frustra", aanvullingen: "(bijw.)", vertaling: "tevergeefs", teksten: ["8b/9"], volgorde: {"8b/9":128} },
+  { grondvorm: "frux", aanvullingen: "frugis, (v.)", vertaling: "vrucht" },
+  { grondvorm: "Fucinus lacus", aanvullingen: "Fucini lacus", vertaling: "het Fucinusmeer (in Italië)" },
+  { grondvorm: "fuga", aanvullingen: "fugae, (v.)", vertaling: "vlucht", basis: true, teksten: ["8b/9"], volgorde: {"8b/9":113} },
+  { grondvorm: "fugare", aanvullingen: "fugo, fugavi, fugatum", vertaling: "op de vlucht jagen, verdrijven", teksten: ["8b/9"], volgorde: {"8b/9":104} },
+  { grondvorm: "fugere", aanvullingen: "fugio, fugi, –", vertaling: "vluchten, ontvluchten", basis: true, teksten: ["6b/2","7a/7","8b/8"], volgorde: {"6b/2":96,"7a/7":18,"8b/8":1} },
+  { grondvorm: "fulgor", aanvullingen: "fulgoris, (m.)", vertaling: "bliksem, bliksemschicht; glans, schittering, gloed", teksten: ["6a/4"], volgorde: {"6a/4":14} },
+  { grondvorm: "fulgur", aanvullingen: "fulguris, (o.)", vertaling: "bliksem, bliksemschicht", teksten: ["6a/7"], volgorde: {"6a/7":47} },
+  { grondvorm: "fulmen", aanvullingen: "fulminis, (o.)", vertaling: "bliksem, bliksemschicht" },
+  { grondvorm: "fumus", aanvullingen: "fumi, (m.)", vertaling: "rook" },
+  { grondvorm: "fundere", aanvullingen: "fundo, fudi, fusum", vertaling: "gieten, uitgieten", basis: true },
+  { grondvorm: "fundus", aanvullingen: "fundi, (m.)", vertaling: "grond, bodem; landgoed, boerderij", teksten: ["8b/3","8b/5"], volgorde: {"8b/3":11,"8b/5":33} },
+  { grondvorm: "funebris", aanvullingen: "funebris, funebre", vertaling: "begrafenis-" },
+  { grondvorm: "funus", aanvullingen: "funeris, (o.)", vertaling: "begrafenis, begrafenisstoet", teksten: ["6b/2"], volgorde: {"6b/2":90} },
+  { grondvorm: "furiosus", aanvullingen: "furiosa, furiosum", vertaling: "razend, waanzinnig", teksten: ["6b/4"], volgorde: {"6b/4":39} },
+  { grondvorm: "fustis", aanvullingen: "fustis (m.)", vertaling: "knuppel, stok", teksten: ["7a/5"], volgorde: {"7a/5":6} },
+  { grondvorm: "Gallia", aanvullingen: "Galliae", vertaling: "Gallië", teksten: ["9a/1"], volgorde: {"9a/1":1} },
+  { grondvorm: "Gallus", aanvullingen: "Galli", vertaling: "Galliër", teksten: ["9a/1","9a/4"], volgorde: {"9a/1":16,"9a/4":4} },
+  { grondvorm: "Garunna", aanvullingen: "Garunae", vertaling: "(de rivier) Garonne", teksten: ["9a/1"], volgorde: {"9a/1":23} },
+  { grondvorm: "gaudere", aanvullingen: "gaudeo, gavisus sum", vertaling: "zich verheugen, blij zijn", basis: true, teksten: ["7a/5","10/26"], volgorde: {"7a/5":35,"10/26":100} },
+  { grondvorm: "gaudium", aanvullingen: "gaudii, (o.)", vertaling: "vreugde" },
+  { grondvorm: "geminus", aanvullingen: "gemina, geminum", vertaling: "tweeling-", basis: true },
+  { grondvorm: "geminus", aanvullingen: "gemini", vertaling: "tweeling", basis: true },
+  { grondvorm: "gens", aanvullingen: "gentis, (v.)", vertaling: "volk", basis: true, teksten: ["8a/3","8b/5","9a/1"], volgorde: {"8a/3":65,"8b/5":7,"9a/1":48} },
+  { grondvorm: "genus", aanvullingen: "generis, (o.)", vertaling: "geboorte, afstamming, geslacht; soort", basis: true, teksten: ["8b/3","9b/6","10/14","10/21"], volgorde: {"8b/3":42,"9b/6":51,"10/14":3,"10/21":2} },
+  { grondvorm: "gerere", aanvullingen: "gero, gessi, gestum", vertaling: "dragen, voeren", basis: true, teksten: ["7b/2"], volgorde: {"7b/2":67} },
+  { grondvorm: "Germanus", aanvullingen: "Germani", vertaling: "Germaan" },
+  { grondvorm: "gerulus", aanvullingen: "geruli", vertaling: "drager, sjouwer", teksten: ["6b/2"], volgorde: {"6b/2":80} },
+  { grondvorm: "gignere", aanvullingen: "gigno, genui, genitum", vertaling: "verwekken, voortbrengen, scheppen", teksten: ["10/14"], volgorde: {"10/14":14} },
+  { grondvorm: "gladiator", aanvullingen: "gladiatoris, (m.)", vertaling: "gladiator" },
+  { grondvorm: "gladiatorius", aanvullingen: "gladiatoria, gladiatorium", vertaling: "van een gladiator, gladiatoren-" },
+  { grondvorm: "gladius", aanvullingen: "gladii", vertaling: "zwaard", basis: true, teksten: ["10/3"], volgorde: {"10/3":52} },
+  { grondvorm: "glomerare", aanvullingen: "glomero, glomeravi, glomeratum", vertaling: "kneden" },
+  { grondvorm: "gradus", aanvullingen: "gradus, (m.)", vertaling: "stap, trede", basis: true, teksten: ["7a/1"], volgorde: {"7a/1":4} },
+  { grondvorm: "Graecia", aanvullingen: "Graeciae", vertaling: "Griekenland", teksten: ["9b/6"], volgorde: {"9b/6":10} },
+  { grondvorm: "Graecus", aanvullingen: "Graeca, Graecum", vertaling: "Grieks", teksten: ["9b/4"], volgorde: {"9b/4":3} },
+  { grondvorm: "Graecus", aanvullingen: "Graeci", vertaling: "Griek" },
+  { grondvorm: "gramen", aanvullingen: "graminis, (o.)", vertaling: "gras, kruid" },
+  { grondvorm: "granum", aanvullingen: "grani, (o.)", vertaling: "graankorrel, graan" },
+  { grondvorm: "graphium", aanvullingen: "graphii, (o.)", vertaling: "schrijfstift" },
+  { grondvorm: "gratia", aanvullingen: "gratiae, (v.)", vertaling: "charme, bekoorlijkheid; dank", basis: true },
+  { grondvorm: "gen. + gratia", aanvullingen: "(vz.)", vertaling: "omwille van, ter wille van, wegens", teksten: ["10/3"], volgorde: {"10/3":46} },
+  { grondvorm: "gratulatio", aanvullingen: "gratulationis, (v.)", vertaling: "gelukwens, felicitatie" },
+  { grondvorm: "gratus", aanvullingen: "grata, gratum", vertaling: "dankbaar; aangenaam", basis: true, teksten: ["10/26"], volgorde: {"10/26":44} },
+  { grondvorm: "gravidus", aanvullingen: "gravida, gravidum", vertaling: "zwanger", teksten: ["7a/3"], volgorde: {"7a/3":16} },
+  { grondvorm: "gravis", aanvullingen: "gravis, grave", vertaling: "zwaar; ernstig", basis: true, teksten: ["7a/3","9a/4"], volgorde: {"7a/3":38,"9a/4":44} },
+  { grondvorm: "gravissimus", aanvullingen: "gravissima, gravissimum", vertaling: "zwaarst, zeer zwaar; ernstigst, zeer ernstig", teksten: ["9a/4"], volgorde: {"9a/4":45} },
+  { grondvorm: "gravitas", aanvullingen: "gravitatis, (v.)", vertaling: "zwaarte, gewicht; ongemak; ernst", teksten: ["10/8"], volgorde: {"10/8":18} },
+  { grondvorm: "gregatim", aanvullingen: "(bijw.)", vertaling: "in groep, gezamenlijk", teksten: ["10/14"], volgorde: {"10/14":41} },
+  { grondvorm: "grex", aanvullingen: "gregis (m.)", vertaling: "kudde; troep, groep", basis: true, teksten: ["8b/5","8b/9"], volgorde: {"8b/5":48,"8b/9":71} },
+  { grondvorm: "gula", aanvullingen: "gulae, (v.)", vertaling: "keel, strot" },
+  { grondvorm: "guttur", aanvullingen: "gutturis (m.)", vertaling: "keel, strot" },
+  { grondvorm: "habere", aanvullingen: "habeo, habui, habitum", vertaling: "hebben; houden", basis: true, teksten: ["7a/3","8a/3","8a/5","8b/5","9a/1","9b/5","9b/7","10/14","10/19"], volgorde: {"7a/3":81,"8a/3":14,"8a/5":17,"8b/5":11,"9a/1":45,"9b/5":77,"9b/7":11,"10/14":34,"10/19":4} },
+  { grondvorm: "habitare", aanvullingen: "habito, habitavi, habitatum", vertaling: "wonen, bewonen" },
+  { grondvorm: "hac", aanvullingen: "(bijw.)", vertaling: "hierlangs … daarlangs, hier … daar" },
+  { grondvorm: "hac … hac", aanvullingen: "(bijw.)", vertaling: "hierlangs … daarlangs, hier … daar", teksten: ["6b/2"], volgorde: {"6b/2":75} },
+  { grondvorm: "haerere", aanvullingen: "haereo, haesi, haesum + dat.", vertaling: "blijven hangen aan, blijven steken in", basis: true, teksten: ["6b/2"], volgorde: {"6b/2":54} },
+  { grondvorm: "Hannibal", aanvullingen: "Hannibalis (m.)", vertaling: "Hannibal (eigennaam)" },
+  { grondvorm: "harena", aanvullingen: "harenae", vertaling: "zandkorrel, zand; strijdperk", basis: true, teksten: ["6a/7"], volgorde: {"6a/7":37} },
+  { grondvorm: "haud", aanvullingen: "(bijw.)", vertaling: "helemaal niet, niet", teksten: ["7a/6"], volgorde: {"7a/6":10} },
+  { grondvorm: "heliocaminus", aanvullingen: "heliocamini", vertaling: "kamer aan de zonkant, zonneprieel", teksten: ["9b/5"], volgorde: {"9b/5":65} },
+  { grondvorm: "Heliodorus", aanvullingen: "Heliodori", vertaling: "Heliodorus (Griekse eigennaam)" },
+  { grondvorm: "Henna", aanvullingen: "Hennae", vertaling: "Henna (stad op Sicilië)" },
+  { grondvorm: "Hennensis", aanvullingen: "Hennensis", vertaling: "inwoner van Henna" },
+  { grondvorm: "herba", aanvullingen: "herbae", vertaling: "kruid, gras", basis: true },
+  { grondvorm: "Herculaneum", aanvullingen: "Herculanei", vertaling: "(de stad) Herculaneum", teksten: ["6a/1"], volgorde: {"6a/1":21} },
+  { grondvorm: "Hercule", aanvullingen: "", vertaling: "bij Hercules!, warempel!, waarachtig!, verdomd!" },
+  { grondvorm: "Hercules", aanvullingen: "Herculis (m.)", vertaling: "(de halfgod/held) Hercules" },
+  { grondvorm: "heres", aanvullingen: "heredis", vertaling: "erfgenaam", teksten: ["8b/10"], volgorde: {"8b/10":16} },
+  { grondvorm: "hic", aanvullingen: "(bijw.)", vertaling: "hier, op deze plaats", basis: true, teksten: ["6b/3","7a/6","9b/3","9b/4"], volgorde: {"6b/3":38,"7a/6":8,"9b/3":2,"9b/4":17} },
+  { grondvorm: "hic", aanvullingen: "haec, hoc (aanw. vnw.)", vertaling: "deze, dit; hij, zij, het", basis: true },
+  { grondvorm: "hiems", aanvullingen: "hiemis", vertaling: "winter", basis: true },
+  { grondvorm: "hinc", aanvullingen: "(bijw.)", vertaling: "vanaf deze plaats, hiervandaan, van hier", teksten: ["7b/2"], volgorde: {"7b/2":102} },
+  { grondvorm: "Hispanus", aanvullingen: "Hispani", vertaling: "Spanjaard" },
+  { grondvorm: "homo", aanvullingen: "hominis (m.)", vertaling: "man, mens", basis: true, teksten: ["6a/7","7a/7","8a/3","8b/3","9b/6","10/14"], volgorde: {"6a/7":3,"7a/7":24,"8a/3":3,"8b/3":38,"9b/6":49,"10/14":12} },
+  { grondvorm: "honor", aanvullingen: "honoris, (m.)", vertaling: "eer", basis: true },
+  { grondvorm: "honorare", aanvullingen: "honoro, honoravi, honoratum", vertaling: "eren" },
+  { grondvorm: "hora", aanvullingen: "horae, (v.)", vertaling: "uur", basis: true, teksten: ["6a/2","9b/7"], volgorde: {"6a/2":5,"9b/7":48} },
+  { grondvorm: "Horatius Cocles", aanvullingen: "Horatii Coclitis", vertaling: "Horatius Cocles (eigennaam)" },
+  { grondvorm: "horrendus", aanvullingen: "horrenda, horrendum", vertaling: "angstaanjagend, gruwelijk, vreselijk", teksten: ["6a/7"], volgorde: {"6a/7":42} },
+  { grondvorm: "horrere", aanvullingen: "horreo, horrui, –", vertaling: "verstijfd staan, stijf staan (van angst)" },
+  { grondvorm: "horrescere", aanvullingen: "horresco, horrui, –", vertaling: "bang worden van, bang zijn voor" },
+  { grondvorm: "horribilis", aanvullingen: "horribilis, horribile", vertaling: "huiveringwekkend, verschrikkelijk" },
+  { grondvorm: "hortus", aanvullingen: "horti", vertaling: "tuin", teksten: ["9b/5"], volgorde: {"9b/5":51} },
+  { grondvorm: "hospes", aanvullingen: "hospitis (m.)", vertaling: "gast; gastheer, herbergier; vreemdeling", teksten: ["7a/6"], volgorde: {"7a/6":1} },
+  { grondvorm: "hospitium", aanvullingen: "hospitii, (o.)", vertaling: "gastvrijheid; herberg, hotel", teksten: ["9b/3"], volgorde: {"9b/3":1} },
+  { grondvorm: "hostia", aanvullingen: "hostiae, (v.)", vertaling: "offerdier" },
+  { grondvorm: "hostilis", aanvullingen: "hostilis, hostile", vertaling: "van de vijand, vijandelijk", teksten: ["7b/2"], volgorde: {"7b/2":98} },
+  { grondvorm: "hostis", aanvullingen: "hostis (m.)", vertaling: "vijand", basis: true, teksten: ["7b/2","7b/4","8a/3"], volgorde: {"7b/2":8,"7b/4":11,"8a/3":53} },
+  { grondvorm: "huc", aanvullingen: "(bijw.)", vertaling: "hierheen, naar hier", basis: true, teksten: ["6a/4","9b/10"], volgorde: {"6a/4":37,"9b/10":2} },
+  { grondvorm: "humanus", aanvullingen: "humana, humanum", vertaling: "menselijk", basis: true, teksten: ["10/19"], volgorde: {"10/19":27} },
+  { grondvorm: "humus", aanvullingen: "humi", vertaling: "grond", basis: true, teksten: ["7a/7"], volgorde: {"7a/7":10} },
+  { grondvorm: "humi", aanvullingen: "", vertaling: "op de grond", teksten: ["7a/7"], volgorde: {"7a/7":11} },
+  { grondvorm: "Hydrus", aanvullingen: "Hydruntis", vertaling: "(de stad) Hydrus (in Zuid-Italië)", teksten: ["9b/7"], volgorde: {"9b/7":45} },
+  { grondvorm: "hypocaustum", aanvullingen: "hypocausti", vertaling: "stookkamer, hypocaustum", teksten: ["9b/5"], volgorde: {"9b/5":34} },
+  { grondvorm: "iacere", aanvullingen: "iacio, ieci, iactum", vertaling: "werpen", basis: true },
+  { grondvorm: "iactare", aanvullingen: "iacto, iactavi, iactatum", vertaling: "werpen", basis: true },
+  { grondvorm: "iam", aanvullingen: "(bijw.)", vertaling: "reeds, al", basis: true, teksten: ["6a/4","7a/1","7a/3","9b/4","6a/7"], volgorde: {"6a/4":63,"7a/1":55,"7a/3":22,"9b/4":26,"6a/7":56} },
+  { grondvorm: "Ianiculum", aanvullingen: "Ianiculi", vertaling: "de Janiculusheuvel (net buiten Rome)", teksten: ["7b/2"], volgorde: {"7b/2":106} },
+  { grondvorm: "ibi", aanvullingen: "(bijw.)", vertaling: "daar, op die plaats", teksten: ["7b/2","8b/9","9b/9","6a/7"], volgorde: {"7b/2":33,"8b/9":32,"9b/9":9,"6a/7":15} },
+  { grondvorm: "ibidem", aanvullingen: "(bijw.)", vertaling: "op dezelfde plaats" },
+  { grondvorm: "ictus", aanvullingen: "ictus, (m.)", vertaling: "slag, stoot, aanval" },
+  { grondvorm: "id est", aanvullingen: "", vertaling: "dat is, dat wil zeggen, namelijk", teksten: ["7a/1","8a/3"], volgorde: {"7a/1":22,"8a/3":66} },
+  { grondvorm: "idem", aanvullingen: "eadem, idem", vertaling: "dezelfde, hetzelfde", basis: true },
+  { grondvorm: "idem", aanvullingen: "eadem, idem … quam", vertaling: "dezelfde, hetzelfde … als", basis: true },
+  { grondvorm: "idem, eadem, idem ... quam", aanvullingen: "", vertaling: "dezelfde, hetzelfde … als", teksten: ["9a/1"], volgorde: {"9a/1":43} },
+  { grondvorm: "idolum", aanvullingen: "idoli, (o.)", vertaling: "schim, spook" },
+  { grondvorm: "Idus", aanvullingen: "Iduum (enkel mv.)", vertaling: "de Iden (= in maart, mei, juli en oktober de 15e dag, in de andere maanden de 13e)" },
+  { grondvorm: "ignarus", aanvullingen: "ignara, ignarum", vertaling: "onwetend, onervaren", basis: true, teksten: ["7a/3"], volgorde: {"7a/3":70} },
+  { grondvorm: "ignis", aanvullingen: "ignis (m.)", vertaling: "vuur", basis: true, teksten: ["6b/5"], volgorde: {"6b/5":13} },
+  { grondvorm: "ignorare", aanvullingen: "ignoro, ignoravi, ignoratum", vertaling: "niet weten" },
+  { grondvorm: "ignoscere", aanvullingen: "ignosco, ignovi, ignotum", vertaling: "vergiffenis schenken, vergeven", teksten: ["7a/3"], volgorde: {"7a/3":48} },
+  { grondvorm: "ille", aanvullingen: "illa, illud (aanw. vnw.)", vertaling: "die, dat; hij, zij, het", basis: true },
+  { grondvorm: "illic", aanvullingen: "(bijw.)", vertaling: "op die plaats, daar", teksten: ["6a/4"], volgorde: {"6a/4":66} },
+  { grondvorm: "illuc", aanvullingen: "(bijw.)", vertaling: "daarheen, naar daar", teksten: ["6a/4"], volgorde: {"6a/4":38} },
+  { grondvorm: "illustrare", aanvullingen: "illustro, illustravi, illustratum", vertaling: "verlichten", teksten: ["8b/6"], volgorde: {"8b/6":46} },
+  { grondvorm: "imber", aanvullingen: "imbris", vertaling: "stortregen, regenbui, regenvlaag", teksten: ["8b/5"], volgorde: {"8b/5":44} },
+  { grondvorm: "immensus", aanvullingen: "immensa, immensum", vertaling: "onmeetbaar, zeer groot, gigantisch", basis: true },
+  { grondvorm: "imminere", aanvullingen: "immineo, –, – + dat.", vertaling: "hangen over/boven; bedreigen", teksten: ["6a/7"], volgorde: {"6a/7":68} },
+  { grondvorm: "immobilis", aanvullingen: "immobilis, immobile", vertaling: "onbeweeglijk" },
+  { grondvorm: "immolare", aanvullingen: "immolo, immolavi, immolatum", vertaling: "offeren", teksten: ["9a/4"], volgorde: {"9a/4":15} },
+  { grondvorm: "immortalis", aanvullingen: "immortalis, immortale", vertaling: "onsterfelijk" },
+  { grondvorm: "immotus", aanvullingen: "immota, immotum", vertaling: "onbewogen, onbeweeglijk, ongestoord, rustig", teksten: ["8a/5"], volgorde: {"8a/5":39} },
+  { grondvorm: "impar", aanvullingen: "impar, impar; imparis", vertaling: "ongelijk" },
+  { grondvorm: "impedire", aanvullingen: "impedio, impedi(v)i, impeditum", vertaling: "belemmeren, verhinderen", basis: true, teksten: ["6b/2"], volgorde: {"6b/2":118} },
+  { grondvorm: "impellere", aanvullingen: "impello, impuli, impulsum", vertaling: "stoten tegen, duwen tegen, voortdrijven", basis: true, teksten: ["6a/7"], volgorde: {"6a/7":9} },
+  { grondvorm: "imperare", aanvullingen: "impero, imperavi, imperatum", vertaling: "bevelen, opdracht geven", basis: true, teksten: ["8a/2"], volgorde: {"8a/2":21} },
+  { grondvorm: "imperator", aanvullingen: "imperatoris", vertaling: "bevelhebber; keizer", basis: true, teksten: ["8b/1","9b/6"], volgorde: {"8b/1":5,"9b/6":46} },
+  { grondvorm: "imperatum", aanvullingen: "imperati, (o.)", vertaling: "bevel" },
+  { grondvorm: "imperium", aanvullingen: "imperii, (o.)", vertaling: "macht, gezag, heerschappij, rijk", basis: true, teksten: ["7b/4","8b/9","9a/1","10/3"], volgorde: {"7b/4":35,"8b/9":93,"9a/1":56,"10/3":73} },
+  { grondvorm: "impetrare", aanvullingen: "impetro, impetravi, impetratum", vertaling: "bereiken, gedaan krijgen, toestemming krijgen" },
+  { grondvorm: "impetus", aanvullingen: "impetus, (m.)", vertaling: "aanval", teksten: ["8b/9"], volgorde: {"8b/9":51} },
+  { grondvorm: "impetum facere", aanvullingen: "in + acc.", vertaling: "een aanval doen op, aanvallen" },
+  { grondvorm: "implere", aanvullingen: "impleo, implevi, impletum", vertaling: "vullen, vol maken", basis: true, teksten: ["7a/7"], volgorde: {"7a/7":49} },
+  { grondvorm: "imponere", aanvullingen: "impono, imposui, impositum + dat.", vertaling: "plaatsen op, leggen op; toekennen, geven", basis: true, teksten: ["6a/4","6b/2","7a/5","9b/6"], volgorde: {"6a/4":55,"6b/2":66,"7a/5":32,"9b/6":39} },
+  { grondvorm: "impositus", aanvullingen: "imposita, impositum", vertaling: "gelegd op, gezet op", teksten: ["6a/4","6b/2"], volgorde: {"6a/4":56,"6b/2":67} },
+  { grondvorm: "imprimis", aanvullingen: "(bijw.)", vertaling: "vooral" },
+  { grondvorm: "impudicus", aanvullingen: "impudica, impudicum", vertaling: "schaamteloos, onfatsoenlijk" },
+  { grondvorm: "impunitas", aanvullingen: "impunitatis, (v.)", vertaling: "het niet straffen, vergiffenis", teksten: ["7b/4"], volgorde: {"7b/4":76} },
+  { grondvorm: "imus", aanvullingen: "ima, imum", vertaling: "onderste, laagste, benedenste", teksten: ["8b/9"], volgorde: {"8b/9":42} },
+  { grondvorm: "in", aanvullingen: "+ abl. (vz.)", vertaling: "in, op; tijdens", basis: true, teksten: ["6a/1","6a/4","6b/1","6b/2","6b/3","6b/5","7a/1","7a/6","7b/2","7b/4","7b/12","8a/2","8a/3","8a/5","8a/6","8b/3","8b/5","8b/9","9a/1","9a/4","9b/5","9b/6","9b/7","10/3","10/8","10/21"], volgorde: {"6a/1":43,"6a/4":26,"6b/1":8,"6b/2":50,"6b/3":3,"6b/5":3,"7a/1":11,"7a/6":24,"7b/2":12,"7b/4":44,"7b/12":2,"8a/2":44,"8a/3":2,"8a/5":43,"8a/6":5,"8b/3":5,"8b/5":1,"8b/9":83,"9a/1":4,"9a/4":17,"9b/5":4,"9b/6":31,"9b/7":19,"10/3":38,"10/8":6,"10/21":10} },
+  { grondvorm: "in", aanvullingen: "+ acc. (vz.)", vertaling: "naar, tot in, in", basis: true, teksten: ["6a/4","6b/3","6b/5","7a/1","8a/3","8b/3","9a/4","9b/5","10/21"], volgorde: {"6a/4":50,"6b/3":46,"6b/5":27,"7a/1":31,"8a/3":8,"8b/3":35,"9a/4":21,"9b/5":58,"10/21":35} },
+  { grondvorm: "in animo esse", aanvullingen: "", vertaling: "van plan zijn", teksten: ["7b/2"], volgorde: {"7b/2":14} },
+  { grondvorm: "in commune", aanvullingen: "(vaste uitdrukking)", vertaling: "gezamenlijk", teksten: ["6a/4"], volgorde: {"6a/4":20} },
+  { grondvorm: "in exilium eicere", aanvullingen: "", vertaling: "iemand verbannen" },
+  { grondvorm: "in perpetuum", aanvullingen: "(vaste uitdrukking)", vertaling: "voor eeuwig, voor altijd, voorgoed", teksten: ["7b/4"], volgorde: {"7b/4":78} },
+  { grondvorm: "in posterum", aanvullingen: "(vaste uitdrukking)", vertaling: "voor/in de toekomst, naar de toekomst toe", teksten: ["7b/4"], volgorde: {"7b/4":65} },
+  { grondvorm: "in regnum restituere", aanvullingen: "", vertaling: "terug aan de macht helpen" },
+  { grondvorm: "in superiorem partem referre", aanvullingen: "", vertaling: "omhoog brengen" },
+  { grondvorm: "incendere", aanvullingen: "incendo, incendi, incensum", vertaling: "in brand steken", basis: true, teksten: ["8a/2"], volgorde: {"8a/2":13} },
+  { grondvorm: "incendium", aanvullingen: "incendii, (o.)", vertaling: "brand", teksten: ["6a/4","6b/5"], volgorde: {"6a/4":11,"6b/5":1} },
+  { grondvorm: "incertus", aanvullingen: "incerta, incertum", vertaling: "onzeker, onbepaald", basis: true },
+  { grondvorm: "incessus", aanvullingen: "incessus, (m.)", vertaling: "stap, gang, manier van lopen", teksten: ["7a/6"], volgorde: {"7a/6":31} },
+  { grondvorm: "inchoarc", aanvullingen: "inchoo, inchoavi, inchoatum", vertaling: "beginnen, een begin maken met" },
+  { grondvorm: "inchoare", aanvullingen: "inchoo, inchoavi, inchoatum", vertaling: "beginnen, een begin maken met", teksten: ["9b/6"], volgorde: {"9b/6":29} },
+  { grondvorm: "inchoatus", aanvullingen: "inchoata, inchoatum", vertaling: "hier: onafgewerkt", teksten: ["9b/6"], volgorde: {"9b/6":30} },
+  { grondvorm: "incidere", aanvullingen: "incido, incidi, incisum", vertaling: "vallen op, neervallen op", teksten: ["6a/4"], volgorde: {"6a/4":61} },
+  { grondvorm: "incipere", aanvullingen: "incipio, incepi, inceptum", vertaling: "beginnen", basis: true, teksten: ["7a/1","9b/4"], volgorde: {"7a/1":47,"9b/4":57} },
+  { grondvorm: "incitare", aanvullingen: "incito, incitavi, incitatum", vertaling: "ophitsen, aansporen" },
+  { grondvorm: "inclutus", aanvullingen: "incluta, inclutum", vertaling: "bekend, beroemd", teksten: ["9b/6"], volgorde: {"9b/6":21} },
+  { grondvorm: "incognitus", aanvullingen: "incognita, incognitum", vertaling: "onbekend" },
+  { grondvorm: "incola", aanvullingen: "incolae (m.)", vertaling: "inwoner, bewoner" },
+  { grondvorm: "incolere", aanvullingen: "incolo, incolui, incultum", vertaling: "bewonen", teksten: ["9a/1"], volgorde: {"9a/1":8} },
+  { grondvorm: "incolumis", aanvullingen: "incolumis, incolume", vertaling: "ongedeerd", basis: true },
+  { grondvorm: "inconditus", aanvullingen: "incondita, inconditum", vertaling: "eenvoudig, sober, ruw" },
+  { grondvorm: "inculpatus", aanvullingen: "inculpata, inculpatum", vertaling: "onberispelijk", teksten: ["7a/3"], volgorde: {"7a/3":15} },
+  { grondvorm: "incumbere", aanvullingen: "incumbo, incubui, incubitum + dat.", vertaling: "gaan liggen op", teksten: ["10/26"], volgorde: {"10/26":90} },
+  { grondvorm: "incutere", aanvullingen: "incutio, incussi, incussum + dat.", vertaling: "slaan op/tegen, stoten tegen", teksten: ["6b/2"], volgorde: {"6b/2":45} },
+  { grondvorm: "inde", aanvullingen: "(bijw.)", vertaling: "vandaar, daarom; vervolgens", teksten: ["7a/1","8a/2","8a/3","8b/9","9b/4","9b/5","9b/7","9b/9"], volgorde: {"7a/1":48,"8a/2":48,"8a/3":33,"8b/9":53,"9b/4":7,"9b/5":26,"9b/7":2,"9b/9":13} },
+  { grondvorm: "indicare", aanvullingen: "indico, indicavi, indicatum", vertaling: "aanwijzen, tonen; melden, bekendmaken", teksten: ["10/3"], volgorde: {"10/3":56} },
+  { grondvorm: "indicere", aanvullingen: "indico, indixi, indictum", vertaling: "aankondigen", teksten: ["7b/2","9b/4"], volgorde: {"7b/2":76,"9b/4":24} },
+  { grondvorm: "indigestus", aanvullingen: "indigesta, indigestum", vertaling: "ongeordend, verward" },
+  { grondvorm: "indignari", aanvullingen: "indignor, indignatus sum", vertaling: "verontwaardigd zijn, protesteren" },
+  { grondvorm: "indoctus", aanvullingen: "indocta, indoctum", vertaling: "ongeschoold, onervaren" },
+  { grondvorm: "inducere", aanvullingen: "induco, induxi, inductum + dat.", vertaling: "leiden in/naar, invoeren", teksten: ["9b/4"], volgorde: {"9b/4":28} },
+  { grondvorm: "induere", aanvullingen: "induo, indui, indutum", vertaling: "aandoen, aantrekken" },
+  { grondvorm: "industria", aanvullingen: "industriae", vertaling: "werkzaamheid, ijver, vlijt, toewijding", teksten: ["10/3"], volgorde: {"10/3":4} },
+  { grondvorm: "inermis", aanvullingen: "inermis, inerme", vertaling: "ongewapend" },
+  { grondvorm: "infamis", aanvullingen: "infamis, infame", vertaling: "berucht" },
+  { grondvorm: "infandus", aanvullingen: "infanda, infandum", vertaling: "gruwelijk, schandalig" },
+  { grondvorm: "infans", aanvullingen: "infantis (m. en vr.)", vertaling: "kind" },
+  { grondvorm: "infantarius", aanvullingen: "infantaria, infantarium", vertaling: "graag kinderen hebbend, kindgezind" },
+  { grondvorm: "infelix", aanvullingen: "infelix, infelix; infelicis", vertaling: "ongelukkig", teksten: ["6b/2"], volgorde: {"6b/2":61} },
+  { grondvorm: "infercire", aanvullingen: "infercio, infersi, infersum", vertaling: "proppen in, volproppen" },
+  { grondvorm: "inferior", aanvullingen: "inferior, inferius; inferioris", vertaling: "lager gelegen, lager", teksten: ["6b/5"], volgorde: {"6b/5":34} },
+  { grondvorm: "inferre", aanvullingen: "infero, intuli, illatum", vertaling: "brengen in/naar, dragen in/naar", basis: true, teksten: ["6b/9"], volgorde: {"6b/9":16} },
+  { grondvorm: "inferus", aanvullingen: "infera, inferum", vertaling: "zich beneden bevindend, onder-", basis: true },
+  { grondvorm: "infinitus", aanvullingen: "infinita, infinitum", vertaling: "oneindig" },
+  { grondvorm: "infra", aanvullingen: "+ acc. (vz.)", vertaling: "onder" },
+  { grondvorm: "infundere", aanvullingen: "infundo, infudi, infusum", vertaling: "gieten in; weken", teksten: ["6b/9"], volgorde: {"6b/9":11} },
+  { grondvorm: "ingemere", aanvullingen: "ingemo, ingemui, –", vertaling: "zuchten, klagen" },
+  { grondvorm: "ingenium", aanvullingen: "ingenii, (o.)", vertaling: "karakter; talent", basis: true },
+  { grondvorm: "ingens", aanvullingen: "ingens, ingens; ingentis", vertaling: "reusachtig", basis: true, teksten: ["6a/1","6a/2","6a/7","6b/2","8a/2"], volgorde: {"6a/1":32,"6a/2":95,"6a/7":5,"6b/2":8,"8a/2":60} },
+  { grondvorm: "ingenuus", aanvullingen: "ingenua, ingenuum", vertaling: "vrijgeboren", teksten: ["7a/3"], volgorde: {"7a/3":10} },
+  { grondvorm: "ingredi", aanvullingen: "ingredior, ingressus sum", vertaling: "binnengaan; beginnen; aanvallen", basis: true },
+  { grondvorm: "inhabitare", aanvullingen: "inhabito, inhabitavi, inhabitatum", vertaling: "bewonen" },
+  { grondvorm: "inhibere", aanvullingen: "inhibeo, inhibui, inhibitum", vertaling: "tegenhouden, verhinderen", teksten: ["10/3"], volgorde: {"10/3":24} },
+  { grondvorm: "inicere", aanvullingen: "inicio, inieci, iniectum", vertaling: "werpen in", teksten: ["7b/2"], volgorde: {"7b/2":87} },
+  { grondvorm: "iniquus", aanvullingen: "iniqua, iniquum", vertaling: "ongelijk; ongunstig, nadelig, ongelegen", basis: true, teksten: ["8a/2"], volgorde: {"8a/2":19} },
+  { grondvorm: "inire", aanvullingen: "ineo, inii, initum", vertaling: "gaan naar, binnengaan; beginnen", basis: true },
+  { grondvorm: "initium", aanvullingen: "initii, (o.)", vertaling: "begin", basis: true, teksten: ["9a/1","9b/6"], volgorde: {"9a/1":54,"9b/6":9} },
+  { grondvorm: "iniuria", aanvullingen: "iniuriae, (v.)", vertaling: "onrecht", basis: true },
+  { grondvorm: "innabilis", aanvullingen: "innabilis, innabile", vertaling: "onbezwembaar" },
+  { grondvorm: "innocuus", aanvullingen: "innocua, innocuum", vertaling: "onschuldig" },
+  { grondvorm: "innuere", aanvullingen: "innuo, innui, –", vertaling: "toeknikken, wenken" },
+  { grondvorm: "innumerabilis", aanvullingen: "innumerabilis, innumerabile", vertaling: "ontelbaar", teksten: ["7b/6"], volgorde: {"7b/6":39} },
+  { grondvorm: "inpubes", aanvullingen: "inpubis, inpube; inpuberis", vertaling: "onvolwassen, jong", teksten: ["7a/1"], volgorde: {"7a/1":23} },
+  { grondvorm: "inquit", aanvullingen: "", vertaling: "hij/zij zegt, hij/zij zei", basis: true, teksten: ["7b/2","7b/4","10/3"], volgorde: {"7b/2":3,"7b/4":3,"10/3":67} },
+  { grondvorm: "insciens", aanvullingen: "insciens, insciens; inscientis", vertaling: "niet wetend, zonder het te weten" },
+  { grondvorm: "inserere", aanvullingen: "insero, inserui, insertum", vertaling: "vlechten in, verstrengelen in" },
+  { grondvorm: "inservire", aanvullingen: "io, –, – + dat.", vertaling: "dienstbaar zijn, ten dienste staan van, dienst doen" },
+  { grondvorm: "insidere", aanvullingen: "insideo, insedi, insessum", vertaling: "zitten op" },
+  { grondvorm: "insidiae", aanvullingen: "insidiarum (enkel mv.), (vr. mv.)", vertaling: "hinderlaag, aanslag, complot" },
+  { grondvorm: "insigne", aanvullingen: "insignis, (o.)", vertaling: "onderscheidingsteken, kenteken", teksten: ["8b/9"], volgorde: {"8b/9":78} },
+  { grondvorm: "insignis", aanvullingen: "insignis, insigne", vertaling: "versierd; opvallend, opmerkelijk, buitengewoon", basis: true, teksten: ["9b/6"], volgorde: {"9b/6":56} },
+  { grondvorm: "instabilis", aanvullingen: "instabilis, instabile", vertaling: "onstabiel, onvast, onbegaanbaar", basis: true },
+  { grondvorm: "instituere", aanvullingen: "instituo, institui, institutum", vertaling: "inrichten, organiseren; bepalen, beslissen", basis: true, teksten: ["8a/5"], volgorde: {"8a/5":37} },
+  { grondvorm: "institutum", aanvullingen: "instituti, (o.)", vertaling: "instelling, zede, gewoonte, gebruik", teksten: ["9a/1"], volgorde: {"9a/1":18} },
+  { grondvorm: "instrumentum", aanvullingen: "instrumenti, (o.)", vertaling: "werktuig", teksten: ["8b/3"], volgorde: {"8b/3":41} },
+  { grondvorm: "insula", aanvullingen: "insulae, (v.)", vertaling: "eiland; flatgebouw", basis: true, teksten: ["6b/8"], volgorde: {"6b/8":1} },
+  { grondvorm: "intactus", aanvullingen: "intacta, intactum", vertaling: "onaangeraakt, onaangeroerd, ongedeerd", teksten: ["7b/2"], volgorde: {"7b/2":100} },
+  { grondvorm: "integer", aanvullingen: "integra, integrum", vertaling: "onbeschadigd, onaangeroerd", teksten: ["6b/2"], volgorde: {"6b/2":124} },
+  { grondvorm: "intellegere", aanvullingen: "intellego, intellexi, intellectum", vertaling: "begrijpen", basis: true },
+  { grondvorm: "inter", aanvullingen: "+ acc. (vz.)", vertaling: "tussen; tijdens", basis: true, teksten: ["10/14"], volgorde: {"10/14":1} },
+  { grondvorm: "inter se", aanvullingen: "(vaste uitdrukking)", vertaling: "onderling", teksten: ["9a/1"], volgorde: {"9a/1":20} },
+  { grondvorm: "intercursare", aanvullingen: "intercurso, intercursavi, intercursatum", vertaling: "lopen tussen, rennen tussen" },
+  { grondvorm: "interdum", aanvullingen: "(bijw.)", vertaling: "soms", teksten: ["6a/2","10/8"], volgorde: {"6a/2":103,"10/8":5} },
+  { grondvorm: "interea", aanvullingen: "(bijw.)", vertaling: "ondertussen", teksten: ["9b/7","10/26"], volgorde: {"9b/7":29,"10/26":13} },
+  { grondvorm: "interficere", aanvullingen: "interficio, interfeci, interfectum", vertaling: "doden", basis: true },
+  { grondvorm: "intericere", aanvullingen: "intericio, interieci, interiectum", vertaling: "ertussen gooien, inschuiven, invoegen" },
+  { grondvorm: "interim", aanvullingen: "(bijw.)", vertaling: "ondertussen", basis: true, teksten: ["6a/4","6b/2"], volgorde: {"6a/4":1,"6b/2":14} },
+  { grondvorm: "interimere", aanvullingen: "interimo, interemi, interemptum", vertaling: "doden", teksten: ["7a/5"], volgorde: {"7a/5":9} },
+  { grondvorm: "interire", aanvullingen: "intereo, interii, interitum", vertaling: "omkomen, vergaan" },
+  { grondvorm: "interpretamentum", aanvullingen: "interpretamenti, (o.)", vertaling: "verklaring, uitleg" },
+  { grondvorm: "interrogare", aanvullingen: "interrogo, interrogavi, interrogatum", vertaling: "vragen; ondervragen, verhoren", teksten: ["10/3"], volgorde: {"10/3":53} },
+  { grondvorm: "interrumpere", aanvullingen: "interrumpo, interrumpi, interruptum", vertaling: "onderbreken; afbreken" },
+  { grondvorm: "intolerabilis", aanvullingen: "intolerabilis, intolerabile", vertaling: "ondraaglijk", teksten: ["8b/6"], volgorde: {"8b/6":24} },
+  { grondvorm: "intra", aanvullingen: "+ acc. (vz.)", vertaling: "binnen, naar … binnen", basis: true, teksten: ["6a/4","7b/2"], volgorde: {"6a/4":23,"7b/2":19} },
+  { grondvorm: "intrare", aanvullingen: "intro, intravi, intratum", vertaling: "naar binnen gaan, binnengaan", teksten: ["7b/2"], volgorde: {"7b/2":5} },
+  { grondvorm: "introire", aanvullingen: "introeo, introii, introitum", vertaling: "naar binnen gaan, binnengaan", teksten: ["9b/9"], volgorde: {"9b/9":21} },
+  { grondvorm: "introïre", aanvullingen: "introeo, introii, introitum", vertaling: "naar binnen gaan, binnengaan" },
+  { grondvorm: "inturbidus", aanvullingen: "inturbida, inturbidum", vertaling: "ongestoord, rustig", teksten: ["6b/2"], volgorde: {"6b/2":18} },
+  { grondvorm: "intus", aanvullingen: "(bijw.)", vertaling: "vanbinnen, binnenin, binnen", teksten: ["6b/2"], volgorde: {"6b/2":22} },
+  { grondvorm: "inusitatus", aanvullingen: "inusitata, inusitatum", vertaling: "ongewoon, abnormaal", teksten: ["6a/2"], volgorde: {"6a/2":10} },
+  { grondvorm: "invenire", aanvullingen: "invenio, inveni, inventum", vertaling: "vinden, aantreffen", basis: true },
+  { grondvorm: "inventor", aanvullingen: "inventoris", vertaling: "uitvinder", teksten: ["9a/1"], volgorde: {"9a/1":30} },
+  { grondvorm: "investigare", aanvullingen: "investigo, investigavi, investigatum", vertaling: "uitzoeken, onderzoeken, trachten te weten te komen", teksten: ["10/3"], volgorde: {"10/3":59} },
+  { grondvorm: "invicem", aanvullingen: "(bijw.)", vertaling: "beurtelings, om de beurt" },
+  { grondvorm: "invidere", aanvullingen: "invideo, invidi, invisum", vertaling: "jaloers zijn" },
+  { grondvorm: "inviolatus", aanvullingen: "inviolata, inviolatum", vertaling: "ongeschonden, ongedeerd", teksten: ["7b/2"], volgorde: {"7b/2":101} },
+  { grondvorm: "invisus", aanvullingen: "invisa, invisum", vertaling: "ongezien, onbemert, verborgen", teksten: ["8b/9"], volgorde: {"8b/9":47} },
+  { grondvorm: "invitare", aanvullingen: "invito, invitavi, invitatum", vertaling: "uitnodigen" },
+  { grondvorm: "involvere", aanvullingen: "involvo, involui, involutum", vertaling: "wentelen in, wikkelen in" },
+  { grondvorm: "iocari", aanvullingen: "iocor, iocatus sum", vertaling: "grappen maken, plezier maken" },
+  { grondvorm: "Iolaus", aanvullingen: "Iolai", vertaling: "Jolaüs (eigennaam)" },
+  { grondvorm: "Ionius", aanvullingen: "Ionia, Ionium", vertaling: "Ionisch" },
+  { grondvorm: "Iphis", aanvullingen: "Iphis", vertaling: "Iphis (eigennaam)", teksten: ["7a/5"], volgorde: {"7a/5":34} },
+  { grondvorm: "ipse", aanvullingen: "ipsa, ipsum (aanw. vnw.)", vertaling: "zelf", teksten: ["8a/3","9a/1"], volgorde: {"8a/3":120,"9a/1":13} },
+  { grondvorm: "ira", aanvullingen: "irae, (v.)", vertaling: "woede", basis: true, teksten: ["8a/3"], volgorde: {"8a/3":116} },
+  { grondvorm: "iratus", aanvullingen: "irata, iratum", vertaling: "kwaad, woedend" },
+  { grondvorm: "ire", aanvullingen: "eo, ii, itum", vertaling: "gaan", basis: true, teksten: ["6a/4","7b/4","9b/7","9b/10"], volgorde: {"6a/4":52,"7b/4":89,"9b/7":3,"9b/10":6} },
+  { grondvorm: "inrumpere", aanvullingen: "inrumpo, inrupi, inruptum", vertaling: "binnendringen, binnenvallen, binnenstormen", teksten: ["10/3"], volgorde: {"10/3":49} },
+  { grondvorm: "is", aanvullingen: "ea, id (aanw. vnw.)", vertaling: "die, dat; hij, zij, het", basis: true },
+  { grondvorm: "iste", aanvullingen: "ista, istud (aanw. vnw.)", vertaling: "die, dat; hij, zij, het" },
+  { grondvorm: "istic", aanvullingen: "(bijw.)", vertaling: "daar, op die plaats" },
+  { grondvorm: "ita", aanvullingen: "(bijw.)", vertaling: "zo, op die manier", basis: true, teksten: ["9b/4","9b/5"], volgorde: {"9b/4":39,"9b/5":15} },
+  { grondvorm: "ita … ut", aanvullingen: "+ conj.", vertaling: "zo … dat", teksten: ["9b/4"], volgorde: {"9b/4":41} },
+  { grondvorm: "Italia", aanvullingen: "Italiae", vertaling: "Italië", teksten: ["8b/9","9b/7"], volgorde: {"8b/9":106,"9b/7":44} },
+  { grondvorm: "Italicus", aanvullingen: "Italica, Italicum", vertaling: "Italisch", teksten: ["8a/5","8b/3"], volgorde: {"8a/5":4,"8b/3":6} },
+  { grondvorm: "Italicus", aanvullingen: "Italici", vertaling: "inwoner van Italië, Italiaan" },
+  { grondvorm: "itaque", aanvullingen: "(vgw.)", vertaling: "dus", basis: true, teksten: ["7a/1","10/19"], volgorde: {"7a/1":14,"10/19":28} },
+  { grondvorm: "item", aanvullingen: "", vertaling: "ook, eveneens", teksten: ["8b/3"], volgorde: {"8b/3":14} },
+  { grondvorm: "iter", aanvullingen: "itineris (o.)", vertaling: "weg; reis", basis: true, teksten: ["9a/1","9b/4"], volgorde: {"9a/1":35,"9b/4":14} },
+  { grondvorm: "iter facere", aanvullingen: "", vertaling: "op reis gaan, reizen", teksten: ["9b/4"], volgorde: {"9b/4":16} },
+  { grondvorm: "iterum", aanvullingen: "(bijw.)", vertaling: "opnieuw", teksten: ["10/26"], volgorde: {"10/26":95} },
+  { grondvorm: "iubere", aanvullingen: "iubeo, iussi, iussum", vertaling: "bevelen", basis: true, teksten: ["6b/4","7a/3","7b/2","7b/4","8b/10"], volgorde: {"6b/4":32,"7a/3":76,"7b/2":95,"7b/4":31,"8b/10":9} },
+  { grondvorm: "iucundus", aanvullingen: "iucunda, iucundum", vertaling: "aangenaam, prettig, leuk", basis: true },
+  { grondvorm: "iudex", aanvullingen: "iudicis (m.)", vertaling: "rechter" },
+  { grondvorm: "iudicium", aanvullingen: "iudicii, (o.)", vertaling: "oordeel, vonnis; proces; rechtspraak", teksten: ["8a/5"], volgorde: {"8a/5":29} },
+  { grondvorm: "iugerum", aanvullingen: "iugeri, (o.)", vertaling: "een morgen land (= ¼ hectare)", teksten: ["8a/5"], volgorde: {"8a/5":16} },
+  { grondvorm: "iugulum", aanvullingen: "iuguli, (o.)", vertaling: "keel, hals" },
+  { grondvorm: "iugum", aanvullingen: "iugi, (o.)", vertaling: "juk" },
+  { grondvorm: "Iulianus", aanvullingen: "Iuliani", vertaling: "Iulianus (eigennaam)" },
+  { grondvorm: "Iulius", aanvullingen: "Iulia, Iulium", vertaling: "van de maand juli", teksten: ["6b/8"], volgorde: {"6b/8":7} },
+  { grondvorm: "Iulius", aanvullingen: "Iulii", vertaling: "Iulius (eigennaam)" },
+  { grondvorm: "iumentum", aanvullingen: "iumenti", vertaling: "lastdier", teksten: ["7a/7"], volgorde: {"7a/7":21} },
+  { grondvorm: "iungere", aanvullingen: "iungo, iunxi, iunctum", vertaling: "verbinden", basis: true, teksten: ["9b/6"], volgorde: {"9b/6":42} },
+  { grondvorm: "Iuno", aanvullingen: "Iunonis", vertaling: "(de godin) Juno" },
+  { grondvorm: "Iupiter", aanvullingen: "Iovis", vertaling: "(de god) Jupiter", teksten: ["7a/2","9a/1"], volgorde: {"7a/2":8,"9a/1":40} },
+  { grondvorm: "iure", aanvullingen: "(bijw.)", vertaling: "met recht, terecht", teksten: ["10/14"], volgorde: {"10/14":7} },
+  { grondvorm: "ius", aanvullingen: "iuris (o.)", vertaling: "recht, rechtspraak", teksten: ["7a/8","8a/3","10/14"], volgorde: {"7a/8":10,"8a/3":64,"10/14":6} },
+  { grondvorm: "iussus", aanvullingen: "iussus, (m.)", vertaling: "bevel" },
+  { grondvorm: "iustitia", aanvullingen: "iustitiae, (v.)", vertaling: "rechtvaardigheid, gerechtigheid", basis: true },
+  { grondvorm: "iustus", aanvullingen: "iusta, iustum", vertaling: "rechtvaardig; wettig; eerlijk, juist", basis: true },
+  { grondvorm: "iuvare", aanvullingen: "iuvo, iuvi, iutum", vertaling: "helpen", teksten: ["7a/1","7b/2"], volgorde: {"7a/1":38,"7b/2":11} },
+  { grondvorm: "iuvencus", aanvullingen: "iuvenci", vertaling: "(jonge) stier" },
+  { grondvorm: "iuvenescere", aanvullingen: "iuvenesco, –, –", vertaling: "terug jong worden, verjongen" },
+  { grondvorm: "iuvenis", aanvullingen: "iuvenis (m.)", vertaling: "jongeman (tussen 30 en 45 jaar)", teksten: ["7a/1","7b/2"], volgorde: {"7a/1":34,"7b/2":94} },
+  { grondvorm: "iuventus", aanvullingen: "iuventutis, (v.)", vertaling: "jeugd", teksten: ["7b/2","7b/4"], volgorde: {"7b/2":75,"7b/4":67} },
+  { grondvorm: "Kal.", aanvullingen: "Kalendae, Kalendarum (enkel mv.)", vertaling: "Kalenden (= 1e dag van de maand)", teksten: ["6a/2","6b/8","7a/2"], volgorde: {"6a/2":2,"6b/8":6,"7a/2":4} },
+  { grondvorm: "labes", aanvullingen: "labis, (v.)", vertaling: "gebrek" },
+  { grondvorm: "labi", aanvullingen: "labor, lapsus sum", vertaling: "glijden" },
+  { grondvorm: "labium", aanvullingen: "labii, (o.)", vertaling: "lip" },
+  { grondvorm: "labor", aanvullingen: "laboris, (m.)", vertaling: "moeite, inspanning; werk, arbeid", basis: true, teksten: ["8a/3","10/14"], volgorde: {"8a/3":19,"10/14":29} },
+  { grondvorm: "laborare", aanvullingen: "laboro, laboravi, laboratum", vertaling: "werken, zwoegen", teksten: ["7a/1","8b/6"], volgorde: {"7a/1":57,"8b/6":28} },
+  { grondvorm: "lac", aanvullingen: "lactis, (o.)", vertaling: "melk" },
+  { grondvorm: "lacer", aanvullingen: "lacera, lacerum", vertaling: "verscheurd", teksten: ["6b/2"], volgorde: {"6b/2":136} },
+  { grondvorm: "lacrima", aanvullingen: "lacrimae, (v.)", vertaling: "traan", teksten: ["7a/3"], volgorde: {"7a/3":58} },
+  { grondvorm: "lacus", aanvullingen: "lacus, (m.)", vertaling: "meer" },
+  { grondvorm: "Laecania", aanvullingen: "Laecaniae", vertaling: "Laecania (eigennaam)" },
+  { grondvorm: "laetus", aanvullingen: "laeta, laetum", vertaling: "blij, verheugd" },
+  { grondvorm: "lamenta", aanvullingen: "lamentorum (enkel mv.)", vertaling: "gejammer, gehuil", teksten: ["6b/2"], volgorde: {"6b/2":109} },
+  { grondvorm: "lana", aanvullingen: "lanae, (v.)", vertaling: "wol", teksten: ["7a/6"], volgorde: {"7a/6":2} },
+  { grondvorm: "lanificium", aanvullingen: "lanificii, (o.)", vertaling: "het maken van wol, het spinnen", teksten: ["7b/6"], volgorde: {"7b/6":8} },
+  { grondvorm: "lanius", aanvullingen: "lanii", vertaling: "slager", teksten: ["6b/1"], volgorde: {"6b/1":4} },
+  { grondvorm: "lapidarius", aanvullingen: "lapidaria, lapidarium", vertaling: "steen-, die stenen vervoert", teksten: ["7a/7"], volgorde: {"7a/7":22} },
+  { grondvorm: "lapidosus", aanvullingen: "lapidosa, lapidosum", vertaling: "vol met stenen" },
+  { grondvorm: "lapillus", aanvullingen: "lapilli, (m.)", vertaling: "steentje", teksten: ["6a/4"], volgorde: {"6a/4":62} },
+  { grondvorm: "lapis", aanvullingen: "lapidis (m.)", vertaling: "steen", basis: true, teksten: ["6b/2"], volgorde: {"6b/2":84} },
+  { grondvorm: "lapsus", aanvullingen: "lapsus, (m.)", vertaling: "misstap, fout, vergissing" },
+  { grondvorm: "lar", aanvullingen: "laris (m.)", vertaling: "huisgod", basis: true, teksten: ["9b/10"], volgorde: {"9b/10":12} },
+  { grondvorm: "lardum", aanvullingen: "lardi, (o.)", vertaling: "spek" },
+  { grondvorm: "laser", aanvullingen: "laseris (o.)", vertaling: "silphium (= soort plant)" },
+  { grondvorm: "lassitudo", aanvullingen: "lassitudinis, (v.)", vertaling: "vermoeidheid", teksten: ["10/8"], volgorde: {"10/8":27} },
+  { grondvorm: "Latinus", aanvullingen: "Latina, Latinum", vertaling: "Latijns" },
+  { grondvorm: "latissimus", aanvullingen: "latissima, latissimum", vertaling: "breedst, zeer breed, wijdst, zeer wijd", teksten: ["6a/4"], volgorde: {"6a/4":8} },
+  { grondvorm: "Latium", aanvullingen: "Latii", vertaling: "(de streek) Latium" },
+  { grondvorm: "Latona", aanvullingen: "Latonae", vertaling: "Latona (eigennaam)" },
+  { grondvorm: "latrare", aanvullingen: "latro, latravi, latratum", vertaling: "blaffen" },
+  { grondvorm: "latro", aanvullingen: "latronis", vertaling: "rover, bandiet" },
+  { grondvorm: "latus", aanvullingen: "lata, latum", vertaling: "breed, wijd", basis: true, teksten: ["9b/5","6a/7"], volgorde: {"9b/5":17,"6a/7":39} },
+  { grondvorm: "latus", aanvullingen: "lateris, (o.)", vertaling: "zijde, flank, kant, zijkant", teksten: [] },
+  { grondvorm: "lavare", aanvullingen: "lavo, lavi, lautum", vertaling: "wassen", teksten: ["7a/3"], volgorde: {"7a/3":60} },
+  { grondvorm: "Lavinium", aanvullingen: "Lavinii", vertaling: "(de stad) Lavinium" },
+  { grondvorm: "lectica", aanvullingen: "lecticae", vertaling: "draagstoel", teksten: ["6b/2"], volgorde: {"6b/2":9} },
+  { grondvorm: "lectus", aanvullingen: "lecti, (m.)", vertaling: "bed", teksten: ["9b/3","9b/5"], volgorde: {"9b/3":7,"9b/5":75} },
+  { grondvorm: "legatus", aanvullingen: "legati, (m.)", vertaling: "gezant" },
+  { grondvorm: "legere", aanvullingen: "lego, legi, lectum", vertaling: "verzamelen; lezen; kiezen", basis: true, teksten: ["6b/2"], volgorde: {"6b/2":16} },
+  { grondvorm: "legio", aanvullingen: "legionis, (v.)", vertaling: "legioen", basis: true },
+  { grondvorm: "legitimus", aanvullingen: "legitima, legitimum", vertaling: "wettelijk, door de wet toegestaan" },
+  { grondvorm: "lenis", aanvullingen: "lenis, lene", vertaling: "zacht, mild, kalm", teksten: ["9b/7"], volgorde: {"9b/7":39} },
+  { grondvorm: "lenissimus", aanvullingen: "lenissima, lenissimum", vertaling: "zachts, mildst, kalmst; zeer zacht, zeer mild, zeer kalm", teksten: ["9b/7"], volgorde: {"9b/7":40} },
+  { grondvorm: "Lentulus", aanvullingen: "Lentuli", vertaling: "Lentulus (eigennaam)", teksten: ["8b/9"], volgorde: {"8b/9":5} },
+  { grondvorm: "lentus", aanvullingen: "lenta, lentum", vertaling: "traag" },
+  { grondvorm: "leo", aanvullingen: "leonis (m.)", vertaling: "leeuw" },
+  { grondvorm: "Leontius", aanvullingen: "Leontii", vertaling: "Leontius (eigennaam)" },
+  { grondvorm: "lepidus", aanvullingen: "lepida, lepidum", vertaling: "lief, charmant; grappig, geestig", teksten: ["7a/6"], volgorde: {"7a/6":30} },
+  { grondvorm: "lepus", aanvullingen: "leporis (m.)", vertaling: "haas" },
+  { grondvorm: "Leucas", aanvullingen: "Leucadis", vertaling: "(het eiland) Leucas (nu: Lefkadia)", teksten: ["9b/9"], volgorde: {"9b/9":5} },
+  { grondvorm: "levare", aanvullingen: "levo, levavi, levatum + abl.", vertaling: "verlichten van, bevrijden van", teksten: ["9b/9"], volgorde: {"9b/9":35} },
+  { grondvorm: "levis", aanvullingen: "levis, leve", vertaling: "licht, mild, zacht", basis: true, teksten: ["6a/1","10/8"], volgorde: {"6a/1":31,"10/8":8} },
+  { grondvorm: "lex", aanvullingen: "legis, (v.)", vertaling: "wet", basis: true, teksten: ["8a/5","9a/1"], volgorde: {"8a/5":20,"9a/1":19} },
+  { grondvorm: "lex Licinia", aanvullingen: "legis Liciniae", vertaling: "de Licinische wet", teksten: ["8a/5"], volgorde: {"8a/5":21} },
+  { grondvorm: "libens", aanvullingen: "libens, libens; libentis", vertaling: "graag, gewillig, met veel plezier" },
+  { grondvorm: "libenter", aanvullingen: "(bijw.)", vertaling: "graag, gewillig, met veel plezier", basis: true },
+  { grondvorm: "liber", aanvullingen: "libera, liberum", vertaling: "vrij", basis: true, teksten: ["7a/7","8a/3","8b/10"], volgorde: {"7a/7":31,"8a/3":59,"8b/10":6} },
+  { grondvorm: "liber", aanvullingen: "libri", vertaling: "boek", basis: true },
+  { grondvorm: "Libera", aanvullingen: "Liberae", vertaling: "Libera (andere naam voor de godin Proserpina)" },
+  { grondvorm: "liberare", aanvullingen: "libero, liberavi, liberatum", vertaling: "bevrijden", basis: true },
+  { grondvorm: "liberator", aanvullingen: "liberatoris", vertaling: "bevrijder" },
+  { grondvorm: "liberi", aanvullingen: "liberorum (enkel mv.)", vertaling: "kinderen", basis: true, teksten: ["6b/2","7b/4","8b/5"], volgorde: {"6b/2":113,"7b/4":70,"8b/5":25} },
+  { grondvorm: "libertas", aanvullingen: "libertatis", vertaling: "vrijheid", basis: true, teksten: ["8b/10"], volgorde: {"8b/10":1} },
+  { grondvorm: "libertus", aanvullingen: "liberti", vertaling: "vrijgelatene, ex-slaaf" },
+  { grondvorm: "libido", aanvullingen: "libidinis, (v.)", vertaling: "wellust, losbandigheid" },
+  { grondvorm: "liceat", aanvullingen: "", vertaling: "het is toegelaten, het mag; het is mogelijk; het kan", teksten: ["9b/10"], volgorde: {"9b/10":10} },
+  { grondvorm: "licens", aanvullingen: "licens, licens; licentis", vertaling: "vrij; brutaal, arrogant" },
+  { grondvorm: "licet", aanvullingen: "", vertaling: "het is toegelaten, het mag; het is mogelijk; het kan", teksten: ["9b/10"], volgorde: {"9b/10":9} },
+  { grondvorm: "lictor", aanvullingen: "lictoris, (m.)", vertaling: "lictor (soort van bodyguard van de consuls, zij droegen de fasces)", teksten: ["7b/4"], volgorde: {"7b/4":90} },
+  { grondvorm: "Ligdus", aanvullingen: "Ligdi", vertaling: "Ligdus (eigennaam)", teksten: ["7a/3"], volgorde: {"7a/3":9} },
+  { grondvorm: "ligneus", aanvullingen: "lignea, ligneum", vertaling: "van hout gemaakt, houten" },
+  { grondvorm: "limen", aanvullingen: "liminis, (o.)", vertaling: "drempel", teksten: ["6b/1"], volgorde: {"6b/1":9} },
+  { grondvorm: "lineamentum", aanvullingen: "lineamenti, (o.)", vertaling: "streep, lijn; omtrek, schets", teksten: ["10/3"], volgorde: {"10/3":78} },
+  { grondvorm: "lingere", aanvullingen: "lingo, linxi, linctum", vertaling: "likken, aflikken" },
+  { grondvorm: "lingua", aanvullingen: "linguae, (v.)", vertaling: "tong; taal", teksten: ["9a/1"], volgorde: {"9a/1":14} },
+  { grondvorm: "linteum", aanvullingen: "lintei, (o.)", vertaling: "linnen doek, linnen laken", teksten: ["6a/4"], volgorde: {"6a/4":57} },
+  { grondvorm: "liquamen", aanvullingen: "liquaminis, (o.)", vertaling: "ook garum genaamd: een soort vissaus, die bereid werd uit gepekelde vissen" },
+  { grondvorm: "liquor", aanvullingen: "liquoris, (m.)", vertaling: "vloeistof, vocht", teksten: ["10/21"], volgorde: {"10/21":40} },
+  { grondvorm: "littera", aanvullingen: "litterae, (v.)", vertaling: "letter; mv.: letters, brief", teksten: ["9b/9"], volgorde: {"9b/9":30} },
+  { grondvorm: "litus", aanvullingen: "litoris, (o.)", vertaling: "kust, strand", basis: true, teksten: ["6a/4","9b/5"], volgorde: {"6a/4":51,"9b/5":5} },
+  { grondvorm: "locare", aanvullingen: "loco, locavi, locatum", vertaling: "plaatsen; verhuren", teksten: ["6b/8","7a/6","7a/7","9b/3","10/26"], volgorde: {"6b/8":4,"7a/6":28,"7a/7":26,"9b/3":3,"10/26":62} },
+  { grondvorm: "locare operas", aanvullingen: "locare operas + gen.", vertaling: "zich verhuren als", teksten: ["7a/7"], volgorde: {"7a/7":27} },
+  { grondvorm: "locus", aanvullingen: "loci (in het mv. onz.), (m.)", vertaling: "plaats", basis: true, teksten: ["6a/4","6b/3","8b/5","9a/4","9b/6","6a/2","6a/7"], volgorde: {"6a/4":6,"6b/3":48,"8b/5":39,"9a/4":19,"9b/6":16,"6a/2":87,"6a/7":71} },
+  { grondvorm: "longinquus", aanvullingen: "longinqua, longinquum", vertaling: "lang, ver", teksten: ["9b/5"], volgorde: {"9b/5":23} },
+  { grondvorm: "longitudo", aanvullingen: "longitudinis, (v.)", vertaling: "lengte", teksten: ["6b/5"], volgorde: {"6b/5":18} },
+  { grondvorm: "longus", aanvullingen: "longa, longum", vertaling: "lang, ver", basis: true, teksten: ["7b/2","9b/4","10/26","6a/7"], volgorde: {"7b/2":69,"9b/4":4,"10/26":59,"6a/7":43} },
+  { grondvorm: "loqui", aanvullingen: "loquor, locutus sum", vertaling: "spreken", teksten: ["10/26"], volgorde: {"10/26":39} },
+  { grondvorm: "Lucius Aemilius Paulus", aanvullingen: "Lucii Aemilii Pauli", vertaling: "Lucius Aemilius Paulus (eigennaam)", teksten: ["9b/6"], volgorde: {"9b/6":1} },
+  { grondvorm: "Lucius Cotta", aanvullingen: "Lucii Cottae", vertaling: "Lucius Cotta (eigennaam)" },
+  { grondvorm: "Lucius Iunius Brutus", aanvullingen: "Lucii Iunii Bruti", vertaling: "Lucius Junius Brutus (eigennaam)" },
+  { grondvorm: "Lucius Petrosidius", aanvullingen: "Lucii Petrosidii", vertaling: "Lucius Petrosidius (eigennaam)" },
+  { grondvorm: "Lucretia", aanvullingen: "Lucretiae", vertaling: "Lucretia (eigennaam)" },
+  { grondvorm: "luctari", aanvullingen: "luctor, luctatus sum + dat.", vertaling: "worstelen met", teksten: ["6b/2"], volgorde: {"6b/2":93} },
+  { grondvorm: "luculentus", aanvullingen: "luculenta, luculentum", vertaling: "licht, helder" },
+  { grondvorm: "lucus", aanvullingen: "luci, (m.)", vertaling: "aan een god gewijd bos, heilig bos, bos" },
+  { grondvorm: "ludi magister", aanvullingen: "ludi magistri", vertaling: "onderwijzer, leraar", teksten: ["6b/3"], volgorde: {"6b/3":52} },
+  { grondvorm: "ludibundus", aanvullingen: "ludibunda, ludibundum", vertaling: "spelend, plezier makend, zonder zorgen", teksten: ["9b/7"], volgorde: {"9b/7":46} },
+  { grondvorm: "ludus", aanvullingen: "ludi, (m.)", vertaling: "spel; mv.: (publieke) spelen; school, gladiatorenschool", teksten: ["8b/9"], volgorde: {"8b/9":6} },
+  { grondvorm: "lumbus", aanvullingen: "lumbi (meestal mv.), (m.)", vertaling: "lende(nen)", teksten: ["6b/2"], volgorde: {"6b/2":36} },
+  { grondvorm: "lumen", aanvullingen: "luminis, (o.)", vertaling: "licht; oog" },
+  { grondvorm: "luna", aanvullingen: "lunae, (v.)", vertaling: "maan" },
+  { grondvorm: "lupa", aanvullingen: "lupae, (v.)", vertaling: "wolvin" },
+  { grondvorm: "lusus", aanvullingen: "lusus, (m.)", vertaling: "spel" },
+  { grondvorm: "lutulentus", aanvullingen: "lutulenta, lutulentum", vertaling: "modderig, vuil", teksten: ["6b/2"], volgorde: {"6b/2":98} },
+  { grondvorm: "lutum", aanvullingen: "luti, (o.)", vertaling: "modder, slijk", teksten: ["6b/2"], volgorde: {"6b/2":103} },
+  { grondvorm: "lux", aanvullingen: "lucis, (v.)", vertaling: "licht, daglicht, dag", basis: true },
+  { grondvorm: "machina", aanvullingen: "machinae, (v.)", vertaling: "machine, hijskraan", teksten: ["6b/2"], volgorde: {"6b/2":81} },
+  { grondvorm: "machinatio", aanvullingen: "machinationis, (v.)", vertaling: "machine, hijskraan", teksten: ["10/3"], volgorde: {"10/3":21} },
+  { grondvorm: "macies", aanvullingen: "maciei", vertaling: "magerheid" },
+  { grondvorm: "maculosus", aanvullingen: "maculosa, maculosum", vertaling: "gevlekt, bevlekt, besmeurd", teksten: ["6a/2"], volgorde: {"6a/2":105} },
+  { grondvorm: "magis", aanvullingen: "(bijw.)", vertaling: "meer", teksten: ["8b/5","9b/10"], volgorde: {"8b/5":52,"9b/10":5} },
+  { grondvorm: "magis quam", aanvullingen: "(bijw.)", vertaling: "meer … dan", teksten: ["7b/2","8b/6"], volgorde: {"7b/2":97,"8b/6":3} },
+  { grondvorm: "magis … quam", aanvullingen: "", vertaling: "meer … dan" },
+  { grondvorm: "magister", aanvullingen: "magistri", vertaling: "meester, leraar", basis: true },
+  { grondvorm: "magnificus", aanvullingen: "magnifica, magnificum", vertaling: "luisterrijk, prachtig, sjiek" },
+  { grondvorm: "magnitudo", aanvullingen: "magnitudinis, (v.)", vertaling: "grootte, omvang", basis: true, teksten: ["6a/2"], volgorde: {"6a/2":13} },
+  { grondvorm: "magnus", aanvullingen: "magna, magnum", vertaling: "groot", basis: true, teksten: ["6a/1","6b/1","6b/2","6b/5","7b/2","8a/3","8a/6","9b/4","9b/6","9b/9","6a/7"], volgorde: {"6a/1":16,"6b/1":15,"6b/2":35,"6b/5":21,"7b/2":9,"8a/3":71,"8a/6":33,"9b/4":2,"9b/6":45,"9b/9":62,"6a/7":49} },
+  { grondvorm: "maiestas", aanvullingen: "maiestatis, (v.)", vertaling: "verhevenheid, waardigheid, aanzien, gezag", teksten: ["7b/4"], volgorde: {"7b/4":37} },
+  { grondvorm: "maior", aanvullingen: "maior, maius; maioris", vertaling: "groter", teksten: ["8a/3","8a/6","6a/7"], volgorde: {"8a/3":72,"8a/6":34,"6a/7":50} },
+  { grondvorm: "maledicere", aanvullingen: "maledico, maledixi, maledictum + dat.", vertaling: "kwaad spreken over, uitschelden, vervloeken", basis: true, teksten: ["7a/7"], volgorde: {"7a/7":12} },
+  { grondvorm: "maledictum", aanvullingen: "maledicti, (o.)", vertaling: "vervloeking; scheldwoord", teksten: ["7a/7"], volgorde: {"7a/7":37} },
+  { grondvorm: "malignus", aanvullingen: "maligna, malignum", vertaling: "slecht, kwaadaardig, onbetrouwbaar", teksten: ["9b/4"], volgorde: {"9b/4":13} },
+  { grondvorm: "malle", aanvullingen: "malo, malui, –", vertaling: "liever willen, verkiezen", basis: true },
+  { grondvorm: "malum", aanvullingen: "mali, (o.)", vertaling: "kwaad, ellende, onheil, ramp", basis: true, teksten: ["6a/1"], volgorde: {"6a/1":14} },
+  { grondvorm: "malus", aanvullingen: "mala, malum", vertaling: "slecht, kwaadaardig", basis: true, teksten: ["9b/4","10/8"], volgorde: {"9b/4":20,"10/8":11} },
+  { grondvorm: "mancipium", aanvullingen: "mancipii, (o.)", vertaling: "eigendom, bezit; slaaf", teksten: ["8a/3","8b/3"], volgorde: {"8a/3":49,"8b/3":1} },
+  { grondvorm: "mandare", aanvullingen: "mando, mandavi, mandatum", vertaling: "toevertouwen, opdragen, bevelen", basis: true, teksten: ["7a/3"], volgorde: {"7a/3":52} },
+  { grondvorm: "mandatum", aanvullingen: "mandati, (o.)", vertaling: "opdracht, bevel", teksten: ["7a/3"], volgorde: {"7a/3":55} },
+  { grondvorm: "mandra", aanvullingen: "mandrae, (v.)", vertaling: "kudde", teksten: ["6b/3"], volgorde: {"6b/3":31} },
+  { grondvorm: "manducare", aanvullingen: "manduco, manducavi, manducatum", vertaling: "eten, opeten" },
+  { grondvorm: "mane", aanvullingen: "(bijw.)", vertaling: "'s morgens", teksten: ["6b/3"], volgorde: {"6b/3":53} },
+  { grondvorm: "manere", aanvullingen: "maneo, mansi, mansum", vertaling: "blijven; wachten", basis: true, teksten: ["6b/2","9b/7"], volgorde: {"6b/2":125,"9b/7":27} },
+  { grondvorm: "Manes", aanvullingen: "Manium (enkel mv.)", vertaling: "de Manes (= geesten van de doden)" },
+  { grondvorm: "manes", aanvullingen: "manium (enkel mv.)", vertaling: "geest(en)" },
+  { grondvorm: "manicatus", aanvullingen: "manicata, manicatum", vertaling: "van lange mouwen voorzien, met lange mouwen", teksten: ["8b/6"], volgorde: {"8b/6":14} },
+  { grondvorm: "manifestus", aanvullingen: "manifesta, manifestum", vertaling: "duidelijk, overduidelijk" },
+  { grondvorm: "Manlius", aanvullingen: "Manlii", vertaling: "Manlius (eigennaam)" },
+  { grondvorm: "Manneia", aanvullingen: "Manneiae", vertaling: "Manneia (eigennaam)" },
+  { grondvorm: "mansuetus", aanvullingen: "mansueta, mansuetum", vertaling: "getemd, tam", teksten: ["10/14"], volgorde: {"10/14":49} },
+  { grondvorm: "manum de tabula", aanvullingen: "", vertaling: "'de hand van de tafel opheffen' → ergens mee ophouden, ergens mee stoppen" },
+  { grondvorm: "manumittere", aanvullingen: "manumitto, manumisi, manumissum", vertaling: "(een slaaf) vrijlaten", teksten: ["8b/10"], volgorde: {"8b/10":18} },
+  { grondvorm: "manus", aanvullingen: "manus (v.)", vertaling: "hand", basis: true, teksten: ["8a/3","8b/6","10/3","10/26"], volgorde: {"8a/3":35,"8b/6":54,"10/3":62,"10/26":96} },
+  { grondvorm: "Marcellus", aanvullingen: "Marcelli", vertaling: "Marcellus (eigennaam)", teksten: ["10/3"], volgorde: {"10/3":19} },
+  { grondvorm: "marculus", aanvullingen: "marculi", vertaling: "hamertje", teksten: ["6b/3"], volgorde: {"6b/3":6} },
+  { grondvorm: "Marcus Licinius Crassus", aanvullingen: "Marci Licinii Crassi", vertaling: "Marcus Licinius Crassus (eigennaam)", teksten: ["8b/9"], volgorde: {"8b/9":101} },
+  { grondvorm: "Marcus", aanvullingen: "Marci", vertaling: "Marcus (eigennaam)" },
+  { grondvorm: "mare", aanvullingen: "maris, (o.)", vertaling: "zee", basis: true, teksten: ["9b/5","9b/9","10/21","6a/7"], volgorde: {"9b/5":19,"9b/9":61,"10/21":28,"6a/7":29} },
+  { grondvorm: "maritus", aanvullingen: "mariti, (m.)", vertaling: "echtgenoot, man", teksten: ["7a/3","7a/6"], volgorde: {"7a/3":62,"7a/6":16} },
+  { grondvorm: "marmoreus", aanvullingen: "marmorea, marmoreum", vertaling: "van marmer gemaakt, marmeren" },
+  { grondvorm: "Mars", aanvullingen: "Martis", vertaling: "(de god) Mars", teksten: ["9a/1"], volgorde: {"9a/1":39} },
+  { grondvorm: "matella", aanvullingen: "matellae, (v.)", vertaling: "pispot" },
+  { grondvorm: "mater", aanvullingen: "matris (v.)", vertaling: "moeder", basis: true, teksten: ["7a/3","7b/6"], volgorde: {"7a/3":73,"7b/6":28} },
+  { grondvorm: "materia", aanvullingen: "materiae, (v.)", vertaling: "stof, bouwmateriaal, materie", basis: true, teksten: ["9b/6"], volgorde: {"9b/6":54} },
+  { grondvorm: "maternus", aanvullingen: "materna, maternumum", vertaling: "langs moederskant" },
+  { grondvorm: "matrimus", aanvullingen: "matrima, matrimum", vertaling: "wiens moeder nog in leven is" },
+  { grondvorm: "matrona", aanvullingen: "matronae", vertaling: "getrouwde vrouw, matrone", teksten: ["9a/1"], volgorde: {"9a/1":25} },
+  { grondvorm: "Matrona", aanvullingen: "Matronae", vertaling: "(de rivier) Marne" },
+  { grondvorm: "maturus", aanvullingen: "matura, maturum", vertaling: "rijp" },
+  { grondvorm: "maxime", aanvullingen: "(bijw.)", vertaling: "het meest, vooral", teksten: ["9a/4","10/14"], volgorde: {"9a/4":2,"10/14":42} },
+  { grondvorm: "maximus", aanvullingen: "maxima, maximum", vertaling: "grootst, zeer groot", basis: true },
+  { grondvorm: "Maximus", aanvullingen: "Maximi", vertaling: "Maximus (eigennaam)" },
+  { grondvorm: "mecum", aanvullingen: "", vertaling: "= cum me" },
+  { grondvorm: "medicamentum", aanvullingen: "medicamenti", vertaling: "geneesmiddel" },
+  { grondvorm: "medicus", aanvullingen: "medici", vertaling: "dokter, arts", basis: true, teksten: ["10/9"], volgorde: {"10/9":6} },
+  { grondvorm: "medium", aanvullingen: "medii", vertaling: "midden", teksten: ["8a/3"], volgorde: {"8a/3":25} },
+  { grondvorm: "medius", aanvullingen: "media, medium", vertaling: "middelste", basis: true, teksten: ["8a/3"], volgorde: {"8a/3":24} },
+  { grondvorm: "medulla", aanvullingen: "medullae", vertaling: "merg; het binnenste" },
+  { grondvorm: "mehercule", aanvullingen: "", vertaling: "bij Hercules!, warempel!, waarachtig!, verdomd!", teksten: ["8a/6"], volgorde: {"8a/6":30} },
+  { grondvorm: "mel", aanvullingen: "mellis (o.)", vertaling: "honing", teksten: ["6b/9","10/14"], volgorde: {"6b/9":14,"10/14":15} },
+  { grondvorm: "melior", aanvullingen: "melior, melius; melioris", vertaling: "beter", teksten: ["8a/6"], volgorde: {"8a/6":36} },
+  { grondvorm: "membra", aanvullingen: "membrorum (mv.)", vertaling: "ledematen", teksten: ["10/26"], volgorde: {"10/26":56} },
+  { grondvorm: "membrum", aanvullingen: "membri, (o.)", vertaling: "lid, mv.: ledematen", basis: true, teksten: ["8a/3"], volgorde: {"8a/3":7} },
+  { grondvorm: "meminisse", aanvullingen: "memini", vertaling: "zich herinneren", basis: true },
+  { grondvorm: "memorare", aanvullingen: "memoro, memoravi, memoratum", vertaling: "in herinnering brengen, vermelden", basis: true, teksten: ["7b/6"], volgorde: {"7b/6":18} },
+  { grondvorm: "memorem", aanvullingen: "", vertaling: "'ik zou in herinnering brengen', 'ik zou vermelden'", teksten: ["7b/6"], volgorde: {"7b/6":19} },
+  { grondvorm: "memoria", aanvullingen: "memoriae, (v.)", vertaling: "geheugen, herinnering, nagedachtenis", basis: true },
+  { grondvorm: "mendacium", aanvullingen: "mendacii, (o.)", vertaling: "leugen", teksten: ["7a/5"], volgorde: {"7a/5":26} },
+  { grondvorm: "mendicare", aanvullingen: "mendico, mendicavi, mendicatum", vertaling: "bedelen om, smeken om" },
+  { grondvorm: "Menenius Agrippa", aanvullingen: "Menenii Agrippae", vertaling: "Menenius Agrippa (eigennaam)", teksten: ["8a/3"], volgorde: {"8a/3":138} },
+  { grondvorm: "mens", aanvullingen: "mentis, (v.)", vertaling: "geest, verstand; manier", basis: true, teksten: ["7b/6","8a/3","10/26"], volgorde: {"7b/6":34,"8a/3":145,"10/26":7} },
+  { grondvorm: "mensis", aanvullingen: "mensis (m.)", vertaling: "maand" },
+  { grondvorm: "menta", aanvullingen: "mentae, (v.)", vertaling: "munt (= plant)" },
+  { grondvorm: "mercennarius", aanvullingen: "mercennarii", vertaling: "dagloner", teksten: ["7a/7"], volgorde: {"7a/7":1} },
+  { grondvorm: "mercimonium", aanvullingen: "mercimonii, (o.)", vertaling: "koopwaar, handelswaar", teksten: ["6b/5"], volgorde: {"6b/5":9} },
+  { grondvorm: "Mercurius", aanvullingen: "Mercurii", vertaling: "(de god) Mercurius", basis: true, teksten: ["9a/4"], volgorde: {"9a/4":3} },
+  { grondvorm: "merda", aanvullingen: "merdae, (v.)", vertaling: "stront" },
+  { grondvorm: "merere", aanvullingen: "mereo, merui, meritum", vertaling: "verdienen" },
+  { grondvorm: "meridies", aanvullingen: "meridiei", vertaling: "middag; zuiden", teksten: ["8b/6"], volgorde: {"8b/6":37} },
+  { grondvorm: "meritorium", aanvullingen: "meritorii, (o.)", vertaling: "gehuurde woning, huurwoning", teksten: ["6b/3"], volgorde: {"6b/3":21} },
+  { grondvorm: "Mescinius", aanvullingen: "Mescinii", vertaling: "Mescinius (eigennaam)", teksten: ["9b/9"], volgorde: {"9b/9":67} },
+  { grondvorm: "messis", aanvullingen: "messis, (v.)", vertaling: "oogst" },
+  { grondvorm: "meta", aanvullingen: "metae, (v.)", vertaling: "eindpaal" },
+  { grondvorm: "metallum", aanvullingen: "metalli, (o.)", vertaling: "erts, metaal; mijn" },
+  { grondvorm: "Metapontum", aanvullingen: "Metaponti", vertaling: "Metapontum (stad in Zuid-Italië)", teksten: ["8b/9"], volgorde: {"8b/9":64} },
+  { grondvorm: "metreta", aanvullingen: "metretae, (v.)", vertaling: "(grote) kruik", teksten: ["6b/2"], volgorde: {"6b/2":46} },
+  { grondvorm: "metuere", aanvullingen: "metuo, metui, –", vertaling: "vrezen, bang zijn voor", basis: true, teksten: ["6a/4"], volgorde: {"6a/4":46} },
+  { grondvorm: "metus", aanvullingen: "metus, (m.)", vertaling: "vrees, angst", basis: true },
+  { grondvorm: "meus", aanvullingen: "mea, meum (bezit. vnw.)", vertaling: "mijn", basis: true, teksten: ["7b/4"], volgorde: {"7b/4":60} },
+  { grondvorm: "mi", aanvullingen: "", vertaling: "= vocatief van meus: mijn, m'n", teksten: ["9b/9"], volgorde: {"9b/9":59} },
+  { grondvorm: "miles", aanvullingen: "militis (m.)", vertaling: "soldaat", basis: true, teksten: ["6b/2","7b/2","10/3"], volgorde: {"6b/2":53,"7b/2":35,"10/3":43} },
+  { grondvorm: "militare", aanvullingen: "milito, militavi, militatum", vertaling: "als soldaat dienen, soldaat zijn", teksten: ["8a/2"], volgorde: {"8a/2":5} },
+  { grondvorm: "militaris", aanvullingen: "militaris, militare", vertaling: "van een soldaat, militair", basis: true, teksten: ["7b/4"], volgorde: {"7b/4":48} },
+  { grondvorm: "militia", aanvullingen: "militiae, (v.)", vertaling: "krijgsdienst" },
+  { grondvorm: "mille", aanvullingen: "mv.: milia, milium", vertaling: "duizend", basis: true, teksten: ["8b/9","10/14","10/26"], volgorde: {"8b/9":22,"10/14":27,"10/26":51} },
+  { grondvorm: "minari", aanvullingen: "minor, minatus sum + dat.", vertaling: "bedreigen", teksten: ["6b/2"], volgorde: {"6b/2":88} },
+  { grondvorm: "Minerva", aanvullingen: "Minervae", vertaling: "(de godin) Minerva", basis: true, teksten: ["9a/1"], volgorde: {"9a/1":41} },
+  { grondvorm: "mingere", aanvullingen: "mingo, mixi, mictum", vertaling: "plassen, pissen" },
+  { grondvorm: "minime", aanvullingen: "(bijw.)", vertaling: "allerminst, helemaal niet, zeker niet" },
+  { grondvorm: "minimus", aanvullingen: "minima, minimum", vertaling: "minst, kleinst", basis: true, teksten: ["7a/3"], volgorde: {"7a/3":30} },
+  { grondvorm: "minister", aanvullingen: "ministri", vertaling: "dienaar, helper", teksten: ["8a/3"], volgorde: {"8a/3":128} },
+  { grondvorm: "ministerium", aanvullingen: "ministerii", vertaling: "hulp, dienst, taak, werk", teksten: ["7a/7","8a/3"], volgorde: {"7a/7":5,"8a/3":20} },
+  { grondvorm: "minor", aanvullingen: "minor, minus; minoris", vertaling: "kleiner; minder", teksten: ["9b/5"], volgorde: {"9b/5":12} },
+  { grondvorm: "Minos", aanvullingen: "Minois (m.)", vertaling: "Minos (eigennaam)" },
+  { grondvorm: "Minucius", aanvullingen: "Minucii", vertaling: "Minucius (eigennaam)" },
+  { grondvorm: "minus", aanvullingen: "(bijw.)", vertaling: "minder … dan" },
+  { grondvorm: "minus … quam", aanvullingen: "", vertaling: "minder … dan", teksten: ["7a/7"], volgorde: {"7a/7":30} },
+  { grondvorm: "mirabilis", aanvullingen: "mirabilis, mirabile", vertaling: "wonderbaarlijk, bewonderenswaardig" },
+  { grondvorm: "miraculum", aanvullingen: "miraculi", vertaling: "wonder, wonderbaarlijke/verbazingwekkende gebeurtenis", teksten: ["6a/2","7b/2"], volgorde: {"6a/2":91,"7b/2":89} },
+  { grondvorm: "mirandus", aanvullingen: "miranda, mirandum", vertaling: "wonderbaarlijk, bewonderenswaardig", teksten: ["6a/7"], volgorde: {"6a/7":16} },
+  { grondvorm: "mirari", aanvullingen: "miror, miratus sum", vertaling: "bewonderen; zich verwonderen over", basis: true, teksten: ["10/26"], volgorde: {"10/26":30} },
+  { grondvorm: "mirificus", aanvullingen: "mirifica, mirificum", vertaling: "wonderbaarlijk, bewonderenswaardig", teksten: ["9b/5"], volgorde: {"9b/5":47} },
+  { grondvorm: "mirus", aanvullingen: "mira, mirum", vertaling: "wonderbaarlijk, bewonderenswaardig", teksten: ["10/14","10/26"], volgorde: {"10/14":43,"10/26":14} },
+  { grondvorm: "miser", aanvullingen: "misera, miserum", vertaling: "arm, ellendig", basis: true },
+  { grondvorm: "miserabilis", aanvullingen: "miserabilis, miserabile", vertaling: "ellendig" },
+  { grondvorm: "miseria", aanvullingen: "miseriae, (v.)", vertaling: "ellende, verdriet" },
+  { grondvorm: "missus", aanvullingen: "missi", vertaling: "ex-soldaat" },
+  { grondvorm: "missus", aanvullingen: "missus", vertaling: "ronde" },
+  { grondvorm: "mittere", aanvullingen: "mitto, misi, missum", vertaling: "zenden, sturen", basis: true, teksten: ["8a/6"], volgorde: {"8a/6":15} },
+  { grondvorm: "mixtio", aanvullingen: "mixtionis, (v.)", vertaling: "vermenging, mengsel", teksten: ["10/21"], volgorde: {"10/21":32} },
+  { grondvorm: "modestus", aanvullingen: "modesta, modestum", vertaling: "bescheiden" },
+  { grondvorm: "modicus", aanvullingen: "modica, modicum", vertaling: "matig; bescheiden, nederig, eenvoudig", teksten: ["7b/6"], volgorde: {"7b/6":16} },
+  { grondvorm: "modo", aanvullingen: "(bijw.)", vertaling: "kort geleden, onlangs, pas; slechts", basis: true, teksten: ["6b/2"], volgorde: {"6b/2":59} },
+  { grondvorm: "modo ... modo", aanvullingen: "", vertaling: "nu eens … dan weer", teksten: ["10/26"], volgorde: {"10/26":41} },
+  { grondvorm: "modo … modo", aanvullingen: "", vertaling: "nu eens … dan weer" },
+  { grondvorm: "modus", aanvullingen: "modi, (m.)", vertaling: "maat; wijze, manier", basis: true, teksten: ["8b/10","6a/7"], volgorde: {"8b/10":5,"6a/7":66} },
+  { grondvorm: "moles", aanvullingen: "molis, (v.)", vertaling: "massa, gewicht", teksten: ["10/21"], volgorde: {"10/21":26} },
+  { grondvorm: "molestia", aanvullingen: "molestiae, (v.)", vertaling: "moeilijkheid, last; verdriet, ergernis", teksten: ["9b/9"], volgorde: {"9b/9":33} },
+  { grondvorm: "mollescere", aanvullingen: "mollesco, –, –", vertaling: "zacht worden", teksten: ["10/26"], volgorde: {"10/26":91} },
+  { grondvorm: "mollis", aanvullingen: "mollis, molle", vertaling: "zacht", basis: true },
+  { grondvorm: "monere", aanvullingen: "moneo, monui, monitum", vertaling: "waarschuwen; aansporen", basis: true, teksten: ["7a/3"], volgorde: {"7a/3":20} },
+  { grondvorm: "monile", aanvullingen: "monilis", vertaling: "halssnoer", teksten: ["10/26"], volgorde: {"10/26":60} },
+  { grondvorm: "mons", aanvullingen: "montis (m.)", vertaling: "berg", basis: true, teksten: ["6a/2","6a/4","8b/9","9b/5","10/21"], volgorde: {"6a/2":100,"6a/4":4,"8b/9":29,"9b/5":24,"10/21":17} },
+  { grondvorm: "monstrare", aanvullingen: "monstro, monstravi, monstratum", vertaling: "tonen" },
+  { grondvorm: "monumentum", aanvullingen: "monumenti, (o.)", vertaling: "herinneringsteken, overwinningsteken, monument", teksten: ["9b/6"], volgorde: {"9b/6":44} },
+  { grondvorm: "morari", aanvullingen: "moror, moratus sum", vertaling: "halt houden, stoppen, pauzeren", basis: true, teksten: ["9b/9"], volgorde: {"9b/9":12} },
+  { grondvorm: "morbus", aanvullingen: "morbi, (m.)", vertaling: "ziekte", teksten: ["9a/1"], volgorde: {"9a/1":50} },
+  { grondvorm: "mordere", aanvullingen: "mordeo, momordi, morsum", vertaling: "bijten" },
+  { grondvorm: "mori", aanvullingen: "morior, mortuus sum", vertaling: "sterven", basis: true, teksten: ["6b/3"], volgorde: {"6b/3":17} },
+  { grondvorm: "mors", aanvullingen: "mortis, (v.)", vertaling: "dood", basis: true, teksten: ["7b/4","8b/9"], volgorde: {"7b/4":74,"8b/9":136} },
+  { grondvorm: "mortalis", aanvullingen: "mortalis, mortale", vertaling: "sterfelijk", basis: true },
+  { grondvorm: "mortuus", aanvullingen: "mortui", vertaling: "dode" },
+  { grondvorm: "mos", aanvullingen: "moris (m.)", vertaling: "zede, gewoonte, gebruik", basis: true, teksten: ["10/14"], volgorde: {"10/14":45} },
+  { grondvorm: "moturus", aanvullingen: "motura, moturum", vertaling: "die de angst aanjaagt, die doet schrikken" },
+  { grondvorm: "motus", aanvullingen: "motus, (m.)", vertaling: "beweging; opstand", basis: true, teksten: ["6a/1"], volgorde: {"6a/1":8} },
+  { grondvorm: "movere", aanvullingen: "moveo, movi, motum", vertaling: "bewegen; ontroeren", basis: true, teksten: ["6a/4","7b/4","10/8"], volgorde: {"6a/4":39,"7b/4":72,"10/8":24} },
+  { grondvorm: "mox", aanvullingen: "(bijw.)", vertaling: "weldra, later; daarna, vervolgens", teksten: ["9b/5"], volgorde: {"9b/5":37} },
+  { grondvorm: "mulier", aanvullingen: "mulieris (v.)", vertaling: "vrouw" },
+  { grondvorm: "multiplex", aanvullingen: "multiplex, multiplex; multiplicis", vertaling: "veelvoudig, veelsoortig, talrijk" },
+  { grondvorm: "multitudo", aanvullingen: "multitudinis, (v.)", vertaling: "menigte, groot aantal, massa", basis: true },
+  { grondvorm: "multo", aanvullingen: "(bijw.)", vertaling: "veel", basis: true, teksten: ["6b/5","9b/10","10/19","6a/2","6a/7"], volgorde: {"6b/5":31,"9b/10":4,"10/19":12,"6a/2":84,"6a/7":52} },
+  { grondvorm: "multus", aanvullingen: "multa, multum", vertaling: "veel", basis: true, teksten: ["6a/1","7a/3","8b/5","9a/4","9b/4","9b/5","9b/7","6a/7"], volgorde: {"6a/1":34,"7a/3":57,"8b/5":34,"9a/4":6,"9b/4":45,"9b/5":74,"9b/7":8,"6a/7":14} },
+  { grondvorm: "mulus", aanvullingen: "muli", vertaling: "muilezel", teksten: ["6b/2","8b/3","9b/9"], volgorde: {"6b/2":79,"8b/3":24,"9b/9":47} },
+  { grondvorm: "mundus", aanvullingen: "mundi", vertaling: "heelal, wereld" },
+  { grondvorm: "municipium", aanvullingen: "municipii, (o.)", vertaling: "stad", teksten: ["10/21"], volgorde: {"10/21":14} },
+  { grondvorm: "munimentum", aanvullingen: "munimenti, (o.)", vertaling: "bescherming", teksten: ["6a/4"], volgorde: {"6a/4":59} },
+  { grondvorm: "munire", aanvullingen: "munio, munivi, munitum", vertaling: "versterken, beschermen", basis: true, teksten: ["8b/6"], volgorde: {"8b/6":6} },
+  { grondvorm: "munus", aanvullingen: "muneris, (o.)", vertaling: "geschenk; taak, opdracht; spel", basis: true, teksten: ["10/26"], volgorde: {"10/26":46} },
+  { grondvorm: "murmillo", aanvullingen: "murmillonis", vertaling: "zwaardvechter, gladiator", teksten: ["8b/9"], volgorde: {"8b/9":96} },
+  { grondvorm: "murrina", aanvullingen: "murrinorum (enkel mv.)", vertaling: "agaatsieraad (agaat was een duur gesteente)" },
+  { grondvorm: "murus", aanvullingen: "muri", vertaling: "muur", basis: true, teksten: ["9b/6"], volgorde: {"9b/6":40} },
+  { grondvorm: "musca", aanvullingen: "muscae", vertaling: "vlieg" },
+  { grondvorm: "mutare", aanvullingen: "muto, mutavi, mutatum", vertaling: "veranderen, (om-)wisselen; zich omkleden", basis: true },
+  { grondvorm: "Mutina", aanvullingen: "Mutinae", vertaling: "Mutina (stad in Noord-Italië)", teksten: ["8b/9"], volgorde: {"8b/9":88} },
+  { grondvorm: "mutus", aanvullingen: "muta, mutum", vertaling: "geen stem hebbend, stom", teksten: ["8b/3"], volgorde: {"8b/3":45} },
+  { grondvorm: "myrta", aanvullingen: "myrtae, (v.)", vertaling: "mirte (= plant)" },
+  { grondvorm: "nam", aanvullingen: "(vgw.)", vertaling: "want, immers", basis: true, teksten: ["6a/1","6a/4","6b/3","6b/4","7a/3","7b/2","10/19"], volgorde: {"6a/1":19,"6a/4":29,"6b/3":19,"6b/4":35,"7a/3":35,"7b/2":61,"10/19":17} },
+  { grondvorm: "naris", aanvullingen: "naris, (v.)", vertaling: "neusvleugel, neusgat", teksten: ["10/8"], volgorde: {"10/8":7} },
+  { grondvorm: "narrare", aanvullingen: "narro, narravi, narratum", vertaling: "vertellen" },
+  { grondvorm: "nasci", aanvullingen: "nascor, natus sum", vertaling: "geboren worden, ontstaan", basis: true, teksten: ["7a/3","8a/3","10/19","10/21","10/26"], volgorde: {"7a/3":72,"8a/3":60,"10/19":22,"10/21":9,"10/26":21} },
+  { grondvorm: "natare", aanvullingen: "nato, natavi, natatum", vertaling: "zwemmen", teksten: ["9b/5"], volgorde: {"9b/5":49} },
+  { grondvorm: "natura", aanvullingen: "naturae, (v.)", vertaling: "natuur", basis: true, teksten: ["10/26"], volgorde: {"10/26":6} },
+  { grondvorm: "naturalis", aanvullingen: "naturalis, naturale", vertaling: "natuurlijk, natuur-", basis: true, teksten: ["10/21"], volgorde: {"10/21":5} },
+  { grondvorm: "naturaliter", aanvullingen: "(bijw.)", vertaling: "van nature", teksten: ["10/21"], volgorde: {"10/21":6} },
+  { grondvorm: "natus", aanvullingen: "nati", vertaling: "zoon", teksten: ["7a/6"], volgorde: {"7a/6":19} },
+  { grondvorm: "naufragare", aanvullingen: "naufrago, naufragavi, naufragatum", vertaling: "schipbreuk lijden, vergaan", teksten: ["8a/6"], volgorde: {"8a/6":18} },
+  { grondvorm: "naufragium", aanvullingen: "naufragii", vertaling: "schipbreuk", teksten: ["9b/7"], volgorde: {"9b/7":33} },
+  { grondvorm: "naufragia facere", aanvullingen: "", vertaling: "schipbreuk lijden", teksten: ["9b/7"], volgorde: {"9b/7":35} },
+  { grondvorm: "naumachia", aanvullingen: "naumachiae", vertaling: "zeegevecht, zeeslag" },
+  { grondvorm: "nauta", aanvullingen: "nautae (m.)", vertaling: "schipper, matroos", teksten: ["9b/4","9b/9"], volgorde: {"9b/4":10,"9b/9":53} },
+  { grondvorm: "navale", aanvullingen: "navalis, (o.)", vertaling: "ligplaats van schepen, dok, werf, haven", teksten: ["9b/6"], volgorde: {"9b/6":43} },
+  { grondvorm: "navalis", aanvullingen: "navalis, navale", vertaling: "bij een schip horend, scheeps-; zee-" },
+  { grondvorm: "navigare", aanvullingen: "navigo, navigavi, navigatum", vertaling: "zeilen, varen", teksten: ["9b/7"], volgorde: {"9b/7":13} },
+  { grondvorm: "navigium", aanvullingen: "navigii, (o.)", vertaling: "schip", teksten: ["8b/9"], volgorde: {"8b/9":117} },
+  { grondvorm: "navis", aanvullingen: "navis, (v.)", vertaling: "schip", basis: true, teksten: ["7a/7","8a/6"], volgorde: {"7a/7":23,"8a/6":11} },
+  { grondvorm: "-ne", aanvullingen: "(vraagpartikel)", vertaling: "(duidt op een vraag, niet vertalen)" },
+  { grondvorm: "ne", aanvullingen: "+ conj. (vgw.)", vertaling: "dat niet; opdat niet, om niet, om te vermijden dat", teksten: ["8a/3","8b/6","9b/9"], volgorde: {"8a/3":34,"8b/6":53,"9b/9":43} },
+  { grondvorm: "Neapolis", aanvullingen: "Neapolis", vertaling: "(de stad) Napels", teksten: ["6a/1"], volgorde: {"6a/1":29} },
+  { grondvorm: "nebula", aanvullingen: "nebulae, (v.)", vertaling: "nevel, mist" },
+  { grondvorm: "nec", aanvullingen: "(vgw.)", vertaling: "(en) niet, (en) evenmin, noch", basis: true, teksten: ["6b/3","6b/5","7a/7","7b/2","7b/4","8a/3","8b/1","6a/2","6a/7"], volgorde: {"6b/3":41,"6b/5":30,"7a/7":29,"7b/2":65,"7b/4":80,"8a/3":40,"8b/1":11,"6a/2":83,"6a/7":51} },
+  { grondvorm: "necare", aanvullingen: "neco, necavi, necatum", vertaling: "doden", teksten: ["7a/3"], volgorde: {"7a/3":49} },
+  { grondvorm: "necesse", aanvullingen: "(onverbuigbaar)", vertaling: "noodzakelijk, onvermijdelijk", basis: true, teksten: ["6b/4","7b/4"], volgorde: {"6b/4":34,"7b/4":73} },
+  { grondvorm: "necessitas", aanvullingen: "necessitatis, (v.)", vertaling: "noodzaak", basis: true, teksten: ["7b/4"], volgorde: {"7b/4":56} },
+  { grondvorm: "negare", aanvullingen: "nego, negavi, negatum", vertaling: "nee zeggen, weigeren, ontkennen", basis: true, teksten: ["6b/3","7a/3"], volgorde: {"6b/3":49,"7a/3":41} },
+  { grondvorm: "neglegere", aanvullingen: "neglego, neglexi, neglectum", vertaling: "verwaarlozen, zich niets aantrekken van, geen rekening houden met", teksten: ["9a/4","10/3"], volgorde: {"9a/4":33,"10/3":72} },
+  { grondvorm: "negotiari", aanvullingen: "negotior, negotiatus sum", vertaling: "handel drijven, handelen", teksten: ["8a/6"], volgorde: {"8a/6":9} },
+  { grondvorm: "negotiatio", aanvullingen: "negotiationis, (v.)", vertaling: "handel" },
+  { grondvorm: "negotium", aanvullingen: "negotii, (o.)", vertaling: "bezigheid, werk, taak", basis: true },
+  { grondvorm: "nemo", aanvullingen: "neminis/nullius", vertaling: "niemand", basis: true, teksten: ["7a/3"], volgorde: {"7a/3":82} },
+  { grondvorm: "nepos", aanvullingen: "nepotis (m. en vr.), (m./vr.)", vertaling: "kleinzoon, kleindochter", basis: true },
+  { grondvorm: "Neptunus", aanvullingen: "Neptuni", vertaling: "(de god) Neptunus", basis: true, teksten: ["8a/6"], volgorde: {"8a/6":22} },
+  { grondvorm: "neque", aanvullingen: "(vgw.)", vertaling: "en niet, en evenmin, noch", basis: true, teksten: ["7b/4","8b/9","9a/4","10/14"], volgorde: {"7b/4":34,"8b/9":116,"9a/4":27,"10/14":48} },
+  { grondvorm: "Nero", aanvullingen: "Neronis (m.)", vertaling: "(keizer) Nero" },
+  { grondvorm: "neuter", aanvullingen: "neutra, neutrum", vertaling: "geen van beide(n)" },
+  { grondvorm: "nex", aanvullingen: "necis, (v.)", vertaling: "dood", teksten: ["8b/5"], volgorde: {"8b/5":10} },
+  { grondvorm: "niger", aanvullingen: "nigra, nigrum", vertaling: "zwart; duister", basis: true, teksten: ["6a/4","6b/1"], volgorde: {"6a/4":70,"6b/1":12} },
+  { grondvorm: "nigrior", aanvullingen: "nigrior, nigrius; nigrioris", vertaling: "zwarter", teksten: ["6a/4"], volgorde: {"6a/4":71} },
+  { grondvorm: "nihil", aanvullingen: "", vertaling: "niets", basis: true, teksten: ["6b/4","8a/3","8a/5"], volgorde: {"6b/4":49,"8a/3":27,"8a/5":38} },
+  { grondvorm: "nihilo minor … quam", aanvullingen: "", vertaling: "niet minder … dan" },
+  { grondvorm: "nimium", aanvullingen: "(bijw.)", vertaling: "te groot, te veel, te", teksten: ["10/3"], volgorde: {"10/3":58} },
+  { grondvorm: "nimius", aanvullingen: "nimia, nimium", vertaling: "te groot, te veel" },
+  { grondvorm: "nisi", aanvullingen: "+ ind./conj. (vgw.)", vertaling: "indien niet, tenzij", basis: true, teksten: ["7a/3"], volgorde: {"7a/3":83} },
+  { grondvorm: "nitor", aanvullingen: "nitoris", vertaling: "schittering, glans" },
+  { grondvorm: "niveus", aanvullingen: "nivea, niveum", vertaling: "sneeuwwit, wit", teksten: ["10/26"], volgorde: {"10/26":17} },
+  { grondvorm: "nobiscum", aanvullingen: "", vertaling: "= cum nobis", teksten: ["9b/9"], volgorde: {"9b/9":19} },
+  { grondvorm: "nocens", aanvullingen: "nocens, nocens; nocentis", vertaling: "schadelijk", teksten: ["10/19"], volgorde: {"10/19":25} },
+  { grondvorm: "noctu", aanvullingen: "(bijw.)", vertaling: "'s nachts" },
+  { grondvorm: "Nola", aanvullingen: "Nolae", vertaling: "Nola (stad in Campania)" },
+  { grondvorm: "noli", aanvullingen: "", vertaling: "'wil niet', 'gelieve niet'", teksten: ["10/3"], volgorde: {"10/3":66} },
+  { grondvorm: "noli(te)", aanvullingen: "", vertaling: "'wil niet', 'gelieve niet'" },
+  { grondvorm: "nolle", aanvullingen: "nolo, nolui, –", vertaling: "niet willen", basis: true, teksten: ["10/3"], volgorde: {"10/3":65} },
+  { grondvorm: "nomen", aanvullingen: "nominis, (o.)", vertaling: "naam", basis: true, teksten: ["7a/5","10/3"], volgorde: {"7a/5":31,"10/3":55} },
+  { grondvorm: "nominare", aanvullingen: "nomino, nominavi, nominatum", vertaling: "noemen", teksten: ["7a/1","7a/6","7a/8","7b/2"], volgorde: {"7a/1":30,"7a/6":14,"7a/8":2,"7b/2":59} },
+  { grondvorm: "non", aanvullingen: "(bijw.)", vertaling: "niet", basis: true },
+  { grondvorm: "non iam", aanvullingen: "(bijw.)", vertaling: "niet meer" },
+  { grondvorm: "non modo sed etiam", aanvullingen: "", vertaling: "niet alleen … maar ook, zowel … als", teksten: ["8a/2","10/21"], volgorde: {"8a/2":9,"10/21":22} },
+  { grondvorm: "non modo … sed etiam", aanvullingen: "", vertaling: "niet alleen … maar ook, zowel … als" },
+  { grondvorm: "non solum sed etiam", aanvullingen: "", vertaling: "niet alleen … maar ook; zowel … als", teksten: ["8a/3","10/3"], volgorde: {"8a/3":129,"10/3":10} },
+  { grondvorm: "non solum … sed etiam", aanvullingen: "", vertaling: "niet alleen … maar ook, zowel … als" },
+  { grondvorm: "non tantum sed etiam", aanvullingen: "", vertaling: "niet alleen … maar ook", teksten: ["7a/5"], volgorde: {"7a/5":12} },
+  { grondvorm: "Nonae", aanvullingen: "Nonarum", vertaling: "de Nonen (= de 7e dag van de maand in maart, mei, juli en oktober; de 5e in de overige maanden)", teksten: ["6a/1"], volgorde: {"6a/1":1} },
+  { grondvorm: "nondum", aanvullingen: "(bijw.)", vertaling: "nog niet" },
+  { grondvorm: "nonne", aanvullingen: "(vraagpartikel)", vertaling: "(leidt een vraag in waarop een ja-antwoord verwacht wordt)" },
+  { grondvorm: "nonnumquam", aanvullingen: "(bijw.)", vertaling: "soms" },
+  { grondvorm: "nonus", aanvullingen: "nona, nonum", vertaling: "negende", teksten: ["6a/2"], volgorde: {"6a/2":1} },
+  { grondvorm: "nos", aanvullingen: "(pers. vnw.)", vertaling: "wij", basis: true, teksten: ["6a/7","6b/2","6b/3"], volgorde: {"6a/7":2,"6b/2":29,"6b/3":12} },
+  { grondvorm: "noscere", aanvullingen: "nosco, novi, notum", vertaling: "leren kennen", teksten: ["9b/6"], volgorde: {"9b/6":17} },
+  { grondvorm: "noscitare", aanvullingen: "noscito, noscitavi, noscitatum", vertaling: "proberen te herkennen, herkennen" },
+  { grondvorm: "noster", aanvullingen: "nostra, nostrum (bezit. vnw.)", vertaling: "ons, onze" },
+  { grondvorm: "novem", aanvullingen: "(telwoord)", vertaling: "negen" },
+  { grondvorm: "novissimus", aanvullingen: "novissima, novissimum", vertaling: "laatste" },
+  { grondvorm: "novus", aanvullingen: "nova, novum", vertaling: "nieuw", teksten: ["8a/5"], volgorde: {"8a/5":23} },
+  { grondvorm: "nox", aanvullingen: "noctis, (v.)", vertaling: "nacht, duisternis", basis: true, teksten: ["6a/4","6b/3","6b/4","9b/4","9b/7","6a/7"], volgorde: {"6a/4":67,"6b/3":54,"6b/4":4,"9b/4":27,"9b/7":43,"6a/7":69} },
+  { grondvorm: "nubere", aanvullingen: "nubo, nupsi, nuptum + dat.", vertaling: "trouwen met" },
+  { grondvorm: "nubes", aanvullingen: "nubis", vertaling: "wolk", basis: true, teksten: ["6a/2","6a/7"], volgorde: {"6a/2":9,"6a/7":40} },
+  { grondvorm: "Nuceria", aanvullingen: "Nuceriae", vertaling: "Nuceria (stad in Campania)" },
+  { grondvorm: "nucleus", aanvullingen: "nuclei, (m.)", vertaling: "pit" },
+  { grondvorm: "nullus", aanvullingen: "nulla, nullum", vertaling: "geen enkel", basis: true, teksten: ["6a/1","6b/1","8b/5","8b/6","10/26"], volgorde: {"6a/1":39,"6b/1":10,"8b/5":13,"8b/6":21,"10/26":20} },
+  { grondvorm: "numerus", aanvullingen: "numeri, (m.)", vertaling: "aantal" },
+  { grondvorm: "Numitor", aanvullingen: "Numitoris", vertaling: "Numitor (eigennaam)" },
+  { grondvorm: "nummus", aanvullingen: "nummi, (m.)", vertaling: "geldstuk" },
+  { grondvorm: "numquam", aanvullingen: "(bijw.)", vertaling: "nooit, nooit meer", basis: true, teksten: ["6a/1"], volgorde: {"6a/1":12} },
+  { grondvorm: "nunc", aanvullingen: "(bijw.)", vertaling: "nu", basis: true, teksten: ["6a/4","6b/1","6b/2","6b/4","8a/3","8b/3","10/9"], volgorde: {"6a/4":35,"6b/1":16,"6b/2":82,"6b/4":2,"8a/3":5,"8b/3":27,"10/9":2} },
+  { grondvorm: "nunc … nunc", aanvullingen: "", vertaling: "nu eens … dan weer", teksten: ["6a/4","6b/2"], volgorde: {"6a/4":36,"6b/2":44} },
+  { grondvorm: "nuntius", aanvullingen: "nuntii, (m.)", vertaling: "boodschapper; bericht" },
+  { grondvorm: "nusquam", aanvullingen: "(bijw.)", vertaling: "nergens" },
+  { grondvorm: "nusquam iam", aanvullingen: "(bijw.)", vertaling: "nergens meer" },
+  { grondvorm: "nutare", aanvullingen: "nuto, nutavi, nutatum", vertaling: "knikken; heen en weer bewegen, wankelen", teksten: ["6a/4","6b/2"], volgorde: {"6a/4":34,"6b/2":86} },
+  { grondvorm: "nutrire", aanvullingen: "nutrio, nutrivi, nutritum", vertaling: "voeden" },
+  { grondvorm: "nutrix", aanvullingen: "nutricis, (v.)", vertaling: "voedster", teksten: ["7a/3"], volgorde: {"7a/3":78} },
+  { grondvorm: "nux", aanvullingen: "nucis, (v.)", vertaling: "noot (walnoot, hazelnoot, amandel)" },
+  { grondvorm: "ob", aanvullingen: "+ acc. (vz.)", vertaling: "voor; wegens" },
+  { grondvorm: "obire", aanvullingen: "obeo, obii, obitum", vertaling: "gaan naar, tegemoet gaan", teksten: ["8b/9"], volgorde: {"8b/9":137} },
+  { grondvorm: "oblivisci", aanvullingen: "obliviscor, oblitus sum + gen.", vertaling: "vergeten, geen rekening houden met", teksten: ["7b/4"], volgorde: {"7b/4":61} },
+  { grondvorm: "obrepere", aanvullingen: "obrepo, obrepsi, obreptum + dat.", vertaling: "naderbij sluipen; verrassen" },
+  { grondvorm: "obruere", aanvullingen: "obruo, obrui, obrutum", vertaling: "bedekken" },
+  { grondvorm: "obscenus", aanvullingen: "obscena, obscenum", vertaling: "obsceen, onfatsoenlijk, schandalig", teksten: ["7a/7"], volgorde: {"7a/7":44} },
+  { grondvorm: "obsecrare", aanvullingen: "obsecro, obsecravi, obsecratum", vertaling: "met aandrang vragen, smeken", teksten: ["10/3"], volgorde: {"10/3":68} },
+  { grondvorm: "obsequium", aanvullingen: "obsequii", vertaling: "gehoorzaamheid", teksten: ["7b/6"], volgorde: {"7b/6":5} },
+  { grondvorm: "obses", aanvullingen: "obsidis", vertaling: "gijzelaar" },
+  { grondvorm: "obsidere", aanvullingen: "obsideo, obsedi, obsessum", vertaling: "bezetten; belegeren", teksten: ["8b/9"], volgorde: {"8b/9":33} },
+  { grondvorm: "obstare", aanvullingen: "obsto, obstiti, – + dat.", vertaling: "in de weg staan, verhinderen, hinderen", teksten: ["6b/2"], volgorde: {"6b/2":31} },
+  { grondvorm: "obstringere", aanvullingen: "obstringo, obstrinxi, obstrictum", vertaling: "binden, vastbinden" },
+  { grondvorm: "obstupefacere", aanvullingen: "obstupefacio, obstupefeci, obstupefactum", vertaling: "verstomd doen staan, verbazen, verbijsteren" },
+  { grondvorm: "obtruncare", aanvullingen: "obtruno, obtruncavi, obtruncatum", vertaling: "doden", teksten: ["7b/2","10/3"], volgorde: {"7b/2":48,"10/3":75} },
+  { grondvorm: "obturare", aanvullingen: "obturo, obturavi, obturatum", vertaling: "dichtstoppen, afsluiten" },
+  { grondvorm: "obvius", aanvullingen: "obvia, obvium", vertaling: "tegenkomend, tegemoetkomend, passerend", teksten: ["8b/9"], volgorde: {"8b/9":69} },
+  { grondvorm: "occidere", aanvullingen: "occido, occidi, occisum", vertaling: "doden, vermoorden", teksten: ["7b/2","8a/3","8b/9"], volgorde: {"7b/2":60,"8a/3":46,"8b/9":145} },
+  { grondvorm: "occultare", aanvullingen: "occulto, occultavi, occultatum", vertaling: "verbergen", teksten: ["9a/4"], volgorde: {"9a/4":37} },
+  { grondvorm: "occupare", aanvullingen: "occupo, occupavi, occupatum", vertaling: "bezetten", teksten: ["6b/1"], volgorde: {"6b/1":14} },
+  { grondvorm: "Octobris", aanvullingen: "Octobris, Octobre", vertaling: "van de maand oktober" },
+  { grondvorm: "oculus", aanvullingen: "oculi", vertaling: "oog", teksten: ["9b/6","10/3"], volgorde: {"9b/6":12,"10/3":37} },
+  { grondvorm: "odor", aanvullingen: "odoris, (m.)", vertaling: "geur, stank", teksten: ["7a/7"], volgorde: {"7a/7":47} },
+  { grondvorm: "odorare", aanvullingen: "odoro, odoravi, odoratum", vertaling: "parfumeren", teksten: ["9b/5"], volgorde: {"9b/5":57} },
+  { grondvorm: "Oenomaus", aanvullingen: "Oenomai", vertaling: "Oenomaus (eigennaam)", teksten: ["8b/9"], volgorde: {"8b/9":3} },
+  { grondvorm: "offendere", aanvullingen: "offendo, offendi, offensum", vertaling: "tegen iets stoten; passief: onstemd zijn, misnoegd zijn", teksten: ["10/26"], volgorde: {"10/26":3} },
+  { grondvorm: "officere", aanvullingen: "officio, offeci, offectum + dat.", vertaling: "in de weg staan, hinderen" },
+  { grondvorm: "officium", aanvullingen: "officii, (o.)", vertaling: "plicht, taak", teksten: ["6b/2"], volgorde: {"6b/2":3} },
+  { grondvorm: "olea", aanvullingen: "oleae, (v.)", vertaling: "olijfboom, olijf" },
+  { grondvorm: "olere", aanvullingen: "oleo, olui, –", vertaling: "stinken, ruiken" },
+  { grondvorm: "oleum", aanvullingen: "olei, (o.)", vertaling: "olijfolie", teksten: ["6b/9"], volgorde: {"6b/9":13} },
+  { grondvorm: "olim", aanvullingen: "(bijw.)", vertaling: "lang geleden, ooit, eens", teksten: ["6b/1"], volgorde: {"6b/1":19} },
+  { grondvorm: "oliva", aanvullingen: "olivae, (v.)", vertaling: "olijfboom, olijf" },
+  { grondvorm: "omentum", aanvullingen: "omenti, (o.)", vertaling: "darmnet" },
+  { grondvorm: "omittere", aanvullingen: "omitto, ommisi, ommissum", vertaling: "laten vallen" },
+  { grondvorm: "omni genere", aanvullingen: "", vertaling: "'op elke vlak', 'in elk opzicht'", teksten: ["9b/6"], volgorde: {"9b/6":52} },
+  { grondvorm: "omnino", aanvullingen: "(bijw.)", vertaling: "helemaal, geheel en al, volledig" },
+  { grondvorm: "omnis", aanvullingen: "omnis, omne", vertaling: "geheel, al, ieder, elk", basis: true, teksten: ["6a/4","7b/4","8a/2","8a/3","8a/5","8a/6","8b/5","9a/1","9b/6","9b/9","10/14"], volgorde: {"6a/4":69,"7b/4":17,"8a/2":15,"8a/3":6,"8a/5":3,"8a/6":17,"8b/5":6,"9a/1":2,"9b/6":13,"9b/9":36,"10/14":2} },
+  { grondvorm: "onerare", aanvullingen: "onero, oneravi, oneratum", vertaling: "beladen, inladen", teksten: ["8a/6"], volgorde: {"8a/6":13} },
+  { grondvorm: "onus", aanvullingen: "oneris", vertaling: "last, lading, gewicht, bagage", teksten: ["7a/3","7a/7"], volgorde: {"7a/3":36,"7a/7":17} },
+  { grondvorm: "onustus", aanvullingen: "onusta, onustum + abl.", vertaling: "beladen met" },
+  { grondvorm: "opera", aanvullingen: "operae, (v.)", vertaling: "werk, inspanning, moeite; dienst, hulp", teksten: ["7a/7"], volgorde: {"7a/7":25} },
+  { grondvorm: "operire", aanvullingen: "operio, operui, opertum", vertaling: "bedekken", teksten: ["6a/7"], volgorde: {"6a/7":55} },
+  { grondvorm: "ophthalmicus", aanvullingen: "ophthalmici", vertaling: "oogarts", teksten: ["10/9"], volgorde: {"10/9":3} },
+  { grondvorm: "opinio", aanvullingen: "opinionis, (v.)", vertaling: "mening", basis: true, teksten: ["9a/1"], volgorde: {"9a/1":46} },
+  { grondvorm: "oplomachus", aanvullingen: "oplomachi", vertaling: "zwaarbewapend gladiator", teksten: ["10/9"], volgorde: {"10/9":1} },
+  { grondvorm: "oportet", aanvullingen: "oportuit, –", vertaling: "het is nodig, het moet", basis: true, teksten: ["8b/5"], volgorde: {"8b/5":55} },
+  { grondvorm: "oppidum", aanvullingen: "oppidi", vertaling: "vesting, stad", basis: true, teksten: ["9b/9"], volgorde: {"9b/9":20} },
+  { grondvorm: "opprimere", aanvullingen: "opprimo, oppressi, oppressum", vertaling: "neerdrukken", basis: true, teksten: ["7b/12"], volgorde: {"7b/12":1} },
+  { grondvorm: "oppugnare", aanvullingen: "oppugno, oppugnavi, oppugnatum", vertaling: "belegeren", basis: true },
+  { grondvorm: "optare", aanvullingen: "opto, optavi, optatum", vertaling: "kiezen; wensen" },
+  { grondvorm: "Optata", aanvullingen: "Optatae", vertaling: "Optata (eigennaam)" },
+  { grondvorm: "optimus", aanvullingen: "optima, optimum", vertaling: "best(e), zeer goed", basis: true, teksten: ["7a/5","8b/6"], volgorde: {"7a/5":20,"8b/6":31} },
+  { grondvorm: "opus esse", aanvullingen: "+ abl.", vertaling: "nodig zijn, nodig hebben" },
+  { grondvorm: "opus", aanvullingen: "operis, (o.)", vertaling: "bezigheid, arbeid; werk, bouwwerk", basis: true, teksten: ["9a/1","10/14"], volgorde: {"9a/1":52,"10/14":31} },
+  { grondvorm: "oraculum", aanvullingen: "oraculi, (o.)", vertaling: "orakel, orakelspreuk", teksten: ["9b/6"], volgorde: {"9b/6":22} },
+  { grondvorm: "orare", aanvullingen: "oro, oravi, oratum", vertaling: "bidden, smeken" },
+  { grondvorm: "oratio", aanvullingen: "orationis, (v.)", vertaling: "redevoering, toespraak, speech", basis: true },
+  { grondvorm: "orbis", aanvullingen: "orbis (m.)", vertaling: "kring, cirkel", basis: true },
+  { grondvorm: "orbis terrarum", aanvullingen: "orbis terrarum", vertaling: "wereld" },
+  { grondvorm: "orcua", aanvullingen: "orcuae", vertaling: "potje" },
+  { grondvorm: "ordo", aanvullingen: "ordinis (m.)", vertaling: "rij; stand, klasse", basis: true, teksten: ["7b/2","7b/4"], volgorde: {"7b/2":71,"7b/4":43} },
+  { grondvorm: "oriri", aanvullingen: "orior, ortus sum", vertaling: "ontstaan; afstammen van", basis: true, teksten: ["6a/2","6b/5","7b/4","8a/2"], volgorde: {"6a/2":101,"6b/5":2,"7b/4":20,"8a/2":61} },
+  { grondvorm: "ornamentum", aanvullingen: "ornamenti, (o.)", vertaling: "sierraad; eer" },
+  { grondvorm: "ornare", aanvullingen: "orno, ornavi, ornatum", vertaling: "versieren, tooien", teksten: ["10/26"], volgorde: {"10/26":53} },
+  { grondvorm: "ornatus", aanvullingen: "ornata, ornatum, (m.)", vertaling: "versierd; beladen, opgetuigd", teksten: ["7b/2","7b/6"], volgorde: {"7b/2":45,"7b/6":13} },
+  { grondvorm: "ornatus", aanvullingen: "ornatus, (m.)", vertaling: "uitrusting, kleding; versiering, sieraad; elegantie" },
+  { grondvorm: "Ortygia", aanvullingen: "Ortygiae", vertaling: "Ortygia (eigennaam)" },
+  { grondvorm: "os", aanvullingen: "oris (o.)", vertaling: "mond, muil; gezicht", teksten: ["6b/2","8a/3","10/26"], volgorde: {"6b/2":13,"8a/3":37,"10/26":94} },
+  { grondvorm: "os", aanvullingen: "ossis (o.)", vertaling: "been (van een skelet)", teksten: ["8a/3"], volgorde: {"8a/3":107} },
+  { grondvorm: "osculum", aanvullingen: "osculi, (o.)", vertaling: "kus", teksten: ["10/26"], volgorde: {"10/26":36} },
+  { grondvorm: "ostendere", aanvullingen: "ostendo, ostendi, ostentum", vertaling: "laten zien, tonen" },
+  { grondvorm: "ostentare", aanvullingen: "ostento, ostentavi, ostentatum", vertaling: "laten zien, tonen", teksten: ["8a/2"], volgorde: {"8a/2":49} },
+  { grondvorm: "otiosus", aanvullingen: "otiosa, otiosum", vertaling: "vrij van werk, rustig, zorgeloos", teksten: ["6b/2"], volgorde: {"6b/2":15} },
+  { grondvorm: "otium", aanvullingen: "otii, (o.)", vertaling: "vrije tijd; rust; vrede", basis: true },
+  { grondvorm: "ovum", aanvullingen: "ovi, (o.)", vertaling: "ei" },
+  { grondvorm: "paedagogus", aanvullingen: "paedagogi, (m.)", vertaling: "opvoeder" },
+  { grondvorm: "paene", aanvullingen: "(bijw.)", vertaling: "bijna", teksten: ["8a/5"], volgorde: {"8a/5":6} },
+  { grondvorm: "paenula", aanvullingen: "paenulae, (v.)", vertaling: "mantel met een kap" },
+  { grondvorm: "Palatinus mons", aanvullingen: "Palatii montis", vertaling: "de Palatijn" },
+  { grondvorm: "palla", aanvullingen: "pallae, (v.)", vertaling: "lang overkleed, kleed" },
+  { grondvorm: "palmula", aanvullingen: "palmulae, (v.)", vertaling: "dadel" },
+  { grondvorm: "paludatus", aanvullingen: "paludata, paludatum", vertaling: "in een militaire mantel gekleed" },
+  { grondvorm: "palus", aanvullingen: "pali", vertaling: "paal", teksten: ["7b/4"], volgorde: {"7b/4":92} },
+  { grondvorm: "palustris", aanvullingen: "palustris, palustre", vertaling: "van een moeras, moeras-", teksten: ["9b/4"], volgorde: {"9b/4":38} },
+  { grondvorm: "panis", aanvullingen: "panis (m.)", vertaling: "brood" },
+  { grondvorm: "par", aanvullingen: "par, par; paris", vertaling: "gelijk", teksten: ["7b/2"], volgorde: {"7b/2":43} },
+  { grondvorm: "parare", aanvullingen: "paro, paravi, paratum", vertaling: "voorbereiden, klaarmaken, in gereedheid brengen", basis: true, teksten: ["8b/9","9b/4"], volgorde: {"8b/9":73,"9b/4":34} },
+  { grondvorm: "parasitus", aanvullingen: "parasiti, (m.)", vertaling: "klaploper; tafelgenoot, gast", teksten: ["7b/12"], volgorde: {"7b/12":6} },
+  { grondvorm: "parcere", aanvullingen: "parco, peperci, – + dat.", vertaling: "sparen", basis: true, teksten: ["10/3"], volgorde: {"10/3":33} },
+  { grondvorm: "parens", aanvullingen: "parentis, (m./vr.)", vertaling: "vader, moeder; mv.: ouders", basis: true, teksten: ["7a/6","7b/6"], volgorde: {"7a/6":13,"7b/6":30} },
+  { grondvorm: "parere", aanvullingen: "pareo, parui, –", vertaling: "gehoorzamen", teksten: ["6b/4","7a/2","7a/3"], volgorde: {"6b/4":33,"7a/2":7,"7a/3":34} },
+  { grondvorm: "parere", aanvullingen: "pario, peperi, partum", vertaling: "baren, een kind ter wereld brengen" },
+  { grondvorm: "paria", aanvullingen: "parium (mv.)", vertaling: "paar, koppel" },
+  { grondvorm: "pariter", aanvullingen: "(bijw.)", vertaling: "op gelijke wijze, evenzeer; tegelijk", teksten: ["6b/4"], volgorde: {"6b/4":61} },
+  { grondvorm: "Parnassus", aanvullingen: "Parnassi", vertaling: "Parnassus (gebergte in Griekenland)" },
+  { grondvorm: "pars", aanvullingen: "partis, (v.)", vertaling: "deel", basis: true, teksten: ["6b/5","8a/3","8b/3","9a/1","9b/5","6a/7"], volgorde: {"6b/5":4,"8a/3":16,"8b/3":37,"9a/1":5,"9b/5":68,"6a/7":26} },
+  { grondvorm: "participare", aanvullingen: "participo, participavi, participatum", vertaling: "deelnemen aan; delen" },
+  { grondvorm: "partim", aanvullingen: "(bijw.)", vertaling: "gedeeltelijk", teksten: ["6a/1"], volgorde: {"6a/1":22} },
+  { grondvorm: "partire", aanvullingen: "partio, partivi, partitum", vertaling: "verdelen, indelen, splitsen" },
+  { grondvorm: "partus", aanvullingen: "partus, (m.)", vertaling: "geboorte", teksten: ["7a/3"], volgorde: {"7a/3":24} },
+  { grondvorm: "parvulus", aanvullingen: "parvula, parvulum", vertaling: "zeer klein, erg klein" },
+  { grondvorm: "parvus", aanvullingen: "parva, parvum", vertaling: "klein", basis: true, teksten: ["7a/3","9b/5","10/26"], volgorde: {"7a/3":29,"9b/5":11,"10/26":48} },
+  { grondvorm: "pascere", aanvullingen: "pasco, pavi, pastum", vertaling: "weiden, laten grazen", basis: true, teksten: ["8b/5"], volgorde: {"8b/5":40} },
+  { grondvorm: "pastor", aanvullingen: "pastoris, (m.)", vertaling: "herder", basis: true, teksten: ["8b/5"], volgorde: {"8b/5":36} },
+  { grondvorm: "patefacere", aanvullingen: "patefacio, patefeci, patefactum", vertaling: "openen; begaanbaar maken" },
+  { grondvorm: "pater", aanvullingen: "patris", vertaling: "vader; mv. ook: patriciërs, senatoren", basis: true, teksten: ["7a/3","7a/7","7b/2","7b/4","8a/3"], volgorde: {"7a/3":69,"7a/7":34,"7b/2":4,"7b/4":14,"8a/3":143} },
+  { grondvorm: "paternus", aanvullingen: "paterna, paternum", vertaling: "van de vader, vaderlijk", teksten: ["8a/2"], volgorde: {"8a/2":29} },
+  { grondvorm: "pati", aanvullingen: "patior, passus sum", vertaling: "lijden, ondergaan, dulden, verdragen; toestaan", basis: true, teksten: ["7b/2","8a/3","6a/7"], volgorde: {"7b/2":63,"8a/3":77,"6a/7":19} },
+  { grondvorm: "patina", aanvullingen: "patinae, (v.)", vertaling: "pan, schotel" },
+  { grondvorm: "patre ignaro", aanvullingen: "", vertaling: "'zonder dat de vader het wist'", teksten: ["7a/3"], volgorde: {"7a/3":71} },
+  { grondvorm: "patria", aanvullingen: "patriae, (v.)", vertaling: "vaderland" },
+  { grondvorm: "patrimus", aanvullingen: "patrima, patrimum", vertaling: "wiens vader nog in leven is" },
+  { grondvorm: "patrius", aanvullingen: "patria, patrium", vertaling: "van een vader, vaderlijk", teksten: ["7b/4"], volgorde: {"7b/4":38} },
+  { grondvorm: "patronus", aanvullingen: "patroni, (m.)", vertaling: "beschermheer, patronus" },
+  { grondvorm: "patronus", aanvullingen: "patroni, (m.)", vertaling: "beschermheer" },
+  { grondvorm: "patulus", aanvullingen: "patula, patulum", vertaling: "wijd, breed", teksten: ["6b/4"], volgorde: {"6b/4":22} },
+  { grondvorm: "paucitas", aanvullingen: "paucitatis, (v.)", vertaling: "gering aantal, klein aantal" },
+  { grondvorm: "paucus", aanvullingen: "pauca, paucum", vertaling: "weinig, mv.: enkele", teksten: ["6b/2","6b/4"], volgorde: {"6b/2":132,"6b/4":65} },
+  { grondvorm: "Paula", aanvullingen: "Paulae", vertaling: "Paula (eigennaam)" },
+  { grondvorm: "paulatim", aanvullingen: "(bijw.)", vertaling: "langzaamaan, geleidelijk" },
+  { grondvorm: "Paulinus", aanvullingen: "Paulini", vertaling: "Paulinus (eigennaam)" },
+  { grondvorm: "paulo post", aanvullingen: "(bijw.)", vertaling: "een beetje later, kort daarop" },
+  { grondvorm: "paulum", aanvullingen: "(bijw.)", vertaling: "een beetje; even", teksten: ["7a/6"], volgorde: {"7a/6":4} },
+  { grondvorm: "pauper", aanvullingen: "pauper, pauper; pauperis", vertaling: "arm", teksten: ["6b/3","7a/7"], volgorde: {"6b/3":40,"7a/7":33} },
+  { grondvorm: "pavere", aanvullingen: "paveo, pavi, –", vertaling: "beven, in paniek zijn, panikeren", teksten: ["6b/2"], volgorde: {"6b/2":110} },
+  { grondvorm: "pavor", aanvullingen: "pavoris", vertaling: "angst" },
+  { grondvorm: "pax", aanvullingen: "pacis, (v.)", vertaling: "vrede", basis: true },
+  { grondvorm: "peccare", aanvullingen: "pecco, peccavi, peccatum", vertaling: "een fout begaan" },
+  { grondvorm: "pectinare", aanvullingen: "pectino, pectinavi, pectinatum", vertaling: "kammen" },
+  { grondvorm: "pectus", aanvullingen: "pectoris, (o.)", vertaling: "borst, hart", basis: true, teksten: ["10/26"], volgorde: {"10/26":31} },
+  { grondvorm: "peculium", aanvullingen: "peculii, (o.)", vertaling: "spaargeld, kapitaal", teksten: ["8b/5"], volgorde: {"8b/5":21} },
+  { grondvorm: "pecunia", aanvullingen: "pecuniae, (v.)", vertaling: "geld", basis: true, teksten: ["7a/8"], volgorde: {"7a/8":22} },
+  { grondvorm: "pecus", aanvullingen: "pecoris", vertaling: "dier, vee", teksten: ["8a/2"], volgorde: {"8a/2":16} },
+  { grondvorm: "pedere", aanvullingen: "pedo, pepedi, peditum", vertaling: "scheten laten" },
+  { grondvorm: "pellere", aanvullingen: "pello, pepuli, pulsum", vertaling: "voortdrijven, verdrijven, verjagen", basis: true, teksten: ["8b/9"], volgorde: {"8b/9":103} },
+  { grondvorm: "pellis", aanvullingen: "pellis, (v.)", vertaling: "huid, pels, leer", teksten: ["8b/6"], volgorde: {"8b/6":13} },
+  { grondvorm: "pelvis", aanvullingen: "pelvis, (v.)", vertaling: "schaal", teksten: ["6b/4"], volgorde: {"6b/4":23} },
+  { grondvorm: "pendere", aanvullingen: "pendeo, pependi, – e(x) + abl.", vertaling: "hangen aan", teksten: ["7a/5"], volgorde: {"7a/5":40} },
+  { grondvorm: "pendere", aanvullingen: "pendo, pependi, pensum", vertaling: "betalen" },
+  { grondvorm: "penetrare", aanvullingen: "penetro, penetravi, penetratum", vertaling: "binnendringen" },
+  { grondvorm: "penna", aanvullingen: "pennae, (v.)", vertaling: "veer; vleugel" },
+  { grondvorm: "per", aanvullingen: "+ acc. (vz.)", vertaling: "doorheen; door middel van; gedurende", basis: true, teksten: ["6b/2","6b/5","8b/1","8b/9","8b/10","9b/6"], volgorde: {"6b/2":5,"6b/5":7,"8b/1":9,"8b/9":37,"8b/10":10,"9b/6":18} },
+  { grondvorm: "peragrare", aanvullingen: "peragro, peragravi, peragratum", vertaling: "doorzwerven, zwerven doorheen" },
+  { grondvorm: "perbibere", aanvullingen: "perbibo, perbibi, –", vertaling: "helemaal opdrinken, helemaal in zich opnemen" },
+  { grondvorm: "percipere", aanvullingen: "percipio, percepi, perceptum", vertaling: "grijpen; in zich opnemen, waarnemen, leren" },
+  { grondvorm: "percussus", aanvullingen: "percussa, percussum", vertaling: "(hevig) geslagen", teksten: ["7a/5"], volgorde: {"7a/5":8} },
+  { grondvorm: "percutere", aanvullingen: "percutio, percussi, percussum", vertaling: "(hevig) slaan", teksten: ["7a/5"], volgorde: {"7a/5":7} },
+  { grondvorm: "perdere", aanvullingen: "perdo, perdidi, perditum", vertaling: "verliezen; vernietigen" },
+  { grondvorm: "perequitare", aanvullingen: "perequito, perequitavi, perequitatum", vertaling: "te paard ergens doorheen rijden" },
+  { grondvorm: "perferre", aanvullingen: "perfero, pertuli, perlatum", vertaling: "brengen naar, dragen naar" },
+  { grondvorm: "perfugere", aanvullingen: "perfugio, perfugi, –", vertaling: "zijn toevlucht zoeken in" },
+  { grondvorm: "perfundere", aanvullingen: "perfundo, perfusi, perfusum", vertaling: "gieten doorheen/over" },
+  { grondvorm: "pergula", aanvullingen: "pergulae", vertaling: "bijkamer, extra kamer, annex-kamer", teksten: ["6b/8"], volgorde: {"6b/8":10} },
+  { grondvorm: "periculum", aanvullingen: "periculi, (o.)", vertaling: "gevaar", basis: true, teksten: ["6b/4"], volgorde: {"6b/4":3} },
+  { grondvorm: "perire", aanvullingen: "pereo, perii, peritum", vertaling: "verloren gaan, verdwijnen, vergaan", basis: true, teksten: ["6b/9"], volgorde: {"6b/9":3} },
+  { grondvorm: "perlegere", aanvullingen: "perlego, perlegi, perlectum", vertaling: "helemaal lezen, doorlezen", teksten: ["7a/6"], volgorde: {"7a/6":7} },
+  { grondvorm: "perpetuus", aanvullingen: "perpetua, perpetuum", vertaling: "voortdurend, levenslang, eeuwig", teksten: ["7b/4"], volgorde: {"7b/4":77} },
+  { grondvorm: "persequi", aanvullingen: "persequor, persecutus sum", vertaling: "achtervolgen" },
+  { grondvorm: "Perseus", aanvullingen: "Persei", vertaling: "Perseus (eigennaam)", teksten: ["9b/6"], volgorde: {"9b/6":36} },
+  { grondvorm: "perstringere", aanvullingen: "perstringo, perstrinxi, perstrictum", vertaling: "zacht aanraken, beroeren; treffen", teksten: ["6a/1"], volgorde: {"6a/1":33} },
+  { grondvorm: "perterrere", aanvullingen: "peterreo, perterrui, perterritum", vertaling: "hevig doen schrikken, hevige schrik aanjagen" },
+  { grondvorm: "perturbare", aanvullingen: "perturbo, perturbavi, perturbatum", vertaling: "in verwarring brengen, verwarren" },
+  { grondvorm: "pervagari", aanvullingen: "pervagor, pervagatus sum", vertaling: "ronddwalen doorheen, rondtrekken doorheen", teksten: ["8b/9"], volgorde: {"8b/9":60} },
+  { grondvorm: "pervenire", aanvullingen: "pervenio, perveni, perventum", vertaling: "aankomen, arriveren", teksten: ["8a/2","9b/7","10/21"], volgorde: {"8a/2":38,"9b/7":47,"10/21":38} },
+  { grondvorm: "pes", aanvullingen: "pedis (m.)", vertaling: "voet, poot", basis: true, teksten: ["7a/7","9b/5"], volgorde: {"7a/7":42,"9b/5":78} },
+  { grondvorm: "pessimus", aanvullingen: "pessima, pessimum", vertaling: "slechtst, zeer slecht", basis: true, teksten: ["9b/4"], volgorde: {"9b/4":21} },
+  { grondvorm: "pestilens", aanvullingen: "pestilens, pestilens", vertaling: "verderfelijk, rampzalig" },
+  { grondvorm: "petere", aanvullingen: "peto, peti(v)i, petitum", vertaling: "zoeken; vragen; verlangen; gaan", basis: true, teksten: ["7b/2","9b/6","10/26"], volgorde: {"7b/2":74,"9b/6":23,"10/26":89} },
+  { grondvorm: "petere", aanvullingen: "peto, peti(v)i, petitum a(b) + abl.", vertaling: "vragen aan", basis: true },
+  { grondvorm: "Phaestius", aanvullingen: "Phaestia, Phaestium", vertaling: "van Phaestus (= stad in het zuiden van Kreta)", teksten: ["7a/3"], volgorde: {"7a/3":2} },
+  { grondvorm: "philosophia", aanvullingen: "philosophiae, (v.)", vertaling: "filosofie", basis: true },
+  { grondvorm: "philosophus", aanvullingen: "philosophi", vertaling: "filosoof" },
+  { grondvorm: "pietas", aanvullingen: "pietatis, (v.)", vertaling: "plichtsgevoel, vroomheid, respect, eerbied", basis: true, teksten: ["7a/3","7b/6"], volgorde: {"7a/3":47,"7b/6":26} },
+  { grondvorm: "pinguis", aanvullingen: "pinguis, pingue", vertaling: "vet, vettig", basis: true, teksten: ["6b/2"], volgorde: {"6b/2":101} },
+  { grondvorm: "pinus", aanvullingen: "pinus, (v.)", vertaling: "pijnboom", teksten: ["6a/2"], volgorde: {"6a/2":96} },
+  { grondvorm: "piper", aanvullingen: "piperis (o.)", vertaling: "peper" },
+  { grondvorm: "Piraeus", aanvullingen: "Piraei", vertaling: "Piraeus (haven van Athene)", teksten: ["9b/6"], volgorde: {"9b/6":41} },
+  { grondvorm: "piscina", aanvullingen: "piscinae, (v.)", vertaling: "zwembad", teksten: ["9b/5"], volgorde: {"9b/5":46} },
+  { grondvorm: "piscis", aanvullingen: "piscis", vertaling: "vis" },
+  { grondvorm: "pistor", aanvullingen: "pistoris", vertaling: "bakker", teksten: ["6b/3"], volgorde: {"6b/3":55} },
+  { grondvorm: "pituita", aanvullingen: "pituitae, (v.)", vertaling: "slijm, etter; verkoudheid", teksten: ["10/8"], volgorde: {"10/8":15} },
+  { grondvorm: "pius", aanvullingen: "pia, pium", vertaling: "plichtsgetrouw; vroom; liefdevol" },
+  { grondvorm: "placere", aanvullingen: "placeo, placui, placitum", vertaling: "behagen, bevallen, leuk zijn/vinden" },
+  { grondvorm: "placidus", aanvullingen: "placida, placidum", vertaling: "rustig" },
+  { grondvorm: "plaga", aanvullingen: "plagae", vertaling: "slag, stoot" },
+  { grondvorm: "planissimus", aanvullingen: "planissima, planissimum", vertaling: "vlakst, zeer vlak, het meest effen, zeer effen", teksten: ["6a/7"], volgorde: {"6a/7":23} },
+  { grondvorm: "planta", aanvullingen: "plantae, (v.)", vertaling: "voetzool, voet", teksten: ["6b/2"], volgorde: {"6b/2":47} },
+  { grondvorm: "planum", aanvullingen: "plani, (o.)", vertaling: "vlakte", teksten: ["6b/5"], volgorde: {"6b/5":24} },
+  { grondvorm: "planus", aanvullingen: "plana, planum", vertaling: "vlak, effen", teksten: ["6a/7"], volgorde: {"6a/7":22} },
+  { grondvorm: "plaustrum", aanvullingen: "plaustri, (o.)", vertaling: "wagen, transportwagen", teksten: ["6b/2","8b/3"], volgorde: {"6b/2":92,"8b/3":46} },
+  { grondvorm: "plebs", aanvullingen: "plebis, (v.)", vertaling: "het gewone volk, volk", teksten: ["8a/3","8a/5"], volgorde: {"8a/3":142,"8a/5":36} },
+  { grondvorm: "plenus", aanvullingen: "plena, plenum + gen.", vertaling: "vol van", teksten: ["9b/7"], volgorde: {"9b/7":5} },
+  { grondvorm: "plerumque", aanvullingen: "(bijw.)", vertaling: "meestal, gewoonlijk", teksten: ["9a/4"], volgorde: {"9a/4":11} },
+  { grondvorm: "plerique", aanvullingen: "pleraeque, pleraque (enkel mv.)", vertaling: "de meeste" },
+  { grondvorm: "plumbum", aanvullingen: "plumbi, (o.)", vertaling: "lood", teksten: ["10/19"], volgorde: {"10/19":18} },
+  { grondvorm: "plures", aanvullingen: "plures, plura (enkel mv.)", vertaling: "meer, meerdere, verscheidene", basis: true, teksten: ["6a/4"], volgorde: {"6a/4":5} },
+  { grondvorm: "plurimi", aanvullingen: "plurimae, plurima (meestal mv.)", vertaling: "zeer veel", teksten: ["6b/3","8b/6","9a/4"], volgorde: {"6b/3":1,"8b/6":44,"9a/4":7} },
+  { grondvorm: "plurimi facere", aanvullingen: "", vertaling: "iemand zeer hoogachten, zeer waarderen", teksten: ["9b/9"], volgorde: {"9b/9":23} },
+  { grondvorm: "plurimus", aanvullingen: "plurima, plurimum (meestal mv.)", vertaling: "zeer veel" },
+  { grondvorm: "plus", aanvullingen: "(bijw.)", vertaling: "meer", teksten: ["8a/5"], volgorde: {"8a/5":14} },
+  { grondvorm: "plus quam", aanvullingen: "", vertaling: "meer … dan" },
+  { grondvorm: "plus … quam", aanvullingen: "", vertaling: "meer … dan" },
+  { grondvorm: "Pluto", aanvullingen: "Plutonis", vertaling: "(de god) Pluto" },
+  { grondvorm: "pluvia", aanvullingen: "pluviae", vertaling: "regen", teksten: ["8b/6"], volgorde: {"8b/6":10} },
+  { grondvorm: "poena", aanvullingen: "poenae, (v.)", vertaling: "straf; boete", basis: true, teksten: ["7a/5","7b/4"], volgorde: {"7a/5":25,"7b/4":87} },
+  { grondvorm: "poenas dare", aanvullingen: "+ gen.", vertaling: "gestraft worden voor" },
+  { grondvorm: "poenas pendere", aanvullingen: "", vertaling: "boete betalen, boeten, gestraft worden", teksten: ["7a/5"], volgorde: {"7a/5":41} },
+  { grondvorm: "polliceri", aanvullingen: "polliceor, pollicitus sum", vertaling: "beloven" },
+  { grondvorm: "Polus", aanvullingen: "Poli", vertaling: "Polus (eigennaam)" },
+  { grondvorm: "Pompeii", aanvullingen: "Pompeiorum (enkel mv.)", vertaling: "(de stad) Pompeji", teksten: ["6a/1"], volgorde: {"6a/1":3} },
+  { grondvorm: "pondus", aanvullingen: "ponderis", vertaling: "gewicht, last" },
+  { grondvorm: "ponere", aanvullingen: "pono, posui, positum", vertaling: "plaatsen, zetten, leggen", teksten: ["7a/7","9a/4","9b/5"], volgorde: {"7a/7":9,"9a/4":39,"9b/5":64} },
+  { grondvorm: "pons", aanvullingen: "pontis (m.)", vertaling: "brug" },
+  { grondvorm: "pontifex", aanvullingen: "pontificis (m.)", vertaling: "opperpriester" },
+  { grondvorm: "popina", aanvullingen: "popinae, (v.)", vertaling: "kroeg", teksten: ["6b/1"], volgorde: {"6b/1":13} },
+  { grondvorm: "populari", aanvullingen: "populor, populatus sum", vertaling: "verwoesten; plunderen", teksten: ["8b/9"], volgorde: {"8b/9":62} },
+  { grondvorm: "populatio", aanvullingen: "populationis, (v.)", vertaling: "verwoesting, vernietiging", teksten: ["8a/2"], volgorde: {"8a/2":7} },
+  { grondvorm: "populus", aanvullingen: "populi, (m.)", vertaling: "volk", teksten: ["6b/2","7a/8"], volgorde: {"6b/2":28,"7a/8":5} },
+  { grondvorm: "porrigere", aanvullingen: "porrigo, porrexi, porrectum", vertaling: "aanreiken, aanbieden, geven" },
+  { grondvorm: "Porsenna", aanvullingen: "Porsennae (m.)", vertaling: "Porsenna (eigennaam)", teksten: ["7b/2"], volgorde: {"7b/2":108} },
+  { grondvorm: "porta", aanvullingen: "portae, (v.)", vertaling: "poort" },
+  { grondvorm: "portare", aanvullingen: "porto, portavi, portatum", vertaling: "dragen, vervoeren", teksten: ["6b/2","7b/4"], volgorde: {"6b/2":68,"7b/4":15} },
+  { grondvorm: "portorium", aanvullingen: "portorii, (o.)", vertaling: "tol, belasting", teksten: ["8a/5"], volgorde: {"8a/5":25} },
+  { grondvorm: "portus", aanvullingen: "portus, (m.)", vertaling: "haven", teksten: ["9b/7"], volgorde: {"9b/7":20} },
+  { grondvorm: "poscere", aanvullingen: "posco, poposci, –", vertaling: "(met aandrang) vragen, eisen", basis: true, teksten: ["6a/2"], volgorde: {"6a/2":81} },
+  { grondvorm: "posse", aanvullingen: "possum, potui, –", vertaling: "kunnen", basis: true, teksten: ["6a/2","6b/2","6b/4"], volgorde: {"6a/2":94,"6b/2":74,"6b/4":64} },
+  { grondvorm: "possent", aanvullingen: "", vertaling: "'zij konden'", teksten: ["7b/12"], volgorde: {"7b/12":18} },
+  { grondvorm: "post", aanvullingen: "+ acc. (vz.)", vertaling: "na, achter", basis: true, teksten: ["6a/1","6b/5","7b/2","9a/1","6a/7"], volgorde: {"6a/1":40,"6b/5":32,"7b/2":70,"9a/1":37,"6a/7":53} },
+  { grondvorm: "post", aanvullingen: "(bijw.)", vertaling: "daarna, later, nadien", basis: true, teksten: ["6a/2"], volgorde: {"6a/2":85} },
+  { grondvorm: "postea", aanvullingen: "(bijw.)", vertaling: "daarna, later, nadien", teksten: ["7b/2"], volgorde: {"7b/2":104} },
+  { grondvorm: "posterus", aanvullingen: "postera, posterum", vertaling: "volgend, later", teksten: ["7b/4","9b/7"], volgorde: {"7b/4":64,"9b/7":17} },
+  { grondvorm: "posthac", aanvullingen: "(bijw.)", vertaling: "nadien, later" },
+  { grondvorm: "postquam", aanvullingen: "(soms post … quam) + ind. (vgw.)", vertaling: "nadat", teksten: ["7b/2","8b/9"], volgorde: {"7b/2":17,"8b/9":4} },
+  { grondvorm: "postremo", aanvullingen: "(bijw.)", vertaling: "kortom, ten slotte", teksten: ["8a/2"], volgorde: {"8a/2":35} },
+  { grondvorm: "postridie", aanvullingen: "(bijw.)", vertaling: "'s anderendaags", teksten: ["9b/9"], volgorde: {"9b/9":7} },
+  { grondvorm: "Postumus", aanvullingen: "Postumi", vertaling: "Postumus (eigennaam)" },
+  { grondvorm: "potestas", aanvullingen: "potestatis, (v.)", vertaling: "macht, gezag, kracht", basis: true, teksten: ["8b/5"], volgorde: {"8b/5":2} },
+  { grondvorm: "potius", aanvullingen: "(bijw.)", vertaling: "eerder, liever" },
+  { grondvorm: "potius … quam", aanvullingen: "", vertaling: "eerder … dan, liever … dan" },
+  { grondvorm: "potus", aanvullingen: "potus, (m.)", vertaling: "het drinken, drank" },
+  { grondvorm: "praebere", aanvullingen: "praebeo, praebui, praebitum", vertaling: "verschaffen", basis: true },
+  { grondvorm: "praeceps", aanvullingen: "praeceps, praeceps; praecipitis", vertaling: "halsoverkop" },
+  { grondvorm: "praecingere", aanvullingen: "praecingo, praecinxi, praecinctum", vertaling: "omgorden (met een riem)" },
+  { grondvorm: "praecipuus", aanvullingen: "praecipua, praecipuum", vertaling: "bijzonder, voornaam, uitstekend", teksten: ["10/14"], volgorde: {"10/14":8} },
+  { grondvorm: "praeda", aanvullingen: "praedae, (v.)", vertaling: "buit" },
+  { grondvorm: "praedandi gratia", aanvullingen: "", vertaling: "'omwille van het stelen' → 'om te stelen'", teksten: ["10/3"], volgorde: {"10/3":47} },
+  { grondvorm: "praedare", aanvullingen: "praedo, praedavi, praedatum", vertaling: "buit binnenhalen, stelen, roven", teksten: ["10/3"], volgorde: {"10/3":45} },
+  { grondvorm: "praedium", aanvullingen: "praedii, (o.)", vertaling: "landgoed, boerderij", teksten: ["8b/3"], volgorde: {"8b/3":4} },
+  { grondvorm: "praeductorium", aanvullingen: "praeductorii", vertaling: "lat, lineaal" },
+  { grondvorm: "praefectus praetorio", aanvullingen: "praefecti praetorio", vertaling: "commandant (van de keizerlijke lijfwacht)" },
+  { grondvorm: "praeferre", aanvullingen: "praefero, praetuli, praelatum", vertaling: "voor zich uitdragen" },
+  { grondvorm: "praeire", aanvullingen: "praeeo, praeii, praeitum", vertaling: "voorgaan, de leiding nemen", teksten: ["7a/8"], volgorde: {"7a/8":9} },
+  { grondvorm: "praemium", aanvullingen: "praemii, (o.)", vertaling: "beloning" },
+  { grondvorm: "praesidere", aanvullingen: "praesideo, praesedi, –", vertaling: "zitten voor; leiden, commanderen" },
+  { grondvorm: "praesidium", aanvullingen: "praesidii, (o.)", vertaling: "bescherming, hulp, bezettingstroep" },
+  { grondvorm: "praestare", aanvullingen: "praesto, praestiti, –", vertaling: "verschaffen, geven, verlenen", teksten: ["10/21"], volgorde: {"10/21":24} },
+  { grondvorm: "praestare", aanvullingen: "praesto, praestiti, – + dat.", vertaling: "overtreffen, superieur zijn aan" },
+  { grondvorm: "praeter", aanvullingen: "+ acc. (vz.)", vertaling: "langs; behalve", teksten: ["7a/1","10/8"], volgorde: {"7a/1":9,"10/8":25} },
+  { grondvorm: "praeterea", aanvullingen: "(bijw.)", vertaling: "bovendien", teksten: ["6a/7"], volgorde: {"6a/7":28} },
+  { grondvorm: "praeterire", aanvullingen: "praetereo, praeterii, praeteritum", vertaling: "gaan langs, voorbijgaan, passeren", teksten: ["6b/4"], volgorde: {"6b/4":14} },
+  { grondvorm: "praetor", aanvullingen: "praetoris", vertaling: "praetor", teksten: ["7a/8","8b/9"], volgorde: {"7a/8":7,"8b/9":77} },
+  { grondvorm: "prandere", aanvullingen: "prandeo, prandi, pransum", vertaling: "eten, lunchen" },
+  { grondvorm: "prandium", aanvullingen: "prandii", vertaling: "lunch" },
+  { grondvorm: "precari", aanvullingen: "precor, precatus sum + acc.", vertaling: "smeken om, bidden om" },
+  { grondvorm: "premere", aanvullingen: "premo, pressi, pressum", vertaling: "drukken, duwen", basis: true, teksten: ["6a/7","6b/2"], volgorde: {"6a/7":8,"6b/2":37} },
+  { grondvorm: "pretium", aanvullingen: "pretii", vertaling: "prijs" },
+  { grondvorm: "prex", aanvullingen: "precis, (v.)", vertaling: "smeekbede, gebed; vervloeking", teksten: ["7a/3"], volgorde: {"7a/3":64} },
+  { grondvorm: "pridie", aanvullingen: "(bijw.)", vertaling: "de dag voor" },
+  { grondvorm: "primo", aanvullingen: "(bijw.)", vertaling: "eerst", teksten: ["8a/2"], volgorde: {"8a/2":28} },
+  { grondvorm: "primum", aanvullingen: "(bijw.)", vertaling: "ten eerste, eerst", basis: true, teksten: ["6a/2","6b/5","10/19"], volgorde: {"6a/2":79,"6b/5":23,"10/19":5} },
+  { grondvorm: "primus", aanvullingen: "prima, primum (telwoord)", vertaling: "eerste", teksten: ["6b/8","7a/1","8b/9"], volgorde: {"6b/8":17,"7a/1":15,"8b/9":24} },
+  { grondvorm: "Primus", aanvullingen: "Primi", vertaling: "Primus (eigennaam)", teksten: ["8b/9"], volgorde: {"8b/9":139} },
+  { grondvorm: "principatus", aanvullingen: "principatus, (m.)", vertaling: "de eerste plaats, hoogste positie, heerschappij", teksten: ["10/14"], volgorde: {"10/14":4} },
+  { grondvorm: "principium", aanvullingen: "principii, (o.)", vertaling: "begin", basis: true },
+  { grondvorm: "prior", aanvullingen: "prior, prius; prioris", vertaling: "eerder, vroeger", basis: true },
+  { grondvorm: "Priscus", aanvullingen: "Prisci", vertaling: "Priscus (eigennaam)" },
+  { grondvorm: "prius", aanvullingen: "(bijw.)", vertaling: "eerder, vroeger" },
+  { grondvorm: "privatim", aanvullingen: "(bijw.)", vertaling: "persoonlijk, onderling", teksten: ["10/14"], volgorde: {"10/14":37} },
+  { grondvorm: "privatus", aanvullingen: "privata, privatum", vertaling: "privé-", teksten: ["6a/1"], volgorde: {"6a/1":35} },
+  { grondvorm: "pro", aanvullingen: "+ abl. (vz.)", vertaling: "voor; ter verdediging van; in de plaats van", basis: true, teksten: ["7b/2"], volgorde: {"7b/2":47} },
+  { grondvorm: "probare", aanvullingen: "probo, probavi, probatum", vertaling: "goedkeuren; bewijzen", basis: true },
+  { grondvorm: "procedere", aanvullingen: "procedo, processi, processum", vertaling: "voorwaarts gaan, voortgaan, vorderen", basis: true, teksten: ["9b/7","6a/7"], volgorde: {"9b/7":26,"6a/7":34} },
+  { grondvorm: "proceritas", aanvullingen: "proceritatis", vertaling: "hoogte, lengte" },
+  { grondvorm: "procreare", aanvullingen: "procreo, procreavi, procreatum", vertaling: "verwekken, doen ontstaan", teksten: ["10/19"], volgorde: {"10/19":29} },
+  { grondvorm: "procurare", aanvullingen: "procuro, procuravi, procuratum", vertaling: "zorgen voor, verzorgen", teksten: ["7a/8"], volgorde: {"7a/8":16} },
+  { grondvorm: "prodesse", aanvullingen: "prosum, profui, –", vertaling: "tot voordeel strekken, nuttig zijn" },
+  { grondvorm: "prodigiosus", aanvullingen: "prodigiosa, prodigiosum", vertaling: "monsterachtig" },
+  { grondvorm: "proelium", aanvullingen: "proelii, (o.)", vertaling: "strijd, gevecht", basis: true, teksten: ["7b/4","9a/1"], volgorde: {"7b/4":5,"9a/1":63} },
+  { grondvorm: "proficisci", aanvullingen: "proficiscor, profectus sum", vertaling: "vertrekken", basis: true, teksten: ["7b/2","9b/7"], volgorde: {"7b/2":22,"9b/7":32} },
+  { grondvorm: "profluere", aanvullingen: "profluo, profluxi, –", vertaling: "voortstomen, tevoorschijn stromen, tevoorschijn komen", teksten: ["10/8"], volgorde: {"10/8":16} },
+  { grondvorm: "progignere", aanvullingen: "progigno, progenui, progenitum", vertaling: "voortbrengen, verwekken", teksten: ["7a/3"], volgorde: {"7a/3":8} },
+  { grondvorm: "prohibere", aanvullingen: "prohibeo, prohibui, prohibitum", vertaling: "verbieden; verhinderen, afhouden van, afweren", basis: true, teksten: ["8b/6"], volgorde: {"8b/6":12} },
+  { grondvorm: "proicere", aanvullingen: "proicio, proieci, proiectum", vertaling: "op de grond gooien, neerwerpen, weggooien", teksten: ["7a/7"], volgorde: {"7a/7":15} },
+  { grondvorm: "prolabi", aanvullingen: "prolabor, prolapsus sum", vertaling: "vooruitglijden, instorten, vernietigen", teksten: ["7b/4"], volgorde: {"7b/4":85} },
+  { grondvorm: "prolapsus", aanvullingen: "prolapsa, prolapsam", vertaling: "vooruitgegleden, ingestort, vernietigd", teksten: ["7b/4"], volgorde: {"7b/4":86} },
+  { grondvorm: "proluere", aanvullingen: "proluo, prolui, prolutum", vertaling: "overgieten, wegspoelen, berochtigen", teksten: ["9b/4"], volgorde: {"9b/4":47} },
+  { grondvorm: "Prometheus", aanvullingen: "Promethei", vertaling: "Prometheus (eigennaam)" },
+  { grondvorm: "promiscuus", aanvullingen: "promiscua, promiscuum", vertaling: "gescheiden, niet gemengd" },
+  { grondvorm: "promptus", aanvullingen: "prompta, promptum ad + acc.", vertaling: "gereed voor, klaar voor; bereidwillig tot, geneigd tot" },
+  { grondvorm: "prope", aanvullingen: "(bijw.)", vertaling: "dichtbij", teksten: ["7a/3","7b/2"], volgorde: {"7a/3":23,"7b/2":29} },
+  { grondvorm: "prope", aanvullingen: "+ acc. (vz.)", vertaling: "dichtbij, bij" },
+  { grondvorm: "properare", aanvullingen: "propero, properavi, properatum", vertaling: "zich haasten, zich spoeden", teksten: ["6b/2","7a/7","9b/9"], volgorde: {"6b/2":30,"7a/7":13,"9b/9":44} },
+  { grondvorm: "propnigeum", aanvullingen: "propnigei", vertaling: "zweetkamer", teksten: ["9b/5"], volgorde: {"9b/5":36} },
+  { grondvorm: "proponere", aanvullingen: "propono, proposui, propositum", vertaling: "voorstellen; uitvaardigen" },
+  { grondvorm: "proprius", aanvullingen: "propria, proprium", vertaling: "eigen, kenmerkend, typisch" },
+  { grondvorm: "propter", aanvullingen: "+ acc. (vz.)", vertaling: "wegens", basis: true, teksten: ["8a/2","9b/4","9b/9","10/3"], volgorde: {"8a/2":6,"9b/4":18,"9b/9":10,"10/3":29} },
+  { grondvorm: "Proserpina", aanvullingen: "Proserpinae", vertaling: "(de godin) Proserpina" },
+  { grondvorm: "prosilire", aanvullingen: "prosilio, prosilui, –", vertaling: "naar voren springen, opspringen", teksten: ["7b/2"], volgorde: {"7b/2":91} },
+  { grondvorm: "prospectare", aanvullingen: "prospecto, prospectavi, prospectatum", vertaling: "bekijken, observeren; van een plaats: uitzicht bieden op", teksten: ["9b/5"], volgorde: {"9b/5":20} },
+  { grondvorm: "prosperus", aanvullingen: "prospera, prosperum", vertaling: "gunstig, voorspoedig" },
+  { grondvorm: "protegere", aanvullingen: "protego, protexi, protectum", vertaling: "beschermen", teksten: ["10/3"], volgorde: {"10/3":63} },
+  { grondvorm: "providere", aanvullingen: "provideo, providi, provisum", vertaling: "voorzien, van tevoren regelen", basis: true },
+  { grondvorm: "provincia", aanvullingen: "provinciae", vertaling: "provincie", basis: true, teksten: ["8a/5"], volgorde: {"8a/5":28} },
+  { grondvorm: "provocare", aanvullingen: "provoco, provocavi, provocatum", vertaling: "aansporen, uitlokken, uitdagen (tot een gevecht)", teksten: ["7b/4"], volgorde: {"7b/4":1} },
+  { grondvorm: "provocatus", aanvullingen: "provocata, provocatum", vertaling: "aangespoord, uitgelokt, uitgedaagd (tot een gevecht)", teksten: ["7b/4"], volgorde: {"7b/4":2} },
+  { grondvorm: "proximus", aanvullingen: "proxima, proximum + dat.", vertaling: "zeer dichtbij, dichtst bij", basis: true, teksten: ["7a/3"], volgorde: {"7a/3":5} },
+  { grondvorm: "prudentia", aanvullingen: "prudentiae, (v.)", vertaling: "kennis, ervaring, verstand, inzicht, wijsheid", basis: true, teksten: ["10/3"], volgorde: {"10/3":31} },
+  { grondvorm: "publicus", aanvullingen: "publica, publicum", vertaling: "openbaar, officieel", basis: true, teksten: ["6a/1","7a/8"], volgorde: {"6a/1":38,"7a/8":15} },
+  { grondvorm: "pudendus", aanvullingen: "pudenda, pudendum", vertaling: "beschamend, schandalig, schandalig" },
+  { grondvorm: "pudicitia", aanvullingen: "pudicitiae", vertaling: "zedigheid, kuisheid", teksten: ["7b/6"], volgorde: {"7b/6":4} },
+  { grondvorm: "pudor", aanvullingen: "pudoris", vertaling: "schaamte; eergevoel, eerbied, eer", teksten: ["8b/9"], volgorde: {"8b/9":99} },
+  { grondvorm: "puella", aanvullingen: "puellae", vertaling: "meisje", teksten: ["10/26"], volgorde: {"10/26":45} },
+  { grondvorm: "puer scriniarius", aanvullingen: "pueri scriniarii", vertaling: "slaafje dat een schrijfkoker draagt" },
+  { grondvorm: "puer", aanvullingen: "pueri, (m.)", vertaling: "jongen; slaaf", basis: true, teksten: ["7a/1","7a/3"], volgorde: {"7a/1":18,"7a/3":74} },
+  { grondvorm: "pugio", aanvullingen: "pugionis (m.)", vertaling: "dolk" },
+  { grondvorm: "pugnare", aanvullingen: "pugno, pugnavi, pugnatum", vertaling: "vechten, strijden", basis: true, teksten: ["7b/4"], volgorde: {"7b/4":46} },
+  { grondvorm: "pulcher", aanvullingen: "pulchra, pulchrum", vertaling: "mooi", basis: true, teksten: ["7a/6","9b/5"], volgorde: {"7a/6":11,"9b/5":3} },
+  { grondvorm: "pullus", aanvullingen: "pulli", vertaling: "kip" },
+  { grondvorm: "pulmo", aanvullingen: "pulmonis (m.)", vertaling: "long", teksten: ["10/8"], volgorde: {"10/8":12} },
+  { grondvorm: "pulpa", aanvullingen: "pulpae", vertaling: "vlees" },
+  { grondvorm: "pulvis", aanvullingen: "pulveris (m.)", vertaling: "stof, zand, aarde, grond", teksten: ["10/3","10/21"], volgorde: {"10/3":61,"10/21":3} },
+  { grondvorm: "pumex", aanvullingen: "pumicis (m.)", vertaling: "puimsteen", teksten: ["6a/4"], volgorde: {"6a/4":44} },
+  { grondvorm: "purus", aanvullingen: "pura, purum", vertaling: "rein, zuiver", teksten: ["7a/1"], volgorde: {"7a/1":21} },
+  { grondvorm: "pusillus", aanvullingen: "pusilla, pusillum", vertaling: "klein" },
+  { grondvorm: "putare", aanvullingen: "puto, putavi, putatum", vertaling: "menen, denken; beschouwen als", basis: true, teksten: ["6b/4","7a/1","7a/7","8a/6","10/3","10/26"], volgorde: {"6b/4":63,"7a/1":52,"7a/7":20,"8a/6":28,"10/3":25,"10/26":38} },
+  { grondvorm: "Pyrrha", aanvullingen: "Pyrrhae", vertaling: "Pyrrha (eigennaam)" },
+  { grondvorm: "Pythius", aanvullingen: "Pythia, Pythium", vertaling: "Pythisch" },
+  { grondvorm: "Python", aanvullingen: "Pythonis (m.)", vertaling: "Python (eigennaam)" },
+  { grondvorm: "qua", aanvullingen: "(bijw.)", vertaling: "waarlangs" },
+  { grondvorm: "qua", aanvullingen: "(bijw.)", vertaling: "ergens" },
+  { grondvorm: "quadraginta", aanvullingen: "(telwoord)", vertaling: "veertig", teksten: ["7a/1"], volgorde: {"7a/1":33} },
+  { grondvorm: "quadriga", aanvullingen: "quadrigae", vertaling: "vierspan" },
+  { grondvorm: "quadriremis", aanvullingen: "quadriremis", vertaling: "vierdekker (= schip met vier verdiepingen roeiers)" },
+  { grondvorm: "quadrupes", aanvullingen: "quadrupedis", vertaling: "viervoeter", teksten: ["8b/3"], volgorde: {"8b/3":18} },
+  { grondvorm: "quaerere", aanvullingen: "quaero, quaesivi, quaesitum", vertaling: "zoeken; vragen", basis: true, teksten: ["6b/4","7a/8","8a/3"], volgorde: {"6b/4":28,"7a/8":19,"8a/3":22} },
+  { grondvorm: "quaestor", aanvullingen: "quaestoris", vertaling: "quaestor (= politiek ambt)", teksten: ["7a/8"], volgorde: {"7a/8":17} },
+  { grondvorm: "quaestus", aanvullingen: "quaestus, (m.)", vertaling: "voordeel, winst", teksten: ["9b/9"], volgorde: {"9b/9":55} },
+  { grondvorm: "qualis", aanvullingen: "qualis, quale", vertaling: "wat voor een?; (zodanig) als, zoals", basis: true, teksten: ["8b/3","6a/7"], volgorde: {"8b/3":10,"6a/7":70} },
+  { grondvorm: "quam", aanvullingen: "(na comparatief)", vertaling: "dan", teksten: ["6b/4","8a/3","9b/5"], volgorde: {"6b/4":5,"8a/3":30,"9b/5":13} },
+  { grondvorm: "quam", aanvullingen: "+ adj.!", vertaling: "hoe", teksten: ["6b/4","8a/3","9b/5"], volgorde: {"6b/4":44,"8a/3":100,"9b/5":42} },
+  { grondvorm: "quam primum", aanvullingen: "", vertaling: "zo vlug mogelijk, zo spoedig mogelijk", teksten: ["9b/9"], volgorde: {"9b/9":40} },
+  { grondvorm: "quam saepissime", aanvullingen: "", vertaling: "zo vaak mogelijk" },
+  { grondvorm: "quamquam", aanvullingen: "+ ind./conj.", vertaling: "hoewel, ook al", teksten: ["6a/7"], volgorde: {"6a/7":21} },
+  { grondvorm: "quando?", aanvullingen: "(vragend bijw.)", vertaling: "wanneer?" },
+  { grondvorm: "quando", aanvullingen: "+ ind. (vgw.)", vertaling: "wanneer; aangezien" },
+  { grondvorm: "quantum?", aanvullingen: "(bijw.)", vertaling: "hoeveel?" },
+  { grondvorm: "quapropter", aanvullingen: "(bijw.)", vertaling: "daarom" },
+  { grondvorm: "quare", aanvullingen: "(vragend bijw.)", vertaling: "waarom?" },
+  { grondvorm: "quartus", aanvullingen: "quarta, quartum (telwoord)", vertaling: "vierde", teksten: ["7a/1"], volgorde: {"7a/1":39} },
+  { grondvorm: "quasi", aanvullingen: "+ conj. (vgw.)", vertaling: "alsof", teksten: ["6a/7"], volgorde: {"6a/7":31} },
+  { grondvorm: "quasi", aanvullingen: "(bijw.)", vertaling: "als het ware, om zo te zeggen" },
+  { grondvorm: "quatere", aanvullingen: "quatio, –, quassum", vertaling: "schudden" },
+  { grondvorm: "quattuor", aanvullingen: "(telwoord)", vertaling: "vier", teksten: ["6b/2"], volgorde: {"6b/2":123} },
+  { grondvorm: "quattuordecim", aanvullingen: "(telwoord)", vertaling: "veertien", teksten: ["6b/2"], volgorde: {"6b/2":120} },
+  { grondvorm: "-que", aanvullingen: "(vgw.)", vertaling: "en", teksten: ["7a/3","7a/5"], volgorde: {"7a/3":14,"7a/5":10} },
+  { grondvorm: "quemadmodum", aanvullingen: "(vragend bijw.)", vertaling: "hoe?", teksten: ["8a/6"], volgorde: {"8a/6":1} },
+  { grondvorm: "quemadmodum", aanvullingen: "(vragend vgw.)", vertaling: "zoals" },
+  { grondvorm: "queri", aanvullingen: "queor, questus sum", vertaling: "klagen", teksten: ["8a/3"], volgorde: {"8a/3":17} },
+  { grondvorm: "qui", aanvullingen: "quae, quod (betr. vnw.)", vertaling: "die, dat", basis: true, teksten: ["6a/1","6a/4","6b/1","6b/2","6b/3","7a/3","7a/6","7a/7","7a/8","7b/2","7b/4","8a/3","8a/5","8b/3","8b/5","10/26","6a/7"], volgorde: {"6a/1":11,"6a/4":13,"6b/1":18,"6b/2":33,"6b/3":20,"7a/3":4,"7a/6":2,"7a/7":3,"7a/8":3,"7b/2":73,"7b/4":49,"8a/3":134,"8a/5":18,"8b/3":29,"8b/5":24,"10/26":5,"6a/7":64} },
+  { grondvorm: "qui", aanvullingen: "quae, quod? (vragend vnw.)", vertaling: "welk?, wat voor een?", basis: true, teksten: ["6a/2","6b/2","7a/3"], volgorde: {"6a/2":90,"6b/2":114,"7a/3":54} },
+  { grondvorm: "quia", aanvullingen: "+ ind. (vgw.)", vertaling: "omdat", basis: true, teksten: ["6a/2","6b/2","7a/5","7a/8","7b/4","9a/4","10/3","10/14"], volgorde: {"6a/2":106,"6b/2":26,"7a/5":16,"7a/8":20,"7b/4":32,"9a/4":43,"10/3":57,"10/14":10} },
+  { grondvorm: "quicumque", aanvullingen: "quaecumque, quodcumque", vertaling: "om het even wie/wat, om het even welk, wie ook/wat ook, alwie/alwat", basis: true },
+  { grondvorm: "quidam", aanvullingen: "quaedam, quiddam (onbep. vnw., subst.)", vertaling: "iemand, iets", teksten: ["10/3"], volgorde: {"10/3":44} },
+  { grondvorm: "quidam", aanvullingen: "quaedam, quoddam (onbep. vnw., adj.)", vertaling: "een, een zekere" },
+  { grondvorm: "quidem", aanvullingen: "(bijw.)", vertaling: "zeker, ongetwijfeld; (legt nadruk op voorgaande woord)", teksten: ["6b/4","7b/4","9b/5"], volgorde: {"6b/4":43,"7b/4":68,"9b/5":66} },
+  { grondvorm: "quies", aanvullingen: "quietis, (v.)", vertaling: "rust, ontspanning, slaap", basis: true },
+  { grondvorm: "quiescere", aanvullingen: "quiesco, quievi, quietum", vertaling: "rusten", teksten: ["6b/3"], volgorde: {"6b/3":44} },
+  { grondvorm: "quietus", aanvullingen: "quieta, quietum", vertaling: "rustig, kalm, ongestoord", teksten: ["8a/3","8a/5"], volgorde: {"8a/3":26,"8a/5":41} },
+  { grondvorm: "quilibet", aanvullingen: "quaelibet, quidlibet (onbep. vnw.)", vertaling: "om het even wie/wat", teksten: ["10/19"], volgorde: {"10/19":9} },
+  { grondvorm: "quilibet", aanvullingen: "quaelibet, quodlibet (onbep. vnw.)", vertaling: "om het even welk" },
+  { grondvorm: "quin", aanvullingen: "+ conj.", vertaling: "dat", basis: true, teksten: ["7b/4"], volgorde: {"7b/4":83} },
+  { grondvorm: "Quinctius Cincinnatus", aanvullingen: "Quinctii Cincinnati", vertaling: "Quinctius Cincinnatus (eigennaam)" },
+  { grondvorm: "quindecim", aanvullingen: "(telwoord)", vertaling: "vijftien", teksten: ["7a/1"], volgorde: {"7a/1":13} },
+  { grondvorm: "quindecimus", aanvullingen: "quindecima, quindecimum (telwoord)", vertaling: "vijftiende", teksten: ["7a/1"], volgorde: {"7a/1":17} },
+  { grondvorm: "quingenti", aanvullingen: "quingentae, quingenta (telwoord)", vertaling: "vijfhonderd", teksten: ["8a/5"], volgorde: {"8a/5":15} },
+  { grondvorm: "quinque", aanvullingen: "(telwoord)", vertaling: "vijf", teksten: ["7a/1","8a/6"], volgorde: {"7a/1":3,"8a/6":10} },
+  { grondvorm: "quintus", aanvullingen: "quinta, quintum", vertaling: "vijfde", teksten: ["7a/1"], volgorde: {"7a/1":51} },
+  { grondvorm: "quippe", aanvullingen: "", vertaling: "want, namelijk", teksten: ["6b/2"], volgorde: {"6b/2":119} },
+  { grondvorm: "Quirinus", aanvullingen: "Quirini", vertaling: "(de god) Quirinus" },
+  { grondvorm: "quiritatus", aanvullingen: "quiritatus, (m.)", vertaling: "hulpgeroep, geschreeuw" },
+  { grondvorm: "quis", aanvullingen: "qua, quid = aliquis, aliqua, aliquid (na si of nisi)", vertaling: "iemand, iets", basis: true, teksten: ["6b/4","6b/9"], volgorde: {"6b/4":36,"6b/9":7} },
+  { grondvorm: "quis", aanvullingen: "quis, quid? (vragend vnw.)", vertaling: "wie?, wat?", basis: true, teksten: ["6b/4"], volgorde: {"6b/4":56} },
+  { grondvorm: "quisnam", aanvullingen: "quisnam, quidnam? (vragend vnw.)", vertaling: "wie?, wat?", teksten: ["10/3"], volgorde: {"10/3":54} },
+  { grondvorm: "quisquam", aanvullingen: "quaequam/ulla, quicquam/quidquam", vertaling: "subst.: iemand, iets; adj.: een", teksten: ["7a/5","8a/5","9a/4"], volgorde: {"7a/5":38,"8a/5":12,"9a/4":31} },
+  { grondvorm: "quisquis", aanvullingen: "quisquis, quidquid/quicquid", vertaling: "alwie, alwat; wie ook, wat ook" },
+  { grondvorm: "quo?", aanvullingen: "(vragend bijw.)", vertaling: "waarheen?" },
+  { grondvorm: "quod", aanvullingen: "+ ind. (vgw.)", vertaling: "omdat", basis: true, teksten: ["7a/1","7a/5","8a/3"], volgorde: {"7a/1":20,"7a/5":3,"8a/3":51} },
+  { grondvorm: "quomodo", aanvullingen: "(bijw.)", vertaling: "hoe?", teksten: ["10/3"], volgorde: {"10/3":9} },
+  { grondvorm: "quomodo?", aanvullingen: "(vragend bijw.)", vertaling: "hoe?" },
+  { grondvorm: "quondam", aanvullingen: "(bijw.)", vertaling: "lang geleden, ooit, eens", teksten: ["7a/3"], volgorde: {"7a/3":1} },
+  { grondvorm: "quoniam", aanvullingen: "+ ind. (vgw.)", vertaling: "omdat, aangezien", basis: true, teksten: ["7b/2"], volgorde: {"7b/2":38} },
+  { grondvorm: "quoque", aanvullingen: "(bijw.)", vertaling: "ook", basis: true, teksten: ["6a/1","8a/3","10/3","10/14","10/26"], volgorde: {"6a/1":30,"8a/3":127,"10/3":5,"10/14":38,"10/26":54} },
+  { grondvorm: "quot?", aanvullingen: "(bijw.)", vertaling: "hoeveel?" },
+  { grondvorm: "quotiens", aanvullingen: "(bijw.)", vertaling: "hoe vaak", teksten: ["6b/4"], volgorde: {"6b/4":13} },
+  { grondvorm: "rabidus", aanvullingen: "rabida, rabidum", vertaling: "razend, woest", teksten: ["8b/9"], volgorde: {"8b/9":27} },
+  { grondvorm: "rabiosus", aanvullingen: "rabiosa, rabiosum", vertaling: "hondsdol, razend", teksten: ["6b/2"], volgorde: {"6b/2":95} },
+  { grondvorm: "radere", aanvullingen: "rado, rasi, rasum", vertaling: "krabben; scheren" },
+  { grondvorm: "radix", aanvullingen: "radicis", vertaling: "wortel; onderste deel", teksten: ["8b/9"], volgorde: {"8b/9":43} },
+  { grondvorm: "raeda", aanvullingen: "raedae, (v.)", vertaling: "reiswagen", teksten: ["6b/3"], volgorde: {"6b/3":24} },
+  { grondvorm: "rana", aanvullingen: "ranae, (v.)", vertaling: "kikker", teksten: ["9b/4"], volgorde: {"9b/4":37} },
+  { grondvorm: "rapere", aanvullingen: "rapio, rapui, raptum", vertaling: "grijpen, stelen, roven", basis: true, teksten: ["8b/9"], volgorde: {"8b/9":52} },
+  { grondvorm: "rapidus", aanvullingen: "rapida, rapidum", vertaling: "meesleurend, snelstromend, snel", teksten: ["8b/9"], volgorde: {"8b/9":125} },
+  { grondvorm: "rarus", aanvullingen: "rara, rarum", vertaling: "verstrooid, niet dicht opeen; zeldzaam, schaars", teksten: ["6a/7"], volgorde: {"6a/7":60} },
+  { grondvorm: "ratio", aanvullingen: "rationis, (v.)", vertaling: "redenering; verstand; reden", basis: true },
+  { grondvorm: "ratis", aanvullingen: "ratis, (v.)", vertaling: "vlot, schip", teksten: ["8b/9"], volgorde: {"8b/9":120} },
+  { grondvorm: "recedere", aanvullingen: "recedo, recessi, recessum", vertaling: "achteruitgaan, weggaan", teksten: ["6b/4"], volgorde: {"6b/4":59} },
+  { grondvorm: "recens", aanvullingen: "recens, recens; recentis", vertaling: "nog fris, nog vers, recent", teksten: ["8a/2"], volgorde: {"8a/2":52} },
+  { grondvorm: "recipere", aanvullingen: "recipio, recepi, receptum", vertaling: "terugnemen, terugtrekken; ontvangen" },
+  { grondvorm: "recoquere", aanvullingen: "recoquo, recoxi, recoctum", vertaling: "omsmelten, ommeden" },
+  { grondvorm: "rectus", aanvullingen: "recta, rectum", vertaling: "recht; juist, rechtvaardig, eerlijk", teksten: ["6b/2"], volgorde: {"6b/2":70} },
+  { grondvorm: "recusare", aanvullingen: "recuso, recusavi, recusatum", vertaling: "afwijzen, weigeren, zich verzetten tegen", teksten: ["7b/4"], volgorde: {"7b/4":81} },
+  { grondvorm: "reddere", aanvullingen: "reddo, reddidi, redditum", vertaling: "teruggeven", teksten: ["8a/3","9b/9","10/26"], volgorde: {"8a/3":131,"9b/9":31,"10/26":37} },
+  { grondvorm: "redemptor", aanvullingen: "redemptoris", vertaling: "opkoper, leverancier", teksten: ["6b/2"], volgorde: {"6b/2":77} },
+  { grondvorm: "redimere", aanvullingen: "redimo, redemi, redemptum", vertaling: "terugkopen, kopen" },
+  { grondvorm: "redire", aanvullingen: "redeo, redii, reditum", vertaling: "teruggaan, terugkeren", basis: true, teksten: ["6a/1","10/26"], volgorde: {"6a/1":45,"10/26":86} },
+  { grondvorm: "Reditus", aanvullingen: "Rediti", vertaling: "Reditus (eigennaam)" },
+  { grondvorm: "referre", aanvullingen: "refero, rettuli, relatum", vertaling: "terugbrengen", teksten: ["6b/9"], volgorde: {"6b/9":8} },
+  { grondvorm: "reficere", aanvullingen: "reficio, refeci, refectum", vertaling: "hermaken, herstellen", teksten: ["10/19"], volgorde: {"10/19":10} },
+  { grondvorm: "refugere", aanvullingen: "refugio, refugi, –", vertaling: "ontvluchten; zijn toevlucht nemen tot", teksten: ["8b/9"], volgorde: {"8b/9":107} },
+  { grondvorm: "regere", aanvullingen: "rego, rexi, rectum", vertaling: "heersen over, besturen", teksten: ["9a/1"], volgorde: {"9a/1":61} },
+  { grondvorm: "regio", aanvullingen: "regionis, (v.)", vertaling: "streek", basis: true, teksten: ["6a/1","6b/2","10/21"], volgorde: {"6a/1":44,"6b/2":121,"10/21":11} },
+  { grondvorm: "regius", aanvullingen: "regia, regium", vertaling: "van koninklijke afkomst, koninklijk", teksten: ["7b/2"], volgorde: {"7b/2":30} },
+  { grondvorm: "regnare", aanvullingen: "regno, regnavi, regnatum", vertaling: "heersen, regeren" },
+  { grondvorm: "regnum", aanvullingen: "regni, (o.)", vertaling: "koningschap, heerschappij, macht; koninkrijk, rijk", teksten: ["7a/3"], volgorde: {"7a/3":7} },
+  { grondvorm: "Regula", aanvullingen: "Regulae", vertaling: "Regula (eigennaam)" },
+  { grondvorm: "relevare", aanvullingen: "relevo, relevavi, relevatum", vertaling: "licht maken, verlichten", teksten: ["7a/3"], volgorde: {"7a/3":32} },
+  { grondvorm: "religio", aanvullingen: "religionis, (v.)", vertaling: "godsdienst; godsdienstigheid, vroomheid", teksten: ["7b/6","9a/4"], volgorde: {"7b/6":10,"9a/4":32} },
+  { grondvorm: "relinquere", aanvullingen: "relinquo, reliqui, relictum", vertaling: "achterlaten, verlaten", basis: true, teksten: ["6a/1","6a/7","7a/6","7a/7","8a/5","9b/9"], volgorde: {"6a/1":28,"6a/7":12,"7a/6":26,"7a/7":35,"8a/5":45,"9b/9":48} },
+  { grondvorm: "reliquus", aanvullingen: "reliqua, reliquum", vertaling: "resterend, overig", teksten: ["6b/2","8a/3","9a/1"], volgorde: {"6b/2":131,"8a/3":15,"9a/1":47} },
+  { grondvorm: "relucere", aanvullingen: "reluceo, reluxi, –", vertaling: "oplichten, opflakkeren, schitteren, stralen", teksten: ["6a/4"], volgorde: {"6a/4":12} },
+  { grondvorm: "remedium", aanvullingen: "remedii, (o.)", vertaling: "redmiddel", teksten: ["6b/2"], volgorde: {"6b/2":107} },
+  { grondvorm: "remittere", aanvullingen: "remitto, remisi, remissum", vertaling: "terugzenden, terugsturen" },
+  { grondvorm: "Remus", aanvullingen: "Remi", vertaling: "Remus (eigennaam)" },
+  { grondvorm: "renovare", aanvullingen: "renovo, renovavi, renovatum", vertaling: "vernieuwen, herstellen, verjongen" },
+  { grondvorm: "repellere", aanvullingen: "repello, reppuli, repulsum", vertaling: "terugdrijven, verdrijven", teksten: ["6a/7"], volgorde: {"6a/7":32} },
+  { grondvorm: "repente", aanvullingen: "(bijw.)", vertaling: "plots, plotseling", teksten: ["10/21"], volgorde: {"10/21":39} },
+  { grondvorm: "repentinus", aanvullingen: "repentina, repentinum", vertaling: "plots, onverwacht", teksten: ["8b/5"], volgorde: {"8b/5":43} },
+  { grondvorm: "repere", aanvullingen: "repo, repsi, reptum", vertaling: "kruipen" },
+  { grondvorm: "reperire", aanvullingen: "reperio, repperi, repertum", vertaling: "vinden, aantreffen" },
+  { grondvorm: "repetere", aanvullingen: "repeto, repeti(v)i, repetitum", vertaling: "opnieuw zoeken; herbeginnen, herhalen" },
+  { grondvorm: "repetitio", aanvullingen: "repetitionis, (v.)", vertaling: "herhaling" },
+  { grondvorm: "replere", aanvullingen: "repleo, replevi, repletum", vertaling: "opnieuw vullen, vullen", teksten: ["8a/5"], volgorde: {"8a/5":27} },
+  { grondvorm: "reponere", aanvullingen: "repono, reposui, repositum", vertaling: "wegleggen, bewaren" },
+  { grondvorm: "reprehensor", aanvullingen: "reprehensoris", vertaling: "iemand die afkeurt, berisper", teksten: ["7a/5"], volgorde: {"7a/5":14} },
+  { grondvorm: "requiescere", aanvullingen: "requiesco, requievi, requietum", vertaling: "rusten, tot rust komen" },
+  { grondvorm: "requirere", aanvullingen: "requiro, requisivi, requisitum", vertaling: "zoeken, opzoeken", teksten: ["10/3"], volgorde: {"10/3":60} },
+  { grondvorm: "res", aanvullingen: "rei, (v.)", vertaling: "zaak, ding", teksten: ["6b/2","7a/3","7b/4","8b/3","9a/4","10/21"], volgorde: {"6b/2":65,"7a/3":80,"7b/4":54,"8b/3":2,"9a/4":16,"10/21":7} },
+  { grondvorm: "res mancipii", aanvullingen: "rei mancipii", vertaling: "zaak waarover men volledig eigendomsrecht heeft, bezit, eigendom", teksten: ["8b/3"], volgorde: {"8b/3":3} },
+  { grondvorm: "res militaris", aanvullingen: "rei militaris", vertaling: "krijgswezen, krijgsdienst", teksten: ["7a/1"], volgorde: {"7a/1":37} },
+  { grondvorm: "res publica", aanvullingen: "rei publicae", vertaling: "staat", teksten: ["7a/1","7b/4","10/14"], volgorde: {"7a/1":36,"7b/4":59,"10/14":33} },
+  { grondvorm: "resalutare", aanvullingen: "resaluto, resalutavi, resalutatum", vertaling: "teruggroeten" },
+  { grondvorm: "rescindere", aanvullingen: "rescindo, rescidi, rescissum", vertaling: "verscheuren, vernietigen, ongedaan maken" },
+  { grondvorm: "resciscere", aanvullingen: "rescisco, rescii, rescitum", vertaling: "te weten komen" },
+  { grondvorm: "respicere", aanvullingen: "respicio, respexi, respectum", vertaling: "omkijken", teksten: ["6b/4","9b/5","10/3","6a/7"], volgorde: {"6b/4":1,"9b/5":25,"10/3":8,"6a/7":61} },
+  { grondvorm: "respondere", aanvullingen: "respondeo, respondi, responsum", vertaling: "antwoorden", teksten: ["6b/4"], volgorde: {"6b/4":50} },
+  { grondvorm: "responsum", aanvullingen: "responsi", vertaling: "antwoord" },
+  { grondvorm: "restare", aanvullingen: "resto, restiti, –", vertaling: "achterblijven, overblijven; nog te wachten staan", teksten: ["9b/9"], volgorde: {"9b/9":64} },
+  { grondvorm: "restituere", aanvullingen: "restituo, restitui, restitutum", vertaling: "terugplaatsen, herstellen", teksten: ["7b/4"], volgorde: {"7b/4":88} },
+  { grondvorm: "retinere", aanvullingen: "retineo, retinui, retentum", vertaling: "vasthouden, tegenhouden", teksten: ["9b/7"], volgorde: {"9b/7":16} },
+  { grondvorm: "retractare", aanvullingen: "retracto, retractavi, retractatum", vertaling: "opnieuw betasten", teksten: ["10/26"], volgorde: {"10/26":105} },
+  { grondvorm: "revera", aanvullingen: "(soms re vera) (bijw.)", vertaling: "inderdaad", teksten: ["9b/5"], volgorde: {"9b/5":63} },
+  { grondvorm: "reverentia", aanvullingen: "reverentiae", vertaling: "fatsoen, respect" },
+  { grondvorm: "reverti", aanvullingen: "revertor, reverti", vertaling: "teruggaan, terugkeren", teksten: ["6b/5"], volgorde: {"6b/5":36} },
+  { grondvorm: "revocare", aanvullingen: "revoco, revocavi, revocatum", vertaling: "terugroepen", teksten: ["8b/8"], volgorde: {"8b/8":4} },
+  { grondvorm: "rex", aanvullingen: "regis (m.)", vertaling: "koning", teksten: ["7b/2","9b/6"], volgorde: {"7b/2":41,"9b/6":35} },
+  { grondvorm: "Rhadamanthus", aanvullingen: "Rhadamanthi", vertaling: "Rhadamanthus (eigennaam)" },
+  { grondvorm: "Rhea Silvia", aanvullingen: "Rheae Silviae", vertaling: "Rhea Silvia (eigennaam)" },
+  { grondvorm: "rhetor", aanvullingen: "rhetoris", vertaling: "leraar in de welsprekendheid, redenaar" },
+  { grondvorm: "Rhodius", aanvullingen: "Rhodia, Rhodium", vertaling: "van Rhodos" },
+  { grondvorm: "ridere", aanvullingen: "rideo, risi, risum", vertaling: "lachen" },
+  { grondvorm: "rigidus", aanvullingen: "rigida, rigidum", vertaling: "ruw, hard, stekelig" },
+  { grondvorm: "rimosus", aanvullingen: "rimosa, rimosum", vertaling: "vol spleten, vol barsten, lek", teksten: ["6b/4"], volgorde: {"6b/4":16} },
+  { grondvorm: "ripa", aanvullingen: "ripae, (v.)", vertaling: "oever" },
+  { grondvorm: "risus", aanvullingen: "risus, (m.)", vertaling: "gelach", teksten: ["6b/3"], volgorde: {"6b/3":9} },
+  { grondvorm: "rite", aanvullingen: "(bijw.)", vertaling: "volgens juist religieus gebruik, op ceremoniële wijze" },
+  { grondvorm: "rixa", aanvullingen: "rixae, (v.)", vertaling: "ruzie", teksten: ["6b/4"], volgorde: {"6b/4":27} },
+  { grondvorm: "roborare", aanvullingen: "roboro, roboravi, roboratum", vertaling: "hard maken, harden, sterk maken" },
+  { grondvorm: "robustus", aanvullingen: "robusta, robustum", vertaling: "stevig", teksten: ["6b/2"], volgorde: {"6b/2":91} },
+  { grondvorm: "rogare", aanvullingen: "rogo, rogavi, rogatum", vertaling: "vragen", basis: true, teksten: ["8b/10","10/3"], volgorde: {"8b/10":13,"10/3":1} },
+  { grondvorm: "Roma", aanvullingen: "Romae", vertaling: "Rome", basis: true, teksten: ["8a/6"], volgorde: {"8a/6":16} },
+  { grondvorm: "Romanus", aanvullingen: "Romana, Romanum", vertaling: "Romeins", basis: true, teksten: ["7b/2","7b/4","8b/9"], volgorde: {"7b/2":55,"7b/4":53,"8b/9":97} },
+  { grondvorm: "Romanus", aanvullingen: "Romani", vertaling: "Romein", basis: true, teksten: ["8b/9"], volgorde: {"8b/9":100} },
+  { grondvorm: "Romulus", aanvullingen: "Romuli", vertaling: "Romulus (eigennaam)" },
+  { grondvorm: "rosa", aanvullingen: "rosa, (v.)", vertaling: "roos" },
+  { grondvorm: "rudis", aanvullingen: "rudis, rude", vertaling: "ruw, onbewerkt; onervaren, jong; ongedisciplineerd" },
+  { grondvorm: "ruere", aanvullingen: "ruo, rui, rutum", vertaling: "neerstorten, instorten; zich haasten, rennen", basis: true, teksten: ["6a/1","6b/2"], volgorde: {"6a/1":23,"6b/2":99} },
+  { grondvorm: "rumor", aanvullingen: "rumoris, (m.)", vertaling: "gerucht; roddel" },
+  { grondvorm: "rursus", aanvullingen: "(bijw.)", vertaling: "opnieuw", basis: true, teksten: ["6a/4","6b/5","9b/7","10/26"], volgorde: {"6a/4":43,"6b/5":33,"9b/7":15,"10/26":103} },
+  { grondvorm: "rus", aanvullingen: "ruris (o.)", vertaling: "platteland" },
+  { grondvorm: "rusticus", aanvullingen: "rustica, rusticum", vertaling: "landelijk, van het platteland", teksten: ["8b/3"], volgorde: {"8b/3":9} },
+  { grondvorm: "ruta", aanvullingen: "rutae, (v.)", vertaling: "wijnruit (= plant)" },
+  { grondvorm: "Sabinus", aanvullingen: "Sabina, Sabinum", vertaling: "Sabijns", teksten: ["8a/2"], volgorde: {"8a/2":1} },
+  { grondvorm: "Sabinus", aanvullingen: "Sabini", vertaling: "Sabijn" },
+  { grondvorm: "sacer", aanvullingen: "sacra, sacrum", vertaling: "heilig, gewijd aan", basis: true, teksten: ["7a/8"], volgorde: {"7a/8":14} },
+  { grondvorm: "sacerdos", aanvullingen: "sacerdotis", vertaling: "priester, priesteres" },
+  { grondvorm: "sacrarium", aanvullingen: "sacrarii, (o.)", vertaling: "bewaarplaats (van heilige voorwerpen)" },
+  { grondvorm: "sacrificium", aanvullingen: "sacrificii, (o.)", vertaling: "offer", teksten: ["7b/2","9b/6"], volgorde: {"7b/2":85,"9b/6":26} },
+  { grondvorm: "sacrificium facere", aanvullingen: "", vertaling: "een offer brengen", teksten: ["9b/6"], volgorde: {"9b/6":28} },
+  { grondvorm: "sacrum", aanvullingen: "sacri, (o.)", vertaling: "heiligdom; godsdienstige handeling, ritueel; offerhandeling, offer" },
+  { grondvorm: "saepe", aanvullingen: "(bijw.)", vertaling: "vaak, dikwijls", basis: true, teksten: ["6b/4","9a/4"], volgorde: {"6b/4":25,"9a/4":28} },
+  { grondvorm: "saepire", aanvullingen: "saepio, saepsi, saeptum", vertaling: "omgeven, omringen, insluiten" },
+  { grondvorm: "saevire", aanvullingen: "saevio, –, –", vertaling: "woeden, razen, hevig tekeergaan" },
+  { grondvorm: "saevus", aanvullingen: "saeva, saevum", vertaling: "woedend, razend; hard, wreed", basis: true },
+  { grondvorm: "sagitta", aanvullingen: "sagittae, (v.)", vertaling: "pijl" },
+  { grondvorm: "sagum", aanvullingen: "sagi, (o.)", vertaling: "(korte wollen) mantel", teksten: ["8b/6"], volgorde: {"8b/6":16} },
+  { grondvorm: "sal", aanvullingen: "salis (soms m., soms onz.)", vertaling: "zout" },
+  { grondvorm: "salire", aanvullingen: "salio, salui/salii, –", vertaling: "springen" },
+  { grondvorm: "saltus", aanvullingen: "saltus", vertaling: "(berg)woud, (berg)weide", teksten: ["8b/5"], volgorde: {"8b/5":37} },
+  { grondvorm: "saluber", aanvullingen: "salubris, salubre", vertaling: "goed voor de gezondheid, gezond; nuttig, voordelig", teksten: ["7b/4","8b/6","10/14","10/19"], volgorde: {"7b/4":66,"8b/6":41,"10/14":22,"10/19":13} },
+  { grondvorm: "salus", aanvullingen: "salutis, (v.)", vertaling: "gezondheid; geluk; redding", basis: true },
+  { grondvorm: "salutare", aanvullingen: "saluto, salutavi, salutatum", vertaling: "groeten, begroeten" },
+  { grondvorm: "salvere", aanvullingen: "salveo, –, –", vertaling: "gezond zijn, krachtig zijn", teksten: ["9b/9"], volgorde: {"9b/9":70} },
+  { grondvorm: "sancire", aanvullingen: "sancio, sanxi, sanctum", vertaling: "bekrachtigen, bevestigen, goedkeuren", teksten: ["7b/4"], volgorde: {"7b/4":75} },
+  { grondvorm: "sanguis", aanvullingen: "sanguinis (m.)", vertaling: "bloed", basis: true, teksten: ["7b/4","10/3"], volgorde: {"7b/4":19,"10/3":76} },
+  { grondvorm: "sanus", aanvullingen: "sana, sanum", vertaling: "gezond", basis: true },
+  { grondvorm: "sapire", aanvullingen: "sapio, sapivi, –", vertaling: "verstandig zijn, wijs zijn" },
+  { grondvorm: "sarcina", aanvullingen: "sarcinae, (v.)", vertaling: "last, lading, gewicht, bagage", teksten: ["7a/7"], volgorde: {"7a/7":8} },
+  { grondvorm: "sarcire", aanvullingen: "sarcio, sarsi, sartum", vertaling: "oplappen, repareren", teksten: ["6b/2"], volgorde: {"6b/2":57} },
+  { grondvorm: "sartus", aanvullingen: "sarta, sartum", vertaling: "opgelapt, gerepareerd", teksten: ["6b/2"], volgorde: {"6b/2":58} },
+  { grondvorm: "satis", aanvullingen: "(bijw.)", vertaling: "voldoende, genoeg", basis: true, teksten: ["9b/5"], volgorde: {"9b/5":2} },
+  { grondvorm: "saxum", aanvullingen: "saxi, (o.)", vertaling: "rots, steen", basis: true },
+  { grondvorm: "scandere", aanvullingen: "scando, scansi, scansum", vertaling: "beklimmen, klimmen" },
+  { grondvorm: "scelus", aanvullingen: "sceleris, (o.)", vertaling: "misdaad", basis: true },
+  { grondvorm: "schola", aanvullingen: "scholae, (v.)", vertaling: "school" },
+  { grondvorm: "scientia", aanvullingen: "scientiae, (v.)", vertaling: "kennis, inzicht", basis: true },
+  { grondvorm: "scindere", aanvullingen: "scindo, scidi, scissum", vertaling: "scheuren", teksten: ["6b/2"], volgorde: {"6b/2":55} },
+  { grondvorm: "scire", aanvullingen: "scio, scivi, scitum", vertaling: "weten", basis: true, teksten: ["9b/9"], volgorde: {"9b/9":3} },
+  { grondvorm: "scriba", aanvullingen: "scriba (m.)", vertaling: "schrijver, secretaris", teksten: ["7b/2"], volgorde: {"7b/2":39} },
+  { grondvorm: "scribere", aanvullingen: "scribo, scripsi, scriptum", vertaling: "schrijven", basis: true, teksten: ["6b/2"], volgorde: {"6b/2":19} },
+  { grondvorm: "scriptum", aanvullingen: "scripti, (o.)", vertaling: "het geschrevene, dat wat geschreven is" },
+  { grondvorm: "sculpere", aanvullingen: "sculpo, sculpsi, sculptum", vertaling: "beeldhouwen", teksten: ["10/26"], volgorde: {"10/26":18} },
+  { grondvorm: "se", aanvullingen: "(pers. vnw.)", vertaling: "hij, zij; zich", teksten: ["8a/2","9a/4"], volgorde: {"8a/2":4,"9a/4":36} },
+  { grondvorm: "secum", aanvullingen: "", vertaling: "= cum se" },
+  { grondvorm: "secundus", aanvullingen: "secunda, secundum", vertaling: "tweede", teksten: ["7a/1"], volgorde: {"7a/1":24} },
+  { grondvorm: "securus", aanvullingen: "secura, securum + gen.", vertaling: "veilig, zorgeloos", basis: true, teksten: ["6a/1"], volgorde: {"6a/1":13} },
+  { grondvorm: "sed", aanvullingen: "(vgw.)", vertaling: "maar", basis: true },
+  { grondvorm: "sedere", aanvullingen: "sedeo, sedi, sessum", vertaling: "zitten", basis: true, teksten: ["7b/2"], volgorde: {"7b/2":42} },
+  { grondvorm: "sedes", aanvullingen: "sedis, (v.)", vertaling: "zitplaats, zetel; woonplaats, verblijfplaats", basis: true, teksten: ["7b/2","8b/9"], volgorde: {"7b/2":90,"8b/9":25} },
+  { grondvorm: "seditio", aanvullingen: "seditionis, (v.)", vertaling: "ruzie, conflict, opstand", teksten: ["8a/3"], volgorde: {"8a/3":140} },
+  { grondvorm: "semen", aanvullingen: "seminis, (o.)", vertaling: "zaad" },
+  { grondvorm: "semita", aanvullingen: "semitae, (v.)", vertaling: "smalle weg, pad", teksten: ["6b/1"], volgorde: {"6b/1":20} },
+  { grondvorm: "semivocalis", aanvullingen: "semivocalis, semivocale", vertaling: "een halve stem hebbend, een onduidelijke stem hebbend", teksten: ["8b/3"], volgorde: {"8b/3":44} },
+  { grondvorm: "semper", aanvullingen: "(bijw.)", vertaling: "altijd", basis: true, teksten: ["7a/7"], volgorde: {"7a/7":4} },
+  { grondvorm: "sempiturnus", aanvullingen: "sempiterna, sempiternum", vertaling: "eeuwig" },
+  { grondvorm: "semustus", aanvullingen: "semusta, semustum", vertaling: "halfverbrand", teksten: ["6b/2"], volgorde: {"6b/2":137} },
+  { grondvorm: "senator", aanvullingen: "senatoris", vertaling: "senator" },
+  { grondvorm: "senatus", aanvullingen: "senatus, (m.)", vertaling: "senaat", basis: true, teksten: ["7a/8","8a/5"], volgorde: {"7a/8":6,"8a/5":31} },
+  { grondvorm: "senecta", aanvullingen: "senectae, (v.)", vertaling: "ouderdom" },
+  { grondvorm: "senescere", aanvullingen: "senesco, senui, –", vertaling: "oud worden", teksten: ["7a/1"], volgorde: {"7a/1":45} },
+  { grondvorm: "senex", aanvullingen: "senis (m.)", vertaling: "oude man, bejaarde", basis: true, teksten: ["6b/2","7a/1"], volgorde: {"6b/2":112,"7a/1":53} },
+  { grondvorm: "senior", aanvullingen: "senioris", vertaling: "oudere man", teksten: ["7a/1"], volgorde: {"7a/1":42} },
+  { grondvorm: "senium", aanvullingen: "senii, (o.)", vertaling: "ouderdom; aftakeling", teksten: ["7a/1"], volgorde: {"7a/1":56} },
+  { grondvorm: "sensus", aanvullingen: "sensus, (m.)", vertaling: "waarneming; gevoel", basis: true },
+  { grondvorm: "sententia", aanvullingen: "sententiae, (v.)", vertaling: "mening, gedachte; zin, spreuk; vonnis", basis: true, teksten: ["7a/3"], volgorde: {"7a/3":68} },
+  { grondvorm: "sentire", aanvullingen: "sentio, sensi, sensum", vertaling: "voelen, merken", basis: true, teksten: ["10/8"], volgorde: {"10/8":19} },
+  { grondvorm: "sepelire", aanvullingen: "sepelio, sepelivi, sepultum", vertaling: "begraven" },
+  { grondvorm: "seplasium", aanvullingen: "seplasii", vertaling: "zalf" },
+  { grondvorm: "septem", aanvullingen: "(telwoord)", vertaling: "zeven", teksten: ["6b/2"], volgorde: {"6b/2":130} },
+  { grondvorm: "Septembris", aanvullingen: "Septembris, Septembre", vertaling: "van de maand september", teksten: ["6a/2"], volgorde: {"6a/2":3} },
+  { grondvorm: "septimus", aanvullingen: "septima, septimum (telwoord)", vertaling: "zevende", teksten: ["6a/2"], volgorde: {"6a/2":7} },
+  { grondvorm: "sepulcrum", aanvullingen: "sepulcri, (o.)", vertaling: "graf", teksten: ["7a/6"], volgorde: {"7a/6":9} },
+  { grondvorm: "Sequana", aanvullingen: "Sequanae", vertaling: "(de rivier) Seine", teksten: ["9a/1"], volgorde: {"9a/1":26} },
+  { grondvorm: "sequi", aanvullingen: "sequor, secutus sum", vertaling: "volgen", basis: true, teksten: ["6a/7","6b/2","8b/5"], volgorde: {"6a/7":1,"6b/2":32,"8b/5":47} },
+  { grondvorm: "serenus", aanvullingen: "serena, serenum", vertaling: "helder, onbewolkt; rustig, kalm", teksten: ["9b/7"], volgorde: {"9b/7":42} },
+  { grondvorm: "sermo", aanvullingen: "sermonis (m.)", vertaling: "gesprek; taal", teksten: ["7a/6","8a/3"], volgorde: {"7a/6":29,"8a/3":13} },
+  { grondvorm: "servare", aanvullingen: "servo, servavi, servatum", vertaling: "bewaken, beschermen; bewaren", basis: true, teksten: ["7a/6","8b/1"], volgorde: {"7a/6":35,"8b/1":10} },
+  { grondvorm: "servire", aanvullingen: "servio, servi, servitum", vertaling: "slaaf zijn, (als slaaf) dienen", basis: true },
+  { grondvorm: "servitium", aanvullingen: "servitii, (o.)", vertaling: "slavernij", teksten: ["8a/2"], volgorde: {"8a/2":45} },
+  { grondvorm: "servitus", aanvullingen: "servitutis, (v.)", vertaling: "slavernij" },
+  { grondvorm: "servulus", aanvullingen: "servuli", vertaling: "slaafje", teksten: ["6b/2"], volgorde: {"6b/2":60} },
+  { grondvorm: "servus", aanvullingen: "servi", vertaling: "slaaf", basis: true, teksten: ["6b/8","8b/1","8b/5","8b/6","8b/9","9b/9"], volgorde: {"6b/8":18,"8b/1":1,"8b/5":3,"8b/6":34,"8b/9":10,"9b/9":24} },
+  { grondvorm: "sese", aanvullingen: "", vertaling: "hij, zij; zich", teksten: ["8a/3"], volgorde: {"8a/3":75} },
+  { grondvorm: "sestertium", aanvullingen: "", vertaling: "= 100 000 sestertiën", teksten: ["8a/6"], volgorde: {"8a/6":25} },
+  { grondvorm: "sestertius", aanvullingen: "sestertii, (m.)", vertaling: "sestertie (Romeinse munt)", teksten: ["8a/6"], volgorde: {"8a/6":24} },
+  { grondvorm: "severitas", aanvullingen: "severitatis, (v.)", vertaling: "strengheid, ernst" },
+  { grondvorm: "severus", aanvullingen: "severa, severum", vertaling: "streng, ernstig" },
+  { grondvorm: "sex", aanvullingen: "(telwoord)", vertaling: "zes" },
+  { grondvorm: "sexagesimus", aanvullingen: "sexagesima, sexagesimum (telwoord)", vertaling: "zestigste", teksten: ["7a/1"], volgorde: {"7a/1":41} },
+  { grondvorm: "Sextus Tarquinius", aanvullingen: "Sexti Tarquinii", vertaling: "Sextus Tarquinius (eigennaam)" },
+  { grondvorm: "si", aanvullingen: "+ ind./conj. (vgw.)", vertaling: "als, indien", basis: true, teksten: ["6b/2","6b/4","6b/9","7a/3","7b/2","8b/6","9b/9","10/8","10/19","10/26"], volgorde: {"6b/2":1,"6b/4":55,"6b/9":6,"7a/3":43,"7b/2":6,"8b/6":19,"9b/9":65,"10/8":13,"10/19":6,"10/26":80} },
+  { grondvorm: "Sibyllinus", aanvullingen: "Sibyllina, Sibyllinum", vertaling: "Sibillijns" },
+  { grondvorm: "sic", aanvullingen: "(bijw.)", vertaling: "zo, op die manier", basis: true, teksten: ["6b/2","7a/3","8a/3","8b/6"], volgorde: {"6b/2":105,"7a/3":50,"8a/3":137,"8b/6":51} },
+  { grondvorm: "sic … ut", aanvullingen: "+ conj.", vertaling: "zo … dat, op die manier … dat", teksten: ["7b/12"], volgorde: {"7b/12":9} },
+  { grondvorm: "siccus", aanvullingen: "sicca, siccum", vertaling: "droog", teksten: ["6a/7"], volgorde: {"6a/7":36} },
+  { grondvorm: "Sicilia", aanvullingen: "Siciliae", vertaling: "Sicilië", teksten: ["8b/9"], volgorde: {"8b/9":114} },
+  { grondvorm: "Siculus", aanvullingen: "Sicula, Siculum", vertaling: "van Sicilië, Siciliaans" },
+  { grondvorm: "sidere", aanvullingen: "sido, sedi, sessum", vertaling: "zich neerzetten, gaan zitten" },
+  { grondvorm: "signum", aanvullingen: "signi, (o.)", vertaling: "teken; veldteken, banier", basis: true, teksten: ["9b/4","10/26"], volgorde: {"9b/4":33,"10/26":104} },
+  { grondvorm: "signa inferre", aanvullingen: "", vertaling: "oprukken tegen, aanvallen" },
+  { grondvorm: "silentium", aanvullingen: "silentii, (o.)", vertaling: "stilte" },
+  { grondvorm: "silere", aanvullingen: "sileo, silui, –", vertaling: "zwijgen, stil zijn" },
+  { grondvorm: "siligineus", aanvullingen: "siliginei", vertaling: "wit tarwebrood" },
+  { grondvorm: "silva", aanvullingen: "silvae, (v.)", vertaling: "bos", basis: true, teksten: ["9b/5"], volgorde: {"9b/5":22} },
+  { grondvorm: "silvestris", aanvullingen: "silvestris, silvestre", vertaling: "van een bos, bebost, met een bos, bos-", teksten: ["8b/5"], volgorde: {"8b/5":38} },
+  { grondvorm: "similis", aanvullingen: "similis, simile + dat.", vertaling: "gelijkend op", basis: true, teksten: ["8a/3","10/26","6a/2","6a/7"], volgorde: {"8a/3":141,"10/26":84,"6a/2":98,"6a/7":48} },
+  { grondvorm: "simul", aanvullingen: "(bijw.)", vertaling: "tegelijkertijd, tegelijk", teksten: ["7a/7","9b/9"], volgorde: {"7a/7":45,"9b/9":18} },
+  { grondvorm: "simulacrum", aanvullingen: "simulacri, (o.)", vertaling: "beeld", teksten: ["9a/4","9b/6","10/26"], volgorde: {"9a/4":8,"9b/6":47,"10/26":87} },
+  { grondvorm: "simulare", aanvullingen: "simulo, simulavi, simulatum", vertaling: "doen alsof, voorwenden, veinzen", teksten: ["7a/3"], volgorde: {"7a/3":75} },
+  { grondvorm: "simulatus", aanvullingen: "simulata, simulatum", vertaling: "vals, niet echt", teksten: ["10/26"], volgorde: {"10/26":34} },
+  { grondvorm: "sine", aanvullingen: "+ abl. (vz.)", vertaling: "zonder", basis: true, teksten: ["7b/6","10/19","10/26","6a/7"], volgorde: {"7b/6":11,"10/19":30,"10/26":10,"6a/7":74} },
+  { grondvorm: "singulus", aanvullingen: "singula, singulum", vertaling: "(elk) afzonderlijk, individueel, alleen", teksten: ["8a/3"], volgorde: {"8a/3":11} },
+  { grondvorm: "sint", aanvullingen: "", vertaling: "'zij zijn'", teksten: ["8b/5"], volgorde: {"8b/5":20} },
+  { grondvorm: "sit", aanvullingen: "", vertaling: "'hij moet zijn'", teksten: ["8b/10","10/26"], volgorde: {"8b/10":8,"10/26":83} },
+  { grondvorm: "sitis", aanvullingen: "sitis, (v.)", vertaling: "dorst", teksten: ["10/8"], volgorde: {"10/8":28} },
+  { grondvorm: "situs", aanvullingen: "sita, situm", vertaling: "gelegen" },
+  { grondvorm: "sobrietas", aanvullingen: "sobrietatis, (v.)", vertaling: "nuchterheid; soberheid", teksten: ["7a/5"], volgorde: {"7a/5":24} },
+  { grondvorm: "socia", aanvullingen: "sociae, (v.)", vertaling: "bondgenote, gezellin", teksten: ["10/26"], volgorde: {"10/26":64} },
+  { grondvorm: "sol", aanvullingen: "solis (m.)", vertaling: "zon", basis: true, teksten: ["9b/5"], volgorde: {"9b/5":71} },
+  { grondvorm: "solea", aanvullingen: "soleae, (v.)", vertaling: "sandaal", teksten: ["6a/2"], volgorde: {"6a/2":80} },
+  { grondvorm: "solere", aanvullingen: "soleo, solitus sum", vertaling: "gewoon zijn, de gewoonte hebben", basis: true, teksten: ["8a/3","9b/9"], volgorde: {"8a/3":47,"9b/9":52} },
+  { grondvorm: "solidare", aanvullingen: "solido, solidavi, solidatum", vertaling: "stevig maken, sterk maken, verstevigen, versterken" },
+  { grondvorm: "solidescere", aanvullingen: "solidesco, –, –", vertaling: "hard worden, stevig worden", teksten: ["10/21"], volgorde: {"10/21":31} },
+  { grondvorm: "solidus", aanvullingen: "solidi, (m.)", vertaling: "een solidus (gouden muntstuk, geïntroduceerd in de 4e eeuw n.C.)", teksten: ["8b/8"], volgorde: {"8b/8":8} },
+  { grondvorm: "solitudo", aanvullingen: "solitudinis, (v.)", vertaling: "eenzaamheid" },
+  { grondvorm: "solitus", aanvullingen: "solita, solitum", vertaling: "gewoon" },
+  { grondvorm: "sollers", aanvullingen: "sollers, sollers; sollertis", vertaling: "vaardig, slim, met inzicht" },
+  { grondvorm: "sollicitare", aanvullingen: "sollicito, sollicitavi, sollicitatum", vertaling: "ophitsen, aansporen", teksten: ["7a/3"], volgorde: {"7a/3":65} },
+  { grondvorm: "solum", aanvullingen: "soli", vertaling: "bodem, grond", teksten: ["6b/2","8b/3"], volgorde: {"6b/2":127,"8b/3":7} },
+  { grondvorm: "solus", aanvullingen: "sola, solum", vertaling: "alleen, enig", basis: true, teksten: ["10/14"], volgorde: {"10/14":11} },
+  { grondvorm: "solutus", aanvullingen: "soluta, solutum", vertaling: "losgemaakt; hier: niet geboeid, niet vastgebonden", teksten: ["8b/6"], volgorde: {"8b/6":33} },
+  { grondvorm: "solvere", aanvullingen: "solvo, solvi, solutum", vertaling: "losmaken, bevrijden; betalen", basis: true, teksten: ["7a/5","7b/4","8b/6","9b/7"], volgorde: {"7a/5":29,"7b/4":55,"8b/6":32,"9b/7":37} },
+  { grondvorm: "somnus", aanvullingen: "somni", vertaling: "slaap", basis: true, teksten: ["6b/3","9b/4"], volgorde: {"6b/3":22,"9b/4":44} },
+  { grondvorm: "sonare", aanvullingen: "sono, sonavi, sonatum", vertaling: "geluid geven, weerklinken", basis: true },
+  { grondvorm: "sonitus", aanvullingen: "sonitus, (m.)", vertaling: "geluid, klank", basis: true },
+  { grondvorm: "sordidus", aanvullingen: "sordida, sordidum", vertaling: "vuil, vies; armzalig, minderwaardig", basis: true, teksten: ["6a/2"], volgorde: {"6a/2":104} },
+  { grondvorm: "Spartacus", aanvullingen: "Spartaci", vertaling: "Spartacus (eigennaam)", teksten: ["8b/9"], volgorde: {"8b/9":1} },
+  { grondvorm: "spatiosus", aanvullingen: "spatiosa, spatiosum", vertaling: "ruim, wijd, groot", teksten: ["9b/5"], volgorde: {"9b/5":30} },
+  { grondvorm: "spatium", aanvullingen: "spatii, (o.)", vertaling: "ruimte, afstand" },
+  { grondvorm: "species", aanvullingen: "speciei, (v.)", vertaling: "aanblik, uiterlijk; soort", basis: true },
+  { grondvorm: "spectaculum", aanvullingen: "spectaculi, (o.)", vertaling: "spektakel, schouwspel" },
+  { grondvorm: "spectare", aanvullingen: "specto, spectavi, spectatum", vertaling: "zien, aanschouwen, toekijken", teksten: ["8b/6"], volgorde: {"8b/6":38} },
+  { grondvorm: "speculum", aanvullingen: "speculi, (o.)", vertaling: "spiegel; weerspiegeling" },
+  { grondvorm: "spelunca", aanvullingen: "speluncae, (v.)", vertaling: "grot" },
+  { grondvorm: "sperare", aanvullingen: "spero, speravi, speratum", vertaling: "hopen", basis: true },
+  { grondvorm: "spes", aanvullingen: "spei, (v.)", vertaling: "hoop", basis: true },
+  { grondvorm: "spoliare", aanvullingen: "spolio, spoliavi, spoliatum", vertaling: "beroven, roven, ontnemen", basis: true, teksten: ["10/3"], volgorde: {"10/3":84} },
+  { grondvorm: "spolium", aanvullingen: "spolii, (o.)", vertaling: "afgestroopte huid (van een dier); mv.: buit, buitgemaakte wapenuitrusting", teksten: ["7b/4"], volgorde: {"7b/4":7} },
+  { grondvorm: "squalor", aanvullingen: "squaloris, (m.)", vertaling: "smerigheid; verdriet, rouw" },
+  { grondvorm: "stadium", aanvullingen: "stadii, (o.)", vertaling: "stadie (= lengtemaat, ca. 180 m)", teksten: ["9b/7"], volgorde: {"9b/7":25} },
+  { grondvorm: "stagnum", aanvullingen: "stagni, (o.)", vertaling: "moeras" },
+  { grondvorm: "stare", aanvullingen: "sto, steti, statum", vertaling: "staan", basis: true, teksten: ["6a/1","6b/3","6b/4","7b/4"], volgorde: {"6a/1":25,"6b/3":30,"6b/4":29,"7b/4":50} },
+  { grondvorm: "statim", aanvullingen: "(bijw.)", vertaling: "dadelijk, onmiddellijk", teksten: ["6b/5","7b/2","8b/9"], volgorde: {"6b/5":19,"7b/2":79,"8b/9":19} },
+  { grondvorm: "statio", aanvullingen: "stationis, (v.)", vertaling: "het stilstaan; positie; wacht post" },
+  { grondvorm: "statua", aanvullingen: "statuae, (v.)", vertaling: "standbeeld", teksten: ["9b/6"], volgorde: {"9b/6":34} },
+  { grondvorm: "status", aanvullingen: "status, (m.)", vertaling: "staat, toestand, situatie", teksten: ["8a/5"], volgorde: {"8a/5":44} },
+  { grondvorm: "sterilis", aanvullingen: "sterilis, sterile", vertaling: "onvruchtbaar" },
+  { grondvorm: "sternere", aanvullingen: "sterno, stravi, stratum", vertaling: "uitstrooien, uitspreiden; neerwerpen, neermaaien" },
+  { grondvorm: "sternumentum", aanvullingen: "sternumenti", vertaling: "het niezen, nies, niesbui", teksten: ["10/8"], volgorde: {"10/8":21} },
+  { grondvorm: "stimulare", aanvullingen: "stimulo, stimulavi, stimulatum", vertaling: "aansporen, aanvuren, ophitsen" },
+  { grondvorm: "stipendium", aanvullingen: "stipendii, (o.)", vertaling: "soldij", teksten: ["7b/2"], volgorde: {"7b/2":36} },
+  { grondvorm: "strages", aanvullingen: "stragis, (v.)", vertaling: "verwoesting, vernieling", teksten: ["6a/1","8b/9"], volgorde: {"6a/1":17,"8b/9":66} },
+  { grondvorm: "strepere", aanvullingen: "strepo, strepui, strepitum", vertaling: "lawaai maken; weerklinken, schetteren", teksten: ["9b/4"], volgorde: {"9b/4":42} },
+  { grondvorm: "strepitus", aanvullingen: "strepitus, (m.)", vertaling: "lawaai", teksten: ["7a/7"], volgorde: {"7a/7":43} },
+  { grondvorm: "stringere", aanvullingen: "stringo, strinxi, strictum", vertaling: "strak aantrekken; (een wapen) trekken", teksten: ["10/3"], volgorde: {"10/3":50} },
+  { grondvorm: "struere", aanvullingen: "struo, struxi, structum", vertaling: "oprichten, bouwen", teksten: ["10/21"], volgorde: {"10/21":27} },
+  { grondvorm: "studium", aanvullingen: "studii, (o.)", vertaling: "interesse, enthousiasme, ijver; studie", teksten: ["7b/6","10/3"], volgorde: {"7b/6":9,"10/3":81} },
+  { grondvorm: "stupere", aanvullingen: "stupeo, stupui, –", vertaling: "verstomd staan", teksten: ["10/26"], volgorde: {"10/26":99} },
+  { grondvorm: "stuprum", aanvullingen: "stupri, (o.)", vertaling: "verkrachting" },
+  { grondvorm: "suavitas", aanvullingen: "suavitatis, (v.)", vertaling: "vriendelijkheid" },
+  { grondvorm: "sub", aanvullingen: "+ abl. (vz.)", vertaling: "onder", basis: true, teksten: ["6a/4","7a/6","8b/6","10/21"], volgorde: {"6a/4":41,"7a/6":27,"8b/6":26,"10/21":29} },
+  { grondvorm: "sub", aanvullingen: "+ acc. (vz.)", vertaling: "tot onder, onder", basis: true },
+  { grondvorm: "subassare", aanvullingen: "subasso, subassavi, subassatum", vertaling: "koken, braden, roosteren" },
+  { grondvorm: "subigere", aanvullingen: "subigo, subegi, subactum", vertaling: "onderwerpen" },
+  { grondvorm: "subinde", aanvullingen: "(bijw.)", vertaling: "onmiddellijk daarna", teksten: ["7a/7"], volgorde: {"7a/7":39} },
+  { grondvorm: "subito", aanvullingen: "(bijw.)", vertaling: "plots, plotseling" },
+  { grondvorm: "subitus", aanvullingen: "subita, subitum", vertaling: "plots", teksten: ["8b/9"], volgorde: {"8b/9":50} },
+  { grondvorm: "sulicius", aanvullingen: "sublicia, sublicium", vertaling: "op palen rustend" },
+  { grondvorm: "subridere", aanvullingen: "subrideo, –, –", vertaling: "glimlachen" },
+  { grondvorm: "subsequi", aanvullingen: "subsequor, subsecutus sum", vertaling: "op de voet volgen/onmiddellijk volgen" },
+  { grondvorm: "subsidere", aanvullingen: "subsido, subsedi, subsessum", vertaling: "gaan zitten; zinken, zakken" },
+  { grondvorm: "subsistere", aanvullingen: "subsisto, substiti, –", vertaling: "stilstaan, blijven staan, blijven", teksten: ["6a/4"], volgorde: {"6a/4":25} },
+  { grondvorm: "subterraneus", aanvullingen: "subterranea, subterraneum", vertaling: "onderaards, ondergronds", teksten: ["8b/6"], volgorde: {"8b/6":43} },
+  { grondvorm: "subtilis", aanvullingen: "subtilis, subtile", vertaling: "dun, fijn", teksten: ["10/14"], volgorde: {"10/14":20} },
+  { grondvorm: "sucus", aanvullingen: "suci", vertaling: "sap", teksten: ["10/14"], volgorde: {"10/14":17} },
+  { grondvorm: "suffundere", aanvullingen: "suffundo, suffudi, suffusum", vertaling: "gieten onder, gieten bij" },
+  { grondvorm: "sumere", aanvullingen: "sumo, sumpsi, sumptum", vertaling: "nemen; verbuiken, eten", basis: true },
+  { grondvorm: "summus", aanvullingen: "summa, summum", vertaling: "hoogst, opperst", basis: true, teksten: ["7b/12"], volgorde: {"7b/12":16} },
+  { grondvorm: "sumptuosus", aanvullingen: "sumptuosa, sumptuosum", vertaling: "kostbaar, duur, luxueus", teksten: ["9b/5"], volgorde: {"9b/5":43} },
+  { grondvorm: "super", aanvullingen: "+ acc./abl. (vz.)", vertaling: "boven, bovenop", teksten: ["6b/2","10/3"], volgorde: {"6b/2":12,"10/3":51} },
+  { grondvorm: "superare", aanvullingen: "supero, superavi, superatum", vertaling: "overwinnen, overtreffen", basis: true, teksten: ["9a/4"], volgorde: {"9a/4":13} },
+  { grondvorm: "superarius", aanvullingen: "superaria, superarium", vertaling: "aan de bovenkant, boven-" },
+  { grondvorm: "superbia", aanvullingen: "superbiae, (v.)", vertaling: "overmoed, arrogantie" },
+  { grondvorm: "superesse", aanvullingen: "supersum, superfui, –", vertaling: "over zijn, overblijven", teksten: ["6b/2"], volgorde: {"6b/2":135} },
+  { grondvorm: "superfundere", aanvullingen: "superfundo, superfudi, superfusum", vertaling: "gieten op/over", teksten: ["6b/9"], volgorde: {"6b/9":15} },
+  { grondvorm: "superior", aanvullingen: "superior, superius; superioris", vertaling: "hogergelegen" },
+  { grondvorm: "superstitio", aanvullingen: "superstitionis, (v.)", vertaling: "bijgeloof", teksten: ["7b/6"], volgorde: {"7b/6":12} },
+  { grondvorm: "superus", aanvullingen: "supera, superum", vertaling: "zich boven bevindend, boven-" },
+  { grondvorm: "suppetere", aanvullingen: "suppeto, suppetivi, suppetitum", vertaling: "voorhanden zijn, ter beschikking staan", teksten: ["8b/9"], volgorde: {"8b/9":118} },
+  { grondvorm: "supplicium", aanvullingen: "supplicii, (o.)", vertaling: "straf, terechtstelling", teksten: ["9a/4"], volgorde: {"9a/4":46} },
+  { grondvorm: "supra", aanvullingen: "(bijw.)", vertaling: "boven, erboven, daarboven" },
+  { grondvorm: "surgere", aanvullingen: "surgo, surrexi, surrectum", vertaling: "opstaan; oprijzen" },
+  { grondvorm: "sus", aanvullingen: "suis, (m./vr.)", vertaling: "zwijn, varken", teksten: ["6b/2"], volgorde: {"6b/2":100} },
+  { grondvorm: "sustinere", aanvullingen: "sustineo, sustinui, sustentum", vertaling: "vasthouden, houden; uithouden" },
+  { grondvorm: "suus", aanvullingen: "sua, suum (bezit. vnw.)", vertaling: "zijn, haar, hun", basis: true },
+  { grondvorm: "Syracusae", aanvullingen: "Syracusarum (enkel mv.)", vertaling: "(de havenstad) Syracuse", teksten: ["10/3"], volgorde: {"10/3":17} },
+  { grondvorm: "Syria", aanvullingen: "Syriae", vertaling: "Syrië" },
+  { grondvorm: "taberna", aanvullingen: "tabernae, (v.)", vertaling: "winkel", teksten: ["6b/1","6b/5","6b/8","6b/9"], volgorde: {"6b/1":17,"6b/5":8,"6b/8":8,"6b/9":5} },
+  { grondvorm: "tabes", aanvullingen: "tabis, (v.)", vertaling: "ziekte", teksten: ["8a/2","8a/3"], volgorde: {"8a/2":37,"8a/3":124} },
+  { grondvorm: "tabula", aanvullingen: "tabulae, (v.)", vertaling: "plank; schrijftafeltje, wastafeltje" },
+  { grondvorm: "tacitus", aanvullingen: "tacita, tacitum", vertaling: "zwijgend, stil", teksten: ["6b/4"], volgorde: {"6b/4":58} },
+  { grondvorm: "tam", aanvullingen: "(bijw.)", vertaling: "zo, zozeer", teksten: ["8b/6"], volgorde: {"8b/6":23} },
+  { grondvorm: "tam … quam", aanvullingen: "", vertaling: "zo … als, zowel … als", teksten: ["8b/3"], volgorde: {"8b/3":3} },
+  { grondvorm: "tamen", aanvullingen: "(bijw.)", vertaling: "toch, nochtans, desalniettemin", basis: true, teksten: ["6a/4","6b/2","7a/3","8b/9","9b/7","9b/9","10/3","6a/7"], volgorde: {"6a/4":48,"6b/2":24,"7a/3":67,"8b/9":130,"9b/7":9,"9b/9":42,"10/3":27,"6a/7":59} },
+  { grondvorm: "tamquam", aanvullingen: "(vgw./bijw.)", vertaling: "zoals, als, alsof; als het ware" },
+  { grondvorm: "tandem", aanvullingen: "(bijw.)", vertaling: "ten slotte, uiteindelijk", teksten: ["8b/9","9b/4","9b/9"], volgorde: {"8b/9":91,"9b/4":54,"9b/9":27} },
+  { grondvorm: "tangere", aanvullingen: "tango, tetigi, tactum", vertaling: "aanraken", basis: true },
+  { grondvorm: "tantum", aanvullingen: "(bijw.)", vertaling: "enkel, alleen, slechts, uitsluitend", teksten: ["6b/3"], volgorde: {"6b/3":37} },
+  { grondvorm: "tantum … quantum", aanvullingen: "", vertaling: "zoveel … als" },
+  { grondvorm: "tantundem", aanvullingen: "(bijw.)", vertaling: "evenveel", teksten: ["6b/4"], volgorde: {"6b/4":60} },
+  { grondvorm: "tantus", aanvullingen: "tanta, tantum", vertaling: "zo veel, zo groot", basis: true },
+  { grondvorm: "tardare", aanvullingen: "tardo, tardavi, tardatum", vertaling: "vertragen, ophouden, belemmeren" },
+  { grondvorm: "Tarquinius Superbus", aanvullingen: "Tarquinii Superbi", vertaling: "Tarquinius Superbus (eigennaam)" },
+  { grondvorm: "Tartareus", aanvullingen: "Tartarea, Tartareum", vertaling: "behorend tot de Tartarus, van de Tartarus" },
+  { grondvorm: "Tartarus", aanvullingen: "Tartari", vertaling: "Tartarus, Onderwereld" },
+  { grondvorm: "Taurea", aanvullingen: "Taureae", vertaling: "Taurea (eigennaam)" },
+  { grondvorm: "taurus", aanvullingen: "tauri", vertaling: "stier" },
+  { grondvorm: "tectum", aanvullingen: "tecti, (o.)", vertaling: "dak, huis", basis: true, teksten: ["6a/4","6b/2","6b/4"], volgorde: {"6a/4":24,"6b/2":133,"6b/4":7} },
+  { grondvorm: "tegere", aanvullingen: "tego, texi, tectum", vertaling: "bedekken, toedekken", basis: true },
+  { grondvorm: "tegumentum", aanvullingen: "tegumenti, (o.)", vertaling: "bedekking, bekleding, huid" },
+  { grondvorm: "Telethusa", aanvullingen: "Telethusae", vertaling: "Telethusa (eigennaam)", teksten: ["7a/3"], volgorde: {"7a/3":53} },
+  { grondvorm: "tellus", aanvullingen: "telluris, (v.)", vertaling: "aarde, land", basis: true, teksten: ["7a/3"], volgorde: {"7a/3":3} },
+  { grondvorm: "telum", aanvullingen: "teli, (o.)", vertaling: "werpspies, speer, wapen", basis: true },
+  { grondvorm: "temere", aanvullingen: "(bijw.)", vertaling: "onbezonnen, zonder nadenken, zonder plan", teksten: ["9b/9"], volgorde: {"9b/9":50} },
+  { grondvorm: "temperare", aanvullingen: "tempero, temperavi, temperatum", vertaling: "in de juiste verhouding brengen" },
+  { grondvorm: "tempestas", aanvullingen: "tempestatis, (v.)", vertaling: "tijd; storm", basis: true, teksten: ["9b/9"], volgorde: {"9b/9":11} },
+  { grondvorm: "templum", aanvullingen: "templi, (o.)", vertaling: "tempel", basis: true, teksten: ["10/26"], volgorde: {"10/26":74} },
+  { grondvorm: "temptare", aanvullingen: "tempto, temptavi, temptatum", vertaling: "proberen", teksten: ["10/26"], volgorde: {"10/26":97} },
+  { grondvorm: "tempus", aanvullingen: "temporis, (o.)", vertaling: "tijd, moment, ogenblik", basis: true, teksten: ["8a/2","9b/6","9b/9"], volgorde: {"8a/2":20,"9b/6":5,"9b/9":17} },
+  { grondvorm: "tenax", aanvullingen: "tenax, tenax; tenacis + gen.", vertaling: "vasthoudend aan, koppig" },
+  { grondvorm: "tenebrae", aanvullingen: "tenebrarum (enkel mv.), (vr. mv.)", vertaling: "duisternis", teksten: ["6a/4"], volgorde: {"6a/4":16} },
+  { grondvorm: "tenebricosus", aanvullingen: "tenebricosa, tenebricosum", vertaling: "donker, duister" },
+  { grondvorm: "tener", aanvullingen: "tenera, tenerum", vertaling: "zacht; jong" },
+  { grondvorm: "tenere", aanvullingen: "teneo, tenui, tentum", vertaling: "vasthouden, houden", basis: true, teksten: ["8b/8","9a/1","10/26"], volgorde: {"8b/8":2,"9a/1":59,"10/26":40} },
+  { grondvorm: "tentare", aanvullingen: "tento, tentavi, tentatum", vertaling: "proberen", teksten: ["6b/4"], volgorde: {"6b/4":57} },
+  { grondvorm: "tenuis", aanvullingen: "tenuis, tenue", vertaling: "dun, fijn, tenger, mager", basis: true, teksten: ["10/8"], volgorde: {"10/8":14} },
+  { grondvorm: "tenus", aanvullingen: "+ abl. (maar het subst. in abl. staat voor het vz.)", vertaling: "tot aan, tot op", teksten: ["6b/2"], volgorde: {"6b/2":128} },
+  { grondvorm: "Terentia", aanvullingen: "Terentia", vertaling: "Terentia (de vrouw van Cicero)", teksten: ["9b/9"], volgorde: {"9b/9":22} },
+  { grondvorm: "terere", aanvullingen: "tero, trivi, tritum", vertaling: "wrijven, stukwrijven, fijnwrijven" },
+  { grondvorm: "tergum", aanvullingen: "tergi, (o.)", vertaling: "rug", teksten: ["8a/2","9b/5","6a/7"], volgorde: {"8a/2":50,"9b/5":21,"6a/7":67} },
+  { grondvorm: "terra", aanvullingen: "terrae, (v.)", vertaling: "land, aarde, grond", basis: true, teksten: ["6a/1","6a/2","7a/6","8b/6","9b/4","10/3","6a/7"], volgorde: {"6a/1":7,"6a/2":107,"7a/6":25,"8b/6":50,"9b/4":29,"10/3":39,"6a/7":30} },
+  { grondvorm: "Terra", aanvullingen: "Terrae", vertaling: "(de godin) Aarde" },
+  { grondvorm: "terrere", aanvullingen: "terreo, terrui, territum", vertaling: "doen schrikken, angst aanjagen", basis: true },
+  { grondvorm: "terribilis", aanvullingen: "terribilis, terribile", vertaling: "vreselijk", teksten: ["8b/9"], volgorde: {"8b/9":65} },
+  { grondvorm: "tertius", aanvullingen: "tertia, tertium (telwoord)", vertaling: "derde", teksten: ["7a/1","9a/1"], volgorde: {"7a/1":32,"9a/1":12} },
+  { grondvorm: "testa", aanvullingen: "testae, (v.)", vertaling: "tegel, dakpan", teksten: ["6b/4"], volgorde: {"6b/4":10} },
+  { grondvorm: "testudo", aanvullingen: "testudinis", vertaling: "schildpad" },
+  { grondvorm: "Thais", aanvullingen: "Thaidis", vertaling: "Thais (Griekse meisjesnaam)" },
+  { grondvorm: "theca graphiaria", aanvullingen: "thecae graphiariae", vertaling: "koker voor schrijfgerief" },
+  { grondvorm: "Thessalia", aanvullingen: "Thessaliae", vertaling: "Thessalië (streek in Noord-Griekenland)", teksten: ["9b/6"], volgorde: {"9b/6":19} },
+  { grondvorm: "Thessalus", aanvullingen: "Thessala, Thessalum", vertaling: "Thessalisch" },
+  { grondvorm: "Thoranus", aanvullingen: "Thorani", vertaling: "Thoranus (eigennaam)", teksten: ["8b/9"], volgorde: {"8b/9":57} },
+  { grondvorm: "Thurii", aanvullingen: "Thuriorum (enkel mv.)", vertaling: "Thurii (stad in Zuid-Italië)", teksten: ["8b/9"], volgorde: {"8b/9":63} },
+  { grondvorm: "Tiberinus pater", aanvullingen: "Tiberini patris", vertaling: "(de riviergod) Tiber" },
+  { grondvorm: "Tiberinus", aanvullingen: "Tiberini", vertaling: "Tiber" },
+  { grondvorm: "Tiberis", aanvullingen: "Tiberis (m.)", vertaling: "Tiber", teksten: ["7b/2"], volgorde: {"7b/2":2} },
+  { grondvorm: "tigillum", aanvullingen: "tigilli, (o.)", vertaling: "balkje; hutje" },
+  { grondvorm: "tignum", aanvullingen: "tigni, (o.)", vertaling: "balk, paal", teksten: ["6b/2"], volgorde: {"6b/2":43} },
+  { grondvorm: "Tillius Cimber", aanvullingen: "Tillii Cimbri", vertaling: "Tillius Cimber (eigennaam)" },
+  { grondvorm: "timere", aanvullingen: "timeo, timui, –", vertaling: "bang zijn, vrezen", basis: true, teksten: ["10/26"], volgorde: {"10/26":102} },
+  { grondvorm: "timidus", aanvullingen: "timida, timidum", vertaling: "angstig; schuchter", teksten: ["10/26"], volgorde: {"10/26":79} },
+  { grondvorm: "tiro", aanvullingen: "tironis (m.)", vertaling: "rekruut, beginnende soldaat", teksten: ["9b/9"], volgorde: {"9b/9":60} },
+  { grondvorm: "Tiro", aanvullingen: "Tironis (m.)", vertaling: "Tiro (eigennaam)" },
+  { grondvorm: "tofinus", aanvullingen: "tofina, tofinum", vertaling: "van tufsteen gemaakt, tufsteen" },
+  { grondvorm: "toga", aanvullingen: "togae, (v.)", vertaling: "toga", basis: true },
+  { grondvorm: "tolerare", aanvullingen: "tolero, toleravi, toleratum", vertaling: "uithouden, verdragen", teksten: ["10/14"], volgorde: {"10/14":30} },
+  { grondvorm: "tollere", aanvullingen: "tollo, sustuli, sublatum", vertaling: "opheffen, optillen; wegnemen, verwijderen", basis: true, teksten: ["7a/7","9a/4","6a/2"], volgorde: {"7a/7":38,"9a/4":40,"6a/2":111} },
+  { grondvorm: "tonitruum", aanvullingen: "tonitrui, (o.)", vertaling: "donderslag, donderwolk, donder" },
+  { grondvorm: "tonsor", aanvullingen: "tonsoris, (m.)", vertaling: "kapper", teksten: ["6b/1"], volgorde: {"6b/1":1} },
+  { grondvorm: "torquere", aanvullingen: "torqueo, torsi, tortum", vertaling: "draaien, omdraaien; zwaaien, slingeren", teksten: ["6b/2"], volgorde: {"6b/2":85} },
+  { grondvorm: "torrens", aanvullingen: "torrentis, (m.)", vertaling: "bergrivier, snelstromende rivier; stortvloed", teksten: ["6a/7"], volgorde: {"6a/7":65} },
+  { grondvorm: "torus", aanvullingen: "tori, (m.)", vertaling: "kussen, bed", teksten: ["10/26"], volgorde: {"10/26":63} },
+  { grondvorm: "tot", aanvullingen: "(onverbuigbaar adj.)", vertaling: "zoveel", basis: true, teksten: ["6b/2"], volgorde: {"6b/2":62} },
+  { grondvorm: "totus", aanvullingen: "tota, totum", vertaling: "geheel, al", basis: true, teksten: ["6b/1","6b/3","8a/3","8b/9"], volgorde: {"6b/1":5,"6b/3":8,"8a/3":121,"8b/9":58} },
+  { grondvorm: "trabs", aanvullingen: "trabis, (v.)", vertaling: "balk, boomstam", teksten: ["8b/9"], volgorde: {"8b/9":121} },
+  { grondvorm: "tractus", aanvullingen: "tracta, tractum", vertaling: "getrokken, gesleept", teksten: ["7b/2"], volgorde: {"7b/2":54} },
+  { grondvorm: "tradere", aanvullingen: "trado, tradidi, traditum", vertaling: "doorgeven, overleveren", basis: true, teksten: ["9a/1"], volgorde: {"9a/1":55} },
+  { grondvorm: "traducere", aanvullingen: "traduco, traduxi, traductum", vertaling: "leiden over, overbrengen" },
+  { grondvorm: "trahere", aanvullingen: "traho, traxi, tractum", vertaling: "trekken, slepen", basis: true, teksten: ["7b/2"], volgorde: {"7b/2":53} },
+  { grondvorm: "traicere", aanvullingen: "traicio, traieci, traiectum", vertaling: "doorboren, doorsteken; oversteken" },
+  { grondvorm: "tranare", aanvullingen: "trano, tranavi, tranatum", vertaling: "overzwemmen, zwemmen" },
+  { grondvorm: "tranquillus", aanvullingen: "tranquilla, tranquillum", vertaling: "rustig, kalm, vredig, stil", teksten: ["8a/5"], volgorde: {"8a/5":40} },
+  { grondvorm: "trans", aanvullingen: "+ acc. (vz.)", vertaling: "over, over … heen, naar/aan de overkant van", basis: true, teksten: ["7b/2"], volgorde: {"7b/2":113} },
+  { grondvorm: "transferre", aanvullingen: "transfero, transtuli, translatum", vertaling: "overbrengen", teksten: ["8a/5"], volgorde: {"8a/5":32} },
+  { grondvorm: "transilire", aanvullingen: "transilio, transilui, –", vertaling: "springen over" },
+  { grondvorm: "transire", aanvullingen: "transeo, transii, transitum", vertaling: "oversteken; voorbijgaan, passeren", basis: true, teksten: ["6b/3","7b/2"], volgorde: {"6b/3":10,"7b/2":1} },
+  { grondvorm: "transitus", aanvullingen: "transitus", vertaling: "overtocht, oversteek, doortocht", teksten: ["6b/3"], volgorde: {"6b/3":25} },
+  { grondvorm: "trecenties", aanvullingen: "(telwoord)", vertaling: "driehonderdmaal", teksten: ["8a/6"], volgorde: {"8a/6":23} },
+  { grondvorm: "trecenties sestertium", aanvullingen: "", vertaling: "= 30 miljoen sestertiën", teksten: ["8a/6"], volgorde: {"8a/6":26} },
+  { grondvorm: "tremor", aanvullingen: "tremoris, (m.)", vertaling: "beving, schok", teksten: ["6a/4"], volgorde: {"6a/4":32} },
+  { grondvorm: "trepidare", aanvullingen: "trepido, trepidavi, trepidatum", vertaling: "beven, bang zijn" },
+  { grondvorm: "trepidus", aanvullingen: "trepida, trepidum", vertaling: "angstig" },
+  { grondvorm: "tres", aanvullingen: "tres, tria (telwoord)", vertaling: "drie", basis: true, teksten: ["6b/2","8b/3","9a/1","9b/3","10/21"], volgorde: {"6b/2":126,"8b/3":40,"9a/1":6,"9b/3":6,"10/21":34} },
+  { grondvorm: "tribunal", aanvullingen: "tribunalis, (o.)", vertaling: "verhoog, tribune", teksten: ["7b/2"], volgorde: {"7b/2":31} },
+  { grondvorm: "tributum", aanvullingen: "tributi, (o.)", vertaling: "belasting", teksten: ["8a/2"], volgorde: {"8a/2":18} },
+  { grondvorm: "tricesimus", aanvullingen: "tricesima, tricesimum (telwoord)", vertaling: "dertigste", teksten: ["7a/1"], volgorde: {"7a/1":26} },
+  { grondvorm: "triclinium", aanvullingen: "triclinii, (o.)", vertaling: "aanligbed; eetkamer", teksten: ["7b/12","9b/3","9b/5"], volgorde: {"7b/12":3,"9b/3":4,"9b/5":1} },
+  { grondvorm: "triclinium versatile", aanvullingen: "triclinii versatilis", vertaling: "eetkamer met draaibaar plafond", teksten: ["7b/12"], volgorde: {"7b/12":5} },
+  { grondvorm: "triginta", aanvullingen: "(telwoord)", vertaling: "dertig", teksten: ["8b/9"], volgorde: {"8b/9":9} },
+  { grondvorm: "triremis", aanvullingen: "triremis", vertaling: "driedekker (= schip met drie verdiepingen roeiers)" },
+  { grondvorm: "tristis", aanvullingen: "tristis, triste", vertaling: "droevig", basis: true, teksten: ["6b/2","7b/4"], volgorde: {"6b/2":89,"7b/4":62} },
+  { grondvorm: "Triton", aanvullingen: "onis (m.)", vertaling: "Triton (= zoon van Neptunus)" },
+  { grondvorm: "tritus", aanvullingen: "trita, tritum", vertaling: "gemalen" },
+  { grondvorm: "triumphare", aanvullingen: "triumpho, triumphavi, triumphatum", vertaling: "triomferen, zegevieren" },
+  { grondvorm: "Troia", aanvullingen: "Troiae", vertaling: "Troje" },
+  { grondvorm: "tu", aanvullingen: "(pers. vnw.)", vertaling: "jij", teksten: ["6b/4"], volgorde: {"6b/4":31} },
+  { grondvorm: "tubulus", aanvullingen: "tubuli", vertaling: "buis (van aardewerk)", teksten: ["10/19"], volgorde: {"10/19":2} },
+  { grondvorm: "tueri", aanvullingen: "tueor, tuitus sum", vertaling: "beschermen, zorg dragen voor" },
+  { grondvorm: "tum", aanvullingen: "(bijw.)", vertaling: "toen, op dat moment, dan" },
+  { grondvorm: "tumescere", aanvullingen: "tumesco, tumui, –", vertaling: "aanzwellen, zwellen" },
+  { grondvorm: "tumulus", aanvullingen: "tumuli, (m.)", vertaling: "heuvel, verhoging; grafheuvel", teksten: ["9a/4"], volgorde: {"9a/4":24} },
+  { grondvorm: "tunc", aanvullingen: "(bijw.)", vertaling: "toen, op dat moment, dan", teksten: ["7a/1"], volgorde: {"7a/1":44} },
+  { grondvorm: "tunica", aanvullingen: "tunicae, (v.)", vertaling: "tunica", teksten: ["6b/2"], volgorde: {"6b/2":56} },
+  { grondvorm: "turba", aanvullingen: "turbae, (v.)", vertaling: "menigte", teksten: ["6b/2","6b/3","7b/2"], volgorde: {"6b/2":6,"6b/3":11,"7b/2":28} },
+  { grondvorm: "turbidus", aanvullingen: "turbida, turbidum", vertaling: "onrustig, woelig" },
+  { grondvorm: "Turnus", aanvullingen: "Turni", vertaling: "Turnus (eigennaam)" },
+  { grondvorm: "turpis", aanvullingen: "turpis, turpe", vertaling: "lelijk; schandelijk", teksten: ["8b/5"], volgorde: {"8b/5":56} },
+  { grondvorm: "turris", aanvullingen: "turris, (v.)", vertaling: "toren" },
+  { grondvorm: "tus", aanvullingen: "turis (onz.)", vertaling: "wierook", teksten: ["10/26"], volgorde: {"10/26":71} },
+  { grondvorm: "tussicula", aanvullingen: "tussiculae, (v.)", vertaling: "lichte hoestbui", teksten: ["10/8"], volgorde: {"10/8":23} },
+  { grondvorm: "tussire", aanvullingen: "tussio, –, –", vertaling: "hoesten" },
+  { grondvorm: "tussis", aanvullingen: "tussis, (v.)", vertaling: "hoest, hoestbui", teksten: ["10/8"], volgorde: {"10/8":26} },
+  { grondvorm: "tuus", aanvullingen: "tua, tuum", vertaling: "jouw", teksten: ["7b/6"], volgorde: {"7b/6":23} },
+  { grondvorm: "uber", aanvullingen: "uberis (o.)", vertaling: "uier" },
+  { grondvorm: "ubi?", aanvullingen: "(vragend bijw.)", vertaling: "waar?" },
+  { grondvorm: "ubi", aanvullingen: "+ ind. perf. (vgw.)", vertaling: "zodra; wanneer, toen", teksten: ["6b/5","7b/2","7b/4","9b/6","9b/7"], volgorde: {"6b/5":6,"7b/2":23,"7b/4":22,"9b/6":24,"9b/7":14} },
+  { grondvorm: "ullus", aanvullingen: "ulla, ullum", vertaling: "een; mv.: enige" },
+  { grondvorm: "ultimus", aanvullingen: "ultima, ultimum", vertaling: "laatste" },
+  { grondvorm: "ululatus", aanvullingen: "ululatus, (m.)", vertaling: "gehuil, gegil, geschreeuw, gebrul", teksten: ["6b/3"], volgorde: {"6b/3":29} },
+  { grondvorm: "umbra", aanvullingen: "umbrae, (v.)", vertaling: "schaduw, schim", teksten: ["9b/4"], volgorde: {"9b/4":30} },
+  { grondvorm: "umerus", aanvullingen: "umeri, (m.)", vertaling: "schouder" },
+  { grondvorm: "umor", aanvullingen: "umoris, (m.)", vertaling: "vochtigheid, vocht", teksten: ["10/8","10/21"], volgorde: {"10/8":2,"10/21":44} },
+  { grondvorm: "umquam", aanvullingen: "(bijw.)", vertaling: "ooit" },
+  { grondvorm: "una", aanvullingen: "(bijw.)", vertaling: "tezamen, tegelijk", teksten: ["10/21"], volgorde: {"10/21":41} },
+  { grondvorm: "unctorium", aanvullingen: "unctorii, (o.)", vertaling: "massageruimte", teksten: ["9b/5"], volgorde: {"9b/5":33} },
+  { grondvorm: "unda", aanvullingen: "undae, (v.)", vertaling: "golf, water", teksten: ["6b/2"], volgorde: {"6b/2":27} },
+  { grondvorm: "unde", aanvullingen: "(bijw.)", vertaling: "vanwaar", teksten: ["6b/4"], volgorde: {"6b/4":8} },
+  { grondvorm: "undique", aanvullingen: "(bijw.)", vertaling: "van overal; overal, aan alle kanten", teksten: ["6b/2","9b/5","10/26"], volgorde: {"6b/2":48,"9b/5":7,"10/26":70} },
+  { grondvorm: "ungere", aanvullingen: "ungo, unxi, unctum", vertaling: "zalven, insmeren" },
+  { grondvorm: "unicus", aanvullingen: "unica, unicum", vertaling: "enig(e)" },
+  { grondvorm: "unus", aanvullingen: "una, unum (telwoord)", vertaling: "één", teksten: ["7b/2","8a/3","8a/6","9a/1","9a/4","10/21"], volgorde: {"7b/2":66,"8a/3":9,"8a/6":20,"9a/1":7,"9a/4":18,"10/21":36} },
+  { grondvorm: "unusquisque", aanvullingen: "unaquaeque, unumquidque (subst.)", vertaling: "elk afzonderlijk, iedereen", teksten: ["7a/1","7a/5"], volgorde: {"7a/1":8,"7a/5":17} },
+  { grondvorm: "unusquisque", aanvullingen: "unaquaeque, unumquodque (adj.)", vertaling: "elk afzonderlijk, ieder" },
+  { grondvorm: "urbanus", aanvullingen: "urbana, urbanum", vertaling: "van de stad, uit de stad, stedelijk", teksten: ["8b/3"], volgorde: {"8b/3":12} },
+  { grondvorm: "urbs", aanvullingen: "urbis", vertaling: "stad", basis: true, teksten: ["6a/1","6a/7","6b/1","6b/3","9b/7"], volgorde: {"6a/1":6,"6a/7":11,"6b/1":6,"6b/3":4,"9b/7":4} },
+  { grondvorm: "urina", aanvullingen: "urinae", vertaling: "urine", teksten: ["10/8"], volgorde: {"10/8":31} },
+  { grondvorm: "urna", aanvullingen: "urnae", vertaling: "kruik, urne (voor assen)", teksten: ["6b/9"], volgorde: {"6b/9":1} },
+  { grondvorm: "Ursa", aanvullingen: "Ursae", vertaling: "Ursa (eigennaam)", teksten: ["7a/2"], volgorde: {"7a/2":6} },
+  { grondvorm: "usitatus", aanvullingen: "usitata, usitatum", vertaling: "gebruikelijk, gewoon, normaal" },
+  { grondvorm: "usque", aanvullingen: "+ acc. (vz.)", vertaling: "tot aan", teksten: ["7a/1","8a/5"], volgorde: {"7a/1":16,"8a/5":7} },
+  { grondvorm: "usque ad", aanvullingen: "+ acc. (vz.)", vertaling: "tot aan" },
+  { grondvorm: "usura", aanvullingen: "usurae, (v.)", vertaling: "rente (op een lening)", teksten: ["8a/2"], volgorde: {"8a/2":27} },
+  { grondvorm: "usus", aanvullingen: "usus, (m.)", vertaling: "gebruik, toepassing; oefening, praktijk", teksten: ["10/14"], volgorde: {"10/14":28} },
+  { grondvorm: "ut", aanvullingen: "+ conj. (vgw.)", vertaling: "toen, wanneer; zoals", teksten: ["6a/4","6b/2","7a/3","7b/4","8a/3","8b/5","8b/6","8b/10","9a/4","9b/4","9b/6","9b/9","9b/10","10/3","10/26"], volgorde: {"6a/4":49,"6b/2":69,"7a/3":28,"7b/4":16,"8a/3":4,"8b/5":17,"8b/6":25,"8b/10":17,"9a/4":30,"9b/4":40,"9b/6":8,"9b/9":2,"9b/10":8,"10/3":28,"10/26":26} },
+  { grondvorm: "ut", aanvullingen: "+ conj. (vgw.)", vertaling: "opdat, om te; zodat; dat", teksten: ["9b/9"], volgorde: {"9b/9":38} },
+  { grondvorm: "ut puta", aanvullingen: "", vertaling: "zoals bijvoorbeeld", teksten: ["8b/10"], volgorde: {"8b/10":12} },
+  { grondvorm: "uter", aanvullingen: "utra, utrum? (vragend vnw.)", vertaling: "welk(e) van beide?" },
+  { grondvorm: "uterque", aanvullingen: "utraque, utrumque", vertaling: "elk van beide(n)", teksten: ["9b/5"], volgorde: {"9b/5":70} },
+  { grondvorm: "uti", aanvullingen: "utor, usus sum + abl.", vertaling: "gebruiken", basis: true },
+  { grondvorm: "utilis", aanvullingen: "utilis, utile", vertaling: "nuttig, bruikbaar, voordelig", basis: true, teksten: ["8b/5","8b/6"], volgorde: {"8b/5":15,"8b/6":4} },
+  { grondvorm: "utrimque", aanvullingen: "(bijw.)", vertaling: "langs beide kanten" },
+  { grondvorm: "utrum", aanvullingen: "… an …", vertaling: "of … of …", teksten: ["6a/4"], volgorde: {"6a/4":22} },
+  { grondvorm: "utrum … an …", aanvullingen: "(vraagwoord)", vertaling: "of … of …", basis: true },
+  { grondvorm: "uva", aanvullingen: "uvae, (v.)", vertaling: "druif" },
+  { grondvorm: "uxor", aanvullingen: "uxoris (v.)", vertaling: "echtgenote, vrouw", teksten: ["7a/5"], volgorde: {"7a/5":2} },
+  { grondvorm: "vadere", aanvullingen: "vado, –, –", vertaling: "gaan" },
+  { grondvorm: "vagabundus", aanvullingen: "vagabunda, vagabundum", vertaling: "rondzwervend" },
+  { grondvorm: "vagari", aanvullingen: "vagor, vagatus sum", vertaling: "ronddwalen, rondtrekken", teksten: ["6a/4"], volgorde: {"6a/4":28} },
+  { grondvorm: "valde", aanvullingen: "(bijw.)", vertaling: "zeer, erg", teksten: ["9b/9"], volgorde: {"9b/9":34} },
+  { grondvorm: "vale", aanvullingen: "", vertaling: "vaarwel" },
+  { grondvorm: "valere", aanvullingen: "valeo, valui, –", vertaling: "gezond zijn, krachtig zijn; kunnen", basis: true, teksten: ["9b/9"], volgorde: {"9b/9":69} },
+  { grondvorm: "Valerius", aanvullingen: "Valerii", vertaling: "Valerius (eigennaam)" },
+  { grondvorm: "valetudo", aanvullingen: "valetudinis", vertaling: "gezondheid" },
+  { grondvorm: "validus", aanvullingen: "valida, validum", vertaling: "krachtig, sterk, gezond", teksten: ["6b/5"], volgorde: {"6b/5":14} },
+  { grondvorm: "vallis", aanvullingen: "vallis, (v.)", vertaling: "dal, vallei" },
+  { grondvorm: "vallum", aanvullingen: "valli, (o.)", vertaling: "verschansing (van een legerkamp), wal", basis: true },
+  { grondvorm: "valvae", aanvullingen: "valvarum (enkel mv.), (vr. mv.)", vertaling: "vleugeldeur, deur", teksten: ["9b/5"], volgorde: {"9b/5":8} },
+  { grondvorm: "vanus", aanvullingen: "vana, vanum", vertaling: "ijdel; vergeefs, zinloos", basis: true, teksten: ["7a/3"], volgorde: {"7a/3":63} },
+  { grondvorm: "Varenius", aanvullingen: "Varenii", vertaling: "Varenius (eigennaam)", teksten: ["8b/9"], volgorde: {"8b/9":55} },
+  { grondvorm: "varius", aanvullingen: "varia, varium", vertaling: "verschillend", basis: true },
+  { grondvorm: "Varro", aanvullingen: "Varronis", vertaling: "Varro (eigennaam)", teksten: ["7a/1"], volgorde: {"7a/1":1} },
+  { grondvorm: "vastare", aanvullingen: "vasto, vastavi, vastatum", vertaling: "vernielen, verwoesten", teksten: ["6a/1","6b/2","8b/9"], volgorde: {"6a/1":18,"6b/2":104,"8b/9":67} },
+  { grondvorm: "vastatio", aanvullingen: "vastationis, (v.)", vertaling: "verwoesting" },
+  { grondvorm: "vastus", aanvullingen: "vasta, vastum", vertaling: "onmetelijk (groot), reusachtig, enorm", basis: true, teksten: ["6a/4"], volgorde: {"6a/4":31} },
+  { grondvorm: "vasum", aanvullingen: "vasi, (o.)", vertaling: "vaas", teksten: ["6b/2","6b/4"], volgorde: {"6b/2":63,"6b/4":19} },
+  { grondvorm: "Vaticanus", aanvullingen: "Vaticani", vertaling: "de Vaticaan (heuvel in Rome)" },
+  { grondvorm: "-ve", aanvullingen: "(vgw.)", vertaling: "of, ofwel", basis: true, teksten: ["6a/2","8b/3"], volgorde: {"6a/2":110,"8b/3":21} },
+  { grondvorm: "vehemens", aanvullingen: "vehemens, vehemens; vehementis", vertaling: "heftig, krachtig", teksten: ["6a/1","6a/4","6b/5"], volgorde: {"6a/1":9,"6a/4":33,"6b/5":11} },
+  { grondvorm: "vehere", aanvullingen: "veho, vexi, vectum", vertaling: "voeren, dragen", teksten: ["6b/2"], volgorde: {"6b/2":10} },
+  { grondvorm: "vehiculum", aanvullingen: "vehiculi, (o.)", vertaling: "wagen", teksten: ["6a/7"], volgorde: {"6a/7":20} },
+  { grondvorm: "vel", aanvullingen: "(vgw.)", vertaling: "of, ofwel", basis: true, teksten: ["6b/2","8b/6"], volgorde: {"6b/2":20,"8b/6":17} },
+  { grondvorm: "velle", aanvullingen: "volo, volui, –", vertaling: "willen", basis: true, teksten: ["6a/1"], volgorde: {"6a/1":46} },
+  { grondvorm: "velocitas", aanvullingen: "velocitatis, (v.)", vertaling: "snelheid", teksten: ["6b/5"], volgorde: {"6b/5":22} },
+  { grondvorm: "velum", aanvullingen: "veli, (o.)", vertaling: "zeil" },
+  { grondvorm: "velut", aanvullingen: "(vgw.)", vertaling: "zoals, als, alsof", teksten: ["8a/2","8a/3","8b/3","8b/9"], volgorde: {"8a/2":36,"8a/3":69,"8b/3":15,"8b/9":26} },
+  { grondvorm: "velut", aanvullingen: "(bijw.)", vertaling: "als het ware" },
+  { grondvorm: "venabulum", aanvullingen: "venabuli, (o.)", vertaling: "jachtspies" },
+  { grondvorm: "venalicia", aanvullingen: "venaliciorum (enkel mv.), (onz. mv.)", vertaling: "koopwaar, handelswaar; slaven" },
+  { grondvorm: "venatio", aanvullingen: "venationis, (v.)", vertaling: "jachtpartij" },
+  { grondvorm: "vendere", aanvullingen: "vendo, vendidi, venditum", vertaling: "verkopen", teksten: ["8b/1"], volgorde: {"8b/1":7} },
+  { grondvorm: "venenum", aanvullingen: "veneni, (o.)", vertaling: "gif" },
+  { grondvorm: "venire", aanvullingen: "venio, veni, ventum", vertaling: "komen", basis: true, teksten: ["6b/4","7b/2","8a/3","9b/9","9b/10","10/26"], volgorde: {"6b/4":46,"7b/2":25,"8a/3":125,"9b/9":6,"9b/10":1,"10/26":69} },
+  { grondvorm: "venter", aanvullingen: "ventris, (m.)", vertaling: "buik; maag", teksten: ["8a/3","9b/4"], volgorde: {"8a/3":21,"9b/4":22} },
+  { grondvorm: "ventus", aanvullingen: "venti, (m.)", vertaling: "wind", basis: true, teksten: ["6b/5","8b/6","9b/7"], volgorde: {"6b/5":16,"8b/6":8,"9b/7":28} },
+  { grondvorm: "venum dare", aanvullingen: "do, dedi, datum", vertaling: "verkopen", teksten: ["8a/3"], volgorde: {"8a/3":76} },
+  { grondvorm: "Venus", aanvullingen: "Veneris", vertaling: "(de godin) Venus", basis: true, teksten: ["10/26"], volgorde: {"10/26":68} },
+  { grondvorm: "verber", aanvullingen: "verberis (o.)", vertaling: "zweep, zweepslag", teksten: ["8a/2"], volgorde: {"8a/2":54} },
+  { grondvorm: "verbum", aanvullingen: "verbi, (o.)", vertaling: "woord", basis: true },
+  { grondvorm: "vereri", aanvullingen: "vereor, veritus sum", vertaling: "vrezen; eerbiedigen, respect hebben voor", basis: true, teksten: ["7b/4"], volgorde: {"7b/4":39} },
+  { grondvorm: "veritas", aanvullingen: "veritatis, (v.)", vertaling: "waarheid", basis: true },
+  { grondvorm: "vermis", aanvullingen: "vermis (m.)", vertaling: "worm" },
+  { grondvorm: "vero", aanvullingen: "(vgw.)", vertaling: "maar, echter" },
+  { grondvorm: "versatilis", aanvullingen: "versatilis, versatile", vertaling: "draaibaar, beweeglijk", teksten: ["7b/12"], volgorde: {"7b/12":4} },
+  { grondvorm: "versus", aanvullingen: "versus, (m.)", vertaling: "versregel" },
+  { grondvorm: "vertex", aanvullingen: "verticis (m.)", vertaling: "draaikolk, wervelwind; kruin (van een hoofd), hoofd", teksten: ["6b/2"], volgorde: {"6b/2":71} },
+  { grondvorm: "verus", aanvullingen: "vera, verum", vertaling: "waar, echt", basis: true, teksten: ["7b/4","10/26"], volgorde: {"7b/4":18,"10/26":24} },
+  { grondvorm: "Vesta", aanvullingen: "Vestae", vertaling: "(de godin) Vesta" },
+  { grondvorm: "vestibulum", aanvullingen: "vestibuli", vertaling: "voorportaal (van een huis of een tempel), ingang", teksten: ["9b/6"], volgorde: {"9b/6":32} },
+  { grondvorm: "vestigium", aanvullingen: "vestigii, (o.)", vertaling: "spoor", teksten: ["6b/2","8a/2"], volgorde: {"6b/2":134,"8a/2":53} },
+  { grondvorm: "vestimentum", aanvullingen: "vestimenti, (o.)", vertaling: "kleed, kledingstuk, kledij" },
+  { grondvorm: "vestis", aanvullingen: "vestis, (v.)", vertaling: "kleed, kledingstuk, kledij", teksten: ["7b/2","8b/6","10/26"], volgorde: {"7b/2":20,"8b/6":1,"10/26":55} },
+  { grondvorm: "Vesuvius", aanvullingen: "Vesuvii", vertaling: "(de vulkaan) Vesuvius", teksten: ["6a/2","6a/4","8b/9","10/21"], volgorde: {"6a/2":99,"6a/4":3,"8b/9":30,"10/21":16} },
+  { grondvorm: "vetare", aanvullingen: "veto, vetui, vetitum", vertaling: "verbieden, verhinderen", teksten: ["8a/5"], volgorde: {"8a/5":11} },
+  { grondvorm: "vetustus", aanvullingen: "vetusta, vetustum", vertaling: "oud, al lang bestaand", teksten: ["9b/7"], volgorde: {"9b/7":6} },
+  { grondvorm: "vexare", aanvullingen: "vexo, vexavi, vexatum", vertaling: "(hevig) bewegen; teisteren, kwellen", teksten: ["6a/1","6b/5"], volgorde: {"6a/1":10,"6b/5":25} },
+  { grondvorm: "vexillum", aanvullingen: "vexilli, (o.)", vertaling: "vaandel, vlag", teksten: ["8b/9"], volgorde: {"8b/9":16} },
+  { grondvorm: "via", aanvullingen: "viae, (v.)", vertaling: "weg", basis: true, teksten: ["6b/1","7a/7","8b/3","9a/1"], volgorde: {"6b/1":11,"7a/7":48,"8b/3":16,"9a/1":33} },
+  { grondvorm: "viator", aanvullingen: "viatoris", vertaling: "reiziger", teksten: ["9b/4"], volgorde: {"9b/4":49} },
+  { grondvorm: "vicinus", aanvullingen: "vicina, vicinum", vertaling: "naburig" },
+  { grondvorm: "victima", aanvullingen: "victimae", vertaling: "offerdier, (slacht)offer" },
+  { grondvorm: "victor", aanvullingen: "victoris, (m.)", vertaling: "overwinnaar", basis: true, teksten: ["9b/6","10/3"], volgorde: {"9b/6":38,"10/3":74} },
+  { grondvorm: "victoria", aanvullingen: "victoriae, (v.)", vertaling: "overwinning", basis: true, teksten: ["10/3"], volgorde: {"10/3":23} },
+  { grondvorm: "vicus", aanvullingen: "vici, (m.)", vertaling: "dorp, gehucht; stadswijk", teksten: ["6b/3"], volgorde: {"6b/3":28} },
+  { grondvorm: "videre", aanvullingen: "video, vidi, visum", vertaling: "zien", basis: true, teksten: ["8a/2","9b/5","9b/10","6a/7"], volgorde: {"8a/2":55,"9b/5":80,"9b/10":11,"6a/7":17} },
+  { grondvorm: "videri", aanvullingen: "videor, visus sum", vertaling: "lijken, schijnen", teksten: ["6a/4","6b/3","10/19","10/26"], volgorde: {"6a/4":40,"6b/3":16,"10/19":20,"10/26":92} },
+  { grondvorm: "vigere", aanvullingen: "vigeo, vigui, –", vertaling: "krachtig zijn, vitaal zijn, bloeien", teksten: ["8a/3"], volgorde: {"8a/3":136} },
+  { grondvorm: "vigilare", aanvullingen: "vigilo, vigilavi, vigilatum", vertaling: "wakker zijn, niet kunnen slapen" },
+  { grondvorm: "vigilia", aanvullingen: "vigiliae, (v.)", vertaling: "het wakker zijn, slapeloosheid", teksten: ["6b/3"], volgorde: {"6b/3":18} },
+  { grondvorm: "viginti", aanvullingen: "(telwoord)", vertaling: "twintig", teksten: ["8a/3"], volgorde: {"8a/3":73} },
+  { grondvorm: "vilicus", aanvullingen: "vilici", vertaling: "opzichter, beheerder (van een landgoed)", teksten: ["8b/5"], volgorde: {"8b/5":16} },
+  { grondvorm: "villa", aanvullingen: "villae, (v.)", vertaling: "landhuis, boerderij; landgoed", teksten: ["8a/2","8b/5","9b/5"], volgorde: {"8a/2":12,"8b/5":41,"9b/5":79} },
+  { grondvorm: "vimen", aanvullingen: "viminis, (o.)", vertaling: "twijg" },
+  { grondvorm: "vincere", aanvullingen: "vinco, vici, victum", vertaling: "overwinnen", basis: true },
+  { grondvorm: "vincire", aanvullingen: "vincio, vinxi, vinctum", vertaling: "vastbinden, boeien", teksten: ["8b/6"], volgorde: {"8b/6":39} },
+  { grondvorm: "vinctus", aanvullingen: "vincta, vinctum", vertaling: "vastgebonden, geboeid", teksten: ["8b/6"], volgorde: {"8b/6":40} },
+  { grondvorm: "vinculum", aanvullingen: "vinculi, (o.)", vertaling: "boei", teksten: ["8b/9"], volgorde: {"8b/9":40} },
+  { grondvorm: "vindicare", aanvullingen: "vindico, vindicavi, vindicatum", vertaling: "bestraffen, vergelden, wreken" },
+  { grondvorm: "vinea", aanvullingen: "vineae, (v.)", vertaling: "wijngaard" },
+  { grondvorm: "vinum", aanvullingen: "vini, (o.)", vertaling: "wijn", teksten: ["7a/5","8a/6","9b/4"], volgorde: {"7a/5":4,"8a/6":14,"9b/4":46} },
+  { grondvorm: "viola", aanvullingen: "violae, (v.)", vertaling: "viool (de bloem, niet het muziekinstrument)", teksten: ["7b/12","9b/5"], volgorde: {"7b/12":7,"9b/5":56} },
+  { grondvorm: "violare", aanvullingen: "violo, violavi, violatum", vertaling: "mishandelen; schenden", teksten: ["7a/5"], volgorde: {"7a/5":22} },
+  { grondvorm: "violatus", aanvullingen: "violata, violatum", vertaling: "mishandeld; geschonden", teksten: ["7a/5"], volgorde: {"7a/5":23} },
+  { grondvorm: "violentus", aanvullingen: "violenta, violentum", vertaling: "gewelddadig, agressief, heftig" },
+  { grondvorm: "vir", aanvullingen: "viri, (m.)", vertaling: "man", teksten: ["7a/3","8b/9"], volgorde: {"7a/3":11,"8b/9":135} },
+  { grondvorm: "virgo", aanvullingen: "virginis", vertaling: "maagd, jong meisje", teksten: ["10/26"], volgorde: {"10/26":22} },
+  { grondvorm: "virgula", aanvullingen: "virgulae, (v.)", vertaling: "tak, twijg", teksten: ["8b/9"], volgorde: {"8b/9":123} },
+  { grondvorm: "viridis", aanvullingen: "viridis, viride", vertaling: "groen; fris, vers" },
+  { grondvorm: "virtus", aanvullingen: "virtutis, (v.)", vertaling: "manhaftigheid, moed; deugd", basis: true, teksten: ["7b/2","7b/4"], volgorde: {"7b/2":111,"7b/4":71} },
+  { grondvorm: "vis", aanvullingen: "(geen gen., gem. verb.)", vertaling: "kracht, macht, geweld", basis: true, teksten: ["7a/3","8b/9"], volgorde: {"7a/3":39,"8b/9":94} },
+  { grondvorm: "viscum", aanvullingen: "visci, (o.)", vertaling: "mistel, maretak" },
+  { grondvorm: "visendus", aanvullingen: "visenda, visendum", vertaling: "bezienswaardig", teksten: ["9b/7"], volgorde: {"9b/7":10} },
+  { grondvorm: "visere", aanvullingen: "viso, visi, –", vertaling: "bekijken, bezichtigen, bezoeken" },
+  { grondvorm: "vison", aanvullingen: "visontis (m.)", vertaling: "bizon" },
+  { grondvorm: "visus", aanvullingen: "visa, visum", vertaling: "gezien", teksten: ["8a/2"], volgorde: {"8a/2":56} },
+  { grondvorm: "vita", aanvullingen: "vitae, (v.)", vertaling: "leven", basis: true, teksten: ["6b/3","7a/1","7a/3","8b/5","10/3"], volgorde: {"6b/3":50,"7a/1":50,"7a/3":12,"8b/5":9,"10/3":13} },
+  { grondvorm: "vitare", aanvullingen: "vito, vitavi, vitatum", vertaling: "vermijden, ontwijken, ontvluchten", teksten: ["8b/5"], volgorde: {"8b/5":45} },
+  { grondvorm: "vitineus", aanvullingen: "vitinea, vitineum", vertaling: "van een wijnrank", teksten: ["8b/9"], volgorde: {"8b/9":39} },
+  { grondvorm: "vitiosus", aanvullingen: "vitiosa, vitiosum", vertaling: "gebrekkig, ongezond, schadelijk", teksten: ["10/19"], volgorde: {"10/19":19} },
+  { grondvorm: "vitium", aanvullingen: "vitii, (o.)", vertaling: "gebrek, mankement; fout, vergissing", teksten: ["10/19","10/26"], volgorde: {"10/19":8,"10/26":4} },
+  { grondvorm: "vitulus marinus", aanvullingen: "vituli marini", vertaling: "zeehond", teksten: ["6b/3"], volgorde: {"6b/3":33} },
+  { grondvorm: "vivere", aanvullingen: "vivo, vixi, –", vertaling: "leven", basis: true, teksten: ["8a/3","10/26"], volgorde: {"8a/3":135,"10/26":12} },
+  { grondvorm: "vix", aanvullingen: "(bijw.)", vertaling: "nauwelijks", teksten: ["6b/2"], volgorde: {"6b/2":72} },
+  { grondvorm: "vocalis", aanvullingen: "vocalis, vocale", vertaling: "een stem hebbend, stem-; klinkend, welluidend", teksten: ["8b/3"], volgorde: {"8b/3":43} },
+  { grondvorm: "vocare", aanvullingen: "voco, vocavi, vocatum", vertaling: "noemen, roepen", teksten: ["6b/2","7a/1"], volgorde: {"6b/2":2,"7a/1":43} },
+  { grondvorm: "volare", aanvullingen: "volo, volavi, volatum", vertaling: "vliegen" },
+  { grondvorm: "volucer", aanvullingen: "volucris", vertaling: "vogel", teksten: ["10/26"], volgorde: {"10/26":49} },
+  { grondvorm: "votum", aanvullingen: "voti, (o.)", vertaling: "gelofte, beloofd offer", teksten: ["7a/5"], volgorde: {"7a/5":28} },
+  { grondvorm: "vota solvere", aanvullingen: "", vertaling: "geloften inlossen, danken", teksten: ["7a/5"], volgorde: {"7a/5":30} },
+  { grondvorm: "vovere", aanvullingen: "voveo, vovi, votum", vertaling: "beloven; wensen", teksten: ["7a/3"], volgorde: {"7a/3":26} },
+  { grondvorm: "vox", aanvullingen: "vocis, (v.)", vertaling: "geluid; woord; stem", basis: true, teksten: ["7a/3"], volgorde: {"7a/3":19} },
+  { grondvorm: "Vulcanus", aanvullingen: "Vulcani", vertaling: "(de god) Vulcanus" },
+  { grondvorm: "vulnerare", aanvullingen: "vulnero, vulneravi, vulneratum", vertaling: "verwonden", basis: true },
+  { grondvorm: "vulnus", aanvullingen: "vulneris, (o.)", vertaling: "wonde", basis: true },
+  { grondvorm: "vulpes", aanvullingen: "vulpis, (v.)", vertaling: "vos" },
+  { grondvorm: "vulturius", aanvullingen: "vulturii, (m.)", vertaling: "gier" },
+  { grondvorm: "vultus", aanvullingen: "vultus, (m.)", vertaling: "gezicht", teksten: ["7a/3"], volgorde: {"7a/3":59} },
+  { grondvorm: "xystus", aanvullingen: "xysti, (m.)", vertaling: "terras", teksten: ["9b/5"], volgorde: {"9b/5":55} },
+  { grondvorm: "Zoninus", aanvullingen: "Zonini", vertaling: "Zoninus (eigennaam)", teksten: ["8b/8"], volgorde: {"8b/8":6} }
 ];
