@@ -528,20 +528,42 @@ function laadWoorden() {
 
   if (ludus && ludus !== 'alfabetisch') {
     if (tekst && tekst !== 'alle') {
-      // Filter op specifieke ludus + tekst
+      // Filter op specifieke ludus + tekst, sorteer op volgorde
       const sleutel = `${ludus}/${tekst}`;
-      basis = basis.filter(w => w.teksten && w.teksten.includes(sleutel));
+      basis = basis
+        .filter(w => w.teksten && w.teksten.includes(sleutel))
+        .sort((a, b) => {
+          const va = a.volgorde?.[sleutel] ?? 9999;
+          const vb = b.volgorde?.[sleutel] ?? 9999;
+          return va - vb;
+        });
     } else {
-      // Filter op ludus, alle teksten
-      basis = basis.filter(w => w.teksten && w.teksten.some(ref => {
-        const p = parseTekstRef(ref);
-        return p && p.ludus === ludus;
-      }));
+      // Filter op ludus, alle teksten — sorteer op eerste tekst binnen deze ludus
+      basis = basis
+        .filter(w => w.teksten && w.teksten.some(ref => {
+          const p = parseTekstRef(ref);
+          return p && p.ludus === ludus;
+        }))
+        .sort((a, b) => {
+          // Sorteer op de eerste tekstreferentie van deze ludus
+          const refA = a.teksten?.find(r => parseTekstRef(r)?.ludus === ludus);
+          const refB = b.teksten?.find(r => parseTekstRef(r)?.ludus === ludus);
+          const parsedA = parseTekstRef(refA || '');
+          const parsedB = parseTekstRef(refB || '');
+          // Eerst op tekst-nummer, dan op volgorde binnen die tekst
+          const tekstNrA = parseInt(parsedA?.tekst) || 0;
+          const tekstNrB = parseInt(parsedB?.tekst) || 0;
+          if (tekstNrA !== tekstNrB) return tekstNrA - tekstNrB;
+          const va = a.volgorde?.[refA] ?? 9999;
+          const vb = b.volgorde?.[refB] ?? 9999;
+          return va - vb;
+        });
     }
   }
 
   if (filter === 'basis') {
     basis = basis.filter(w => w.basis);
+    // Volgorde bewaren — geen hersortering na filter
   }
 
   huidigeWoorden = basis;
