@@ -566,14 +566,21 @@ function laadWoorden() {
   if (ludus && ludus !== 'alfabetisch' && ludus !== 'moeilijk') {
     if (tekst && tekst !== 'alle') {
       // Filter op specifieke ludus + tekst, sorteer op volgorde
+      // Woorden die dubbel voorkomen in teksten worden twee keer getoond
       const sleutel = `${ludus}/${tekst}`;
-      basis = basis
-        .filter(w => w.teksten && w.teksten.includes(sleutel))
-        .sort((a, b) => {
-          const va = a.volgorde?.[sleutel] ?? 9999;
-          const vb = b.volgorde?.[sleutel] ?? 9999;
-          return va - vb;
-        });
+      const rijen = [];
+      basis.forEach(w => {
+        if (!w.teksten) return;
+        const aantalVoorkomens = w.teksten.filter(t => t === sleutel).length;
+        if (aantalVoorkomens === 0) return;
+        // Eerste voorkomen
+        rijen.push({ ...w, _pos: w.volgorde?.[sleutel] ?? 9999 });
+        // Tweede voorkomen (indien aanwezig)
+        if (aantalVoorkomens >= 2) {
+          rijen.push({ ...w, _pos: w.volgorde2?.[sleutel] ?? 9999 });
+        }
+      });
+      basis = rijen.sort((a, b) => a._pos - b._pos);
     } else {
       // Filter op ludus, alle teksten — sorteer op eerste tekst binnen deze ludus
       basis = basis
