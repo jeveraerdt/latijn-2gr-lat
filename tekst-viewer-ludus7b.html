@@ -46,14 +46,10 @@ body.twocol .side-panel{display:flex!important;flex-direction:column;gap:1rem;pa
 .side-panel{display:none;}
 
 /* HEADER */
-.text-header{margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--rule);animation:fadeUp .5s ease both;}
-.text-meta{font-family:'Lufga',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--magenta);margin-bottom:.6rem;}
-.text-title{font-family:'EB Garamond',Georgia,serif;font-size:2.2rem;font-weight:600;line-height:1.2;color:var(--blue);margin-bottom:.4rem;}
-.text-sub{font-family:'EB Garamond',Georgia,serif;font-style:italic;font-size:1.05rem;color:var(--ink-light);}
-.difficulty{display:flex;align-items:center;gap:.7rem;margin-top:1rem;}
-.wreaths span{font-size:.9rem;opacity:.2;}
-.wreaths span.on{opacity:1;}
-.diff-txt{font-family:'Lufga',sans-serif;font-size:.68rem;color:var(--ink-light);}
+.text-header{margin-bottom:2rem;padding-bottom:1.75rem;border-bottom:1px solid var(--rule);animation:fadeUp .5s ease both;}
+.text-meta{font-family:'Lufga',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);margin-bottom:.6rem;opacity:.7;}
+.text-title{font-family:'Lufga',sans-serif;font-size:2rem;font-weight:600;line-height:1.2;color:var(--blue);margin-bottom:.5rem;letter-spacing:-.01em;}
+.text-sub{font-family:'Lufga',sans-serif;font-size:.85rem;color:var(--ink-light);line-height:1.5;}
 
 /* CONTEXT */
 .context-block{background:linear-gradient(135deg,#eef3fa,#f5f0fb);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;padding:1rem 1.3rem;margin-bottom:2rem;font-family:'Lufga',sans-serif;font-size:.86rem;line-height:1.65;color:#2a3a5e;animation:fadeUp .5s .07s ease both;}
@@ -180,6 +176,17 @@ body.interlin .lat-word .iln{
 .scroll-top.on{opacity:1;transform:translateY(0);}
 .scroll-top svg{width:15px;height:15px;}
 
+/* WOORDENLIJST DROPDOWN MENU */
+.wl-menu-wrap{position:relative;}
+.wl-dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:var(--paper);border:1.5px solid var(--rule);border-radius:10px;box-shadow:0 8px 32px rgba(19,66,127,.18);z-index:500;min-width:160px;max-height:70vh;overflow-y:auto;padding:.5rem 0;}
+.wl-dropdown.open{display:block;}
+.wl-group{padding:.35rem 0;}
+.wl-group + .wl-group{border-top:1px solid var(--rule);}
+.wl-group-title{font-family:'Lufga',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);padding:.25rem .9rem .1rem;opacity:.7;}
+.wl-item{display:block;font-family:'Lufga',sans-serif;font-size:.76rem;color:var(--ink-mid);padding:.3rem .9rem;text-decoration:none;transition:background .12s,color .12s;cursor:pointer;}
+.wl-item:hover{background:#eef3fa;color:var(--blue);}
+.wl-item-active{color:var(--magenta)!important;font-weight:600;}
+
 @keyframes fadeUp{from{opacity:0;transform:translateY(7px);}to{opacity:1;transform:translateY(0);}}
 @media(max-width:900px){body.twocol .outer{display:block;}body.twocol .main-col{padding:2rem 0 5rem;}body.twocol .side-panel{display:none!important;}}
 @media(max-width:600px){.main-col{padding:2rem 0 5rem;}.outer{padding:0 1rem;}.text-title{font-size:1.7rem;}.topbar{padding:0 1rem;}.topbar-label,.topbar-divider{display:none;}}
@@ -204,6 +211,92 @@ body.interlin .lat-word .iln{
     </button>
     <div class="topbar-divider"></div>
     <span class="topbar-label">Tekstviewer</span>
+    <div class="topbar-divider"></div>
+    <div class="wl-menu-wrap">
+      <button class="ctrl-btn" id="btnWlMenu" onclick="toggleWlMenu()">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h8M4 5h5M4 11h6"/></svg>
+        Woordenlijst
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:9px;height:9px;margin-left:1px"><path d="M4 6l4 4 4-4"/></svg>
+      </button>
+      <div class="wl-dropdown" id="wlDropdown">
+        <div class="wl-group">
+          <div class="wl-group-title">Ludus 6A</div>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('6a/1');closeWlMenu()">Tekst 1</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('6a/2');closeWlMenu()">Tekst 2</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('6a/4');closeWlMenu()">Tekst 4</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('6a/7');closeWlMenu()">Tekst 7</a>
+        </div>
+        <div class="wl-group">
+          <div class="wl-group-title">Ludus 6B</div>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('6b/1');closeWlMenu()">Tekst 1</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('6b/2');closeWlMenu()">Tekst 2</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('6b/3');closeWlMenu()">Tekst 3</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('6b/4');closeWlMenu()">Tekst 4</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('6b/5');closeWlMenu()">Tekst 5</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('6b/8');closeWlMenu()">Tekst 8</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('6b/9');closeWlMenu()">Tekst 9</a>
+        </div>
+        <div class="wl-group">
+          <div class="wl-group-title">Ludus 7A</div>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('7a/1');closeWlMenu()">Tekst 1</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('7a/2');closeWlMenu()">Tekst 2</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('7a/3');closeWlMenu()">Tekst 3</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('7a/5');closeWlMenu()">Tekst 5</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('7a/6');closeWlMenu()">Tekst 6</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('7a/7');closeWlMenu()">Tekst 7</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('7a/8');closeWlMenu()">Tekst 8</a>
+        </div>
+        <div class="wl-group">
+          <div class="wl-group-title">Ludus 7B</div>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('7b/2');closeWlMenu()">Tekst 2</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('7b/4');closeWlMenu()" style="color:var(--magenta);font-weight:600;">Tekst 4</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('7b/6');closeWlMenu()">Tekst 6</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('7b/12');closeWlMenu()">Tekst 12</a>
+        </div>
+        <div class="wl-group">
+          <div class="wl-group-title">Ludus 8A</div>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('8a/2');closeWlMenu()">Tekst 2</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('8a/3');closeWlMenu()">Tekst 3</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('8a/5');closeWlMenu()">Tekst 5</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('8a/6');closeWlMenu()">Tekst 6</a>
+        </div>
+        <div class="wl-group">
+          <div class="wl-group-title">Ludus 8B</div>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('8b/1');closeWlMenu()">Tekst 1</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('8b/3');closeWlMenu()">Tekst 3</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('8b/5');closeWlMenu()">Tekst 5</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('8b/6');closeWlMenu()">Tekst 6</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('8b/8');closeWlMenu()">Tekst 8</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('8b/9');closeWlMenu()">Tekst 9</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('8b/10');closeWlMenu()">Tekst 10</a>
+        </div>
+        <div class="wl-group">
+          <div class="wl-group-title">Ludus 9A</div>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('9a/1');closeWlMenu()">Tekst 1</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('9a/4');closeWlMenu()">Tekst 4</a>
+        </div>
+        <div class="wl-group">
+          <div class="wl-group-title">Ludus 9B</div>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('9b/3');closeWlMenu()">Tekst 3</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('9b/4');closeWlMenu()">Tekst 4</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('9b/5');closeWlMenu()">Tekst 5</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('9b/6');closeWlMenu()">Tekst 6</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('9b/7');closeWlMenu()">Tekst 7</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('9b/9');closeWlMenu()">Tekst 9</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('9b/10');closeWlMenu()">Tekst 10</a>
+        </div>
+        <div class="wl-group">
+          <div class="wl-group-title">Ludus 10</div>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('10/3');closeWlMenu()">Tekst 3</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('10/8');closeWlMenu()">Tekst 8</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('10/9');closeWlMenu()">Tekst 9</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('10/14');closeWlMenu()">Tekst 14</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('10/19');closeWlMenu()">Tekst 19</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('10/21');closeWlMenu()">Tekst 21</a>
+          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('10/26');closeWlMenu()">Tekst 26</a>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="topbar-controls">
     <button class="ctrl-btn" id="btnReveal" onclick="toggleReveal()">
@@ -233,13 +326,9 @@ body.interlin .lat-word .iln{
 <div class="main-col">
 
   <div class="text-header">
-    <div class="text-meta">Livius · Ab Urbe Condita · VIII, 7–8 · Ludus 7B</div>
+    <div class="text-meta">Ludus 7B · Tekst 4</div>
     <h1 class="text-title">Vaderlandsliefde boven vaderliefde</h1>
-    <div class="text-sub">Tekst 4 — T. Manlius Torquatus en zijn zoon</div>
-    <div class="difficulty">
-      <div class="wreaths"><span class="on">&#127942;</span><span class="on">&#127942;</span><span class="on">&#127942;</span></div>
-      <span class="diff-txt">Moeilijkheidsgraad 3/3</span>
-    </div>
+    <div class="text-sub">naar Livius, <em>Ab Urbe Condita</em> VIII, 7–8 · T. Manlius Torquatus en zijn zoon</div>
   </div>
 
   <div class="context-block">
@@ -415,9 +504,9 @@ body.interlin .lat-word .iln{
 
   <!-- ══ WOORDENLIJST ══ -->
   <div id="woordenlijst-sectie" style="margin-top:3.5rem;padding-top:2rem;border-top:2px solid var(--rule);">
-    <div style="font-family:'Lufga',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--magenta);margin-bottom:.3rem;">Tekst 4 · Ludus 7B</div>
-    <h2 style="font-family:'EB Garamond',Georgia,serif;font-size:1.6rem;color:var(--blue);margin-bottom:.3rem;">Woordenlijst</h2>
-    <p style="font-family:'Lufga',sans-serif;font-size:.78rem;color:var(--ink-light);margin-bottom:1.5rem;">90 woorden op volgorde van voorkomen. <span style="display:inline-block;font-size:.6rem;font-weight:700;padding:.04rem .3rem;border-radius:8px;background:#eef3fa;color:var(--blue);text-transform:uppercase;vertical-align:middle;">basis</span> = basiswoordenschat.</p>
+    <div id="wlSectieLabel" style="font-family:'Lufga',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);margin-bottom:.3rem;opacity:.7;">Tekst 4 · Ludus 7B</div>
+    <h2 style="font-family:'Lufga',sans-serif;font-size:1.3rem;font-weight:600;color:var(--blue);margin-bottom:.3rem;" id="wlSectieTitle">Woordenlijst</h2>
+    <p id="wlSectieInfo" style="font-family:'Lufga',sans-serif;font-size:.78rem;color:var(--ink-light);margin-bottom:1.5rem;">90 woorden op volgorde van voorkomen. <span style="display:inline-block;font-size:.6rem;font-weight:700;padding:.04rem .3rem;border-radius:8px;background:#eef3fa;color:var(--blue);text-transform:uppercase;vertical-align:middle;">basis</span> = basiswoordenschat.</p>
     <div id="wlTable"></div>
   </div>
 
@@ -448,102 +537,105 @@ body.interlin .lat-word .iln{
 
 <script>
 /* ══════════════════════════════════════════
-   WOORDENLIJST DATA (90 woorden, tekst 7b/4)
+   WOORDENLIJST DATA (tekst 7b/4, 90 woorden)
+   t = teksten waarin het woord voorkomt
+   vol = volgorde per tekst
 ══════════════════════════════════════════ */
 var WL = [
-  {g:"provocare",a:"provoco, provocavi, provocatum",v:"aansporen, uitlokken, uitdagen (tot een gevecht)"},
-  {g:"provocatus",a:"provocata, provocatum",v:"aangespoord, uitgelokt, uitgedaagd (tot een gevecht)"},
-  {g:"inquit",a:"",v:"hij/zij zegt, hij/zij zei",b:true},
-  {g:"filius",a:"filii, (m.)",v:"zoon",b:true},
-  {g:"proelium",a:"proelii, (o.)",v:"strijd, gevecht",b:true},
-  {g:"equester",a:"equestris, equestre",v:"van een ruiter, ruiter-"},
-  {g:"spolium",a:"spolii, (o.)",v:"afgestroopte huid; mv.: buit, buitgemaakte wapenuitrusting"},
-  {g:"capere",a:"capio, cepi, captum",v:"nemen, grijpen, vangen; veroveren",b:true},
-  {g:"captus",a:"capta, captum",v:"genomen, gegrepen, gevangen; veroverd"},
-  {g:"ex / e",a:"+ abl. (vz.)",v:"uit, weg van, vanuit, vanaf, van",b:true},
-  {g:"hostis",a:"hostis (m.)",v:"vijand",b:true},
-  {g:"caedere",a:"caedo, cecidi, caesum",v:"doden, vermoorden, afmaken",b:true},
-  {g:"caesus",a:"caesa, caesum",v:"gedood, vermoord, afgemaakt"},
-  {g:"pater",a:"patris, (m.)",v:"vader; mv. ook: patriciërs, senatoren",b:true},
-  {g:"portare",a:"porto, portavi, portatum",v:"dragen, vervoeren",b:true},
-  {g:"ut",a:"(vgw.)",v:"opdat, om te; zodat; dat",b:true},
-  {g:"omnis",a:"omnis, omne",v:"geheel, al, ieder, elk",b:true},
-  {g:"verus",a:"vera, verum",v:"waar, echt",b:true},
-  {g:"sanguis",a:"sanguinis, (m.)",v:"bloed",b:true},
-  {g:"oriri",a:"orior, ortus sum",v:"ontstaan; afstammen van"},
-  {g:"ferre",a:"fero, tuli, latum",v:"dragen, voeren, brengen; zeggen, vertellen",b:true},
-  {g:"ubi",a:"(bijw./vgw.)",v:"zodra; wanneer, toen",b:true},
-  {g:"audire",a:"audio, audivi, auditum",v:"horen, luisteren",b:true},
-  {g:"consul",a:"consulis, (m.)",v:"consul",b:true},
-  {g:"extemplo",a:"(bijw.)",v:"onmiddellijk, dadelijk"},
-  {g:"aversor",a:"aversari, aversatus sum",v:"(zich) afwenden van, vermijden"},
-  {g:"contio",a:"contionis, (v.)",v:"bijeenkomst, vergadering; troepenvergadering"},
-  {g:"classicum",a:"classici, (o.)",v:"trompetsignaal"},
-  {g:"advocare",a:"advoco, advocavi, advocatum",v:"erbij roepen, bijeenroepen",b:true},
-  {g:"iubere",a:"iubeo, iussi, iussum",v:"bevelen, opdragen",b:true},
-  {g:"quia",a:"(vgw.)",v:"omdat",b:true},
-  {g:"neque",a:"(vgw.)",v:"en niet, en evenmin, noch",b:true},
-  {g:"imperium",a:"imperii, (o.)",v:"macht, gezag, heerschappij, rijk",b:true},
-  {g:"consularis",a:"consularis, consulare",v:"van een consul, consulair"},
-  {g:"maiestas",a:"maiestatis, (v.)",v:"verhevenheid, waardigheid, aanzien, gezag"},
-  {g:"patrius",a:"patria, patrium",v:"van een vader, vaderlijk",b:true},
-  {g:"vereri",a:"vereor, veritus sum",v:"vrezen; eerbiedigen, respect hebben voor"},
-  {g:"edictum",a:"edicti, (o.)",v:"bevel, verordening, edict"},
-  {g:"extra",a:"+ acc. (vz.)",v:"buiten",b:true},
-  {g:"ordo",a:"ordinis, (m.)",v:"rij, orde, rang, stand"},
-  {g:"pugnare",a:"pugno, pugnavi, pugnatum",v:"vechten, strijden",b:true},
-  {g:"disciplina",a:"disciplinae, (v.)",v:"onderwijs, opleiding; tucht, discipline"},
-  {g:"militaris",a:"militaris, militare",v:"van een soldaat, militair"},
-  {g:"stare",a:"sto, steti, statum",v:"staan; standvast blijven; overeind blijven",b:true},
-  {g:"dies",a:"diei, (m./v.)",v:"dag",b:true},
-  {g:"Romanus",a:"Romana, Romanum",v:"Romeins",b:true},
-  {g:"res",a:"rei, (v.)",v:"zaak, ding; de staat (res publica)",b:true},
-  {g:"solvere",a:"solvo, solvi, solutum",v:"losmaken; vernietigen, ontbinden; bevrijden",b:true},
-  {g:"necessitas",a:"necessitatis, (v.)",v:"noodzaak, onvermijdelijkheid; dwang"},
-  {g:"cogere",a:"cogo, coegi, coactum",v:"samendrukken; dwingen, noodzaken",b:true},
-  {g:"res publica",a:"rei publicae, (v.)",v:"de staat, het openbare leven"},
-  {g:"obliviscor",a:"oblivisci, oblitus sum",v:"vergeten (+ gen.)"},
-  {g:"tristis",a:"tristis, triste",v:"treurig, droevig, somber",b:true},
-  {g:"exemplum",a:"exempli, (o.)",v:"voorbeeld, model; precedent"},
-  {g:"posterus",a:"postera, posterum",v:"volgend, komend; in posterum: voor de toekomst",b:true},
-  {g:"saluber",a:"salubris, salubre",v:"gezond; nuttig, voordelig"},
-  {g:"iuventus",a:"iuventutis, (v.)",v:"jeugd"},
-  {g:"quidem",a:"(bijw.)",v:"zeker, ongetwijfeld; (legt nadruk op voorgaand woord)",b:true},
-  {g:"amor",a:"amoris, (m.)",v:"liefde",b:true},
-  {g:"liberi",a:"liberorum (enkel mv.)",v:"kinderen",b:true},
-  {g:"virtus",a:"virtutis, (v.)",v:"moed, dapperheid; deugd",b:true},
-  {g:"movere",a:"moveo, movi, motum",v:"bewegen; ontroeren",b:true},
-  {g:"necesse",a:"(indeclinabel adj.)",v:"noodzakelijk, onvermijdelijk"},
-  {g:"mors",a:"mortis, (v.)",v:"dood",b:true},
-  {g:"sancire",a:"sancio, sanxi, sanctum",v:"heiligen; bekrachtigen, vastleggen"},
-  {g:"impunitas",a:"impunitatis, (v.)",v:"straffeloosheid"},
-  {g:"perpetuus",a:"perpetua, perpetuum",v:"voortdurend, onafgebroken; voor altijd"},
-  {g:"abrogare",a:"abrogo, abrogavi, abrogatum",v:"afschaffen, herroepen"},
-  {g:"recusare",a:"recuso, recusavi, recusatum",v:"weigeren, bezwaar maken",b:true},
-  {g:"censere",a:"censeo, censui, censum",v:"schatten; oordelen, van mening zijn"},
-  {g:"quin",a:"(vgw.)",v:"dat (niet); zonder dat (na negatie)"},
-  {g:"culpa",a:"culpae, (v.)",v:"schuld, fout, vergissing",b:true},
-  {g:"prolabi",a:"prolabor, prolapsus sum",v:"afglijden; falen, ondergaan"},
-  {g:"poena",a:"poenae, (v.)",v:"straf, boete",b:true},
-  {g:"restituere",a:"restituo, restitui, restitutum",v:"terugplaatsen; herstellen"},
-  {g:"ire",a:"eo, ii, itum",v:"gaan",b:true},
-  {g:"lictor",a:"lictoris, (m.)",v:"lictor (ambtelijke dienaar van een magistraat)"},
-  {g:"deligare",a:"deligo, deligavi, deligatum",v:"vastbinden"},
-  {g:"palus",a:"pali, (m.)",v:"paal"},
-  {g:"nec / neque",a:"(vgw.)",v:"en niet, en evenmin, noch",b:true},
-  {g:"et",a:"(vgw.)",v:"en; ook",b:true},
-  {g:"in",a:"+ abl. of acc. (vz.)",v:"in, op (+ abl.); in, naar, tegen (+ acc.)",b:true},
-  {g:"ad",a:"+ acc. (vz.)",v:"naar, bij, tot; voor (doel)",b:true},
-  {g:"sed",a:"(vgw.)",v:"maar",b:true},
-  {g:"aut",a:"(vgw.)",v:"of; aut…aut: ofwel…ofwel",b:true},
-  {g:"tu",a:"tui",v:"jij, jou",b:true},
-  {g:"ego",a:"mei",v:"ik, mij",b:true},
-  {g:"qui / quae / quod",a:"(rel. pron.)",v:"die, dat, wat",b:true},
-  {g:"hic / haec / hoc",a:"(dem. pron.)",v:"deze, dit; hij/zij/het",b:true},
-  {g:"is / ea / id",a:"(dem. pron.)",v:"hij, zij, het; die, dat",b:true}
+{g:"provocare",a:"provoco, provocavi, provocatum",v:"aansporen, uitlokken, uitdagen (tot een gevecht)",t:["7b/4"],vol:{"7b/4":1}},
+{g:"provocatus",a:"provocata, provocatum",v:"aangespoord, uitgelokt, uitgedaagd (tot een gevecht)",t:["7b/4"],vol:{"7b/4":2}},
+{g:"inquit",a:"",v:"hij/zij zegt, hij/zij zei",b:true,t:["7b/2","7b/4","10/3"],vol:{"7b/2":3,"7b/4":3,"10/3":67}},
+{g:"filius",a:"filii, (m.)",v:"zoon",b:true,t:["7a/3","7b/4"],vol:{"7a/3":33,"7b/4":4}},
+{g:"proelium",a:"proelii, (o.)",v:"strijd, gevecht",b:true,t:["7b/4","9a/1"],vol:{"7b/4":5,"9a/1":63}},
+{g:"equester",a:"equestris, equestre",v:"van een ruiter, ruiter-",t:["6b/8","7b/4"],vol:{"6b/8":12,"7b/4":6}},
+{g:"spolium",a:"spolii, (o.)",v:"afgestroopte huid (van een dier); mv.: buit, buitgemaakte wapenuitrusting",t:["7b/4"],vol:{"7b/4":7}},
+{g:"capere",a:"capio, cepi, captum",v:"nemen, grijpen, vangen; veroveren",b:true,t:["7b/4","8a/3","8b/9","9a/4","10/3"],vol:{"7b/4":8,"8a/3":55,"8b/9":75,"9a/4":10,"10/3":18}},
+{g:"captus",a:"capta, captum",v:"genomen, gegrepen, gevangen; veroverd",t:["7b/4"],vol:{"7b/4":9}},
+{g:"ex",a:"+ abl. (vz.)",v:"uit, weg van, vanuit, vanaf, van",b:true,t:["7a/1","7a/3","7b/2","7b/4","8a/2","8a/3","8a/5","8b/6","9a/1","9b/5","9b/9","6a/7"],vol:{"7a/1":28,"7a/3":67,"7b/2":49,"7b/4":10,"8a/2":42,"8a/3":52,"8a/5":30,"8b/6":48,"9a/1":22,"9b/5":16,"9b/9":49,"6a/7":40}},
+{g:"hostis",a:"hostis (m.)",v:"vijand",b:true,t:["7a/5","7b/4","8a/3","8b/9","9a/1","9b/5","9b/9","10/3"],vol:{"7a/5":3,"7b/4":11,"8a/3":90,"8b/9":73,"9a/1":8,"9b/5":4,"9b/9":22,"10/3":56}},
+{g:"caedere",a:"caedo, cecidi, caesum",v:"doden, vermoorden, afmaken",b:true,t:["7b/4","9b/9"],vol:{"7b/4":12,"9b/9":15}},
+{g:"caesus",a:"caesa, caesum",v:"gedood, vermoord, afgemaakt",t:["7b/4"],vol:{"7b/4":13}},
+{g:"pater",a:"patris, (m.)",v:"vader; mv. ook: patriciërs, senatoren",b:true,t:["6b/2","7a/3","7b/4","8b/9","10/26"],vol:{"6b/2":47,"7a/3":13,"7b/4":14,"8b/9":8,"10/26":24}},
+{g:"portare",a:"porto, portavi, portatum",v:"dragen, vervoeren",b:true,t:["7b/4"],vol:{"7b/4":15}},
+{g:"ut",a:"(vgw.)",v:"opdat, om te; zodat; dat",b:true,t:["6a/1","6a/2","6a/4","6b/2","6b/3","6b/4","6b/5","7a/1","7a/3","7a/5","7a/6","7a/7","7a/8","7b/2","7b/4","8a/2","8a/3","8a/5","8b/5","8b/6","8b/9","9a/1","9a/4","9b/5","9b/7","9b/9","10/3","10/14","10/26","6a/7"],vol:{"7b/4":16}},
+{g:"omnis",a:"omnis, omne",v:"geheel, al, ieder, elk",b:true,t:["6a/1","6b/2","6b/4","7a/1","7a/3","7a/7","7b/2","7b/4","8a/3","8b/5","8b/9","9b/5","9b/7","10/3","10/26","6a/7"],vol:{"7b/4":17}},
+{g:"verus",a:"vera, verum",v:"waar, echt",b:true,t:["6b/4","7b/4","9b/5"],vol:{"6b/4":31,"7b/4":18,"9b/5":8}},
+{g:"sanguis",a:"sanguinis, (m.)",v:"bloed",b:true,t:["7b/4","8b/9"],vol:{"7b/4":19,"8b/9":57}},
+{g:"oriri",a:"orior, ortus sum",v:"ontstaan; afstammen van",t:["7b/4"],vol:{"7b/4":20}},
+{g:"ferre",a:"fero, tuli, latum",v:"dragen, voeren, brengen; zeggen, vertellen",b:true,t:["6b/2","6b/4","7a/3","7a/6","7b/2","7b/4","8a/3","8b/9","9a/1","9b/5","9b/9","10/3","10/26","6a/7"],vol:{"7b/4":21}},
+{g:"ubi",a:"(bijw./vgw.)",v:"zodra; wanneer, toen",b:true,t:["6b/2","6b/4","7a/3","7a/6","7b/2","7b/4","8a/2","8b/9","9b/5","10/3","6a/7"],vol:{"7b/4":22}},
+{g:"audire",a:"audio, audivi, auditum",v:"horen, luisteren",b:true,t:["6a/1","6b/2","7b/4","8a/3","8b/9","9b/5","10/3"],vol:{"7b/4":23}},
+{g:"consul",a:"consulis, (m.)",v:"consul",b:true,t:["7b/4","8b/9","9a/1","10/3"],vol:{"7b/4":24,"8b/9":86,"9a/1":53,"10/3":70}},
+{g:"extemplo",a:"(bijw.)",v:"onmiddellijk, dadelijk",t:["7b/4"],vol:{"7b/4":25}},
+{g:"aversor",a:"aversari, aversatus sum",v:"(zich) afwenden van, vermijden",t:["7b/4"],vol:{"7b/4":26}},
+{g:"contio",a:"contionis, (v.)",v:"bijeenkomst, vergadering; troepenvergadering",t:["7b/4"],vol:{"7b/4":27}},
+{g:"classicum",a:"classici, (o.)",v:"trompetsignaal",t:["7b/4"],vol:{"7b/4":28}},
+{g:"advocare",a:"advoco, advocavi, advocatum",v:"erbij roepen, bijeenroepen",b:true,t:["7b/4"],vol:{"7b/4":29}},
+{g:"iubere",a:"iubeo, iussi, iussum",v:"bevelen, opdragen",b:true,t:["6a/4","6b/2","6b/4","7a/3","7a/6","7b/2","7b/4","8a/3","8b/5","8b/9","9a/1","9b/5","9b/9","10/3","10/26","6a/7"],vol:{"7b/4":30}},
+{g:"quia",a:"(vgw.)",v:"omdat",b:true,t:["6b/4","7b/4","8a/3","8b/9","9a/4","10/3"],vol:{"7b/4":31}},
+{g:"neque",a:"(vgw.)",v:"en niet, en evenmin, noch",b:true,t:["7b/4","8b/9","9a/4","10/14"],vol:{"7b/4":32}},
+{g:"imperium",a:"imperii, (o.)",v:"macht, gezag, heerschappij, rijk",b:true,t:["7b/4","8b/9","9a/1","10/3"],vol:{"7b/4":33}},
+{g:"consularis",a:"consularis, consulare",v:"van een consul, consulair",t:["7b/4"],vol:{"7b/4":34}},
+{g:"maiestas",a:"maiestatis, (v.)",v:"verhevenheid, waardigheid, aanzien, gezag",t:["7b/4"],vol:{"7b/4":35}},
+{g:"patrius",a:"patria, patrium",v:"van een vader, vaderlijk",b:true,t:["7b/4"],vol:{"7b/4":36}},
+{g:"vereri",a:"vereor, veritus sum",v:"vrezen; eerbiedigen, respect hebben voor",t:["7b/4","8b/9","9a/4","10/3"],vol:{"7b/4":37,"8b/9":88,"9a/4":26,"10/3":54}},
+{g:"edictum",a:"edicti, (o.)",v:"bevel, verordening, edict",t:["7b/4"],vol:{"7b/4":38}},
+{g:"extra",a:"+ acc. (vz.)",v:"buiten",b:true,t:["7b/4"],vol:{"7b/4":39}},
+{g:"ordo",a:"ordinis, (m.)",v:"rij, orde, rang, stand",t:["7b/4","9b/9"],vol:{"7b/4":40,"9b/9":20}},
+{g:"pugnare",a:"pugno, pugnavi, pugnatum",v:"vechten, strijden",b:true,t:["7b/4","8a/3","9a/1","9b/9"],vol:{"7b/4":41,"8a/3":80,"9a/1":5,"9b/9":12}},
+{g:"disciplina",a:"disciplinae, (v.)",v:"onderwijs, opleiding; tucht, discipline",t:["7b/4"],vol:{"7b/4":42}},
+{g:"militaris",a:"militaris, militare",v:"van een soldaat, militair",b:true,t:["7b/4"],vol:{"7b/4":43}},
+{g:"qui",a:"quae, quod (betr. vnw.)",v:"die, dat",b:true,t:["6a/1","6a/4","6b/1","6b/2","6b/3","7a/3","7a/6","7a/7","7a/8","7b/2","7b/4","8a/3","8a/5","8b/3","8b/5","10/26","6a/7"],vol:{"7b/4":44}},
+{g:"stare",a:"sto, steti, statum",v:"staan",b:true,t:["6a/1","6b/3","6b/4","7b/4"],vol:{"7b/4":45}},
+{g:"ad",a:"+ acc. (vz.)",v:"naar, tot bij, bij",b:true,t:["6b/2","6b/3","7a/1","7b/2","7b/4","8a/2","8a/3","8a/5","8b/6","8b/9","9b/7","10/14","10/26","6a/7"],vol:{"7b/4":46}},
+{g:"dies",a:"diei, (m. en v.)",v:"dag, daglicht",b:true,t:["6a/4","6b/3","7a/2","7b/4","8a/6","8b/5","8b/9","9a/4","9b/5","10/3","10/14","6a/7"],vol:{"7b/4":47}},
+{g:"solvere",a:"solvo, solvi, solutum",v:"losmaken; vernietigen, ontbinden; bevrijden",b:true,t:["7b/4"],vol:{"7b/4":48}},
+{g:"necessitas",a:"necessitatis, (v.)",v:"noodzaak, onvermijdelijkheid; dwang",t:["7b/4"],vol:{"7b/4":49}},
+{g:"cogere",a:"cogo, coegi, coactum",v:"samendrukken; dwingen, noodzaken",b:true,t:["7b/4","8b/9","10/26"],vol:{"7b/4":50,"8b/9":121,"10/26":97}},
+{g:"res publica",a:"rei publicae, (v.)",v:"de staat, het openbare leven",b:true,t:["7b/4","9a/1","9b/5"],vol:{"7b/4":51,"9a/1":54,"9b/5":68}},
+{g:"obliviscor",a:"oblivisci, oblitus sum",v:"vergeten (+ gen.)",t:["7b/4","10/26"],vol:{"7b/4":52,"10/26":50}},
+{g:"tristis",a:"tristis, triste",v:"treurig, droevig, somber",b:true,t:["7b/4"],vol:{"7b/4":53}},
+{g:"exemplum",a:"exempli, (o.)",v:"voorbeeld, model; precedent",t:["7b/4","10/3"],vol:{"7b/4":54,"10/3":75}},
+{g:"posterus",a:"postera, posterum",v:"volgend, komend; in posterum: voor de toekomst",b:true,t:["7b/4"],vol:{"7b/4":55}},
+{g:"saluber",a:"salubris, salubre",v:"goed voor de gezondheid, gezond; nuttig, voordelig",t:["7b/4","8b/6","10/14","10/19"],vol:{"7b/4":56,"8b/6":41,"10/14":22,"10/19":13}},
+{g:"iuventus",a:"iuventutis, (v.)",v:"jeugd",t:["7b/2","7b/4"],vol:{"7b/2":75,"7b/4":57}},
+{g:"quidem",a:"(bijw.)",v:"zeker, ongetwijfeld; (legt nadruk op voorgaand woord)",b:true,t:["6b/4","7b/4","9b/5"],vol:{"6b/4":43,"7b/4":58,"9b/5":66}},
+{g:"amor",a:"amoris, (m.)",v:"liefde",b:true,t:["7b/4","9b/5","10/26"],vol:{"7b/4":59,"9b/5":61,"10/26":33}},
+{g:"liberi",a:"liberorum (enkel mv.)",v:"kinderen",b:true,t:["6b/2","7b/4","8b/5","6a/7"],vol:{"6b/2":113,"7b/4":60,"8b/5":25,"6a/7":89}},
+{g:"virtus",a:"virtutis, (v.)",v:"moed, dapperheid; deugd",b:true,t:["7a/5","7b/4","8a/3","8b/9","9a/1","9b/9","10/3"],vol:{"7b/4":61}},
+{g:"movere",a:"moveo, movi, motum",v:"bewegen; ontroeren",b:true,t:["7b/4","9b/5","10/26"],vol:{"7b/4":62,"9b/5":65,"10/26":66}},
+{g:"necesse",a:"(indeclinabel adj.)",v:"noodzakelijk, onvermijdelijk",t:["7b/4","8b/9","10/3"],vol:{"7b/4":63,"8b/9":127,"10/3":43}},
+{g:"mors",a:"mortis, (v.)",v:"dood",b:true,t:["7b/4","8b/9","9b/5","9b/9","10/26"],vol:{"7b/4":64}},
+{g:"sancire",a:"sancio, sanxi, sanctum",v:"heiligen; bekrachtigen, vastleggen",t:["7b/4"],vol:{"7b/4":65}},
+{g:"impunitas",a:"impunitatis, (v.)",v:"straffeloosheid",t:["7b/4"],vol:{"7b/4":66}},
+{g:"perpetuus",a:"perpetua, perpetuum",v:"voortdurend, onafgebroken; voor altijd",b:true,t:["7b/4","8b/9","10/26"],vol:{"7b/4":67}},
+{g:"abrogare",a:"abrogo, abrogavi, abrogatum",v:"afschaffen, herroepen",t:["7b/4"],vol:{"7b/4":68}},
+{g:"recusare",a:"recuso, recusavi, recusatum",v:"weigeren, bezwaar maken",b:true,t:["7b/4"],vol:{"7b/4":69}},
+{g:"censere",a:"censeo, censui, censum",v:"schatten; oordelen, van mening zijn",b:true,t:["7b/4","10/3"],vol:{"7b/4":70,"10/3":63}},
+{g:"quin",a:"(vgw.)",v:"dat (niet); zonder dat (na negatie)",b:true,t:["7b/4"],vol:{"7b/4":71}},
+{g:"culpa",a:"culpae, (v.)",v:"schuld, fout, vergissing",b:true,t:["7b/4","8b/9"],vol:{"7b/4":72,"8b/9":100}},
+{g:"prolabi",a:"prolabor, prolapsus sum",v:"afglijden; falen, ondergaan",t:["7b/4"],vol:{"7b/4":73}},
+{g:"poena",a:"poenae, (v.)",v:"straf, boete",b:true,t:["7b/4","8b/9","9b/4"],vol:{"7b/4":74,"8b/9":110,"9b/4":16}},
+{g:"restituere",a:"restituo, restitui, restitutum",v:"terugplaatsen; herstellen",t:["7b/4"],vol:{"7b/4":75}},
+{g:"ire",a:"eo, ii, itum",v:"gaan",b:true,t:["6b/2","6b/4","7a/3","7a/6","7b/2","7b/4","8a/3","8b/9","9a/4","9b/5","9b/9","10/3","10/26","6a/7"],vol:{"7b/4":76}},
+{g:"lictor",a:"lictoris, (m.)",v:"lictor (ambtelijke dienaar van een magistraat)",t:["7b/4"],vol:{"7b/4":77}},
+{g:"deligare",a:"deligo, deligavi, deligatum",v:"vastbinden",t:["7b/4"],vol:{"7b/4":78}},
+{g:"palus",a:"pali, (m.)",v:"paal",t:["7b/4"],vol:{"7b/4":79}},
+{g:"nec",a:"(vgw.)",v:"en niet, en evenmin, noch",b:true,t:["6a/4","6b/2","7b/4","8a/3","8b/9","9b/5","9b/9","10/3","6a/7"],vol:{"7b/4":80}},
+{g:"et",a:"(vgw.)",v:"en; ook",b:true,t:["6a/1","6a/2","6a/4","6b/1","6b/2","6b/3","6b/4","6b/5","7a/1","7a/3","7a/5","7a/6","7a/7","7a/8","7b/2","7b/4","8a/2","8a/3","8a/5","8a/6","8b/1","8b/3","8b/5","8b/6","8b/8","8b/9","9a/1","9a/4","9b/3","9b/4","9b/5","9b/6","9b/7","9b/9","10/3","10/8","10/14","10/19","10/21","10/26","6a/7"],vol:{"7b/4":81}},
+{g:"in",a:"+ abl. of acc. (vz.)",v:"in, op (+ abl.); in, naar, tegen (+ acc.)",b:true,t:["6a/1","6a/2","6a/4","6b/1","6b/2","6b/3","6b/4","6b/5","7a/1","7a/3","7a/5","7a/6","7a/7","7a/8","7b/2","7b/4","8a/2","8a/3","8a/5","8b/3","8b/5","8b/6","8b/9","9a/1","9a/4","9b/4","9b/5","9b/7","9b/9","10/3","10/14","10/19","10/21","10/26","6a/7"],vol:{"7b/4":82}},
+{g:"sed",a:"(vgw.)",v:"maar",b:true,t:["6a/1","6a/4","6b/2","6b/3","6b/4","7a/1","7a/3","7a/5","7a/6","7b/2","7b/4","8a/3","8b/5","8b/6","8b/9","9a/1","9a/4","9b/5","9b/9","10/3","10/14","10/26","6a/7"],vol:{"7b/4":83}},
+{g:"aut",a:"(vgw.)",v:"of; aut…aut: ofwel…ofwel",b:true,t:["7b/4","8b/9","9a/1","9b/9","10/3","10/14"],vol:{"7b/4":84}},
+{g:"tu",a:"tui",v:"jij, jou",b:true,t:["6a/4","6b/2","6b/4","7a/3","7b/2","7b/4","8b/9","9b/5","9b/9","10/3","10/26","6a/7"],vol:{"7b/4":85}},
+{g:"ego",a:"mei",v:"ik, mij",b:true,t:["6b/2","6b/4","7a/3","7a/6","7b/2","7b/4","8a/3","8b/9","9b/5","9b/9","10/3","10/26","6a/7"],vol:{"7b/4":86}},
+{g:"qui / quae / quod",a:"(rel. pron.)",v:"die, dat, wat",b:true,t:["7b/4"],vol:{"7b/4":87}},
+{g:"hic / haec / hoc",a:"(dem. pron.)",v:"deze, dit; hij/zij/het",b:true,t:["7b/4"],vol:{"7b/4":88}},
+{g:"is / ea / id",a:"(dem. pron.)",v:"hij, zij, het; die, dat",b:true,t:["7b/4"],vol:{"7b/4":89}}
 ];
 
-/* Opzoeken in WL op basis van de grondvorm (data-l op .lat-word) */
+/* ══════════════════════════════════════════
+   WOORDENLIJST OPZOEKEN
+══════════════════════════════════════════ */
 function lookupWL(lemma) {
   if (!lemma) return null;
   var parts = lemma.toLowerCase().split(/[\/,\s]+/);
@@ -553,7 +645,6 @@ function lookupWL(lemma) {
       if (g === parts[j] || g.startsWith(parts[j])) return WL[i];
     }
   }
-  // fuzzy: grondvorm bevat de zoekterm
   for (var i = 0; i < WL.length; i++) {
     var g = WL[i].g.toLowerCase();
     for (var j = 0; j < parts.length; j++) {
@@ -564,50 +655,108 @@ function lookupWL(lemma) {
 }
 
 /* ══════════════════════════════════════════
-   RENDER WOORDENLIJST
+   RENDER WOORDENLIJST (hoofd + zijpaneel)
 ══════════════════════════════════════════ */
-function renderWL(containerId, compact) {
-  var el = document.getElementById(containerId);
+var currentTekst = '7b/4';
+var tekstLabels = {
+  '6a/1':'Ludus 6A · Tekst 1','6a/2':'Ludus 6A · Tekst 2','6a/4':'Ludus 6A · Tekst 4','6a/7':'Ludus 6A · Tekst 7',
+  '6b/1':'Ludus 6B · Tekst 1','6b/2':'Ludus 6B · Tekst 2','6b/3':'Ludus 6B · Tekst 3','6b/4':'Ludus 6B · Tekst 4',
+  '6b/5':'Ludus 6B · Tekst 5','6b/8':'Ludus 6B · Tekst 8','6b/9':'Ludus 6B · Tekst 9',
+  '7a/1':'Ludus 7A · Tekst 1','7a/2':'Ludus 7A · Tekst 2','7a/3':'Ludus 7A · Tekst 3','7a/5':'Ludus 7A · Tekst 5',
+  '7a/6':'Ludus 7A · Tekst 6','7a/7':'Ludus 7A · Tekst 7','7a/8':'Ludus 7A · Tekst 8',
+  '7b/2':'Ludus 7B · Tekst 2','7b/4':'Ludus 7B · Tekst 4','7b/6':'Ludus 7B · Tekst 6','7b/12':'Ludus 7B · Tekst 12',
+  '8a/2':'Ludus 8A · Tekst 2','8a/3':'Ludus 8A · Tekst 3','8a/5':'Ludus 8A · Tekst 5','8a/6':'Ludus 8A · Tekst 6',
+  '8b/1':'Ludus 8B · Tekst 1','8b/3':'Ludus 8B · Tekst 3','8b/5':'Ludus 8B · Tekst 5','8b/6':'Ludus 8B · Tekst 6',
+  '8b/8':'Ludus 8B · Tekst 8','8b/9':'Ludus 8B · Tekst 9','8b/10':'Ludus 8B · Tekst 10',
+  '9a/1':'Ludus 9A · Tekst 1','9a/4':'Ludus 9A · Tekst 4',
+  '9b/3':'Ludus 9B · Tekst 3','9b/4':'Ludus 9B · Tekst 4','9b/5':'Ludus 9B · Tekst 5','9b/6':'Ludus 9B · Tekst 6',
+  '9b/7':'Ludus 9B · Tekst 7','9b/9':'Ludus 9B · Tekst 9','9b/10':'Ludus 9B · Tekst 10',
+  '10/3':'Ludus 10 · Tekst 3','10/8':'Ludus 10 · Tekst 8','10/9':'Ludus 10 · Tekst 9',
+  '10/14':'Ludus 10 · Tekst 14','10/19':'Ludus 10 · Tekst 19','10/21':'Ludus 10 · Tekst 21','10/26':'Ludus 10 · Tekst 26'
+};
+
+function filterWL(tekst) {
+  currentTekst = tekst;
+  var label = tekstLabels[tekst] || tekst;
+  var filtered = WL.filter(function(w){ return w.t && w.t.indexOf(tekst) !== -1; })
+                   .sort(function(a,b){ return (a.volgorde && a.volgorde[tekst]||999) - (b.volgorde && b.volgorde[tekst]||999); });
+  // Update labels
+  var sectLabel = document.getElementById('wlSectieLabel');
+  var sectTitle = document.getElementById('wlSectieTitle');
+  var sectInfo  = document.getElementById('wlSectieInfo');
+  if (sectLabel) sectLabel.textContent = label;
+  if (sectTitle) sectTitle.textContent = 'Woordenlijst';
+  if (sectInfo)  sectInfo.innerHTML = filtered.length + ' woorden op volgorde van voorkomen. <span style="display:inline-block;font-size:.6rem;font-weight:700;padding:.04rem .3rem;border-radius:8px;background:#eef3fa;color:var(--blue);text-transform:uppercase;vertical-align:middle;">basis</span> = basiswoordenschat.';
+  // Update side panel header
+  var spHead = document.querySelector('#sidePanelWl h3');
+  if (spHead) spHead.textContent = 'Woordenlijst — ' + label;
+  renderWLData(filtered);
+  renderWLSide(filtered);
+}
+
+function renderWLData(list) {
+  var el = document.getElementById('wlTable');
+  if (!el) return;
+  var html = '<table style="width:100%;border-collapse:collapse;font-family:\'Lufga\',sans-serif;font-size:.82rem;">';
+  html += '<thead><tr style="border-bottom:2px solid var(--rule);text-align:left;">'
+    + '<th style="padding:.4rem .5rem .4rem 0;color:var(--ink-light);font-weight:600;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;">#</th>'
+    + '<th style="padding:.4rem .5rem;color:var(--ink-light);font-weight:600;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;">Grondvorm</th>'
+    + '<th style="padding:.4rem .5rem;color:var(--ink-light);font-weight:600;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;">Aanvullingen</th>'
+    + '<th style="padding:.4rem 0 .4rem .5rem;color:var(--ink-light);font-weight:600;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;">Vertaling</th>'
+    + '</tr></thead><tbody>';
+  list.forEach(function(w, i) {
+    var bg = (i % 2 === 0) ? '' : 'background:rgba(19,66,127,.025);';
+    html += '<tr style="border-bottom:1px solid var(--rule);' + bg + '">'
+      + '<td style="padding:.38rem .5rem .38rem 0;color:var(--ink-light);font-size:.65rem;">' + (i+1) + '</td>'
+      + '<td style="padding:.38rem .5rem;">'
+        + '<span style="font-family:\'EB Garamond\',Georgia,serif;font-size:1rem;font-weight:600;color:var(--blue);">' + w.g + '</span>'
+        + (w.b ? ' <span style="display:inline-block;font-size:.55rem;font-weight:700;padding:.03rem .28rem;border-radius:8px;background:#eef3fa;color:var(--blue);text-transform:uppercase;vertical-align:middle;">basis</span>' : '')
+      + '</td>'
+      + '<td style="padding:.38rem .5rem;color:var(--ink-light);font-size:.75rem;">' + (w.a || '—') + '</td>'
+      + '<td style="padding:.38rem 0 .38rem .5rem;color:var(--ink-mid);">' + w.v + '</td>'
+      + '</tr>';
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+function renderWLSide(list) {
+  var el = document.getElementById('wlSide');
   if (!el) return;
   var html = '';
-  if (!compact) {
-    // Full table
-    html += '<table style="width:100%;border-collapse:collapse;font-family:\'Lufga\',sans-serif;font-size:.82rem;">';
-    html += '<thead><tr style="border-bottom:2px solid var(--rule);text-align:left;">'
-      + '<th style="padding:.4rem .5rem .4rem 0;color:var(--ink-light);font-weight:600;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;">#</th>'
-      + '<th style="padding:.4rem .5rem;color:var(--ink-light);font-weight:600;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;">Grondvorm</th>'
-      + '<th style="padding:.4rem .5rem;color:var(--ink-light);font-weight:600;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;">Aanvullingen</th>'
-      + '<th style="padding:.4rem 0 .4rem .5rem;color:var(--ink-light);font-weight:600;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;">Vertaling</th>'
-      + '</tr></thead><tbody>';
-    for (var i = 0; i < WL.length; i++) {
-      var w = WL[i];
-      var bg = (i % 2 === 0) ? '' : 'background:rgba(19,66,127,.025);';
-      html += '<tr style="border-bottom:1px solid var(--rule);' + bg + '">'
-        + '<td style="padding:.38rem .5rem .38rem 0;color:var(--ink-light);font-size:.65rem;">' + (i+1) + '</td>'
-        + '<td style="padding:.38rem .5rem;">'
-          + '<span style="font-family:\'EB Garamond\',Georgia,serif;font-size:1rem;font-weight:600;color:var(--blue);">' + w.g + '</span>'
-          + (w.b ? ' <span style="display:inline-block;font-size:.55rem;font-weight:700;padding:.03rem .28rem;border-radius:8px;background:#eef3fa;color:var(--blue);text-transform:uppercase;vertical-align:middle;">basis</span>' : '')
-        + '</td>'
-        + '<td style="padding:.38rem .5rem;color:var(--ink-light);font-size:.75rem;">' + (w.a || '—') + '</td>'
-        + '<td style="padding:.38rem 0 .38rem .5rem;color:var(--ink-mid);">' + w.v + '</td>'
-        + '</tr>';
-    }
-    html += '</tbody></table>';
-  } else {
-    // Compact for side panel: show first 20
-    for (var i = 0; i < Math.min(20, WL.length); i++) {
-      var w = WL[i];
-      html += '<div class="panel-word">'
-        + '<span class="pw-lat">' + w.g + (w.b ? '<span class="pw-basis">basis</span>' : '') + '</span>'
-        + '<span class="pw-nl">' + w.v.split(';')[0] + '</span>'
-        + '</div>';
-    }
-    html += '<div style="font-family:\'Lufga\',sans-serif;font-size:.7rem;color:var(--ink-light);padding:.5rem 0;text-align:center;">+ ' + (WL.length - 20) + ' meer ↓ zie woordenlijst</div>';
+  var max = Math.min(20, list.length);
+  for (var i = 0; i < max; i++) {
+    var w = list[i];
+    html += '<div class="panel-word">'
+      + '<span class="pw-lat">' + w.g + (w.b ? '<span class="pw-basis">basis</span>' : '') + '</span>'
+      + '<span class="pw-nl">' + w.v.split(';')[0] + '</span>'
+      + '</div>';
+  }
+  if (list.length > 20) {
+    html += '<div style="font-family:\'Lufga\',sans-serif;font-size:.7rem;color:var(--ink-light);padding:.5rem 0;text-align:center;">+ ' + (list.length - 20) + ' meer ↓ zie woordenlijst</div>';
   }
   el.innerHTML = html;
 }
-renderWL('wlTable', false);
-renderWL('wlSide', true);
+
+/* ══════════════════════════════════════════
+   WOORDENLIJST DROPDOWN MENU
+══════════════════════════════════════════ */
+function toggleWlMenu() {
+  document.getElementById('wlDropdown').classList.toggle('open');
+}
+function closeWlMenu() {
+  document.getElementById('wlDropdown').classList.remove('open');
+}
+document.addEventListener('click', function(e) {
+  var wrap = document.getElementById('wlDropdown');
+  var btn  = document.getElementById('btnWlMenu');
+  if (wrap && btn && !wrap.contains(e.target) && !btn.contains(e.target)) {
+    closeWlMenu();
+  }
+});
+
+/* init woordenlijst */
+filterWL('7b/4');
 
 /* ══════════════════════════════════════════
    STATE
@@ -766,6 +915,17 @@ function toggleInterlin() {
       }
     });
     if (S.lines) toggleLines();
+  } else {
+    // Verwijder alle .iln spans én reset inline stijl op het woord
+    document.querySelectorAll('#plainView .lat-word').forEach(function(w) {
+      var iln = w.querySelector('.iln');
+      if (iln) iln.remove();
+      w.style.display = '';
+      w.style.flexDirection = '';
+      w.style.alignItems = '';
+      w.style.verticalAlign = '';
+      w.style.margin = '';
+    });
   }
 }
 function toggleTwocol() {
