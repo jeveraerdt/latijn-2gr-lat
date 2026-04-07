@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tekst 4 – Vaderlandsliefde boven vaderliefde · athena</title>
+<link href="https://fonts.googleapis.com/css2?family=Lufga:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue:#13427f; --blue-mid:#1a5299; --magenta:#E6007E;
+  --bg:#f5f3ef; --paper:#fffef9; --ink:#1c1a16; --ink-mid:#3d3a34;
+  --ink-light:#7a7168; --rule:#ddd8d0;
+  --green:#2d7a3a; --green-bg:#e8f5eb;
+  --orange:#c05a00; --orange-bg:#fff0e0;
+  --purple:#6a1a8a; --purple-bg:#f3e8fb;
+  --hl:#fff3c4; --hl-b:#e8c840;
+  --lh:2.3; --fs:1.18rem;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);font-family:'EB Garamond',Georgia,serif;color:var(--ink);min-height:100vh;overflow-x:hidden;}
+
+/* TOPBAR */
+.topbar{position:sticky;top:0;z-index:200;background:var(--blue);display:flex;align-items:center;justify-content:space-between;padding:0 1.75rem;height:50px;box-shadow:0 2px 16px rgba(19,66,127,.22);}
+.topbar-left{display:flex;align-items:center;gap:.9rem;}
+.back-btn{background:none;border:none;color:rgba(255,255,255,.65);font-family:'Lufga',sans-serif;font-size:.76rem;cursor:pointer;display:flex;align-items:center;gap:.4rem;padding:.3rem 0;transition:color .15s;letter-spacing:.02em;}
+.back-btn:hover{color:#fff;}
+.back-btn svg{width:13px;height:13px;}
+.topbar-div{width:1px;height:18px;background:rgba(255,255,255,.18);}
+.topbar-label{font-family:'Lufga',sans-serif;font-size:.74rem;font-weight:500;color:rgba(255,255,255,.42);letter-spacing:.1em;text-transform:uppercase;}
+.topbar-controls{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;}
+.ctrl-btn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:6px;color:rgba(255,255,255,.82);font-family:'Lufga',sans-serif;font-size:.7rem;padding:.28rem .65rem;cursor:pointer;transition:all .15s;letter-spacing:.03em;display:flex;align-items:center;gap:.3rem;white-space:nowrap;}
+.ctrl-btn:hover{background:rgba(255,255,255,.2);color:#fff;}
+.ctrl-btn.active{background:var(--magenta);border-color:var(--magenta);color:#fff;}
+.ctrl-btn svg{width:12px;height:12px;flex-shrink:0;}
+
+/* PROGRESS BAR */
+.rp{position:fixed;top:50px;left:0;right:0;height:2px;z-index:199;}
+.rp-fill{height:100%;background:var(--magenta);width:0%;transition:width .12s linear;}
+
+/* LAYOUT */
+.outer{max-width:1200px;margin:0 auto;padding:0 1.5rem;}
+.main-col{max-width:760px;margin:0 auto;padding:3rem 0 6rem;}
+body.twocol .outer{display:grid;grid-template-columns:1fr 360px;gap:0;align-items:start;}
+body.twocol .main-col{max-width:none;padding:3rem 2rem 6rem 0;}
+body.twocol .side-panel{display:flex!important;flex-direction:column;gap:1rem;padding:3rem 0 6rem 1.5rem;border-left:1px solid var(--rule);position:sticky;top:50px;max-height:calc(100vh - 50px);overflow-y:auto;}
+.side-panel{display:none;}
+
+/* HEADER */
+.text-header{margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--rule);animation:fadeUp .5s ease both;}
+.text-meta{font-family:'Lufga',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--magenta);margin-bottom:.6rem;}
+.text-title{font-family:'EB Garamond',Georgia,serif;font-size:2.2rem;font-weight:600;line-height:1.2;color:var(--blue);margin-bottom:.4rem;}
+.text-sub{font-family:'EB Garamond',Georgia,serif;font-style:italic;font-size:1.05rem;color:var(--ink-light);}
+.difficulty{display:flex;align-items:center;gap:.7rem;margin-top:1rem;}
+.wreaths span{font-size:.9rem;opacity:.2;}
+.wreaths span.on{opacity:1;}
+.diff-txt{font-family:'Lufga',sans-serif;font-size:.68rem;color:var(--ink-light);}
+
+/* CONTEXT */
+.context-block{background:linear-gradient(135deg,#eef3fa,#f5f0fb);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;padding:1rem 1.3rem;margin-bottom:2rem;font-family:'Lufga',sans-serif;font-size:.86rem;line-height:1.65;color:#2a3a5e;animation:fadeUp .5s .07s ease both;}
+.context-block strong{display:block;font-size:.68rem;letter-spacing:.11em;text-transform:uppercase;color:var(--blue);margin-bottom:.35rem;font-weight:600;}
+
+/* PILLS */
+.link-strip{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem;animation:fadeUp .5s .12s ease both;}
+.link-pill{font-family:'Lufga',sans-serif;font-size:.7rem;font-weight:500;letter-spacing:.04em;padding:.38rem .85rem;border-radius:20px;border:1.5px solid var(--rule);background:var(--paper);color:var(--ink-light);cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:.35rem;text-decoration:none;}
+.link-pill:hover{border-color:var(--blue);color:var(--blue);background:#eef3fa;}
+.link-pill svg{width:11px;height:11px;}
+
+/* LATIN TEXT */
+.latin-text{font-size:var(--fs);line-height:var(--lh);animation:fadeUp .5s .18s ease both;}
+body.font-lg .latin-text{--fs:1.35rem;--lh:2.45;}
+.latin-para{margin-bottom:2rem;}
+
+/* ── WOORDGROEPEN ── */
+/* Default: all visible */
+.wg{
+  display:inline;
+  border-radius:3px;
+  transition:opacity .3s, background .2s;
+}
+
+/* Reveal mode: dim everything first */
+.reveal-mode .wg{
+  opacity:.12;
+}
+/* Revealed groups */
+.reveal-mode .wg.revealed{
+  opacity:1;
+}
+/* Currently active group: highlight */
+.reveal-mode .wg.active{
+  opacity:1;
+  background:var(--hl);
+  outline:1px solid var(--hl-b);
+  border-radius:3px;
+}
+
+/* LINE NUMBERS */
+.numbered-view{display:none;}
+.numbered-view.on{display:block;}
+.plain-view.off{display:none;}
+.latin-line{display:flex;gap:1.4rem;line-height:var(--lh);}
+.ln{font-family:'Lufga',sans-serif;font-size:.62rem;color:#ccc;min-width:1.7rem;text-align:right;padding-top:.44em;user-select:none;flex-shrink:0;}
+.lc{flex:1;}
+
+/* WORD CLICKS */
+.lw{cursor:pointer;border-radius:3px;transition:background .15s;display:inline;}
+.lw:hover{background:rgba(19,66,127,.08);}
+.lw.st1{background:var(--green-bg);color:var(--green);border-bottom:1.5px solid var(--green);}
+.lw.st2{background:var(--orange-bg);color:var(--orange);border-bottom:1.5px solid var(--orange);}
+
+/* POPUP */
+.word-popup{position:absolute;z-index:500;background:var(--paper);border:1.5px solid var(--rule);border-radius:10px;box-shadow:0 8px 32px rgba(19,66,127,.18);padding:.85rem 1.1rem;max-width:290px;min-width:200px;font-family:'Lufga',sans-serif;font-size:.78rem;pointer-events:none;opacity:0;transform:translateY(4px);transition:opacity .18s,transform .18s;}
+.word-popup.vis{opacity:1;transform:translateY(0);}
+.wp-word{font-family:'EB Garamond',Georgia,serif;font-size:1.1rem;font-weight:600;color:var(--blue);margin-bottom:.35rem;}
+.wp-lemma{font-size:.68rem;color:var(--ink-light);margin-bottom:.4rem;}
+.wp-row{display:flex;gap:.4rem;margin-bottom:.2rem;align-items:flex-start;}
+.wp-tag{font-size:.6rem;font-weight:700;padding:.08rem .35rem;border-radius:10px;letter-spacing:.04em;text-transform:uppercase;flex-shrink:0;margin-top:.12rem;}
+.tg{background:var(--green-bg);color:var(--green);}
+.to{background:var(--orange-bg);color:var(--orange);}
+.tp{background:var(--purple-bg);color:var(--purple);}
+.tm{background:#e8f3ff;color:#1a5299;}
+.wp-val{color:var(--ink-mid);line-height:1.45;}
+.wp-basis{display:inline-block;font-size:.58rem;font-weight:600;padding:.04rem .3rem;border-radius:8px;background:#fff3c4;color:#7a5c00;margin-left:.3rem;text-transform:uppercase;vertical-align:middle;}
+.wp-hint{font-size:.68rem;color:var(--ink-light);margin-top:.4rem;padding-top:.4rem;border-top:1px solid var(--rule);}
+
+/* REVEAL BAR */
+.reveal-bar{display:none;align-items:center;gap:.6rem;margin-bottom:1.5rem;padding:.7rem 1rem;background:var(--paper);border:1.5px solid var(--rule);border-radius:10px;font-family:'Lufga',sans-serif;font-size:.78rem;color:var(--ink-mid);flex-wrap:wrap;}
+.reveal-bar.vis{display:flex;}
+.reveal-bar button{background:var(--blue);color:#fff;border:none;border-radius:6px;padding:.3rem .8rem;font-family:'Lufga',sans-serif;font-size:.72rem;cursor:pointer;transition:background .15s;white-space:nowrap;}
+.reveal-bar button:hover{background:var(--blue-mid);}
+.reveal-bar button.sec{background:var(--paper);color:var(--blue);border:1.5px solid var(--blue);}
+.reveal-bar button.sec:hover{background:#eef3fa;}
+.rev-count{margin-left:auto;color:var(--ink-light);font-size:.68rem;white-space:nowrap;}
+
+/* FOOTNOTES */
+.footnotes{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);}
+.fn-title{font-family:'Lufga',sans-serif;font-size:.66rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-light);margin-bottom:.9rem;}
+.fn{display:flex;gap:.65rem;font-size:.8rem;line-height:1.58;color:var(--ink-light);margin-bottom:.45rem;font-family:'Lufga',sans-serif;}
+.fn-n{color:var(--magenta);font-size:.68rem;font-weight:600;min-width:1.1rem;padding-top:.1rem;flex-shrink:0;}
+
+/* SIDE PANEL */
+.panel-card{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:1rem 1.1rem;}
+.panel-card h3{font-family:'Lufga',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:.7rem;}
+.panel-word{display:flex;justify-content:space-between;align-items:baseline;padding:.28rem 0;border-bottom:1px solid var(--rule);font-size:.85rem;gap:.5rem;}
+.panel-word:last-child{border-bottom:none;}
+.pw-lat{font-family:'EB Garamond',Georgia,serif;font-weight:600;color:var(--blue);flex-shrink:0;}
+.pw-aanv{font-family:'Lufga',sans-serif;font-size:.68rem;color:var(--ink-light);flex-shrink:0;}
+.pw-nl{font-family:'Lufga',sans-serif;font-size:.74rem;color:var(--ink-mid);text-align:right;}
+.pw-b{display:inline-block;font-size:.55rem;font-weight:700;padding:.02rem .25rem;border-radius:6px;background:#fff3c4;color:#7a5c00;margin-left:.25rem;text-transform:uppercase;vertical-align:middle;}
+.panel-note{padding:.3rem 0;font-family:'Lufga',sans-serif;font-size:.78rem;color:var(--ink-mid);line-height:1.5;border-bottom:1px solid var(--rule);}
+.panel-note:last-child{border-bottom:none;}
+.pn-tag{display:inline-block;font-size:.6rem;font-weight:600;padding:.05rem .35rem;border-radius:10px;text-transform:uppercase;margin-right:.35rem;background:#eef3fa;color:var(--blue);}
+.analysis-card{background:linear-gradient(135deg,#eef3fa,#f0f5ff);border:1.5px solid #c8d6ed;border-radius:10px;padding:1rem 1.1rem;font-family:'Lufga',sans-serif;font-size:.8rem;line-height:1.6;}
+.ac-word{font-family:'EB Garamond',Georgia,serif;font-size:1.4rem;font-weight:600;color:var(--blue);}
+.ac-lemma{font-size:.72rem;color:var(--ink-light);margin-bottom:.5rem;}
+.ac-row{display:flex;gap:.5rem;margin-bottom:.2rem;align-items:flex-start;}
+.ac-tag{font-size:.6rem;font-weight:700;padding:.08rem .38rem;border-radius:10px;text-transform:uppercase;flex-shrink:0;margin-top:.15rem;}
+.ac-empty{color:var(--ink-light);font-size:.78rem;font-style:italic;}
+
+/* SCROLL TOP */
+.scroll-top{position:fixed;bottom:1.75rem;right:1.75rem;width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(8px);transition:all .2s;box-shadow:0 4px 14px rgba(19,66,127,.28);z-index:100;}
+.scroll-top.on{opacity:1;transform:translateY(0);}
+.scroll-top svg{width:15px;height:15px;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(7px);}to{opacity:1;transform:translateY(0);}}
+@media(max-width:900px){body.twocol .outer{display:block;}body.twocol .main-col{padding:2rem 0 5rem;}body.twocol .side-panel{display:none!important;}}
+@media(max-width:600px){.main-col{padding:2rem 0 5rem;}.outer{padding:0 1rem;}.text-title{font-size:1.7rem;}.topbar{padding:0 1rem;}.topbar-label,.topbar-div{display:none;}}
+</style>
+</head>
+<body>
+
+<div class="rp"><div class="rp-fill" id="rpFill"></div></div>
+<div class="word-popup" id="popup">
+  <div class="wp-word" id="ppWord"></div>
+  <div class="wp-lemma" id="ppLemma"></div>
+  <div id="ppContent"></div>
+  <div class="wp-hint" id="ppHint"></div>
+</div>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <button class="back-btn" onclick="history.back()">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 12L6 8l4-4"/></svg>
+      Teksten
+    </button>
+    <div class="topbar-div"></div>
+    <span class="topbar-label">Tekstviewer</span>
+  </div>
+  <div class="topbar-controls">
+    <button class="ctrl-btn" id="btnReveal" onclick="toggleReveal()">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="3"/><path d="M1.5 8C3 4.5 5.3 2.5 8 2.5S13 4.5 14.5 8C13 11.5 10.7 13.5 8 13.5S3 11.5 1.5 8z"/></svg>
+      Onthul
+    </button>
+    <button class="ctrl-btn" id="btnLines" onclick="toggleLines()">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h12M2 8h12M2 12h8"/></svg>
+      Regelnrs
+    </button>
+    <button class="ctrl-btn" id="btnInterlin" onclick="toggleInterlin()">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5h12M2 9h12"/></svg>
+      Interlineair
+    </button>
+    <button class="ctrl-btn" id="btnTwocol" onclick="toggleTwocol()">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="6" height="10" rx="1"/><rect x="9" y="3" width="6" height="10" rx="1"/></svg>
+      Tweekolom
+    </button>
+    <button class="ctrl-btn" id="btnFont" onclick="toggleFont()">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12L8 4l5 8M5.5 9h5"/></svg>
+      Groter
+    </button>
+  </div>
+</div>
+
+<div class="outer">
+<div class="main-col">
+
+  <div class="text-header">
+    <div class="text-meta">Livius · Ab Urbe Condita · VIII, 7–8 · Ludus 7B</div>
+    <h1 class="text-title">Vaderlandsliefde boven vaderliefde</h1>
+    <div class="text-sub">Tekst 4 — T. Manlius Torquatus en zijn zoon</div>
+    <div class="difficulty">
+      <div class="wreaths"><span class="on">🏆</span><span class="on">🏆</span><span class="on">🏆</span></div>
+      <span class="diff-txt">Moeilijkheidsgraad 3/3</span>
+    </div>
+  </div>
+
+  <div class="context-block">
+    <strong>Context</strong>
+    Tijdens de Tweede Samnitische Oorlog verbood consul T. Manlius Torquatus zijn soldaten strikt om buiten de gelederen te vechten. Zijn eigen zoon daagde desondanks een vijandelijke ruiter uit, overwon hem en bracht de buit triomfantelijk naar zijn vader. De consul stond voor een onontkoombare keuze: vaderliefde of staatsgezag.
+  </div>
+
+  <div class="link-strip">
+    <a class="link-pill" href="#woordenlijst-sectie">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h8M4 5h5M4 11h6"/></svg>
+      Woordenlijst
+    </a>
+    <a class="link-pill" href="#">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M6 6h4M6 10h2"/></svg>
+      Grammatica
+    </a>
+    <a class="link-pill" href="#">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
+      Historische kaart
+    </a>
+    <a class="link-pill" href="#">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l6 4 6-4M2 4v8h12V4"/></svg>
+      Oefeningen
+    </a>
+  </div>
+
+  <div class="reveal-bar" id="revealBar">
+    <span style="font-size:.72rem;color:var(--ink-light);">Woordgroep</span>
+    <button onclick="revealPrev()">&#8592;</button>
+    <button onclick="revealNext()">&#8594;</button>
+    <button class="sec" onclick="revealAll()">Alles</button>
+    <span class="rev-count" id="revCount">0 / 0</span>
+  </div>
+
+  <div class="latin-text" id="latinText">
+  <div class="plain-view" id="plainView">
+
+<!--
+  TEKST — woordgroepen gemarkeerd met <span class="wg">
+  Elke wg is een betekenisvolle eenheid (naamwoordgroep, werkwoordgroep, bijzin, prepositiebepaling enz.)
+  Klikbare woorden = <span class="lw" data-w="..." data-l="..." data-d="..." data-s="..." data-n="...">
+-->
+
+<div class="latin-para">
+<span class="wg">&#8216;<span class="lw" data-w="Provocatus" data-l="provocare / provocatus" data-d="ppp, nom. sg.: uitgedaagd" data-s="verkorte concessieve bijzin: &#8216;hoewel ik uitgedaagd was&#8217;" data-n="uitgedaagd">Provocatus</span>&#8217;,</span>
+<span class="wg"><span class="lw" data-w="inquit" data-l="inquit" data-d="verbum def., 3 sg.: hij/zij zegt/zei" data-s="hoofdwerkwoord van de directe rede" data-n="zei">inquit</span></span>
+<span class="wg"><span class="lw" data-w="filius" data-l="filius, filii (m.)" data-d="subst., nom. sg." data-s="subject van inquit" data-n="de zoon">filius</span>,</span>
+<span class="wg">&#8216;<span class="lw" data-w="proelio equestri" data-l="proelium / equester" data-d="subst. + adj., abl. sg." data-s="abl. van omstandigheid bij provocatus" data-n="in een ruitergevecht">proelio equestri</span>,</span>
+<span class="wg"><span class="lw" data-w="haec spolia capta" data-l="hic / spolium / capere" data-d="pron. + subst. + ppp, acc. pl." data-s="direct object van porto + attribuut" data-n="deze veroverde buit">haec spolia capta</span></span>
+<span class="wg"><span class="lw" data-w="ex hoste caeso" data-l="ex / hostis / caedere" data-d="prep. + subst. + ppp, abl. sg." data-s="prep.-bepaling bij capta: van wie?" data-n="van de verslagen vijand">ex hoste caeso</span></span>
+<span class="wg"><span class="lw" data-w="tibi" data-l="tu" data-d="pers. pron., dat. sg." data-s="indirect object van porto" data-n="aan u">tibi</span>,</span>
+<span class="wg"><span class="lw" data-w="pater" data-l="pater, patris (m.)" data-d="subst., voc. sg." data-s="aanspreekvorm (vocatief)" data-n="vader">pater</span>,</span>
+<span class="wg"><span class="lw" data-w="porto" data-l="portare" data-d="ww., 1 sg. praes. act." data-s="hoofdwerkwoord van de directe rede" data-n="draag ik">porto</span>,</span>
+<span class="wg"><span class="lw" data-w="ut" data-l="ut + conj." data-d="voegwoord" data-s="inleider van de finale bijzin" data-n="opdat">ut</span></span>
+<span class="wg"><span class="lw" data-w="omnes" data-l="omnis, omne" data-d="adj., nom. pl." data-s="subject van ferrent" data-n="allen">omnes</span></span>
+<span class="wg"><span class="lw" data-w="me vere tuo sanguine ortum esse" data-l="ego / verus / sanguis / oriri" data-d="ACI: acc. + ppp inf. perf." data-s="ACI afhankelijk van ferrent: dat ik werkelijk van uw bloed ben" data-n="dat ik werkelijk van uw bloed ben">me vere tuo sanguine ortum esse</span></span>
+<span class="wg"><span class="lw" data-w="ferrent" data-l="ferre" data-d="ww., 3 pl. imperf. conj. act." data-s="persoonsvorm in de ut-bijzin (finaal)" data-n="zouden vertellen">ferrent</span>.&#8217;</span>
+</div>
+
+<div class="latin-para">
+<span class="wg"><span class="lw" data-w="Id" data-l="is, ea, id" data-d="dem. pron., acc. sg. n." data-s="anticiperend object van audivit" data-n="dit">Id</span></span>
+<span class="wg"><span class="lw" data-w="ubi" data-l="ubi" data-d="temporeel voegwoord" data-s="inleider van de temporele bijzin" data-n="toen">ubi</span></span>
+<span class="wg"><span class="lw" data-w="audivit" data-l="audire" data-d="ww., 3 sg. perf. act." data-s="persoonsvorm in de temporele bijzin" data-n="hoorde">audivit</span></span>
+<span class="wg"><span class="lw" data-w="consul" data-l="consul, consulis (m.)" data-d="subst., nom. sg." data-s="subject van audivit en iussit" data-n="de consul">consul</span>,</span>
+<span class="wg"><span class="lw" data-w="extemplo" data-l="extemplo" data-d="bijwoord" data-s="tijdsbepaling bij iussit" data-n="onmiddellijk">extemplo</span></span>
+<span class="wg"><span class="lw" data-w="filium aversatus" data-l="filius / aversor (dep.)" data-d="subst. acc. + dep. pcp. nom. sg." data-s="participium bij consul: hij wendde zich af van zijn zoon" data-n="zich van zijn zoon afwendend">filium aversatus</span></span>
+<span class="wg"><span class="lw" data-w="contionem classico advocari" data-l="contio / classicum / advocare" data-d="ACI: acc. + abl. + inf. praes. pass." data-s="ACI na iussit: dat de vergadering bijeengeroepen wordt" data-n="de vergadering per trompet bijeengeroepen te worden">contionem classico advocari</span></span>
+<span class="wg"><span class="lw" data-w="iussit" data-l="iubere" data-d="ww., 3 sg. perf. act." data-s="hoofdwerkwoord; stuurt de ACI aan" data-n="beval">iussit</span>.</span>
+</div>
+
+<div class="latin-para">
+<span class="wg">&#8216;<span class="lw" data-w="Quia tu" data-l="quia / tu" data-d="causaal vgw. + pron. nom. sg." data-s="inleider van de causale bijzin; tu is subject van pugnavisti/solvisti" data-n="Omdat jij">Quia tu</span>,</span>
+<span class="wg"><span class="lw" data-w="T. Manli" data-l="T. Manlius" data-d="eigennaam, voc." data-s="vocatief: aanspreekvorm" data-n="T. Manlius">T. Manli</span>,&#8217;</span>
+<span class="wg"><span class="lw" data-w="inquit" data-l="inquit" data-d="verbum def., 3 sg." data-s="hoofdwerkwoord van de directe rede" data-n="zei hij">inquit</span>,</span>
+<span class="wg">&#8216;<span class="lw" data-w="neque imperium consulare" data-l="neque / imperium / consularis" data-d="vgw. + subst. + adj., acc. sg." data-s="eerste object van veritus es (neque…neque)" data-n="noch het consulair gezag">neque imperium consulare</span></span>
+<span class="wg"><span class="lw" data-w="neque maiestatem patriam" data-l="neque / maiestas / patrius" data-d="vgw. + subst. + adj., acc. sg." data-s="tweede object van veritus es (neque…neque)" data-n="noch de vaderlandse majesteit">neque maiestatem patriam</span></span>
+<span class="wg"><span class="lw" data-w="veritus es" data-l="vereri (dep.)" data-d="dep. ww., 2 sg. perf." data-s="persoonsvorm in de causale bijzin" data-n="heb jij geëerbiedigd">veritus es</span></span>
+<span class="wg"><span class="lw" data-w="et adversus edictum nostrum" data-l="et / adversus / edictum / noster" data-d="vgw. + prep. + subst. + pron., acc. sg." data-s="prep.-bepaling bij pugnavisti" data-n="en tegen ons bevel">et adversus edictum nostrum</span></span>
+<span class="wg"><span class="lw" data-w="extra ordinem" data-l="extra / ordo" data-d="prep. + subst., acc. sg." data-s="prep.-bepaling bij pugnavisti: buiten de gelederen" data-n="buiten de gelederen">extra ordinem</span></span>
+<span class="wg"><span class="lw" data-w="in hostem" data-l="in / hostis" data-d="prep. + subst., acc. sg." data-s="richting bij pugnavisti" data-n="tegen de vijand">in hostem</span></span>
+<span class="wg"><span class="lw" data-w="pugnavisti" data-l="pugnare" data-d="ww., 2 sg. perf. act." data-s="eerste persoonsvorm in de quia-bijzin" data-n="heb jij gevochten">pugnavisti</span></span>
+<span class="wg"><span class="lw" data-w="et disciplinam militarem" data-l="et / disciplina / militaris" data-d="vgw. + subst. + adj., acc. sg." data-s="object van solvisti" data-n="en de militaire krijgstucht">et disciplinam militarem</span>,</span>
+<span class="wg"><span class="lw" data-w="qua stetit ad hanc diem Romana res" data-l="qui/quae/quod / stare / dies / Romanus / res" data-d="rel. bijzin: abl. + ww. + tijdsbep. + subj." data-s="relatieve bijzin; antecedent = disciplinam: waardoor de Romeinse staat tot op heden stand heeft gehouden" data-n="waardoor de Romeinse staat tot op heden overeind bleef">qua stetit ad hanc diem Romana res</span>,</span>
+<span class="wg"><span class="lw" data-w="solvisti" data-l="solvere" data-d="ww., 2 sg. perf. act." data-s="tweede persoonsvorm in de quia-bijzin" data-n="hebt jij vernietigd">solvisti</span>,</span>
+<span class="wg"><span class="lw" data-w="me in eam necessitatem coegisti" data-l="ego / necessitas / cogere" data-d="acc. + prep.-vb. + ww. 2 sg. perf." data-s="hoofdwerkwoord; stuurt de ut-bijzin aan" data-n="heb jij mij in die noodzaak gedwongen">me in eam necessitatem coegisti</span>,</span>
+<span class="wg"><span class="lw" data-w="ut" data-l="ut + conj." data-d="voegwoord" data-s="inleider van de consecutieve ut-bijzin na necessitatem" data-n="dat">ut</span></span>
+<span class="wg"><span class="lw" data-w="aut rei publicae" data-l="aut / res publica" data-d="vgw. + subst. gen. sg." data-s="eerste genitivus afhankelijk van obliviscerer (aut…aut)" data-n="ofwel de staat">aut rei publicae</span></span>
+<span class="wg"><span class="lw" data-w="aut mei meorumque" data-l="aut / ego / meus" data-d="vgw. + gen. sg. + gen. pl. + -que" data-s="tweede genitivus afhankelijk van obliviscerer" data-n="ofwel mijzelf en de mijnen">aut mei meorumque</span></span>
+<span class="wg"><span class="lw" data-w="obliviscerer" data-l="obliviscor (dep.)" data-d="dep. ww., 1 sg. imperf. conj." data-s="persoonsvorm in de ut-bijzin (consecutief)" data-n="ik zou vergeten">obliviscerer</span></span>
+</div>
+
+<div class="latin-para">
+<span class="wg"><span class="lw" data-w="Triste exemplum" data-l="tristis / exemplum" data-d="adj. + subst., nom. sg. n." data-s="subject + predicatief bij erimus" data-n="Een treurig voorbeeld">Triste exemplum</span>,</span>
+<span class="wg"><span class="lw" data-w="sed" data-l="sed" data-d="adversatief voegwoord" data-s="keerpunt in de redenering" data-n="maar">sed</span></span>
+<span class="wg"><span class="lw" data-w="in posterum" data-l="in / posterus" data-d="prep. + adj. als subst., acc. sg." data-s="temporele bepaling" data-n="voor de toekomst">in posterum</span></span>
+<span class="wg"><span class="lw" data-w="salubre iuventuti" data-l="saluber / iuventus" data-d="adj. nom. sg. n. + subst. dat. sg." data-s="predicatief + datief van voordeel" data-n="heilzaam voor de jeugd">salubre iuventuti</span></span>
+<span class="wg"><span class="lw" data-w="erimus" data-l="esse" data-d="ww., 1 pl. fut." data-s="hoofdwerkwoord" data-n="zullen wij zijn">erimus</span>.</span>
+</div>
+
+<div class="latin-para">
+<span class="wg"><span class="lw" data-w="Me quidem" data-l="ego / quidem" data-d="pron. acc. sg. + partikel" data-s="object van movent; quidem beklemtoont me" data-n="Mij weliswaar">Me quidem</span></span>
+<span class="wg"><span class="lw" data-w="amor liberorum" data-l="amor / liberi" data-d="subst. nom. sg. + gen. pl." data-s="eerste subject van movent + afhankelijke genitivus" data-n="de liefde voor mijn kinderen">amor liberorum</span></span>
+<span class="wg"><span class="lw" data-w="et virtus tua" data-l="et / virtus / tuus" data-d="vgw. + subst. nom. sg. + poss. pron." data-s="tweede subject van movent" data-n="en jouw dapperheid">et virtus tua</span></span>
+<span class="wg"><span class="lw" data-w="movent" data-l="movere" data-d="ww., 3 pl. praes. act." data-s="hoofdwerkwoord" data-n="ontroeren">movent</span>,</span>
+<span class="wg"><span class="lw" data-w="sed" data-l="sed" data-d="adversatief voegwoord" data-s="keerpunt: het onvermijdelijke dilemma volgt" data-n="maar">sed</span></span>
+<span class="wg"><span class="lw" data-w="necesse est" data-l="necesse (indecl.) / esse" data-d="predicatief adj. + koppelww." data-s="stuurt de dubbele ACI aan" data-n="het is noodzakelijk">necesse est</span></span>
+<span class="wg"><span class="lw" data-w="aut tua morte" data-l="aut / mors / tuus" data-d="vgw. + subst. abl. sg. + poss. pron." data-s="abl. van middel bij sanciri (aut…aut)" data-n="ofwel door jouw dood">aut tua morte</span></span>
+<span class="wg"><span class="lw" data-w="consulum imperium sanciri" data-l="consul / imperium / sancire" data-d="ACI: gen. pl. + acc. sg. + inf. praes. pass." data-s="eerste ACI na necesse est: het gezag der consuls wordt bekrachtigd" data-n="het gezag der consuls bekrachtigd wordt">consulum imperium sanciri</span></span>
+<span class="wg"><span class="lw" data-w="aut impunitate in perpetuum abrogari" data-l="aut / impunitas / in / perpetuus / abrogare" data-d="vgw. + abl. sg. + prep.-vb. + inf. praes. pass." data-s="tweede ACI na necesse est: of voor eeuwig afgeschaft wordt" data-n="of door straffeloosheid voor altijd afgeschaft wordt">aut impunitate in perpetuum abrogari</span>.</span>
+</div>
+
+<div class="latin-para">
+<span class="wg"><span class="lw" data-w="Nec te quidem recusare censeo" data-l="nec / tu / quidem / recusare / censere" data-d="ACI: acc. + inf. praes. act. + hoofdww." data-s="ACI na censeo: ik oordeel dat jij niet weigert" data-n="Ik oordeel ook dat jij niet weigert">Nec te quidem recusare censeo</span>,</span>
+<span class="wg"><span class="lw" data-w="quin" data-l="quin + conj." data-d="voegwoord" data-s="inleider quin-bijzin na negatief nec … censeo" data-n="dat niet">quin</span></span>
+<span class="wg"><span class="lw" data-w="disciplinam militarem culpa tua prolapsam" data-l="disciplina / militaris / culpa / tuus / prolabi (dep.)" data-d="acc. sg. + abl. oorzaak + dep. pcp. acc. sg." data-s="object van restituas + attribuut + abl. van oorzaak" data-n="de door jouw schuld verslechterde krijgstucht">disciplinam militarem culpa tua prolapsam</span></span>
+<span class="wg"><span class="lw" data-w="poena restituas" data-l="poena / restituere" data-d="subst. abl. sg. + ww. 2 sg. praes. conj." data-s="persoonsvorm in de quin-bijzin + abl. van middel" data-n="door straf herstelt">poena restituas</span>.</span>
+<span class="wg"><span class="lw" data-w="I, lictor" data-l="ire / lictor" data-d="imp. + subst. voc. sg." data-s="imperatief + vocatief: bevel aan de lictor" data-n="Ga, lictor">I, lictor</span>,</span>
+<span class="wg"><span class="lw" data-w="deliga ad palum" data-l="deligare / ad / palus" data-d="imp. + prep. + subst. acc. sg." data-s="imperatief + prep.-bepaling: bind hem vast" data-n="bind vast aan de paal">deliga ad palum</span>!&#8217;</span>
+</div>
+
+  </div><!-- /plain-view -->
+
+  <div class="numbered-view" id="numberedView">
+    <div class="latin-line"><span class="ln">1</span><span class="lc">&#8216;Provocatus&#8217;, inquit filius, &#8216;proelio equestri, haec spolia capta ex hoste caeso tibi, pater,</span></div>
+    <div class="latin-line"><span class="ln">2</span><span class="lc">porto, ut omnes me vere tuo sanguine ortum esse ferrent.&#8217;</span></div>
+    <div class="latin-line"><span class="ln">&nbsp;</span><span class="lc">&nbsp;</span></div>
+    <div class="latin-line"><span class="ln">3</span><span class="lc">Id ubi audivit consul, extemplo filium aversatus contionem classico advocari iussit.</span></div>
+    <div class="latin-line"><span class="ln">&nbsp;</span><span class="lc">&nbsp;</span></div>
+    <div class="latin-line"><span class="ln">4</span><span class="lc">&#8216;Quia tu, T. Manli,&#8217; inquit, &#8216;neque imperium consulare neque maiestatem patriam</span></div>
+    <div class="latin-line"><span class="ln">5</span><span class="lc">veritus es et adversus edictum nostrum extra ordinem in hostem pugnavisti et</span></div>
+    <div class="latin-line"><span class="ln">6</span><span class="lc">disciplinam militarem, qua stetit ad hanc diem Romana res, solvisti, me in eam</span></div>
+    <div class="latin-line"><span class="ln">7</span><span class="lc">necessitatem coegisti, ut aut rei publicae aut mei meorumque obliviscerer</span></div>
+    <div class="latin-line"><span class="ln">&nbsp;</span><span class="lc">&nbsp;</span></div>
+    <div class="latin-line"><span class="ln">8</span><span class="lc">Triste exemplum, sed in posterum salubre iuventuti erimus.</span></div>
+    <div class="latin-line"><span class="ln">&nbsp;</span><span class="lc">&nbsp;</span></div>
+    <div class="latin-line"><span class="ln">9</span><span class="lc">Me quidem amor liberorum et virtus tua movent, sed necesse est aut tua morte consulum</span></div>
+    <div class="latin-line"><span class="ln">10</span><span class="lc">imperium sanciri aut impunitate in perpetuum abrogari.</span></div>
+    <div class="latin-line"><span class="ln">&nbsp;</span><span class="lc">&nbsp;</span></div>
+    <div class="latin-line"><span class="ln">11</span><span class="lc">Nec te quidem recusare censeo, quin disciplinam militarem culpa tua prolapsam poena</span></div>
+    <div class="latin-line"><span class="ln">12</span><span class="lc">restituas. I, lictor, deliga ad palum!&#8217;</span></div>
+  </div>
+
+  </div><!-- /latin-text -->
+
+  <!-- FOOTNOTES -->
+  <div class="footnotes">
+    <div class="fn-title">Grammaticale noten</div>
+    <div class="fn"><span class="fn-n">1</span><span><em>Provocatus</em> – ppp als verkorte concessieve bijzin: &#8216;hoewel ik uitgedaagd was&#8217;. Motiveert de daad maar ontslaat de zoon niet van de overtreding.</span></div>
+    <div class="fn"><span class="fn-n">2</span><span><em>ut … ferrent</em> – finale bijzin na <em>porto</em>. <em>Ferrent</em>: imperf. conj. (gelijktijdigheid in de gedachtewereld van de zoon).</span></div>
+    <div class="fn"><span class="fn-n">3</span><span><em>aversatus filium</em> – deponens van <em>aversor</em>. De consul wendt zich fysiek af vóór het vonnis: een krachtig gebaar.</span></div>
+    <div class="fn"><span class="fn-n">4</span><span><em>neque … neque</em> – dubbele ontkenning coördineert <em>imperium consulare</em> en <em>maiestatem patriam</em> als objecten van <em>veritus es</em>.</span></div>
+    <div class="fn"><span class="fn-n">5</span><span><em>qua stetit … Romana res</em> – rel. bijzin; antecedent = <em>disciplinam</em>. De krijgstucht als pijler van Rome.</span></div>
+    <div class="fn"><span class="fn-n">6</span><span><em>necesse est … sanciri … abrogari</em> – dubbele ACI: gezag bekrachtigen ÓF voor altijd afschaffen. Het onvermijdelijke dilemma.</span></div>
+    <div class="fn"><span class="fn-n">7</span><span><em>quin … restituas</em> – quin-bijzin na negatief <em>nec … censeo</em>. Conj. praesentis: actuele verwachting.</span></div>
+    <div class="fn"><span class="fn-n">8</span><span><em>I, lictor, deliga ad palum</em> – drie korte imperativen als climax. De consul richt zich niet meer tot zijn zoon.</span></div>
+  </div>
+
+  <!-- WOORDENLIJST -->
+  <div class="footnotes" id="woordenlijst-sectie" style="margin-top:3rem;">
+    <div class="fn-title">Woordenlijst — Tekst 4</div>
+    <div id="woordenlijstContainer" style="font-family:'Lufga',sans-serif;">
+      <div style="color:var(--ink-light);font-size:.82rem;font-style:italic;">Laden…</div>
+    </div>
+  </div>
+
+</div><!-- /main-col -->
+
+<!-- SIDE PANEL -->
+<div class="side-panel" id="sidePanel">
+  <div class="analysis-card" id="analysisCard">
+    <div class="ac-empty">Klik op een woord of woordgroep voor determinering en analyse.</div>
+  </div>
+  <div class="panel-card" id="panelWoordlijst">
+    <h3>Woordenlijst tekst 4</h3>
+    <div id="panelWoordlijstBody"><div style="color:var(--ink-light);font-size:.78rem;font-style:italic;">Laden…</div></div>
+  </div>
+  <div class="panel-card">
+    <h3>Let op</h3>
+    <div class="panel-note"><span class="pn-tag">ACI</span>me ortum esse · filium advocari · imperium sanciri/abrogari</div>
+    <div class="panel-note"><span class="pn-tag">Dep.</span><em>aversatus</em> (aversor) · <em>obliviscerer</em> (obliviscor) · <em>prolapsam</em> (prolabor)</div>
+    <div class="panel-note"><span class="pn-tag">Quin</span>Na negatief <em>nec … censeo</em> → <em>quin … restituas</em></div>
+    <div class="panel-note"><span class="pn-tag">Imp.</span>I — deliga: climax in drie woorden</div>
+  </div>
+</div>
+
+</div><!-- /outer -->
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10l4-4 4 4"/></svg>
+</button>
+
+<script>
+/* ══════════════════════════════════════════
+   WOORDENLIJST DATA (7b/4, gesorteerd op volgorde)
+══════════════════════════════════════════ */
+var WL = [
+  {g:"provocare",a:"provoco, provocavi, provocatum",v:"uitdagen, uitlokken"},
+  {g:"provocatus",a:"provocata, provocatum",v:"uitgedaagd, uitgelokt"},
+  {g:"inquit",a:"",v:"hij/zij zegt, hij/zij zei",b:true},
+  {g:"filius",a:"filii, (m.)",v:"zoon",b:true},
+  {g:"proelium",a:"proelii, (o.)",v:"strijd, gevecht",b:true},
+  {g:"equester",a:"equestris, equestre",v:"van een ruiter, ruiter-"},
+  {g:"spolium",a:"spolii, (o.)",v:"afgestroopte huid; mv.: buit, buitgemaakte wapenuitrusting"},
+  {g:"capere",a:"capio, cepi, captum",v:"nemen, grijpen, veroveren",b:true},
+  {g:"captus",a:"capta, captum",v:"genomen, veroverd"},
+  {g:"ex",a:"+ abl. (vz.)",v:"uit, weg van, van",b:true},
+  {g:"hostis",a:"hostis (m.)",v:"vijand",b:true},
+  {g:"caedere",a:"caedo, cecidi, caesum",v:"doden, vermoorden",b:true},
+  {g:"caesus",a:"caesa, caesum",v:"gedood, verslagen"},
+  {g:"pater",a:"patris, (m.)",v:"vader",b:true},
+  {g:"portare",a:"porto, portavi, portatum",v:"dragen, vervoeren",b:true},
+  {g:"ut",a:"(vgw.)",v:"opdat, om te; zodat; dat",b:true},
+  {g:"omnis",a:"omnis, omne",v:"geheel, al, ieder, elk",b:true},
+  {g:"verus",a:"vera, verum",v:"waar, echt",b:true},
+  {g:"sanguis",a:"sanguinis, (m.)",v:"bloed"},
+  {g:"oriri",a:"orior, ortus sum",v:"ontstaan; afstammen van"},
+  {g:"ferre",a:"fero, tuli, latum",v:"dragen, brengen; zeggen, vertellen",b:true},
+  {g:"ubi",a:"(bijw./vgw.)",v:"zodra; wanneer, toen",b:true},
+  {g:"audire",a:"audio, audivi, auditum",v:"horen, luisteren",b:true},
+  {g:"consul",a:"consulis, (m.)",v:"consul",b:true},
+  {g:"extemplo",a:"(bijw.)",v:"onmiddellijk, dadelijk"},
+  {g:"aversari",a:"aversor, aversatus sum",v:"zich afwenden van, afwijzen"},
+  {g:"contio",a:"contionis, (v.)",v:"bijeenkomst, vergadering, troepenvergadering"},
+  {g:"classicum",a:"classici, (o.)",v:"trompetsignaal, trompetgeschal"},
+  {g:"advocare",a:"advoco, advocavi, advocatum",v:"bijeenroepen, erbij roepen"},
+  {g:"iubere",a:"iubeo, iussi, iussum",v:"bevelen, opdragen",b:true},
+  {g:"quia",a:"(vgw.)",v:"omdat",b:true},
+  {g:"neque",a:"(vgw.)",v:"en niet, noch",b:true},
+  {g:"imperium",a:"imperii, (o.)",v:"macht, gezag, heerschappij",b:true},
+  {g:"consularis",a:"consularis, consulare",v:"van een consul, consulair"},
+  {g:"maiestas",a:"maiestatis, (v.)",v:"verhevenheid, waardigheid, gezag"},
+  {g:"patrius",a:"patria, patrium",v:"van een vader, vaderlijk",b:true},
+  {g:"vereri",a:"vereor, veritus sum",v:"vrezen; eerbiedigen, respecteren"},
+  {g:"adversus",a:"+ acc. (vz.)",v:"tegenover, tegen",b:true},
+  {g:"edictum",a:"edicti, (o.)",v:"bevel, edict, bekendmaking"},
+  {g:"noster",a:"nostra, nostrum",v:"ons, onze",b:true},
+  {g:"extra",a:"+ acc. (vz.)",v:"buiten",b:true},
+  {g:"ordo",a:"ordinis, (m.)",v:"rij, gelid, orde, rang"},
+  {g:"pugnare",a:"pugno, pugnavi, pugnatum",v:"vechten, strijden",b:true},
+  {g:"disciplina",a:"disciplinae, (v.)",v:"opleiding, tucht, orde"},
+  {g:"militaris",a:"militaris, militare",v:"militair, van een soldaat"},
+  {g:"stare",a:"sto, steti, statum",v:"staan, standhouden",b:true},
+  {g:"dies",a:"diei, (m./v.)",v:"dag",b:true},
+  {g:"solvere",a:"solvo, solvi, solutum",v:"losmaken; ontbinden, vernietigen",b:true},
+  {g:"necessitas",a:"necessitatis, (v.)",v:"noodzaak, noodzakelijkheid, dwang"},
+  {g:"cogere",a:"cogo, coegi, coactum",v:"samendrukken; dwingen",b:true},
+  {g:"res publica",a:"rei publicae, (v.)",v:"staat, gemeenschap",b:true},
+  {g:"obliviscor",a:"obliviscor, oblitus sum",v:"vergeten (+ gen.)"},
+  {g:"tristis",a:"tristis, triste",v:"droevig, treurig, somber"},
+  {g:"exemplum",a:"exempli, (o.)",v:"voorbeeld, precedent"},
+  {g:"posterus",a:"postera, posterum",v:"volgend; de toekomst"},
+  {g:"saluber",a:"salubris, salubre",v:"heilzaam, nuttig, voordelig"},
+  {g:"iuventus",a:"iuventutis, (v.)",v:"jeugd"},
+  {g:"quidem",a:"(bijw.)",v:"zeker; (legt nadruk op voorgaand woord)",b:true},
+  {g:"amor",a:"amoris, (m.)",v:"liefde",b:true},
+  {g:"liberi",a:"liberorum (enkel mv.)",v:"kinderen",b:true},
+  {g:"virtus",a:"virtutis, (v.)",v:"moed, dapperheid, deugd",b:true},
+  {g:"movere",a:"moveo, movi, motum",v:"bewegen, ontroeren",b:true},
+  {g:"necesse",a:"(indecl. adj.)",v:"noodzakelijk"},
+  {g:"mors",a:"mortis, (v.)",v:"dood",b:true},
+  {g:"sancire",a:"sancio, sanxi, sanctum",v:"heiligen, bekrachtigen, wettigen"},
+  {g:"impunitas",a:"impunitatis, (v.)",v:"straffeloosheid"},
+  {g:"perpetuus",a:"perpetua, perpetuum",v:"ononderbroken, eeuwig",b:true},
+  {g:"abrogare",a:"abrogo, abrogavi, abrogatum",v:"afschaffen, intrekken"},
+  {g:"censere",a:"censeo, censui, censum",v:"oordelen, menen, schatten",b:true},
+  {g:"recusare",a:"recuso, recusavi, recusatum",v:"weigeren, bezwaar maken"},
+  {g:"quin",a:"(vgw.)",v:"dat niet; of niet",b:true},
+  {g:"culpa",a:"culpae, (v.)",v:"schuld, fout"},
+  {g:"prolabi",a:"prolabor, prolapsus sum",v:"afglijden, verslechteren"},
+  {g:"poena",a:"poenae, (v.)",v:"straf, boete",b:true},
+  {g:"restituere",a:"restituo, restitui, restitutum",v:"terugzetten, herstellen"},
+  {g:"ire",a:"eo, ii/ivi, itum",v:"gaan",b:true},
+  {g:"lictor",a:"lictoris, (m.)",v:"lictor (ambtsdienaar van een magistraat)"},
+  {g:"deligare",a:"deligo, deligavi, deligatum",v:"vastbinden"},
+  {g:"palus",a:"pali, (m.)",v:"paal, staak"}
+];
+
+/* ══════════════════════════════════════════
+   RENDER WOORDENLIJST
+══════════════════════════════════════════ */
+function renderWoordlijst() {
+  // Bottom section
+  var cont = document.getElementById('woordenlijstContainer');
+  var html = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.4rem .75rem;">';
+  WL.forEach(function(w) {
+    html += '<div style="display:flex;gap:.5rem;padding:.28rem 0;border-bottom:1px solid var(--rule);align-items:baseline;">' +
+      '<span style="font-family:\'EB Garamond\',Georgia,serif;font-weight:600;color:var(--blue);min-width:6.5rem;flex-shrink:0;font-size:.95rem;">' + w.g + (w.b ? '<span class="pw-b">basis</span>' : '') + '</span>' +
+      '<span style="font-family:\'Lufga\',sans-serif;font-size:.66rem;color:var(--ink-light);min-width:4rem;flex-shrink:0;">' + (w.a||'') + '</span>' +
+      '<span style="font-family:\'Lufga\',sans-serif;font-size:.74rem;color:var(--ink-mid);">' + w.v + '</span>' +
+      '</div>';
+  });
+  html += '</div>';
+  cont.innerHTML = html;
+
+  // Side panel (compact)
+  var body = document.getElementById('panelWoordlijstBody');
+  var h2 = '';
+  WL.forEach(function(w) {
+    h2 += '<div class="panel-word">' +
+      '<span class="pw-lat">' + w.g + (w.b ? '<span class="pw-b">b</span>' : '') + '</span>' +
+      '<span class="pw-nl">' + w.v.split(';')[0].split(',')[0] + '</span>' +
+      '</div>';
+  });
+  body.innerHTML = h2;
+}
+
+/* ══════════════════════════════════════════
+   WOORDGROEP-ONTHULLING
+══════════════════════════════════════════ */
+var groups = Array.from(document.querySelectorAll('#plainView .wg'));
+var S = {reveal:false,lines:false,font:false,twocol:false,interlin:false,revIdx:-1};
+
+function toggleReveal() {
+  S.reveal = !S.reveal;
+  document.getElementById('btnReveal').classList.toggle('active', S.reveal);
+  document.getElementById('revealBar').classList.toggle('vis', S.reveal);
+  document.getElementById('latinText').classList.toggle('reveal-mode', S.reveal);
+  if (S.reveal) {
+    S.revIdx = -1;
+    groups.forEach(function(g){ g.classList.remove('revealed','active'); });
+    updCount();
+  } else {
+    groups.forEach(function(g){ g.classList.remove('revealed','active'); });
+  }
+}
+
+function revealNext() {
+  if (!S.reveal) return;
+  if (S.revIdx >= 0 && S.revIdx < groups.length) groups[S.revIdx].classList.remove('active');
+  S.revIdx = Math.min(S.revIdx + 1, groups.length - 1);
+  groups[S.revIdx].classList.add('revealed','active');
+  groups[S.revIdx].scrollIntoView({behavior:'smooth', block:'nearest'});
+  updCount();
+}
+function revealPrev() {
+  if (!S.reveal || S.revIdx < 0) return;
+  groups[S.revIdx].classList.remove('active');
+  if (S.revIdx > 0) { S.revIdx--; groups[S.revIdx].classList.add('active'); }
+  else S.revIdx = -1;
+  updCount();
+}
+function revealAll() {
+  groups.forEach(function(g){ g.classList.add('revealed'); g.classList.remove('active'); });
+  S.revIdx = groups.length - 1;
+  updCount();
+}
+function updCount() {
+  var done = groups.filter(function(g){ return g.classList.contains('revealed'); }).length;
+  document.getElementById('revCount').textContent = done + ' / ' + groups.length;
+}
+
+/* ══════════════════════════════════════════
+   KEYBOARD SHORTCUTS voor onthulling
+══════════════════════════════════════════ */
+document.addEventListener('keydown', function(e) {
+  if (!S.reveal) return;
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); revealNext(); }
+  if (e.key === 'ArrowLeft')  { e.preventDefault(); revealPrev(); }
+});
+
+/* ══════════════════════════════════════════
+   WORD CLICKS: 1 klik = det., 2 klik = synt.
+══════════════════════════════════════════ */
+var lastW = null, clickN = 0;
+document.querySelectorAll('.lw').forEach(function(w) {
+  w.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (lastW === w) { clickN++; } else { if (lastW) lastW.classList.remove('st1','st2'); lastW = w; clickN = 1; }
+    w.classList.remove('st1','st2');
+    if (clickN === 1)      { w.classList.add('st1'); showPopup(w,1); updatePanel(w); }
+    else if (clickN === 2) { w.classList.add('st2'); showPopup(w,2); }
+    else                   { clickN=0; lastW=null; hidePopup(); }
+  });
+});
+document.addEventListener('click', function(){ if(lastW){lastW.classList.remove('st1','st2');lastW=null;clickN=0;} hidePopup(); });
+
+/* ══════════════════════════════════════════
+   POPUP
+══════════════════════════════════════════ */
+var popup = document.getElementById('popup');
+function showPopup(el, click) {
+  // Look up in woordenlijst
+  var wText = el.dataset.w.toLowerCase().split(' ')[0];
+  var wEntry = null;
+  WL.forEach(function(w){ if(!wEntry && (w.g.toLowerCase().startsWith(wText) || wText.startsWith(w.g.split(',')[0].toLowerCase().replace(/[()]/g,'').trim()))) wEntry = w; });
+
+  document.getElementById('ppWord').textContent = el.dataset.w;
+  document.getElementById('ppLemma').textContent = el.dataset.l || '';
+
+  var tagCls = click===1 ? 'tg' : 'to';
+  var tagLbl = click===1 ? 'Determinering' : 'Syntaxis';
+  var info   = click===1 ? el.dataset.d : el.dataset.s;
+  document.getElementById('ppContent').innerHTML =
+    '<div class="wp-row"><span class="wp-tag '+tagCls+'">'+tagLbl+'</span><span class="wp-val">'+info+'</span></div>';
+
+  var hintHtml = '<span class="wp-tag tp">NL</span> ' + el.dataset.n;
+  if (wEntry) {
+    hintHtml += '<br><span style="color:var(--ink-light);font-size:.65rem;">woordenlijst: <em>' + wEntry.g + '</em> — ' + wEntry.v + (wEntry.b ? ' <span class="wp-basis">basis</span>' : '') + '</span>';
+  }
+  document.getElementById('ppHint').innerHTML = hintHtml;
+
+  var rect = el.getBoundingClientRect();
+  var top  = rect.bottom + window.scrollY + 6;
+  var left = rect.left;
+  if (rect.bottom + 160 > window.innerHeight) top = rect.top + window.scrollY - 165;
+  if (left + 295 > window.innerWidth) left = window.innerWidth - 300;
+  if (left < 5) left = 5;
+  popup.style.top  = top + 'px';
+  popup.style.left = left + 'px';
+  popup.classList.add('vis');
+}
+function hidePopup(){ popup.classList.remove('vis'); }
+
+function updatePanel(el) {
+  var wText = el.dataset.w.toLowerCase().split(' ')[0];
+  var wEntry = null;
+  WL.forEach(function(w){ if(!wEntry && (w.g.toLowerCase().startsWith(wText) || wText.startsWith(w.g.split(',')[0].toLowerCase().replace(/[()]/g,'').trim()))) wEntry = w; });
+  var wlRow = wEntry ? '<div class="ac-row" style="margin-top:.35rem"><span class="ac-tag tm">Lijst</span><span class="ac-val"><em>'+wEntry.g+'</em> — '+wEntry.v+(wEntry.b?' <span style="font-size:.58rem;background:#fff3c4;color:#7a5c00;padding:.02rem .25rem;border-radius:6px;font-weight:700;text-transform:uppercase">basis</span>':'')+'</span></div>' : '';
+  document.getElementById('analysisCard').innerHTML =
+    '<div class="ac-word">'+el.dataset.w+'</div>'+
+    '<div class="ac-lemma">'+el.dataset.l+'</div>'+
+    '<div class="ac-row"><span class="ac-tag tg">Det.</span><span class="ac-val">'+el.dataset.d+'</span></div>'+
+    '<div class="ac-row" style="margin-top:.35rem"><span class="ac-tag to">Synt.</span><span class="ac-val">'+el.dataset.s+'</span></div>'+
+    '<div class="ac-row" style="margin-top:.35rem"><span class="ac-tag tp">NL</span><span class="ac-val">'+el.dataset.n+'</span></div>'+
+    wlRow;
+}
+
+/* ══════════════════════════════════════════
+   ANDERE KNOPPEN
+══════════════════════════════════════════ */
+function toggleLines() {
+  S.lines = !S.lines;
+  document.getElementById('btnLines').classList.toggle('active', S.lines);
+  document.getElementById('plainView').classList.toggle('off', S.lines);
+  document.getElementById('numberedView').classList.toggle('on', S.lines);
+  if (S.lines && S.reveal) toggleReveal();
+}
+
+function toggleInterlin() {
+  S.interlin = !S.interlin;
+  document.getElementById('btnInterlin').classList.toggle('active', S.interlin);
+  document.querySelectorAll('#plainView .lw').forEach(function(w) {
+    var ex = w.querySelector('.iln');
+    if (S.interlin) {
+      if (!ex) {
+        var sp = document.createElement('span');
+        sp.className = 'iln';
+        sp.style.cssText = 'display:block;font-family:Lufga,sans-serif;font-size:0.58em;color:var(--magenta);line-height:1;text-align:center;pointer-events:none;margin-top:-0.1em;';
+        sp.textContent = w.dataset.n;
+        w.style.cssText += 'display:inline-flex;flex-direction:column;align-items:center;vertical-align:top;';
+        w.appendChild(sp);
+      }
+    } else {
+      if (ex) { ex.remove(); w.style.display=''; }
+    }
+  });
+}
+
+function toggleTwocol() {
+  S.twocol = !S.twocol;
+  document.getElementById('btnTwocol').classList.toggle('active', S.twocol);
+  document.body.classList.toggle('twocol', S.twocol);
+}
+
+function toggleFont() {
+  S.font = !S.font;
+  document.getElementById('btnFont').classList.toggle('active', S.font);
+  document.body.classList.toggle('font-lg', S.font);
+}
+
+/* SCROLL */
+window.addEventListener('scroll', function() {
+  var d = document.documentElement;
+  var pct = d.scrollTop / (d.scrollHeight - d.clientHeight);
+  document.getElementById('rpFill').style.width = (pct*100)+'%';
+  document.getElementById('scrollTop').classList.toggle('on', d.scrollTop > 280);
+});
+
+/* INIT */
+renderWoordlijst();
+</script>
+</body>
+</html>
