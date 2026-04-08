@@ -353,7 +353,7 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
     </button>
     <div class="weergave-wrap" id="weergaveWrap">
       <button class="ctrl-btn" id="btnWeergave" onclick="toggleWeergaveMenu(event)">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h12M2 8h8M2 12h5"/></svg>
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2.2"/><path d="M8 1.5v1.2M8 13.3v1.2M1.5 8h1.2M13.3 8h1.2M3.4 3.4l.85.85M11.75 11.75l.85.85M12.6 3.4l-.85.85M4.25 11.75l-.85.85"/></svg>
         Weergave
         <svg class="weergave-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:9px;height:9px;margin-left:1px"><path d="M4 6l4 4 4-4"/></svg>
       </button>
@@ -366,12 +366,12 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5h12M2 10h12"/></svg>
           Interlineair
         </button>
+        <button class="weergave-item" id="btnTwocol" onclick="toggleTwocol()">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="6" height="10" rx="1"/><rect x="9" y="3" width="6" height="10" rx="1"/></svg>
+          Tweekolom
+        </button>
       </div>
     </div>
-    <button class="ctrl-btn" id="btnTwocol" onclick="toggleTwocol()">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="6" height="10" rx="1"/><rect x="9" y="3" width="6" height="10" rx="1"/></svg>
-      Tweekolom
-    </button>
     <button class="ctrl-btn" id="btnFont" onclick="toggleFont()">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12L8 4l5 8M5.5 9h5"/></svg>
       Groter
@@ -395,21 +395,8 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
   </div>
 
   <div class="link-strip">
-    <a class="link-pill" href="#woordenlijst-sectie">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h8M4 5h5M4 11h6"/></svg>
-      Woordenlijst van deze tekst
-    </a>
-    <a class="link-pill" href="#">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M6 6h4M6 10h2"/></svg>
-      Grammatica
-    </a>
-    <button class="link-pill" onclick="openKaartModal()">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
-      Historische kaart
-    </button>
-    <a class="link-pill" href="#">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l6 4 6-4M2 4v8h12V4"/></svg>
-      Oefeningen
+    <a class="link-pill" href="#woordenlijst-sectie" title="Woordenlijst van deze tekst" style="border-color:transparent;background:none;padding:.3rem .4rem;">
+      <svg viewBox="0 0 16 16" fill="none" stroke="var(--magenta)" stroke-width="1.5" style="width:18px;height:18px;opacity:.7;"><path d="M3 2h8a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1z"/><path d="M3 2v12"/><path d="M6 6h4M6 9h3"/></svg>
     </a>
   </div>
 
@@ -451,95 +438,95 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
 ══════════════════════════════════════════ -->
 
 <div class="latin-para">
-<span class="wg" data-wg="1">&#8216;<span class="lat-word" data-w="Provocatus" data-l="provocare" data-d="volt. dw., nom. enk. m." data-s="concessief part. bij OND (filius)" data-n="uitgedaagd">Provocatus</span>&#8217;,</span>
-<span class="wg" data-wg="2"><span class="lat-word" data-w="inquit" data-l="inquit" data-d="onvolled. ww., 3 enk." data-s="PV van de directe rede" data-n="zegt/zei hij">inquit</span></span>
-<span class="wg" data-wg="3"><span class="lat-word" data-w="filius" data-l="filius, -ii" data-d="znw., nom. enk." data-s="OND van inquit" data-n="de zoon">filius</span>,</span>
-<span class="wg" data-wg="4">&#8216;<span class="lat-word" data-w="proelio equestri" data-l="proelium / equester" data-d="znw. + bnw., abl. enk." data-s="abl. van omstandigheid bij provocatus" data-n="in een ruitergevecht">proelio equestri</span>,</span>
-<span class="wg" data-wg="5"><span class="lat-word" data-w="haec spolia" data-l="hic / spolium" data-d="vnw. + znw., acc. mv. n." data-s="LV van porto" data-n="deze buit">haec spolia</span></span>
-<span class="wg" data-wg="6"><span class="lat-word" data-w="capta" data-l="capere" data-d="volt. dw., acc. mv. n." data-s="bep. bij spolia" data-n="veroverd">capta</span></span>
-<span class="wg" data-wg="7"><span class="lat-word" data-w="ex hoste caeso" data-l="hostis / caedere" data-d="vz. + znw. + volt. dw., abl. enk." data-s="abl. van herkomst / omstandigheid" data-n="van de gedode vijand">ex hoste caeso</span></span>
-<span class="wg" data-wg="8"><span class="lat-word" data-w="tibi" data-l="tu" data-d="pers. vnw., dat. enk." data-s="meew. voorw. bij porto" data-n="aan u">tibi</span>,</span>
-<span class="wg" data-wg="9"><span class="lat-word" data-w="pater" data-l="pater, -tris" data-d="znw., voc. enk." data-s="roepvorm (aanspreekvorm)" data-n="vader">pater</span>,</span>
-<span class="wg" data-wg="10"><span class="lat-word" data-w="porto" data-l="portare" data-d="ww., 1 enk. praes. act." data-s="PV van de directe rede" data-n="draag ik">porto</span>,</span>
+<span class="wg" data-wg="1">&#8216;<span class="lat-word" data-w="Provocatus" data-l="provocare" data-d="PPP nom. enk. m." data-s="concessief part. bij OND (filius)" data-n="uitgedaagd">Provocatus</span>&#8217;,</span>
+<span class="wg" data-wg="2"><span class="lat-word" data-w="inquit" data-l="inquit" data-d="A. ind. praes. 3 enk." data-s="PV van de directe rede" data-n="zegt/zei hij">inquit</span></span>
+<span class="wg" data-wg="3"><span class="lat-word" data-w="filius" data-l="filius, -ii" data-d="nom. enk. m." data-s="OND van inquit" data-n="de zoon">filius</span>,</span>
+<span class="wg" data-wg="4">&#8216;<span class="lat-word" data-w="proelio equestri" data-l="proelium / equester" data-d="abl. enk. o." data-s="abl. van omstandigheid bij provocatus" data-n="in een ruitergevecht">proelio equestri</span>,</span>
+<span class="wg" data-wg="5"><span class="lat-word" data-w="haec spolia" data-l="hic / spolium" data-d="acc. mv. o." data-s="LV van porto" data-n="deze buit">haec spolia</span></span>
+<span class="wg" data-wg="6"><span class="lat-word" data-w="capta" data-l="capere" data-d="PPP acc. mv. o." data-s="bep. bij spolia" data-n="veroverd">capta</span></span>
+<span class="wg" data-wg="7"><span class="lat-word" data-w="ex hoste caeso" data-l="hostis / caedere" data-d="voorzetselgroep (abl. enk.)" data-s="abl. van herkomst / omstandigheid" data-n="van de gedode vijand">ex hoste caeso</span></span>
+<span class="wg" data-wg="8"><span class="lat-word" data-w="tibi" data-l="tu" data-d="dat. enk." data-s="meew. voorw. bij porto" data-n="aan u">tibi</span>,</span>
+<span class="wg" data-wg="9"><span class="lat-word" data-w="pater" data-l="pater, -tris" data-d="voc. enk. m." data-s="roepvorm (aanspreekvorm)" data-n="vader">pater</span>,</span>
+<span class="wg" data-wg="10"><span class="lat-word" data-w="porto" data-l="portare" data-d="A. ind. praes. 1 enk." data-s="PV van de directe rede" data-n="draag ik">porto</span>,</span>
 <span class="wg" data-wg="11"><span class="lat-word" data-w="ut" data-l="ut" data-d="vgw." data-s="inleider finale bijzin" data-n="opdat">ut</span>
-<span class="lat-word" data-w="omnes" data-l="omnis, -e" data-d="bnw., nom. mv." data-s="OND van ferrent" data-n="allen">omnes</span></span>
-<span class="wg" data-wg="12"><span class="lat-word" data-w="me" data-l="ego" data-d="pers. vnw., acc. enk." data-s="OND van de ACI (me ortum esse)" data-n="dat ik">me</span>
-<span class="lat-word" data-w="vere" data-l="vere" data-d="bw." data-s="bw. bij ortum esse" data-n="werkelijk">vere</span></span>
-<span class="wg" data-wg="13"><span class="lat-word" data-w="tuo sanguine" data-l="tuus / sanguis" data-d="vnw. + znw., abl. enk." data-s="abl. van oorsprong bij ortum esse" data-n="uit uw bloed">tuo sanguine</span>
-<span class="lat-word" data-w="ortum esse" data-l="oriri" data-d="inf. pf. (ACI)" data-s="ACI: me ortum esse na ferrent" data-n="voortgekomen te zijn">ortum esse</span></span>
-<span class="wg" data-wg="14"><span class="lat-word" data-w="ferrent" data-l="ferre" data-d="ww., 3 mv. imperf. conjunct." data-s="PV in de finale bijzin na ut" data-n="zouden vertellen">ferrent</span>.&#8217;</span>
+<span class="lat-word" data-w="omnes" data-l="omnis, -e" data-d="nom. mv." data-s="OND van ferrent" data-n="allen">omnes</span></span>
+<span class="wg" data-wg="12"><span class="lat-word" data-w="me" data-l="ego" data-d="acc. enk." data-s="OND van de ACI (me ortum esse)" data-n="dat ik">me</span>
+<span class="lat-word" data-w="vere" data-l="vere" data-d="bijw." data-s="bw. bij ortum esse" data-n="werkelijk">vere</span></span>
+<span class="wg" data-wg="13"><span class="lat-word" data-w="tuo sanguine" data-l="tuus / sanguis" data-d="abl. enk. m." data-s="abl. van oorsprong bij ortum esse" data-n="uit uw bloed">tuo sanguine</span>
+<span class="lat-word" data-w="ortum esse" data-l="oriri" data-d="A. inf. pf. (ACI)" data-s="ACI: me ortum esse na ferrent" data-n="voortgekomen te zijn">ortum esse</span></span>
+<span class="wg" data-wg="14"><span class="lat-word" data-w="ferrent" data-l="ferre" data-d="A. conj. imperf. 3 mv." data-s="PV in de finale bijzin na ut" data-n="zouden vertellen">ferrent</span>.&#8217;</span>
 </div>
 
 <div class="latin-para tekst-scheiding">
-<span class="wg" data-wg="15"><span class="lat-word" data-w="Id" data-l="is, ea, id" data-d="aanw. vnw., acc. enk. n." data-s="anticiperend LV van audivit" data-n="dit">Id</span>
-<span class="lat-word" data-w="ubi" data-l="ubi" data-d="temp. vgw." data-s="inleider temporele bijzin" data-n="toen">ubi</span>
-<span class="lat-word" data-w="audivit" data-l="audire" data-d="ww., 3 enk. pf. act." data-s="PV in de temporele bijzin" data-n="hoorde">audivit</span>
-<span class="lat-word" data-w="consul" data-l="consul, -ulis" data-d="znw., nom. enk." data-s="OND van audivit en iussit" data-n="de consul">consul</span>,</span>
-<span class="wg" data-wg="16"><span class="lat-word" data-w="extemplo" data-l="extemplo" data-d="bw." data-s="BWB van tijd bij iussit" data-n="onmiddellijk">extemplo</span></span>
-<span class="wg" data-wg="17"><span class="lat-word" data-w="filium aversatus" data-l="filius / aversor" data-d="znw. acc. + dep. part. nom." data-s="dep. part. bij consul: hij wendt zich van zijn zoon af" data-n="zijn zoon de rug toekerende">filium aversatus</span></span>
-<span class="wg" data-wg="18"><span class="lat-word" data-w="contionem" data-l="contio, -onis" data-d="znw., acc. enk." data-s="LV van advocari" data-n="de troepenvergadering">contionem</span>
-<span class="lat-word" data-w="classico" data-l="classicum, -i" data-d="znw., abl. enk." data-s="abl. van middel bij advocari" data-n="met de trompet">classico</span>
-<span class="lat-word" data-w="advocari" data-l="advocare" data-d="inf. praes. pass." data-s="infinitief in de ACI na iussit" data-n="bijeengeroepen worden">advocari</span></span>
-<span class="wg" data-wg="19"><span class="lat-word" data-w="iussit" data-l="iubere" data-d="ww., 3 enk. pf. act." data-s="PV; stuurt ACI aan" data-n="beval">iussit</span>.</span>
+<span class="wg" data-wg="15"><span class="lat-word" data-w="Id" data-l="is, ea, id" data-d="acc. enk. o." data-s="anticiperend LV van audivit" data-n="dit">Id</span>
+<span class="lat-word" data-w="ubi" data-l="ubi" data-d="vgw." data-s="inleider temporele bijzin" data-n="toen">ubi</span>
+<span class="lat-word" data-w="audivit" data-l="audire" data-d="A. ind. perf. 3 enk." data-s="PV in de temporele bijzin" data-n="hoorde">audivit</span>
+<span class="lat-word" data-w="consul" data-l="consul, -ulis" data-d="nom. enk. m." data-s="OND van audivit en iussit" data-n="de consul">consul</span>,</span>
+<span class="wg" data-wg="16"><span class="lat-word" data-w="extemplo" data-l="extemplo" data-d="bijw." data-s="BWB van tijd bij iussit" data-n="onmiddellijk">extemplo</span></span>
+<span class="wg" data-wg="17"><span class="lat-word" data-w="filium aversatus" data-l="filius / aversor" data-d="acc. enk. + P. dep. PPA nom." data-s="dep. part. bij consul: hij wendt zich van zijn zoon af" data-n="zijn zoon de rug toekerende">filium aversatus</span></span>
+<span class="wg" data-wg="18"><span class="lat-word" data-w="contionem" data-l="contio, -onis" data-d="acc. enk. v." data-s="LV van advocari" data-n="de troepenvergadering">contionem</span>
+<span class="lat-word" data-w="classico" data-l="classicum, -i" data-d="abl. enk. o." data-s="abl. van middel bij advocari" data-n="met de trompet">classico</span>
+<span class="lat-word" data-w="advocari" data-l="advocare" data-d="P. inf. praes." data-s="infinitief in de ACI na iussit" data-n="bijeengeroepen worden">advocari</span></span>
+<span class="wg" data-wg="19"><span class="lat-word" data-w="iussit" data-l="iubere" data-d="A. ind. perf. 3 enk." data-s="PV; stuurt ACI aan" data-n="beval">iussit</span>.</span>
 </div>
 
 <div class="latin-para tekst-scheiding">
-<span class="wg" data-wg="20">&#8216;<span class="lat-word" data-w="Quia" data-l="quia" data-d="caus. vgw." data-s="inleider causale bijzin" data-n="omdat">Quia</span>
-<span class="lat-word" data-w="tu" data-l="tu" data-d="pers. vnw., nom. enk." data-s="OND van pugnavisti / solvisti / coegisti" data-n="jij">tu</span>,
-<span class="lat-word" data-w="T. Manli" data-l="T. Manlius" data-d="eigennaam, voc." data-s="roepvorm" data-n="T. Manlius">T. Manli</span>,&#8217;</span>
-<span class="wg" data-wg="21"><span class="lat-word" data-w="inquit" data-l="inquit" data-d="onvolled. ww., 3 enk." data-s="PV van de aanhalingstekenzin" data-n="zei hij">inquit</span>,</span>
-<span class="wg" data-wg="22">&#8216;<span class="lat-word" data-w="neque … neque" data-l="neque" data-d="nev. vgw. (ontkennend)" data-s="dubbele ontkenning: neque imp. … neque maiest." data-n="noch … noch">neque</span>
-<span class="lat-word" data-w="imperium consulare" data-l="imperium / consularis" data-d="znw. + bnw., acc. enk." data-s="LV van veritus es" data-n="het consulaire gezag">imperium consulare</span></span>
-<span class="wg" data-wg="23"><span class="lat-word" data-w="neque maiestatem patriam" data-l="maiestas / patrius" data-d="znw. + bnw., acc. enk." data-s="tweede LV van veritus es" data-n="noch de vaderlandse majesteit">neque maiestatem patriam</span></span>
-<span class="wg" data-wg="24"><span class="lat-word" data-w="veritus es" data-l="vereri" data-d="dep., 2 enk. pf." data-s="PV (causale bijzin); dep. perf. = veritus + es" data-n="hebt jij geëerbiedigd">veritus es</span></span>
-<span class="wg" data-wg="25"><span class="lat-word" data-w="et adversus edictum nostrum" data-l="edictum / noster" data-d="vz. + znw. + vnw., acc. enk." data-s="vz.bep. bij pugnavisti" data-n="en tegen ons bevel in">et adversus edictum nostrum</span></span>
-<span class="wg" data-wg="26"><span class="lat-word" data-w="extra ordinem" data-l="ordo, -inis" data-d="vz. + znw., acc. enk." data-s="vz.bep.: buiten de gelederen" data-n="buiten de gelederen">extra ordinem</span>
-<span class="lat-word" data-w="in hostem" data-l="hostis, -is" data-d="vz. + znw., acc. enk." data-s="richting: tegen de vijand" data-n="tegen de vijand">in hostem</span>
-<span class="lat-word" data-w="pugnavisti" data-l="pugnare" data-d="ww., 2 enk. pf. act." data-s="eerste PV in de quia-bijzin" data-n="heb jij gevochten">pugnavisti</span></span>
-<span class="wg" data-wg="27"><span class="lat-word" data-w="et disciplinam militarem" data-l="disciplina / militaris" data-d="znw. + bnw., acc. enk." data-s="LV van solvisti" data-n="en de krijgstucht">et disciplinam militarem</span>,</span>
-<span class="wg" data-wg="28"><span class="lat-word" data-w="qua stetit" data-l="qui, quae, quod / stare" data-d="betr. vnw. abl. + ww. 3 enk. pf." data-s="rel. bijzin; qua = abl. van middel; antec. = disciplinam" data-n="waardoor overeind gebleven is">qua stetit</span>
-<span class="lat-word" data-w="ad hanc diem" data-l="dies, -ei" data-d="temp. vz.verbinding, acc. enk." data-s="BWB van tijd bij stetit" data-n="tot op deze dag">ad hanc diem</span>
-<span class="lat-word" data-w="Romana res" data-l="res, rei / Romanus" data-d="znw. + bnw., nom. enk." data-s="OND van stetit" data-n="de Romeinse staat">Romana res</span>,</span>
-<span class="wg" data-wg="29"><span class="lat-word" data-w="solvisti" data-l="solvere" data-d="ww., 2 enk. pf. act." data-s="tweede PV in de quia-bijzin" data-n="hebt jij vernietigd">solvisti</span>,</span>
-<span class="wg" data-wg="30"><span class="lat-word" data-w="me in eam necessitatem" data-l="necessitas, -atis" data-d="vnw. acc. + vz.verbinding acc. enk." data-s="LV van coegisti; geconcretiseerd door de ut-bijzin" data-n="mij in die noodzaak">me in eam necessitatem</span></span>
-<span class="wg" data-wg="31"><span class="lat-word" data-w="coegisti" data-l="cogere" data-d="ww., 2 enk. pf. act." data-s="derde PV in de quia-bijzin; stuurt ut-bijzin aan" data-n="heb jij gedwongen">coegisti</span>,</span>
-<span class="wg" data-wg="32"><span class="lat-word" data-w="ut aut" data-l="ut / aut" data-d="vgw. + disj. vgw." data-s="ut leidt consec. bijzin in; aut…aut = ofwel…ofwel" data-n="dat ofwel">ut aut</span>
-<span class="lat-word" data-w="rei publicae" data-l="res publica" data-d="znw. + bnw., gen. enk." data-s="gen. afhankelijk van obliviscerer" data-n="de staat">rei publicae</span>
+<span class="wg" data-wg="20">&#8216;<span class="lat-word" data-w="Quia" data-l="quia" data-d="vgw." data-s="inleider causale bijzin" data-n="omdat">Quia</span>
+<span class="lat-word" data-w="tu" data-l="tu" data-d="nom. enk." data-s="OND van pugnavisti / solvisti / coegisti" data-n="jij">tu</span>,
+<span class="lat-word" data-w="T. Manli" data-l="T. Manlius" data-d="voc. enk. m." data-s="roepvorm" data-n="T. Manlius">T. Manli</span>,&#8217;</span>
+<span class="wg" data-wg="21"><span class="lat-word" data-w="inquit" data-l="inquit" data-d="A. ind. praes. 3 enk." data-s="PV van de aanhalingstekenzin" data-n="zei hij">inquit</span>,</span>
+<span class="wg" data-wg="22">&#8216;<span class="lat-word" data-w="neque … neque" data-l="neque" data-d="vgw." data-s="dubbele ontkenning: neque imp. … neque maiest." data-n="noch … noch">neque</span>
+<span class="lat-word" data-w="imperium consulare" data-l="imperium / consularis" data-d="acc. enk. o." data-s="LV van veritus es" data-n="het consulaire gezag">imperium consulare</span></span>
+<span class="wg" data-wg="23"><span class="lat-word" data-w="neque maiestatem patriam" data-l="maiestas / patrius" data-d="acc. enk. v." data-s="tweede LV van veritus es" data-n="noch de vaderlandse majesteit">neque maiestatem patriam</span></span>
+<span class="wg" data-wg="24"><span class="lat-word" data-w="veritus es" data-l="vereri" data-d="P. dep. ind. perf. 2 enk." data-s="PV (causale bijzin); dep. perf. = veritus + es" data-n="hebt jij geëerbiedigd">veritus es</span></span>
+<span class="wg" data-wg="25"><span class="lat-word" data-w="et adversus edictum nostrum" data-l="edictum / noster" data-d="voorzetselgroep (acc. enk.)" data-s="vz.bep. bij pugnavisti" data-n="en tegen ons bevel in">et adversus edictum nostrum</span></span>
+<span class="wg" data-wg="26"><span class="lat-word" data-w="extra ordinem" data-l="ordo, -inis" data-d="voorzetselgroep (acc. enk.)" data-s="vz.bep.: buiten de gelederen" data-n="buiten de gelederen">extra ordinem</span>
+<span class="lat-word" data-w="in hostem" data-l="hostis, -is" data-d="voorzetselgroep (acc. enk.)" data-s="richting: tegen de vijand" data-n="tegen de vijand">in hostem</span>
+<span class="lat-word" data-w="pugnavisti" data-l="pugnare" data-d="A. ind. perf. 2 enk." data-s="eerste PV in de quia-bijzin" data-n="heb jij gevochten">pugnavisti</span></span>
+<span class="wg" data-wg="27"><span class="lat-word" data-w="et disciplinam militarem" data-l="disciplina / militaris" data-d="acc. enk. v." data-s="LV van solvisti" data-n="en de krijgstucht">et disciplinam militarem</span>,</span>
+<span class="wg" data-wg="28"><span class="lat-word" data-w="qua stetit" data-l="qui, quae, quod / stare" data-d="abl. enk. + A. ind. perf. 3 enk." data-s="rel. bijzin; qua = abl. van middel; antec. = disciplinam" data-n="waardoor overeind gebleven is">qua stetit</span>
+<span class="lat-word" data-w="ad hanc diem" data-l="dies, -ei" data-d="voorzetselgroep (acc. enk.)" data-s="BWB van tijd bij stetit" data-n="tot op deze dag">ad hanc diem</span>
+<span class="lat-word" data-w="Romana res" data-l="res, rei / Romanus" data-d="nom. enk. v." data-s="OND van stetit" data-n="de Romeinse staat">Romana res</span>,</span>
+<span class="wg" data-wg="29"><span class="lat-word" data-w="solvisti" data-l="solvere" data-d="A. ind. perf. 2 enk." data-s="tweede PV in de quia-bijzin" data-n="hebt jij vernietigd">solvisti</span>,</span>
+<span class="wg" data-wg="30"><span class="lat-word" data-w="me in eam necessitatem" data-l="necessitas, -atis" data-d="acc. enk. + voorzetselgroep (acc. enk.)" data-s="LV van coegisti; geconcretiseerd door de ut-bijzin" data-n="mij in die noodzaak">me in eam necessitatem</span></span>
+<span class="wg" data-wg="31"><span class="lat-word" data-w="coegisti" data-l="cogere" data-d="A. ind. perf. 2 enk." data-s="derde PV in de quia-bijzin; stuurt ut-bijzin aan" data-n="heb jij gedwongen">coegisti</span>,</span>
+<span class="wg" data-wg="32"><span class="lat-word" data-w="ut aut" data-l="ut / aut" data-d="vgw. + vgw." data-s="ut leidt consec. bijzin in; aut…aut = ofwel…ofwel" data-n="dat ofwel">ut aut</span>
+<span class="lat-word" data-w="rei publicae" data-l="res publica" data-d="gen. enk." data-s="gen. afhankelijk van obliviscerer" data-n="de staat">rei publicae</span>
 <span class="lat-word" data-w="aut mei meorumque" data-l="ego / meus" data-d="gen. enk. + gen. mv. + -que" data-s="tweede gen. bij obliviscerer; -que coördineert" data-n="ofwel van mijzelf en de mijnen">aut mei meorumque</span></span>
-<span class="wg" data-wg="33"><span class="lat-word" data-w="obliviscerer" data-l="obliviscor" data-d="dep., 1 enk. imperf. conjunct." data-s="PV in de ut-bijzin (consecutief); gen. bij obliviscor" data-n="ik zou vergeten">obliviscerer</span></span>
+<span class="wg" data-wg="33"><span class="lat-word" data-w="obliviscerer" data-l="obliviscor" data-d="P. dep. conj. imperf. 1 enk." data-s="PV in de ut-bijzin (consecutief); gen. bij obliviscor" data-n="ik zou vergeten">obliviscerer</span></span>
 </div>
 
 <div class="latin-para tekst-scheiding">
-<span class="wg" data-wg="34"><span class="lat-word" data-w="Triste exemplum" data-l="tristis / exemplum" data-d="bnw. + znw., nom. enk. n." data-s="OND + predicatief bep." data-n="een treurig voorbeeld">Triste exemplum</span>,</span>
-<span class="wg" data-wg="35"><span class="lat-word" data-w="sed" data-l="sed" data-d="advers. vgw." data-s="verbindt de twee zinnen" data-n="maar">sed</span>
-<span class="lat-word" data-w="in posterum" data-l="posterus" data-d="bnw. als znw., acc. enk." data-s="temp. vz.verbinding" data-n="voor de toekomst">in posterum</span>
-<span class="lat-word" data-w="salubre" data-l="saluber" data-d="bnw., nom. enk. n." data-s="tweede predicatief naast triste" data-n="heilzaam">salubre</span></span>
-<span class="wg" data-wg="36"><span class="lat-word" data-w="iuventuti" data-l="iuventus, -utis" data-d="znw., dat. enk." data-s="datief van voordeel bij salubre" data-n="voor de jeugd">iuventuti</span>
-<span class="lat-word" data-w="erimus" data-l="esse" data-d="ww., 1 mv. fut." data-s="PV (koppelwerkwoord)" data-n="wij zullen zijn">erimus</span>.</span>
+<span class="wg" data-wg="34"><span class="lat-word" data-w="Triste exemplum" data-l="tristis / exemplum" data-d="nom. enk. o." data-s="OND + predicatief bep." data-n="een treurig voorbeeld">Triste exemplum</span>,</span>
+<span class="wg" data-wg="35"><span class="lat-word" data-w="sed" data-l="sed" data-d="vgw." data-s="verbindt de twee zinnen" data-n="maar">sed</span>
+<span class="lat-word" data-w="in posterum" data-l="posterus" data-d="acc. enk. o." data-s="temp. vz.verbinding" data-n="voor de toekomst">in posterum</span>
+<span class="lat-word" data-w="salubre" data-l="saluber" data-d="nom. enk. o." data-s="tweede predicatief naast triste" data-n="heilzaam">salubre</span></span>
+<span class="wg" data-wg="36"><span class="lat-word" data-w="iuventuti" data-l="iuventus, -utis" data-d="dat. enk. v." data-s="datief van voordeel bij salubre" data-n="voor de jeugd">iuventuti</span>
+<span class="lat-word" data-w="erimus" data-l="esse" data-d="A. ind. fut. s. 1 mv." data-s="PV (koppelwerkwoord)" data-n="wij zullen zijn">erimus</span>.</span>
 </div>
 
 <div class="latin-para tekst-scheiding">
-<span class="wg" data-wg="37"><span class="lat-word" data-w="Me quidem" data-l="ego / quidem" data-d="vnw. acc. + partikel" data-s="me = LV van movent; quidem emphatisch" data-n="Mij weliswaar">Me quidem</span></span>
-<span class="wg" data-wg="38"><span class="lat-word" data-w="amor liberorum" data-l="amor / liberi" data-d="znw. nom. + gen. mv." data-s="eerste OND van movent" data-n="de liefde voor kinderen">amor liberorum</span>
-<span class="lat-word" data-w="et virtus tua" data-l="virtus / tuus" data-d="znw. nom. + bnw." data-s="tweede OND van movent" data-n="en jouw dapperheid">et virtus tua</span></span>
-<span class="wg" data-wg="39"><span class="lat-word" data-w="movent" data-l="movere" data-d="ww., 3 mv. praes. act." data-s="PV" data-n="ontroeren">movent</span>,</span>
-<span class="wg" data-wg="40"><span class="lat-word" data-w="sed necesse est" data-l="necesse / esse" data-d="bnw. invar. + ww. 3 enk." data-s="keerpunt; stuurt de dubbele ACI aan" data-n="maar het is noodzakelijk">sed necesse est</span></span>
-<span class="wg" data-wg="41"><span class="lat-word" data-w="aut tua morte" data-l="mors, mortis / tuus" data-d="vz. + vnw. + znw., abl. enk." data-s="abl. van middel bij sanciri" data-n="ofwel door jouw dood">aut tua morte</span>
-<span class="lat-word" data-w="consulum" data-l="consul, -ulis" data-d="znw., gen. mv." data-s="gen. afhankelijk van imperium" data-n="van de consuls">consulum</span></span>
-<span class="wg" data-wg="42"><span class="lat-word" data-w="imperium sanciri" data-l="imperium / sancire" data-d="znw. acc. + inf. praes. pass." data-s="ACI (subj. + inf.) bij necesse est" data-n="het gezag bekrachtigd wordt">imperium sanciri</span></span>
-<span class="wg" data-wg="43"><span class="lat-word" data-w="aut impunitate in perpetuum" data-l="impunitas / perpetuus" data-d="znw. abl. + temp. vz.verbinding" data-s="abl. van middel + tijdsbep. bij abrogari" data-n="ofwel door straffeloosheid voor altijd">aut impunitate in perpetuum</span></span>
-<span class="wg" data-wg="44"><span class="lat-word" data-w="abrogari" data-l="abrogare" data-d="inf. praes. pass." data-s="tweede infinitief van de ACI bij necesse est" data-n="afgeschaft wordt">abrogari</span>.</span>
+<span class="wg" data-wg="37"><span class="lat-word" data-w="Me quidem" data-l="ego / quidem" data-d="acc. enk. + partikel" data-s="me = LV van movent; quidem emphatisch" data-n="Mij weliswaar">Me quidem</span></span>
+<span class="wg" data-wg="38"><span class="lat-word" data-w="amor liberorum" data-l="amor / liberi" data-d="nom. enk. m. + gen. mv. m." data-s="eerste OND van movent" data-n="de liefde voor kinderen">amor liberorum</span>
+<span class="lat-word" data-w="et virtus tua" data-l="virtus / tuus" data-d="nom. enk. v. + bnw." data-s="tweede OND van movent" data-n="en jouw dapperheid">et virtus tua</span></span>
+<span class="wg" data-wg="39"><span class="lat-word" data-w="movent" data-l="movere" data-d="A. ind. praes. 3 mv." data-s="PV" data-n="ontroeren">movent</span>,</span>
+<span class="wg" data-wg="40"><span class="lat-word" data-w="sed necesse est" data-l="necesse / esse" data-d="bnw. invar. + A. ind. praes. 3 enk." data-s="keerpunt; stuurt de dubbele ACI aan" data-n="maar het is noodzakelijk">sed necesse est</span></span>
+<span class="wg" data-wg="41"><span class="lat-word" data-w="aut tua morte" data-l="mors, mortis / tuus" data-d="voorzetselgroep (abl. enk.)" data-s="abl. van middel bij sanciri" data-n="ofwel door jouw dood">aut tua morte</span>
+<span class="lat-word" data-w="consulum" data-l="consul, -ulis" data-d="gen. mv. m." data-s="gen. afhankelijk van imperium" data-n="van de consuls">consulum</span></span>
+<span class="wg" data-wg="42"><span class="lat-word" data-w="imperium sanciri" data-l="imperium / sancire" data-d="acc. + P. inf. praes." data-s="ACI (subj. + inf.) bij necesse est" data-n="het gezag bekrachtigd wordt">imperium sanciri</span></span>
+<span class="wg" data-wg="43"><span class="lat-word" data-w="aut impunitate in perpetuum" data-l="impunitas / perpetuus" data-d="abl. enk. + voorzetselgroep" data-s="abl. van middel + tijdsbep. bij abrogari" data-n="ofwel door straffeloosheid voor altijd">aut impunitate in perpetuum</span></span>
+<span class="wg" data-wg="44"><span class="lat-word" data-w="abrogari" data-l="abrogare" data-d="P. inf. praes." data-s="tweede infinitief van de ACI bij necesse est" data-n="afgeschaft wordt">abrogari</span>.</span>
 </div>
 
 <div class="latin-para tekst-scheiding">
-<span class="wg" data-wg="45"><span class="lat-word" data-w="Nec te quidem" data-l="neque / tu / quidem" data-d="nev. vgw. + vnw. acc. + partikel" data-s="te = OND ACI; quidem emphatisch" data-n="En zelfs jij niet">Nec te quidem</span>
-<span class="lat-word" data-w="recusare" data-l="recusare" data-d="inf. praes. act." data-s="ACI: te recusare na censeo" data-n="te weigeren">recusare</span>
-<span class="lat-word" data-w="censeo" data-l="censere" data-d="ww., 1 enk. praes. act." data-s="PV; stuurt ACI en quin-bijzin aan" data-n="ik oordeel">censeo</span>,</span>
-<span class="wg" data-wg="46"><span class="lat-word" data-w="quin disciplinam militarem" data-l="quin / disciplina / militaris" data-d="vgw. + znw. + bnw., acc. enk." data-s="quin-bijzin na nec…censeo; disc. = LV van restituas" data-n="dat de krijgstucht">quin disciplinam militarem</span></span>
-<span class="wg" data-wg="47"><span class="lat-word" data-w="culpa tua prolapsam" data-l="culpa / tuus / prolabi" data-d="znw. abl. + vnw. + dep. volt. dw., acc. enk." data-s="abl. van oorzaak + dep. part. als bep. bij disc." data-n="die door jouw schuld afgegleden is">culpa tua prolapsam</span></span>
-<span class="wg" data-wg="48"><span class="lat-word" data-w="poena restituas" data-l="poena / restituere" data-d="znw. abl. + ww. 2 enk. praes. conjunct." data-s="abl. van middel + PV in de quin-bijzin" data-n="jij door straf herstelt">poena restituas</span>.</span>
-<span class="wg" data-wg="49"><span class="lat-word" data-w="I, lictor" data-l="ire / lictor" data-d="imper. + voc." data-s="bevel aan de ambtenaaar (lictor); roepvorm" data-n="Ga, lictor">I, lictor</span>,</span>
-<span class="wg" data-wg="50"><span class="lat-word" data-w="deliga ad palum" data-l="deligare / palus" data-d="imper. + vz. + znw., acc. enk." data-s="bevel + BWB van plaats" data-n="bind hem vast aan de paal">deliga ad palum</span>!&#8217;</span>
+<span class="wg" data-wg="45"><span class="lat-word" data-w="Nec te quidem" data-l="neque / tu / quidem" data-d="vgw. + acc. enk. + partikel" data-s="te = OND ACI; quidem emphatisch" data-n="En zelfs jij niet">Nec te quidem</span>
+<span class="lat-word" data-w="recusare" data-l="recusare" data-d="A. inf. praes." data-s="ACI: te recusare na censeo" data-n="te weigeren">recusare</span>
+<span class="lat-word" data-w="censeo" data-l="censere" data-d="A. ind. praes. 1 enk." data-s="PV; stuurt ACI en quin-bijzin aan" data-n="ik oordeel">censeo</span>,</span>
+<span class="wg" data-wg="46"><span class="lat-word" data-w="quin disciplinam militarem" data-l="quin / disciplina / militaris" data-d="vgw. + acc. enk. v." data-s="quin-bijzin na nec…censeo; disc. = LV van restituas" data-n="dat de krijgstucht">quin disciplinam militarem</span></span>
+<span class="wg" data-wg="47"><span class="lat-word" data-w="culpa tua prolapsam" data-l="culpa / tuus / prolabi" data-d="abl. enk. + vnw. + P. dep. PPP acc. enk." data-s="abl. van oorzaak + dep. part. als bep. bij disc." data-n="die door jouw schuld afgegleden is">culpa tua prolapsam</span></span>
+<span class="wg" data-wg="48"><span class="lat-word" data-w="poena restituas" data-l="poena / restituere" data-d="abl. + A. conj. praes. 2 enk." data-s="abl. van middel + PV in de quin-bijzin" data-n="jij door straf herstelt">poena restituas</span>.</span>
+<span class="wg" data-wg="49"><span class="lat-word" data-w="I, lictor" data-l="ire / lictor" data-d="imp. + voc." data-s="bevel aan de ambtenaaar (lictor); roepvorm" data-n="Ga, lictor">I, lictor</span>,</span>
+<span class="wg" data-wg="50"><span class="lat-word" data-w="deliga ad palum" data-l="deligare / palus" data-d="imp. + vz. + znw. acc. enk." data-s="bevel + BWB van plaats" data-n="bind hem vast aan de paal">deliga ad palum</span>!&#8217;</span>
 </div>
 
   </div><!-- /plain-view -->
@@ -595,7 +582,7 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
     <div class="ac-empty">Klik op een woord voor grammaticahulp.</div>
   </div>
   <div class="panel-card" id="sidePanelVertaling">
-    <h3>Vertaling</h3>
+    <h3 style="color:var(--magenta);">Vertaling</h3>
     <div class="vertaling-tekst" id="vertaalTekst"></div>
   </div>
   <div class="panel-card">
@@ -775,26 +762,23 @@ function filterWL(tekst) {
 function renderWLData(list) {
   var el = document.getElementById('wlTable');
   if (!el) return;
-  var html = '<table style="width:100%;border-collapse:collapse;font-family:\'Lufga\',sans-serif;font-size:.82rem;">';
-  html += '<thead><tr style="border-bottom:2px solid var(--rule);text-align:left;">'
-    + '<th style="padding:.4rem .5rem .4rem 0;color:var(--ink-light);font-weight:600;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;">#</th>'
-    + '<th style="padding:.4rem .5rem;color:var(--ink-light);font-weight:600;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;">Grondvorm</th>'
-    + '<th style="padding:.4rem .5rem;color:var(--ink-light);font-weight:600;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;">Aanvullingen</th>'
-    + '<th style="padding:.4rem 0 .4rem .5rem;color:var(--ink-light);font-weight:600;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;">Vertaling</th>'
-    + '</tr></thead><tbody>';
+  var html = '<div style="background:#fff;border:0.5px solid var(--rule);border-radius:12px;overflow:hidden;">';
   list.forEach(function(w, i) {
-    var bg = (i % 2 === 0) ? '' : 'background:rgba(19,66,127,.025);';
-    html += '<tr style="border-bottom:1px solid var(--rule);' + bg + '">'
-      + '<td style="padding:.38rem .5rem .38rem 0;color:var(--ink-light);font-size:.65rem;">' + (i+1) + '</td>'
-      + '<td style="padding:.38rem .5rem;">'
-        + '<span style="font-family:\'EB Garamond\',Georgia,serif;font-size:1rem;font-weight:600;color:var(--blue);">' + w.g + '</span>'
-        + (w.b ? ' <span style="display:inline-block;font-size:.55rem;font-weight:700;padding:.03rem .28rem;border-radius:8px;background:#eef3fa;color:var(--blue);text-transform:uppercase;vertical-align:middle;">basis</span>' : '')
-      + '</td>'
-      + '<td style="padding:.38rem .5rem;color:var(--ink-light);font-size:.75rem;">' + (w.a || '—') + '</td>'
-      + '<td style="padding:.38rem 0 .38rem .5rem;color:var(--ink-mid);">' + w.v + '</td>'
-      + '</tr>';
+    var isLast = (i === list.length - 1);
+    var borderB = isLast ? '' : 'border-bottom:0.5px solid var(--rule);';
+    var latColor = w.b ? 'var(--magenta)' : 'var(--ink)';
+    html += '<div style="display:flex;align-items:center;gap:14px;padding:11px 16px;' + borderB + '">'
+      + '<span style="font-family:\'Lufga\',sans-serif;font-size:12px;color:var(--ink-light);width:28px;flex-shrink:0;text-align:right;">' + (i+1) + '</span>'
+      + '<span style="width:18px;height:18px;border-radius:50%;border:1.5px solid var(--rule);flex-shrink:0;display:inline-block;"></span>'
+      + '<span style="flex:1;min-width:0;">'
+        + '<span style="font-family:\'Lufga\',sans-serif;font-size:14px;font-weight:500;color:' + latColor + ';">' + w.g + '</span>'
+        + (w.a ? '<span style="font-family:\'Lufga\',sans-serif;font-size:12px;color:var(--ink-light);margin-left:.5rem;">' + w.a + '</span>' : '')
+      + '</span>'
+      + '<span style="font-family:\'Lufga\',sans-serif;font-size:13px;color:var(--ink);flex:1.2;text-align:left;">' + w.v + '</span>'
+      + '<span style="font-size:16px;color:#d1d5db;flex-shrink:0;padding:2px 4px;line-height:1;">&#9734;</span>'
+      + '</div>';
   });
-  html += '</tbody></table>';
+  html += '</div>';
   el.innerHTML = html;
 }
 
@@ -882,17 +866,22 @@ function showPopup(el, click) {
 
   var info = click === 1 ? el.dataset.d : el.dataset.s;
   var tagClass = click === 1 ? 'tg' : 'to';
-  var tagLabel = click === 1 ? 'Grammatica' : 'Functie';
+  var tagLabel = click === 1 ? 'Det.' : 'Funct.';
   var html = '<div class="wp-row"><span class="wp-tag ' + tagClass + '">' + tagLabel + '</span><span class="wp-val">' + info + '</span></div>';
 
   // Add NL from data-n
   html += '<div class="wp-row" style="margin-top:.25rem"><span class="wp-tag tp">NL</span><span class="wp-val">' + el.dataset.n + '</span></div>';
 
-  // Add woordenlijst entry if found
+  // Add woordenlijst entry if found — weergave conform woordjestrainer
   if (wl) {
     html += '<hr class="wp-sep">';
-    html += '<div class="wp-row"><span class="wp-tag tw">&#128218;</span><span class="wp-val" style="color:var(--ink-mid);">' + wl.v + '</span></div>';
-    if (wl.a) html += '<div style="font-size:.66rem;color:var(--ink-light);margin-top:.15rem;padding-left:.05rem;">' + wl.a + '</div>';
+    var isBasis = wl.b;
+    var grondvorm = '<span style="font-family:\'EB Garamond\',Georgia,serif;font-size:1rem;font-weight:600;color:' + (isBasis ? 'var(--magenta)' : 'var(--blue)') + ';">' + wl.g + '</span>';
+    if (isBasis) grondvorm += ' <span style="display:inline-block;font-size:.55rem;font-weight:700;padding:.03rem .28rem;border-radius:8px;background:#fce4f1;color:var(--magenta);text-transform:uppercase;vertical-align:middle;">basis</span>';
+    html += '<div class="wp-row"><span class="wp-tag tw">&#128218;</span><div>' + grondvorm;
+    if (wl.a) html += '<div style="font-size:.66rem;color:var(--ink-light);margin-top:.1rem;">' + wl.a + '</div>';
+    html += '<div style="font-size:.78rem;color:var(--ink-mid);margin-top:.15rem;">' + wl.v + '</div>';
+    html += '</div></div>';
   }
 
   document.getElementById('ppContent').innerHTML = html;
@@ -914,13 +903,20 @@ function hidePopup() { popup.classList.remove('vis'); }
 
 function updatePanel(w) {
   var wl = lookupWL(w.dataset.l);
-  var wlHtml = wl
-    ? '<div class="ac-row" style="margin-top:.4rem"><span class="ac-tag tw">&#128218;</span><span class="ac-val">' + wl.v + (wl.a ? '<br><span style="font-size:.66rem;color:var(--ink-light);">' + wl.a + '</span>' : '') + '</span></div>'
-    : '';
+  var wlHtml = '';
+  if (wl) {
+    var isBasis = wl.b;
+    var grondvorm = '<span style="font-family:\'EB Garamond\',Georgia,serif;font-size:1rem;font-weight:600;color:' + (isBasis ? 'var(--magenta)' : 'var(--blue)') + ';">' + wl.g + '</span>';
+    if (isBasis) grondvorm += ' <span style="display:inline-block;font-size:.55rem;font-weight:700;padding:.03rem .28rem;border-radius:8px;background:#fce4f1;color:var(--magenta);text-transform:uppercase;vertical-align:middle;">basis</span>';
+    wlHtml = '<div class="ac-row" style="margin-top:.4rem"><span class="ac-tag tw">&#128218;</span><div>' + grondvorm
+      + (wl.a ? '<div style="font-size:.66rem;color:var(--ink-light);margin-top:.1rem;">' + wl.a + '</div>' : '')
+      + '<div style="font-size:.78rem;color:var(--ink-mid);margin-top:.15rem;">' + wl.v + '</div>'
+      + '</div></div>';
+  }
   document.getElementById('analysisCard').innerHTML =
     '<div class="ac-word">' + w.dataset.w + '</div>' +
     '<div class="ac-lemma">' + (w.dataset.l||'') + '</div>' +
-    '<div class="ac-row"><span class="ac-tag tg">Gram.</span><span class="ac-val">' + w.dataset.d + '</span></div>' +
+    '<div class="ac-row"><span class="ac-tag tg">Det.</span><span class="ac-val">' + w.dataset.d + '</span></div>' +
     '<div class="ac-row" style="margin-top:.3rem"><span class="ac-tag to">Funct.</span><span class="ac-val">' + w.dataset.s + '</span></div>' +
     '<div class="ac-row" style="margin-top:.3rem"><span class="ac-tag tp">NL</span><span class="ac-val">' + w.dataset.n + '</span></div>' +
     wlHtml;
@@ -1008,7 +1004,8 @@ function toggleInterlin() {
 }
 function toggleTwocol() {
   S.twocol = !S.twocol;
-  document.getElementById('btnTwocol').classList.toggle('active', S.twocol);
+  var btn = document.getElementById('btnTwocol');
+  if (btn) btn.classList.toggle('active', S.twocol);
   document.body.classList.toggle('twocol', S.twocol);
   if (S.twocol) renderVertaling();
 }
