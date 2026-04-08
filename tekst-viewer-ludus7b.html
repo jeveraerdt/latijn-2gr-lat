@@ -33,6 +33,17 @@ body{background:var(--bg);font-family:'EB Garamond',Georgia,serif;color:var(--in
 .ctrl-btn.active{background:var(--blue);border-color:var(--blue);color:#fff;}
 .ctrl-btn svg{width:12px;height:12px;flex-shrink:0;}
 
+/* WEERGAVE DROPDOWN */
+.weergave-wrap{position:relative;}
+.weergave-menu{display:none;position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:1.5px solid rgba(19,66,127,.18);border-radius:12px;box-shadow:0 6px 24px rgba(19,66,127,.13);z-index:400;min-width:160px;padding:.35rem 0;overflow:hidden;}
+.weergave-menu.open{display:block;animation:fadeUp .12s ease both;}
+.weergave-item{display:flex;align-items:center;gap:.45rem;width:100%;background:none;border:none;padding:.45rem .9rem;font-family:'Lufga',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);cursor:pointer;transition:background .12s,color .12s;white-space:nowrap;}
+.weergave-item:hover{background:#eef3fa;}
+.weergave-item.active{color:var(--magenta);}
+.weergave-item svg{width:12px;height:12px;flex-shrink:0;}
+.weergave-chevron{transition:transform .18s;}
+#btnWeergave.open .weergave-chevron{transform:rotate(180deg);}
+
 /* PROGRESS */
 .rp{position:fixed;top:50px;left:0;right:0;height:2px;z-index:199;}
 .rp-fill{height:100%;background:var(--magenta);width:0%;transition:width .12s linear;}
@@ -53,13 +64,27 @@ body.twocol .side-panel{display:flex!important;flex-direction:column;gap:1rem;pa
 
 /* CONTEXT */
 .context-block{background:linear-gradient(135deg,#eef3fa,#f5f0fb);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;padding:1rem 1.3rem;margin-bottom:2rem;font-family:'Lufga',sans-serif;font-size:.86rem;line-height:1.65;color:#2a3a5e;animation:fadeUp .5s .07s ease both;}
-.context-block strong{display:block;font-size:.68rem;letter-spacing:.11em;text-transform:uppercase;color:var(--blue);margin-bottom:.35rem;font-weight:600;}
+.context-block strong{display:block;font-family:'Lufga',sans-serif;font-size:.68rem;letter-spacing:.11em;text-transform:uppercase;color:var(--magenta);margin-bottom:.25rem;font-weight:600;}
+.context-subtitel{display:block;font-family:'EB Garamond',Georgia,serif;font-style:italic;font-size:.88rem;color:#888;margin-bottom:.5rem;}
 
 /* PILLS */
 .link-strip{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem;animation:fadeUp .5s .12s ease both;}
 .link-pill{font-family:'Lufga',sans-serif;font-size:.7rem;font-weight:500;letter-spacing:.04em;padding:.38rem .85rem;border-radius:20px;border:1.5px solid var(--rule);background:var(--paper);color:var(--ink-light);cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:.35rem;text-decoration:none;}
 .link-pill:hover{border-color:var(--blue);color:var(--blue);background:#eef3fa;}
 .link-pill svg{width:11px;height:11px;}
+button.link-pill{font-size:.7rem;font-weight:500;font-family:'Lufga',sans-serif;letter-spacing:.04em;cursor:pointer;}
+
+/* KAART MODAL */
+.kaart-modal-overlay{display:none;position:fixed;inset:0;background:rgba(19,66,127,.18);backdrop-filter:blur(2px);z-index:800;align-items:center;justify-content:center;}
+.kaart-modal-overlay.open{display:flex;animation:fadeUp .18s ease both;}
+.kaart-modal{background:var(--paper);border:1.5px solid var(--rule);border-radius:14px;box-shadow:0 16px 48px rgba(19,66,127,.22);width:min(680px,92vw);max-height:80vh;display:flex;flex-direction:column;overflow:hidden;}
+.kaart-modal-header{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.25rem;border-bottom:1px solid var(--rule);}
+.kaart-modal-title{font-family:'Lufga',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);}
+.kaart-modal-close{background:none;border:none;cursor:pointer;color:var(--ink-light);padding:.2rem;border-radius:6px;display:flex;transition:color .12s;}
+.kaart-modal-close:hover{color:var(--blue);}
+.kaart-modal-close svg{width:15px;height:15px;}
+.kaart-modal-body{padding:1.5rem;overflow-y:auto;}
+.kaart-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:220px;border:2px dashed rgba(19,66,127,.15);border-radius:10px;color:var(--ink-light);font-family:'Lufga',sans-serif;font-size:.82rem;}
 
 /* LATIN TEXT */
 .latin-text{font-size:var(--fs);line-height:var(--lh);animation:fadeUp .5s .18s ease both;}
@@ -113,6 +138,9 @@ body.interlin .lat-word .iln{
   font-size:.52em;color:var(--magenta);line-height:1.1;
   text-align:center;pointer-events:none;white-space:nowrap;
 }
+
+/* TEKSTSCHEIDING */
+.latin-para.tekst-scheiding{border-top:1px solid #ddd;margin-top:1.5em;padding-top:1.5em;}
 
 /* LINE NUMBERS */
 .numbered-view{display:none;}
@@ -323,14 +351,23 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8s2.5-5 6-5 6 5 6 5-2.5 5-6 5-6-5-6-5z"/><circle cx="8" cy="8" r="2"/></svg>
       Onthul
     </button>
-    <button class="ctrl-btn" id="btnLines" onclick="toggleLines()">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h12M2 8h12M2 12h8"/></svg>
-      Regelnrs
-    </button>
-    <button class="ctrl-btn" id="btnInterlin" onclick="toggleInterlin()">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5h12M2 10h12"/></svg>
-      Interlineair
-    </button>
+    <div class="weergave-wrap" id="weergaveWrap">
+      <button class="ctrl-btn" id="btnWeergave" onclick="toggleWeergaveMenu(event)">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h12M2 8h8M2 12h5"/></svg>
+        Weergave
+        <svg class="weergave-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:9px;height:9px;margin-left:1px"><path d="M4 6l4 4 4-4"/></svg>
+      </button>
+      <div class="weergave-menu" id="weergaveMenu">
+        <button class="weergave-item" id="btnLines" onclick="toggleLines()">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h12M2 8h12M2 12h8"/></svg>
+          Regelnummers
+        </button>
+        <button class="weergave-item" id="btnInterlin" onclick="toggleInterlin()">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5h12M2 10h12"/></svg>
+          Interlineair
+        </button>
+      </div>
+    </div>
     <button class="ctrl-btn" id="btnTwocol" onclick="toggleTwocol()">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="6" height="10" rx="1"/><rect x="9" y="3" width="6" height="10" rx="1"/></svg>
       Tweekolom
@@ -351,28 +388,47 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
     <div class="text-sub">naar Livius, <em>Ab Urbe Condita</em> VIII, 7–8 · T. Manlius Torquatus en zijn zoon</div>
   </div>
 
-  <div class="context-block">
+  <div class="context-block" data-subtitel="Historische achtergrond">
     <strong>Context</strong>
+    <span class="context-subtitel">Historische achtergrond</span>
     Tijdens de Tweede Samnitische Oorlog verbood consul T. Manlius Torquatus zijn soldaten strikt om buiten de gelederen te vechten. Zijn eigen zoon daagde desondanks een vijandelijke ruiter uit, overwon hem en bracht de buit triomfantelijk naar zijn vader. De consul stond voor een onontkoombare keuze: vaderliefde of staatsgezag.
   </div>
 
   <div class="link-strip">
     <a class="link-pill" href="#woordenlijst-sectie">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h8M4 5h5M4 11h6"/></svg>
-      Woordenlijst
+      Woordenlijst van deze tekst
     </a>
     <a class="link-pill" href="#">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M6 6h4M6 10h2"/></svg>
       Grammatica
     </a>
-    <a class="link-pill" href="#">
+    <button class="link-pill" onclick="openKaartModal()">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
       Historische kaart
-    </a>
+    </button>
     <a class="link-pill" href="#">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l6 4 6-4M2 4v8h12V4"/></svg>
       Oefeningen
     </a>
+  </div>
+
+  <!-- KAART MODAL -->
+  <div class="kaart-modal-overlay" id="kaartModalOverlay" onclick="closeKaartModal()">
+    <div class="kaart-modal" onclick="event.stopPropagation()">
+      <div class="kaart-modal-header">
+        <span class="kaart-modal-title">Historische kaart</span>
+        <button class="kaart-modal-close" onclick="closeKaartModal()">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+        </button>
+      </div>
+      <div class="kaart-modal-body">
+        <div class="kaart-placeholder">
+          <svg viewBox="0 0 48 48" fill="none" stroke="rgba(19,66,127,.2)" stroke-width="1.5" style="width:48px;height:48px;margin-bottom:1rem"><rect x="4" y="8" width="40" height="32" rx="3"/><path d="M4 20l10-6 8 8 8-5 14 9"/><circle cx="34" cy="15" r="3"/></svg>
+          <p>Kaart wordt hier getoond</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="reveal-bar" id="revealBar">
@@ -414,7 +470,7 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
 <span class="wg" data-wg="14"><span class="lat-word" data-w="ferrent" data-l="ferre" data-d="ww., 3 mv. imperf. conjunct." data-s="PV in de finale bijzin na ut" data-n="zouden vertellen">ferrent</span>.&#8217;</span>
 </div>
 
-<div class="latin-para">
+<div class="latin-para tekst-scheiding">
 <span class="wg" data-wg="15"><span class="lat-word" data-w="Id" data-l="is, ea, id" data-d="aanw. vnw., acc. enk. n." data-s="anticiperend LV van audivit" data-n="dit">Id</span>
 <span class="lat-word" data-w="ubi" data-l="ubi" data-d="temp. vgw." data-s="inleider temporele bijzin" data-n="toen">ubi</span>
 <span class="lat-word" data-w="audivit" data-l="audire" data-d="ww., 3 enk. pf. act." data-s="PV in de temporele bijzin" data-n="hoorde">audivit</span>
@@ -427,7 +483,7 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
 <span class="wg" data-wg="19"><span class="lat-word" data-w="iussit" data-l="iubere" data-d="ww., 3 enk. pf. act." data-s="PV; stuurt ACI aan" data-n="beval">iussit</span>.</span>
 </div>
 
-<div class="latin-para">
+<div class="latin-para tekst-scheiding">
 <span class="wg" data-wg="20">&#8216;<span class="lat-word" data-w="Quia" data-l="quia" data-d="caus. vgw." data-s="inleider causale bijzin" data-n="omdat">Quia</span>
 <span class="lat-word" data-w="tu" data-l="tu" data-d="pers. vnw., nom. enk." data-s="OND van pugnavisti / solvisti / coegisti" data-n="jij">tu</span>,
 <span class="lat-word" data-w="T. Manli" data-l="T. Manlius" data-d="eigennaam, voc." data-s="roepvorm" data-n="T. Manlius">T. Manli</span>,&#8217;</span>
@@ -453,7 +509,7 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
 <span class="wg" data-wg="33"><span class="lat-word" data-w="obliviscerer" data-l="obliviscor" data-d="dep., 1 enk. imperf. conjunct." data-s="PV in de ut-bijzin (consecutief); gen. bij obliviscor" data-n="ik zou vergeten">obliviscerer</span></span>
 </div>
 
-<div class="latin-para">
+<div class="latin-para tekst-scheiding">
 <span class="wg" data-wg="34"><span class="lat-word" data-w="Triste exemplum" data-l="tristis / exemplum" data-d="bnw. + znw., nom. enk. n." data-s="OND + predicatief bep." data-n="een treurig voorbeeld">Triste exemplum</span>,</span>
 <span class="wg" data-wg="35"><span class="lat-word" data-w="sed" data-l="sed" data-d="advers. vgw." data-s="verbindt de twee zinnen" data-n="maar">sed</span>
 <span class="lat-word" data-w="in posterum" data-l="posterus" data-d="bnw. als znw., acc. enk." data-s="temp. vz.verbinding" data-n="voor de toekomst">in posterum</span>
@@ -462,7 +518,7 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
 <span class="lat-word" data-w="erimus" data-l="esse" data-d="ww., 1 mv. fut." data-s="PV (koppelwerkwoord)" data-n="wij zullen zijn">erimus</span>.</span>
 </div>
 
-<div class="latin-para">
+<div class="latin-para tekst-scheiding">
 <span class="wg" data-wg="37"><span class="lat-word" data-w="Me quidem" data-l="ego / quidem" data-d="vnw. acc. + partikel" data-s="me = LV van movent; quidem emphatisch" data-n="Mij weliswaar">Me quidem</span></span>
 <span class="wg" data-wg="38"><span class="lat-word" data-w="amor liberorum" data-l="amor / liberi" data-d="znw. nom. + gen. mv." data-s="eerste OND van movent" data-n="de liefde voor kinderen">amor liberorum</span>
 <span class="lat-word" data-w="et virtus tua" data-l="virtus / tuus" data-d="znw. nom. + bnw." data-s="tweede OND van movent" data-n="en jouw dapperheid">et virtus tua</span></span>
@@ -475,7 +531,7 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
 <span class="wg" data-wg="44"><span class="lat-word" data-w="abrogari" data-l="abrogare" data-d="inf. praes. pass." data-s="tweede infinitief van de ACI bij necesse est" data-n="afgeschaft wordt">abrogari</span>.</span>
 </div>
 
-<div class="latin-para">
+<div class="latin-para tekst-scheiding">
 <span class="wg" data-wg="45"><span class="lat-word" data-w="Nec te quidem" data-l="neque / tu / quidem" data-d="nev. vgw. + vnw. acc. + partikel" data-s="te = OND ACI; quidem emphatisch" data-n="En zelfs jij niet">Nec te quidem</span>
 <span class="lat-word" data-w="recusare" data-l="recusare" data-d="inf. praes. act." data-s="ACI: te recusare na censeo" data-n="te weigeren">recusare</span>
 <span class="lat-word" data-w="censeo" data-l="censere" data-d="ww., 1 enk. praes. act." data-s="PV; stuurt ACI en quin-bijzin aan" data-n="ik oordeel">censeo</span>,</span>
@@ -972,6 +1028,34 @@ function toggleFont() {
   document.getElementById('btnFont').classList.toggle('active', S.font);
   document.body.classList.toggle('font-lg', S.font);
 }
+
+/* KAART MODAL */
+function openKaartModal()  { document.getElementById('kaartModalOverlay').classList.add('open'); }
+function closeKaartModal() { document.getElementById('kaartModalOverlay').classList.remove('open'); }
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeKaartModal(); });
+
+/* WEERGAVE DROPDOWN */
+function toggleWeergaveMenu(e) {
+  e.stopPropagation();
+  var menu = document.getElementById('weergaveMenu');
+  var btn  = document.getElementById('btnWeergave');
+  var open = menu.classList.toggle('open');
+  btn.classList.toggle('open', open);
+}
+document.addEventListener('click', function(e) {
+  var menu = document.getElementById('weergaveMenu');
+  var btn  = document.getElementById('btnWeergave');
+  if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+  }
+});
+
+/* Sync active state inside dropdown */
+var _origToggleLines = toggleLines;
+toggleLines = function() { _origToggleLines(); document.getElementById('btnLines').classList.toggle('active', S.lines); };
+var _origToggleInterlin = toggleInterlin;
+toggleInterlin = function() { _origToggleInterlin(); document.getElementById('btnInterlin').classList.toggle('active', S.interlin); };
 
 /* Scroll */
 window.addEventListener('scroll', function() {
