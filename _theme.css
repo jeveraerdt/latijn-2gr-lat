@@ -1,0 +1,372 @@
+/* 
+  athena Campus Pottelberg — Latijn/Grieks Oefensite
+  Centraal CSS Thema — 2026-04-09
+  Variabelen, layout, huisstijl, responsive
+*/
+
+:root {
+  /* KLEURENPALETTE */
+  --blauw: #13427f;
+  --roze: #E6007E;
+  --magenta: #E6007E;
+  --grijs-donker: #1a1a1a;
+  --grijs-medium: #6b7280;
+  --achtergrond: #f7f8fa;
+  --wit: #ffffff;
+  --rand: #e2e6ed;
+  
+  /* FONTS */
+  --fv: 'Lufga', Arial, sans-serif;
+  --fo: 'Aptos', Arial, sans-serif;
+  
+  /* SPACING & RADIUS */
+  --radius: 12px;
+  --radius-sm: 8px;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-xxl: 3.5rem;
+  
+  /* KLEURBAKKEN (icon backgrounds) */
+  --icoon-blauw: #e6f0fb;
+  --icoon-roze: #fce8f3;
+  --icoon-groen: #e8f5e9;
+  --icoon-amber: #fff8e1;
+  --icoon-paars: #ede7f6;
+  
+  /* TEKST */
+  --tekst-groot: 38px;
+  --tekst-medium: 15px;
+  --tekst-klein: 13px;
+  --tekst-xklein: 12px;
+  --tekst-hoofdstuk: 16px;
+}
+
+/* ====== RESET & BASE ====== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fv);
+  background: var(--achtergrond);
+  color: var(--grijs-donker);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ====== TYPOGRAFIE ====== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fv);
+  font-weight: 600;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ====== HERO SECTION ====== */
+
+.hero {
+  width: 100%;
+  position: relative;
+  background: var(--blauw);
+  color: white;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  min-height: 280px;
+}
+
+.hero-inhoud {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.hero .ondertitel {
+  font-size: var(--tekst-klein);
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--fo);
+  letter-spacing: 0.3px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.hero-beschrijving {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--fo);
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+.hero-afbeelding {
+  flex: 0 0 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+}
+
+.hero-afbeelding img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius);
+  padding: var(--spacing-md);
+}
+
+.hero-afbeelding svg {
+  width: 200px;
+  height: 200px;
+  opacity: 0.9;
+}
+
+.school-logo {
+  width: 44px;
+  height: auto;
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* HERO VARIATIES */
+
+.hero--home {
+  flex-direction: column;
+  text-align: center;
+  min-height: auto;
+  padding: var(--spacing-xxl) var(--spacing-lg) 3rem;
+  background: transparent;
+  color: var(--grijs-donker);
+}
+
+.hero--home h1 {
+  color: var(--blauw);
+  font-size: var(--tekst-groot);
+}
+
+.hero--home .ondertitel {
+  color: var(--blauw);
+}
+
+.hero--grammatica,
+.hero--oefeningen,
+.hero--woordjestrainer,
+.hero--cultuur,
+.hero--teksten {
+  background: var(--blauw);
+}
+
+.hero--grammatica h1,
+.hero--oefeningen h1,
+.hero--woordjestrainer h1,
+.hero--cultuur h1,
+.hero--teksten h1 {
+  color: white;
+  font-size: 32px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    min-height: auto;
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+  
+  .hero-afbeelding {
+    flex: 0 0 200px;
+    height: 200px;
+  }
+  
+  .hero-afbeelding svg {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .hero h1 {
+    font-size: 24px;
+  }
+}
+
+/* ====== NAVIGATIE ====== */
+
+.terug-wrap {
+  padding: 1.25rem var(--spacing-lg) 0;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.terug-link {
+  font-size: var(--tekst-xklein);
+  color: var(--grijs-medium);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.terug-link:hover {
+  color: var(--blauw);
+}
+
+.nav-wrap {
+  flex: 1;
+  padding: var(--spacing-md) var(--spacing-lg) 3rem;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.nav-tegel {
+  background: var(--wit);
+  border: 0.5px solid var(--rand);
+  border-radius: var(--radius);
+  padding: var(--spacing-md) 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.15s, transform 0.15s;
+  cursor: pointer;
+}
+
+.nav-tegel:hover {
+  border-color: var(--blauw);
+  transform: translateY(-2px);
+}
+
+.nav-tegel-icoon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nav-tegel-icoon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.icoon-blauw {
+  background: var(--icoon-blauw);
+}
+
+.icoon-roze {
+  background: var(--icoon-roze);
+}
+
+.icoon-groen {
+  background: var(--icoon-groen);
+}
+
+.icoon-amber {
+  background: var(--icoon-amber);
+}
+
+.icoon-paars {
+  background: var(--icoon-paars);
+}
+
+.nav-tegel-naam {
+  font-size: var(--tekst-medium);
+  font-weight: 600;
+  color: var(--blauw);
+}
+
+.nav-tegel-omschrijving {
+  font-family: var(--fo);
+  font-size: var(--tekst-klein);
+  color: var(--grijs-medium);
+  line-height: 1.5;
+}
+
+.nav-tegel-pijl {
+  margin-top: auto;
+  font-size: 18px;
+  color: var(--rand);
+  transition: color 0.15s;
+}
+
+.nav-tegel:hover .nav-tegel-pijl {
+  color: var(--blauw);
+}
+
+/* ====== FOOTER ====== */
+
+.voet {
+  text-align: center;
+  padding: 1rem;
+  font-family: var(--fo);
+  font-size: var(--tekst-xklein);
+  color: #c0c8d4;
+}
+
+/* ====== RESPONSIVE ====== */
+
+@media (max-width: 768px) {
+  .hero-inhoud {
+    padding: var(--spacing-xl) var(--spacing-md) 2rem;
+  }
+  
+  .hero h1 {
+    font-size: 28px;
+  }
+  
+  .nav-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nav-wrap {
+    padding: var(--spacing-md) var(--spacing-md) 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-inhoud {
+    padding: var(--spacing-lg) var(--spacing-md) 1.5rem;
+  }
+  
+  .hero h1 {
+    font-size: 24px;
+  }
+  
+  .nav-tegel {
+    padding: 1rem;
+  }
+}
