@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zeus, Hera en hun kinderen</title>
+<link href="https://fonts.cdnfonts.com/css/lufga" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blauw:#13427f;--magenta:#E6007E;--lichtblauw:#e8f0fb;--lichtmagenta:#fde8f3;
+    --grijs:#f5f5f5;--tekst:#1a1a2e;--rand:#d0d8e8;--groen:#1a8a4a;
+    --lichtgroen:#e8f7ef;--geel:#fffbe6;--geelrand:#e8c800;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Lufga','Aptos',Arial,sans-serif;background:var(--grijs);color:var(--tekst);min-height:100vh;}
+  .site-header{background:var(--blauw);color:white;padding:0 32px;display:flex;align-items:center;gap:14px;height:60px;box-shadow:0 2px 10px rgba(19,66,127,.2);}
+  .site-header .icon{font-size:1.5rem;}
+  .site-header h1{font-size:1.05rem;font-weight:700;color:white;}
+  .site-header .sub{font-size:.72rem;opacity:.65;letter-spacing:.06em;text-transform:uppercase;}
+  .hero{background:linear-gradient(135deg,var(--blauw) 0%,#1a5a9e 55%,#0d2d54 100%);color:white;padding:36px 32px 28px;position:relative;overflow:hidden;}
+  .hero::before{content:'Ζεύς';position:absolute;right:24px;top:8px;font-family:'EB Garamond',serif;font-size:6rem;opacity:.08;color:white;pointer-events:none;}
+  .hero-inner{max-width:860px;margin:auto;display:flex;gap:28px;align-items:center;}
+  .hero-text h2{font-size:1.7rem;font-weight:700;margin-bottom:6px;line-height:1.2;}
+  .hero-text h2 span{color:var(--magenta);}
+  .hero-text p{font-size:.9rem;opacity:.82;max-width:500px;line-height:1.55;}
+  .hero-img{flex-shrink:0;width:100px;height:128px;border-radius:6px;overflow:hidden;border:3px solid rgba(255,255,255,.22);box-shadow:0 8px 20px rgba(0,0,0,.28);}
+  .hero-img img{width:100%;height:100%;object-fit:cover;object-position:top;}
+  .leerdoelen-banner{background:var(--blauw);border-bottom:3px solid var(--magenta);padding:9px 32px;}
+  .leerdoelen-inner{max-width:860px;margin:auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .leerdoelen-label{font-size:.7rem;font-weight:700;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;}
+  .doel-pill{background:rgba(255,255,255,.12);color:white;font-size:.74rem;padding:3px 9px;border-radius:20px;border:1px solid rgba(255,255,255,.2);}
+  .tabs{background:white;border-bottom:2px solid var(--rand);display:flex;position:sticky;top:0;z-index:10;box-shadow:0 2px 6px rgba(0,0,0,.06);}
+  .tab-btn{padding:12px 22px;font-size:.85rem;font-weight:600;border:none;background:none;cursor:pointer;color:#666;border-bottom:3px solid transparent;transition:all .2s;display:flex;flex-direction:column;align-items:flex-start;gap:2px;font-family:inherit;}
+  .tab-btn:hover{color:var(--blauw);background:var(--lichtblauw);}
+  .tab-btn.active{color:var(--blauw);border-bottom-color:var(--magenta);background:var(--lichtblauw);}
+  .tab-hint{font-size:.68rem;font-weight:400;opacity:.6;}
+  .main{max-width:860px;margin:0 auto;padding:22px 20px 60px;}
+  .mode-panel{display:none;}
+  .mode-panel.active{display:block;animation:fadeIn .25s ease;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(5px);}to{opacity:1;transform:none;}}
+  .card{background:white;border-radius:10px;border:1px solid var(--rand);padding:22px;margin-bottom:15px;box-shadow:0 1px 5px rgba(19,66,127,.06);}
+  .card-title{font-size:.75rem;font-weight:700;color:var(--blauw);text-transform:uppercase;letter-spacing:.06em;margin-bottom:13px;display:flex;align-items:center;gap:7px;}
+  .card-title::after{content:'';flex:1;height:1px;background:var(--rand);margin-left:6px;}
+  .surma-badge{display:none;align-items:center;gap:3px;font-size:.64rem;font-weight:700;padding:2px 7px;border-radius:4px;background:var(--lichtblauw);color:var(--blauw);border:1px solid var(--rand);margin-left:4px;text-transform:uppercase;letter-spacing:.04em;flex-shrink:0;}
+  body.surma-mode .surma-badge{display:inline-flex;}
+  /* LPD badges */
+  .lpd-badge{display:none;align-items:center;gap:3px;font-size:.63rem;font-weight:700;padding:2px 7px;border-radius:4px;background:#e8f7ef;color:var(--groen);border:1px solid #b2dfc4;margin-left:4px;text-transform:uppercase;letter-spacing:.04em;flex-shrink:0;}
+  body.lpd-mode .lpd-badge{display:inline-flex;}
+  body.lpd-mode .card-title{background:rgba(232,247,239,.5);border-radius:6px;padding:4px 8px;margin:-4px -8px 13px;}
+  body.surma-mode.lpd-mode .card-title{background:rgba(232,240,251,.4);border-radius:6px;padding:4px 8px;margin:-4px -8px 13px;}
+  body.surma-mode .card-title{background:rgba(232,240,251,.4);border-radius:6px;padding:4px 8px;margin:-4px -8px 13px;}
+  /* DIDACTIEK TOGGLE DROPDOWN */
+  .didactiek-wrap{position:relative;display:inline-block;}
+  .didactiek-btn{display:flex;align-items:center;gap:5px;font-size:.68rem;font-weight:600;padding:4px 10px;border-radius:5px;border:1.5px solid rgba(255,255,255,.3);background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);cursor:pointer;transition:all .2s;font-family:inherit;white-space:nowrap;user-select:none;}
+  .didactiek-btn:hover{background:rgba(255,255,255,.2);color:white;}
+  .didactiek-btn.open{background:rgba(255,255,255,.2);color:white;}
+  .didactiek-dropdown{display:none;position:absolute;right:0;top:calc(100% + 6px);background:white;border:1px solid var(--rand);border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.15);min-width:170px;overflow:hidden;z-index:100;}
+  .didactiek-dropdown.open{display:block;animation:fadeIn .15s ease;}
+  .dd-item{display:flex;align-items:center;gap:9px;padding:10px 14px;font-size:.8rem;font-weight:600;color:var(--tekst);cursor:pointer;transition:background .15s;border:none;background:none;width:100%;font-family:inherit;text-align:left;}
+  .dd-item:hover{background:var(--lichtblauw);}
+  .dd-item .dd-check{width:14px;height:14px;border-radius:3px;border:1.5px solid var(--rand);display:inline-block;flex-shrink:0;transition:all .15s;}
+  .dd-item.active .dd-check{background:var(--magenta);border-color:var(--magenta);}
+  .dd-item.active .dd-check::after{content:'✓';display:block;color:white;font-size:.6rem;line-height:14px;text-align:center;}
+  .dd-divider{height:1px;background:var(--rand);}
+  .score-bar{display:flex;align-items:center;gap:16px;background:white;border:1px solid var(--rand);border-radius:10px;padding:13px 20px;margin-bottom:15px;box-shadow:0 1px 4px rgba(0,0,0,.04);}
+  .score-circle{width:50px;height:50px;border-radius:50%;border:3px solid var(--magenta);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;}
+  .score-number{font-size:1.18rem;font-weight:700;color:var(--magenta);line-height:1;}
+  .score-label{font-size:.55rem;color:#999;text-transform:uppercase;letter-spacing:.06em;}
+  .score-info{flex:1;}
+  .score-info strong{display:block;font-size:.88rem;color:var(--blauw);margin-bottom:2px;}
+  .score-info small{font-size:.75rem;color:#666;}
+  .progress-bar-outer{height:5px;background:var(--rand);border-radius:3px;margin-top:7px;overflow:hidden;}
+  .progress-bar-inner{height:100%;background:linear-gradient(90deg,var(--blauw),var(--magenta));border-radius:3px;transition:width .5s ease;}
+  .listen-bar{display:flex;align-items:center;gap:12px;background:var(--lichtblauw);border:1px solid var(--rand);border-radius:8px;padding:10px 14px;margin-bottom:15px;}
+  .listen-bar .listen-text{font-size:.83rem;color:#444;font-style:italic;font-family:'EB Garamond',serif;line-height:1.45;}
+  .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border:none;border-radius:6px;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:inherit;}
+  .btn-primary{background:var(--magenta);color:white;}
+  .btn-primary:hover{background:#c4006b;}
+  .btn-secondary{background:var(--blauw);color:white;}
+  .btn-secondary:hover{background:#0d2d54;}
+  .btn-outline{background:white;color:var(--blauw);border:1.5px solid var(--blauw);}
+  .btn-outline:hover{background:var(--lichtblauw);}
+  .btn:disabled{opacity:.45;cursor:not-allowed;}
+  .vraag-blok{margin-bottom:4px;}
+  .vraag-blok+.vraag-blok{margin-top:19px;padding-top:17px;border-top:1px solid var(--rand);}
+  .vraag-label{font-size:.87rem;font-weight:600;color:var(--tekst);margin-bottom:8px;line-height:1.5;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}
+  .vraag-nr{display:inline-flex;align-items:center;justify-content:center;background:var(--magenta);color:white;border-radius:50%;width:20px;height:20px;font-size:.72rem;flex-shrink:0;line-height:1;}
+  textarea,input[type="text"]{width:100%;border:1.5px solid var(--rand);border-radius:6px;padding:9px 12px;font-family:inherit;font-size:.87rem;color:var(--tekst);background:white;transition:border-color .2s;resize:vertical;}
+  textarea{min-height:78px;}
+  textarea:focus,input[type="text"]:focus{outline:none;border-color:var(--blauw);box-shadow:0 0 0 3px rgba(19,66,127,.1);}
+  .vraag-actie{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+  .denkhulp{background:var(--geel);border:1px solid var(--geelrand);border-radius:7px;padding:9px 13px;font-size:.81rem;color:#5a4a00;margin:8px 0 2px;line-height:1.5;display:none;}
+  .denkhulp.zichtbaar{display:block;animation:fadeIn .2s ease;}
+  .denkhulp strong{color:#3a3000;}
+  .feedback-box{display:none;margin-top:10px;padding:11px 15px;border-radius:7px;font-size:.84rem;line-height:1.55;border-left:4px solid var(--magenta);background:var(--lichtmagenta);color:#4a0030;}
+  .feedback-box.goed{border-left-color:var(--groen);background:var(--lichtgroen);color:#0d4a25;}
+  .feedback-box.fout{border-left-color:#c00;background:#fff0f0;color:#800;}
+  .feedback-box.active{display:block;animation:fadeIn .25s ease;}
+  .mc-options{display:flex;flex-direction:column;gap:7px;margin-top:10px;}
+  .mc-opt{display:flex;align-items:center;gap:10px;padding:9px 13px;border:1.5px solid var(--rand);border-radius:6px;cursor:pointer;transition:all .15s;font-size:.85rem;background:white;font-family:inherit;}
+  .mc-opt:hover{border-color:var(--blauw);background:var(--lichtblauw);}
+  .mc-opt.correct{border-color:var(--groen);background:var(--lichtgroen);color:#0d4a25;font-weight:600;}
+  .mc-opt.fout{border-color:#c00;background:#fff0f0;color:#800;}
+  .mc-opt input[type="radio"]{accent-color:var(--magenta);flex-shrink:0;}
+  .beeld-tekst{display:grid;grid-template-columns:128px 1fr;gap:16px;align-items:start;}
+  .beeld-tekst img{width:100%;border-radius:7px;border:2px solid var(--rand);box-shadow:0 3px 10px rgba(19,66,127,.1);}
+  .beeld-labels{display:flex;flex-direction:column;gap:6px;}
+  .symbool-pill{display:inline-flex;align-items:center;gap:7px;background:var(--lichtblauw);border:1px solid var(--rand);border-radius:6px;padding:5px 10px;font-size:.79rem;}
+  .symbool-pill .sym-label{font-weight:700;color:var(--blauw);}
+  .symbool-pill .sym-betekenis{color:#555;}
+  .god-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:10px;margin-top:4px;}
+  .god-card{background:var(--lichtblauw);border:1.5px solid var(--rand);border-radius:8px;padding:13px;cursor:pointer;transition:all .2s;}
+  .god-card:hover{border-color:var(--blauw);transform:translateY(-2px);box-shadow:0 4px 14px rgba(19,66,127,.1);}
+  .god-card.open{border-color:var(--magenta);background:var(--lichtmagenta);}
+  .god-card .god-symbol{font-size:1.3rem;margin-bottom:4px;}
+  .god-card .god-name{font-size:.96rem;font-weight:700;color:var(--blauw);font-family:'EB Garamond',serif;font-style:italic;}
+  .god-card .god-role{font-size:.74rem;color:#555;margin-top:3px;}
+  .god-card .god-detail{display:none;font-size:.78rem;margin-top:8px;color:#333;line-height:1.5;border-top:1px solid var(--rand);padding-top:7px;}
+  .god-card .god-vraag{display:none;font-size:.74rem;margin-top:6px;font-weight:700;color:var(--magenta);font-style:italic;}
+  .god-card.open .god-detail,.god-card.open .god-vraag{display:block;}
+  .tijdlijn{display:flex;flex-direction:column;position:relative;}
+  .tijdlijn::before{content:'';position:absolute;left:18px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--blauw),var(--magenta));}
+  .tl-item{display:flex;gap:13px;padding:0 0 16px 41px;position:relative;}
+  .tl-dot{position:absolute;left:10px;top:3px;width:16px;height:16px;border-radius:50%;background:var(--magenta);border:3px solid white;box-shadow:0 0 0 2px var(--magenta);}
+  .tl-content strong{display:block;font-size:.83rem;color:var(--blauw);margin-bottom:3px;}
+  .tl-content p{font-size:.79rem;color:#555;line-height:1.5;}
+  .retrieval-blok{background:var(--grijs);border:1.5px dashed var(--rand);border-radius:8px;padding:15px;margin-bottom:9px;}
+  .retrieval-vraag{font-size:.87rem;font-weight:600;margin-bottom:9px;color:var(--tekst);}
+  .retrieval-antwoord{display:none;background:white;border:1px solid var(--rand);border-radius:6px;padding:9px 13px;font-size:.82rem;line-height:1.55;margin-top:9px;color:#333;}
+  .retrieval-antwoord.zichtbaar{display:block;animation:fadeIn .2s ease;}
+  .zelfcheck{margin-top:9px;display:none;gap:8px;}
+  .zelfcheck.zichtbaar{display:flex;}
+  .zelfcheck-btn{flex:1;padding:7px;border:none;border-radius:6px;font-size:.79rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s;}
+  .zelfcheck-btn.ja{background:var(--lichtgroen);color:var(--groen);border:1px solid var(--groen);}
+  .zelfcheck-btn.nee{background:#fff0f0;color:#800;border:1px solid #c00;}
+  .zelfcheck-btn:hover{filter:brightness(.93);}
+  .exit-ticket{background:linear-gradient(135deg,#f0f4ff,#fde8f3);border:2px solid var(--magenta);border-radius:10px;padding:20px 22px;margin-bottom:14px;}
+  .exit-ticket h3{font-size:.88rem;font-weight:700;color:var(--blauw);margin-bottom:14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;}
+  .meta-item label{font-size:.8rem;font-weight:600;color:var(--blauw);display:block;margin-bottom:5px;}
+  .meta-item select{width:100%;border:1.5px solid var(--rand);border-radius:6px;padding:7px 10px;font-family:inherit;font-size:.8rem;color:var(--tekst);background:white;cursor:pointer;}
+  .meta-item select:focus{outline:none;border-color:var(--blauw);}
+  .meta-item textarea{font-size:.8rem;min-height:60px;}
+  .inzend-card{background:white;border-radius:10px;border:1px solid var(--rand);padding:18px 22px;margin-top:8px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;box-shadow:0 1px 5px rgba(19,66,127,.06);}
+  .naam-wrap{display:flex;align-items:center;gap:10px;flex:1;min-width:200px;}
+  .naam-wrap label{font-size:.82rem;font-weight:600;color:var(--blauw);white-space:nowrap;}
+  .naam-wrap input{flex:1;}
+  .spinner{display:inline-block;width:13px;height:13px;border:2px solid rgba(255,255,255,.4);border-top-color:white;border-radius:50%;animation:spin .7s linear infinite;margin-right:5px;}
+  .spinner.donker{border-color:rgba(19,66,127,.2);border-top-color:var(--blauw);}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  /* ── INLINE DIDACTIEK CHIPS ── */
+  /* Alleen zichtbaar als de betreffende mode aan staat */
+  /* Zitten op het ELEMENT dat de didactische keuze realiseert */
+
+  .s-chip, .l-chip {
+    display: none;
+    align-items: center;
+    gap: 4px;
+    font-size: .61rem;
+    font-weight: 700;
+    padding: 2px 7px 2px 5px;
+    border-radius: 20px;
+    white-space: nowrap;
+    cursor: help;
+    position: relative;
+    flex-shrink: 0;
+    vertical-align: middle;
+    margin-left: 4px;
+  }
+  /* Surma: blauw */
+  .s-chip { background: var(--lichtblauw); color: var(--blauw); border: 1px solid #b8cce8; }
+  body.surma-mode .s-chip { display: inline-flex; }
+  /* LPD: groen */
+  .l-chip { background: #e8f7ef; color: var(--groen); border: 1px solid #b2dfc4; }
+  body.lpd-mode .l-chip { display: inline-flex; }
+
+  /* Tooltip */
+  .s-chip::after, .l-chip::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a1a2e;
+    color: white;
+    font-size: .72rem;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: normal;
+    width: max-content;
+    max-width: 240px;
+    line-height: 1.4;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .15s;
+    z-index: 200;
+    text-transform: none;
+    letter-spacing: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  }
+  .s-chip:hover::after, .l-chip:hover::after { opacity: 1; }
+
+  /* Highlight op het element zelf als de mode aan staat */
+  body.surma-mode .s-highlight { outline: 2px solid rgba(19,66,127,.25); outline-offset: 3px; border-radius: 6px; }
+  body.lpd-mode .l-highlight { outline: 2px solid rgba(26,138,74,.25); outline-offset: 3px; border-radius: 6px; }
+
+  /* Card-title krijgt geen achtergrond meer — chips dragen de info */
+  body.surma-mode .card-title,
+  body.lpd-mode .card-title,
+  body.surma-mode.lpd-mode .card-title { background: none; border-radius: 0; padding: 0; margin: 0 0 13px; }
+  @media(max-width:580px){
+    .hero-img{display:none;}.tab-btn{padding:10px 14px;font-size:.76rem;}
+    .main{padding:14px 12px 40px;}.hero{padding:22px 16px;}
+    .beeld-tekst{grid-template-columns:1fr;}.meta-grid{grid-template-columns:1fr;}
+    .leerdoelen-banner{padding:8px 16px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <span class="icon">🏛️</span>
+  <h1>athena Campus Pottelberg — Grieks</h1>
+  <span class="sub" style="margin-left:auto;">2GR-LAT</span>
+  <div class="didactiek-wrap">
+    <button class="didactiek-btn" onclick="toggleDropdown(this)" title="Didactische lagen">
+      🧱 <span>Didactiek</span> <span style="font-size:.6rem;opacity:.7;">▾</span>
+    </button>
+    <div class="didactiek-dropdown" id="didactiekDropdown">
+      <button class="dd-item" id="dd-surma" onclick="toggleLaag('surma')">
+        <span class="dd-check"></span> Surma-bouwstenen
+      </button>
+      <div class="dd-divider"></div>
+      <button class="dd-item" id="dd-lpd" onclick="toggleLaag('lpd')">
+        <span class="dd-check"></span> Leerplandoelen
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h2>Zeus, <span>Hera</span> en hun kinderen</h2>
+      <p>Doorloop de drie modi in volgorde. Elke fase bouwt verder op de vorige.</p>
+    </div>
+    <div class="hero-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Zeus_Otricoli_Pio-Clementino_Inv257.jpg" alt="Zeus Otricoli">
+    </div>
+  </div>
+</div>
+
+<!-- LEERDOELEN — bouwsteen 2 -->
+<div class="leerdoelen-banner">
+  <div class="leerdoelen-inner">
+    <span class="leerdoelen-label">Na deze les kun je:</span>
+    <span class="doel-pill">Zeus en Hera beschrijven</span>
+    <span class="doel-pill">4 kinderen benoemen + verklaren</span>
+    <span class="doel-pill">Griekse en Latijnse namen koppelen</span>
+    <span class="doel-pill">Hera's gedrag verklaren vanuit haar karakter</span>
+  </div>
+</div>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="toonModus('ontdek',this)">
+    🔍 Ontdekmodus <span class="tab-hint">Activeer wat je weet</span>
+  </button>
+  <button class="tab-btn" onclick="toonModus('leer',this)">
+    📚 Leerboekmodus <span class="tab-hint">Verwerk de stof</span>
+  </button>
+  <button class="tab-btn" onclick="toonModus('actie',this)">
+    🧪 Oefenmodus <span class="tab-hint">Test jezelf</span>
+  </button>
+</div>
+
+<main class="main">
+
+  <div class="score-bar" id="scoreBar">
+    <div class="score-circle">
+      <span class="score-number" id="scoreNr">0</span>
+      <span class="score-label">punten</span>
+    </div>
+    <div class="score-info">
+      <strong id="scoreStatus">Begin maar!</strong>
+      <small id="scoreDetail">Beantwoord vragen om punten te verdienen.</small>
+      <div class="progress-bar-outer"><div class="progress-bar-inner" id="progressBar" style="width:0%"></div></div>
+    </div>
+  </div>
+
+  <!-- ══ ONTDEKMODUS — BS 1 (voorkennis) + 7 (scaffolding) ══ -->
+  <section class="mode-panel active" id="modus-ontdek">
+
+    <div class="card">
+      <div class="card-title">🧠 Wat weet jij al?</div>
+      <p style="font-size:.85rem;color:#555;margin-bottom:15px;line-height:1.55;">Beantwoord deze vragen <strong>zonder</strong> de rest te lezen. Het gaat om wat er al in jouw hoofd zit — ook als je twijfelt.</p>
+
+      <div class="vraag-blok">
+        <div class="vraag-label"><span class="vraag-nr">1</span>Wat weet jij al over Zeus? Schrijf alles op — ook als je twijfelt.</div>
+        <textarea id="o-v1" placeholder="Schrijf alles op wat je weet of denkt te weten…"></textarea>
+        <div class="vraag-actie">
+          <button class="btn btn-outline s-highlight l-highlight" onclick="toggleDenkhulp('dh-v1',this)" title="⑦ Scaffolding: ondersteuning op verzoek — de leerling kiest zelf of hij denkhulp nodig heeft.">💡 Denkhulp</button> <span class="s-chip" data-tip="⑦ Scaffolding: schrijfsteiger — concrete elementen aanreiken voor creatieve verwerking.">⬡ ⑦ </span> <span class="l-chip" data-tip="BO1_03.07 begrijpen: mythologisch verhaal (wraak Hephaistos) tonen te kennen via creatieve verwerking.">BO1_03.07</span> <span class="s-chip" data-tip="⑦ Scaffolding: vergelijkingspunt aanreiken (Hephaistos vs Ares) als haak.">⬡ ⑦ </span> <span class="l-chip" data-tip="BO1_03.08 begrijpen: vergelijken van gedrag en waarden in de mythologie.">BO1_03.08</span> <span class="s-chip" data-tip="⑦ Scaffolding: contextualiseringsvraag om machtsdynamiek te vatten.">⬡ ⑦ </span> <span class="l-chip" data-tip="BO1_03.08 begrijpen: gelijkenissen/verschillen oud↔heden — machtsverhoudingen vergelijken.">BO1_03.08</span> <span class="s-chip" data-tip="⑦ Scaffolding: stappenstructuur als denkhulp — oorzaak→gevolg keten.">⬡ ⑦ </span> <span class="l-chip" data-tip="BO1_03.05 begrijpen: aandacht voor signaalwoorden en tekststructuur als ondersteuning bij tekstbegrip.">BO1_03.05</span> <span class="s-chip" data-tip="⑦ Scaffolding: graduele hulp — pas zichtbaar als leerling erom vraagt.">⬡ ⑦ </span> <span class="l-chip" data-tip="BO1_03.07 begrijpen: symboliek verbinden met cultuuraspekten (karakter Hera via pauw).">BO1_03.07</span> <span class="s-chip" data-tip="⑦ Scaffolding: ondersteuning op verzoek — de leerling kiest zelf of hij denkhulp nodig heeft.">⬡ ⑦ </span> <span class="l-chip" data-tip="BO1_03.05 begrijpen: lectuurstrategie 'inzetten van voorkennis' — denkhulp activeert associaties.">BO1_03.05</span>
+        </div>
+        <div class="denkhulp" id="dh-v1"><strong>Denk aan:</strong> films, games, of verhalen die je kent. Waar heb je de naam Zeus al eens gehoord? Wat deed hij?</div>
+      </div>
+
+      <div class="vraag-blok">
+        <div class="vraag-label"><span class="vraag-nr">2</span>Bekijk dit beeld van Zeus. Welke drie woorden komen bij jou op? Leg de link.<br><br>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Zeus_Otricoli_Pio-Clementino_Inv257.jpg" alt="Zeus" style="width:110px;border-radius:7px;border:2px solid var(--rand);box-shadow:0 3px 10px rgba(0,0,0,.1);">
+        </div>
+        <textarea id="o-v2" placeholder="Drie woorden en waarom…"></textarea>
+        <div class="vraag-actie">
+          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('o-v2','o-fb2','De leerling beschrijft een beeld van Zeus met drie woorden en legt uit waarom. Reageer enthousiast. Bevestig of stuur bij. Sluit af met een prikkelende vervolgvraag.')">✨ Feedback</button> <span class="s-chip" data-tip="⑪ Feedback die denkt aanzet: AI reageert inhoudelijk en sluit af met vervolgvraag.">⬡ ⑪ </span> <span class="l-chip" data-tip="BO1_03.07 begrijpen: iconografische kennis van Zeus activeren en bijsturen.">BO1_03.07 begrijpen</span>
+        </div>
+        <div class="feedback-box" id="o-fb2"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🎧 Luister en verbind</div>
+      <div class="listen-bar">
+        <button class="btn btn-secondary s-highlight" onclick="leesTekst('Zeus was de oppergod van de Olympus en heerste over mensen en goden. Zelfs hij moest soms rekening houden met Hera, zijn jaloerse en machtige echtgenote. Hera was de godin van het huwelijk en beschermde vrouwen, maar ze werd ook gevreesd om haar wraak. Haar symbolen, de pauw en de koekoek, verwijzen naar haar trotse en waakzame karakter.')">🔊 Speel af</button>
+        <div class="listen-text">"Zeus heerste over goden en mensen. Zelfs hij moest soms rekening houden met Hera…" <span class="s-chip" data-tip="Dual coding: auditief kanaal — tekst wordt ook gesproken aangeboden naast het geschreven woord.">⬡ ④</span> <span class="l-chip" data-tip="BO1_03.07 begrijpen: aspecten van godsdienst en karakter van goden illustreren.">BO1_03.07</span></div>
+      </div>
+      <div class="vraag-blok">
+        <div class="vraag-label"><span class="vraag-nr">3</span>Je hoort dat de pauw een symbool van Hera is. Welke eigenschappen van een pauw passen bij haar karakter? Leg de link.</div>
+        <textarea id="o-v3" placeholder="Pauw → karakter Hera, want…"></textarea>
+        <div class="vraag-actie">
+          <button class="btn btn-outline s-highlight l-highlight" onclick="toggleDenkhulp('dh-v3',this)" title="⑦ Scaffolding: graduele hulp — pas zichtbaar als leerling erom vraagt.">💡 Denkhulp</button>
+          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('o-v3','o-fb3','De leerling legt een link tussen de pauw als symbool en het karakter van Hera. Geef feedback op de symbolische redenering. Sluit af met: wat zegt de koekoek dan over haar?')">✨ Feedback</button> <span class="s-chip" data-tip="⑪ Feedback die denkt aanzet: redenering over symboliek begeleid zonder antwoord weg te geven.">⬡ ⑪ </span> <span class="l-chip" data-tip="BO1_03.07 + BO1_03.08: symboliek koppelen aan karakter én vergelijken met eigen referentiekader.">BO1_03.07 + BO1_03.08</span>
+        </div>
+        <div class="denkhulp" id="dh-v3"><strong>Denk aan:</strong> hoe gedraagt een pauw zich? Welke eigenschappen ken je? Verbind die met wat je over Hera hoorde.</div>
+        <div class="feedback-box" id="o-fb3"></div>
+      </div>
+    </div>
+
+    <div style="text-align:center;padding:6px 0 2px;">
+      <button class="btn btn-secondary" onclick="toonModusBtn('leer')">Ga verder naar de Leerboekmodus →</button>
+    </div>
+
+  </section>
+
+  <!-- ══ LEERBOEKMODUS — BS 3 (voorbeelden) + 4 (dual coding) + 5 (actieve verwerking) ══ -->
+  <section class="mode-panel" id="modus-leer">
+
+    <div class="card">
+      <div class="card-title">⚡ Zeus — oppergod</div>
+      <div class="beeld-tekst">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Zeus_Otricoli_Pio-Clementino_Inv257.jpg" alt="Zeus Otricoli">
+        <div class="beeld-labels">
+          <div class="symbool-pill s-highlight l-highlight"><span>⚡</span><span class="sym-label">Bliksemschicht</span><span class="sym-betekenis">macht over het weer</span> <span class="s-chip" data-tip="Dual coding: symbool (beeld) + betekenis (woord) tegelijk aangeboden op hetzelfde element.">⬡ ④</span> <span class="l-chip" data-tip="BO1_03.07 begrijpen: symbolen van Zeus als aspect van Griekse godsdienst en cultuur.">BO1_03.07</span></div>
+          <div class="symbool-pill"><span>🦅</span><span class="sym-label">Adelaar</span><span class="sym-betekenis">koningschap, hoogte</span></div>
+          <div class="symbool-pill"><span>🌳</span><span class="sym-label">Eikentak</span><span class="sym-betekenis">kracht, orakel van Dodona</span></div>
+          <div class="symbool-pill"><span>🏔️</span><span class="sym-label">Olympusberg</span><span class="sym-betekenis">woonplaats der goden</span></div>
+          <div class="symbool-pill"><span>🇮🇹</span><span class="sym-label">Latijn: Iuppiter</span><span class="sym-betekenis">vader der goden</span></div>
+        </div>
+      </div>
+      <p style="font-size:.86rem;line-height:1.65;margin-top:13px;color:#333;">
+        Zeus was de heerser over alle goden en mensen — een <strong>zoon van de Titan Kronos en Rhea</strong>. Kronos verslond al zijn kinderen omdat een orakel hem had gezegd dat hij door een eigen kind zou worden verslagen. Rhea verstopte de pasgeboren Zeus op Kreta: Kronos kreeg een steen toegestopt. Zeus groeide op, bevrijdde zijn broers en zussen, en versloeg de Titanen in de <strong>Titanomachie</strong>. Daarna verdeelden Zeus, Poseidon en Hades de wereld: hemel, zee, onderwereld.
+      </p>
+      <div style="margin-top:11px;"><button class="btn btn-outline" onclick="leesTekst('Zeus was de heerser over alle goden en mensen, een zoon van de Titan Kronos en Rhea. Kronos verslond al zijn kinderen omdat een orakel hem had gezegd dat hij door een eigen kind zou worden verslagen. Rhea verstopte de pasgeboren Zeus op Kreta. Zeus groeide op, bevrijdde zijn broers en zussen, en versloeg de Titanen in de Titanomachie.')">🔊 Voorlezen</button></div>
+
+      <div style="margin-top:15px;padding-top:13px;border-top:1px solid var(--rand);">
+        <div class="vraag-label" style="margin-bottom:8px;"> Waarom at Kronos zijn kinderen op? Gebruik de tekst en leg het in je eigen woorden uit.</div>
+        <textarea id="l-v1" placeholder="Kronos deed dit omdat…"></textarea>
+        <div class="vraag-actie">
+          <button class="btn btn-outline s-highlight l-highlight" onclick="toggleDenkhulp('dh-l1',this)" title="⑦ Scaffolding: stappenstructuur als denkhulp — oorzaak→gevolg keten.">💡 Denkhulp</button>
+          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('l-v1','l-fb1','De leerling legt in eigen woorden uit waarom Kronos zijn kinderen opat. Beoordeel of de redenering klopt (orakel → angst → actie). Sluit af: was Kronos slim of dom bezig?')">✨ Feedback</button>
+        </div>
+        <div class="denkhulp" id="dh-l1"><strong>Denk zo:</strong> wat zei het orakel → wat was Kronos bang voor → wat deed hij daaraan?</div>
+        <div class="feedback-box" id="l-fb1"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">👑 Hera — koningin der goden</div>
+      <div class="beeld-tekst">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Hera_Campana_Louvre_Ma2283.jpg" alt="Hera Campana" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/5/5f/Zeus_Otricoli_Pio-Clementino_Inv257.jpg'">
+        <div class="beeld-labels">
+          <div class="symbool-pill s-highlight l-highlight"><span>🦚</span><span class="sym-label">Pauw</span><span class="sym-betekenis">trots, waakzaamheid</span> <span class="s-chip" data-tip="Dual coding: symbolisch beeld (pauw) + verbale betekenis simultaan — minder cognitieve belasting dan tekst alleen.">⬡ ④</span> <span class="l-chip" data-tip="BO1_03.07 begrijpen: symbolen van Hera als aspect van Griekse godsdienst en cultuur.">BO1_03.07</span></div>
+          <div class="symbool-pill"><span>🐦</span><span class="sym-label">Koekoek</span><span class="sym-betekenis">list (zo veroverde Zeus haar)</span></div>
+          <div class="symbool-pill"><span>🍎</span><span class="sym-label">Granaatappel</span><span class="sym-betekenis">vruchtbaarheid, huwelijk</span></div>
+          <div class="symbool-pill"><span>💍</span><span class="sym-label">Godin huwelijk</span><span class="sym-betekenis">beschermt vrouwen</span></div>
+          <div class="symbool-pill"><span>🇮🇹</span><span class="sym-label">Latijn: Iuno</span><span class="sym-betekenis">koningin der goden</span></div>
+        </div>
+      </div>
+      <p style="font-size:.86rem;line-height:1.65;margin-top:13px;color:#333;">
+        Hera was de echtgenote van Zeus en tegelijk zijn zus — ook zij was een kind van Kronos en Rhea. Ze was de <strong>godin van het huwelijk en het gezin</strong> en beschermde vrouwen. Maar ze werd ook gevreesd om haar <strong>jaloezie en wraakzucht</strong>. Zeus had talloze buitenechtelijke avonturen; Hera wreekte zich dan niet op Zeus zelf, maar op zijn geliefden en hun kinderen — want Zeus was als oppergod onaantastbaar. Dat maakte haar tot een van de gevaarlijkste goden van de Olympus.
+      </p>
+      <div style="margin-top:11px;"><button class="btn btn-outline" onclick="leesTekst('Hera was de echtgenote van Zeus en tegelijk zijn zus. Ze was de godin van het huwelijk en het gezin. Ze werd gevreesd om haar jaloezie en wraakzucht. Zeus had talloze buitenechtelijke avonturen. Hera wreekte zich niet op Zeus zelf maar op zijn geliefden en hun kinderen, want Zeus was als oppergod onaantastbaar.')">🔊 Voorlezen</button></div>
+
+      <div style="margin-top:15px;padding-top:13px;border-top:1px solid var(--rand);">
+        <div class="vraag-label" style="margin-bottom:8px;"> Waarom wreekte Hera zich op de geliefden van Zeus en niet op Zeus zelf? Wat zegt dat over de machtsverhoudingen op de Olympus?</div>
+        <textarea id="l-v2" placeholder="Hera deed dit omdat…"></textarea>
+        <div class="vraag-actie">
+          <button class="btn btn-outline s-highlight l-highlight" onclick="toggleDenkhulp('dh-l2',this)" title="⑦ Scaffolding: contextualiseringsvraag om machtsdynamiek te vatten.">💡 Denkhulp</button>
+          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('l-v2','l-fb2','De leerling reflecteert over waarom Hera zich wreekte op de geliefden van Zeus en niet op Zeus zelf, en wat dat zegt over machtsverhoudingen. Sluit af: ken jij een vergelijkbare situatie uit een film of serie?')">✨ Feedback</button>
+        </div>
+        <div class="denkhulp" id="dh-l2"><strong>Denk aan:</strong> wie is oppergod? Wat kan Hera wél en niet doen? Hoe reageert iemand als hij de zwakkere is in een relatie?</div>
+        <div class="feedback-box" id="l-fb2"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">👨‍👩‍👧‍👦 De kinderen van Zeus en Hera</div>
+      <p style="font-size:.81rem;color:#666;margin-bottom:13px;">Klik op een kaart. Lees de info én de prikkelende vraag eronder. <span class="s-chip" data-tip="③ Voorbeelden: concrete godfiguren als cases om het abstracte leerplandoel te concretiseren.">⬡ ③</span> <span class="l-chip" data-tip="BO1_03.07 begrijpen: aspecten van godsdienst, kunst en samenleving van Grieken illustreren.">BO1_03.07</span></p>
+      <div class="god-grid"> <!-- <span class="s-chip" data-tip="③ Voorbeelden/modeling: klikkaarten als concrete gevallen — elk kind illustreert een aspect van BO1_03.07.">⬡ ③</span> <span class="l-chip" data-tip="BO1_03.07 begrijpen: aspecten van Griekse godsdienst en samenleving illustreren via concrete godfiguren.">BO1_03.07</span> -->
+        <div class="god-card" onclick="toggleKind(this)">
+          <div class="god-symbol">⚔️</div><div class="god-name">Ares</div>
+          <div class="god-role">God van de oorlog · Latijn: Mars</div>
+          <div class="god-detail">God van de gewelddadige, bloedige oorlog. Weinig vereerd: de Grieken waardeerden strategie (→ Athena) meer dan bruut geweld.</div>
+          <div class="god-vraag">→ Hoe verklaart dat het verschil in populariteit tussen Ares en Athena?</div>
+        </div>
+        <div class="god-card" onclick="toggleKind(this)">
+          <div class="god-symbol">🔥</div><div class="god-name">Hephaistos</div>
+          <div class="god-role">God van vuur en smeedkunst · Latijn: Vulcanus</div>
+          <div class="god-detail">Goddelijke smid. Hera gooide hem van de Olympus omdat hij misvormd was. Wraak: een gouden troon waaruit Hera niet kon ontsnappen.</div>
+          <div class="god-vraag">→ Hephaistos wreekt zich met list, niet met geweld. Wat zegt dat over hem?</div>
+        </div>
+        <div class="god-card" onclick="toggleKind(this)">
+          <div class="god-symbol">🌸</div><div class="god-name">Hebe</div>
+          <div class="god-role">Godin van de jeugd · Latijn: Iuventas</div>
+          <div class="god-detail">Bediende nectar en ambrosia aan de goden. Belichaming van eeuwige jeugd. Later echtgenote van de vergoddelijkte Herakles.</div>
+          <div class="god-vraag">→ Waarom zou de godin van de jeugd een kind van Hera zijn?</div>
+        </div>
+        <div class="god-card" onclick="toggleKind(this)">
+          <div class="god-symbol">🤲</div><div class="god-name">Eileithyia</div>
+          <div class="god-role">Godin van de geboorte</div>
+          <div class="god-detail">Hielp vrouwen bij de bevalling. Hera stuurde haar soms opzettelijk weg om de geboorte van een kind van Zeus te vertragen — zoals bij Herakles.</div>
+          <div class="god-vraag">→ Hoe verklaarden de Grieken via deze mythe de pijn van een bevalling?</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📜 Van Kronos tot Olympus</div>
+      <div class="tijdlijn l-highlight">
+        <span class="l-chip" data-tip="BO1_03.06 begrijpen: tekstfragmenten situeren in tijd, ruimte en maatschappelijke context — de tijdlijn biedt die chronologische context expliciet aan.">BO1_03.06</span><div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>De Titanen regeren</strong><p>Kronos verslindt zijn kinderen — een orakel voorspelde zijn val door een eigen kind.</p></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Zeus ontsnapt (Kreta)</strong><p>Rhea verstopt de baby Zeus. Kronos krijgt een steen in doeken.</p></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Titanomachie (10 jaar)</strong><p>Zeus bevrijdt zijn broers en zussen. Zeus, Poseidon en Hades verdelen de wereld.</p></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Zeus huwt Hera</strong><p>Hera wordt koningin der goden. Hun huwelijk staat vol spanning: Zeus' avonturen, Hera's wraak.</p></div></div>
+      </div>
+    </div>
+
+    <div style="text-align:center;padding:6px 0 2px;">
+      <button class="btn btn-secondary" onclick="toonModusBtn('actie')">Ga verder naar de Oefenmodus →</button>
+    </div>
+
+  </section>
+
+  <!-- ══ OEFENMODUS — BS 6, 9, 10, 11, 12 ══ -->
+  <section class="mode-panel" id="modus-actie">
+
+    <!-- RETRIEVAL — BS 10 -->
+    <div class="card">
+      <div class="card-title">🔁 Test jezelf — zonder te kijken</div>
+      <p style="font-size:.83rem;color:#555;margin-bottom:13px;line-height:1.5;">Typ eerst je antwoord. Dan klik je het antwoord open en beoordeel je jezelf eerlijk.</p>
+
+      <div class="retrieval-blok">
+        <div class="retrieval-vraag s-highlight l-highlight">Wat zijn de drie symbolen van Zeus? Noem ze uit je hoofd. <span class="s-chip" data-tip="⑩ Retrieval practice: leerling haalt kennis op uit geheugen vóór het antwoord te zien — versterkt lange-termijn retentie.">⬡ ⑩</span> <span class="l-chip" data-tip="BO1_03.07 begrijpen: symbolen van Zeus uit het hoofd reproduceren = kennis van Griekse godsdienst.">BO1_03.07</span></div>
+        <input type="text" id="ret-v1" placeholder="Schrijf je antwoord…">
+        <div class="vraag-actie" style="margin-top:8px;"><button class="btn btn-outline" onclick="toonRetrieval('ret-ant1','ret-check1')">👁️ Toon antwoord</button></div>
+        <div class="retrieval-antwoord" id="ret-ant1">⚡ Bliksemschicht · 🦅 Adelaar · 🌳 Eikentak</div>
+        <div class="zelfcheck" id="ret-check1">
+          <button class="zelfcheck-btn ja s-highlight" onclick="updateScore(1,'ret1-ja')" title="Zelfbeoordeling na retrieval">✓ Ik wist het</button> <span class="s-chip" data-tip="⑩ Retrieval: zelfbeoordeling activeert metacognitie — de leerling beoordeelt zijn eigen kennis eerlijk.">⬡ ⑩</span>
+          <button class="zelfcheck-btn nee" onclick="updateScore(0,'ret1-nee')">✗ Nog niet</button>
+        </div>
+      </div>
+
+      <div class="retrieval-blok">
+        <div class="retrieval-vraag s-highlight l-highlight">Wat is de Latijnse naam van Hephaistos, en waarvoor is hij god? <span class="s-chip" data-tip="⑩ Retrieval practice: leerling haalt kennis op uit geheugen vóór het antwoord te zien — versterkt lange-termijn retentie.">⬡ ⑩</span> <span class="l-chip" data-tip="BO1_03.07 begrijpen: Latijnse naam koppelen = Grieks-Latijnse cultuurtransfer.">BO1_03.07</span></div>
+        <input type="text" id="ret-v2" placeholder="Schrijf je antwoord…">
+        <div class="vraag-actie" style="margin-top:8px;"><button class="btn btn-outline" onclick="toonRetrieval('ret-ant2','ret-check2')">👁️ Toon antwoord</button></div>
+        <div class="retrieval-antwoord" id="ret-ant2">Latijn: <strong>Vulcanus</strong> · God van vuur en smeedkunst</div>
+        <div class="zelfcheck" id="ret-check2">
+          <button class="zelfcheck-btn ja"  onclick="updateScore(1,'ret2-ja')">✓ Ik wist het</button>
+          <button class="zelfcheck-btn nee" onclick="updateScore(0,'ret2-nee')">✗ Nog niet</button>
+        </div>
+      </div>
+
+      <div class="retrieval-blok">
+        <div class="retrieval-vraag s-highlight l-highlight">Waarom at Kronos zijn kinderen op? Noem de oorzaak én het gevolg. <span class="s-chip" data-tip="⑩ Retrieval practice: leerling haalt kennis op uit geheugen vóór het antwoord te zien — versterkt lange-termijn retentie.">⬡ ⑩</span> <span class="l-chip" data-tip="BO1_03.07 + BO1_03.06 begrijpen: mythologisch verhaal situeren in oorzaak-gevolgstructuur.">BO1_03.07+06</span></div>
+        <input type="text" id="ret-v3" placeholder="Schrijf je antwoord…">
+        <div class="vraag-actie" style="margin-top:8px;"><button class="btn btn-outline" onclick="toonRetrieval('ret-ant3','ret-check3')">👁️ Toon antwoord</button></div>
+        <div class="retrieval-antwoord" id="ret-ant3">Oorzaak: orakel → hij zou door een eigen kind worden verslagen. Gevolg: hij verslond ze — maar Zeus ontsnapte.</div>
+        <div class="zelfcheck" id="ret-check3">
+          <button class="zelfcheck-btn ja"  onclick="updateScore(1,'ret3-ja')">✓ Ik wist het</button>
+          <button class="zelfcheck-btn nee" onclick="updateScore(0,'ret3-nee')">✗ Nog niet</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEERKEUZE met interleaving — BS 6 + 9 -->
+    <div class="card">
+      <div class="card-title">❓ Meerkeuze</div>
+
+      <div class="vraag-blok">
+        <div class="vraag-label"><span class="vraag-nr">1</span>Waarom werd Ares weinig vereerd in Griekenland?</div>
+        <div class="mc-options" id="mc1">
+          <label class="mc-opt"><input type="radio" name="mc1" value="a"> Hij was te gevaarlijk om te aanbidden.</label>
+          <label class="mc-opt"><input type="radio" name="mc1" value="b"> De Grieken waardeerden strategie meer dan bruut geweld.</label>
+          <label class="mc-opt"><input type="radio" name="mc1" value="c"> Hij had geen tempel in Athene.</label>
+          <label class="mc-opt"><input type="radio" name="mc1" value="d"> Hij was de god van de vrede, niet van de oorlog.</label>
+        </div>
+        <div class="vraag-actie"><button class="btn btn-secondary s-highlight l-highlight" id="mc1-btn" onclick="checkMC('mc1','b','mc1-fb','mc1-btn',2)">✓ Controleer</button> <span class="s-chip" data-tip="⑥ Check begrip hele klas: MC-vraag geeft onmiddellijke verificatie van conceptuele kennis.">⬡ ⑥</span> <span class="l-chip" data-tip="BO1_03.07 begrijpen: kennis over Ares en Griekse waardenpatronen controleren.">BO1_03.07</span></div>
+        <div class="feedback-box" id="mc1-fb"></div>
+      </div>
+
+      <div class="vraag-blok">
+        <div class="vraag-label"><span class="vraag-nr">2</span>Hera wreekte zich op de geliefden van Zeus, niet op Zeus zelf. Wat is de beste verklaring?</div>
+        <div class="mc-options" id="mc2">
+          <label class="mc-opt"><input type="radio" name="mc2" value="a"> Hera vond de geliefden gevaarlijker dan Zeus.</label>
+          <label class="mc-opt"><input type="radio" name="mc2" value="b"> Zeus was als oppergod onaantastbaar voor haar wraak.</label>
+          <label class="mc-opt"><input type="radio" name="mc2" value="c"> Hera hield nog van Zeus en wilde hem niet kwetsen.</label>
+          <label class="mc-opt"><input type="radio" name="mc2" value="d"> De Griekse wet verbood wraak op goden.</label>
+        </div>
+        <div class="vraag-actie"><button class="btn btn-secondary s-highlight l-highlight" id="mc2-btn" onclick="checkMC('mc2','b','mc2-fb','mc2-btn',2)">✓ Controleer</button> <span class="s-chip" data-tip="⑥ Check begrip hele klas: MC-vraag geeft onmiddellijke verificatie van conceptuele kennis.">⬡ ⑥</span> <span class="l-chip" data-tip="BO1_03.08 begrijpen: machtsdynamiek Hera↔Zeus vergelijken en verklaren.">BO1_03.08</span></div>
+        <div class="feedback-box" id="mc2-fb"></div>
+      </div>
+
+      <div class="vraag-blok">
+        <div class="vraag-label"><span class="vraag-nr">3</span>Wat is de Latijnse naam van Hera?</div>
+        <div class="mc-options" id="mc3">
+          <label class="mc-opt"><input type="radio" name="mc3" value="a"> Venus</label>
+          <label class="mc-opt"><input type="radio" name="mc3" value="b"> Minerva</label>
+          <label class="mc-opt"><input type="radio" name="mc3" value="c"> Iuno</label>
+          <label class="mc-opt"><input type="radio" name="mc3" value="d"> Diana</label>
+        </div>
+        <div class="vraag-actie"><button class="btn btn-secondary s-highlight l-highlight" id="mc3-btn" onclick="checkMC('mc3','c','mc3-fb','mc3-btn',2)">✓ Controleer</button> <span class="s-chip" data-tip="⑥ Check begrip hele klas: MC-vraag geeft onmiddellijke verificatie van conceptuele kennis.">⬡ ⑥</span> <span class="l-chip" data-tip="BO1_03.07 begrijpen: Latijnse naam van Hera kennen = cultuurtransfer Grieks→Latijn.">BO1_03.07</span></div>
+        <div class="feedback-box" id="mc3-fb"></div>
+      </div>
+    </div>
+
+    <!-- DENKVRAGEN met doorvragende AI — BS 11 -->
+    <div class="card">
+      <div class="card-title">✍️ Denkvragen</div>
+
+      <div class="vraag-blok">
+        <div class="vraag-label"><span class="vraag-nr">4</span>Hephaistos werd van de Olympus gegooid. Toch is zijn wraak indirect: een gouden troon. Wat zegt dat over hem als personage?</div>
+        <textarea id="a-v4" placeholder="Schrijf een doordacht antwoord…"></textarea>
+        <div class="vraag-actie">
+          <button class="btn btn-outline s-highlight l-highlight" onclick="toggleDenkhulp('dh-a4',this)" title="⑦ Scaffolding: vergelijkingspunt aanreiken (Hephaistos vs Ares) als haak.">💡 Denkhulp</button>
+          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('a-v4','a-fb4','De leerling analyseert het karakter van Hephaistos via zijn indirecte wraak. Geef gerichte feedback. Sluit af met een prikkelende vervolgvraag over de verhouding macht-list in de mythologie.')">✨ Feedback</button>
+        </div>
+        <div class="denkhulp" id="dh-a4"><strong>Denk aan:</strong> hij is misvormd maar slim. Wat kiest iemand als hij niet de sterkste is? Vergelijk met Ares.</div>
+        <div class="feedback-box" id="a-fb4"></div>
+      </div>
+
+      <div class="vraag-blok">
+        <div class="vraag-label"><span class="vraag-nr">5</span>Eileithyia hielp vrouwen bij de bevalling — maar Hera hield haar soms tegen. Hoe verklaarden de Grieken daarmee iets wat ze zelf meemaakten?</div>
+        <textarea id="a-v5" placeholder="Schrijf je antwoord…"></textarea>
+        <div class="vraag-actie">
+          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('a-v5','a-fb5','De leerling reflecteert hoe de Grieken via Eileithyia een pijnlijke bevalling mythologisch verklaarden. Sluit af: welke andere dingen uit het dagelijks leven hadden de Grieken een mythologische verklaring voor?')">✨ Feedback</button>
+        </div>
+        <div class="feedback-box" id="a-fb5"></div>
+      </div>
+    </div>
+
+    <!-- CREATIEVE OPDRACHT -->
+    <div class="card">
+      <div class="card-title">🎭 Creatieve verwerking</div>
+      <div class="vraag-blok">
+        <div class="vraag-label"><span class="vraag-nr">6</span>Jij bent Hephaistos. Je moeder gooide je van de Olympus. Schrijf een monoloog (5–8 zinnen): waarom neem je wraak, en hoe? Laat zien dat je het verhaal begrijpt.</div>
+        <textarea id="a-v6" rows="5" placeholder="Schrijf hier je monoloog…"></textarea>
+        <div class="vraag-actie">
+          <button class="btn btn-outline s-highlight l-highlight" onclick="toggleDenkhulp('dh-a6',this)" title="⑦ Scaffolding: schrijfsteiger — concrete elementen aanreiken voor creatieve verwerking.">💡 Denkhulp</button>
+          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('a-v6','a-fb6','De leerling schrijft een monoloog als Hephaistos over zijn wraak op Hera. Geef inhoudelijke én creatieve feedback. Controleer of het klopt. Sluit af: wat zou Hera geantwoord hebben?')">✨ Feedback</button>
+        </div>
+        <div class="denkhulp" id="dh-a6"><strong>Gebruik:</strong> zijn gevoel van onrecht, zijn ambacht als smid, de list van de troon. Schrijf in de ik-persoon.</div>
+        <div class="feedback-box" id="a-fb6"></div>
+      </div>
+    </div>
+
+    <!-- EXIT TICKET — BS 6 + 12 -->
+    <div class="exit-ticket">
+      <h3>🎫 Exit ticket</h3>
+
+      <div class="vraag-blok" style="margin-bottom:16px;">
+        <div class="vraag-label"><span class="vraag-nr">7</span>Schrijf in één zin de belangrijkste les van vandaag. Gebruik de woorden <em>Zeus</em>, <em>Hera</em> en <em>macht</em>.</div>
+        <textarea id="exit-v1" rows="2" placeholder="De belangrijkste les is…" class="l-highlight s-highlight"></textarea> <span class="s-chip" data-tip="⑥ Check begrip hele klas: exit ticket meet of de kernboodschap geland is bij elke leerling individueel.">⬡ ⑥</span> <span class="l-chip" data-tip="BO1_03.08 begrijpen: gelijkenissen/verschillen Grieks-Romeins-heden verwoorden in eigen woorden.">BO1_03.08</span>
+        <div class="vraag-actie">
+          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('exit-v1','exit-fb1','De leerling vat de les samen in één zin met de woorden Zeus, Hera en macht. Beoordeel inhoudelijk en of de drie woorden correct worden gebruikt.')">✨ Feedback</button>
+        </div>
+        <div class="feedback-box" id="exit-fb1"></div>
+      </div>
+
+      <div style="padding-top:14px;border-top:1px solid rgba(19,66,127,.15);">
+        <div class="card-title" style="margin-bottom:11px;">🪞 Hoe heb jij geleerd vandaag? <span class="s-chip" data-tip="⑫ Leer leren: expliciete metacognitieve reflectie — leerling evalueert eigen begrip en leerstrategie.">⬡ ⑫</span></div>
+        <div class="meta-grid">
+          <div class="meta-item">
+            <label>Hoe goed begrijp ik de stof?</label>
+            <select id="meta-begrip">
+              <option value="">Kies…</option>
+              <option>⭐ Ik snap er weinig van</option>
+              <option>⭐⭐ Ik snap de basis</option>
+              <option>⭐⭐⭐ Ik snap het goed</option>
+              <option>⭐⭐⭐⭐ Ik kan het uitleggen aan iemand anders</option>
+            </select>
+          </div>
+          <div class="meta-item">
+            <label>Wat hielp mij het meest?</label>
+            <select id="meta-strategie">
+              <option value="">Kies…</option>
+              <option>De afbeeldingen met symbolen</option>
+              <option>Het luisterfragment</option>
+              <option>De kindkaarten aanklikken</option>
+              <option>Mezelf testen (retrieval)</option>
+              <option>De AI-feedback</option>
+              <option>De monoloog schrijven</option>
+            </select>
+          </div>
+          <div class="meta-item">
+            <label>Wat wil ik nog beter begrijpen?</label>
+            <textarea id="meta-vraag" rows="2" placeholder="Bijv. het verschil tussen Ares en Athena…" style="font-size:.79rem;min-height:56px;"></textarea>
+          </div>
+          <div class="meta-item">
+            <label>Hoe ga ik dit onthouden?</label>
+            <select id="meta-plan">
+              <option value="">Kies…</option>
+              <option>Ik maak een geheugenkaartje</option>
+              <option>Ik leg het uit aan iemand thuis</option>
+              <option>Ik lees de tekst nog eens</option>
+              <option>Ik test mezelf morgen opnieuw</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="inzend-card">
+      <div class="naam-wrap">
+        <label for="naam">Naam:</label>
+        <input type="text" id="naam" placeholder="Jouw naam">
+      </div>
+      <button class="btn btn-secondary" onclick="resultatenInzenden()">📤 Inzenden</button>
+    </div>
+    <div class="feedback-box" id="inzend-fb" style="margin-top:10px"></div>
+
+  </section>
+
+</main>
+
+<script>
+const PROXY = 'https://latijn-api.jens-everaerdt.workers.dev';
+// Score: 3 retrieval×1 + 3 MC×2 + 3 open×2 + exit×2 = 15
+const MAX = 15;
+let score = 0;
+const gedaan = {};
+
+function toonModus(id, btn) {
+  document.querySelectorAll('.mode-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('modus-' + id).classList.add('active');
+  btn.classList.add('active');
+  document.getElementById('scoreBar').style.display = (id === 'leer') ? 'none' : 'flex';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function toonModusBtn(id) {
+  const idx = { ontdek: 0, leer: 1, actie: 2 };
+  const btn = document.querySelectorAll('.tab-btn')[idx[id]];
+  toonModus(id, btn);
+}
+
+function updateScore(delta, sleutel) {
+  if (gedaan[sleutel]) return;
+  gedaan[sleutel] = true;
+  score = Math.min(score + delta, MAX);
+  document.getElementById('scoreNr').textContent = score;
+  document.getElementById('progressBar').style.width = Math.round((score / MAX) * 100) + '%';
+  const staten = [
+    [MAX, '🏆 Meester van de Olympus!', 'Perfecte score — Zeus zou trots zijn.'],
+    [10,  'Uitstekend!',                'Indrukwekkende kennis van de mythologie.'],
+    [7,   'Goed werk!',                 'Je begrijpt de stof goed.'],
+    [3,   'Goed bezig!',               'Je bent op weg.'],
+    [0,   'Begin maar!',               'Beantwoord vragen om punten te verdienen.'],
+  ];
+  const s = staten.find(([d]) => score >= d);
+  document.getElementById('scoreStatus').textContent = s[1];
+  document.getElementById('scoreDetail').textContent = s[2];
+}
+
+function leesTekst(t) {
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(t);
+  u.lang = 'nl-NL';
+  speechSynthesis.speak(u);
+}
+
+function toggleKind(el) { el.classList.toggle('open'); }
+
+function toggleDenkhulp(id, btn) {
+  const el = document.getElementById(id);
+  const zichtbaar = el.classList.toggle('zichtbaar');
+  if (btn) btn.textContent = zichtbaar ? '💡 Verberg' : '💡 Denkhulp';
+}
+
+function toonFeedback(el, html, type) {
+  el.innerHTML = html;
+  el.className = 'feedback-box active' + (type ? ' ' + type : '');
+}
+
+function checkMC(groepId, juist, fbId, btnId, punten) {
+  const gekozen = document.querySelector(`input[name="${groepId}"]:checked`);
+  const fb = document.getElementById(fbId);
+  if (!gekozen) { toonFeedback(fb, '⚠️ Selecteer eerst een antwoord.', ''); return; }
+  document.getElementById(btnId).disabled = true;
+  document.querySelectorAll(`#${groepId} input`).forEach(r => r.disabled = true);
+  document.querySelectorAll(`#${groepId} .mc-opt`).forEach(opt => {
+    const r = opt.querySelector('input');
+    if (r.value === juist) opt.classList.add('correct');
+    else if (r.checked) opt.classList.add('fout');
+  });
+  if (gekozen.value === juist) {
+    toonFeedback(fb, `✅ Correct! +${punten} punten.`, 'goed');
+    updateScore(punten, fbId);
+  } else {
+    toonFeedback(fb, '❌ Niet correct. Het juiste antwoord is groen gemarkeerd.', 'fout');
+  }
+}
+
+function toonRetrieval(antwoordId, checkId) {
+  document.getElementById(antwoordId).classList.add('zichtbaar');
+  document.getElementById(checkId).classList.add('zichtbaar');
+}
+
+async function vraagAI(inputId, fbId, context) {
+  const inp = document.getElementById(inputId);
+  const fb  = document.getElementById(fbId);
+  const tekst = inp.value.trim();
+  if (!tekst) { toonFeedback(fb, '⚠️ Schrijf eerst een antwoord.', ''); return; }
+  // vind de dichtstbijzijnde vraagAI-knop
+  const allBtns = [...fb.closest('.vraag-blok, .exit-ticket, .card').querySelectorAll('button')];
+  const aiBtn = allBtns.find(b => b.getAttribute('onclick')?.includes('vraagAI'));
+  if (aiBtn) aiBtn.disabled = true;
+  fb.innerHTML = '<span class="spinner"></span> Feedback laden…';
+  fb.className = 'feedback-box active';
+  try {
+    const resp = await fetch(PROXY, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-haiku-4-5-20251001',
+        max_tokens: 250,
+        system: `Je bent een enthousiaste leraar Griekse mythologie voor leerlingen van 12–14 jaar (2e middelbaar, 2GR-LAT). Geef feedback in het Nederlands, spreek de leerling aan als "je". Regels: (1) Bevestig of corrigeer het antwoord inhoudelijk in max. 2 zinnen. (2) Sluit ALTIJD af met een prikkelende vervolgvraag die dieper gaat. (3) Geef nooit het volledige antwoord weg — zet de leerling aan het denken.`,
+        messages: [{ role: 'user', content: `Opdracht: ${context}\n\nAntwoord van de leerling: "${tekst}"\n\nGeef feedback.` }]
+      })
+    });
+    const data = await resp.json();
+    const tekst2 = data.content?.[0]?.text?.trim() || 'Geen feedback ontvangen.';
+    toonFeedback(fb, '💬 ' + tekst2, '');
+    updateScore(2, fbId);
+  } catch {
+    toonFeedback(fb, '❌ Verbindingsfout. Probeer opnieuw.', 'fout');
+  } finally {
+    if (aiBtn) aiBtn.disabled = false;
+  }
+}
+
+function toggleDropdown(btn) {
+  const dropdown = document.getElementById('didactiekDropdown');
+  const open = dropdown.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  if (open) {
+    const close = (e) => {
+      if (!btn.closest('.didactiek-wrap').contains(e.target)) {
+        dropdown.classList.remove('open');
+        btn.classList.remove('open');
+        document.removeEventListener('click', close);
+      }
+    };
+    setTimeout(() => document.addEventListener('click', close), 0);
+  }
+}
+
+function toggleLaag(laag) {
+  document.body.classList.toggle(laag + '-mode');
+  const aan = document.body.classList.contains(laag + '-mode');
+  const item = document.getElementById('dd-' + laag);
+  item.classList.toggle('active', aan);
+}
+
+async function resultatenInzenden() {
+  const naam = document.getElementById('naam').value.trim();
+  const fb   = document.getElementById('inzend-fb');
+  if (!naam) { toonFeedback(fb, '⚠️ Vul eerst je naam in.', ''); return; }
+
+  const meta = [
+    document.getElementById('meta-begrip').value,
+    document.getElementById('meta-strategie').value,
+    document.getElementById('meta-vraag').value.trim(),
+    document.getElementById('meta-plan').value,
+  ].filter(Boolean).join(' / ');
+
+  const antwoorden = [
+    { id:'o-v1',label:'Voorkennis'},{id:'o-v2',label:'Beeld'},{id:'o-v3',label:'Symbool'},
+    {id:'l-v1',label:'Kronos'},{id:'l-v2',label:'Hera wraak'},
+    {id:'a-v4',label:'Hephaistos'},{id:'a-v5',label:'Eileithyia'},
+    {id:'a-v6',label:'Monoloog'},{id:'exit-v1',label:'Exit'},
+  ].map(v => { const el=document.getElementById(v.id); return el?.value?.trim() ? `${v.label}: ${el.value.trim()}` : ''; })
+   .filter(Boolean).join(' | ');
+
+  const mc = ['mc1','mc2','mc3'].map(n => {
+    const v = document.querySelector(`input[name="${n}"]:checked`)?.value || '—';
+    return `${n.toUpperCase()}:${v}`;
+  }).join(', ');
+
+  const resultatenTekst = `Score:${score}/${MAX} | ${mc} | Meta:${meta||'—'} | ${antwoorden}`;
+
+  const FORM_ID='1FAIpQLScCEJFq3G9kw1DsRpeq90hTpsSuVbCs7FMFh1bzOIXKBIKvIQ';
+  const ENTRY_NAAM='entry.825151788', ENTRY_RES='entry.1977566684';
+  const url=`https://docs.google.com/forms/d/e/${FORM_ID}/formResponse`;
+  const body=new URLSearchParams();
+  body.append(ENTRY_NAAM,naam); body.append(ENTRY_RES,resultatenTekst);
+
+  try {
+    fb.innerHTML='<span class="spinner donker"></span> Inzenden…';
+    fb.className='feedback-box active';
+    await fetch(url,{method:'POST',mode:'no-cors',body});
+    toonFeedback(fb,`✅ <strong>${naam}</strong> — score <strong>${score}/${MAX}</strong> ingezonden. Goed gedaan!`,'goed');
+    document.querySelector('.inzend-card button').disabled=true;
+    localStorage.setItem('zeus-hera-resultaat',JSON.stringify({naam,score,max:MAX,tijdstip:new Date().toISOString()}));
+  } catch {
+    toonFeedback(fb,'❌ Inzenden mislukt. Controleer je verbinding.','fout');
+  }
+}
+</script>
+</body>
+</html>
