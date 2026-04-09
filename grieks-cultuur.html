@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cultuur — Grieks 2GR-LAT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lufga:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_theme.css">
+<style>
+  :root {
+    --amber: #b45309;
+    --fv: 'Lufga', Arial, sans-serif; --fo: 'Aptos', Arial, sans-serif;
+    --achtergrond: #f7f8fa; --kaart: #ffffff; --rand: #e2e6ed;
+    --tekst: #1a1a1a; --tekst-zacht: #6b7280;
+    --radius: 12px;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--achtergrond); color: var(--tekst); min-height: 100vh; display: flex; flex-direction: column; }
+
+  .hero { width: 100%; position: relative; background: transparent; flex-shrink: 0; }
+  .hero-inhoud { position: relative; z-index: 1; padding: 3.5rem 2rem 3rem; text-align: center; }
+  .hero h1 { font-size: 38px; font-weight: 600; color: var(--blauw); letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 5px; }
+  .hero h1 .accent { color: #f9a8d4; }
+  .hero .ondertitel { font-size: 13px; color: var(--blauw); font-family: var(--fo); letter-spacing: 0.3px; }
+  .school-logo { width: 44px; height: auto; margin-top: 10px; display: block; margin-left: auto; margin-right: auto; }
+
+  .terug-wrap { padding: 1.25rem 2rem 0; max-width: 1100px; width: 100%; margin: 0 auto; }
+  .terug-link { font-size: 12px; color: var(--tekst-zacht); text-decoration: none; }
+  .terug-link:hover { color: var(--blauw); }
+
+  .springmenu-wrap { padding: .9rem 2rem 0; max-width: 1100px; width: 100%; margin: 0 auto; }
+  .springmenu { display: flex; flex-wrap: wrap; gap: .4rem; padding: .75rem 0 0; }
+  .springmenu a {
+    font-family: var(--fv); font-size: 11.5px; font-weight: 600;
+    letter-spacing: .07em; text-transform: uppercase;
+    color: var(--blauw); text-decoration: none;
+    padding: .32rem .72rem;
+    border: 1.5px solid var(--rand); border-radius: 20px;
+    background: var(--kaart);
+    transition: color .13s, border-color .13s, background .13s;
+    white-space: nowrap;
+  }
+  .springmenu a:hover { color: var(--roze); border-color: var(--roze); background: #fce8f3; }
+
+  .content-wrap { flex: 1; padding: 2rem 2rem 3rem; max-width: 1100px; width: 100%; margin: 0 auto; }
+
+  .thema-sectie { margin-bottom: 2.5rem; }
+  .thema-header {
+    display: flex; align-items: baseline; gap: .75rem;
+    margin-bottom: 1rem; padding-bottom: .6rem;
+    border-bottom: 1.5px solid var(--rand);
+  }
+  .thema-titel { font-family: var(--fv); font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--blauw); }
+  .thema-sub { font-family: var(--fo); font-size: 12px; color: var(--tekst-zacht); font-style: italic; }
+
+  .tekst-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+
+  .tekst-kaart {
+    background: var(--kaart); border: 0.5px solid var(--rand);
+    border-radius: var(--radius); padding: 1.25rem 1.1rem 1rem;
+    text-decoration: none; color: inherit;
+    display: flex; flex-direction: column; gap: 7px;
+    transition: border-color .15s, transform .15s, box-shadow .15s;
+    position: relative; overflow: hidden;
+  }
+  .tekst-kaart:hover { border-color: var(--amber); transform: translateY(-2px); box-shadow: 0 4px 18px rgba(180,83,9,.09); }
+  .tekst-kaart.coming-soon { opacity: .55; pointer-events: none; cursor: default; }
+
+  .kaart-meta { font-family: var(--fv); font-size: 10.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--roze); margin-bottom: 1px; }
+  .kaart-titel { font-family: 'EB Garamond', Georgia, serif; font-size: 16px; font-weight: 600; color: var(--blauw); line-height: 1.3; }
+  .kaart-auteur { font-family: var(--fo); font-size: 11.5px; color: var(--tekst-zacht); font-style: italic; line-height: 1.4; }
+  .kaart-pijl { margin-top: auto; font-size: 18px; color: var(--rand); transition: color .15s; padding-top: 2px; }
+  .tekst-kaart:hover .kaart-pijl { color: var(--amber); }
+
+  .kaart-badge {
+    position: absolute; top: .7rem; right: .75rem;
+    font-family: var(--fv); font-size: 9.5px; font-weight: 600;
+    letter-spacing: .07em; text-transform: uppercase;
+    background: #f0f3f8; color: #9aa3b0;
+    padding: .2rem .5rem; border-radius: 20px;
+  }
+
+  .kaart-img { display: flex; justify-content: flex-end; margin-top: 2px; margin-bottom: -2px; }
+  .kaart-img img { width: 70px; height: 70px; object-fit: contain; object-position: center; display: block; transition: transform .18s; }
+  .tekst-kaart:hover .kaart-img img { transform: scale(1.06); }
+  .tekst-kaart.coming-soon .kaart-img img { opacity: .5; }
+
+  .voet { text-align: center; padding: 1rem; font-family: var(--fo); font-size: 12px; color: #c0c8d4; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inhoud">
+    <h1>Cultuur <span class="accent">Grieks</span></h1>
+    <p class="ondertitel">athena Campus Pottelberg</p>
+    <svg class="school-logo" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="4"  y="36" width="36" height="4" rx="1.5" fill="#13427f"/>
+      <rect x="2"  y="30" width="40" height="4" rx="1.5" fill="#13427f"/>
+      <rect x="6"  y="14" width="3.5" height="16" rx="1.2" fill="#13427f"/>
+      <rect x="13" y="14" width="3.5" height="16" rx="1.2" fill="#13427f"/>
+      <rect x="20" y="14" width="3.5" height="16" rx="1.2" fill="#13427f"/>
+      <rect x="27" y="14" width="3.5" height="16" rx="1.2" fill="#13427f"/>
+      <rect x="34" y="14" width="3.5" height="16" rx="1.2" fill="#13427f"/>
+      <polygon points="2,14 22,3 42,14" fill="#13427f"/>
+    </svg>
+  </div>
+</div>
+
+<div class="terug-wrap">
+  <a class="terug-link" href="grieks.html">&#8592; Terug naar Grieks</a>
+</div>
+
+<div class="springmenu-wrap">
+  <nav class="springmenu">
+    <a href="#thema-1">Thema 1</a>
+    <a href="#thema-2">Thema 2</a>
+    <a href="#thema-3">Thema 3</a>
+    <a href="#thema-4">Thema 4</a>
+    <a href="#thema-5">Thema 5</a>
+  </nav>
+</div>
+
+<div class="content-wrap">
+
+  <!-- ══════════════════════════════════
+       THEMA 1
+  ══════════════════════════════════ -->
+  <div class="thema-sectie" id="thema-1">
+    <div class="thema-header">
+      <span class="thema-titel">Thema 1</span>
+      <span class="thema-sub">De Grieken en hun taal</span>
+    </div>
+    <div class="tekst-grid">
+      <a class="tekst-kaart coming-soon" href="#">
+        <span class="kaart-badge">Binnenkort</span>
+        <div class="kaart-meta">Les 1</div>
+        <div class="kaart-titel">—</div>
+        <div class="kaart-auteur"></div>
+        <div class="kaart-pijl">›</div>
+      </a>
+      <a class="tekst-kaart coming-soon" href="#">
+        <span class="kaart-badge">Binnenkort</span>
+        <div class="kaart-meta">Les 2</div>
+        <div class="kaart-titel">—</div>
+        <div class="kaart-auteur"></div>
+        <div class="kaart-pijl">›</div>
+      </a>
+      <a class="tekst-kaart coming-soon" href="#">
+        <span class="kaart-badge">Binnenkort</span>
+        <div class="kaart-meta">Les 3</div>
+        <div class="kaart-titel">—</div>
+        <div class="kaart-auteur"></div>
+        <div class="kaart-pijl">›</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       THEMA 2
+  ══════════════════════════════════ -->
+  <div class="thema-sectie" id="thema-2">
+    <div class="thema-header">
+      <span class="thema-titel">Thema 2</span>
+      <span class="thema-sub">Het land van de Grieken</span>
+    </div>
+    <div class="tekst-grid">
+      <a class="tekst-kaart coming-soon" href="#">
+        <span class="kaart-badge">Binnenkort</span>
+        <div class="kaart-meta">Les 1</div>
+        <div class="kaart-titel">—</div>
+        <div class="kaart-auteur"></div>
+        <div class="kaart-pijl">›</div>
+      </a>
+      <a class="tekst-kaart coming-soon" href="#">
+        <span class="kaart-badge">Binnenkort</span>
+        <div class="kaart-meta">Les 2</div>
+        <div class="kaart-titel">—</div>
+        <div class="kaart-auteur"></div>
+        <div class="kaart-pijl">›</div>
+      </a>
+      <a class="tekst-kaart coming-soon" href="#">
+        <span class="kaart-badge">Binnenkort</span>
+        <div class="kaart-meta">Les 3</div>
+        <div class="kaart-titel">—</div>
+        <div class="kaart-auteur"></div>
+        <div class="kaart-pijl">›</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       THEMA 3
+  ══════════════════════════════════ -->
+  <div class="thema-sectie" id="thema-3">
+    <div class="thema-header">
+      <span class="thema-titel">Thema 3</span>
+      <span class="thema-sub">Mythologie: De goden</span>
+    </div>
+    <div class="tekst-grid">
+
+      <!-- Zeus & Hera 1 — beschikbaar -->
+      <a class="tekst-kaart" href="grieks-zeus-hera-1.html">
+        <div class="kaart-meta">Les 1</div>
+        <div class="kaart-titel">Zeus en Hera (1)</div>
+        <div class="kaart-auteur">De koningsgoden van de Olympos</div>
+        <div class="kaart-pijl">›</div>
+      </a>
+
+      <a class="tekst-kaart coming-soon" href="#">
+        <span class="kaart-badge">Binnenkort</span>
+        <div class="kaart-meta">Les 2</div>
+        <div class="kaart-titel">—</div>
+        <div class="kaart-auteur"></div>
+        <div class="kaart-pijl">›</div>
+      </a>
+      <a class="tekst-kaart coming-soon" href="#">
+        <span class="kaart-badge">Binnenkort</span>
+        <div class="kaart-meta">Les 3</div>
+        <div class="kaart-titel">—</div>
+        <div class="kaart-auteur"></div>
+        <div class="kaart-pijl">›</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       THEMA 4
+  ══════════════════════════════════ -->
+  <div class="thema-sectie" id="thema-4">
+    <div class="thema-header">
+      <span class="thema-titel">Thema 4</span>
+      <span class="thema-sub">Mythologie: Odysseus</span>
+    </div>
+    <div class="tekst-grid">
+      <a class="tekst-kaart coming-soon" href="#">
+        <span class="kaart-badge">Binnenkort</span>
+        <div class="kaart-meta">Les 1</div>
+        <div class="kaart-titel">—</div>
+        <div class="kaart-auteur"></div>
+        <div class="kaart-pijl">›</div>
+      </a>
+      <a class="tekst-kaart coming-soon" href="#">
+        <span class="kaart-badge">Binnenkort</span>
+        <div class="kaart-meta">Les 2</div>
+        <div class="kaart-titel">—</div>
+        <div class="kaart-auteur"></div>
+        <div class="kaart-pijl">›</div>
+      </a>
+      <a class="tekst-kaart coming-soon" href="#">
+        <span class="kaart-badge">Binnenkort</span>
+        <div class="kaart-meta">Les 3</div>
+        <div class="kaart-titel">—</div>
+        <div class="kaart-auteur"></div>
+        <div class="kaart-pijl">›</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       THEMA 5
+  ══════════════════════════════════ -->
+  <div class="thema-sectie" id="thema-5">
+    <div class="thema-header">
+      <span class="thema-titel">Thema 5</span>
+      <span class="thema-sub">Sport en Spel</span>
+    </div>
+    <div class="tekst-grid">
+      <a class="tekst-kaart coming-soon" href="#">
+        <span class="kaart-badge">Binnenkort</span>
+        <div class="kaart-meta">Les 1</div>
+        <div class="kaart-titel">—</div>
+        <div class="kaart-auteur"></div>
+        <div class="kaart-pijl">›</div>
+      </a>
+      <a class="tekst-kaart coming-soon" href="#">
+        <span class="kaart-badge">Binnenkort</span>
+        <div class="kaart-meta">Les 2</div>
+        <div class="kaart-titel">—</div>
+        <div class="kaart-auteur"></div>
+        <div class="kaart-pijl">›</div>
+      </a>
+      <a class="tekst-kaart coming-soon" href="#">
+        <span class="kaart-badge">Binnenkort</span>
+        <div class="kaart-meta">Les 3</div>
+        <div class="kaart-titel">—</div>
+        <div class="kaart-auteur"></div>
+        <div class="kaart-pijl">›</div>
+      </a>
+    </div>
+  </div>
+
+</div><!-- /content-wrap -->
+
+<p class="voet">J. Everaerdt &mdash; athena Campus Pottelberg</p>
+</body>
+</html>
