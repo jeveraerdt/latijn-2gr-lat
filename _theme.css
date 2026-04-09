@@ -1,372 +1,366 @@
-/* 
-  athena Campus Pottelberg — Latijn/Grieks Oefensite
-  Centraal CSS Thema — 2026-04-09
-  Variabelen, layout, huisstijl, responsive
-*/
+/* ============================================================
+   _theme.css — gedeelde stijl voor alle pagina's
+   athena Campus Pottelberg / Groenhoveschool — Latijn & Grieks
+   ============================================================
+   Bevat:
+   - Design tokens (kleuren, fonts)
+   - Site header (blauw merklint met logo)
+   - Site toolbar (witte pill-knoppen-balk)
+   - Page title (tekst-viewer stijl op beige)
+   - Leerdoelen-banner (optie-A stijl, voor cultuurpagina's)
+   - Didactiek-dropdown (popup, niet de knop zelf)
 
+   Bevat NIET:
+   - Pagina-specifieke content (cards, score-bars, oefeningen)
+   - Tekst-viewer specifieke layout (twocol, side-panel, popups)
+   - Modi-tab logica (gebruik .ctrl-btn + .tab-btn als JS-hook)
+
+   Hoe te gebruiken:
+   <link rel="stylesheet" href="_theme.css">
+   ...en verwijder de overeenkomstige inline regels uit de pagina.
+   ============================================================ */
+
+/* ---- TOKENS ------------------------------------------------ */
 :root {
-  /* KLEURENPALETTE */
-  --blauw: #13427f;
-  --roze: #E6007E;
-  --magenta: #E6007E;
-  --grijs-donker: #1a1a1a;
-  --grijs-medium: #6b7280;
-  --achtergrond: #f7f8fa;
-  --wit: #ffffff;
-  --rand: #e2e6ed;
-  
-  /* FONTS */
-  --fv: 'Lufga', Arial, sans-serif;
-  --fo: 'Aptos', Arial, sans-serif;
-  
-  /* SPACING & RADIUS */
-  --radius: 12px;
-  --radius-sm: 8px;
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
-  --spacing-xxl: 3.5rem;
-  
-  /* KLEURBAKKEN (icon backgrounds) */
-  --icoon-blauw: #e6f0fb;
-  --icoon-roze: #fce8f3;
-  --icoon-groen: #e8f5e9;
-  --icoon-amber: #fff8e1;
-  --icoon-paars: #ede7f6;
-  
-  /* TEKST */
-  --tekst-groot: 38px;
-  --tekst-medium: 15px;
-  --tekst-klein: 13px;
-  --tekst-xklein: 12px;
-  --tekst-hoofdstuk: 16px;
+  /* Kleuren — canonieke namen */
+  --blauw:        #13427f;
+  --blauw-mid:    #1a5299;
+  --blauw-donker: #0d2d54;
+  --magenta:      #E6007E;
+  --lichtblauw:   #e8f0fb;
+  --lichtmagenta: #fde8f3;
+
+  /* Beige + papier achtergronden */
+  --beige:  #f5f3ef;
+  --paper:  #fffef9;
+  --rule:   #ddd8d0;
+
+  /* Tekst */
+  --tekst:      #1a1a2e;
+  --tekst-mid:  #3d3a34;
+  --tekst-light:#7a7168;
+
+  /* Status */
+  --groen:      #1a8a4a;
+  --lichtgroen: #e8f7ef;
+  --geel:       #fffbe6;
+  --geelrand:   #e8c800;
+
+  /* Aliasen voor legacy class-namen
+     (zodat bestaande inline-CSS in pagina's blijft werken) */
+  --blue:    var(--blauw);
+  --rand:    var(--rule);
+  --grijs:   var(--beige);
+  --ink:     var(--tekst);
+  --ink-mid: var(--tekst-mid);
+  --ink-light: var(--tekst-light);
+  --bg:      var(--beige);
 }
 
-/* ====== RESET & BASE ====== */
+/* ---- RESET & BODY ------------------------------------------ */
+*{box-sizing:border-box;margin:0;padding:0;}
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+body{
+  font-family:'Lufga','Aptos',Arial,sans-serif;
+  background:var(--beige);
+  color:var(--tekst);
+  min-height:100vh;
 }
 
-body {
-  font-family: var(--fv);
-  background: var(--achtergrond);
-  color: var(--grijs-donker);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+/* ============================================================
+   SITE HEADER — blauw merklint met logo
+   Verwacht in HTML:
+   <header class="site-header">
+     <img class="logo" src="..." alt="athena logo">
+     <h1>Latijn</h1>   (of "Grieks")
+     <span class="sub">2GR-LAT</span>
+   </header>
+   ============================================================ */
+.site-header{
+  position:sticky;top:0;z-index:201;
+  background:var(--blauw);
+  color:#fff;
+  padding:0 28px 0 18px;
+  display:flex;align-items:center;gap:14px;
+  height:60px;
+  box-shadow:0 1px 0 rgba(0,0,0,.08);
+}
+.site-header .logo{
+  width:42px;height:42px;
+  border-radius:6px;
+  object-fit:cover;
+  flex-shrink:0;
+  display:block;
+}
+.site-header h1{
+  font-family:'Lufga',sans-serif;
+  font-size:1.05rem;
+  font-weight:700;
+  color:#fff;
+  letter-spacing:.005em;
+  line-height:1;
+}
+.site-header .sub{
+  font-family:'Lufga',sans-serif;
+  font-size:.7rem;
+  font-weight:500;
+  color:#fff;
+  opacity:.6;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-left:auto;
 }
 
-/* ====== TYPOGRAFIE ====== */
+/* ============================================================
+   SITE TOOLBAR — witte strook met pill-knoppen
+   Verwacht in HTML:
+   <div class="site-toolbar">
+     <div class="toolbar-left"> ...knoppen links... </div>
+     <div class="toolbar-right"> ...knoppen rechts... </div>
+   </div>
+   ============================================================ */
+.site-toolbar{
+  position:sticky;top:60px;z-index:200;
+  background:var(--paper);
+  padding:0 22px;
+  height:48px;
+  display:flex;align-items:center;gap:.5rem;
+  border-bottom:1px solid var(--rule);
+  box-shadow:0 2px 12px rgba(19,66,127,.05);
+}
+.toolbar-left{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;}
+.toolbar-right{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;margin-left:auto;}
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--fv);
-  font-weight: 600;
+/* Terug-knop (zonder pill) */
+.back-btn{
+  background:none;border:none;
+  color:var(--blauw);
+  font-family:'Lufga',sans-serif;
+  font-size:.76rem;font-weight:500;
+  letter-spacing:.02em;
+  cursor:pointer;
+  display:flex;align-items:center;gap:.4rem;
+  padding:.3rem 0;
+  transition:color .15s;
+}
+.back-btn:hover{color:var(--magenta);}
+.back-btn svg{width:13px;height:13px;}
+
+/* Verticale scheidings-streep */
+.topbar-divider{
+  width:1px;height:18px;
+  background:rgba(19,66,127,.15);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* Sectie-label ("Cultuur", "Tekstviewer", ...) */
+.topbar-label{
+  font-family:'Lufga',sans-serif;
+  font-size:.7rem;font-weight:500;
+  color:rgba(19,66,127,.5);
+  letter-spacing:.1em;
+  text-transform:uppercase;
 }
 
-/* ====== HERO SECTION ====== */
+/* Pill-knop — de basis voor alle toolbar-acties */
+.ctrl-btn{
+  background:#fff;
+  border:1.5px solid rgba(19,66,127,.18);
+  border-radius:20px;
+  color:var(--blauw);
+  font-family:'Lufga',sans-serif;
+  font-size:.68rem;font-weight:600;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  padding:.3rem .75rem;
+  cursor:pointer;
+  display:flex;align-items:center;gap:.3rem;
+  white-space:nowrap;
+  transition:all .15s;
+}
+.ctrl-btn:hover{border-color:var(--magenta);color:var(--magenta);}
+.ctrl-btn.active,
+.ctrl-btn.open{background:var(--blauw);border-color:var(--blauw);color:#fff;}
+.ctrl-btn svg{width:12px;height:12px;flex-shrink:0;}
 
-.hero {
-  width: 100%;
-  position: relative;
-  background: var(--blauw);
-  color: white;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--spacing-lg);
-  padding: var(--spacing-xl) var(--spacing-lg);
-  min-height: 280px;
+/* Sticky offset voor progress bars / side-panels onder de toolbar */
+.below-toolbar{top:108px;} /* 60 + 48 */
+
+/* ============================================================
+   PAGE TITLE — tekst-viewer stijl titel-sectie op beige
+   Verwacht in HTML:
+   <div class="page-title-wrap">
+     <div class="page-title-inner">
+       <div class="page-meta">Cultuur · Thema 3 — De goden</div>
+       <h2 class="page-title">Zeus, Hera en hun kinderen</h2>
+       <p class="page-sub">Korte inleiding...</p>
+     </div>
+   </div>
+   ============================================================ */
+.page-title-wrap{
+  background:var(--beige);
+  padding:3rem 32px 2rem;
+}
+.page-title-inner{
+  max-width:860px;
+  margin:0 auto;
+  padding-bottom:.5rem;
+}
+.page-meta{
+  font-family:'Lufga',sans-serif;
+  font-size:.7rem;font-weight:600;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--magenta);
+  margin-bottom:.6rem;
+}
+.page-title{
+  font-family:'Lufga',sans-serif;
+  font-size:2rem;font-weight:600;
+  line-height:1.2;
+  color:var(--blauw);
+  letter-spacing:-.01em;
+  margin-bottom:.5rem;
+}
+.page-sub{
+  font-family:'Lufga',sans-serif;
+  font-size:.95rem;font-weight:400;
+  color:var(--tekst-light);
+  line-height:1.55;
+  max-width:560px;
 }
 
-.hero-inhoud {
-  position: relative;
-  z-index: 1;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+/* ============================================================
+   LEERDOELEN-BANNER — witte strook met lichtblauwe pills
+   Optioneel — momenteel alleen op cultuurpagina's gebruikt.
+   Plaats NA de page-title, VOOR de hoofdcontent.
+   Verwacht in HTML:
+   <div class="leerdoelen-banner">
+     <div class="leerdoelen-inner">
+       <span class="leerdoelen-label">Na deze les kun je:</span>
+       <span class="doel-pill">...</span>
+       <span class="doel-pill">...</span>
+     </div>
+   </div>
+   ============================================================ */
+.leerdoelen-banner{
+  background:var(--paper);
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  padding:14px 32px;
+}
+.leerdoelen-inner{
+  max-width:860px;
+  margin:0 auto;
+  display:flex;align-items:center;gap:10px;
+  flex-wrap:wrap;
+}
+.leerdoelen-label{
+  font-family:'Lufga',sans-serif;
+  font-size:.66rem;font-weight:700;
+  color:var(--blauw);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  white-space:nowrap;
+  opacity:.7;
+}
+.doel-pill{
+  background:var(--lichtblauw);
+  color:var(--blauw);
+  font-family:'Lufga',sans-serif;
+  font-size:.72rem;font-weight:500;
+  padding:3px 10px;
+  border-radius:20px;
+  border:1px solid rgba(19,66,127,.12);
 }
 
-.hero h1 {
-  font-size: 32px;
-  font-weight: 600;
-  color: white;
-  letter-spacing: -0.5px;
-  line-height: 1.2;
-  margin-bottom: 8px;
+/* ============================================================
+   DIDACTIEK DROPDOWN — popup-menu (de knop zelf is .ctrl-btn)
+   Verwacht in HTML:
+   <div class="didactiek-wrap">
+     <button class="ctrl-btn" onclick="toggleDropdown(this)">
+       🧱 Didactiek ▾
+     </button>
+     <div class="didactiek-dropdown" id="didactiekDropdown">
+       <button class="dd-item">...</button>
+     </div>
+   </div>
+   ============================================================ */
+.didactiek-wrap{
+  position:relative;
+  display:inline-block;
+}
+.didactiek-dropdown{
+  display:none;
+  position:absolute;
+  right:0;top:calc(100% + 6px);
+  background:#fff;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  box-shadow:0 6px 20px rgba(0,0,0,.15);
+  min-width:180px;
+  overflow:hidden;
+  z-index:300;
+}
+.didactiek-dropdown.open{
+  display:block;
+  animation:ddFadeIn .15s ease;
+}
+.dd-item{
+  display:flex;align-items:center;gap:9px;
+  width:100%;
+  padding:10px 14px;
+  border:none;background:none;
+  font-family:'Lufga',sans-serif;
+  font-size:.78rem;font-weight:600;
+  color:var(--tekst);
+  text-align:left;
+  cursor:pointer;
+  transition:background .15s;
+}
+.dd-item:hover{background:var(--lichtblauw);}
+.dd-item .dd-check{
+  width:14px;height:14px;
+  border-radius:3px;
+  border:1.5px solid var(--rule);
+  flex-shrink:0;
+  display:inline-block;
+  transition:all .15s;
+}
+.dd-item.active .dd-check{
+  background:var(--magenta);
+  border-color:var(--magenta);
+}
+.dd-item.active .dd-check::after{
+  content:'✓';
+  display:block;
+  color:#fff;
+  font-size:.6rem;
+  line-height:14px;
+  text-align:center;
+}
+.dd-divider{
+  height:1px;
+  background:var(--rule);
 }
 
-.hero .ondertitel {
-  font-size: var(--tekst-klein);
-  color: rgba(255, 255, 255, 0.9);
-  font-family: var(--fo);
-  letter-spacing: 0.3px;
-  margin-bottom: var(--spacing-sm);
+@keyframes ddFadeIn{
+  from{opacity:0;transform:translateY(-2px);}
+  to  {opacity:1;transform:none;}
 }
 
-.hero-beschrijving {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.85);
-  font-family: var(--fo);
-  line-height: 1.6;
-  max-width: 400px;
-}
-
-.hero-afbeelding {
-  flex: 0 0 280px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 250px;
-}
-
-.hero-afbeelding img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: var(--radius);
-  padding: var(--spacing-md);
-}
-
-.hero-afbeelding svg {
-  width: 200px;
-  height: 200px;
-  opacity: 0.9;
-}
-
-.school-logo {
-  width: 44px;
-  height: auto;
-  margin-top: 10px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* HERO VARIATIES */
-
-.hero--home {
-  flex-direction: column;
-  text-align: center;
-  min-height: auto;
-  padding: var(--spacing-xxl) var(--spacing-lg) 3rem;
-  background: transparent;
-  color: var(--grijs-donker);
-}
-
-.hero--home h1 {
-  color: var(--blauw);
-  font-size: var(--tekst-groot);
-}
-
-.hero--home .ondertitel {
-  color: var(--blauw);
-}
-
-.hero--grammatica,
-.hero--oefeningen,
-.hero--woordjestrainer,
-.hero--cultuur,
-.hero--teksten {
-  background: var(--blauw);
-}
-
-.hero--grammatica h1,
-.hero--oefeningen h1,
-.hero--woordjestrainer h1,
-.hero--cultuur h1,
-.hero--teksten h1 {
-  color: white;
-  font-size: 32px;
-}
-
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    min-height: auto;
-    padding: var(--spacing-lg) var(--spacing-md);
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:600px){
+  .site-header{padding:0 14px;}
+  .site-toolbar{
+    padding:8px 14px;
+    height:auto;
+    flex-wrap:wrap;
   }
-  
-  .hero-afbeelding {
-    flex: 0 0 200px;
-    height: 200px;
-  }
-  
-  .hero-afbeelding svg {
-    width: 150px;
-    height: 150px;
-  }
-  
-  .hero h1 {
-    font-size: 24px;
-  }
-}
-
-/* ====== NAVIGATIE ====== */
-
-.terug-wrap {
-  padding: 1.25rem var(--spacing-lg) 0;
-  max-width: 1100px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.terug-link {
-  font-size: var(--tekst-xklein);
-  color: var(--grijs-medium);
-  text-decoration: none;
-  transition: color 0.15s;
-}
-
-.terug-link:hover {
-  color: var(--blauw);
-}
-
-.nav-wrap {
-  flex: 1;
-  padding: var(--spacing-md) var(--spacing-lg) 3rem;
-  max-width: 1100px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.nav-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-}
-
-.nav-tegel {
-  background: var(--wit);
-  border: 0.5px solid var(--rand);
-  border-radius: var(--radius);
-  padding: var(--spacing-md) 1.25rem;
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  transition: border-color 0.15s, transform 0.15s;
-  cursor: pointer;
-}
-
-.nav-tegel:hover {
-  border-color: var(--blauw);
-  transform: translateY(-2px);
-}
-
-.nav-tegel-icoon {
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.nav-tegel-icoon svg {
-  width: 22px;
-  height: 22px;
-}
-
-.icoon-blauw {
-  background: var(--icoon-blauw);
-}
-
-.icoon-roze {
-  background: var(--icoon-roze);
-}
-
-.icoon-groen {
-  background: var(--icoon-groen);
-}
-
-.icoon-amber {
-  background: var(--icoon-amber);
-}
-
-.icoon-paars {
-  background: var(--icoon-paars);
-}
-
-.nav-tegel-naam {
-  font-size: var(--tekst-medium);
-  font-weight: 600;
-  color: var(--blauw);
-}
-
-.nav-tegel-omschrijving {
-  font-family: var(--fo);
-  font-size: var(--tekst-klein);
-  color: var(--grijs-medium);
-  line-height: 1.5;
-}
-
-.nav-tegel-pijl {
-  margin-top: auto;
-  font-size: 18px;
-  color: var(--rand);
-  transition: color 0.15s;
-}
-
-.nav-tegel:hover .nav-tegel-pijl {
-  color: var(--blauw);
-}
-
-/* ====== FOOTER ====== */
-
-.voet {
-  text-align: center;
-  padding: 1rem;
-  font-family: var(--fo);
-  font-size: var(--tekst-xklein);
-  color: #c0c8d4;
-}
-
-/* ====== RESPONSIVE ====== */
-
-@media (max-width: 768px) {
-  .hero-inhoud {
-    padding: var(--spacing-xl) var(--spacing-md) 2rem;
-  }
-  
-  .hero h1 {
-    font-size: 28px;
-  }
-  
-  .nav-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .nav-wrap {
-    padding: var(--spacing-md) var(--spacing-md) 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-inhoud {
-    padding: var(--spacing-lg) var(--spacing-md) 1.5rem;
-  }
-  
-  .hero h1 {
-    font-size: 24px;
-  }
-  
-  .nav-tegel {
-    padding: 1rem;
-  }
+  .topbar-label,
+  .topbar-divider{display:none;}
+  .page-title-wrap{padding:2rem 18px 1.5rem;}
+  .page-title{font-size:1.6rem;}
+  .leerdoelen-banner{padding:10px 18px;}
 }

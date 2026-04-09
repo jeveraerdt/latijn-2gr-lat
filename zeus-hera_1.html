@@ -6,34 +6,8 @@
 <title>Zeus, Hera en hun kinderen</title>
 <link href="https://fonts.cdnfonts.com/css/lufga" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_theme.css">
 <style>
-  :root {
-    --blauw:#13427f;--magenta:#E6007E;--lichtblauw:#e8f0fb;--lichtmagenta:#fde8f3;
-    --grijs:#f5f5f5;--tekst:#1a1a2e;--rand:#d0d8e8;--groen:#1a8a4a;
-    --lichtgroen:#e8f7ef;--geel:#fffbe6;--geelrand:#e8c800;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:'Lufga','Aptos',Arial,sans-serif;background:var(--grijs);color:var(--tekst);min-height:100vh;}
-  .site-header{background:var(--blauw);color:white;padding:0 32px;display:flex;align-items:center;gap:14px;height:60px;box-shadow:0 2px 10px rgba(19,66,127,.2);}
-  .site-header .icon{font-size:1.5rem;}
-  .site-header h1{font-size:1.05rem;font-weight:700;color:white;}
-  .site-header .sub{font-size:.72rem;opacity:.65;letter-spacing:.06em;text-transform:uppercase;}
-  .hero{background:linear-gradient(135deg,var(--blauw) 0%,#1a5a9e 55%,#0d2d54 100%);color:white;padding:36px 32px 28px;position:relative;overflow:hidden;}
-  .hero::before{content:'Ζεύς';position:absolute;right:24px;top:8px;font-family:'EB Garamond',serif;font-size:6rem;opacity:.08;color:white;pointer-events:none;}
-  .hero-inner{max-width:860px;margin:auto;display:flex;gap:28px;align-items:center;}
-  .hero-text h2{font-size:1.7rem;font-weight:700;margin-bottom:6px;line-height:1.2;}
-  .hero-text h2 span{color:var(--magenta);}
-  .hero-text p{font-size:.9rem;opacity:.82;max-width:500px;line-height:1.55;}
-  .hero-img{flex-shrink:0;width:100px;height:128px;border-radius:6px;overflow:hidden;border:3px solid rgba(255,255,255,.22);box-shadow:0 8px 20px rgba(0,0,0,.28);}
-  .hero-img img{width:100%;height:100%;object-fit:cover;object-position:top;}
-  .leerdoelen-banner{background:var(--blauw);border-bottom:3px solid var(--magenta);padding:9px 32px;}
-  .leerdoelen-inner{max-width:860px;margin:auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
-  .leerdoelen-label{font-size:.7rem;font-weight:700;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;}
-  .doel-pill{background:rgba(255,255,255,.12);color:white;font-size:.74rem;padding:3px 9px;border-radius:20px;border:1px solid rgba(255,255,255,.2);}
-  .tabs{background:white;border-bottom:2px solid var(--rand);display:flex;position:sticky;top:0;z-index:10;box-shadow:0 2px 6px rgba(0,0,0,.06);}
-  .tab-btn{padding:12px 22px;font-size:.85rem;font-weight:600;border:none;background:none;cursor:pointer;color:#666;border-bottom:3px solid transparent;transition:all .2s;display:flex;flex-direction:column;align-items:flex-start;gap:2px;font-family:inherit;}
-  .tab-btn:hover{color:var(--blauw);background:var(--lichtblauw);}
-  .tab-btn.active{color:var(--blauw);border-bottom-color:var(--magenta);background:var(--lichtblauw);}
   .tab-hint{font-size:.68rem;font-weight:400;opacity:.6;}
   .main{max-width:860px;margin:0 auto;padding:22px 20px 60px;}
   .mode-panel{display:none;}
@@ -50,19 +24,6 @@
   body.lpd-mode .card-title{background:rgba(232,247,239,.5);border-radius:6px;padding:4px 8px;margin:-4px -8px 13px;}
   body.surma-mode.lpd-mode .card-title{background:rgba(232,240,251,.4);border-radius:6px;padding:4px 8px;margin:-4px -8px 13px;}
   body.surma-mode .card-title{background:rgba(232,240,251,.4);border-radius:6px;padding:4px 8px;margin:-4px -8px 13px;}
-  /* DIDACTIEK TOGGLE DROPDOWN */
-  .didactiek-wrap{position:relative;display:inline-block;}
-  .didactiek-btn{display:flex;align-items:center;gap:5px;font-size:.68rem;font-weight:600;padding:4px 10px;border-radius:5px;border:1.5px solid rgba(255,255,255,.3);background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);cursor:pointer;transition:all .2s;font-family:inherit;white-space:nowrap;user-select:none;}
-  .didactiek-btn:hover{background:rgba(255,255,255,.2);color:white;}
-  .didactiek-btn.open{background:rgba(255,255,255,.2);color:white;}
-  .didactiek-dropdown{display:none;position:absolute;right:0;top:calc(100% + 6px);background:white;border:1px solid var(--rand);border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.15);min-width:170px;overflow:hidden;z-index:100;}
-  .didactiek-dropdown.open{display:block;animation:fadeIn .15s ease;}
-  .dd-item{display:flex;align-items:center;gap:9px;padding:10px 14px;font-size:.8rem;font-weight:600;color:var(--tekst);cursor:pointer;transition:background .15s;border:none;background:none;width:100%;font-family:inherit;text-align:left;}
-  .dd-item:hover{background:var(--lichtblauw);}
-  .dd-item .dd-check{width:14px;height:14px;border-radius:3px;border:1.5px solid var(--rand);display:inline-block;flex-shrink:0;transition:all .15s;}
-  .dd-item.active .dd-check{background:var(--magenta);border-color:var(--magenta);}
-  .dd-item.active .dd-check::after{content:'✓';display:block;color:white;font-size:.6rem;line-height:14px;text-align:center;}
-  .dd-divider{height:1px;background:var(--rand);}
   .score-bar{display:flex;align-items:center;gap:16px;background:white;border:1px solid var(--rand);border-radius:10px;padding:13px 20px;margin-bottom:15px;box-shadow:0 1px 4px rgba(0,0,0,.04);}
   .score-circle{width:50px;height:50px;border-radius:50%;border:3px solid var(--magenta);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;}
   .score-number{font-size:1.18rem;font-weight:700;color:var(--magenta);line-height:1;}
@@ -212,8 +173,7 @@
   body.lpd-mode .card-title,
   body.surma-mode.lpd-mode .card-title { background: none; border-radius: 0; padding: 0; margin: 0 0 13px; }
   @media(max-width:580px){
-    .hero-img{display:none;}.tab-btn{padding:10px 14px;font-size:.76rem;}
-    .main{padding:14px 12px 40px;}.hero{padding:22px 16px;}
+    .main{padding:14px 12px 40px;}
     .beeld-tekst{grid-template-columns:1fr;}.meta-grid{grid-template-columns:1fr;}
     .leerdoelen-banner{padding:8px 16px;}
   }
@@ -222,34 +182,53 @@
 <body>
 
 <header class="site-header">
-  <span class="icon">🏛️</span>
-  <h1>athena Campus Pottelberg — Grieks</h1>
-  <span class="sub" style="margin-left:auto;">2GR-LAT</span>
-  <div class="didactiek-wrap">
-    <button class="didactiek-btn" onclick="toggleDropdown(this)" title="Didactische lagen">
-      🧱 <span>Didactiek</span> <span style="font-size:.6rem;opacity:.7;">▾</span>
-    </button>
-    <div class="didactiek-dropdown" id="didactiekDropdown">
-      <button class="dd-item" id="dd-surma" onclick="toggleLaag('surma')">
-        <span class="dd-check"></span> Surma-bouwstenen
-      </button>
-      <div class="dd-divider"></div>
-      <button class="dd-item" id="dd-lpd" onclick="toggleLaag('lpd')">
-        <span class="dd-check"></span> Leerplandoelen
-      </button>
-    </div>
-  </div>
+  <img class="logo" src="data:image/jpeg;base64,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" alt="athena logo">
+  <h1>Grieks</h1>
+  <span class="sub">2GR-LAT</span>
 </header>
 
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-text">
-      <h2>Zeus, <span>Hera</span> en hun kinderen</h2>
-      <p>Doorloop de drie modi in volgorde. Elke fase bouwt verder op de vorige.</p>
+<div class="site-toolbar">
+  <div class="toolbar-left">
+    <button class="back-btn" onclick="history.back()">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px"><path d="M10 12L6 8l4-4"/></svg>
+      Terug
+    </button>
+    <div class="topbar-divider"></div>
+    <span class="topbar-label">Cultuur</span>
+    <div class="topbar-divider"></div>
+    <button class="ctrl-btn tab-btn active" onclick="toonModus('ontdek',this)" title="Activeer wat je weet">
+      🔍 Ontdek
+    </button>
+    <button class="ctrl-btn tab-btn" onclick="toonModus('leer',this)" title="Verwerk de stof">
+      📚 Leer
+    </button>
+    <button class="ctrl-btn tab-btn" onclick="toonModus('actie',this)" title="Test jezelf">
+      🧪 Oefen
+    </button>
+  </div>
+  <div class="toolbar-right">
+    <div class="didactiek-wrap">
+      <button class="ctrl-btn" onclick="toggleDropdown(this)" title="Didactische lagen">
+        🧱 Didactiek <span style="font-size:.6rem;opacity:.7;margin-left:.15rem;">▾</span>
+      </button>
+      <div class="didactiek-dropdown" id="didactiekDropdown">
+        <button class="dd-item" id="dd-surma" onclick="toggleLaag('surma')">
+          <span class="dd-check"></span> Surma-bouwstenen
+        </button>
+        <div class="dd-divider"></div>
+        <button class="dd-item" id="dd-lpd" onclick="toggleLaag('lpd')">
+          <span class="dd-check"></span> Leerplandoelen
+        </button>
+      </div>
     </div>
-    <div class="hero-img">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Zeus_Otricoli_Pio-Clementino_Inv257.jpg" alt="Zeus Otricoli">
-    </div>
+  </div>
+</div>
+
+<div class="page-title-wrap">
+  <div class="page-title-inner">
+    <div class="page-meta">Cultuur · Thema 3 — De goden</div>
+    <h2 class="page-title">Zeus, Hera en hun kinderen</h2>
+    <p class="page-sub">Doorloop de drie modi in volgorde. Elke fase bouwt verder op de vorige.</p>
   </div>
 </div>
 
@@ -264,17 +243,7 @@
   </div>
 </div>
 
-<div class="tabs">
-  <button class="tab-btn active" onclick="toonModus('ontdek',this)">
-    🔍 Ontdekmodus <span class="tab-hint">Activeer wat je weet</span>
-  </button>
-  <button class="tab-btn" onclick="toonModus('leer',this)">
-    📚 Leerboekmodus <span class="tab-hint">Verwerk de stof</span>
-  </button>
-  <button class="tab-btn" onclick="toonModus('actie',this)">
-    🧪 Oefenmodus <span class="tab-hint">Test jezelf</span>
-  </button>
-</div>
+
 
 <main class="main">
 
