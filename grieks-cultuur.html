@@ -19,33 +19,9 @@
   html { scroll-behavior: smooth; }
   body { background: var(--achtergrond); color: var(--tekst); min-height: 100vh; display: flex; flex-direction: column; }
 
-  .hero { width: 100%; position: relative; background: transparent; flex-shrink: 0; }
-  .hero-inhoud { position: relative; z-index: 1; padding: 3.5rem 2rem 3rem; text-align: center; }
-  .hero h1 { font-size: 38px; font-weight: 600; color: var(--blauw); letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 5px; }
-  .hero h1 .accent { color: #f9a8d4; }
-  .hero .ondertitel { font-size: 13px; color: var(--blauw); font-family: var(--fo); letter-spacing: 0.3px; }
-  .school-logo { width: 44px; height: auto; margin-top: 10px; display: block; margin-left: auto; margin-right: auto; }
-
-  .terug-wrap { padding: 1.25rem 2rem 0; max-width: 1100px; width: 100%; margin: 0 auto; }
-  .terug-link { font-size: 12px; color: var(--tekst-zacht); text-decoration: none; }
-  .terug-link:hover { color: var(--blauw); }
-
-  .springmenu-wrap { padding: .9rem 2rem 0; max-width: 1100px; width: 100%; margin: 0 auto; }
-  .springmenu { display: flex; flex-wrap: wrap; gap: .4rem; padding: .75rem 0 0; }
-  .springmenu a {
-    font-family: var(--fv); font-size: 11.5px; font-weight: 600;
-    letter-spacing: .07em; text-transform: uppercase;
-    color: var(--blauw); text-decoration: none;
-    padding: .32rem .72rem;
-    border: 1.5px solid var(--rand); border-radius: 20px;
-    background: var(--kaart);
-    transition: color .13s, border-color .13s, background .13s;
-    white-space: nowrap;
-  }
-  .springmenu a:hover { color: var(--roze); border-color: var(--roze); background: #fce8f3; }
-
   .content-wrap { flex: 1; padding: 2rem 2rem 3rem; max-width: 1100px; width: 100%; margin: 0 auto; }
 
+  /* THEMA SECTIE */
   .thema-sectie { margin-bottom: 2.5rem; }
   .thema-header {
     display: flex; align-items: baseline; gap: .75rem;
@@ -55,8 +31,10 @@
   .thema-titel { font-family: var(--fv); font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--blauw); }
   .thema-sub { font-family: var(--fo); font-size: 12px; color: var(--tekst-zacht); font-style: italic; }
 
+  /* TEKST-GRID */
   .tekst-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
 
+  /* TEKST-KAART */
   .tekst-kaart {
     background: var(--kaart); border: 0.5px solid var(--rand);
     border-radius: var(--radius); padding: 1.25rem 1.1rem 1rem;
@@ -68,7 +46,7 @@
   .tekst-kaart:hover { border-color: var(--amber); transform: translateY(-2px); box-shadow: 0 4px 18px rgba(180,83,9,.09); }
   .tekst-kaart.coming-soon { opacity: .55; pointer-events: none; cursor: default; }
 
-  .kaart-meta { font-family: var(--fv); font-size: 10.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--roze); margin-bottom: 1px; }
+  .kaart-meta { font-family: var(--fv); font-size: 10.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--magenta); margin-bottom: 1px; }
   .kaart-titel { font-family: 'EB Garamond', Georgia, serif; font-size: 16px; font-weight: 600; color: var(--blauw); line-height: 1.3; }
   .kaart-auteur { font-family: var(--fo); font-size: 11.5px; color: var(--tekst-zacht); font-style: italic; line-height: 1.4; }
   .kaart-pijl { margin-top: auto; font-size: 18px; color: var(--rand); transition: color .15s; padding-top: 2px; }
@@ -92,35 +70,27 @@
 </head>
 <body>
 
-<div class="hero">
-  <div class="hero-inhoud">
-    <h1>Cultuur <span class="accent">Grieks</span></h1>
-    <p class="ondertitel">athena Campus Pottelberg</p>
-    <svg class="school-logo" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect x="4"  y="36" width="36" height="4" rx="1.5" fill="#13427f"/>
-      <rect x="2"  y="30" width="40" height="4" rx="1.5" fill="#13427f"/>
-      <rect x="6"  y="14" width="3.5" height="16" rx="1.2" fill="#13427f"/>
-      <rect x="13" y="14" width="3.5" height="16" rx="1.2" fill="#13427f"/>
-      <rect x="20" y="14" width="3.5" height="16" rx="1.2" fill="#13427f"/>
-      <rect x="27" y="14" width="3.5" height="16" rx="1.2" fill="#13427f"/>
-      <rect x="34" y="14" width="3.5" height="16" rx="1.2" fill="#13427f"/>
-      <polygon points="2,14 22,3 42,14" fill="#13427f"/>
-    </svg>
+<!-- SITE-HEADER — uit theme.css -->
+<header class="site-header">
+  <img class="logo" src="data:image/jpeg;base64,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" alt="athena logo">
+  <h1>Grieks</h1>
+  <span class="sub">2GR-LAT</span>
+</header>
+
+<!-- SITE-TOOLBAR — uit theme.css, met Terug + Thema-pills -->
+<div class="site-toolbar">
+  <div class="toolbar-left">
+    <button class="back-btn" onclick="history.back()">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 12L6 8l4-4"/></svg>
+      Terug
+    </button>
+    <div class="topbar-divider"></div>
+    <a class="ctrl-btn" href="#thema-1">Thema 1</a>
+    <a class="ctrl-btn" href="#thema-2">Thema 2</a>
+    <a class="ctrl-btn" href="#thema-3">Thema 3</a>
+    <a class="ctrl-btn" href="#thema-4">Thema 4</a>
+    <a class="ctrl-btn" href="#thema-5">Thema 5</a>
   </div>
-</div>
-
-<div class="terug-wrap">
-  <a class="terug-link" href="grieks.html">&#8592; Terug naar Grieks</a>
-</div>
-
-<div class="springmenu-wrap">
-  <nav class="springmenu">
-    <a href="#thema-1">Thema 1</a>
-    <a href="#thema-2">Thema 2</a>
-    <a href="#thema-3">Thema 3</a>
-    <a href="#thema-4">Thema 4</a>
-    <a href="#thema-5">Thema 5</a>
-  </nav>
 </div>
 
 <div class="content-wrap">
