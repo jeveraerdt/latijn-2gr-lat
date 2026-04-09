@@ -236,6 +236,21 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
 .wl-item-active{color:var(--magenta)!important;font-weight:600;}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(7px);}to{opacity:1;transform:translateY(0);}}
+
+/* ══ DIDACTIEK TOGGLE SYSTEEM ══ */
+
+/* Badges die op elementen verschijnen */
+.d-badge{display:inline-flex;align-items:center;gap:.25rem;font-family:'Lufga',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.18rem .5rem;border-radius:20px;vertical-align:middle;margin:0 .2rem .1rem;white-space:nowrap;transition:opacity .2s,transform .2s;opacity:0;pointer-events:none;transform:scale(.85);}
+.d-badge.bs{background:#dbeafe;color:#1d4ed8;border:1px solid #bfdbfe;}
+.d-badge.lpd{background:#dcfce7;color:#15803d;border:1px solid #bbf7d0;}
+.d-badge.vis{opacity:1;pointer-events:auto;transform:scale(1);}
+
+/* Badge-container boven elk pagina-element */
+.d-badges{display:block;margin-bottom:.35rem;min-height:0;line-height:1.6;}
+.d-badges:empty{margin-bottom:0;}
+
+/* Surma-bouwsteen nummers staan al in de badge-tekst */
+
 @media(max-width:900px){body.twocol .outer{display:block;}body.twocol .main-col{padding:2rem 0 5rem;}body.twocol .side-panel{display:none!important;}}
 @media(max-width:600px){.main-col{padding:2rem 0 5rem;}.outer{padding:0 1rem;}.text-title{font-size:1.7rem;}.topbar{padding:0 1rem;}.topbar-label,.topbar-divider{display:none;}}
 </style>
@@ -370,6 +385,16 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="6" height="10" rx="1"/><rect x="9" y="3" width="6" height="10" rx="1"/></svg>
           Tweekolom
         </button>
+        <div style="height:1px;background:rgba(19,66,127,.08);margin:.3rem 0;"></div>
+        <div style="font-family:'Lufga',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(19,66,127,.4);padding:.2rem .9rem .1rem;">Didactiek</div>
+        <button class="weergave-item" id="btnBs" onclick="toggleLayer('bs');event.stopPropagation()">
+          <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#2563eb;flex-shrink:0;"></span>
+          Bouwstenen
+        </button>
+        <button class="weergave-item" id="btnLpd" onclick="toggleLayer('lpd');event.stopPropagation()">
+          <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#16a34a;flex-shrink:0;"></span>
+          LPD
+        </button>
       </div>
     </div>
     <button class="ctrl-btn" id="btnFont" onclick="toggleFont()">
@@ -388,13 +413,21 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
     <div class="text-sub">naar Livius, <em>Ab Urbe Condita</em> VIII, 7–8 · T. Manlius Torquatus en zijn zoon</div>
   </div>
 
-  <div class="context-block" data-subtitel="Historische achtergrond">
+  <div class="context-block" data-subtitel="Historische achtergrond" data-bs="1" data-lpd="BO1_03.06">
+    <div class="d-badges" id="badges-context">
+      <span class="d-badge bs" data-layer="bs">① Voorkennis activeren</span>
+      <span class="d-badge lpd" data-layer="lpd">BO1_03.06 – situeren in tijd &amp; ruimte</span>
+    </div>
     <strong>Context</strong>
     <span class="context-subtitel">Historische achtergrond</span>
     Tijdens de Tweede Samnitische Oorlog verbood consul T. Manlius Torquatus zijn soldaten strikt om buiten de gelederen te vechten. Zijn eigen zoon daagde desondanks een vijandelijke ruiter uit, overwon hem en bracht de buit triomfantelijk naar zijn vader. De consul stond voor een onontkoombare keuze: vaderliefde of staatsgezag.
   </div>
 
   <div class="link-strip">
+    <div class="d-badges" id="badges-kaart">
+      <span class="d-badge bs" data-layer="bs">④ Dual coding</span>
+      <span class="d-badge lpd" data-layer="lpd">BO1_03.06 – situeren in tijd &amp; ruimte</span>
+    </div>
     <a class="link-pill" href="#woordenlijst-sectie" title="Woordenlijst van deze tekst" style="border-color:transparent;background:none;padding:.3rem .4rem;">
       <svg viewBox="0 0 16 16" fill="none" stroke="var(--magenta)" stroke-width="1.5" style="width:18px;height:18px;opacity:.7;"><path d="M3 2h8a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1z"/><path d="M3 2v12"/><path d="M6 6h4M6 9h3"/></svg>
     </a>
@@ -418,6 +451,12 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
     </div>
   </div>
 
+  <div class="d-badges" id="badges-reveal" style="margin-bottom:.5rem;">
+    <span class="d-badge bs" data-layer="bs">⑤ Actieve verwerking</span>
+    <span class="d-badge bs" data-layer="bs">⑦ Scaffolding</span>
+    <span class="d-badge lpd" data-layer="lpd">BO1_03.05 – tekst begrijpen via lectuurmethode</span>
+    <span class="d-badge lpd" data-layer="lpd">BO1_03.04 – lectuurstrategieën</span>
+  </div>
   <div class="reveal-bar" id="revealBar">
     <span style="font-size:.72rem;color:var(--ink-light);">Onthulling per woordgroep</span>
     <button onclick="revealPrev()">&#8592; Vorige</button>
@@ -426,6 +465,12 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
     <span class="rev-count" id="revCount">0 / 0</span>
   </div>
 
+  <div class="d-badges" id="badges-tekst" style="margin-bottom:.5rem;">
+    <span class="d-badge bs" data-layer="bs">③ Voorbeelden &amp; modelling</span>
+    <span class="d-badge bs" data-layer="bs">⑤ Actieve verwerking</span>
+    <span class="d-badge lpd" data-layer="lpd">BO1_03.05 – tekst begrijpen via lectuurmethode</span>
+    <span class="d-badge lpd" data-layer="lpd">BO1_03.03 – morfologie &amp; syntaxis</span>
+  </div>
   <div class="latin-text" id="latinText">
   <div class="plain-view" id="plainView">
 
@@ -553,6 +598,11 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
 
   </div><!-- /latin-text -->
 
+  <div class="d-badges" id="badges-noten" style="margin-bottom:.5rem;">
+    <span class="d-badge bs" data-layer="bs">⑦ Scaffolding</span>
+    <span class="d-badge bs" data-layer="bs">⑪ Feedback die denken aanzet</span>
+    <span class="d-badge lpd" data-layer="lpd">BO1_03.03 – morfologie &amp; syntaxis</span>
+  </div>
   <div class="footnotes">
     <div class="fn-title">Grammaticale noten</div>
     <div class="fn"><span class="fn-n">1</span><span><em>Provocatus</em> — ppp als verkorte concessieve bijzin: &#8216;hoewel uitgedaagd&#8217;. Stelt de daad voor als begrijpelijk maar desondanks in strijd met het bevel.</span></div>
@@ -566,6 +616,12 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
   </div>
 
   <!-- ══ WOORDENLIJST ══ -->
+  <div class="d-badges" id="badges-wl" style="margin-bottom:.5rem;">
+    <span class="d-badge bs" data-layer="bs">① Voorkennis activeren</span>
+    <span class="d-badge bs" data-layer="bs">⑧ Gespreide oefening</span>
+    <span class="d-badge lpd" data-layer="lpd">BO1_03.01 – basiswoordenschat</span>
+    <span class="d-badge lpd" data-layer="lpd">BO1_03.02 – woordenschatstrategieën</span>
+  </div>
   <div id="woordenlijst-sectie" style="margin-top:3.5rem;padding-top:2rem;border-top:2px solid var(--rule);">
     <div id="wlSectieLabel" style="font-family:'Lufga',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);margin-bottom:.3rem;opacity:.7;">Tekst 4 · Ludus 7B</div>
     <h2 style="font-family:'Lufga',sans-serif;font-size:1.3rem;font-weight:600;color:var(--blue);margin-bottom:.3rem;" id="wlSectieTitle">Woordenlijst</h2>
@@ -1025,6 +1081,22 @@ function toggleFont() {
   document.getElementById('btnFont').classList.toggle('active', S.font);
   document.body.classList.toggle('font-lg', S.font);
 }
+
+/* ══════════════════════════════════════════
+   DIDACTIEK TOGGLE SYSTEEM
+══════════════════════════════════════════ */
+var D = { bs: false, lpd: false };
+
+function toggleLayer(layer) {
+  D[layer] = !D[layer];
+  var btnId = layer === 'bs' ? 'btnBs' : 'btnLpd';
+  var btn = document.getElementById(btnId);
+  if (btn) btn.classList.toggle('active', D[layer]);
+  document.querySelectorAll('.d-badge[data-layer="' + layer + '"]').forEach(function(b) {
+    b.classList.toggle('vis', D[layer]);
+  });
+}
+
 
 /* KAART MODAL */
 function openKaartModal()  { document.getElementById('kaartModalOverlay').classList.add('open'); }
