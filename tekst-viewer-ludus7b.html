@@ -238,6 +238,22 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
 
 /* Surma-bouwsteen nummers staan al in de badge-tekst */
 
+/* Donkere hover-tooltip op badges */
+.d-tooltip{
+  position:absolute;z-index:900;
+  background:#1a2238;color:#fff;
+  font-family:'Lufga',sans-serif;font-size:.78rem;font-weight:500;
+  line-height:1.45;letter-spacing:.005em;
+  padding:.7rem .95rem;border-radius:10px;
+  max-width:340px;
+  box-shadow:0 12px 32px rgba(19,66,127,.28);
+  pointer-events:none;
+  opacity:0;transform:translateY(4px);
+  transition:opacity .15s ease,transform .15s ease;
+}
+.d-tooltip.vis{opacity:1;transform:translateY(0);}
+.d-badge{cursor:help;}
+
 @media(max-width:900px){body.twocol .outer{display:block;}body.twocol .main-col{padding:2rem 0 5rem;}body.twocol .side-panel{display:none!important;}}
 @media(max-width:600px){.main-col{padding:2rem 0 5rem;}.outer{padding:0 1rem;}.text-title{font-size:1.7rem;}.site-header{padding:0 14px;}.site-toolbar{padding:8px 14px;height:auto;flex-wrap:wrap;}.topbar-label,.topbar-divider{display:none;}}
 </style>
@@ -1004,12 +1020,85 @@ function toggleNoten() {
   if (open) blk.scrollIntoView({behavior:'smooth', block:'start'});
 }
 
-/* TOOLTIPS OP DIDACTIEK-BADGES */
+/* TOOLTIPS OP DIDACTIEK-BADGES — contextspecifiek per locatie + bouwsteen/LPD */
 (function annotateBadges(){
-  var BS_TIP  = 'Surma-bouwsteen — een didactisch principe uit "Wijze Lessen". Toont welk leerprincipe dit element van de tekstpagina activeert.';
-  var LPD_TIP = 'Leerplandoel — de eindterm/het leerplandoel (BO1) waar dit element aan bijdraagt.';
-  document.querySelectorAll('.d-badge.bs').forEach(function(b){ if(!b.title) b.title = BS_TIP; });
-  document.querySelectorAll('.d-badge.lpd').forEach(function(b){ if(!b.title) b.title = LPD_TIP; });
+  // Key = parent-id van .d-badges container + '|' + badge-tekst
+  var TIPS = {
+    // ── CONTEXT-BLOK ────────────────────────────────────────────
+    'badges-context|① Voorkennis activeren':
+      '① Voorkennis activeren: situeert de tekst in de Tweede Samnitische Oorlog vóór de lectuur, zodat leerlingen het dilemma vader–consul al kunnen kaderen.',
+    'badges-context|BO1_03.06 – situeren in tijd & ruimte':
+      'BO1_03.06 situeren in tijd & ruimte: leerlingen plaatsen het verhaal in de Romeinse Republiek, ca. 340 v.Chr., aan het begin van de Latijnse Oorlog.',
+
+    // ── EXTRA\'S (kaart + woordenlijst-icoon) ───────────────────
+    'badges-kaart|④ Dual coding':
+      '④ Dual coding: koppelt de tekst aan een visuele kaart van Latium, zodat plaats en tekst samen verankerd raken in het geheugen.',
+    'badges-kaart|BO1_03.06 – situeren in tijd & ruimte':
+      'BO1_03.06 situeren in tijd & ruimte: de kaart maakt de geografische context van het Manlius-conflict concreet zichtbaar.',
+
+    // ── REVEAL-BAR (onthulling per woordgroep) ─────────────────
+    'badges-reveal|⑤ Actieve verwerking':
+      '⑤ Actieve verwerking: leerlingen onthullen de tekst stap voor stap en moeten elk fragment actief proberen te begrijpen vóór de volgende woordgroep verschijnt.',
+    'badges-reveal|⑦ Scaffolding':
+      '⑦ Scaffolding: de tekst wordt in kleine, beheersbare woordgroepen aangeboden — een tijdelijke steun die de cognitieve belasting bij Livius\' lange perioden verlaagt.',
+    'badges-reveal|BO1_03.05 – tekst begrijpen via lectuurmethode':
+      'BO1_03.05 tekst begrijpen via lectuurmethode: oefent het lineair lezen per kolon, kerngedachte van de lectuurmethode bij gevorderde Latijnse zinsbouw.',
+    'badges-reveal|BO1_03.04 – lectuurstrategieën':
+      'BO1_03.04 lectuurstrategieën: traint de strategie "lees in zinvolle eenheden" in plaats van woord voor woord — essentieel bij Livius\' hypotactische stijl.',
+
+    // ── GRAMMATICALE NOTEN ─────────────────────────────────────
+    'badges-noten|⑦ Scaffolding':
+      '⑦ Scaffolding: gerichte hulp bij precies díe constructies (ppp, finale bijzin, deponens, dubbele ACI) waar leerlingen op vastlopen — niet meer, niet minder.',
+    'badges-noten|⑪ Feedback die denken aanzet':
+      '⑪ Feedback die denken aanzet: de noten leggen niet alleen uit wát er staat, maar ook waaróm Livius die constructie kiest — dwingt leerlingen tot interpretatie.',
+    'badges-noten|BO1_03.03 – morfologie & syntaxis':
+      'BO1_03.03 morfologie & syntaxis: behandelt de specifieke vormen die in deze passage voorkomen (concessieve ppp, conjunctief impf., deponens, ACI, quin-bijzin).',
+
+    // ── WOORDENLIJST ───────────────────────────────────────────
+    'badges-wl|① Voorkennis activeren':
+      '① Voorkennis activeren: vóór de lectuur worden de basiswoorden uit de tekst herhaald, zodat bekende vormen meteen herkend worden tijdens het lezen.',
+    'badges-wl|⑧ Gespreide oefening':
+      '⑧ Gespreide oefening: dezelfde basiswoorden komen telkens terug bij elke nieuwe tekst — herhaling over tijd voor duurzame opslag.',
+    'badges-wl|BO1_03.01 – basiswoordenschat':
+      'BO1_03.01 basiswoordenschat: de magenta-gemarkeerde woorden behoren tot het Repertorium en moeten actief gekend zijn.',
+    'badges-wl|BO1_03.02 – woordenschatstrategieën':
+      'BO1_03.02 woordenschatstrategieën: aanvullingen (stamtijden, genitief, genus) trainen de strategie om vormen te analyseren in plaats van te memoriseren.'
+  };
+
+  // Zorg voor één globale tooltip-node
+  var tip = document.createElement('div');
+  tip.className = 'd-tooltip';
+  document.body.appendChild(tip);
+
+  function show(badge, text) {
+    tip.textContent = text;
+    tip.classList.add('vis');
+    var r = badge.getBoundingClientRect();
+    var tw = tip.offsetWidth;
+    var th = tip.offsetHeight;
+    var pad = 10;
+    var left = r.left + r.width/2 - tw/2;
+    left = Math.max(8, Math.min(window.innerWidth - tw - 8, left));
+    var top = r.top - th - pad;
+    if (top < 8) top = r.bottom + pad; // klap onder als bovenaan
+    tip.style.left = (left + window.scrollX) + 'px';
+    tip.style.top  = (top  + window.scrollY) + 'px';
+  }
+  function hide() { tip.classList.remove('vis'); }
+
+  document.querySelectorAll('.d-badges').forEach(function(container){
+    var pid = container.id;
+    if (!pid) return;
+    container.querySelectorAll('.d-badge').forEach(function(b){
+      var key = pid + '|' + b.textContent.trim();
+      var text = TIPS[key];
+      if (!text) return;
+      b.addEventListener('mouseenter', function(){ show(b, text); });
+      b.addEventListener('mouseleave', hide);
+      b.addEventListener('focus',      function(){ show(b, text); });
+      b.addEventListener('blur',       hide);
+    });
+  });
 })();
 
 /* KAART MODAL */
