@@ -8,6 +8,66 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="theme.css">
 <style>
+  svg.icon { width: 20px; height: 20px; color: var(--blauw); vertical-align: middle; margin-right: 5px; display: inline-block; }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="icon-eye-micro" viewBox="0 0 64 64">
+      <path d="M10 32C15 24 23 20 32 20C41 20 49 24 54 32C49 40 41 44 32 44C23 44 15 40 10 32Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="32" cy="32" r="5" fill="none" stroke="currentColor" stroke-width="5"/>
+    </symbol>
+    <symbol id="icon-scroll-micro" viewBox="0 0 64 64">
+      <path d="M22 20H40C43 20 46 23 46 26V38C46 41 43 44 40 44H24C21 44 18 41 18 38V26C18 23 21 20 24 20" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M22 20C19 20 16 23 16 26C16 29 19 32 22 32" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M42 32C45 32 48 35 48 38C48 41 45 44 42 44" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-halter-micro" viewBox="0 0 64 64">
+      <path d="M18 26V38" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <path d="M24 23V41" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <path d="M40 23V41" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <path d="M46 26V38" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <path d="M24 32H40" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-diaulos-micro" viewBox="0 0 64 64">
+      <path d="M20 20L44 36" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <path d="M16 26L40 42" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <path d="M28 24L32 26" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <path d="M24 30L28 32" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-laurel-micro" viewBox="0 0 64 64">
+      <path d="M24 45C19 41 16 35 16 30" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <path d="M40 45C45 41 48 35 48 30" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <path d="M22 38L18 35" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <path d="M20 31L16 29" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <path d="M42 38L46 35" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <path d="M44 31L48 29" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <path d="M28 47C29 48 30 49 32 49C34 49 35 48 36 47" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-torch-micro" viewBox="0 0 64 64">
+      <path d="M32 12C29 17 25 19 25 25C25 29 27 32 29 34" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M32 12C38 16 41 22 39 29" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M24 33H40" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <path d="M25 33C26 39 29 42 32 44C35 42 38 39 39 33" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M30 44H34" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <path d="M32 44V54" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-owl-micro" viewBox="0 0 64 64">
+      <path d="M20 28C16 28 13 31 13 35C13 39 16 42 20 42" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M44 28C48 28 51 31 51 35C51 39 48 42 44 42" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M20 34C20 36 18 37 17 37C16 37 15 36 15 35C15 34 16 33 17 33C18 33 20 34 20 35" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M44 34C44 36 46 37 47 37C48 37 49 36 49 35C49 34 48 33 47 33C46 33 44 34 44 35" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M23 28L32 14L41 28" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-ear-micro" viewBox="0 0 64 64">
+      <path d="M37 16C43 16 47 22 47 29C47 34 45 38 41 41C38 43 36 45 36 48" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M37 16C30 16 24 22 24 31C24 38 27 43 32 47" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M35 27C38 28 39 30 39 32C39 35 36 36 34 38C33 39 32 40 32 42" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<style>
   .tab-hint{font-size:.68rem;font-weight:400;opacity:.6;}
   .main{max-width:860px;margin:0 auto;padding:22px 20px 60px;}
   .mode-panel{display:none;}
@@ -197,27 +257,27 @@
     <span class="topbar-label">Cultuur</span>
     <div class="topbar-divider"></div>
     <button class="ctrl-btn tab-btn active" onclick="toonModus('ontdek',this)" title="Activeer wat je weet">
-      🔍 Ontdek
+      <svg class="icon"><use href="#icon-eye-micro"/></svg> Ontdek
     </button>
     <button class="ctrl-btn tab-btn" onclick="toonModus('leer',this)" title="Verwerk de stof">
-      📚 Leer
+      <svg class="icon"><use href="#icon-scroll-micro"/></svg> Leer
     </button>
     <button class="ctrl-btn tab-btn" onclick="toonModus('actie',this)" title="Test jezelf">
-      🧪 Oefen
+      <svg class="icon"><use href="#icon-halter-micro"/></svg> Oefen
     </button>
   </div>
   <div class="toolbar-right">
     <div class="didactiek-wrap">
       <button class="ctrl-btn" onclick="toggleDropdown(this)" title="Didactische lagen">
-        🧱 Didactiek <span style="font-size:.6rem;opacity:.7;margin-left:.15rem;">▾</span>
+        Didactiek <span style="font-size:.6rem;opacity:.7;margin-left:.15rem;">▾</span>
       </button>
       <div class="didactiek-dropdown" id="didactiekDropdown">
         <button class="dd-item" id="dd-surma" onclick="toggleLaag('surma')">
-          <span class="dd-check"></span> Surma-bouwstenen
+          <span class="dd-check"></span> Bouwstenen
         </button>
         <div class="dd-divider"></div>
         <button class="dd-item" id="dd-lpd" onclick="toggleLaag('lpd')">
-          <span class="dd-check"></span> Leerplandoelen
+          <span class="dd-check"></span> LPD
         </button>
       </div>
     </div>
@@ -263,14 +323,14 @@
   <section class="mode-panel active" id="modus-ontdek">
 
     <div class="card">
-      <div class="card-title">🧠 Wat weet jij al?</div>
+      <div class="card-title"><svg class="icon"><use href="#icon-owl-micro"/></svg>Wat weet jij al?</div>
       <p style="font-size:.85rem;color:#555;margin-bottom:15px;line-height:1.55;">Beantwoord deze vragen <strong>zonder</strong> de rest te lezen. Het gaat om wat er al in jouw hoofd zit — ook als je twijfelt.</p>
 
       <div class="vraag-blok">
         <div class="vraag-label"><span class="vraag-nr">1</span>Wat weet jij al over Zeus? Schrijf alles op — ook als je twijfelt.</div>
         <textarea id="o-v1" placeholder="Schrijf alles op wat je weet of denkt te weten…"></textarea>
         <div class="vraag-actie">
-          <button class="btn btn-outline s-highlight l-highlight" onclick="toggleDenkhulp('dh-v1',this)" title="⑦ Scaffolding: ondersteuning op verzoek — de leerling kiest zelf of hij denkhulp nodig heeft.">💡 Denkhulp</button> <span class="s-chip" data-tip="⑦ Scaffolding: schrijfsteiger — concrete elementen aanreiken voor creatieve verwerking.">⬡ ⑦ </span> <span class="l-chip" data-tip="BO1_03.07 begrijpen: mythologisch verhaal (wraak Hephaistos) tonen te kennen via creatieve verwerking.">BO1_03.07</span> <span class="s-chip" data-tip="⑦ Scaffolding: vergelijkingspunt aanreiken (Hephaistos vs Ares) als haak.">⬡ ⑦ </span> <span class="l-chip" data-tip="BO1_03.08 begrijpen: vergelijken van gedrag en waarden in de mythologie.">BO1_03.08</span> <span class="s-chip" data-tip="⑦ Scaffolding: contextualiseringsvraag om machtsdynamiek te vatten.">⬡ ⑦ </span> <span class="l-chip" data-tip="BO1_03.08 begrijpen: gelijkenissen/verschillen oud↔heden — machtsverhoudingen vergelijken.">BO1_03.08</span> <span class="s-chip" data-tip="⑦ Scaffolding: stappenstructuur als denkhulp — oorzaak→gevolg keten.">⬡ ⑦ </span> <span class="l-chip" data-tip="BO1_03.05 begrijpen: aandacht voor signaalwoorden en tekststructuur als ondersteuning bij tekstbegrip.">BO1_03.05</span> <span class="s-chip" data-tip="⑦ Scaffolding: graduele hulp — pas zichtbaar als leerling erom vraagt.">⬡ ⑦ </span> <span class="l-chip" data-tip="BO1_03.07 begrijpen: symboliek verbinden met cultuuraspekten (karakter Hera via pauw).">BO1_03.07</span> <span class="s-chip" data-tip="⑦ Scaffolding: ondersteuning op verzoek — de leerling kiest zelf of hij denkhulp nodig heeft.">⬡ ⑦ </span> <span class="l-chip" data-tip="BO1_03.05 begrijpen: lectuurstrategie 'inzetten van voorkennis' — denkhulp activeert associaties.">BO1_03.05</span>
+          <button class="btn btn-outline s-highlight l-highlight" onclick="toggleDenkhulp('dh-v1',this)" title="⑦ Scaffolding: ondersteuning op verzoek — de leerling kiest zelf of hij denkhulp nodig heeft."><svg class="icon"><use href="#icon-torch-micro"/></svg> Denkhulp</button> <span class="s-chip" data-tip="⑦ Scaffolding: schrijfsteiger — concrete elementen aanreiken voor creatieve verwerking.">⬡ ⑦ </span> <span class="l-chip" data-tip="BO1_03.07 begrijpen: mythologisch verhaal (wraak Hephaistos) tonen te kennen via creatieve verwerking.">BO1_03.07</span> <span class="s-chip" data-tip="⑦ Scaffolding: vergelijkingspunt aanreiken (Hephaistos vs Ares) als haak.">⬡ ⑦ </span> <span class="l-chip" data-tip="BO1_03.08 begrijpen: vergelijken van gedrag en waarden in de mythologie.">BO1_03.08</span> <span class="s-chip" data-tip="⑦ Scaffolding: contextualiseringsvraag om machtsdynamiek te vatten.">⬡ ⑦ </span> <span class="l-chip" data-tip="BO1_03.08 begrijpen: gelijkenissen/verschillen oud↔heden — machtsverhoudingen vergelijken.">BO1_03.08</span> <span class="s-chip" data-tip="⑦ Scaffolding: stappenstructuur als denkhulp — oorzaak→gevolg keten.">⬡ ⑦ </span> <span class="l-chip" data-tip="BO1_03.05 begrijpen: aandacht voor signaalwoorden en tekststructuur als ondersteuning bij tekstbegrip.">BO1_03.05</span> <span class="s-chip" data-tip="⑦ Scaffolding: graduele hulp — pas zichtbaar als leerling erom vraagt.">⬡ ⑦ </span> <span class="l-chip" data-tip="BO1_03.07 begrijpen: symboliek verbinden met cultuuraspekten (karakter Hera via pauw).">BO1_03.07</span> <span class="s-chip" data-tip="⑦ Scaffolding: ondersteuning op verzoek — de leerling kiest zelf of hij denkhulp nodig heeft.">⬡ ⑦ </span> <span class="l-chip" data-tip="BO1_03.05 begrijpen: lectuurstrategie 'inzetten van voorkennis' — denkhulp activeert associaties.">BO1_03.05</span>
         </div>
         <div class="denkhulp" id="dh-v1"><strong>Denk aan:</strong> films, games, of verhalen die je kent. Waar heb je de naam Zeus al eens gehoord? Wat deed hij?</div>
       </div>
@@ -281,24 +341,24 @@
         </div>
         <textarea id="o-v2" placeholder="Drie woorden en waarom…"></textarea>
         <div class="vraag-actie">
-          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('o-v2','o-fb2','De leerling beschrijft een beeld van Zeus met drie woorden en legt uit waarom. Reageer enthousiast. Bevestig of stuur bij. Sluit af met een prikkelende vervolgvraag.')">✨ Feedback</button> <span class="s-chip" data-tip="⑪ Feedback die denkt aanzet: AI reageert inhoudelijk en sluit af met vervolgvraag.">⬡ ⑪ </span> <span class="l-chip" data-tip="BO1_03.07 begrijpen: iconografische kennis van Zeus activeren en bijsturen.">BO1_03.07 begrijpen</span>
+          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('o-v2','o-fb2','De leerling beschrijft een beeld van Zeus met drie woorden en legt uit waarom. Reageer enthousiast. Bevestig of stuur bij. Sluit af met een prikkelende vervolgvraag.')"><svg class="icon"><use href="#icon-laurel-micro"/></svg> Feedback</button> <span class="s-chip" data-tip="⑪ Feedback die denkt aanzet: AI reageert inhoudelijk en sluit af met vervolgvraag.">⬡ ⑪ </span> <span class="l-chip" data-tip="BO1_03.07 begrijpen: iconografische kennis van Zeus activeren en bijsturen.">BO1_03.07 begrijpen</span>
         </div>
         <div class="feedback-box" id="o-fb2"></div>
       </div>
     </div>
 
     <div class="card">
-      <div class="card-title">🎧 Luister en verbind</div>
+      <div class="card-title"><svg class="icon"><use href="#icon-ear-micro"/></svg>Luister en verbind</div>
       <div class="listen-bar">
-        <button class="btn btn-secondary s-highlight" onclick="leesTekst('Zeus was de oppergod van de Olympus en heerste over mensen en goden. Zelfs hij moest soms rekening houden met Hera, zijn jaloerse en machtige echtgenote. Hera was de godin van het huwelijk en beschermde vrouwen, maar ze werd ook gevreesd om haar wraak. Haar symbolen, de pauw en de koekoek, verwijzen naar haar trotse en waakzame karakter.')">🔊 Speel af</button>
+        <button class="btn btn-secondary s-highlight" onclick="leesTekst('Zeus was de oppergod van de Olympus en heerste over mensen en goden. Zelfs hij moest soms rekening houden met Hera, zijn jaloerse en machtige echtgenote. Hera was de godin van het huwelijk en beschermde vrouwen, maar ze werd ook gevreesd om haar wraak. Haar symbolen, de pauw en de koekoek, verwijzen naar haar trotse en waakzame karakter.')"><svg class="icon"><use href="#icon-diaulos-micro"/></svg> Speel af</button>
         <div class="listen-text">"Zeus heerste over goden en mensen. Zelfs hij moest soms rekening houden met Hera…" <span class="s-chip" data-tip="Dual coding: auditief kanaal — tekst wordt ook gesproken aangeboden naast het geschreven woord.">⬡ ④</span> <span class="l-chip" data-tip="BO1_03.07 begrijpen: aspecten van godsdienst en karakter van goden illustreren.">BO1_03.07</span></div>
       </div>
       <div class="vraag-blok">
         <div class="vraag-label"><span class="vraag-nr">3</span>Je hoort dat de pauw een symbool van Hera is. Welke eigenschappen van een pauw passen bij haar karakter? Leg de link.</div>
         <textarea id="o-v3" placeholder="Pauw → karakter Hera, want…"></textarea>
         <div class="vraag-actie">
-          <button class="btn btn-outline s-highlight l-highlight" onclick="toggleDenkhulp('dh-v3',this)" title="⑦ Scaffolding: graduele hulp — pas zichtbaar als leerling erom vraagt.">💡 Denkhulp</button>
-          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('o-v3','o-fb3','De leerling legt een link tussen de pauw als symbool en het karakter van Hera. Geef feedback op de symbolische redenering. Sluit af met: wat zegt de koekoek dan over haar?')">✨ Feedback</button> <span class="s-chip" data-tip="⑪ Feedback die denkt aanzet: redenering over symboliek begeleid zonder antwoord weg te geven.">⬡ ⑪ </span> <span class="l-chip" data-tip="BO1_03.07 + BO1_03.08: symboliek koppelen aan karakter én vergelijken met eigen referentiekader.">BO1_03.07 + BO1_03.08</span>
+          <button class="btn btn-outline s-highlight l-highlight" onclick="toggleDenkhulp('dh-v3',this)" title="⑦ Scaffolding: graduele hulp — pas zichtbaar als leerling erom vraagt."><svg class="icon"><use href="#icon-torch-micro"/></svg> Denkhulp</button>
+          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('o-v3','o-fb3','De leerling legt een link tussen de pauw als symbool en het karakter van Hera. Geef feedback op de symbolische redenering. Sluit af met: wat zegt de koekoek dan over haar?')"><svg class="icon"><use href="#icon-laurel-micro"/></svg> Feedback</button> <span class="s-chip" data-tip="⑪ Feedback die denkt aanzet: redenering over symboliek begeleid zonder antwoord weg te geven.">⬡ ⑪ </span> <span class="l-chip" data-tip="BO1_03.07 + BO1_03.08: symboliek koppelen aan karakter én vergelijken met eigen referentiekader.">BO1_03.07 + BO1_03.08</span>
         </div>
         <div class="denkhulp" id="dh-v3"><strong>Denk aan:</strong> hoe gedraagt een pauw zich? Welke eigenschappen ken je? Verbind die met wat je over Hera hoorde.</div>
         <div class="feedback-box" id="o-fb3"></div>
@@ -329,14 +389,14 @@
       <p style="font-size:.86rem;line-height:1.65;margin-top:13px;color:#333;">
         Zeus was de heerser over alle goden en mensen — een <strong>zoon van de Titan Kronos en Rhea</strong>. Kronos verslond al zijn kinderen omdat een orakel hem had gezegd dat hij door een eigen kind zou worden verslagen. Rhea verstopte de pasgeboren Zeus op Kreta: Kronos kreeg een steen toegestopt. Zeus groeide op, bevrijdde zijn broers en zussen, en versloeg de Titanen in de <strong>Titanomachie</strong>. Daarna verdeelden Zeus, Poseidon en Hades de wereld: hemel, zee, onderwereld.
       </p>
-      <div style="margin-top:11px;"><button class="btn btn-outline" onclick="leesTekst('Zeus was de heerser over alle goden en mensen, een zoon van de Titan Kronos en Rhea. Kronos verslond al zijn kinderen omdat een orakel hem had gezegd dat hij door een eigen kind zou worden verslagen. Rhea verstopte de pasgeboren Zeus op Kreta. Zeus groeide op, bevrijdde zijn broers en zussen, en versloeg de Titanen in de Titanomachie.')">🔊 Voorlezen</button></div>
+      <div style="margin-top:11px;"><button class="btn btn-outline" onclick="leesTekst('Zeus was de heerser over alle goden en mensen, een zoon van de Titan Kronos en Rhea. Kronos verslond al zijn kinderen omdat een orakel hem had gezegd dat hij door een eigen kind zou worden verslagen. Rhea verstopte de pasgeboren Zeus op Kreta. Zeus groeide op, bevrijdde zijn broers en zussen, en versloeg de Titanen in de Titanomachie.')"><svg class="icon"><use href="#icon-diaulos-micro"/></svg> Voorlezen</button></div>
 
       <div style="margin-top:15px;padding-top:13px;border-top:1px solid var(--rand);">
         <div class="vraag-label" style="margin-bottom:8px;"> Waarom at Kronos zijn kinderen op? Gebruik de tekst en leg het in je eigen woorden uit.</div>
         <textarea id="l-v1" placeholder="Kronos deed dit omdat…"></textarea>
         <div class="vraag-actie">
-          <button class="btn btn-outline s-highlight l-highlight" onclick="toggleDenkhulp('dh-l1',this)" title="⑦ Scaffolding: stappenstructuur als denkhulp — oorzaak→gevolg keten.">💡 Denkhulp</button>
-          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('l-v1','l-fb1','De leerling legt in eigen woorden uit waarom Kronos zijn kinderen opat. Beoordeel of de redenering klopt (orakel → angst → actie). Sluit af: was Kronos slim of dom bezig?')">✨ Feedback</button>
+          <button class="btn btn-outline s-highlight l-highlight" onclick="toggleDenkhulp('dh-l1',this)" title="⑦ Scaffolding: stappenstructuur als denkhulp — oorzaak→gevolg keten."><svg class="icon"><use href="#icon-torch-micro"/></svg> Denkhulp</button>
+          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('l-v1','l-fb1','De leerling legt in eigen woorden uit waarom Kronos zijn kinderen opat. Beoordeel of de redenering klopt (orakel → angst → actie). Sluit af: was Kronos slim of dom bezig?')"><svg class="icon"><use href="#icon-laurel-micro"/></svg> Feedback</button>
         </div>
         <div class="denkhulp" id="dh-l1"><strong>Denk zo:</strong> wat zei het orakel → wat was Kronos bang voor → wat deed hij daaraan?</div>
         <div class="feedback-box" id="l-fb1"></div>
@@ -358,14 +418,14 @@
       <p style="font-size:.86rem;line-height:1.65;margin-top:13px;color:#333;">
         Hera was de echtgenote van Zeus en tegelijk zijn zus — ook zij was een kind van Kronos en Rhea. Ze was de <strong>godin van het huwelijk en het gezin</strong> en beschermde vrouwen. Maar ze werd ook gevreesd om haar <strong>jaloezie en wraakzucht</strong>. Zeus had talloze buitenechtelijke avonturen; Hera wreekte zich dan niet op Zeus zelf, maar op zijn geliefden en hun kinderen — want Zeus was als oppergod onaantastbaar. Dat maakte haar tot een van de gevaarlijkste goden van de Olympus.
       </p>
-      <div style="margin-top:11px;"><button class="btn btn-outline" onclick="leesTekst('Hera was de echtgenote van Zeus en tegelijk zijn zus. Ze was de godin van het huwelijk en het gezin. Ze werd gevreesd om haar jaloezie en wraakzucht. Zeus had talloze buitenechtelijke avonturen. Hera wreekte zich niet op Zeus zelf maar op zijn geliefden en hun kinderen, want Zeus was als oppergod onaantastbaar.')">🔊 Voorlezen</button></div>
+      <div style="margin-top:11px;"><button class="btn btn-outline" onclick="leesTekst('Hera was de echtgenote van Zeus en tegelijk zijn zus. Ze was de godin van het huwelijk en het gezin. Ze werd gevreesd om haar jaloezie en wraakzucht. Zeus had talloze buitenechtelijke avonturen. Hera wreekte zich niet op Zeus zelf maar op zijn geliefden en hun kinderen, want Zeus was als oppergod onaantastbaar.')"><svg class="icon"><use href="#icon-diaulos-micro"/></svg> Voorlezen</button></div>
 
       <div style="margin-top:15px;padding-top:13px;border-top:1px solid var(--rand);">
         <div class="vraag-label" style="margin-bottom:8px;"> Waarom wreekte Hera zich op de geliefden van Zeus en niet op Zeus zelf? Wat zegt dat over de machtsverhoudingen op de Olympus?</div>
         <textarea id="l-v2" placeholder="Hera deed dit omdat…"></textarea>
         <div class="vraag-actie">
-          <button class="btn btn-outline s-highlight l-highlight" onclick="toggleDenkhulp('dh-l2',this)" title="⑦ Scaffolding: contextualiseringsvraag om machtsdynamiek te vatten.">💡 Denkhulp</button>
-          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('l-v2','l-fb2','De leerling reflecteert over waarom Hera zich wreekte op de geliefden van Zeus en niet op Zeus zelf, en wat dat zegt over machtsverhoudingen. Sluit af: ken jij een vergelijkbare situatie uit een film of serie?')">✨ Feedback</button>
+          <button class="btn btn-outline s-highlight l-highlight" onclick="toggleDenkhulp('dh-l2',this)" title="⑦ Scaffolding: contextualiseringsvraag om machtsdynamiek te vatten."><svg class="icon"><use href="#icon-torch-micro"/></svg> Denkhulp</button>
+          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('l-v2','l-fb2','De leerling reflecteert over waarom Hera zich wreekte op de geliefden van Zeus en niet op Zeus zelf, en wat dat zegt over machtsverhoudingen. Sluit af: ken jij een vergelijkbare situatie uit een film of serie?')"><svg class="icon"><use href="#icon-laurel-micro"/></svg> Feedback</button>
         </div>
         <div class="denkhulp" id="dh-l2"><strong>Denk aan:</strong> wie is oppergod? Wat kan Hera wél en niet doen? Hoe reageert iemand als hij de zwakkere is in een relatie?</div>
         <div class="feedback-box" id="l-fb2"></div>
@@ -510,8 +570,8 @@
         <div class="vraag-label"><span class="vraag-nr">4</span>Hephaistos werd van de Olympus gegooid. Toch is zijn wraak indirect: een gouden troon. Wat zegt dat over hem als personage?</div>
         <textarea id="a-v4" placeholder="Schrijf een doordacht antwoord…"></textarea>
         <div class="vraag-actie">
-          <button class="btn btn-outline s-highlight l-highlight" onclick="toggleDenkhulp('dh-a4',this)" title="⑦ Scaffolding: vergelijkingspunt aanreiken (Hephaistos vs Ares) als haak.">💡 Denkhulp</button>
-          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('a-v4','a-fb4','De leerling analyseert het karakter van Hephaistos via zijn indirecte wraak. Geef gerichte feedback. Sluit af met een prikkelende vervolgvraag over de verhouding macht-list in de mythologie.')">✨ Feedback</button>
+          <button class="btn btn-outline s-highlight l-highlight" onclick="toggleDenkhulp('dh-a4',this)" title="⑦ Scaffolding: vergelijkingspunt aanreiken (Hephaistos vs Ares) als haak."><svg class="icon"><use href="#icon-torch-micro"/></svg> Denkhulp</button>
+          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('a-v4','a-fb4','De leerling analyseert het karakter van Hephaistos via zijn indirecte wraak. Geef gerichte feedback. Sluit af met een prikkelende vervolgvraag over de verhouding macht-list in de mythologie.')"><svg class="icon"><use href="#icon-laurel-micro"/></svg> Feedback</button>
         </div>
         <div class="denkhulp" id="dh-a4"><strong>Denk aan:</strong> hij is misvormd maar slim. Wat kiest iemand als hij niet de sterkste is? Vergelijk met Ares.</div>
         <div class="feedback-box" id="a-fb4"></div>
@@ -521,7 +581,7 @@
         <div class="vraag-label"><span class="vraag-nr">5</span>Eileithyia hielp vrouwen bij de bevalling — maar Hera hield haar soms tegen. Hoe verklaarden de Grieken daarmee iets wat ze zelf meemaakten?</div>
         <textarea id="a-v5" placeholder="Schrijf je antwoord…"></textarea>
         <div class="vraag-actie">
-          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('a-v5','a-fb5','De leerling reflecteert hoe de Grieken via Eileithyia een pijnlijke bevalling mythologisch verklaarden. Sluit af: welke andere dingen uit het dagelijks leven hadden de Grieken een mythologische verklaring voor?')">✨ Feedback</button>
+          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('a-v5','a-fb5','De leerling reflecteert hoe de Grieken via Eileithyia een pijnlijke bevalling mythologisch verklaarden. Sluit af: welke andere dingen uit het dagelijks leven hadden de Grieken een mythologische verklaring voor?')"><svg class="icon"><use href="#icon-laurel-micro"/></svg> Feedback</button>
         </div>
         <div class="feedback-box" id="a-fb5"></div>
       </div>
@@ -534,8 +594,8 @@
         <div class="vraag-label"><span class="vraag-nr">6</span>Jij bent Hephaistos. Je moeder gooide je van de Olympus. Schrijf een monoloog (5–8 zinnen): waarom neem je wraak, en hoe? Laat zien dat je het verhaal begrijpt.</div>
         <textarea id="a-v6" rows="5" placeholder="Schrijf hier je monoloog…"></textarea>
         <div class="vraag-actie">
-          <button class="btn btn-outline s-highlight l-highlight" onclick="toggleDenkhulp('dh-a6',this)" title="⑦ Scaffolding: schrijfsteiger — concrete elementen aanreiken voor creatieve verwerking.">💡 Denkhulp</button>
-          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('a-v6','a-fb6','De leerling schrijft een monoloog als Hephaistos over zijn wraak op Hera. Geef inhoudelijke én creatieve feedback. Controleer of het klopt. Sluit af: wat zou Hera geantwoord hebben?')">✨ Feedback</button>
+          <button class="btn btn-outline s-highlight l-highlight" onclick="toggleDenkhulp('dh-a6',this)" title="⑦ Scaffolding: schrijfsteiger — concrete elementen aanreiken voor creatieve verwerking."><svg class="icon"><use href="#icon-torch-micro"/></svg> Denkhulp</button>
+          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('a-v6','a-fb6','De leerling schrijft een monoloog als Hephaistos over zijn wraak op Hera. Geef inhoudelijke én creatieve feedback. Controleer of het klopt. Sluit af: wat zou Hera geantwoord hebben?')"><svg class="icon"><use href="#icon-laurel-micro"/></svg> Feedback</button>
         </div>
         <div class="denkhulp" id="dh-a6"><strong>Gebruik:</strong> zijn gevoel van onrecht, zijn ambacht als smid, de list van de troon. Schrijf in de ik-persoon.</div>
         <div class="feedback-box" id="a-fb6"></div>
@@ -550,7 +610,7 @@
         <div class="vraag-label"><span class="vraag-nr">7</span>Schrijf in één zin de belangrijkste les van vandaag. Gebruik de woorden <em>Zeus</em>, <em>Hera</em> en <em>macht</em>.</div>
         <textarea id="exit-v1" rows="2" placeholder="De belangrijkste les is…" class="l-highlight s-highlight"></textarea> <span class="s-chip" data-tip="⑥ Check begrip hele klas: exit ticket meet of de kernboodschap geland is bij elke leerling individueel.">⬡ ⑥</span> <span class="l-chip" data-tip="BO1_03.08 begrijpen: gelijkenissen/verschillen Grieks-Romeins-heden verwoorden in eigen woorden.">BO1_03.08</span>
         <div class="vraag-actie">
-          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('exit-v1','exit-fb1','De leerling vat de les samen in één zin met de woorden Zeus, Hera en macht. Beoordeel inhoudelijk en of de drie woorden correct worden gebruikt.')">✨ Feedback</button>
+          <button class="btn btn-primary s-highlight l-highlight" onclick="vraagAI('exit-v1','exit-fb1','De leerling vat de les samen in één zin met de woorden Zeus, Hera en macht. Beoordeel inhoudelijk en of de drie woorden correct worden gebruikt.')"><svg class="icon"><use href="#icon-laurel-micro"/></svg> Feedback</button>
         </div>
         <div class="feedback-box" id="exit-fb1"></div>
       </div>
@@ -663,7 +723,7 @@ function toggleKind(el) { el.classList.toggle('open'); }
 function toggleDenkhulp(id, btn) {
   const el = document.getElementById(id);
   const zichtbaar = el.classList.toggle('zichtbaar');
-  if (btn) btn.textContent = zichtbaar ? '💡 Verberg' : '💡 Denkhulp';
+  if (btn) btn.innerHTML = zichtbaar ? '<svg class="icon"><use href="#icon-torch-micro"/></svg> Verberg' : '<svg class="icon"><use href="#icon-torch-micro"/></svg> Denkhulp';
 }
 
 function toonFeedback(el, html, type) {
