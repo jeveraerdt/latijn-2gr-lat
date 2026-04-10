@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grieks — athena Campus Pottelberg</title>
+<title>Grieks — athena campus Pottelberg</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lufga:wght@400;500;600&display=swap" rel="stylesheet">
@@ -32,17 +32,17 @@
   .nav-wrap { flex: 1; padding: 1.5rem 2rem 3rem; max-width: 1100px; width: 100%; margin: 0 auto; }
   .nav-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
   .nav-tegel { background: var(--kaart); border: 0.5px solid var(--rand); border-radius: var(--radius); padding: 1.5rem 1.25rem; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 10px; transition: border-color 0.15s, transform 0.15s; }
-  .nav-tegel:hover { border-color: var(--paars); transform: translateY(-2px); }
+  .nav-tegel:hover { border-color: var(--blauw); transform: translateY(-2px); }
   .nav-tegel-icoon { width: 42px; height: 42px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .nav-tegel-icoon svg { width: 22px; height: 22px; }
   .icoon-paars { background: #ede7f6; }
   .icoon-blauw { background: #e6f0fb; }
   .icoon-groen { background: #e8f5e9; }
   .icoon-roze  { background: #fce8f3; }
-  .nav-tegel-naam { font-size: 15px; font-weight: 600; color: var(--paars); }
+  .nav-tegel-naam { font-size: 15px; font-weight: 600; color: var(--blauw); }
   .nav-tegel-omschrijving { font-family: var(--fo); font-size: 13px; color: var(--tekst-zacht); line-height: 1.5; }
   .nav-tegel-pijl { margin-top: auto; font-size: 18px; color: var(--rand); transition: color 0.15s; }
-  .nav-tegel:hover .nav-tegel-pijl { color: var(--paars); }
+  .nav-tegel:hover .nav-tegel-pijl { color: var(--blauw); }
 
   .voet { text-align: center; padding: 1rem; font-family: var(--fo); font-size: 12px; color: #c0c8d4; }
 </style>
@@ -52,7 +52,7 @@
 <div class="hero">
   <div class="hero-inhoud">
     <h1>Grieks <span class="accent">2GR</span></h1>
-    <p class="ondertitel">athena Campus Pottelberg</p>
+    <p class="ondertitel">athena campus Pottelberg</p>
     <img class="school-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHAAAABZCAYAAADmQ6C1" alt="athena" />
   </div>
 </div>
@@ -63,10 +63,17 @@
 
 <div class="nav-wrap">
   <div class="nav-grid">
-    <!-- navigatietegels blijven hier identiek aan origineel -->
+
+    <a class="nav-tegel" href="grieks-grammatica.html">
+      <div class="nav-tegel-icoon icoon-paars">$1</div>
+      <div class="nav-tegel-naam">Cultuur</div>
+      <div class="nav-tegel-omschrijving">Griekse beschaving en cultuurgeschiedenis.</div>
+      <div class="nav-tegel-pijl">›</div>
+    </a>
+
   </div>
 </div>
 
-<footer class="voet">© athena Campus Pottelberg</footer>
+<footer class="voet">© athena campus Pottelberg</footer>
 </body>
 </html>
