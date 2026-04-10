@@ -59,6 +59,19 @@ body.twocol .side-panel{display:flex!important;flex-direction:column;gap:1rem;pa
 .link-pill svg{width:11px;height:11px;}
 button.link-pill{font-size:.7rem;font-weight:500;font-family:'Lufga',sans-serif;letter-spacing:.04em;cursor:pointer;}
 
+/* EXTRA'S STRIP */
+.extras-strip{margin-bottom:2rem;animation:fadeUp .5s .12s ease both;}
+.extras-row{display:flex;align-items:center;gap:.9rem;}
+.extras-label{font-family:'Lufga',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--magenta);}
+.extras-icon{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;border:none;background:none;color:var(--magenta);cursor:pointer;padding:0;opacity:.75;transition:opacity .15s,background .15s,color .15s;text-decoration:none;}
+.extras-icon:hover{opacity:1;background:#fbe6f1;}
+.extras-icon svg{width:18px;height:18px;}
+.extras-icon.active{opacity:1;background:#fbe6f1;color:var(--magenta);}
+
+/* GRAMMATICALE NOTEN — verborgen tot toggle */
+.noten-block{display:none;}
+.noten-block.vis{display:block;}
+
 /* KAART MODAL */
 .kaart-modal-overlay{display:none;position:fixed;inset:0;background:rgba(19,66,127,.18);backdrop-filter:blur(2px);z-index:800;align-items:center;justify-content:center;}
 .kaart-modal-overlay.open{display:flex;animation:fadeUp .18s ease both;}
@@ -173,7 +186,7 @@ body.interlin .lat-word .iln{
 .pw-lat{font-family:'EB Garamond',Georgia,serif;font-weight:600;color:var(--blue);}
 .pw-aanv{font-family:'Lufga',sans-serif;font-size:.65rem;color:var(--ink-light);}
 .pw-nl{font-family:'Lufga',sans-serif;font-size:.72rem;color:var(--ink-mid);text-align:right;max-width:55%;}
-.pw-basis{display:inline-block;font-size:.55rem;font-weight:700;padding:.04rem .28rem;border-radius:8px;background:#eef3fa;color:var(--blue);text-transform:uppercase;margin-left:.3rem;vertical-align:middle;}
+.pw-basis{display:inline-block;font-size:.55rem;font-weight:700;padding:.04rem .28rem;border-radius:8px;background:#fbe6f1;color:var(--magenta);text-transform:uppercase;margin-left:.3rem;vertical-align:middle;}
 .panel-note{padding:.3rem 0;font-family:'Lufga',sans-serif;font-size:.78rem;color:var(--ink-mid);line-height:1.5;border-bottom:1px solid var(--rule);}
 .panel-note:last-child{border-bottom:none;}
 .pn-tag{display:inline-block;font-size:.6rem;font-weight:600;padding:.05rem .35rem;border-radius:10px;text-transform:uppercase;margin-right:.35rem;background:#eef3fa;color:var(--blue);}
@@ -208,17 +221,6 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
 .scroll-top{position:fixed;bottom:1.75rem;right:1.75rem;width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(8px);transition:all .2s;box-shadow:0 4px 14px rgba(19,66,127,.28);z-index:100;}
 .scroll-top.on{opacity:1;transform:translateY(0);}
 .scroll-top svg{width:15px;height:15px;}
-
-/* WOORDENLIJST DROPDOWN MENU */
-.wl-menu-wrap{position:relative;}
-.wl-dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:var(--paper);border:1.5px solid var(--rule);border-radius:10px;box-shadow:0 8px 32px rgba(19,66,127,.18);z-index:500;min-width:160px;max-height:70vh;overflow-y:auto;padding:.5rem 0;}
-.wl-dropdown.open{display:block;}
-.wl-group{padding:.35rem 0;}
-.wl-group + .wl-group{border-top:1px solid var(--rule);}
-.wl-group-title{font-family:'Lufga',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);padding:.25rem .9rem .1rem;opacity:.7;}
-.wl-item{display:block;font-family:'Lufga',sans-serif;font-size:.76rem;color:var(--ink-mid);padding:.3rem .9rem;text-decoration:none;transition:background .12s,color .12s;cursor:pointer;}
-.wl-item:hover{background:#eef3fa;color:var(--blue);}
-.wl-item-active{color:var(--magenta)!important;font-weight:600;}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(7px);}to{opacity:1;transform:translateY(0);}}
 
@@ -263,92 +265,6 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 12L6 8l4-4"/></svg>
       Teksten
     </button>
-    <div class="topbar-divider"></div>
-    <div class="wl-menu-wrap">
-      <button class="ctrl-btn" id="btnWlMenu" onclick="toggleWlMenu()">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h8M4 5h5M4 11h6"/></svg>
-        Woordenlijst
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:9px;height:9px;margin-left:1px"><path d="M4 6l4 4 4-4"/></svg>
-      </button>
-      <div class="wl-dropdown" id="wlDropdown">
-        <div class="wl-group">
-          <div class="wl-group-title">Ludus 6A</div>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('6a/1');closeWlMenu()">Tekst 1</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('6a/2');closeWlMenu()">Tekst 2</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('6a/4');closeWlMenu()">Tekst 4</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('6a/7');closeWlMenu()">Tekst 7</a>
-        </div>
-        <div class="wl-group">
-          <div class="wl-group-title">Ludus 6B</div>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('6b/1');closeWlMenu()">Tekst 1</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('6b/2');closeWlMenu()">Tekst 2</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('6b/3');closeWlMenu()">Tekst 3</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('6b/4');closeWlMenu()">Tekst 4</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('6b/5');closeWlMenu()">Tekst 5</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('6b/8');closeWlMenu()">Tekst 8</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('6b/9');closeWlMenu()">Tekst 9</a>
-        </div>
-        <div class="wl-group">
-          <div class="wl-group-title">Ludus 7A</div>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('7a/1');closeWlMenu()">Tekst 1</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('7a/2');closeWlMenu()">Tekst 2</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('7a/3');closeWlMenu()">Tekst 3</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('7a/5');closeWlMenu()">Tekst 5</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('7a/6');closeWlMenu()">Tekst 6</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('7a/7');closeWlMenu()">Tekst 7</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('7a/8');closeWlMenu()">Tekst 8</a>
-        </div>
-        <div class="wl-group">
-          <div class="wl-group-title">Ludus 7B</div>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('7b/2');closeWlMenu()">Tekst 2</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('7b/4');closeWlMenu()" style="color:var(--magenta);font-weight:600;">Tekst 4</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('7b/6');closeWlMenu()">Tekst 6</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('7b/12');closeWlMenu()">Tekst 12</a>
-        </div>
-        <div class="wl-group">
-          <div class="wl-group-title">Ludus 8A</div>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('8a/2');closeWlMenu()">Tekst 2</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('8a/3');closeWlMenu()">Tekst 3</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('8a/5');closeWlMenu()">Tekst 5</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('8a/6');closeWlMenu()">Tekst 6</a>
-        </div>
-        <div class="wl-group">
-          <div class="wl-group-title">Ludus 8B</div>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('8b/1');closeWlMenu()">Tekst 1</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('8b/3');closeWlMenu()">Tekst 3</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('8b/5');closeWlMenu()">Tekst 5</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('8b/6');closeWlMenu()">Tekst 6</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('8b/8');closeWlMenu()">Tekst 8</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('8b/9');closeWlMenu()">Tekst 9</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('8b/10');closeWlMenu()">Tekst 10</a>
-        </div>
-        <div class="wl-group">
-          <div class="wl-group-title">Ludus 9A</div>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('9a/1');closeWlMenu()">Tekst 1</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('9a/4');closeWlMenu()">Tekst 4</a>
-        </div>
-        <div class="wl-group">
-          <div class="wl-group-title">Ludus 9B</div>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('9b/3');closeWlMenu()">Tekst 3</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('9b/4');closeWlMenu()">Tekst 4</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('9b/5');closeWlMenu()">Tekst 5</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('9b/6');closeWlMenu()">Tekst 6</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('9b/7');closeWlMenu()">Tekst 7</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('9b/9');closeWlMenu()">Tekst 9</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('9b/10');closeWlMenu()">Tekst 10</a>
-        </div>
-        <div class="wl-group">
-          <div class="wl-group-title">Ludus 10</div>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('10/3');closeWlMenu()">Tekst 3</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('10/8');closeWlMenu()">Tekst 8</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('10/9');closeWlMenu()">Tekst 9</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('10/14');closeWlMenu()">Tekst 14</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('10/19');closeWlMenu()">Tekst 19</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('10/21');closeWlMenu()">Tekst 21</a>
-          <a class="wl-item" href="#woordenlijst-sectie" onclick="filterWL('10/26');closeWlMenu()">Tekst 26</a>
-        </div>
-      </div>
-    </div>
   </div>
   <div class="toolbar-right">
     <button class="ctrl-btn" id="btnReveal" onclick="toggleReveal()">
@@ -412,14 +328,20 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
     Tijdens de Tweede Samnitische Oorlog verbood consul T. Manlius Torquatus zijn soldaten strikt om buiten de gelederen te vechten. Zijn eigen zoon daagde desondanks een vijandelijke ruiter uit, overwon hem en bracht de buit triomfantelijk naar zijn vader. De consul stond voor een onontkoombare keuze: vaderliefde of staatsgezag.
   </div>
 
-  <div class="link-strip">
+  <div class="extras-strip">
     <div class="d-badges" id="badges-kaart">
       <span class="d-badge bs" data-layer="bs">④ Dual coding</span>
       <span class="d-badge lpd" data-layer="lpd">BO1_03.06 – situeren in tijd &amp; ruimte</span>
     </div>
-    <a class="link-pill" href="#woordenlijst-sectie" title="Woordenlijst van deze tekst" style="border-color:transparent;background:none;padding:.3rem .4rem;">
-      <svg viewBox="0 0 16 16" fill="none" stroke="var(--magenta)" stroke-width="1.5" style="width:18px;height:18px;opacity:.7;"><path d="M3 2h8a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1z"/><path d="M3 2v12"/><path d="M6 6h4M6 9h3"/></svg>
-    </a>
+    <div class="extras-row">
+      <span class="extras-label">Extra's</span>
+      <a class="extras-icon" href="#woordenlijst-sectie" title="Woordenlijst van deze tekst" aria-label="Woordenlijst">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2h8a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1z"/><path d="M3 2v12"/><path d="M6 6h4M6 9h3"/></svg>
+      </a>
+      <button type="button" class="extras-icon" id="btnNoten" onclick="toggleNoten()" title="Grammaticale noten tonen / verbergen" aria-label="Grammaticale noten">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.5 3.5h11M2.5 7h11M2.5 10.5h7"/><circle cx="12" cy="11" r="1.6" fill="currentColor" stroke="none"/></svg>
+      </button>
+    </div>
   </div>
 
   <!-- KAART MODAL -->
@@ -587,6 +509,7 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
 
   </div><!-- /latin-text -->
 
+  <div class="noten-block" id="notenBlock">
   <div class="d-badges" id="badges-noten" style="margin-bottom:.5rem;">
     <span class="d-badge bs" data-layer="bs">⑦ Scaffolding</span>
     <span class="d-badge bs" data-layer="bs">⑪ Feedback die denken aanzet</span>
@@ -603,6 +526,7 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
     <div class="fn"><span class="fn-n">7</span><span><em>quin … restituas</em> — <em>quin</em>-bijzin na negatief <em>nec … censeo</em>. Conj. praesentis: actuele verwachting.</span></div>
     <div class="fn"><span class="fn-n">8</span><span><em>I, lictor, deliga ad palum</em> — drie korte imperativen als climax. De consul richt zich tot zijn lictor, niet tot zijn zoon.</span></div>
   </div>
+  </div><!-- /noten-block -->
 
   <!-- ══ WOORDENLIJST ══ -->
   <div class="d-badges" id="badges-wl" style="margin-bottom:.5rem;">
@@ -612,9 +536,9 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
     <span class="d-badge lpd" data-layer="lpd">BO1_03.02 – woordenschatstrategieën</span>
   </div>
   <div id="woordenlijst-sectie" style="margin-top:3.5rem;padding-top:2rem;border-top:2px solid var(--rule);">
-    <div id="wlSectieLabel" style="font-family:'Lufga',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);margin-bottom:.3rem;opacity:.7;">Tekst 4 · Ludus 7B</div>
+    <div id="wlSectieLabel" style="font-family:'Lufga',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--magenta);margin-bottom:.3rem;opacity:.85;">Tekst 4 · Ludus 7B</div>
     <h2 style="font-family:'Lufga',sans-serif;font-size:1.3rem;font-weight:600;color:var(--blue);margin-bottom:.3rem;" id="wlSectieTitle">Woordenlijst</h2>
-    <p id="wlSectieInfo" style="font-family:'Lufga',sans-serif;font-size:.78rem;color:var(--ink-light);margin-bottom:1.5rem;">90 woorden op volgorde van voorkomen. <span style="display:inline-block;font-size:.6rem;font-weight:700;padding:.04rem .3rem;border-radius:8px;background:#eef3fa;color:var(--blue);text-transform:uppercase;vertical-align:middle;">basis</span> = basiswoordenschat.</p>
+    <p id="wlSectieInfo" style="font-family:'Lufga',sans-serif;font-size:.78rem;color:var(--ink-light);margin-bottom:1.5rem;">90 woorden op volgorde van voorkomen. <span style="display:inline-block;font-size:.6rem;font-weight:700;padding:.04rem .3rem;border-radius:8px;background:#fbe6f1;color:var(--magenta);text-transform:uppercase;vertical-align:middle;">basis</span> = basiswoordenschat.</p>
     <div id="wlTable"></div>
   </div>
 
@@ -796,7 +720,7 @@ function filterWL(tekst) {
   var sectInfo  = document.getElementById('wlSectieInfo');
   if (sectLabel) sectLabel.textContent = label;
   if (sectTitle) sectTitle.textContent = 'Woordenlijst';
-  if (sectInfo)  sectInfo.innerHTML = filtered.length + ' woorden op volgorde van voorkomen. <span style="display:inline-block;font-size:.6rem;font-weight:700;padding:.04rem .3rem;border-radius:8px;background:#eef3fa;color:var(--blue);text-transform:uppercase;vertical-align:middle;">basis</span> = basiswoordenschat.';
+  if (sectInfo)  sectInfo.innerHTML = filtered.length + ' woorden op volgorde van voorkomen. <span style="display:inline-block;font-size:.6rem;font-weight:700;padding:.04rem .3rem;border-radius:8px;background:#fbe6f1;color:var(--magenta);text-transform:uppercase;vertical-align:middle;">basis</span> = basiswoordenschat.';
   // Update side panel header
   var spHead = document.querySelector('#sidePanelWl h3');
   if (spHead) spHead.textContent = 'Woordenlijst — ' + label;
@@ -844,23 +768,6 @@ function renderWLSide(list) {
   }
   el.innerHTML = html;
 }
-
-/* ══════════════════════════════════════════
-   WOORDENLIJST DROPDOWN MENU
-══════════════════════════════════════════ */
-function toggleWlMenu() {
-  document.getElementById('wlDropdown').classList.toggle('open');
-}
-function closeWlMenu() {
-  document.getElementById('wlDropdown').classList.remove('open');
-}
-document.addEventListener('click', function(e) {
-  var wrap = document.getElementById('wlDropdown');
-  var btn  = document.getElementById('btnWlMenu');
-  if (wrap && btn && !wrap.contains(e.target) && !btn.contains(e.target)) {
-    closeWlMenu();
-  }
-});
 
 /* init woordenlijst */
 filterWL('7b/4');
@@ -1086,6 +993,24 @@ function toggleLayer(layer) {
   });
 }
 
+
+/* GRAMMATICALE NOTEN TOGGLE */
+function toggleNoten() {
+  var blk = document.getElementById('notenBlock');
+  var btn = document.getElementById('btnNoten');
+  if (!blk) return;
+  var open = blk.classList.toggle('vis');
+  if (btn) btn.classList.toggle('active', open);
+  if (open) blk.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+/* TOOLTIPS OP DIDACTIEK-BADGES */
+(function annotateBadges(){
+  var BS_TIP  = 'Surma-bouwsteen — een didactisch principe uit "Wijze Lessen". Toont welk leerprincipe dit element van de tekstpagina activeert.';
+  var LPD_TIP = 'Leerplandoel — de eindterm/het leerplandoel (BO1) waar dit element aan bijdraagt.';
+  document.querySelectorAll('.d-badge.bs').forEach(function(b){ if(!b.title) b.title = BS_TIP; });
+  document.querySelectorAll('.d-badge.lpd').forEach(function(b){ if(!b.title) b.title = LPD_TIP; });
+})();
 
 /* KAART MODAL */
 function openKaartModal()  { document.getElementById('kaartModalOverlay').classList.add('open'); }
