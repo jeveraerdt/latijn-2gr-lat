@@ -8,7 +8,12 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="theme.css">
 <style>
-  svg.icon { width: 20px; height: 20px; color: var(--blauw); vertical-align: middle; margin-right: 5px; display: inline-block; }
+  svg.icon { width: 20px; height: 20px; color: var(--blauw); vertical-align: middle; margin-right: 8px; display: inline-block; transition: color .2s; flex-shrink: 0; }
+  .card-title svg.icon { color: var(--blauw); }
+  .btn svg.icon { transition: color .2s; flex-shrink: 0; }
+  .btn-primary:hover svg.icon { color: white; }
+  .btn-secondary:hover svg.icon { color: white; }
+  .btn-outline:hover svg.icon { color: var(--blauw); }
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -53,11 +58,24 @@
       <path d="M32 44V54" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
     </symbol>
     <symbol id="icon-owl-micro" viewBox="0 0 64 64">
-      <path d="M20 28C16 28 13 31 13 35C13 39 16 42 20 42" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M44 28C48 28 51 31 51 35C51 39 48 42 44 42" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M20 34C20 36 18 37 17 37C16 37 15 36 15 35C15 34 16 33 17 33C18 33 20 34 20 35" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M44 34C44 36 46 37 47 37C48 37 49 36 49 35C49 34 48 33 47 33C46 33 44 34 44 35" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M23 28L32 14L41 28" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Lichaam/hoofd -->
+      <ellipse cx="32" cy="36" rx="14" ry="16" fill="currentColor"/>
+      <!-- Links oog wit -->
+      <circle cx="26" cy="32" r="5" fill="white"/>
+      <!-- Rechts oog wit -->
+      <circle cx="38" cy="32" r="5" fill="white"/>
+      <!-- Links pupil -->
+      <circle cx="26" cy="33" r="2.5" fill="currentColor"/>
+      <!-- Rechts pupil -->
+      <circle cx="38" cy="33" r="2.5" fill="currentColor"/>
+      <!-- Linker oortje/hoorn -->
+      <path d="M20 20L18 12L24 18" fill="currentColor"/>
+      <!-- Rechter oortje/hoorn -->
+      <path d="M44 20L46 12L40 18" fill="currentColor"/>
+      <!-- Snavel -->
+      <path d="M30 40L32 44L34 40Z" fill="currentColor"/>
+      <!-- Borstlijn detail -->
+      <path d="M32 36L32 48" stroke="currentColor" stroke-width="1.5" fill="none"/>
     </symbol>
     <symbol id="icon-ear-micro" viewBox="0 0 64 64">
       <path d="M37 16C43 16 47 22 47 29C47 34 45 38 41 41C38 43 36 45 36 48" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -323,7 +341,7 @@
   <section class="mode-panel active" id="modus-ontdek">
 
     <div class="card">
-      <div class="card-title"><svg class="icon"><use href="#icon-owl-micro"/></svg>Wat weet jij al?</div>
+      <div class="card-title"><svg class="icon"><use href="#icon-owl-micro"/></svg> Wat weet jij al?</div>
       <p style="font-size:.85rem;color:#555;margin-bottom:15px;line-height:1.55;">Beantwoord deze vragen <strong>zonder</strong> de rest te lezen. Het gaat om wat er al in jouw hoofd zit — ook als je twijfelt.</p>
 
       <div class="vraag-blok">
@@ -348,7 +366,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title"><svg class="icon"><use href="#icon-ear-micro"/></svg>Luister en verbind</div>
+      <div class="card-title"><svg class="icon"><use href="#icon-ear-micro"/></svg> Luister en verbind</div>
       <div class="listen-bar">
         <button class="btn btn-secondary s-highlight" onclick="leesTekst('Zeus was de oppergod van de Olympus en heerste over mensen en goden. Zelfs hij moest soms rekening houden met Hera, zijn jaloerse en machtige echtgenote. Hera was de godin van het huwelijk en beschermde vrouwen, maar ze werd ook gevreesd om haar wraak. Haar symbolen, de pauw en de koekoek, verwijzen naar haar trotse en waakzame karakter.')"><svg class="icon"><use href="#icon-diaulos-micro"/></svg> Speel af</button>
         <div class="listen-text">"Zeus heerste over goden en mensen. Zelfs hij moest soms rekening houden met Hera…" <span class="s-chip" data-tip="Dual coding: auditief kanaal — tekst wordt ook gesproken aangeboden naast het geschreven woord.">⬡ ④</span> <span class="l-chip" data-tip="BO1_03.07 begrijpen: aspecten van godsdienst en karakter van goden illustreren.">BO1_03.07</span></div>
