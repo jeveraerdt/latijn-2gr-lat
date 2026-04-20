@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>De revolutionaire hervormingen van Gaius Gracchus – Ludus 8A T5 · athena</title>
+<link href="https://fonts.googleapis.com/css2?family=Lufga:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme.css">
+<style>
+:root {
+  /* Tekst-viewer specifieke tokens (rest komt uit _theme.css) */
+  --green:#2d7a3a; --green-bg:#e8f5eb;
+  --orange:#c05a00; --orange-bg:#fff0e0;
+  --purple:#6a1a8a; --purple-bg:#f3e8fb;
+  --hl:#fff3c4; --hl-b:#e8c840;
+  --lh:2.3; --fs:1.18rem;
+}
+/* Body font override: tekst-viewer gebruikt EB Garamond als basis */
+body{font-family:'EB Garamond',Georgia,serif;overflow-x:hidden;}
+
+/* WEERGAVE DROPDOWN */
+.weergave-wrap{position:relative;}
+.weergave-menu{display:none;position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:1.5px solid rgba(19,66,127,.18);border-radius:12px;box-shadow:0 6px 24px rgba(19,66,127,.13);z-index:400;min-width:160px;padding:.35rem 0;overflow:hidden;}
+.weergave-menu.open{display:block;animation:fadeUp .12s ease both;}
+.weergave-item{display:flex;align-items:center;gap:.45rem;width:100%;background:none;border:none;padding:.45rem .9rem;font-family:'Lufga',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);cursor:pointer;transition:background .12s,color .12s;white-space:nowrap;}
+.weergave-item:hover{background:#eef3fa;}
+.weergave-item.active{color:var(--magenta);}
+.weergave-item svg{width:12px;height:12px;flex-shrink:0;}
+.weergave-chevron{transition:transform .18s;}
+#btnWeergave.open .weergave-chevron{transform:rotate(180deg);}
+
+/* PROGRESS */
+.rp{position:fixed;top:108px;left:0;right:0;height:2px;z-index:199;}
+.rp-fill{height:100%;background:var(--magenta);width:0%;transition:width .12s linear;}
+
+/* LAYOUT */
+.outer{max-width:1200px;margin:0 auto;padding:0 1.5rem;}
+.main-col{max-width:760px;margin:0 auto;padding:3rem 0 6rem;}
+body.twocol .outer{display:grid;grid-template-columns:var(--col-split,60%) 12px 1fr;gap:0;align-items:start;}
+body.twocol .main-col{max-width:none;padding:3rem 2rem 6rem 0;}
+body.twocol .side-panel{display:flex!important;flex-direction:column;gap:1rem;padding:3rem 0 6rem 1.5rem;border-left:1px solid var(--rule);position:sticky;top:108px;max-height:calc(100vh - 108px);overflow-y:auto;}
+.side-panel{display:none;}
+
+/* HEADER */
+.text-header{margin-bottom:2rem;padding-bottom:1.75rem;border-bottom:1px solid var(--rule);animation:fadeUp .5s ease both;}
+.text-meta{font-family:'Lufga',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--magenta);margin-bottom:.6rem;}
+.text-title{font-family:'Lufga',sans-serif;font-size:2rem;font-weight:600;line-height:1.2;color:var(--blue);margin-bottom:.5rem;letter-spacing:-.01em;}
+.text-sub{font-family:'EB Garamond',Georgia,serif;font-style:italic;font-size:1rem;color:var(--ink-light);line-height:1.5;}
+
+/* CONTEXT */
+.context-block{background:linear-gradient(135deg,#eef3fa,#f5f0fb);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;padding:1rem 1.3rem;margin-bottom:2rem;font-family:'Lufga',sans-serif;font-size:.86rem;line-height:1.65;color:#2a3a5e;animation:fadeUp .5s .07s ease both;}
+.context-block strong{display:block;font-family:'Lufga',sans-serif;font-size:.68rem;letter-spacing:.11em;text-transform:uppercase;color:var(--magenta);margin-bottom:.25rem;font-weight:600;}
+.context-subtitel{display:block;font-family:'EB Garamond',Georgia,serif;font-style:italic;font-size:.88rem;color:#888;margin-bottom:.5rem;}
+
+/* PILLS */
+.link-strip{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem;animation:fadeUp .5s .12s ease both;}
+.link-pill{font-family:'Lufga',sans-serif;font-size:.7rem;font-weight:500;letter-spacing:.04em;padding:.38rem .85rem;border-radius:20px;border:1.5px solid var(--rule);background:var(--paper);color:var(--ink-light);cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:.35rem;text-decoration:none;}
+.link-pill:hover{border-color:var(--blue);color:var(--blue);background:#eef3fa;}
+.link-pill svg{width:11px;height:11px;}
+button.link-pill{font-size:.7rem;font-weight:500;font-family:'Lufga',sans-serif;letter-spacing:.04em;cursor:pointer;}
+
+/* EXTRA'S STRIP */
+.extras-strip{margin-bottom:2rem;animation:fadeUp .5s .12s ease both;}
+.extras-row{display:flex;align-items:center;gap:.9rem;}
+.extras-label{font-family:'Lufga',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--magenta);}
+.extras-icon{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;border:none;background:none;color:var(--magenta);cursor:pointer;padding:0;opacity:.75;transition:opacity .15s,background .15s,color .15s;text-decoration:none;}
+.extras-icon:hover{opacity:1;background:#fbe6f1;}
+.extras-icon svg{width:18px;height:18px;}
+.extras-icon.active{opacity:1;background:#fbe6f1;color:var(--magenta);}
+
+/* GRAMMATICALE NOTEN — verborgen tot toggle */
+.noten-block{display:none;}
+.noten-block.vis{display:block;}
+
+/* KAART MODAL */
+.kaart-modal-overlay{display:none;position:fixed;inset:0;background:rgba(19,66,127,.18);backdrop-filter:blur(2px);z-index:800;align-items:center;justify-content:center;}
+.kaart-modal-overlay.open{display:flex;animation:fadeUp .18s ease both;}
+.kaart-modal{background:var(--paper);border:1.5px solid var(--rule);border-radius:14px;box-shadow:0 16px 48px rgba(19,66,127,.22);width:min(680px,92vw);max-height:80vh;display:flex;flex-direction:column;overflow:hidden;}
+.kaart-modal-header{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.25rem;border-bottom:1px solid var(--rule);}
+.kaart-modal-title{font-family:'Lufga',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);}
+.kaart-modal-close{background:none;border:none;cursor:pointer;color:var(--ink-light);padding:.2rem;border-radius:6px;display:flex;transition:color .12s;}
+.kaart-modal-close:hover{color:var(--blue);}
+.kaart-modal-close svg{width:15px;height:15px;}
+.kaart-modal-body{padding:1.5rem;overflow-y:auto;}
+.kaart-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:220px;border:2px dashed rgba(19,66,127,.15);border-radius:10px;color:var(--ink-light);font-family:'Lufga',sans-serif;font-size:.82rem;}
+
+/* LATIN TEXT */
+.latin-text{font-size:var(--fs);line-height:var(--lh);animation:fadeUp .5s .18s ease both;}
+body.font-lg .latin-text{--fs:1.35rem;--lh:2.45;}
+.latin-para{margin-bottom:2rem;}
+
+/* ── WORD GROUPS ── */
+/* Each .wg is a clickable phrase chunk */
+.wg{
+  display:inline;
+  border-radius:4px;
+  cursor:pointer;
+  transition:background .15s, outline .1s;
+  padding:1px 0;
+}
+.wg:hover{background:rgba(19,66,127,.07);}
+
+/* Reveal mode: dim everything */
+.reveal-mode .wg{
+  opacity:.12;
+  transition:opacity .3s;
+}
+.reveal-mode .wg.revealed{opacity:1;}
+.reveal-mode .wg.current{
+  opacity:1;
+  background:var(--hl);
+  outline:1px solid var(--hl-b);
+  border-radius:4px;
+}
+
+/* Word click: 1e klik = determinering (groen), 2e klik = syntaxis (oranje) */
+/* We highlight individual lat-words inside wg */
+.lat-word{
+  display:inline;
+  border-radius:3px;
+  cursor:pointer;
+  transition:background .12s;
+  padding:0 1px;
+}
+.lat-word:hover{background:rgba(19,66,127,.09);}
+.lat-word.st1{background:var(--green-bg);color:var(--green);border-bottom:1.5px solid var(--green);}
+.lat-word.st2{background:var(--orange-bg);color:var(--orange);border-bottom:1.5px solid var(--orange);}
+
+/* Interlinear */
+body.interlin .lat-word{
+  display:inline-flex;flex-direction:column;align-items:center;
+  vertical-align:bottom;margin:0 1px;
+}
+body.interlin .lat-word .iln{
+  display:block;font-family:'Lufga',sans-serif;
+  font-size:.52em;color:var(--magenta);line-height:1.1;
+  text-align:center;pointer-events:none;white-space:nowrap;
+}
+
+/* TEKSTSCHEIDING */
+.latin-para.tekst-scheiding{border-top:1px solid #ddd;margin-top:1.5em;padding-top:1.5em;}
+
+/* LINE NUMBERS */
+.numbered-view{display:none;}
+.numbered-view.on{display:block;}
+.plain-view.off{display:none;}
+.latin-line{display:flex;gap:1.4rem;line-height:var(--lh);}
+.ln{font-family:'Lufga',sans-serif;font-size:.62rem;color:#ccc;min-width:1.7rem;text-align:right;padding-top:.44em;user-select:none;flex-shrink:0;}
+.lc{flex:1;}
+
+/* POPUP */
+.word-popup{position:absolute;z-index:500;background:var(--paper);border:1.5px solid var(--rule);border-radius:10px;box-shadow:0 8px 32px rgba(19,66,127,.18);padding:.85rem 1.1rem;max-width:300px;min-width:200px;font-family:'Lufga',sans-serif;font-size:.78rem;pointer-events:none;opacity:0;transform:translateY(4px);transition:opacity .18s,transform .18s;}
+.word-popup.vis{opacity:1;transform:translateY(0);}
+.wp-word{font-family:'EB Garamond',Georgia,serif;font-size:1.1rem;font-weight:600;color:var(--blue);margin-bottom:.1rem;}
+.wp-lemma{font-size:.68rem;color:var(--ink-light);margin-bottom:.35rem;}
+.wp-row{display:flex;gap:.4rem;margin-bottom:.2rem;align-items:flex-start;}
+.wp-tag{font-size:.6rem;font-weight:700;padding:.08rem .35rem;border-radius:10px;letter-spacing:.04em;text-transform:uppercase;flex-shrink:0;margin-top:.12rem;}
+.tg{background:var(--green-bg);color:var(--green);}
+.to{background:var(--orange-bg);color:var(--orange);}
+.tp{background:var(--purple-bg);color:var(--purple);}
+.tw{background:#eef3fa;color:var(--blue);}
+.wp-val{color:var(--ink-mid);line-height:1.45;}
+.wp-sep{border:none;border-top:1px solid var(--rule);margin:.4rem 0;}
+.wp-hint{font-size:.7rem;color:var(--ink-light);}
+
+/* REVEAL BAR */
+.reveal-bar{display:none;align-items:center;gap:.6rem;margin-bottom:1.5rem;padding:.65rem 1rem;background:var(--paper);border:1.5px solid var(--rule);border-radius:10px;font-family:'Lufga',sans-serif;font-size:.78rem;color:var(--ink-mid);flex-wrap:wrap;}
+.reveal-bar.vis{display:flex;}
+.reveal-bar button{background:var(--blue);color:#fff;border:none;border-radius:6px;padding:.3rem .8rem;font-family:'Lufga',sans-serif;font-size:.72rem;cursor:pointer;transition:background .15s;white-space:nowrap;}
+.reveal-bar button:hover{background:var(--blue-mid);}
+.reveal-bar button.sec{background:var(--paper);color:var(--blue);border:1.5px solid var(--blue);}
+.reveal-bar button.sec:hover{background:#eef3fa;}
+.rev-count{margin-left:auto;color:var(--ink-light);font-size:.68rem;white-space:nowrap;}
+
+/* FOOTNOTES */
+.footnotes{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);}
+.fn-title{font-family:'Lufga',sans-serif;font-size:.66rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-light);margin-bottom:.9rem;}
+.fn{display:flex;gap:.65rem;font-size:.8rem;line-height:1.58;color:var(--ink-light);margin-bottom:.45rem;font-family:'Lufga',sans-serif;}
+.fn-n{color:var(--magenta);font-size:.68rem;font-weight:600;min-width:1.1rem;padding-top:.1rem;flex-shrink:0;}
+
+/* SIDE PANEL */
+.panel-card{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:1rem 1.1rem;}
+.panel-card h3{font-family:'Lufga',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:.7rem;}
+.panel-word{display:flex;justify-content:space-between;align-items:baseline;padding:.32rem 0;border-bottom:1px solid var(--rule);font-size:.85rem;gap:.5rem;}
+.panel-word:last-child{border-bottom:none;}
+.pw-lat{font-family:'EB Garamond',Georgia,serif;font-weight:600;color:var(--blue);}
+.pw-aanv{font-family:'Lufga',sans-serif;font-size:.65rem;color:var(--ink-light);}
+.pw-nl{font-family:'Lufga',sans-serif;font-size:.72rem;color:var(--ink-mid);text-align:right;max-width:55%;}
+.pw-basis{display:inline-block;font-size:.55rem;font-weight:700;padding:.04rem .28rem;border-radius:8px;background:#fbe6f1;color:var(--magenta);text-transform:uppercase;margin-left:.3rem;vertical-align:middle;}
+.panel-note{padding:.3rem 0;font-family:'Lufga',sans-serif;font-size:.78rem;color:var(--ink-mid);line-height:1.5;border-bottom:1px solid var(--rule);}
+.panel-note:last-child{border-bottom:none;}
+.pn-tag{display:inline-block;font-size:.6rem;font-weight:600;padding:.05rem .35rem;border-radius:10px;text-transform:uppercase;margin-right:.35rem;background:#eef3fa;color:var(--blue);}
+.analysis-card{background:linear-gradient(135deg,#eef3fa,#f0f5ff);border:1.5px solid #c8d6ed;border-radius:10px;padding:1rem 1.1rem;font-family:'Lufga',sans-serif;font-size:.8rem;line-height:1.6;}
+.ac-word{font-family:'EB Garamond',Georgia,serif;font-size:1.4rem;font-weight:600;color:var(--blue);}
+.ac-lemma{font-size:.68rem;color:var(--ink-light);margin-bottom:.5rem;}
+.ac-row{display:flex;gap:.5rem;margin-bottom:.2rem;align-items:flex-start;}
+.ac-tag{font-size:.6rem;font-weight:700;padding:.08rem .38rem;border-radius:10px;text-transform:uppercase;flex-shrink:0;margin-top:.15rem;}
+.ac-empty{color:var(--ink-light);font-size:.78rem;font-style:italic;}
+
+/* VERTALING ZIJPANEEL */
+.vertaling-tekst{font-family:'Lufga',sans-serif;font-size:.82rem;line-height:1.7;color:var(--blue);}
+.vertaling-tekst p{margin-bottom:.7rem;}
+.vertaling-tekst p:last-child{margin-bottom:0;}
+
+
+/* KOLOM-RESIZER */
+.col-resizer{display:none;width:12px;cursor:col-resize;align-self:stretch;position:relative;z-index:10;flex-shrink:0;}
+body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;}
+.col-resizer-handle{
+  width:4px;height:48px;border-radius:4px;
+  background:var(--rule);
+  transition:background .15s, height .15s;
+  position:sticky;top:calc(50vh - 24px);
+}
+.col-resizer:hover .col-resizer-handle,
+.col-resizer.dragging .col-resizer-handle{
+  background:var(--blue);height:64px;
+}
+
+/* SCROLL TOP */
+.scroll-top{position:fixed;bottom:1.75rem;right:1.75rem;width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(8px);transition:all .2s;box-shadow:0 4px 14px rgba(19,66,127,.28);z-index:100;}
+.scroll-top.on{opacity:1;transform:translateY(0);}
+.scroll-top svg{width:15px;height:15px;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(7px);}to{opacity:1;transform:translateY(0);}}
+
+/* ══ DIDACTIEK TOGGLE SYSTEEM ══ */
+
+/* Badges die op elementen verschijnen */
+.d-badge{display:inline-flex;align-items:center;gap:.25rem;font-family:'Lufga',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.18rem .5rem;border-radius:20px;vertical-align:middle;margin:0 .2rem .1rem;white-space:nowrap;transition:opacity .2s,transform .2s;opacity:0;pointer-events:none;transform:scale(.85);}
+.d-badge.bs{background:#dbeafe;color:#1d4ed8;border:1px solid #bfdbfe;}
+.d-badge.lpd{background:#dcfce7;color:#15803d;border:1px solid #bbf7d0;}
+.d-badge.vis{opacity:1;pointer-events:auto;transform:scale(1);}
+
+/* Badge-container boven elk pagina-element */
+.d-badges{display:block;margin-bottom:.35rem;min-height:0;line-height:1.6;}
+.d-badges:empty{margin-bottom:0;}
+
+/* Surma-bouwsteen nummers staan al in de badge-tekst */
+
+/* Donkere hover-tooltip op badges */
+.d-tooltip{
+  position:absolute;z-index:900;
+  background:#1a2238;color:#fff;
+  font-family:'Lufga',sans-serif;font-size:.78rem;font-weight:500;
+  line-height:1.45;letter-spacing:.005em;
+  padding:.7rem .95rem;border-radius:10px;
+  max-width:340px;
+  box-shadow:0 12px 32px rgba(19,66,127,.28);
+  pointer-events:none;
+  opacity:0;transform:translateY(4px);
+  transition:opacity .15s ease,transform .15s ease;
+}
+.d-tooltip.vis{opacity:1;transform:translateY(0);}
+.d-badge{cursor:help;}
+
+@media(max-width:900px){body.twocol .outer{display:block;}body.twocol .main-col{padding:2rem 0 5rem;}body.twocol .side-panel{display:none!important;}}
+@media(max-width:600px){.main-col{padding:2rem 0 5rem;}.outer{padding:0 1rem;}.text-title{font-size:1.7rem;}.site-header{padding:0 14px;}.site-toolbar{padding:8px 14px;height:auto;flex-wrap:wrap;}.topbar-label,.topbar-divider{display:none;}}
+</style>
+</head>
+<body>
+
+<div class="rp"><div class="rp-fill" id="rpFill"></div></div>
+<div class="word-popup" id="popup">
+  <div class="wp-word" id="ppWord"></div>
+  <div class="wp-lemma" id="ppLemma"></div>
+  <div id="ppContent"></div>
+  <hr class="wp-sep" id="ppSep" style="display:none">
+  <div class="wp-hint" id="ppHint"></div>
+</div>
+
+<header class="site-header">
+  <img class="logo" src="data:image/jpeg;base64,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" alt="athena logo">
+  <h1>Latijn</h1>
+  <span class="sub">2GR-LAT</span>
+</header>
+
+<div class="site-toolbar">
+  <div class="toolbar-left">
+    <button class="back-btn" onclick="history.back()">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 12L6 8l4-4"/></svg>
+      Teksten
+    </button>
+  </div>
+  <div class="toolbar-right">
+    <button class="ctrl-btn" id="btnReveal" onclick="toggleReveal()">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8s2.5-5 6-5 6 5 6 5-2.5 5-6 5-6-5-6-5z"/><circle cx="8" cy="8" r="2"/></svg>
+      Onthul
+    </button>
+    <div class="weergave-wrap" id="weergaveWrap">
+      <button class="ctrl-btn" id="btnWeergave" onclick="toggleWeergaveMenu(event)">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2.2"/><path d="M8 1.5v1.2M8 13.3v1.2M1.5 8h1.2M13.3 8h1.2M3.4 3.4l.85.85M11.75 11.75l.85.85M12.6 3.4l-.85.85M4.25 11.75l-.85.85"/></svg>
+        Weergave
+        <svg class="weergave-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:9px;height:9px;margin-left:1px"><path d="M4 6l4 4 4-4"/></svg>
+      </button>
+      <div class="weergave-menu" id="weergaveMenu">
+        <button class="weergave-item" id="btnLines" onclick="toggleLines()">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h12M2 8h12M2 12h8"/></svg>
+          Regelnummers
+        </button>
+        <button class="weergave-item" id="btnInterlin" onclick="toggleInterlin()">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5h12M2 10h12"/></svg>
+          Interlineair
+        </button>
+        <button class="weergave-item" id="btnTwocol" onclick="toggleTwocol()">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="6" height="10" rx="1"/><rect x="9" y="3" width="6" height="10" rx="1"/></svg>
+          Tweekolom
+        </button>
+        <div style="height:1px;background:rgba(19,66,127,.08);margin:.3rem 0;"></div>
+        <div style="font-family:'Lufga',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(19,66,127,.4);padding:.2rem .9rem .1rem;">Didactiek</div>
+        <button class="weergave-item" id="btnBs" onclick="toggleLayer('bs');event.stopPropagation()">
+          <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#2563eb;flex-shrink:0;"></span>
+          Bouwstenen
+        </button>
+        <button class="weergave-item" id="btnLpd" onclick="toggleLayer('lpd');event.stopPropagation()">
+          <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#16a34a;flex-shrink:0;"></span>
+          LPD
+        </button>
+      </div>
+    </div>
+    <button class="ctrl-btn" id="btnFont" onclick="toggleFont()">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12L8 4l5 8M5.5 9h5"/></svg>
+      Groter
+    </button>
+  </div>
+</div>
+
+<div class="outer">
+<div class="main-col">
+
+  <div class="text-header">
+    <div class="text-meta">Ludus 8A · Tekst 5</div>
+    <h1 class="text-title">De revolutionaire hervormingen van Gaius Gracchus</h1>
+    <div class="text-sub">naar Velleius Paterculus, <em>Historia Romana</em> II, 6, 2–3 · de hervormingen van Gaius Gracchus</div>
+  </div>
+
+  <div class="context-block" data-subtitel="Historische achtergrond" data-bs="1" data-lpd="BO1_03.06">
+    <div class="d-badges" id="badges-context">
+      <span class="d-badge bs" data-layer="bs">① Voorkennis activeren</span>
+      <span class="d-badge lpd" data-layer="lpd">BO1_03.06 – situeren in tijd &amp; ruimte</span>
+    </div>
+    <strong>Context</strong>
+    <span class="context-subtitel">Historische achtergrond</span>
+    Na de moord op zijn broer Tiberius in 133 v.Chr. zette Gaius Gracchus zijn hervormingspolitiek voort. Als volkstribuun (123–122 v.Chr.) voerde hij een reeks radicale maatregelen door: landhervorming, graanwetten, nieuwe belastingen en kolonisatie buiten Italië. Zijn aanpak was zo omvattend en zo snel dat hij zijn tijdgenoten naar adem deed happen. De historicus Velleius Paterculus beschrijft hoe Gaius letterlijk alles in beweging zette.
+  </div>
+
+  <div class="extras-strip">
+    <div class="d-badges" id="badges-kaart">
+      <span class="d-badge bs" data-layer="bs">④ Dual coding</span>
+      <span class="d-badge lpd" data-layer="lpd">BO1_03.06 – situeren in tijd &amp; ruimte</span>
+    </div>
+    <div class="extras-row">
+      <span class="extras-label">Extra's</span>
+      <a class="extras-icon" href="#woordenlijst-sectie" title="Woordenlijst van deze tekst" aria-label="Woordenlijst">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2h8a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1z"/><path d="M3 2v12"/><path d="M6 6h4M6 9h3"/></svg>
+      </a>
+      <button type="button" class="extras-icon" id="btnNoten" onclick="toggleNoten()" title="Grammaticale noten tonen / verbergen" aria-label="Grammaticale noten">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.5 3.5h11M2.5 7h11M2.5 10.5h7"/><circle cx="12" cy="11" r="1.6" fill="currentColor" stroke="none"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- KAART MODAL -->
+  <div class="kaart-modal-overlay" id="kaartModalOverlay" onclick="closeKaartModal()">
+    <div class="kaart-modal" onclick="event.stopPropagation()">
+      <div class="kaart-modal-header">
+        <span class="kaart-modal-title">Historische kaart</span>
+        <button class="kaart-modal-close" onclick="closeKaartModal()">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+        </button>
+      </div>
+      <div class="kaart-modal-body">
+        <div class="kaart-placeholder">
+          <svg viewBox="0 0 48 48" fill="none" stroke="rgba(19,66,127,.2)" stroke-width="1.5" style="width:48px;height:48px;margin-bottom:1rem"><rect x="4" y="8" width="40" height="32" rx="3"/><path d="M4 20l10-6 8 8 8-5 14 9"/><circle cx="34" cy="15" r="3"/></svg>
+          <p>Kaart wordt hier getoond</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-badges" id="badges-reveal" style="margin-bottom:.5rem;">
+    <span class="d-badge bs" data-layer="bs">⑤ Actieve verwerking</span>
+    <span class="d-badge bs" data-layer="bs">⑦ Scaffolding</span>
+    <span class="d-badge lpd" data-layer="lpd">BO1_03.05 – tekst begrijpen via lectuurmethode</span>
+    <span class="d-badge lpd" data-layer="lpd">BO1_03.04 – lectuurstrategieën</span>
+  </div>
+  <div class="reveal-bar" id="revealBar">
+    <span style="font-size:.72rem;color:var(--ink-light);">Onthulling per woordgroep</span>
+    <button onclick="revealPrev()">&#8592; Vorige</button>
+    <button onclick="revealNext()">Volgende &#8594;</button>
+    <button class="sec" onclick="revealAll()">Alles tonen</button>
+    <span class="rev-count" id="revCount">0 / 0</span>
+  </div>
+
+  <div class="d-badges" id="badges-tekst" style="margin-bottom:.5rem;">
+    <span class="d-badge bs" data-layer="bs">③ Voorbeelden &amp; modelling</span>
+    <span class="d-badge bs" data-layer="bs">⑤ Actieve verwerking</span>
+    <span class="d-badge lpd" data-layer="lpd">BO1_03.05 – tekst begrijpen via lectuurmethode</span>
+    <span class="d-badge lpd" data-layer="lpd">BO1_03.03 – morfologie &amp; syntaxis</span>
+  </div>
+  <div class="latin-text" id="latinText">
+  <div class="plain-view" id="plainView">
+
+<!-- ══════════════════════════════════════════
+     TEKST — opgedeeld in .wg (woordgroepen)
+     Elke .wg is een semantische chunk:
+     subject, predicaat, object, bepaling …
+     Klik op woord = analyse-popup
+     Onthulling gaat wg voor wg
+══════════════════════════════════════════ -->
+
+<div class="latin-para">
+<span class="wg" data-wg="1"><span class="lat-word" data-w="Dabat" data-l="dare" data-d="A. ind. imperf. 3 enk." data-s="PV (eerste in de reeks van historische imperf.)" data-n="hij gaf">Dabat</span></span>
+<span class="wg" data-wg="2"><span class="lat-word" data-w="civitatem" data-l="civitas, -atis" data-d="acc. enk. v." data-s="LV van dabat" data-n="het burgerrecht">civitatem</span></span>
+<span class="wg" data-wg="3"><span class="lat-word" data-w="omnibus Italicis" data-l="omnis / Italicus" data-d="dat. mv. m." data-s="meew. voorw. bij dabat" data-n="aan alle Italiërs">omnibus Italicis</span>,</span>
+<span class="wg" data-wg="4"><span class="lat-word" data-w="extendebat" data-l="extendere" data-d="A. ind. imperf. 3 enk." data-s="tweede PV in de reeks" data-n="hij breidde uit">extendebat</span></span>
+<span class="wg" data-wg="5"><span class="lat-word" data-w="eam" data-l="is, ea, id" data-d="acc. enk. v." data-s="LV van extendebat; verwijst naar civitatem" data-n="haar">eam</span></span>
+<span class="wg" data-wg="6"><span class="lat-word" data-w="paene usque Alpes" data-l="paene / usque / Alpes" data-d="bijw. + bijw. + eigennaam acc. mv." data-s="BWB van richting bij extendebat" data-n="bijna tot aan de Alpen">paene usque Alpes</span>,</span>
+<span class="wg" data-wg="7"><span class="lat-word" data-w="dividebat" data-l="dividere" data-d="A. ind. imperf. 3 enk." data-s="derde PV in de reeks" data-n="hij verdeelde">dividebat</span></span>
+<span class="wg" data-wg="8"><span class="lat-word" data-w="agros" data-l="ager, agri" data-d="acc. mv. m." data-s="LV van dividebat" data-n="de akkers">agros</span>,</span>
+<span class="wg" data-wg="9"><span class="lat-word" data-w="vetabat" data-l="vetare" data-d="A. ind. imperf. 3 enk." data-s="vierde PV; stuurt ACI aan" data-n="hij verbood">vetabat</span></span>
+<span class="wg" data-wg="10"><span class="lat-word" data-w="quemquam civem" data-l="quisquam / civis" data-d="acc. enk. m." data-s="OND van de ACI bij vetabat" data-n="dat enige burger">quemquam civem</span></span>
+<span class="wg" data-wg="11"><span class="lat-word" data-w="plus quingentis iugeribus" data-l="plus / quingenti / iugerum" data-d="acc. + abl. mv. o." data-s="BWB van hoeveelheid bij habere" data-n="meer dan 500 morgen">plus quingentis iugeribus</span></span>
+<span class="wg" data-wg="12"><span class="lat-word" data-w="habere" data-l="habere" data-d="A. inf. praes." data-s="infinitief in de ACI na vetabat" data-n="te hebben">habere</span>,</span>
+<span class="wg" data-wg="13"><span class="lat-word" data-w="quod aliquando" data-l="qui, quae, quod / aliquando" data-d="rel. pron. nom. enk. o. + bijw." data-s="rel. bijzin bij vetabat-bepaling; quod = antecedent is het verbod zelf" data-n="wat vroeger">quod aliquando</span></span>
+<span class="wg" data-wg="14"><span class="lat-word" data-w="lege Licinia" data-l="lex / Licinius" data-d="abl. enk. v." data-s="BWB van middel bij cautum erat" data-n="door de Licinische wet">lege Licinia</span></span>
+<span class="wg" data-wg="15"><span class="lat-word" data-w="cautum erat" data-l="cavere" data-d="PPP + erat: P. ind. plusperf. 3 enk. onpers." data-s="PV van de rel. bijzin; onpersoonlijk passief" data-n="vastgelegd was">cautum erat</span>,</span>
+<span class="wg" data-wg="16"><span class="lat-word" data-w="nova" data-l="novus" data-d="acc. mv. o." data-s="LV van constituebat" data-n="nieuwe dingen">nova</span></span>
+<span class="wg" data-wg="17"><span class="lat-word" data-w="constituebat portoria" data-l="constituere / portorium" data-d="A. ind. imperf. 3 enk. + acc. mv. o." data-s="vijfde PV + nader omschrijving als appositie" data-n="hij stelde belastingen in">constituebat portoria</span>,</span>
+<span class="wg" data-wg="18"><span class="lat-word" data-w="novis coloniis" data-l="novus / colonia" data-d="abl. mv. v." data-s="BWB van middel bij replebat" data-n="met nieuwe kolonies">novis coloniis</span></span>
+<span class="wg" data-wg="19"><span class="lat-word" data-w="replebat provincias" data-l="replere / provincia" data-d="A. ind. imperf. 3 enk. + acc. mv. v." data-s="zesde PV + LV" data-n="hij vulde de provincies">replebat provincias</span>,</span>
+<span class="wg" data-wg="20"><span class="lat-word" data-w="iudicia" data-l="iudicium, -ii" data-d="acc. mv. o." data-s="LV van transferebat" data-n="de rechtsbevoegdheid">iudicia</span></span>
+<span class="wg" data-wg="21"><span class="lat-word" data-w="a senatu" data-l="senatus, -us" data-d="voorzetselgroep (abl. enk. m.)" data-s="BWB van scheiding bij transferebat" data-n="van de senaat">a senatu</span></span>
+<span class="wg" data-wg="22"><span class="lat-word" data-w="transferebat ad equites" data-l="transferre / eques" data-d="A. ind. imperf. 3 enk. + voorzetselgroep acc. mv." data-s="zevende PV + BWB van richting" data-n="hij bracht over naar de ridders">transferebat ad equites</span>,</span>
+<span class="wg" data-wg="23"><span class="lat-word" data-w="frumentum" data-l="frumentum, -i" data-d="acc. enk. o." data-s="OND van de ACI bij instituebat" data-n="graan">frumentum</span></span>
+<span class="wg" data-wg="24"><span class="lat-word" data-w="plebi" data-l="plebs, plebis" data-d="dat. enk. v." data-s="meew. voorw. bij dari" data-n="aan het volk">plebi</span></span>
+<span class="wg" data-wg="25"><span class="lat-word" data-w="dari" data-l="dare" data-d="P. inf. praes." data-s="infinitief in de ACI na instituebat" data-n="gegeven worden">dari</span></span>
+<span class="wg" data-wg="26"><span class="lat-word" data-w="instituebat" data-l="instituere" data-d="A. ind. imperf. 3 enk." data-s="achtste PV; stuurt ACI (frumentum dari) aan" data-n="hij stelde in">instituebat</span>.</span>
+</div>
+
+<div class="latin-para tekst-scheiding">
+<span class="wg" data-wg="27"><span class="lat-word" data-w="Nihil" data-l="nihil" data-d="nom. enk. o." data-s="OND van de impliciete koppelzin" data-n="Niets">Nihil</span>
+<span class="lat-word" data-w="immotum" data-l="immotus" data-d="adj. nom. enk. o." data-s="naamw. gezegde bij nihil" data-n="onbewogen">immotum</span>,</span>
+<span class="wg" data-wg="28"><span class="lat-word" data-w="nihil tranquillum" data-l="nihil / tranquillus" data-d="nom. enk. o. + adj. nom. enk. o." data-s="tweede subject + naamw. gezegde (ellips van PV)" data-n="niets rustig">nihil tranquillum</span>,</span>
+<span class="wg" data-wg="29"><span class="lat-word" data-w="nihil quietum" data-l="nihil / quietus" data-d="nom. enk. o. + adj. nom. enk. o." data-s="derde subject + naamw. gezegde (ellips van PV)" data-n="niets stil">nihil quietum</span>,</span>
+<span class="wg" data-wg="30"><span class="lat-word" data-w="nihil denique" data-l="nihil / denique" data-d="nom. enk. o. + bijw." data-s="vierde subject; denique introduceert het slotlid" data-n="kortom niets">nihil denique</span></span>
+<span class="wg" data-wg="31"><span class="lat-word" data-w="in eodem statu" data-l="idem / status, -us" data-d="voorzetselgroep (abl. enk. m.)" data-s="BWB van omstandigheid bij relinquebat" data-n="in dezelfde toestand">in eodem statu</span></span>
+<span class="wg" data-wg="32"><span class="lat-word" data-w="relinquebat" data-l="relinquere" data-d="A. ind. imperf. 3 enk." data-s="PV van de tweede paragraaf; sluit de anafoor af" data-n="liet hij achter">relinquebat</span>.</span>
+</div>
+
+  </div><!-- /plain-view -->
+
+  <div class="numbered-view" id="numberedView">
+    <div class="latin-line"><span class="ln">1</span><span class="lc">Dabat civitatem omnibus Italicis, extendebat eam paene usque Alpes, dividebat agros,</span></div>
+    <div class="latin-line"><span class="ln">2</span><span class="lc">vetabat quemquam civem plus quingentis iugeribus habere, quod aliquando lege Licinia</span></div>
+    <div class="latin-line"><span class="ln">3</span><span class="lc">cautum erat, nova constituebat portoria, novis coloniis replebat provincias, iudicia</span></div>
+    <div class="latin-line"><span class="ln">4</span><span class="lc">a senatu transferebat ad equites, frumentum plebi dari instituebat.</span></div>
+    <div class="latin-line"><span class="ln">&nbsp;</span><span class="lc">&nbsp;</span></div>
+    <div class="latin-line"><span class="ln">5</span><span class="lc">Nihil immotum, nihil tranquillum, nihil quietum, nihil denique in eodem statu relinquebat.</span></div>
+  </div>
+
+  </div><!-- /latin-text -->
+
+  <div class="noten-block" id="notenBlock">
+  <div class="d-badges" id="badges-noten" style="margin-bottom:.5rem;">
+    <span class="d-badge bs" data-layer="bs">⑦ Scaffolding</span>
+    <span class="d-badge bs" data-layer="bs">⑪ Feedback die denken aanzet</span>
+    <span class="d-badge lpd" data-layer="lpd">BO1_03.03 – morfologie &amp; syntaxis</span>
+  </div>
+  <div class="footnotes">
+    <div class="fn-title">Grammaticale noten</div>
+    <div class="fn"><span class="fn-n">1</span><span>Reeks historische <em>imperfecta</em> (<em>dabat, extendebat, dividebat</em> …) — Velleius gebruikt het imperf. om de duur en herhaling van Gaius' maatregelen te benadrukken: hij is niet éénmalig maar voortdurend actief.</span></div>
+    <div class="fn"><span class="fn-n">2</span><span><em>vetabat quemquam civem … habere</em> — ACI na <em>vetare</em>: OND = <em>quemquam civem</em> (acc.), infinitief = <em>habere</em>. Let op <em>quemquam</em> (pronomen + adj.) als accusatief-subject.</span></div>
+    <div class="fn"><span class="fn-n">3</span><span><em>quod … lege Licinia cautum erat</em> — relatieve bijzin (antecedent = de gehele bepaling over 500 morgen). <em>Cautum erat</em> is een onpersoonlijk plusquamperfectum passivum: 'vastgelegd was'.</span></div>
+    <div class="fn"><span class="fn-n">4</span><span><em>nova … portoria</em> — <em>nova</em> (nom./acc. mv. o.) is het LV van <em>constituebat</em>; <em>portoria</em> fungeert als appositie die preciseert wat die nova zijn: tolgelden, belastingen.</span></div>
+    <div class="fn"><span class="fn-n">5</span><span><em>frumentum plebi dari instituebat</em> — ACI na <em>instituebat</em>: <em>frumentum</em> (acc.) = OND, <em>dari</em> (P. inf. praes.) = infinitief; <em>plebi</em> = datief van voordeel. Let op het passieve infinitief.</span></div>
+    <div class="fn"><span class="fn-n">6</span><span><em>Nihil immotum, nihil tranquillum, nihil quietum, nihil denique …</em> — viervoudige anafoor van <em>nihil</em> als stijlfiguur. De koppelwerkwoorden zijn weggelaten (ellips): begrijp telkens <em>erat</em>. Klimax: het laatste lid wordt ingeleid door <em>denique</em> ('kortom', 'ja zelfs').</span></div>
+    <div class="fn"><span class="fn-n">7</span><span><em>in eodem statu relinquebat</em> — <em>statu</em> = abl. van <em>status, -us</em> (4e declinatie). Het geheel betekent: 'hij liet niets onveranderd'. Een krachtige afsluiting van de anafoor.</span></div>
+  </div>
+  </div><!-- /noten-block -->
+
+  <!-- ══ WOORDENLIJST ══ -->
+  <div class="d-badges" id="badges-wl" style="margin-bottom:.5rem;">
+    <span class="d-badge bs" data-layer="bs">① Voorkennis activeren</span>
+    <span class="d-badge bs" data-layer="bs">⑧ Gespreide oefening</span>
+    <span class="d-badge lpd" data-layer="lpd">BO1_03.01 – basiswoordenschat</span>
+    <span class="d-badge lpd" data-layer="lpd">BO1_03.02 – woordenschatstrategieën</span>
+  </div>
+  <div id="woordenlijst-sectie" style="margin-top:3.5rem;padding-top:2rem;border-top:2px solid var(--rule);">
+    <div id="wlSectieLabel" style="font-family:'Lufga',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--magenta);margin-bottom:.3rem;opacity:.85;">Tekst 5 · Ludus 8A</div>
+    <h2 style="font-family:'Lufga',sans-serif;font-size:1.3rem;font-weight:600;color:var(--blue);margin-bottom:.3rem;" id="wlSectieTitle">Woordenlijst</h2>
+    <p id="wlSectieInfo" style="font-family:'Lufga',sans-serif;font-size:.78rem;color:var(--ink-light);margin-bottom:1.5rem;">41 woorden op volgorde van voorkomen. <span style="display:inline-block;font-size:.6rem;font-weight:700;padding:.04rem .3rem;border-radius:8px;background:#fbe6f1;color:var(--magenta);text-transform:uppercase;vertical-align:middle;">basis</span> = basiswoordenschat.</p>
+    <div id="wlTable"></div>
+  </div>
+
+</div><!-- /main-col -->
+
+<div class="col-resizer" id="colResizer"><div class="col-resizer-handle"></div></div>
+
+<div class="side-panel" id="sidePanel">
+  <div class="analysis-card" id="analysisCard">
+    <div class="ac-empty">Klik op een woord voor grammaticahulp.</div>
+  </div>
+  <div class="panel-card" id="sidePanelVertaling">
+    <h3 style="color:var(--magenta);">Vertaling</h3>
+    <div class="vertaling-tekst" id="vertaalTekst"></div>
+  </div>
+  <div class="panel-card">
+    <h3>Let op</h3>
+    <div class="panel-note"><span class="pn-tag">ACI</span>Zoek: <em>quemquam civem habere</em> na <em>vetabat</em> en <em>frumentum dari</em> na <em>instituebat</em>.</div>
+    <div class="panel-note"><span class="pn-tag">PPP</span><em>cautum erat</em> — onpersoonlijk passief plusquamperfectum van <em>cavere</em>.</div>
+    <div class="panel-note"><span class="pn-tag">Anafoor</span>Viervoudig <em>nihil</em> met ellips van <em>erat</em> — typisch voor Velleius' stijl.</div>
+    <div class="panel-note"><span class="pn-tag">Imperf.</span>Historisch imperfectum: acht werkwoorden beschrijven Gaius' aanhoudende hervormingen.</div>
+  </div>
+</div>
+
+</div><!-- /outer -->
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10l4-4 4 4"/></svg>
+</button>
+
+<script>
+/* ══════════════════════════════════════════
+   WOORDENLIJST DATA — gefilterd voor deze tekst
+   t = teksten waarin het woord voorkomt
+   vol = volgorde per tekst
+══════════════════════════════════════════ */
+var WL = [
+{g:"dare",a:"do, dedi, datum",v:"geven",b:true,t:["6a/1","6a/2","6a/4","6b/2","6b/4","7a/3","7b/2","7b/4","8a/5","8b/9","9b/5","10/3"],vol:{"8a/5":1}},
+{g:"civitas",a:"civitatis, (v.)",v:"burgerrecht; stad, gemeenschap, staat",b:true,t:["8a/5","9a/1","9b/9"],vol:{"8a/5":2}},
+{g:"omnis",a:"omnis, omne",v:"geheel, al, ieder, elk",b:true,t:["6a/1","6b/2","6b/4","7a/1","7a/3","7a/7","7b/2","7b/4","8a/3","8a/5","8b/5","8b/9","9b/5","9b/7","10/3","10/26","6a/7"],vol:{"8a/5":3}},
+{g:"extendere",a:"extendo, extendi, extensum",v:"uitstrekken, uitbreiden",t:["8a/5"],vol:{"8a/5":4}},
+{g:"is / ea / id",a:"(dem. pron.)",v:"hij, zij, het; die, dat",b:true,t:["7b/4","8a/5"],vol:{"8a/5":5}},
+{g:"paene",a:"(bijw.)",v:"bijna",b:true,t:["8a/5","9b/5"],vol:{"8a/5":6}},
+{g:"Alpes",a:"Alpium, (v. mv.)",v:"de Alpen",t:["8a/5"],vol:{"8a/5":7}},
+{g:"dividere",a:"divido, divisi, divisum",v:"verdelen, splitsen",b:true,t:["8a/5","9b/9"],vol:{"8a/5":8}},
+{g:"ager",a:"agri, (m.)",v:"akker, land, veld",b:true,t:["8a/5","9a/1","9b/5","10/26"],vol:{"8a/5":9}},
+{g:"vetare",a:"veto, vetui, vetitum",v:"verbieden",b:true,t:["8a/5","9b/9"],vol:{"8a/5":10}},
+{g:"quisquam",a:"quidquam / quicquam",v:"iemand, iets (na negatie of in verbodszin)",b:true,t:["8a/5","10/3"],vol:{"8a/5":11}},
+{g:"civis",a:"civis, (m./v.)",v:"burger",b:true,t:["8a/5","9a/1","9b/5","10/3"],vol:{"8a/5":12}},
+{g:"plus",a:"pluris (onverbogen als bijw.)",v:"meer",b:true,t:["8a/5","9b/5","10/26"],vol:{"8a/5":13}},
+{g:"quingenti",a:"quingentae, quingenta",v:"vijfhonderd",t:["8a/5"],vol:{"8a/5":14}},
+{g:"iugerum",a:"iugeri, (o.)",v:"morgen (landmaat, ca. 2519 m²)",t:["8a/5"],vol:{"8a/5":15}},
+{g:"habere",a:"habeo, habui, habitum",v:"hebben, bezitten; houden",b:true,t:["6a/1","6b/2","6b/4","7a/3","7b/4","8a/3","8a/5","8b/9","9b/5","9b/9","10/3","10/26"],vol:{"8a/5":16}},
+{g:"aliquando",a:"(bijw.)",v:"ooit, eens, vroeger",t:["8a/5"],vol:{"8a/5":17}},
+{g:"lex",a:"legis, (v.)",v:"wet",b:true,t:["8a/5","9a/1","9b/5","10/3"],vol:{"8a/5":18}},
+{g:"Licinius",a:"Licinii, (m.) – eigennaam",v:"Licinius (Romeinse familienaam)",t:["8a/5"],vol:{"8a/5":19}},
+{g:"cavere",a:"caveo, cavi, cautum",v:"zich hoeden voor; vastleggen (in een wet)",t:["8a/5"],vol:{"8a/5":20}},
+{g:"novus",a:"nova, novum",v:"nieuw",b:true,t:["7b/2","8a/5","9a/1","9b/5","10/3"],vol:{"8a/5":21}},
+{g:"constituere",a:"constituo, constitui, constitutum",v:"opstellen, vaststellen, instellen",b:true,t:["8a/5","9a/1","10/3"],vol:{"8a/5":22}},
+{g:"portorium",a:"portorii, (o.)",v:"tolgeld, belasting, invoerrecht",t:["8a/5"],vol:{"8a/5":23}},
+{g:"colonia",a:"coloniae, (v.)",v:"kolonie, nederzetting van Romaanse burgers",b:true,t:["8a/5","9b/5"],vol:{"8a/5":24}},
+{g:"replere",a:"repleo, replevi, repletum",v:"volladen, volmaken, vullen",t:["8a/5"],vol:{"8a/5":25}},
+{g:"provincia",a:"provinciae, (v.)",v:"provincie, gebied",b:true,t:["8a/5","9a/1","9b/9"],vol:{"8a/5":26}},
+{g:"iudicium",a:"iudicii, (o.)",v:"oordeel; rechtszaak; rechtsbevoegdheid",b:true,t:["8a/5","9a/1","10/3"],vol:{"8a/5":27}},
+{g:"senatus",a:"senatus, (m.)",v:"senaat",b:true,t:["8a/5","9a/1","9b/5","10/3"],vol:{"8a/5":28}},
+{g:"transferre",a:"transfero, transtuli, translatum",v:"overbrengen, verplaatsen, overdragen",b:true,t:["8a/5"],vol:{"8a/5":29}},
+{g:"eques",a:"equitis, (m.)",v:"ruiter; ridder (lid van de equestere stand)",b:true,t:["8a/5","9a/1"],vol:{"8a/5":30}},
+{g:"frumentum",a:"frumenti, (o.)",v:"graan, koren",b:true,t:["8a/5","9a/1","9b/5"],vol:{"8a/5":31}},
+{g:"plebs",a:"plebis, (v.)",v:"het gewone volk, de plebejers",b:true,t:["8a/5","9a/1","10/3"],vol:{"8a/5":32}},
+{g:"instituere",a:"instituo, institui, institutum",v:"oprichten, instellen, vaststellen; beginnen",b:true,t:["8a/5","9a/1","10/3"],vol:{"8a/5":33}},
+{g:"nihil",a:"(onverbogen)",v:"niets",b:true,t:["8a/5","9b/5","10/3","10/26"],vol:{"8a/5":34}},
+{g:"immotus",a:"immota, immotum",v:"onbewogen, onveranderd, ongestoord",t:["8a/5"],vol:{"8a/5":35}},
+{g:"tranquillus",a:"tranquilla, tranquillum",v:"rustig, kalm, vredig",t:["8a/5"],vol:{"8a/5":36}},
+{g:"quietus",a:"quieta, quietum",v:"stil, rustig; in rust gelaten",t:["8a/5"],vol:{"8a/5":37}},
+{g:"denique",a:"(bijw.)",v:"kortom, ten slotte; zelfs",b:true,t:["8a/5","9b/5","10/3"],vol:{"8a/5":38}},
+{g:"idem",a:"eadem, idem (dem. pron.)",v:"dezelfde, hetzelfde",b:true,t:["8a/5","9a/1","9b/5","10/3"],vol:{"8a/5":39}},
+{g:"status",a:"status, (m.)",v:"toestand, positie, situatie",b:true,t:["8a/5","9b/9"],vol:{"8a/5":40}},
+{g:"relinquere",a:"relinquo, reliqui, relictum",v:"achterlaten, verlaten",b:true,t:["7a/3","8a/5","8b/9","9b/5","9b/9","10/3"],vol:{"8a/5":41}}
+];
+
+/* ══════════════════════════════════════════
+   WOORDENLIJST OPZOEKEN
+══════════════════════════════════════════ */
+function lookupWL(lemma) {
+  if (!lemma) return null;
+  var parts = lemma.toLowerCase().split(/[\/,\s]+/);
+  for (var i = 0; i < WL.length; i++) {
+    var g = WL[i].g.toLowerCase();
+    for (var j = 0; j < parts.length; j++) {
+      if (g === parts[j] || g.startsWith(parts[j])) return WL[i];
+    }
+  }
+  for (var i = 0; i < WL.length; i++) {
+    var g = WL[i].g.toLowerCase();
+    for (var j = 0; j < parts.length; j++) {
+      if (parts[j].length > 3 && g.includes(parts[j])) return WL[i];
+    }
+  }
+  return null;
+}
+
+/* ══════════════════════════════════════════
+   RENDER WOORDENLIJST (hoofd + zijpaneel)
+══════════════════════════════════════════ */
+var currentTekst = '7b/4';
+var tekstLabels = {
+  '6a/1':'Ludus 6A · Tekst 1','6a/2':'Ludus 6A · Tekst 2','6a/4':'Ludus 6A · Tekst 4','6a/7':'Ludus 6A · Tekst 7',
+  '6b/1':'Ludus 6B · Tekst 1','6b/2':'Ludus 6B · Tekst 2','6b/3':'Ludus 6B · Tekst 3','6b/4':'Ludus 6B · Tekst 4',
+  '6b/5':'Ludus 6B · Tekst 5','6b/8':'Ludus 6B · Tekst 8','6b/9':'Ludus 6B · Tekst 9',
+  '7a/1':'Ludus 7A · Tekst 1','7a/2':'Ludus 7A · Tekst 2','7a/3':'Ludus 7A · Tekst 3','7a/5':'Ludus 7A · Tekst 5',
+  '7a/6':'Ludus 7A · Tekst 6','7a/7':'Ludus 7A · Tekst 7','7a/8':'Ludus 7A · Tekst 8',
+  '7b/2':'Ludus 7B · Tekst 2','7b/4':'Ludus 7B · Tekst 4','7b/6':'Ludus 7B · Tekst 6','7b/12':'Ludus 7B · Tekst 12',
+  '8a/2':'Ludus 8A · Tekst 2','8a/3':'Ludus 8A · Tekst 3','8a/5':'Ludus 8A · Tekst 5','8a/6':'Ludus 8A · Tekst 6',
+  '8b/1':'Ludus 8B · Tekst 1','8b/3':'Ludus 8B · Tekst 3','8b/5':'Ludus 8B · Tekst 5','8b/6':'Ludus 8B · Tekst 6',
+  '8b/8':'Ludus 8B · Tekst 8','8b/9':'Ludus 8B · Tekst 9','8b/10':'Ludus 8B · Tekst 10',
+  '9a/1':'Ludus 9A · Tekst 1','9a/4':'Ludus 9A · Tekst 4',
+  '9b/3':'Ludus 9B · Tekst 3','9b/4':'Ludus 9B · Tekst 4','9b/5':'Ludus 9B · Tekst 5','9b/6':'Ludus 9B · Tekst 6',
+  '9b/7':'Ludus 9B · Tekst 7','9b/9':'Ludus 9B · Tekst 9','9b/10':'Ludus 9B · Tekst 10',
+  '10/3':'Ludus 10 · Tekst 3','10/8':'Ludus 10 · Tekst 8','10/9':'Ludus 10 · Tekst 9',
+  '10/14':'Ludus 10 · Tekst 14','10/19':'Ludus 10 · Tekst 19','10/21':'Ludus 10 · Tekst 21','10/26':'Ludus 10 · Tekst 26'
+};
+
+function filterWL(tekst) {
+  currentTekst = tekst;
+  var label = tekstLabels[tekst] || tekst;
+  var filtered = WL.filter(function(w){ return w.t && w.t.indexOf(tekst) !== -1; })
+                   .sort(function(a,b){ return (a.volgorde && a.volgorde[tekst]||999) - (b.volgorde && b.volgorde[tekst]||999); });
+  // Update labels
+  var sectLabel = document.getElementById('wlSectieLabel');
+  var sectTitle = document.getElementById('wlSectieTitle');
+  var sectInfo  = document.getElementById('wlSectieInfo');
+  if (sectLabel) sectLabel.textContent = label;
+  if (sectTitle) sectTitle.textContent = 'Woordenlijst';
+  if (sectInfo)  sectInfo.innerHTML = filtered.length + ' woorden op volgorde van voorkomen. <span style="display:inline-block;font-size:.6rem;font-weight:700;padding:.04rem .3rem;border-radius:8px;background:#fbe6f1;color:var(--magenta);text-transform:uppercase;vertical-align:middle;">basis</span> = basiswoordenschat.';
+  // Update side panel header
+  var spHead = document.querySelector('#sidePanelWl h3');
+  if (spHead) spHead.textContent = 'Woordenlijst — ' + label;
+  renderWLData(filtered);
+  renderWLSide(filtered);
+}
+
+function renderWLData(list) {
+  var el = document.getElementById('wlTable');
+  if (!el) return;
+  var html = '<div style="background:#fff;border:0.5px solid var(--rule);border-radius:12px;overflow:hidden;">';
+  list.forEach(function(w, i) {
+    var isLast = (i === list.length - 1);
+    var borderB = isLast ? '' : 'border-bottom:0.5px solid var(--rule);';
+    var latColor = w.b ? 'var(--magenta)' : 'var(--ink)';
+    html += '<div style="display:flex;align-items:center;gap:14px;padding:11px 16px;' + borderB + '">'
+      + '<span style="font-family:\'Lufga\',sans-serif;font-size:12px;color:var(--ink-light);width:28px;flex-shrink:0;text-align:right;">' + (i+1) + '</span>'
+      + '<span style="width:18px;height:18px;border-radius:50%;border:1.5px solid var(--rule);flex-shrink:0;display:inline-block;"></span>'
+      + '<span style="flex:1;min-width:0;">'
+        + '<span style="font-family:\'Lufga\',sans-serif;font-size:14px;font-weight:500;color:' + latColor + ';">' + w.g + '</span>'
+        + (w.a ? '<span style="font-family:\'Lufga\',sans-serif;font-size:12px;color:var(--ink-light);margin-left:.5rem;">' + w.a + '</span>' : '')
+      + '</span>'
+      + '<span style="font-family:\'Lufga\',sans-serif;font-size:13px;color:var(--ink);flex:1.2;text-align:left;">' + w.v + '</span>'
+      + '<span style="font-size:16px;color:#d1d5db;flex-shrink:0;padding:2px 4px;line-height:1;">&#9734;</span>'
+      + '</div>';
+  });
+  html += '</div>';
+  el.innerHTML = html;
+}
+
+function renderWLSide(list) {
+  var el = document.getElementById('wlSide');
+  if (!el) return;
+  var html = '';
+  var max = Math.min(20, list.length);
+  for (var i = 0; i < max; i++) {
+    var w = list[i];
+    html += '<div class="panel-word">'
+      + '<span class="pw-lat">' + w.g + (w.b ? '<span class="pw-basis">basis</span>' : '') + '</span>'
+      + '<span class="pw-nl">' + w.v.split(';')[0] + '</span>'
+      + '</div>';
+  }
+  if (list.length > 20) {
+    html += '<div style="font-family:\'Lufga\',sans-serif;font-size:.7rem;color:var(--ink-light);padding:.5rem 0;text-align:center;">+ ' + (list.length - 20) + ' meer ↓ zie woordenlijst</div>';
+  }
+  el.innerHTML = html;
+}
+
+/* init woordenlijst */
+filterWL('8a/5');
+
+/* ══════════════════════════════════════════
+   STATE
+══════════════════════════════════════════ */
+var S = {lines:false, font:false, reveal:false, twocol:false, interlin:false, revIdx:-1};
+var wgroups = Array.from(document.querySelectorAll('.wg'));
+var lastWord = null, clickN = 0;
+
+/* ══════════════════════════════════════════
+   WORD CLICKS
+══════════════════════════════════════════ */
+document.querySelectorAll('.lat-word').forEach(function(w) {
+  w.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (lastWord === w) { clickN++; } else {
+      if (lastWord) lastWord.classList.remove('st1','st2');
+      lastWord = w; clickN = 1;
+    }
+    w.classList.remove('st1','st2');
+    if (clickN === 1) {
+      w.classList.add('st1');
+      showPopup(w, 1);
+      updatePanel(w);
+    } else if (clickN === 2) {
+      w.classList.add('st2');
+      showPopup(w, 2);
+    } else {
+      clickN = 0; lastWord = null; hidePopup();
+    }
+  });
+});
+document.addEventListener('click', function() {
+  if (lastWord) { lastWord.classList.remove('st1','st2'); lastWord = null; clickN = 0; }
+  hidePopup();
+});
+
+/* ══════════════════════════════════════════
+   POPUP
+══════════════════════════════════════════ */
+var popup = document.getElementById('popup');
+function showPopup(el, click) {
+  var wl = lookupWL(el.dataset.l);
+  document.getElementById('ppWord').textContent = el.dataset.w;
+  document.getElementById('ppLemma').textContent = el.dataset.l || '';
+
+  var info = click === 1 ? el.dataset.d : el.dataset.s;
+  var tagClass = click === 1 ? 'tg' : 'to';
+  var tagLabel = click === 1 ? 'Det.' : 'Funct.';
+  var html = '<div class="wp-row"><span class="wp-tag ' + tagClass + '">' + tagLabel + '</span><span class="wp-val">' + info + '</span></div>';
+
+  // Add NL from data-n
+  html += '<div class="wp-row" style="margin-top:.25rem"><span class="wp-tag tp">NL</span><span class="wp-val">' + el.dataset.n + '</span></div>';
+
+  // Add woordenlijst entry if found — weergave conform woordjestrainer
+  if (wl) {
+    html += '<hr class="wp-sep">';
+    var isBasis = wl.b;
+    var grondvorm = '<span style="font-family:\'EB Garamond\',Georgia,serif;font-size:1rem;font-weight:600;color:' + (isBasis ? 'var(--magenta)' : 'var(--blue)') + ';">' + wl.g + '</span>';
+    if (isBasis) grondvorm += ' <span style="display:inline-block;font-size:.55rem;font-weight:700;padding:.03rem .28rem;border-radius:8px;background:#fce4f1;color:var(--magenta);text-transform:uppercase;vertical-align:middle;">basis</span>';
+    html += '<div class="wp-row"><span class="wp-tag tw">&#128218;</span><div>' + grondvorm;
+    if (wl.a) html += '<div style="font-size:.66rem;color:var(--ink-light);margin-top:.1rem;">' + wl.a + '</div>';
+    html += '<div style="font-size:.78rem;color:var(--ink-mid);margin-top:.15rem;">' + wl.v + '</div>';
+    html += '</div></div>';
+  }
+
+  document.getElementById('ppContent').innerHTML = html;
+  document.getElementById('ppSep').style.display = 'none';
+  document.getElementById('ppHint').innerHTML = '';
+
+  // Position
+  var rect = el.getBoundingClientRect();
+  var top = rect.bottom + window.scrollY + 6;
+  var left = rect.left;
+  if (rect.bottom + 160 > window.innerHeight) top = rect.top + window.scrollY - 170;
+  if (left + 310 > window.innerWidth) left = window.innerWidth - 315;
+  if (left < 8) left = 8;
+  popup.style.top = top + 'px';
+  popup.style.left = left + 'px';
+  popup.classList.add('vis');
+}
+function hidePopup() { popup.classList.remove('vis'); }
+
+function updatePanel(w) {
+  var wl = lookupWL(w.dataset.l);
+  var wlHtml = '';
+  if (wl) {
+    var isBasis = wl.b;
+    var grondvorm = '<span style="font-family:\'EB Garamond\',Georgia,serif;font-size:1rem;font-weight:600;color:' + (isBasis ? 'var(--magenta)' : 'var(--blue)') + ';">' + wl.g + '</span>';
+    if (isBasis) grondvorm += ' <span style="display:inline-block;font-size:.55rem;font-weight:700;padding:.03rem .28rem;border-radius:8px;background:#fce4f1;color:var(--magenta);text-transform:uppercase;vertical-align:middle;">basis</span>';
+    wlHtml = '<div class="ac-row" style="margin-top:.4rem"><span class="ac-tag tw">&#128218;</span><div>' + grondvorm
+      + (wl.a ? '<div style="font-size:.66rem;color:var(--ink-light);margin-top:.1rem;">' + wl.a + '</div>' : '')
+      + '<div style="font-size:.78rem;color:var(--ink-mid);margin-top:.15rem;">' + wl.v + '</div>'
+      + '</div></div>';
+  }
+  document.getElementById('analysisCard').innerHTML =
+    '<div class="ac-word">' + w.dataset.w + '</div>' +
+    '<div class="ac-lemma">' + (w.dataset.l||'') + '</div>' +
+    '<div class="ac-row"><span class="ac-tag tg">Det.</span><span class="ac-val">' + w.dataset.d + '</span></div>' +
+    '<div class="ac-row" style="margin-top:.3rem"><span class="ac-tag to">Funct.</span><span class="ac-val">' + w.dataset.s + '</span></div>' +
+    '<div class="ac-row" style="margin-top:.3rem"><span class="ac-tag tp">NL</span><span class="ac-val">' + w.dataset.n + '</span></div>' +
+    wlHtml;
+}
+
+/* ══════════════════════════════════════════
+   REVEAL PER WOORDGROEP
+══════════════════════════════════════════ */
+function toggleReveal() {
+  S.reveal = !S.reveal;
+  document.getElementById('btnReveal').classList.toggle('active', S.reveal);
+  document.getElementById('revealBar').classList.toggle('vis', S.reveal);
+  document.getElementById('latinText').classList.toggle('reveal-mode', S.reveal);
+  if (S.reveal) {
+    S.revIdx = -1;
+    wgroups.forEach(function(g){ g.classList.remove('revealed','current'); });
+    updCount();
+  } else {
+    wgroups.forEach(function(g){ g.classList.remove('revealed','current'); });
+  }
+}
+function revealNext() {
+  if (!S.reveal) return;
+  if (S.revIdx >= 0 && S.revIdx < wgroups.length) wgroups[S.revIdx].classList.remove('current');
+  S.revIdx = Math.min(S.revIdx + 1, wgroups.length - 1);
+  wgroups[S.revIdx].classList.add('revealed','current');
+  wgroups[S.revIdx].scrollIntoView({behavior:'smooth', block:'nearest'});
+  updCount();
+}
+function revealPrev() {
+  if (!S.reveal) return;
+  if (S.revIdx >= 0) {
+    wgroups[S.revIdx].classList.remove('current','revealed');
+    S.revIdx = Math.max(S.revIdx - 1, -1);
+    if (S.revIdx >= 0) wgroups[S.revIdx].classList.add('current');
+  }
+  updCount();
+}
+function revealAll() {
+  wgroups.forEach(function(g){ g.classList.add('revealed'); g.classList.remove('current'); });
+  S.revIdx = wgroups.length - 1;
+  updCount();
+}
+function updCount() {
+  var done = document.querySelectorAll('.wg.revealed').length;
+  document.getElementById('revCount').textContent = done + ' / ' + wgroups.length;
+}
+
+/* ══════════════════════════════════════════
+   TOGGLE FUNCTIES
+══════════════════════════════════════════ */
+function toggleLines() {
+  S.lines = !S.lines;
+  document.getElementById('btnLines').classList.toggle('active', S.lines);
+  document.getElementById('plainView').classList.toggle('off', S.lines);
+  document.getElementById('numberedView').classList.toggle('on', S.lines);
+  if (S.lines && S.reveal) toggleReveal();
+}
+function toggleInterlin() {
+  S.interlin = !S.interlin;
+  document.getElementById('btnInterlin').classList.toggle('active', S.interlin);
+  document.body.classList.toggle('interlin', S.interlin);
+  if (S.interlin) {
+    document.querySelectorAll('#plainView .lat-word').forEach(function(w) {
+      if (!w.querySelector('.iln')) {
+        var sp = document.createElement('span');
+        sp.className = 'iln';
+        sp.textContent = w.dataset.n;
+        w.appendChild(sp);
+      }
+    });
+    if (S.lines) toggleLines();
+  } else {
+    // Verwijder alle .iln spans én reset inline stijl op het woord
+    document.querySelectorAll('#plainView .lat-word').forEach(function(w) {
+      var iln = w.querySelector('.iln');
+      if (iln) iln.remove();
+      w.style.display = '';
+      w.style.flexDirection = '';
+      w.style.alignItems = '';
+      w.style.verticalAlign = '';
+      w.style.margin = '';
+    });
+  }
+}
+function toggleTwocol() {
+  S.twocol = !S.twocol;
+  var btn = document.getElementById('btnTwocol');
+  if (btn) btn.classList.toggle('active', S.twocol);
+  document.body.classList.toggle('twocol', S.twocol);
+  if (S.twocol) renderVertaling();
+}
+function renderVertaling() {
+  var el = document.getElementById('vertaalTekst');
+  if (!el) return;
+  el.innerHTML = `<p>Hij gaf het burgerrecht aan alle inwoners van Italië, breidde het uit tot bijna aan de Alpen, verdeelde de akkers, verbood dat een burger meer dan 500 morgen land [= 125 ha] had, wat in het verleden vastgelegd was in de Licinische wet, hij stelde nieuwe belastingen in, vulde de provincies met nieuwe kolonies, bracht de rechterlijke machten van de senaat naar de ridders over, hij bepaalde dat er graan aan het volk moest gegeven worden.</p>
+<p>Niets liet hij ongestoord, niets liet hij vredig, niets liet hij rustig achter, kortom niets liet hij in dezelfde toestand achter.</p>`;
+}
+function toggleFont() {
+  S.font = !S.font;
+  document.getElementById('btnFont').classList.toggle('active', S.font);
+  document.body.classList.toggle('font-lg', S.font);
+}
+
+/* ══════════════════════════════════════════
+   DIDACTIEK TOGGLE SYSTEEM
+══════════════════════════════════════════ */
+var D = { bs: false, lpd: false };
+
+function toggleLayer(layer) {
+  D[layer] = !D[layer];
+  var btnId = layer === 'bs' ? 'btnBs' : 'btnLpd';
+  var btn = document.getElementById(btnId);
+  if (btn) btn.classList.toggle('active', D[layer]);
+  document.querySelectorAll('.d-badge[data-layer="' + layer + '"]').forEach(function(b) {
+    b.classList.toggle('vis', D[layer]);
+  });
+}
+
+
+/* GRAMMATICALE NOTEN TOGGLE */
+function toggleNoten() {
+  var blk = document.getElementById('notenBlock');
+  var btn = document.getElementById('btnNoten');
+  if (!blk) return;
+  var open = blk.classList.toggle('vis');
+  if (btn) btn.classList.toggle('active', open);
+  if (open) blk.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+/* TOOLTIPS OP DIDACTIEK-BADGES — contextspecifiek per locatie + bouwsteen/LPD */
+(function annotateBadges(){
+  // Key = parent-id van .d-badges container + '|' + badge-tekst
+  var TIPS = {
+    // ── CONTEXT-BLOK ────────────────────────────────────────────
+    'badges-context|① Voorkennis activeren':
+      '① Voorkennis activeren: de context situeert de hervormingen van Gaius Gracchus na de dood van Tiberius, zodat leerlingen de politieke spanning achter de tekst al begrijpen.',
+    'badges-context|BO1_03.06 – situeren in tijd & ruimte':
+      'BO1_03.06 situeren in tijd & ruimte: leerlingen plaatsen de tekst in Rome van ca. 123-122 v.Chr., de periode van het volkstribunaat van Gaius Gracchus.',
+
+    // ── EXTRA\'S (kaart + woordenlijst-icoon) ─────────────────
+    'badges-kaart|④ Dual coding':
+      '④ Dual coding: een kaart van het Italiaanse schiereiland met de regio\'s van Romeins burgerrecht en kolonies verankert de geografische dimensie van Gaius\' beleid.',
+    'badges-kaart|BO1_03.06 – situeren in tijd & ruimte':
+      'BO1_03.06 situeren in tijd & ruimte: de kaart maakt de geografische reikwijdte van de burgerrechtsuitbreiding (paene usque Alpes) visueel concreet.',
+
+    // ── REVEAL-BAR ─────────────────────────────────────────────
+    'badges-reveal|⑤ Actieve verwerking':
+      '⑤ Actieve verwerking: leerlingen onthullen de reeks van acht imperfecta één voor één en proberen telkens de maatregel te benoemen vóór de volgende verschijnt.',
+    'badges-reveal|⑦ Scaffolding':
+      '⑦ Scaffolding: de woordgroep-aanpak verlaagt de drempel bij de ACI-constructies na vetabat en instituebat, die in hun volle zinslengte moeilijk te overzien zijn.',
+    'badges-reveal|BO1_03.05 – tekst begrijpen via lectuurmethode':
+      'BO1_03.05 tekst begrijpen via lectuurmethode: het lineair lezen per kolon helpt leerlingen de parallelle structuur van de acht imperfecta te herkennen en te benoemen.',
+    'badges-reveal|BO1_03.04 – lectuurstrategieën':
+      'BO1_03.04 lectuurstrategieën: de strategie \'zoek het werkwoord eerst\' is hier bijzonder productief door de opeenvolging van historische imperfecta als ruggengraat van de zin.',
+
+    // ── GRAMMATICALE NOTEN ─────────────────────────────────────
+    'badges-noten|⑦ Scaffolding':
+      '⑦ Scaffolding: de noten lichten precies de ACI na vetabat/instituebat, het onpers. PPP cautum erat en de anafoor nihil toe — de drie puntjes waar leerlingen op vastlopen.',
+    'badges-noten|⑪ Feedback die denken aanzet':
+      '⑪ Feedback die denken aanzet: de noot over de stilistische anafoor vraagt leerlingen te verklaren waarom Velleius vier keer nihil herhaalt in plaats van één keer te samenvatten.',
+    'badges-noten|BO1_03.03 – morfologie & syntaxis':
+      'BO1_03.03 morfologie & syntaxis: aandacht voor het historisch imperfectum, ACI na vetare/instituere, en het onpersoonlijk passief plusquamperfectum (cautum erat).',
+
+    // ── WOORDENLIJST ───────────────────────────────────────────
+    'badges-wl|① Voorkennis activeren':
+      '① Voorkennis activeren: woorden als civis, lex, provincia en senatus behoren tot het Repertorium en bieden een herkenbaar kader vóór de lectuur van de tekst.',
+    'badges-wl|⑧ Gespreide oefening':
+      '⑧ Gespreide oefening: basiswoorden als dare, habere, relinquere en novus keren in meerdere teksten terug en worden hier opnieuw geconfronteerd.',
+    'badges-wl|BO1_03.01 – basiswoordenschat':
+      'BO1_03.01 basiswoordenschat: ruim de helft van de 41 woorden behoort tot het Repertorium en wordt magenta gemarkeerd als actief te kennen woordenschat.',
+    'badges-wl|BO1_03.02 – woordenschatstrategieën':
+      'BO1_03.02 woordenschatstrategieën: woorden als portorium, iugerum en immotus oefenen de strategie om onbekende vormen te analyseren via stam en uitgang.'
+  };
+
+  // Zorg voor één globale tooltip-node
+  var tip = document.createElement('div');
+  tip.className = 'd-tooltip';
+  document.body.appendChild(tip);
+
+  function show(badge, text) {
+    tip.textContent = text;
+    tip.classList.add('vis');
+    var r = badge.getBoundingClientRect();
+    var tw = tip.offsetWidth;
+    var th = tip.offsetHeight;
+    var pad = 10;
+    var left = r.left + r.width/2 - tw/2;
+    left = Math.max(8, Math.min(window.innerWidth - tw - 8, left));
+    var top = r.top - th - pad;
+    if (top < 8) top = r.bottom + pad; // klap onder als bovenaan
+    tip.style.left = (left + window.scrollX) + 'px';
+    tip.style.top  = (top  + window.scrollY) + 'px';
+  }
+  function hide() { tip.classList.remove('vis'); }
+
+  document.querySelectorAll('.d-badges').forEach(function(container){
+    var pid = container.id;
+    if (!pid) return;
+    container.querySelectorAll('.d-badge').forEach(function(b){
+      var key = pid + '|' + b.textContent.trim();
+      var text = TIPS[key];
+      if (!text) return;
+      b.addEventListener('mouseenter', function(){ show(b, text); });
+      b.addEventListener('mouseleave', hide);
+      b.addEventListener('focus',      function(){ show(b, text); });
+      b.addEventListener('blur',       hide);
+    });
+  });
+})();
+
+/* KAART MODAL */
+function openKaartModal()  { document.getElementById('kaartModalOverlay').classList.add('open'); }
+function closeKaartModal() { document.getElementById('kaartModalOverlay').classList.remove('open'); }
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeKaartModal(); });
+
+/* WEERGAVE DROPDOWN */
+function toggleWeergaveMenu(e) {
+  e.stopPropagation();
+  var menu = document.getElementById('weergaveMenu');
+  var btn  = document.getElementById('btnWeergave');
+  var open = menu.classList.toggle('open');
+  btn.classList.toggle('open', open);
+}
+document.addEventListener('click', function(e) {
+  var menu = document.getElementById('weergaveMenu');
+  var btn  = document.getElementById('btnWeergave');
+  if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+  }
+});
+
+/* Sync active state inside dropdown */
+var _origToggleLines = toggleLines;
+toggleLines = function() { _origToggleLines(); document.getElementById('btnLines').classList.toggle('active', S.lines); };
+var _origToggleInterlin = toggleInterlin;
+toggleInterlin = function() { _origToggleInterlin(); document.getElementById('btnInterlin').classList.toggle('active', S.interlin); };
+
+/* Scroll */
+window.addEventListener('scroll', function() {
+  var d = document.documentElement;
+  var pct = d.scrollTop / (d.scrollHeight - d.clientHeight);
+  document.getElementById('rpFill').style.width = (pct*100) + '%';
+  document.getElementById('scrollTop').classList.toggle('on', d.scrollTop > 280);
+});
+
+/* ══════════════════════════════════════════
+   KOLOM-RESIZER (drag to resize)
+══════════════════════════════════════════ */
+(function(){
+  var resizer = document.getElementById('colResizer');
+  if (!resizer) return;
+  var outer = resizer.closest('.outer');
+  var dragging = false;
+  var startX, startPct;
+
+  function getPct() {
+    var val = getComputedStyle(document.documentElement).getPropertyValue('--col-split') || '60%';
+    return parseFloat(val);
+  }
+
+  resizer.addEventListener('mousedown', function(e) {
+    dragging = true;
+    startX = e.clientX;
+    startPct = getPct();
+    resizer.classList.add('dragging');
+    document.body.style.cursor = 'col-resize';
+    document.body.style.userSelect = 'none';
+    e.preventDefault();
+  });
+
+  document.addEventListener('mousemove', function(e) {
+    if (!dragging) return;
+    var outerW = outer.getBoundingClientRect().width;
+    var delta = e.clientX - startX;
+    var newPct = Math.min(80, Math.max(30, startPct + (delta / outerW) * 100));
+    document.documentElement.style.setProperty('--col-split', newPct.toFixed(1) + '%');
+  });
+
+  document.addEventListener('mouseup', function() {
+    if (!dragging) return;
+    dragging = false;
+    resizer.classList.remove('dragging');
+    document.body.style.cursor = '';
+    document.body.style.userSelect = '';
+  });
+
+  /* Touch support */
+  resizer.addEventListener('touchstart', function(e) {
+    dragging = true;
+    startX = e.touches[0].clientX;
+    startPct = getPct();
+    resizer.classList.add('dragging');
+    e.preventDefault();
+  }, {passive: false});
+
+  document.addEventListener('touchmove', function(e) {
+    if (!dragging) return;
+    var outerW = outer.getBoundingClientRect().width;
+    var delta = e.touches[0].clientX - startX;
+    var newPct = Math.min(80, Math.max(30, startPct + (delta / outerW) * 100));
+    document.documentElement.style.setProperty('--col-split', newPct.toFixed(1) + '%');
+  }, {passive: false});
+
+  document.addEventListener('touchend', function() {
+    dragging = false;
+    resizer.classList.remove('dragging');
+  });
+})();
+
+</script>
+</body>
+</html>
