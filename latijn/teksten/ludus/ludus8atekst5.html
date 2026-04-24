@@ -113,29 +113,75 @@ body.font-lg .latin-text{--fs:1.35rem;--lh:2.45;}
   border-radius:4px;
 }
 
-/* Word click: 1e klik = determinering (groen), 2e klik = syntaxis (oranje) */
-/* We highlight individual lat-words inside wg */
-.lat-word{
-  display:inline;
-  border-radius:3px;
-  cursor:pointer;
-  transition:background .12s;
-  padding:0 1px;
-}
+/* ── lat-word: basis ── */
+.lat-word{display:inline;border-radius:3px;cursor:pointer;transition:background .12s;padding:0 1px;}
 .lat-word:hover{background:rgba(19,66,127,.09);}
-.lat-word.st1{background:var(--green-bg);color:var(--green);border-bottom:1.5px solid var(--green);}
-.lat-word.st2{background:var(--orange-bg);color:var(--orange);border-bottom:1.5px solid var(--orange);}
 
-/* Interlinear */
-body.interlin .lat-word{
-  display:inline-flex;flex-direction:column;align-items:center;
-  vertical-align:bottom;margin:0 1px;
-}
-body.interlin .lat-word .iln{
-  display:block;font-family:'Lufga',sans-serif;
-  font-size:.52em;color:var(--magenta);line-height:1.1;
-  text-align:center;pointer-events:none;white-space:nowrap;
-}
+/* ── KLIKSYSTEEM: interlineaire inline-analyse ── */
+body.interlin-analysis .lat-word{display:inline-flex;flex-direction:column;align-items:center;vertical-align:bottom;margin:0 2px;padding:0 1px;}
+.inline-analysis{display:none;}
+body.interlin-analysis .inline-analysis{display:flex;flex-direction:column;align-items:center;gap:1px;margin-bottom:.14rem;min-height:0;}
+.lat-surface{display:inline;}
+body.interlin-analysis .lat-surface{display:inline-block;}
+.ia-line{display:block;font-family:var(--ft);line-height:1.05;text-align:center;white-space:nowrap;}
+.ia-lemma{font-size:.53em;color:var(--accent);}
+.ia-meaning{font-size:.5em;color:var(--ink-light);}
+.ia-det{font-size:.49em;color:#006633;}
+.ia-func{font-size:.49em;color:var(--blue);font-weight:700;}
+.lat-word.has-analysis .lat-surface{border-radius:3px;}
+.lat-word.stage-1 .lat-surface{box-shadow:inset 0 -2px 0 rgba(255,59,29,.22);}
+.lat-word.stage-2 .lat-surface{box-shadow:inset 0 -2px 0 rgba(0,102,51,.25);}
+.lat-word.stage-3 .lat-surface{background:rgba(255,234,61,.35);outline:1px solid rgba(0,102,51,.28);}
+.lat-word.active-word .lat-surface{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px;}
+
+/* ── KLIKSYSTEEM: inktlaag ── */
+.ink-canvas{position:fixed;inset:0;z-index:640;pointer-events:none;touch-action:none;}
+.ink-canvas.on{pointer-events:auto;}
+body.ink-on{cursor:crosshair;}
+
+/* ── KLIKSYSTEEM: lectuuranalyse modal ── */
+.poetry-modal-overlay{display:none;position:fixed;inset:0;background:rgba(19,66,127,.18);backdrop-filter:blur(3px);z-index:800;align-items:center;justify-content:center;}
+.poetry-modal-overlay.open{display:flex;animation:fadeUp .18s ease both;}
+.poetry-modal{background:var(--paper);border:1.5px solid var(--rule);border-radius:14px;box-shadow:0 16px 48px rgba(19,66,127,.22);width:min(700px,92vw);max-height:82vh;display:flex;flex-direction:column;overflow:hidden;}
+.poetry-modal-header{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.25rem;border-bottom:1px solid var(--rule);}
+.poetry-modal-title{font-family:var(--ft);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);}
+.poetry-modal-nav{display:flex;align-items:center;gap:.6rem;}
+.poetry-modal-nav-btn{font-family:var(--ft);font-size:.72rem;font-weight:600;padding:.3rem .75rem;border:1.5px solid var(--rule);border-radius:8px;background:none;cursor:pointer;color:var(--ink-mid);transition:background .12s,color .12s,border-color .12s;}
+.poetry-modal-nav-btn:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+.poetry-modal-nav-btn:disabled{opacity:.35;cursor:default;}
+.poetry-modal-close{background:none;border:none;cursor:pointer;color:var(--ink-light);padding:.25rem;border-radius:6px;display:flex;transition:color .12s;}
+.poetry-modal-close:hover{color:var(--blue);}
+.poetry-modal-close svg{width:16px;height:16px;}
+.poetry-modal-body{flex:1;overflow-y:auto;padding:1.25rem 1.5rem;}
+.la-sectie-titel{font-family:var(--ft);font-size:.85rem;font-weight:700;color:var(--blue);margin-bottom:1rem;}
+.la-vraag{margin-bottom:1.2rem;}
+.la-vraag-tekst{font-family:var(--ft);font-size:.84rem;font-weight:600;color:var(--ink);margin-bottom:.4rem;line-height:1.5;}
+.la-antwoord-wrap{border-left:2px solid var(--rule);padding-left:.85rem;margin-top:.35rem;}
+.la-antwoord{display:none;font-family:var(--fb,'Noto Sans',Arial,sans-serif);font-size:.8rem;color:var(--ink-mid);line-height:1.6;}
+.la-antwoord.vis{display:block;}
+.la-toggle-btn{font-family:var(--ft);font-size:.68rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;background:none;border:1.5px solid var(--rule);border-radius:20px;padding:.22rem .7rem;cursor:pointer;color:var(--ink-light);display:inline-flex;align-items:center;gap:.3rem;transition:background .12s,color .12s;}
+.la-toggle-btn:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+.la-toggle-btn svg{width:12px;height:12px;transition:transform .18s;}
+.la-toggle-btn.open svg{transform:rotate(180deg);}
+
+/* ── KLIKSYSTEEM: horizontale les-toolbar (onderaan, centred) ── */
+.lesson-toolbar-wrap{position:fixed;bottom:1.25rem;left:50%;transform:translateX(-50%) translateY(20px);z-index:700;opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;}
+body.show-lesson-toolbar .lesson-toolbar-wrap{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+.lesson-toolbar{display:flex;flex-direction:row;align-items:center;gap:.28rem;padding:.38rem .5rem;border-radius:28px;background:rgba(255,255,255,.88);border:1px solid rgba(19,66,127,.12);box-shadow:0 8px 32px rgba(19,66,127,.18),0 2px 8px rgba(0,0,0,.06);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}
+.lesson-toolbar-divider{width:1px;height:26px;background:rgba(19,66,127,.10);margin:0 .18rem;flex-shrink:0;}
+.lesson-btn{width:40px;height:40px;padding:0;border:none;border-radius:12px;background:transparent;color:#1a2a4a;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;position:relative;transition:background .14s ease,color .14s ease,box-shadow .14s ease;flex-shrink:0;}
+.lesson-btn:hover{background:rgba(19,66,127,.08);}
+.lesson-btn:active{background:rgba(19,66,127,.14);}
+.lesson-btn.active{background:#ffea3d;color:#006633;box-shadow:0 0 0 2px rgba(255,234,61,.4);}
+.lesson-btn.danger:hover{background:#fee2e2;color:#b91c1c;}
+.lesson-btn svg{width:19px;height:19px;stroke:currentColor;fill:none;}
+.lesson-btn::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 7px);left:50%;transform:translateX(-50%);background:#1a2238;color:#fff;font-family:var(--tf,Arial);font-size:.6rem;font-weight:600;letter-spacing:.04em;white-space:nowrap;padding:.2rem .5rem;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .12s;}
+.lesson-btn:hover::after{opacity:1;}
+.tool-palette{position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%);display:none;flex-direction:row;gap:8px;padding:10px 14px;background:rgba(255,255,255,.96);border:1px solid rgba(0,0,0,.08);border-radius:20px;box-shadow:0 8px 24px rgba(0,0,0,.12);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:701;}
+.tool-palette.open{display:flex;}
+.swatch{width:20px;height:20px;border-radius:50%;border:2px solid rgba(0,0,0,.10);cursor:pointer;transition:transform .12s,box-shadow .12s,border-color .12s;flex-shrink:0;}
+.swatch:hover{transform:scale(1.12);}
+.swatch.active{border-color:#111;box-shadow:0 0 0 2px rgba(0,0,0,.10);}
 
 /* TEKSTSCHEIDING */
 .latin-para.tekst-scheiding{border-top:1px solid #ddd;margin-top:1.5em;padding-top:1.5em;}
@@ -260,6 +306,8 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
 </head>
 <body>
 
+<canvas id="inkCanvas" class="ink-canvas"></canvas>
+
 <div class="rp"><div class="rp-fill" id="rpFill"></div></div>
 <div class="word-popup" id="popup">
   <div class="wp-word" id="ppWord"></div>
@@ -270,7 +318,7 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
 </div>
 
 <header class="site-header">
-  <img class="logo" src="data:image/jpeg;base64,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" alt="athena logo">
+  <img class="logo" src="../../../images/nav/logo_wit.png" alt="athena logo">
   <h1>Latijn</h1>
   <span class="sub">2GR-LAT</span>
 </header>
@@ -357,6 +405,9 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
       <button type="button" class="extras-icon" id="btnNoten" onclick="toggleNoten()" title="Grammaticale noten tonen / verbergen" aria-label="Grammaticale noten">
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.5 3.5h11M2.5 7h11M2.5 10.5h7"/><circle cx="12" cy="11" r="1.6" fill="currentColor" stroke="none"/></svg>
       </button>
+      <button type="button" class="extras-icon" id="btnLectuur" onclick="openLectuurModal()" title="Lectuuranalyse openen" aria-label="Lectuuranalyse">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h12M2 8h8M2 12h10"/><circle cx="13" cy="11" r="2.2" fill="currentColor" stroke="none"/><path d="M13 10v2M12 11h2" stroke="white" stroke-width="1.2"/></svg>
+      </button>
     </div>
   </div>
 
@@ -377,6 +428,8 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
       </div>
     </div>
   </div>
+
+  <div id="textStartSentinel" aria-hidden="true" style="height:1px;"></div>
 
   <div class="d-badges" id="badges-reveal" style="margin-bottom:.5rem;">
     <span class="d-badge bs" data-layer="bs">⑤ Actieve verwerking</span>
@@ -678,41 +731,93 @@ filterWL('8a/5');
 /* ══════════════════════════════════════════
    STATE
 ══════════════════════════════════════════ */
-var S = {lines:false, font:false, reveal:false, twocol:false, interlin:false, revIdx:-1};
-var wgroups = Array.from(document.querySelectorAll('.wg'));
-var lastWord = null, clickN = 0;
+var S = {lines:false, font:false, reveal:false, twocol:false, interlin:true, revIdx:-1};
+var ksWgroups = Array.from(document.querySelectorAll('.wg'));
+var ksActiveWord = null;
 
-/* ══════════════════════════════════════════
-   WORD CLICKS
-══════════════════════════════════════════ */
-document.querySelectorAll('.lat-word').forEach(function(w) {
-  w.addEventListener('click', function(e) {
-    e.stopPropagation();
-    if (lastWord === w) { clickN++; } else {
-      if (lastWord) lastWord.classList.remove('st1','st2');
-      lastWord = w; clickN = 1;
-    }
-    w.classList.remove('st1','st2');
-    if (clickN === 1) {
-      w.classList.add('st1');
-      showPopup(w, 1);
-      updatePanel(w);
-    } else if (clickN === 2) {
-      w.classList.add('st2');
-      showPopup(w, 2);
-    } else {
-      clickN = 0; lastWord = null; hidePopup();
-    }
+/* ── KLIKSYSTEEM: DOM prep ── */
+document.body.classList.add('interlin-analysis');
+(function ksPrep(){
+  document.querySelectorAll('.lat-word').forEach(function(w){
+    if(w.dataset.ksPrepared==='1') return;
+    var txt=w.textContent;
+    w.innerHTML='<span class="inline-analysis"></span><span class="lat-surface">'+txt+'</span>';
+    w.dataset.stage='0'; w.dataset.ksPrepared='1';
   });
+})();
+
+function ksWordAvailable(word){
+  if(!S.reveal) return true;
+  var wg=word.closest('.wg');
+  return !wg||wg.classList.contains('revealed')||wg.classList.contains('current');
+}
+function ksGetStage(w){return parseInt(w.dataset.stage||'0',10);}
+function ksSetStage(w,stage){w.dataset.stage=String(stage);ksRenderAnalysis(w);}
+function ksSetActive(word){
+  document.querySelectorAll('.lat-word.active-word').forEach(function(w){w.classList.remove('active-word');});
+  ksActiveWord=word||null;
+  if(ksActiveWord) ksActiveWord.classList.add('active-word');
+}
+function ksRenderAnalysis(w){
+  var slot=w.querySelector('.inline-analysis'); if(!slot) return;
+  var stage=ksGetStage(w);
+  w.classList.remove('has-analysis','stage-1','stage-2','stage-3');
+  if(!S.interlin||stage===0){slot.innerHTML='';return;}
+  var h='';
+  if(stage>=1){h+='<span class="ia-line ia-lemma">'+(w.dataset.l||'')+'</span><span class="ia-line ia-meaning">'+(w.dataset.n||'')+'</span>';}
+  if(stage>=2){h+='<span class="ia-line ia-det">'+(w.dataset.d||'')+'</span>';}
+  if(stage>=3){h+='<span class="ia-line ia-func">'+(w.dataset.s||'')+'</span>';}
+  slot.innerHTML=h;
+  w.classList.add('has-analysis','stage-'+stage);
+}
+function ksStepWord(w){
+  if(!w||!ksWordAvailable(w)) return;
+  ksSetActive(w);
+  var stage=ksGetStage(w); if(stage<3) stage++;
+  ksSetStage(w,stage);
+  updatePanel(w); hidePopup();
+}
+function stepActiveWord(){if(!ksActiveWord) ksFocusFirstInWg(); if(ksActiveWord) ksStepWord(ksActiveWord);}
+
+/* Replace lat-word listeners (clone to strip old) */
+document.querySelectorAll('.lat-word').forEach(function(w){
+  var clone=w.cloneNode(true);
+  w.parentNode.replaceChild(clone,w);
+  clone.addEventListener('click',function(e){e.stopPropagation();ksStepWord(clone);});
 });
-document.addEventListener('click', function() {
-  if (lastWord) { lastWord.classList.remove('st1','st2'); lastWord = null; clickN = 0; }
-  hidePopup();
+ksWgroups=Array.from(document.querySelectorAll('.wg'));
+
+document.addEventListener('click',function(e){
+  if(!e.target.closest('.lat-word')&&!e.target.closest('.lesson-toolbar-wrap')&&!e.target.closest('.tool-palette')){
+    document.querySelectorAll('.lat-word.active-word').forEach(function(w){w.classList.remove('active-word');});
+    ksActiveWord=null; hidePopup();
+  }
 });
 
-/* ══════════════════════════════════════════
-   POPUP
-══════════════════════════════════════════ */
+/* ── Woordgroep-navigatie ── */
+function ksCurrentWg(){
+  if(S.reveal&&S.revIdx>=0&&ksWgroups[S.revIdx]) return ksWgroups[S.revIdx];
+  if(ksActiveWord) return ksActiveWord.closest('.wg');
+  return null;
+}
+function ksWordsInWg(){var wg=ksCurrentWg();return wg?Array.from(wg.querySelectorAll('.lat-word')): [];}
+function ksFocusFirstInWg(){var ws=ksWordsInWg();if(ws.length) ksSetActive(ws[0]);}
+function focusNextWord(){
+  var ws=ksWordsInWg(); if(!ws.length) return;
+  if(!ksActiveWord||ws.indexOf(ksActiveWord)===-1){ksSetActive(ws[0]);return;}
+  var idx=Math.min(ws.length-1,ws.indexOf(ksActiveWord)+1);
+  ksSetActive(ws[idx]); ws[idx].scrollIntoView({behavior:'smooth',block:'nearest',inline:'nearest'});
+}
+function focusPrevWord(){
+  var ws=ksWordsInWg(); if(!ws.length) return;
+  if(!ksActiveWord||ws.indexOf(ksActiveWord)===-1){ksSetActive(ws[0]);return;}
+  var idx=Math.max(0,ws.indexOf(ksActiveWord)-1);
+  ksSetActive(ws[idx]); ws[idx].scrollIntoView({behavior:'smooth',block:'nearest',inline:'nearest'});
+}
+function clearCurrentWgAnalysis(){ksWordsInWg().forEach(function(w){ksSetStage(w,0);});}
+function clearAllAnalysis(){document.querySelectorAll('.lat-word').forEach(function(w){ksSetStage(w,0);});ksSetActive(null);}
+
+/* ── POPUP ── */
 var popup = document.getElementById('popup');
 function showPopup(el, click) {
   var wl = lookupWL(el.dataset.l);
@@ -783,41 +888,45 @@ function updatePanel(w) {
 function toggleReveal() {
   S.reveal = !S.reveal;
   document.getElementById('btnReveal').classList.toggle('active', S.reveal);
+  var lrb=document.getElementById('lessonRevealBtn'); if(lrb) lrb.classList.toggle('active',S.reveal);
   document.getElementById('revealBar').classList.toggle('vis', S.reveal);
   document.getElementById('latinText').classList.toggle('reveal-mode', S.reveal);
-  if (S.reveal) {
-    S.revIdx = -1;
-    wgroups.forEach(function(g){ g.classList.remove('revealed','current'); });
-    updCount();
-  } else {
-    wgroups.forEach(function(g){ g.classList.remove('revealed','current'); });
-  }
+  ksWgroups.forEach(function(g){ g.classList.remove('revealed','current'); });
+  ksSetActive(null);
+  if (S.reveal) { S.revIdx = -1; updCount(); }
+  else { updCount(); }
 }
 function revealNext() {
-  if (!S.reveal) return;
-  if (S.revIdx >= 0 && S.revIdx < wgroups.length) wgroups[S.revIdx].classList.remove('current');
-  S.revIdx = Math.min(S.revIdx + 1, wgroups.length - 1);
-  wgroups[S.revIdx].classList.add('revealed','current');
-  wgroups[S.revIdx].scrollIntoView({behavior:'smooth', block:'nearest'});
+  if (!S.reveal) toggleReveal();
+  if (S.revIdx >= 0 && S.revIdx < ksWgroups.length) ksWgroups[S.revIdx].classList.remove('current');
+  S.revIdx = Math.min(S.revIdx + 1, ksWgroups.length - 1);
+  if(S.revIdx<0||!ksWgroups[S.revIdx]) return;
+  ksWgroups[S.revIdx].classList.add('revealed','current');
+  ksWgroups[S.revIdx].scrollIntoView({behavior:'smooth', block:'nearest'});
+  ksFocusFirstInWg();
   updCount();
 }
 function revealPrev() {
   if (!S.reveal) return;
   if (S.revIdx >= 0) {
-    wgroups[S.revIdx].classList.remove('current','revealed');
+    ksWgroups[S.revIdx].classList.remove('current','revealed');
     S.revIdx = Math.max(S.revIdx - 1, -1);
-    if (S.revIdx >= 0) wgroups[S.revIdx].classList.add('current');
+    if (S.revIdx >= 0) { ksWgroups[S.revIdx].classList.add('current'); ksFocusFirstInWg(); }
+    else ksSetActive(null);
   }
   updCount();
 }
 function revealAll() {
-  wgroups.forEach(function(g){ g.classList.add('revealed'); g.classList.remove('current'); });
-  S.revIdx = wgroups.length - 1;
+  if (!S.reveal) toggleReveal();
+  ksWgroups.forEach(function(g){ g.classList.add('revealed'); g.classList.remove('current'); });
+  S.revIdx = ksWgroups.length - 1;
+  if(ksWgroups[S.revIdx]) ksWgroups[S.revIdx].classList.add('current');
+  ksFocusFirstInWg();
   updCount();
 }
 function updCount() {
   var done = document.querySelectorAll('.wg.revealed').length;
-  document.getElementById('revCount').textContent = done + ' / ' + wgroups.length;
+  document.getElementById('revCount').textContent = done + ' / ' + ksWgroups.length;
 }
 
 /* ══════════════════════════════════════════
@@ -833,29 +942,8 @@ function toggleLines() {
 function toggleInterlin() {
   S.interlin = !S.interlin;
   document.getElementById('btnInterlin').classList.toggle('active', S.interlin);
-  document.body.classList.toggle('interlin', S.interlin);
-  if (S.interlin) {
-    document.querySelectorAll('#plainView .lat-word').forEach(function(w) {
-      if (!w.querySelector('.iln')) {
-        var sp = document.createElement('span');
-        sp.className = 'iln';
-        sp.textContent = w.dataset.n;
-        w.appendChild(sp);
-      }
-    });
-    if (S.lines) toggleLines();
-  } else {
-    // Verwijder alle .iln spans én reset inline stijl op het woord
-    document.querySelectorAll('#plainView .lat-word').forEach(function(w) {
-      var iln = w.querySelector('.iln');
-      if (iln) iln.remove();
-      w.style.display = '';
-      w.style.flexDirection = '';
-      w.style.alignItems = '';
-      w.style.verticalAlign = '';
-      w.style.margin = '';
-    });
-  }
+  document.body.classList.toggle('interlin-analysis', S.interlin);
+  document.querySelectorAll('.lat-word').forEach(ksRenderAnalysis);
 }
 function toggleTwocol() {
   S.twocol = !S.twocol;
@@ -986,7 +1074,6 @@ function toggleNoten() {
 /* KAART MODAL */
 function openKaartModal()  { document.getElementById('kaartModalOverlay').classList.add('open'); }
 function closeKaartModal() { document.getElementById('kaartModalOverlay').classList.remove('open'); }
-document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeKaartModal(); });
 
 /* WEERGAVE DROPDOWN */
 function toggleWeergaveMenu(e) {
@@ -1005,12 +1092,6 @@ document.addEventListener('click', function(e) {
   }
 });
 
-/* Sync active state inside dropdown */
-var _origToggleLines = toggleLines;
-toggleLines = function() { _origToggleLines(); document.getElementById('btnLines').classList.toggle('active', S.lines); };
-var _origToggleInterlin = toggleInterlin;
-toggleInterlin = function() { _origToggleInterlin(); document.getElementById('btnInterlin').classList.toggle('active', S.interlin); };
-
 /* Scroll */
 window.addEventListener('scroll', function() {
   var d = document.documentElement;
@@ -1019,70 +1100,321 @@ window.addEventListener('scroll', function() {
   document.getElementById('scrollTop').classList.toggle('on', d.scrollTop > 280);
 });
 
-/* ══════════════════════════════════════════
-   KOLOM-RESIZER (drag to resize)
-══════════════════════════════════════════ */
+/* KOLOM-RESIZER */
 (function(){
   var resizer = document.getElementById('colResizer');
   if (!resizer) return;
   var outer = resizer.closest('.outer');
-  var dragging = false;
-  var startX, startPct;
-
+  var dragging = false, startX, startPct;
   function getPct() {
     var val = getComputedStyle(document.documentElement).getPropertyValue('--col-split') || '60%';
     return parseFloat(val);
   }
-
   resizer.addEventListener('mousedown', function(e) {
-    dragging = true;
-    startX = e.clientX;
-    startPct = getPct();
+    dragging=true; startX=e.clientX; startPct=getPct();
     resizer.classList.add('dragging');
-    document.body.style.cursor = 'col-resize';
-    document.body.style.userSelect = 'none';
+    document.body.style.cursor='col-resize'; document.body.style.userSelect='none';
     e.preventDefault();
   });
-
   document.addEventListener('mousemove', function(e) {
-    if (!dragging) return;
-    var outerW = outer.getBoundingClientRect().width;
-    var delta = e.clientX - startX;
-    var newPct = Math.min(80, Math.max(30, startPct + (delta / outerW) * 100));
-    document.documentElement.style.setProperty('--col-split', newPct.toFixed(1) + '%');
+    if(!dragging) return;
+    var outerW=outer.getBoundingClientRect().width;
+    var delta=e.clientX-startX;
+    var newPct=Math.min(80,Math.max(30,startPct+(delta/outerW)*100));
+    document.documentElement.style.setProperty('--col-split',newPct.toFixed(1)+'%');
   });
-
   document.addEventListener('mouseup', function() {
-    if (!dragging) return;
-    dragging = false;
-    resizer.classList.remove('dragging');
-    document.body.style.cursor = '';
-    document.body.style.userSelect = '';
+    if(!dragging) return;
+    dragging=false; resizer.classList.remove('dragging');
+    document.body.style.cursor=''; document.body.style.userSelect='';
   });
+  resizer.addEventListener('touchstart',function(e){
+    dragging=true; startX=e.touches[0].clientX; startPct=getPct();
+    resizer.classList.add('dragging'); e.preventDefault();
+  },{passive:false});
+  document.addEventListener('touchmove',function(e){
+    if(!dragging) return;
+    var outerW=outer.getBoundingClientRect().width;
+    var delta=e.touches[0].clientX-startX;
+    var newPct=Math.min(80,Math.max(30,startPct+(delta/outerW)*100));
+    document.documentElement.style.setProperty('--col-split',newPct.toFixed(1)+'%');
+  },{passive:false});
+  document.addEventListener('touchend',function(){dragging=false;resizer.classList.remove('dragging');});
+})();
 
-  /* Touch support */
-  resizer.addEventListener('touchstart', function(e) {
-    dragging = true;
-    startX = e.touches[0].clientX;
-    startPct = getPct();
-    resizer.classList.add('dragging');
+/* ══ LECTUURANALYSE MODAL ══ */
+var laSectieIdx = 0;
+var LA_SECTIES = [
+  {
+    titel: '1. De hervormingen — structuur en retoriek',
+    html: '<div class="la-sectie-titel">1. De hervormingen — structuur en retoriek</div>'
+      + '<div class="la-vraag"><div class="la-vraag-tekst">1. Velleius Paterculus gebruikt acht werkwoorden in het imperfectum (<em>dabat, extendebat, dividebat</em> …). Wat is het retorisch effect van deze herhaling?</div>'
+      + '<div class="la-antwoord-wrap"><button class="la-toggle-btn" onclick="toggleAntwoord(this)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg> Toon antwoord</button>'
+      + '<div class="la-antwoord">Het <em>historisch imperfectum</em> geeft de handelingen een duratieve, voortdurende kwaliteit: Gaius was continu bezig. De staccato-opeenvolging van acht werkwoorden zonder verbinding (<em>asyndeton</em>) versterkt de indruk van een onstuitbare hervormingsdrang.</div></div></div>'
+      + '<div class="la-vraag"><div class="la-vraag-tekst">2. Hoe bouwt de zin <em>Nihil immotum, nihil tranquillum, nihil quietum, nihil denique in eodem statu relinquebat</em> zijn effect op? Welk stijlmiddel herkent u?</div>'
+      + '<div class="la-antwoord-wrap"><button class="la-toggle-btn" onclick="toggleAntwoord(this)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg> Toon antwoord</button>'
+      + '<div class="la-antwoord"><em>Anafoor</em>: viermaal <em>nihil</em> aan het begin van elk lid. De drie synoniemen (<em>immotum, tranquillum, quietum</em>) vormen een climax, afgesloten door <em>denique</em> als slotaccent. Velleius vat hier heel Gaius' politiek samen in één vernietigende zin.</div></div></div>'
+  },
+  {
+    titel: '2. Syntaxis in context — ACI en PPP',
+    html: '<div class="la-sectie-titel">2. Syntaxis in context — ACI en PPP</div>'
+      + '<div class="la-vraag"><div class="la-vraag-tekst">3. <em>Vetabat quemquam civem plus quingentis iugeribus habere</em> bevat een ACI. Wijs elk element aan: accusativus-subjectum, infinitief, aanstuurder.</div>'
+      + '<div class="la-antwoord-wrap"><button class="la-toggle-btn" onclick="toggleAntwoord(this)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg> Toon antwoord</button>'
+      + '<div class="la-antwoord">Aanstuurder: <em>vetabat</em>. Accusativus-subjectum: <em>quemquam civem</em>. Infinitief: <em>habere</em>. BWB van hoeveelheid: <em>plus quingentis iugeribus</em>. Samenvatting: Gaius verbood dat <strong>iemand</strong> (acc.) meer dan 500 morgen (BWB) <strong>bezat</strong> (inf.).</div></div></div>'
+      + '<div class="la-vraag"><div class="la-vraag-tekst">4. Verklaar <em>quod aliquando lege Licinia cautum erat</em>. Welke vorm is <em>cautum erat</em> en wat is het bijzonder aan dit werkwoord?</div>'
+      + '<div class="la-antwoord-wrap"><button class="la-toggle-btn" onclick="toggleAntwoord(this)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg> Toon antwoord</button>'
+      + '<div class="la-antwoord"><em>Cautum erat</em> = PPP van <em>cavere</em> + <em>erat</em>: <strong>passief plusquamperfectum</strong>, onpersoonlijk gebruikt. <em>Cautum erat</em> = "was vastgelegd". Dit onpers. passief is typisch voor wetsbepalingen in het Latijn. <em>Lege Licinia</em> = ablativus auctoris/instrumenti.</div></div></div>'
+  },
+  {
+    titel: '3. Velleius als bron — perspectief en betrouwbaarheid',
+    html: '<div class="la-sectie-titel">3. Velleius als bron — perspectief en betrouwbaarheid</div>'
+      + '<div class="la-vraag"><div class="la-vraag-tekst">5. Velleius Paterculus schreef onder keizer Tiberius. Hoe kan dat zijn oordeel over de Gracchen gekleurd hebben?</div>'
+      + '<div class="la-antwoord-wrap"><button class="la-toggle-btn" onclick="toggleAntwoord(this)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg> Toon antwoord</button>'
+      + '<div class="la-antwoord">Als loyale Augusteïsche-Tiberische schrijver had Velleius belang bij een negatief beeld van populistische hervormers die de senaat ondermijnden. Zijn toon (<em>nihil … relinquebat</em>) is eerder kritisch dan bewonderend. Vergelijk met de pro-Gracchische traditie bij Plutarchus.</div></div></div>'
+      + '<div class="la-vraag"><div class="la-vraag-tekst">6. Discussievraag: Was Gaius Gracchus een vernieuwer of een omverwerper? Gebruik minimaal twee concrete maatregelen uit de tekst als argument.</div>'
+      + '<div class="la-antwoord-wrap"><button class="la-toggle-btn" onclick="toggleAntwoord(this)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg> Toon antwoord</button>'
+      + '<div class="la-antwoord">Mogelijke argumenten: <strong>vernieuwer</strong> — graanwet (<em>frumentum plebi dari</em>) = sociale bescherming; burgerrecht voor Italiërs (<em>dabat civitatem omnibus Italicis</em>) = inclusieve politiek. <strong>Omverwerper</strong> — overdracht van rechtsbevoegdheid (<em>iudicia a senatu ad equites</em>) = aantasting van senatoriale macht; negatie van Licinische wet = minachting van precedent.</div></div></div>'
+  }
+];
+
+function openLectuurModal(){
+  laSectieIdx=0; renderLaSectie();
+  document.getElementById('lectuurOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLectuurModal(){
+  document.getElementById('lectuurOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+function renderLaSectie(){
+  var s=LA_SECTIES[laSectieIdx];
+  document.getElementById('lectuurModalBody').innerHTML=s.html;
+  document.getElementById('laSectieNr').textContent=(laSectieIdx+1)+' / '+LA_SECTIES.length;
+  document.getElementById('laSectieVorige').disabled=laSectieIdx===0;
+  document.getElementById('laSectieVolgende').disabled=laSectieIdx===LA_SECTIES.length-1;
+}
+function navigateLaSectie(dir){
+  laSectieIdx=Math.max(0,Math.min(LA_SECTIES.length-1,laSectieIdx+dir));
+  renderLaSectie();
+}
+function toggleAntwoord(btn){
+  var antw=btn.parentElement.querySelector('.la-antwoord');
+  var open=antw.classList.toggle('vis');
+  btn.classList.toggle('open',open);
+  btn.querySelector('svg').style.transform=open?'rotate(180deg)':'';
+}
+
+/* ══ INKTLAAG ══ */
+var inkCanvas=document.getElementById('inkCanvas');
+var inkCtx=inkCanvas.getContext('2d');
+var inkMode=null,isDrawing=false,lastPt=null,inkPointerId=null;
+var penColors=['#FF3B1D','#13427f','#0d7a3e','#E6007E','#f3f1ef','#111111'];
+var highlightColors=['rgba(255,234,61,.45)','rgba(19,66,127,.20)','rgba(13,122,62,.22)','rgba(230,0,126,.22)','rgba(255,59,29,.20)','rgba(255,255,255,.20)'];
+var currentPenColor=penColors[0], currentHighlightColor=highlightColors[0];
+
+function buildPalette(elId,colors,type){
+  var el=document.getElementById(elId); if(!el) return; el.innerHTML='';
+  colors.forEach(function(color,idx){
+    var b=document.createElement('button');
+    b.type='button'; b.className='swatch'+(idx===0?' active':'');
+    b.style.background=color; b.setAttribute('aria-label',type+' kleur '+(idx+1));
+    b.addEventListener('click',function(e){
+      e.stopPropagation();
+      if(type==='pen') currentPenColor=color; else currentHighlightColor=color;
+      el.querySelectorAll('.swatch').forEach(function(s){s.classList.remove('active');});
+      b.classList.add('active');
+    });
+    el.appendChild(b);
+  });
+}
+buildPalette('penPalette',penColors,'pen');
+buildPalette('highlightPalette',highlightColors,'markeer');
+
+function closePalettes(){
+  var pp=document.getElementById('penPalette'),hp=document.getElementById('highlightPalette');
+  if(pp) pp.classList.remove('open'); if(hp) hp.classList.remove('open');
+}
+document.addEventListener('click',function(e){if(!e.target.closest('.lesson-toolbar-wrap')&&!e.target.closest('.tool-palette')) closePalettes();});
+
+function resizeInkCanvas(){
+  var tmp=document.createElement('canvas'); tmp.width=inkCanvas.width; tmp.height=inkCanvas.height;
+  tmp.getContext('2d').drawImage(inkCanvas,0,0);
+  inkCanvas.width=window.innerWidth; inkCanvas.height=window.innerHeight;
+  inkCtx.drawImage(tmp,0,0);
+}
+resizeInkCanvas();
+window.addEventListener('resize',resizeInkCanvas);
+
+function updateInkButtons(){
+  document.getElementById('inkPenBtn').classList.toggle('active',inkMode==='pen');
+  document.getElementById('inkHighBtn').classList.toggle('active',inkMode==='highlight');
+  document.getElementById('inkEraseBtn').classList.toggle('active',inkMode==='erase');
+  inkCanvas.classList.toggle('on',!!inkMode);
+  document.body.classList.toggle('ink-on',!!inkMode);
+  var pp=document.getElementById('penPalette'),hp=document.getElementById('highlightPalette');
+  if(inkMode==='pen'){if(pp)pp.classList.add('open');if(hp)hp.classList.remove('open');}
+  else if(inkMode==='highlight'){if(hp)hp.classList.add('open');if(pp)pp.classList.remove('open');}
+  else closePalettes();
+}
+function setInkMode(mode){inkMode=(inkMode===mode)?null:mode; updateInkButtons();}
+function clearInk(){inkCtx.clearRect(0,0,inkCanvas.width,inkCanvas.height);}
+function applyInkStyle(){
+  inkCtx.lineCap='round'; inkCtx.lineJoin='round';
+  if(inkMode==='erase'){inkCtx.globalCompositeOperation='destination-out';inkCtx.lineWidth=28;inkCtx.strokeStyle='rgba(0,0,0,1)';}
+  else if(inkMode==='highlight'){inkCtx.globalCompositeOperation='source-over';inkCtx.lineWidth=20;inkCtx.strokeStyle=currentHighlightColor;}
+  else{inkCtx.globalCompositeOperation='source-over';inkCtx.lineWidth=4;inkCtx.strokeStyle=currentPenColor;}
+}
+inkCanvas.addEventListener('pointerdown',function(e){
+  if(!inkMode) return; e.preventDefault(); isDrawing=true; inkPointerId=e.pointerId;
+  inkCanvas.setPointerCapture(e.pointerId); lastPt={x:e.clientX,y:e.clientY};
+  applyInkStyle(); inkCtx.beginPath(); inkCtx.moveTo(lastPt.x,lastPt.y); inkCtx.lineTo(lastPt.x+.01,lastPt.y+.01); inkCtx.stroke();
+});
+inkCanvas.addEventListener('pointermove',function(e){
+  if(!inkMode||!isDrawing) return; e.preventDefault();
+  var pt={x:e.clientX,y:e.clientY}; applyInkStyle();
+  inkCtx.beginPath(); inkCtx.moveTo(lastPt.x,lastPt.y); inkCtx.lineTo(pt.x,pt.y); inkCtx.stroke(); lastPt=pt;
+});
+function stopInk(e){
+  if(!isDrawing) return; isDrawing=false; lastPt=null;
+  if(e&&inkPointerId!==null){try{inkCanvas.releasePointerCapture(inkPointerId);}catch(err){}} inkPointerId=null;
+}
+inkCanvas.addEventListener('pointerup',stopInk);
+inkCanvas.addEventListener('pointercancel',stopInk);
+
+/* ══ TOOLBAR SENTINEL ══ */
+(function(){
+  var s=document.getElementById('textStartSentinel');
+  if(!s){document.body.classList.add('show-lesson-toolbar');return;}
+  function upd(){document.body.classList.toggle('show-lesson-toolbar',s.getBoundingClientRect().top<=170);}
+  upd();
+  window.addEventListener('scroll',upd,{passive:true});
+  window.addEventListener('resize',upd);
+})();
+
+/* ══ SNELTOETSEN / R400 ══ */
+document.addEventListener('keydown',function(e){
+  if(document.getElementById('lectuurOverlay').classList.contains('open')) return;
+  var key=e.key,code=e.code;
+  if(key==='ArrowRight'||key==='PageDown'||code==='PageDown'){e.preventDefault();revealNext();}
+  else if(key==='ArrowLeft'||key==='PageUp'||code==='PageUp'){e.preventDefault();revealPrev();}
+  else if(key==='ArrowDown'){e.preventDefault();focusNextWord();}
+  else if(key==='ArrowUp'){e.preventDefault();focusPrevWord();}
+  else if(key==='Enter'||key===' '||code==='Space'){e.preventDefault();stepActiveWord();}
+  else if(key==='Backspace'||key==='Delete'){e.preventDefault();clearCurrentWgAnalysis();}
+  else if(key.toLowerCase()==='p'){e.preventDefault();setInkMode('pen');}
+  else if(key.toLowerCase()==='h'){e.preventDefault();setInkMode('highlight');}
+  else if(key.toLowerCase()==='e'){e.preventDefault();setInkMode('erase');}
+  else if(key==='Escape'){
     e.preventDefault();
-  }, {passive: false});
+    closeLectuurModal(); closeKaartModal();
+    inkMode=null; updateInkButtons();
+  }
+});
 
-  document.addEventListener('touchmove', function(e) {
-    if (!dragging) return;
-    var outerW = outer.getBoundingClientRect().width;
-    var delta = e.touches[0].clientX - startX;
-    var newPct = Math.min(80, Math.max(30, startPct + (delta / outerW) * 100));
-    document.documentElement.style.setProperty('--col-split', newPct.toFixed(1) + '%');
-  }, {passive: false});
-
-  document.addEventListener('touchend', function() {
-    dragging = false;
-    resizer.classList.remove('dragging');
-  });
+/* ══ INIT ══ */
+(function(){
+  var bi=document.getElementById('btnInterlin');
+  if(bi) bi.classList.add('active');
 })();
 
 </script>
+
+<!-- LECTUURANALYSE MODAL -->
+<div class="poetry-modal-overlay" id="lectuurOverlay" onclick="closeLectuurModal()">
+  <div class="poetry-modal" onclick="event.stopPropagation()">
+    <div class="poetry-modal-header">
+      <span class="poetry-modal-title">Lectuuranalyse — De hervormingen van Gaius Gracchus</span>
+      <div class="poetry-modal-nav">
+        <button class="poetry-modal-nav-btn" id="laSectieVorige" onclick="navigateLaSectie(-1)" disabled>&#8592; Vorige</button>
+        <span id="laSectieNr" style="font-family:var(--tf,Arial);font-size:.72rem;color:var(--ink-light);min-width:3rem;text-align:center;">1 / 3</span>
+        <button class="poetry-modal-nav-btn" id="laSectieVolgende" onclick="navigateLaSectie(1)">Volgende &#8594;</button>
+      </div>
+      <button class="poetry-modal-close" onclick="closeLectuurModal()">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+      </button>
+    </div>
+    <div class="poetry-modal-body" id="lectuurModalBody"></div>
+  </div>
+</div>
+
+<!-- LES-TOOLBAR (horizontaal, onderaan, centred) -->
+<div class="lesson-toolbar-wrap" id="lessonToolbarWrap">
+  <div class="lesson-toolbar">
+
+    <!-- Groep 1: Woordgroep-onthulling -->
+    <button class="lesson-btn" type="button" onclick="revealPrev()" data-tip="Vorige woordgroep" aria-label="Vorige woordgroep">
+      <!-- Pijl-links in ballon -->
+      <svg viewBox="0 0 20 20" stroke-width="1.8"><polyline points="13,4 7,10 13,16"/><rect x="2" y="2" width="16" height="16" rx="4" stroke-opacity=".18" fill="none"/></svg>
+    </button>
+    <button class="lesson-btn" type="button" onclick="revealNext()" data-tip="Volgende woordgroep" aria-label="Volgende woordgroep">
+      <!-- Pijl-rechts in ballon -->
+      <svg viewBox="0 0 20 20" stroke-width="1.8"><polyline points="7,4 13,10 7,16"/><rect x="2" y="2" width="16" height="16" rx="4" stroke-opacity=".18" fill="none"/></svg>
+    </button>
+    <button class="lesson-btn" type="button" onclick="toggleReveal()" id="lessonRevealBtn" data-tip="Onthulmodus aan/uit" aria-label="Onthulmodus">
+      <!-- Oog met strepen = reveal -->
+      <svg viewBox="0 0 20 20" stroke-width="1.8"><path d="M2 10s3-6 8-6 8 6 8 6-3 6-8 6-8-6-8-6z"/><circle cx="10" cy="10" r="2.5"/><line x1="4" y1="4" x2="16" y2="16" stroke-opacity=".35"/></svg>
+    </button>
+
+    <div class="lesson-toolbar-divider"></div>
+
+    <!-- Groep 2: Woord-analyse (stapsgewijs) -->
+    <button class="lesson-btn" type="button" onclick="focusPrevWord()" data-tip="Vorig woord" aria-label="Vorig woord">
+      <!-- Kleine pijl-links -->
+      <svg viewBox="0 0 20 20" stroke-width="1.8"><polyline points="12,6 8,10 12,14"/></svg>
+    </button>
+    <button class="lesson-btn" type="button" onclick="stepActiveWord()" data-tip="Analyseer woord (stap)" aria-label="Analyseer woord">
+      <!-- Cursor + plusje = stap vooruit -->
+      <svg viewBox="0 0 20 20" stroke-width="1.8"><path d="M5 15L9 5l2 5 3-3"/><circle cx="14" cy="6" r="2.2"/></svg>
+    </button>
+    <button class="lesson-btn" type="button" onclick="focusNextWord()" data-tip="Volgend woord" aria-label="Volgend woord">
+      <!-- Kleine pijl-rechts -->
+      <svg viewBox="0 0 20 20" stroke-width="1.8"><polyline points="8,6 12,10 8,14"/></svg>
+    </button>
+
+    <div class="lesson-toolbar-divider"></div>
+
+    <!-- Groep 3: Wissen -->
+    <button class="lesson-btn danger" type="button" onclick="clearCurrentWgAnalysis()" data-tip="Wis huidige woordgroep" aria-label="Wis huidige woordgroep">
+      <!-- Gum op één vlak = lokaal wissen -->
+      <svg viewBox="0 0 20 20" stroke-width="1.8"><path d="M5 14l7-9 4 3-7 9H5z"/><line x1="9" y1="14" x2="18" y2="14"/></svg>
+    </button>
+    <button class="lesson-btn danger" type="button" onclick="clearAllAnalysis()" data-tip="Wis alle analyse" aria-label="Wis alle analyse">
+      <!-- Prullenbak = alles wissen -->
+      <svg viewBox="0 0 20 20" stroke-width="1.8"><polyline points="4,6 16,6"/><path d="M7 6V4h6v2"/><rect x="5" y="6" width="10" height="10" rx="1"/><line x1="8" y1="9" x2="8" y2="14"/><line x1="12" y1="9" x2="12" y2="14"/></svg>
+    </button>
+
+    <div class="lesson-toolbar-divider"></div>
+
+    <!-- Groep 4: Annotatie -->
+    <button class="lesson-btn" type="button" id="inkPenBtn" onclick="setInkMode('pen')" data-tip="Pen (p)" aria-label="Pen">
+      <!-- Vulpen-penpunt -->
+      <svg viewBox="0 0 20 20" stroke-width="1.8"><path d="M4 16l3.5-.7L15 8l-3-3-7.5 7.5L4 16z"/><path d="M12 5l3 3"/><path d="M4 16l1.5-1.5"/></svg>
+    </button>
+    <button class="lesson-btn" type="button" id="inkHighBtn" onclick="setInkMode('highlight')" data-tip="Markeerstift (h)" aria-label="Markeerstift">
+      <!-- Brede marker-streep -->
+      <svg viewBox="0 0 20 20" stroke-width="1.8"><rect x="3" y="8" width="14" height="5" rx="2"/><line x1="10" y1="13" x2="10" y2="17"/><line x1="8" y1="17" x2="12" y2="17"/></svg>
+    </button>
+    <button class="lesson-btn" type="button" id="inkEraseBtn" onclick="setInkMode('erase')" data-tip="Gum (e)" aria-label="Gum">
+      <!-- Klassieke gum-blok -->
+      <svg viewBox="0 0 20 20" stroke-width="1.8"><rect x="2" y="11" width="16" height="6" rx="1.5"/><path d="M6 11L11 4l5 4-5 3H6z"/></svg>
+    </button>
+    <button class="lesson-btn" type="button" onclick="clearInk()" data-tip="Wis annotaties" aria-label="Wis annotaties">
+      <!-- Spons/vlak wissen -->
+      <svg viewBox="0 0 20 20" stroke-width="1.8"><path d="M3 16h14"/><path d="M6 12l5-8 5 5-5 3H6z"/></svg>
+    </button>
+
+    <div class="lesson-toolbar-divider"></div>
+
+    <!-- Groep 5: Lectuuranalyse -->
+    <button class="lesson-btn" type="button" onclick="openLectuurModal()" data-tip="Lectuuranalyse" aria-label="Lectuuranalyse openen">
+      <!-- Boek met zoeklens -->
+      <svg viewBox="0 0 20 20" stroke-width="1.8"><path d="M4 4h7v12H4z"/><path d="M11 4h5v12h-5z"/><circle cx="14.5" cy="9.5" r="2"/><line x1="16" y1="11" x2="18" y2="13"/></svg>
+    </button>
+
+  </div>
+  <div class="tool-palette" id="penPalette"></div>
+  <div class="tool-palette" id="highlightPalette"></div>
+</div>
+
 </body>
 </html>
