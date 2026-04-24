@@ -35,7 +35,7 @@ body{font-family:'EB Garamond',Georgia,serif;overflow-x:hidden;}
 
 /* LAYOUT */
 .outer{max-width:1200px;margin:0 auto;padding:0 1.5rem;}
-.main-col{max-width:760px;margin:0 auto;padding:3rem 0 6rem;}
+.main-col{max-width:760px;margin:0 auto;padding:3rem 0 9rem;}
 body.twocol .outer{display:grid;grid-template-columns:var(--col-split,60%) 12px 1fr;gap:0;align-items:start;}
 body.twocol .main-col{max-width:none;padding:3rem 2rem 6rem 0;}
 body.twocol .side-panel{display:flex!important;flex-direction:column;gap:1rem;padding:3rem 0 6rem 1.5rem;border-left:1px solid var(--rule);position:sticky;top:108px;max-height:calc(100vh - 108px);overflow-y:auto;}
@@ -165,9 +165,10 @@ body.ink-on{cursor:crosshair;}
 .la-toggle-btn.open svg{transform:rotate(180deg);}
 
 /* ── KLIKSYSTEEM: horizontale les-toolbar (onderaan, centred) ── */
-.lesson-toolbar-wrap{position:fixed;bottom:1.25rem;left:50%;transform:translateX(-50%) translateY(20px);z-index:700;opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;}
+.lesson-toolbar-wrap{position:fixed;bottom:1.25rem;left:50%;transform:translateX(-50%) translateY(20px);z-index:9999;opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;}
 body.show-lesson-toolbar .lesson-toolbar-wrap{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0);}
-.lesson-toolbar{display:flex;flex-direction:row;align-items:center;gap:.28rem;padding:.38rem .5rem;border-radius:28px;background:rgba(255,255,255,.88);border:1px solid rgba(19,66,127,.12);box-shadow:0 8px 32px rgba(19,66,127,.18),0 2px 8px rgba(0,0,0,.06);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}
+body.show-lesson-toolbar .lesson-toolbar-wrap *{pointer-events:auto;}
+.lesson-toolbar{display:flex;flex-direction:row;align-items:center;gap:.28rem;padding:.38rem .5rem;border-radius:28px;background:rgba(255,255,255,.95);border:1px solid rgba(19,66,127,.15);box-shadow:0 8px 32px rgba(19,66,127,.22),0 2px 8px rgba(0,0,0,.08);}
 .lesson-toolbar-divider{width:1px;height:26px;background:rgba(19,66,127,.10);margin:0 .18rem;flex-shrink:0;}
 .lesson-btn{width:40px;height:40px;padding:0;border:none;border-radius:12px;background:transparent;color:#1a2a4a;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;position:relative;transition:background .14s ease,color .14s ease,box-shadow .14s ease;flex-shrink:0;}
 .lesson-btn:hover{background:rgba(19,66,127,.08);}
