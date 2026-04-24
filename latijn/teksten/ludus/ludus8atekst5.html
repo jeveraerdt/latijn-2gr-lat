@@ -304,7 +304,7 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
 @media(max-width:600px){.main-col{padding:2rem 0 5rem;}.outer{padding:0 1rem;}.text-title{font-size:1.7rem;}.site-header{padding:0 14px;}.site-toolbar{padding:8px 14px;height:auto;flex-wrap:wrap;}.topbar-label,.topbar-divider{display:none;}}
 </style>
 </head>
-<body>
+<body class="show-lesson-toolbar">
 
 <canvas id="inkCanvas" class="ink-canvas"></canvas>
 
@@ -1283,9 +1283,14 @@ inkCanvas.addEventListener('pointercancel',stopInk);
 
 /* ══ TOOLBAR SENTINEL ══ */
 (function(){
+  /* Toolbar verschijnt zodra de Latijnse tekst in beeld scrollt */
   var s=document.getElementById('textStartSentinel');
   if(!s){document.body.classList.add('show-lesson-toolbar');return;}
-  function upd(){document.body.classList.toggle('show-lesson-toolbar',s.getBoundingClientRect().top<=170);}
+  function upd(){
+    var rect=s.getBoundingClientRect();
+    /* top < viewport-hoogte = sentinel is in of voorbij het scherm */
+    document.body.classList.toggle('show-lesson-toolbar', rect.top < window.innerHeight);
+  }
   upd();
   window.addEventListener('scroll',upd,{passive:true});
   window.addEventListener('resize',upd);
