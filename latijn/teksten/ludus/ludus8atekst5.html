@@ -8,18 +8,15 @@
 <link rel="stylesheet" href="../../../theme.css">
 <style>
 :root {
-  /* Tekst-viewer specifieke tokens (rest komt uit _theme.css) */
   --green:#2d7a3a; --green-bg:#e8f5eb;
   --orange:#c05a00; --orange-bg:#fff0e0;
   --purple:#6a1a8a; --purple-bg:#f3e8fb;
   --hl:#fff3c4; --hl-b:#e8c840;
   --lh:2.3; --fs:1.18rem;
 }
-/* Body font override: tekst-viewer gebruikt EB Garamond als basis */
 html{overflow-x:hidden;}
 body{font-family:'EB Garamond',Georgia,serif;}
 
-/* WEERGAVE DROPDOWN */
 .weergave-wrap{position:relative;}
 .weergave-menu{display:none;position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:1.5px solid rgba(19,66,127,.18);border-radius:12px;box-shadow:0 6px 24px rgba(19,66,127,.13);z-index:400;min-width:160px;padding:.35rem 0;overflow:hidden;}
 .weergave-menu.open{display:block;animation:fadeUp .12s ease both;}
@@ -30,11 +27,9 @@ body{font-family:'EB Garamond',Georgia,serif;}
 .weergave-chevron{transition:transform .18s;}
 #btnWeergave.open .weergave-chevron{transform:rotate(180deg);}
 
-/* PROGRESS */
 .rp{position:fixed;top:108px;left:0;right:0;height:2px;z-index:199;}
 .rp-fill{height:100%;background:var(--magenta);width:0%;transition:width .12s linear;}
 
-/* LAYOUT */
 .outer{max-width:1200px;margin:0 auto;padding:0 1.5rem;}
 .main-col{max-width:760px;margin:0 auto;padding:3rem 0 9rem;}
 body.twocol .outer{display:grid;grid-template-columns:var(--col-split,60%) 12px 1fr;gap:0;align-items:start;}
@@ -42,25 +37,21 @@ body.twocol .main-col{max-width:none;padding:3rem 2rem 6rem 0;}
 body.twocol .side-panel{display:flex!important;flex-direction:column;gap:1rem;padding:3rem 0 6rem 1.5rem;border-left:1px solid var(--rule);position:sticky;top:108px;max-height:calc(100vh - 108px);overflow-y:auto;}
 .side-panel{display:none;}
 
-/* HEADER */
 .text-header{margin-bottom:2rem;padding-bottom:1.75rem;border-bottom:1px solid var(--rule);animation:fadeUp .5s ease both;}
 .text-meta{font-family:'Lufga',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--magenta);margin-bottom:.6rem;}
 .text-title{font-family:'Lufga',sans-serif;font-size:2rem;font-weight:600;line-height:1.2;color:var(--blue);margin-bottom:.5rem;letter-spacing:-.01em;}
 .text-sub{font-family:'EB Garamond',Georgia,serif;font-style:italic;font-size:1rem;color:var(--ink-light);line-height:1.5;}
 
-/* CONTEXT */
 .context-block{background:linear-gradient(135deg,#eef3fa,#f5f0fb);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;padding:1rem 1.3rem;margin-bottom:2rem;font-family:'Lufga',sans-serif;font-size:.86rem;line-height:1.65;color:#2a3a5e;animation:fadeUp .5s .07s ease both;}
 .context-block strong{display:block;font-family:'Lufga',sans-serif;font-size:.68rem;letter-spacing:.11em;text-transform:uppercase;color:var(--magenta);margin-bottom:.25rem;font-weight:600;}
 .context-subtitel{display:block;font-family:'EB Garamond',Georgia,serif;font-style:italic;font-size:.88rem;color:#888;margin-bottom:.5rem;}
 
-/* PILLS */
 .link-strip{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem;animation:fadeUp .5s .12s ease both;}
 .link-pill{font-family:'Lufga',sans-serif;font-size:.7rem;font-weight:500;letter-spacing:.04em;padding:.38rem .85rem;border-radius:20px;border:1.5px solid var(--rule);background:var(--paper);color:var(--ink-light);cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:.35rem;text-decoration:none;}
 .link-pill:hover{border-color:var(--blue);color:var(--blue);background:#eef3fa;}
 .link-pill svg{width:11px;height:11px;}
 button.link-pill{font-size:.7rem;font-weight:500;font-family:'Lufga',sans-serif;letter-spacing:.04em;cursor:pointer;}
 
-/* EXTRA'S STRIP */
 .extras-strip{margin-bottom:2rem;animation:fadeUp .5s .12s ease both;}
 .extras-row{display:flex;align-items:center;gap:.9rem;}
 .extras-label{font-family:'Lufga',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--magenta);}
@@ -69,11 +60,9 @@ button.link-pill{font-size:.7rem;font-weight:500;font-family:'Lufga',sans-serif;
 .extras-icon svg{width:18px;height:18px;}
 .extras-icon.active{opacity:1;background:#fbe6f1;color:var(--magenta);}
 
-/* GRAMMATICALE NOTEN — verborgen tot toggle */
 .noten-block{display:none;}
 .noten-block.vis{display:block;}
 
-/* KAART MODAL */
 .kaart-modal-overlay{display:none;position:fixed;inset:0;background:rgba(19,66,127,.18);backdrop-filter:blur(2px);z-index:800;align-items:center;justify-content:center;}
 .kaart-modal-overlay.open{display:flex;animation:fadeUp .18s ease both;}
 .kaart-modal{background:var(--paper);border:1.5px solid var(--rule);border-radius:14px;box-shadow:0 16px 48px rgba(19,66,127,.22);width:min(680px,92vw);max-height:80vh;display:flex;flex-direction:column;overflow:hidden;}
@@ -85,13 +74,10 @@ button.link-pill{font-size:.7rem;font-weight:500;font-family:'Lufga',sans-serif;
 .kaart-modal-body{padding:1.5rem;overflow-y:auto;}
 .kaart-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:220px;border:2px dashed rgba(19,66,127,.15);border-radius:10px;color:var(--ink-light);font-family:'Lufga',sans-serif;font-size:.82rem;}
 
-/* LATIN TEXT */
 .latin-text{font-size:var(--fs);line-height:var(--lh);animation:fadeUp .5s .18s ease both;}
 body.font-lg .latin-text{--fs:1.35rem;--lh:2.45;}
 .latin-para{margin-bottom:2rem;}
 
-/* ── WORD GROUPS ── */
-/* Each .wg is a clickable phrase chunk */
 .wg{
   display:inline;
   border-radius:4px;
@@ -101,9 +87,9 @@ body.font-lg .latin-text{--fs:1.35rem;--lh:2.45;}
 }
 .wg:hover{background:rgba(19,66,127,.07);}
 
-/* Reveal mode: dim everything */
+/* ── PATCH 1: opacity .02 (was .12) ── */
 .reveal-mode .wg{
-  opacity:.12;
+  opacity:.02;
   transition:opacity .3s;
 }
 .reveal-mode .wg.revealed{opacity:1;}
@@ -114,11 +100,9 @@ body.font-lg .latin-text{--fs:1.35rem;--lh:2.45;}
   border-radius:4px;
 }
 
-/* ── lat-word: basis ── */
 .lat-word{display:inline;border-radius:3px;cursor:pointer;transition:background .12s;padding:0 1px;}
 .lat-word:hover{background:rgba(19,66,127,.09);}
 
-/* ── KLIKSYSTEEM: interlineaire inline-analyse ── */
 body.interlin-analysis .lat-word{display:inline-flex;flex-direction:column;align-items:center;vertical-align:bottom;margin:0 2px;padding:0 1px;}
 .inline-analysis{display:none;}
 body.interlin-analysis .inline-analysis{display:flex;flex-direction:column;align-items:center;gap:1px;margin-bottom:.14rem;min-height:0;}
@@ -135,12 +119,10 @@ body.interlin-analysis .lat-surface{display:inline-block;}
 .lat-word.stage-3 .lat-surface{background:rgba(255,234,61,.35);outline:1px solid rgba(0,102,51,.28);}
 .lat-word.active-word .lat-surface{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px;}
 
-/* ── KLIKSYSTEEM: inktlaag ── */
 .ink-canvas{position:fixed;inset:0;z-index:640;pointer-events:none;touch-action:none;}
 .ink-canvas.on{pointer-events:auto;}
 body.ink-on{cursor:crosshair;}
 
-/* ── KLIKSYSTEEM: lectuuranalyse modal ── */
 .poetry-modal-overlay{display:none;position:fixed;inset:0;background:rgba(19,66,127,.18);backdrop-filter:blur(3px);z-index:800;align-items:center;justify-content:center;}
 .poetry-modal-overlay.open{display:flex;animation:fadeUp .18s ease both;}
 .poetry-modal{background:var(--paper);border:1.5px solid var(--rule);border-radius:14px;box-shadow:0 16px 48px rgba(19,66,127,.22);width:min(700px,92vw);max-height:82vh;display:flex;flex-direction:column;overflow:hidden;}
@@ -165,16 +147,18 @@ body.ink-on{cursor:crosshair;}
 .la-toggle-btn svg{width:12px;height:12px;transition:transform .18s;}
 .la-toggle-btn.open svg{transform:rotate(180deg);}
 
-/* ── KLIKSYSTEEM: horizontale les-toolbar (onderaan, centred) ── */
+/* ── PATCH 2: toolbar magenta hover/active ── */
 .lesson-toolbar-wrap{position:fixed;bottom:1.25rem;left:50%;transform:translateX(-50%) translateY(20px);z-index:9999;opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;}
 body.show-lesson-toolbar .lesson-toolbar-wrap{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0);}
 body.show-lesson-toolbar .lesson-toolbar-wrap *{pointer-events:auto;}
 .lesson-toolbar{display:flex;flex-direction:row;align-items:center;gap:.28rem;padding:.38rem .5rem;border-radius:28px;background:rgba(255,255,255,.95);border:1px solid rgba(19,66,127,.15);box-shadow:0 8px 32px rgba(19,66,127,.22),0 2px 8px rgba(0,0,0,.08);}
 .lesson-toolbar-divider{width:1px;height:26px;background:rgba(19,66,127,.10);margin:0 .18rem;flex-shrink:0;}
 .lesson-btn{width:40px;height:40px;padding:0;border:none;border-radius:12px;background:transparent;color:#1a2a4a;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;position:relative;transition:background .14s ease,color .14s ease,box-shadow .14s ease;flex-shrink:0;}
-.lesson-btn:hover{background:rgba(19,66,127,.08);}
-.lesson-btn:active{background:rgba(19,66,127,.14);}
-.lesson-btn.active{background:#ffea3d;color:#006633;box-shadow:0 0 0 2px rgba(255,234,61,.4);}
+/* PATCH 2a: hover magenta */
+.lesson-btn:hover{background:rgba(230,0,126,.09);color:var(--magenta);}
+.lesson-btn:active{background:rgba(230,0,126,.15);color:var(--magenta);}
+/* PATCH 2b: active magenta */
+.lesson-btn.active{background:var(--magenta);color:#fff;box-shadow:0 0 0 2px rgba(230,0,126,.28);}
 .lesson-btn.danger:hover{background:#fee2e2;color:#b91c1c;}
 .lesson-btn svg{width:19px;height:19px;stroke:currentColor;fill:none;}
 .lesson-btn::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 7px);left:50%;transform:translateX(-50%);background:#1a2238;color:#fff;font-family:var(--tf,Arial);font-size:.6rem;font-weight:600;letter-spacing:.04em;white-space:nowrap;padding:.2rem .5rem;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .12s;}
@@ -185,10 +169,8 @@ body.show-lesson-toolbar .lesson-toolbar-wrap *{pointer-events:auto;}
 .swatch:hover{transform:scale(1.12);}
 .swatch.active{border-color:#111;box-shadow:0 0 0 2px rgba(0,0,0,.10);}
 
-/* TEKSTSCHEIDING */
 .latin-para.tekst-scheiding{border-top:1px solid #ddd;margin-top:1.5em;padding-top:1.5em;}
 
-/* LINE NUMBERS */
 .numbered-view{display:none;}
 .numbered-view.on{display:block;}
 .plain-view.off{display:none;}
@@ -196,7 +178,6 @@ body.show-lesson-toolbar .lesson-toolbar-wrap *{pointer-events:auto;}
 .ln{font-family:'Lufga',sans-serif;font-size:.62rem;color:#ccc;min-width:1.7rem;text-align:right;padding-top:.44em;user-select:none;flex-shrink:0;}
 .lc{flex:1;}
 
-/* POPUP */
 .word-popup{position:absolute;z-index:500;background:var(--paper);border:1.5px solid var(--rule);border-radius:10px;box-shadow:0 8px 32px rgba(19,66,127,.18);padding:.85rem 1.1rem;max-width:300px;min-width:200px;font-family:'Lufga',sans-serif;font-size:.78rem;pointer-events:none;opacity:0;transform:translateY(4px);transition:opacity .18s,transform .18s;}
 .word-popup.vis{opacity:1;transform:translateY(0);}
 .wp-word{font-family:'EB Garamond',Georgia,serif;font-size:1.1rem;font-weight:600;color:var(--blue);margin-bottom:.1rem;}
@@ -211,7 +192,6 @@ body.show-lesson-toolbar .lesson-toolbar-wrap *{pointer-events:auto;}
 .wp-sep{border:none;border-top:1px solid var(--rule);margin:.4rem 0;}
 .wp-hint{font-size:.7rem;color:var(--ink-light);}
 
-/* REVEAL BAR */
 .reveal-bar{display:none;align-items:center;gap:.6rem;margin-bottom:1.5rem;padding:.65rem 1rem;background:var(--paper);border:1.5px solid var(--rule);border-radius:10px;font-family:'Lufga',sans-serif;font-size:.78rem;color:var(--ink-mid);flex-wrap:wrap;}
 .reveal-bar.vis{display:flex;}
 .reveal-bar button{background:var(--blue);color:#fff;border:none;border-radius:6px;padding:.3rem .8rem;font-family:'Lufga',sans-serif;font-size:.72rem;cursor:pointer;transition:background .15s;white-space:nowrap;}
@@ -220,13 +200,11 @@ body.show-lesson-toolbar .lesson-toolbar-wrap *{pointer-events:auto;}
 .reveal-bar button.sec:hover{background:#eef3fa;}
 .rev-count{margin-left:auto;color:var(--ink-light);font-size:.68rem;white-space:nowrap;}
 
-/* FOOTNOTES */
 .footnotes{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);}
 .fn-title{font-family:'Lufga',sans-serif;font-size:.66rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-light);margin-bottom:.9rem;}
 .fn{display:flex;gap:.65rem;font-size:.8rem;line-height:1.58;color:var(--ink-light);margin-bottom:.45rem;font-family:'Lufga',sans-serif;}
 .fn-n{color:var(--magenta);font-size:.68rem;font-weight:600;min-width:1.1rem;padding-top:.1rem;flex-shrink:0;}
 
-/* SIDE PANEL */
 .panel-card{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:1rem 1.1rem;}
 .panel-card h3{font-family:'Lufga',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:.7rem;}
 .panel-word{display:flex;justify-content:space-between;align-items:baseline;padding:.32rem 0;border-bottom:1px solid var(--rule);font-size:.85rem;gap:.5rem;}
@@ -245,60 +223,28 @@ body.show-lesson-toolbar .lesson-toolbar-wrap *{pointer-events:auto;}
 .ac-tag{font-size:.6rem;font-weight:700;padding:.08rem .38rem;border-radius:10px;text-transform:uppercase;flex-shrink:0;margin-top:.15rem;}
 .ac-empty{color:var(--ink-light);font-size:.78rem;font-style:italic;}
 
-/* VERTALING ZIJPANEEL */
 .vertaling-tekst{font-family:'Lufga',sans-serif;font-size:.82rem;line-height:1.7;color:var(--blue);}
 .vertaling-tekst p{margin-bottom:.7rem;}
 .vertaling-tekst p:last-child{margin-bottom:0;}
 
-
-/* KOLOM-RESIZER */
 .col-resizer{display:none;width:12px;cursor:col-resize;align-self:stretch;position:relative;z-index:10;flex-shrink:0;}
 body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;}
-.col-resizer-handle{
-  width:4px;height:48px;border-radius:4px;
-  background:var(--rule);
-  transition:background .15s, height .15s;
-  position:sticky;top:calc(50vh - 24px);
-}
-.col-resizer:hover .col-resizer-handle,
-.col-resizer.dragging .col-resizer-handle{
-  background:var(--blue);height:64px;
-}
+.col-resizer-handle{width:4px;height:48px;border-radius:4px;background:var(--rule);transition:background .15s, height .15s;position:sticky;top:calc(50vh - 24px);}
+.col-resizer:hover .col-resizer-handle,.col-resizer.dragging .col-resizer-handle{background:var(--blue);height:64px;}
 
-/* SCROLL TOP */
 .scroll-top{position:fixed;bottom:1.75rem;right:1.75rem;width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(8px);transition:all .2s;box-shadow:0 4px 14px rgba(19,66,127,.28);z-index:100;}
 .scroll-top.on{opacity:1;transform:translateY(0);}
 .scroll-top svg{width:15px;height:15px;}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(7px);}to{opacity:1;transform:translateY(0);}}
 
-/* ══ DIDACTIEK TOGGLE SYSTEEM ══ */
-
-/* Badges die op elementen verschijnen */
 .d-badge{display:inline-flex;align-items:center;gap:.25rem;font-family:'Lufga',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.18rem .5rem;border-radius:20px;vertical-align:middle;margin:0 .2rem .1rem;white-space:nowrap;transition:opacity .2s,transform .2s;opacity:0;pointer-events:none;transform:scale(.85);}
 .d-badge.bs{background:#dbeafe;color:#1d4ed8;border:1px solid #bfdbfe;}
 .d-badge.lpd{background:#dcfce7;color:#15803d;border:1px solid #bbf7d0;}
 .d-badge.vis{opacity:1;pointer-events:auto;transform:scale(1);}
-
-/* Badge-container boven elk pagina-element */
 .d-badges{display:block;margin-bottom:.35rem;min-height:0;line-height:1.6;}
 .d-badges:empty{margin-bottom:0;}
-
-/* Surma-bouwsteen nummers staan al in de badge-tekst */
-
-/* Donkere hover-tooltip op badges */
-.d-tooltip{
-  position:absolute;z-index:900;
-  background:#1a2238;color:#fff;
-  font-family:'Lufga',sans-serif;font-size:.78rem;font-weight:500;
-  line-height:1.45;letter-spacing:.005em;
-  padding:.7rem .95rem;border-radius:10px;
-  max-width:340px;
-  box-shadow:0 12px 32px rgba(19,66,127,.28);
-  pointer-events:none;
-  opacity:0;transform:translateY(4px);
-  transition:opacity .15s ease,transform .15s ease;
-}
+.d-tooltip{position:absolute;z-index:900;background:#1a2238;color:#fff;font-family:'Lufga',sans-serif;font-size:.78rem;font-weight:500;line-height:1.45;letter-spacing:.005em;padding:.7rem .95rem;border-radius:10px;max-width:340px;box-shadow:0 12px 32px rgba(19,66,127,.28);pointer-events:none;opacity:0;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;}
 .d-tooltip.vis{opacity:1;transform:translateY(0);}
 .d-badge{cursor:help;}
 
@@ -413,7 +359,6 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
     </div>
   </div>
 
-  <!-- KAART MODAL -->
   <div class="kaart-modal-overlay" id="kaartModalOverlay" onclick="closeKaartModal()">
     <div class="kaart-modal" onclick="event.stopPropagation()">
       <div class="kaart-modal-header">
@@ -456,39 +401,31 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
   <div class="latin-text" id="latinText">
   <div class="plain-view" id="plainView">
 
-<!-- ══════════════════════════════════════════
-     TEKST — opgedeeld in .wg (woordgroepen)
-     Elke .wg is een semantische chunk:
-     subject, predicaat, object, bepaling …
-     Klik op woord = analyse-popup
-     Onthulling gaat wg voor wg
-══════════════════════════════════════════ -->
-
 <div class="latin-para">
 <span class="wg" data-wg="1"><span class="lat-word" data-w="Dabat" data-l="dare" data-d="A. ind. imperf. 3 enk." data-s="PV (eerste in de reeks van historische imperf.)" data-n="hij gaf">Dabat</span></span>
-<span class="wg" data-wg="2"><span class="lat-word" data-w="civitatem" data-l="civitas, -atis" data-d="acc. enk. v." data-s="LV van dabat" data-n="het burgerrecht">civitatem</span></span>
-<span class="wg" data-wg="3"><span class="lat-word" data-w="omnibus Italicis" data-l="omnis / Italicus" data-d="dat. mv. m." data-s="meew. voorw. bij dabat" data-n="aan alle Italiërs">omnibus Italicis</span>,</span>
+<span class="wg" data-wg="2"><span class="lat-word" data-w="civitatem" data-l="civitas" data-d="acc. enk. v." data-s="LV van dabat" data-n="het burgerrecht">civitatem</span></span>
+<span class="wg" data-wg="3"><span class="lat-word" data-w="omnibus Italicis" data-l="omnis" data-d="dat. mv. m." data-s="meew. voorw. bij dabat" data-n="aan alle Italiërs">omnibus Italicis</span>,</span>
 <span class="wg" data-wg="4"><span class="lat-word" data-w="extendebat" data-l="extendere" data-d="A. ind. imperf. 3 enk." data-s="tweede PV in de reeks" data-n="hij breidde uit">extendebat</span></span>
-<span class="wg" data-wg="5"><span class="lat-word" data-w="eam" data-l="is, ea, id" data-d="acc. enk. v." data-s="LV van extendebat; verwijst naar civitatem" data-n="haar">eam</span></span>
-<span class="wg" data-wg="6"><span class="lat-word" data-w="paene usque Alpes" data-l="paene / usque / Alpes" data-d="bijw. + bijw. + eigennaam acc. mv." data-s="BWB van richting bij extendebat" data-n="bijna tot aan de Alpen">paene usque Alpes</span>,</span>
+<span class="wg" data-wg="5"><span class="lat-word" data-w="eam" data-l="is / ea / id" data-d="acc. enk. v." data-s="LV van extendebat; verwijst naar civitatem" data-n="haar">eam</span></span>
+<span class="wg" data-wg="6"><span class="lat-word" data-w="paene usque Alpes" data-l="paene" data-d="bijw. + bijw. + eigennaam acc. mv." data-s="BWB van richting bij extendebat" data-n="bijna tot aan de Alpen">paene usque Alpes</span>,</span>
 <span class="wg" data-wg="7"><span class="lat-word" data-w="dividebat" data-l="dividere" data-d="A. ind. imperf. 3 enk." data-s="derde PV in de reeks" data-n="hij verdeelde">dividebat</span></span>
-<span class="wg" data-wg="8"><span class="lat-word" data-w="agros" data-l="ager, agri" data-d="acc. mv. m." data-s="LV van dividebat" data-n="de akkers">agros</span>,</span>
+<span class="wg" data-wg="8"><span class="lat-word" data-w="agros" data-l="ager" data-d="acc. mv. m." data-s="LV van dividebat" data-n="de akkers">agros</span>,</span>
 <span class="wg" data-wg="9"><span class="lat-word" data-w="vetabat" data-l="vetare" data-d="A. ind. imperf. 3 enk." data-s="vierde PV; stuurt ACI aan" data-n="hij verbood">vetabat</span></span>
-<span class="wg" data-wg="10"><span class="lat-word" data-w="quemquam civem" data-l="quisquam / civis" data-d="acc. enk. m." data-s="OND van de ACI bij vetabat" data-n="dat enige burger">quemquam civem</span></span>
-<span class="wg" data-wg="11"><span class="lat-word" data-w="plus quingentis iugeribus" data-l="plus / quingenti / iugerum" data-d="acc. + abl. mv. o." data-s="BWB van hoeveelheid bij habere" data-n="meer dan 500 morgen">plus quingentis iugeribus</span></span>
+<span class="wg" data-wg="10"><span class="lat-word" data-w="quemquam civem" data-l="quisquam" data-d="acc. enk. m." data-s="OND van de ACI bij vetabat" data-n="dat enige burger">quemquam civem</span></span>
+<span class="wg" data-wg="11"><span class="lat-word" data-w="plus quingentis iugeribus" data-l="plus" data-d="acc. + abl. mv. o." data-s="BWB van hoeveelheid bij habere" data-n="meer dan 500 morgen">plus quingentis iugeribus</span></span>
 <span class="wg" data-wg="12"><span class="lat-word" data-w="habere" data-l="habere" data-d="A. inf. praes." data-s="infinitief in de ACI na vetabat" data-n="te hebben">habere</span>,</span>
-<span class="wg" data-wg="13"><span class="lat-word" data-w="quod aliquando" data-l="qui, quae, quod / aliquando" data-d="rel. pron. nom. enk. o. + bijw." data-s="rel. bijzin bij vetabat-bepaling; quod = antecedent is het verbod zelf" data-n="wat vroeger">quod aliquando</span></span>
-<span class="wg" data-wg="14"><span class="lat-word" data-w="lege Licinia" data-l="lex / Licinius" data-d="abl. enk. v." data-s="BWB van middel bij cautum erat" data-n="door de Licinische wet">lege Licinia</span></span>
+<span class="wg" data-wg="13"><span class="lat-word" data-w="quod aliquando" data-l="aliquando" data-d="rel. pron. nom. enk. o. + bijw." data-s="rel. bijzin bij vetabat-bepaling" data-n="wat vroeger">quod aliquando</span></span>
+<span class="wg" data-wg="14"><span class="lat-word" data-w="lege Licinia" data-l="lex" data-d="abl. enk. v." data-s="BWB van middel bij cautum erat" data-n="door de Licinische wet">lege Licinia</span></span>
 <span class="wg" data-wg="15"><span class="lat-word" data-w="cautum erat" data-l="cavere" data-d="PPP + erat: P. ind. plusperf. 3 enk. onpers." data-s="PV van de rel. bijzin; onpersoonlijk passief" data-n="vastgelegd was">cautum erat</span>,</span>
 <span class="wg" data-wg="16"><span class="lat-word" data-w="nova" data-l="novus" data-d="acc. mv. o." data-s="LV van constituebat" data-n="nieuwe dingen">nova</span></span>
-<span class="wg" data-wg="17"><span class="lat-word" data-w="constituebat portoria" data-l="constituere / portorium" data-d="A. ind. imperf. 3 enk. + acc. mv. o." data-s="vijfde PV + nader omschrijving als appositie" data-n="hij stelde belastingen in">constituebat portoria</span>,</span>
-<span class="wg" data-wg="18"><span class="lat-word" data-w="novis coloniis" data-l="novus / colonia" data-d="abl. mv. v." data-s="BWB van middel bij replebat" data-n="met nieuwe kolonies">novis coloniis</span></span>
-<span class="wg" data-wg="19"><span class="lat-word" data-w="replebat provincias" data-l="replere / provincia" data-d="A. ind. imperf. 3 enk. + acc. mv. v." data-s="zesde PV + LV" data-n="hij vulde de provincies">replebat provincias</span>,</span>
-<span class="wg" data-wg="20"><span class="lat-word" data-w="iudicia" data-l="iudicium, -ii" data-d="acc. mv. o." data-s="LV van transferebat" data-n="de rechtsbevoegdheid">iudicia</span></span>
-<span class="wg" data-wg="21"><span class="lat-word" data-w="a senatu" data-l="senatus, -us" data-d="voorzetselgroep (abl. enk. m.)" data-s="BWB van scheiding bij transferebat" data-n="van de senaat">a senatu</span></span>
-<span class="wg" data-wg="22"><span class="lat-word" data-w="transferebat ad equites" data-l="transferre / eques" data-d="A. ind. imperf. 3 enk. + voorzetselgroep acc. mv." data-s="zevende PV + BWB van richting" data-n="hij bracht over naar de ridders">transferebat ad equites</span>,</span>
-<span class="wg" data-wg="23"><span class="lat-word" data-w="frumentum" data-l="frumentum, -i" data-d="acc. enk. o." data-s="OND van de ACI bij instituebat" data-n="graan">frumentum</span></span>
-<span class="wg" data-wg="24"><span class="lat-word" data-w="plebi" data-l="plebs, plebis" data-d="dat. enk. v." data-s="meew. voorw. bij dari" data-n="aan het volk">plebi</span></span>
+<span class="wg" data-wg="17"><span class="lat-word" data-w="constituebat portoria" data-l="constituere" data-d="A. ind. imperf. 3 enk. + acc. mv. o." data-s="vijfde PV + nader omschrijving als appositie" data-n="hij stelde belastingen in">constituebat portoria</span>,</span>
+<span class="wg" data-wg="18"><span class="lat-word" data-w="novis coloniis" data-l="colonia" data-d="abl. mv. v." data-s="BWB van middel bij replebat" data-n="met nieuwe kolonies">novis coloniis</span></span>
+<span class="wg" data-wg="19"><span class="lat-word" data-w="replebat provincias" data-l="replere" data-d="A. ind. imperf. 3 enk. + acc. mv. v." data-s="zesde PV + LV" data-n="hij vulde de provincies">replebat provincias</span>,</span>
+<span class="wg" data-wg="20"><span class="lat-word" data-w="iudicia" data-l="iudicium" data-d="acc. mv. o." data-s="LV van transferebat" data-n="de rechtsbevoegdheid">iudicia</span></span>
+<span class="wg" data-wg="21"><span class="lat-word" data-w="a senatu" data-l="senatus" data-d="voorzetselgroep (abl. enk. m.)" data-s="BWB van scheiding bij transferebat" data-n="van de senaat">a senatu</span></span>
+<span class="wg" data-wg="22"><span class="lat-word" data-w="transferebat ad equites" data-l="transferre" data-d="A. ind. imperf. 3 enk. + voorzetselgroep acc. mv." data-s="zevende PV + BWB van richting" data-n="hij bracht over naar de ridders">transferebat ad equites</span>,</span>
+<span class="wg" data-wg="23"><span class="lat-word" data-w="frumentum" data-l="frumentum" data-d="acc. enk. o." data-s="OND van de ACI bij instituebat" data-n="graan">frumentum</span></span>
+<span class="wg" data-wg="24"><span class="lat-word" data-w="plebi" data-l="plebs" data-d="dat. enk. v." data-s="meew. voorw. bij dari" data-n="aan het volk">plebi</span></span>
 <span class="wg" data-wg="25"><span class="lat-word" data-w="dari" data-l="dare" data-d="P. inf. praes." data-s="infinitief in de ACI na instituebat" data-n="gegeven worden">dari</span></span>
 <span class="wg" data-wg="26"><span class="lat-word" data-w="instituebat" data-l="instituere" data-d="A. ind. imperf. 3 enk." data-s="achtste PV; stuurt ACI (frumentum dari) aan" data-n="hij stelde in">instituebat</span>.</span>
 </div>
@@ -496,10 +433,10 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
 <div class="latin-para tekst-scheiding">
 <span class="wg" data-wg="27"><span class="lat-word" data-w="Nihil" data-l="nihil" data-d="nom. enk. o." data-s="OND van de impliciete koppelzin" data-n="Niets">Nihil</span>
 <span class="lat-word" data-w="immotum" data-l="immotus" data-d="adj. nom. enk. o." data-s="naamw. gezegde bij nihil" data-n="onbewogen">immotum</span>,</span>
-<span class="wg" data-wg="28"><span class="lat-word" data-w="nihil tranquillum" data-l="nihil / tranquillus" data-d="nom. enk. o. + adj. nom. enk. o." data-s="tweede subject + naamw. gezegde (ellips van PV)" data-n="niets rustig">nihil tranquillum</span>,</span>
-<span class="wg" data-wg="29"><span class="lat-word" data-w="nihil quietum" data-l="nihil / quietus" data-d="nom. enk. o. + adj. nom. enk. o." data-s="derde subject + naamw. gezegde (ellips van PV)" data-n="niets stil">nihil quietum</span>,</span>
-<span class="wg" data-wg="30"><span class="lat-word" data-w="nihil denique" data-l="nihil / denique" data-d="nom. enk. o. + bijw." data-s="vierde subject; denique introduceert het slotlid" data-n="kortom niets">nihil denique</span></span>
-<span class="wg" data-wg="31"><span class="lat-word" data-w="in eodem statu" data-l="idem / status, -us" data-d="voorzetselgroep (abl. enk. m.)" data-s="BWB van omstandigheid bij relinquebat" data-n="in dezelfde toestand">in eodem statu</span></span>
+<span class="wg" data-wg="28"><span class="lat-word" data-w="nihil tranquillum" data-l="tranquillus" data-d="nom. enk. o. + adj. nom. enk. o." data-s="tweede subject + naamw. gezegde (ellips van PV)" data-n="niets rustig">nihil tranquillum</span>,</span>
+<span class="wg" data-wg="29"><span class="lat-word" data-w="nihil quietum" data-l="quietus" data-d="nom. enk. o. + adj. nom. enk. o." data-s="derde subject + naamw. gezegde (ellips van PV)" data-n="niets stil">nihil quietum</span>,</span>
+<span class="wg" data-wg="30"><span class="lat-word" data-w="nihil denique" data-l="denique" data-d="nom. enk. o. + bijw." data-s="vierde subject; denique introduceert het slotlid" data-n="kortom niets">nihil denique</span></span>
+<span class="wg" data-wg="31"><span class="lat-word" data-w="in eodem statu" data-l="status" data-d="voorzetselgroep (abl. enk. m.)" data-s="BWB van omstandigheid bij relinquebat" data-n="in dezelfde toestand">in eodem statu</span></span>
 <span class="wg" data-wg="32"><span class="lat-word" data-w="relinquebat" data-l="relinquere" data-d="A. ind. imperf. 3 enk." data-s="PV van de tweede paragraaf; sluit de anafoor af" data-n="liet hij achter">relinquebat</span>.</span>
 </div>
 
@@ -532,9 +469,8 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
     <div class="fn"><span class="fn-n">6</span><span><em>Nihil immotum, nihil tranquillum, nihil quietum, nihil denique …</em> — viervoudige anafoor van <em>nihil</em> als stijlfiguur. De koppelwerkwoorden zijn weggelaten (ellips): begrijp telkens <em>erat</em>. Klimax: het laatste lid wordt ingeleid door <em>denique</em> ('kortom', 'ja zelfs').</span></div>
     <div class="fn"><span class="fn-n">7</span><span><em>in eodem statu relinquebat</em> — <em>statu</em> = abl. van <em>status, -us</em> (4e declinatie). Het geheel betekent: 'hij liet niets onveranderd'. Een krachtige afsluiting van de anafoor.</span></div>
   </div>
-  </div><!-- /noten-block -->
+  </div>
 
-  <!-- ══ WOORDENLIJST ══ -->
   <div class="d-badges" id="badges-wl" style="margin-bottom:.5rem;">
     <span class="d-badge bs" data-layer="bs">① Voorkennis activeren</span>
     <span class="d-badge bs" data-layer="bs">⑧ Gespreide oefening</span>
@@ -576,11 +512,6 @@ body.twocol .col-resizer{display:flex;align-items:center;justify-content:center;
 </button>
 
 <script>
-/* ══════════════════════════════════════════
-   WOORDENLIJST DATA — gefilterd voor deze tekst
-   t = teksten waarin het woord voorkomt
-   vol = volgorde per tekst
-══════════════════════════════════════════ */
 var WL = [
 {g:"dare",a:"do, dedi, datum",v:"geven",b:true,t:["6a/1","6a/2","6a/4","6b/2","6b/4","7a/3","7b/2","7b/4","8a/5","8b/9","9b/5","10/3"],vol:{"8a/5":1}},
 {g:"civitas",a:"civitatis, (v.)",v:"burgerrecht; stad, gemeenschap, staat",b:true,t:["8a/5","9a/1","9b/9"],vol:{"8a/5":2}},
@@ -626,62 +557,45 @@ var WL = [
 ];
 
 /* ══════════════════════════════════════════
-   WOORDENLIJST OPZOEKEN
+   PATCH 3: verbeterde lookupWL
+   Matcht nu ook op enkel het eerste woord van grondvorm
+   (bijv. data-l="civitas" matcht g:"civitas")
+   En normaliseert de data-l door alles na komma/haakje weg te laten
 ══════════════════════════════════════════ */
 function lookupWL(lemma) {
   if (!lemma) return null;
-  var parts = lemma.toLowerCase().split(/[\/,\s]+/);
+  // Normaliseer: haal alles na komma, slash, haakje weg; lowercase; trim
+  var clean = lemma.toLowerCase()
+    .replace(/[,;\/\(\)].*/g, '')
+    .trim();
+  // Exacte match op grondvorm (eerste woord)
   for (var i = 0; i < WL.length; i++) {
-    var g = WL[i].g.toLowerCase();
-    for (var j = 0; j < parts.length; j++) {
-      if (g === parts[j] || g.startsWith(parts[j])) return WL[i];
+    var g = WL[i].g.toLowerCase().replace(/[,;\/\(\)].*/g, '').trim();
+    if (g === clean) return WL[i];
+  }
+  // Gedeeltelijke match: grondvorm begint met clean of clean begint met grondvorm
+  if (clean.length >= 3) {
+    for (var i = 0; i < WL.length; i++) {
+      var g = WL[i].g.toLowerCase().replace(/[,;\/\(\)].*/g, '').trim();
+      if (g.startsWith(clean) || clean.startsWith(g)) return WL[i];
     }
   }
-  for (var i = 0; i < WL.length; i++) {
-    var g = WL[i].g.toLowerCase();
-    for (var j = 0; j < parts.length; j++) {
-      if (parts[j].length > 3 && g.includes(parts[j])) return WL[i];
+  // Fallback: zoek in aanvullingen
+  if (clean.length >= 4) {
+    for (var i = 0; i < WL.length; i++) {
+      var a = (WL[i].a || '').toLowerCase();
+      if (a.includes(clean)) return WL[i];
     }
   }
   return null;
 }
 
-/* ══════════════════════════════════════════
-   RENDER WOORDENLIJST (hoofd + zijpaneel)
-══════════════════════════════════════════ */
-var currentTekst = '7b/4';
-var tekstLabels = {
-  '6a/1':'Ludus 6A · Tekst 1','6a/2':'Ludus 6A · Tekst 2','6a/4':'Ludus 6A · Tekst 4','6a/7':'Ludus 6A · Tekst 7',
-  '6b/1':'Ludus 6B · Tekst 1','6b/2':'Ludus 6B · Tekst 2','6b/3':'Ludus 6B · Tekst 3','6b/4':'Ludus 6B · Tekst 4',
-  '6b/5':'Ludus 6B · Tekst 5','6b/8':'Ludus 6B · Tekst 8','6b/9':'Ludus 6B · Tekst 9',
-  '7a/1':'Ludus 7A · Tekst 1','7a/2':'Ludus 7A · Tekst 2','7a/3':'Ludus 7A · Tekst 3','7a/5':'Ludus 7A · Tekst 5',
-  '7a/6':'Ludus 7A · Tekst 6','7a/7':'Ludus 7A · Tekst 7','7a/8':'Ludus 7A · Tekst 8',
-  '7b/2':'Ludus 7B · Tekst 2','7b/4':'Ludus 7B · Tekst 4','7b/6':'Ludus 7B · Tekst 6','7b/12':'Ludus 7B · Tekst 12',
-  '8a/2':'Ludus 8A · Tekst 2','8a/3':'Ludus 8A · Tekst 3','8a/5':'Ludus 8A · Tekst 5','8a/6':'Ludus 8A · Tekst 6',
-  '8b/1':'Ludus 8B · Tekst 1','8b/3':'Ludus 8B · Tekst 3','8b/5':'Ludus 8B · Tekst 5','8b/6':'Ludus 8B · Tekst 6',
-  '8b/8':'Ludus 8B · Tekst 8','8b/9':'Ludus 8B · Tekst 9','8b/10':'Ludus 8B · Tekst 10',
-  '9a/1':'Ludus 9A · Tekst 1','9a/4':'Ludus 9A · Tekst 4',
-  '9b/3':'Ludus 9B · Tekst 3','9b/4':'Ludus 9B · Tekst 4','9b/5':'Ludus 9B · Tekst 5','9b/6':'Ludus 9B · Tekst 6',
-  '9b/7':'Ludus 9B · Tekst 7','9b/9':'Ludus 9B · Tekst 9','9b/10':'Ludus 9B · Tekst 10',
-  '10/3':'Ludus 10 · Tekst 3','10/8':'Ludus 10 · Tekst 8','10/9':'Ludus 10 · Tekst 9',
-  '10/14':'Ludus 10 · Tekst 14','10/19':'Ludus 10 · Tekst 19','10/21':'Ludus 10 · Tekst 21','10/26':'Ludus 10 · Tekst 26'
-};
-
 function filterWL(tekst) {
-  currentTekst = tekst;
-  var label = tekstLabels[tekst] || tekst;
+  var label = 'Tekst 5 · Ludus 8A';
   var filtered = WL.filter(function(w){ return w.t && w.t.indexOf(tekst) !== -1; })
-                   .sort(function(a,b){ return (a.volgorde && a.volgorde[tekst]||999) - (b.volgorde && b.volgorde[tekst]||999); });
-  // Update labels
-  var sectLabel = document.getElementById('wlSectieLabel');
-  var sectTitle = document.getElementById('wlSectieTitle');
-  var sectInfo  = document.getElementById('wlSectieInfo');
-  if (sectLabel) sectLabel.textContent = label;
-  if (sectTitle) sectTitle.textContent = 'Woordenlijst';
-  if (sectInfo)  sectInfo.innerHTML = filtered.length + ' woorden op volgorde van voorkomen. <span style="display:inline-block;font-size:.6rem;font-weight:700;padding:.04rem .3rem;border-radius:8px;background:#fbe6f1;color:var(--magenta);text-transform:uppercase;vertical-align:middle;">basis</span> = basiswoordenschat.';
-  // Update side panel header
-  var spHead = document.querySelector('#sidePanelWl h3');
-  if (spHead) spHead.textContent = 'Woordenlijst — ' + label;
+                   .sort(function(a,b){ return ((a.vol&&a.vol[tekst])||999) - ((b.vol&&b.vol[tekst])||999); });
+  var sectInfo = document.getElementById('wlSectieInfo');
+  if (sectInfo) sectInfo.innerHTML = filtered.length + ' woorden op volgorde van voorkomen. <span style="display:inline-block;font-size:.6rem;font-weight:700;padding:.04rem .3rem;border-radius:8px;background:#fbe6f1;color:var(--magenta);text-transform:uppercase;vertical-align:middle;">basis</span> = basiswoordenschat.';
   renderWLData(filtered);
   renderWLSide(filtered);
 }
@@ -727,17 +641,12 @@ function renderWLSide(list) {
   el.innerHTML = html;
 }
 
-/* init woordenlijst */
 filterWL('8a/5');
 
-/* ══════════════════════════════════════════
-   STATE
-══════════════════════════════════════════ */
 var S = {lines:false, font:false, reveal:false, twocol:false, interlin:true, revIdx:-1};
 var ksWgroups = Array.from(document.querySelectorAll('.wg'));
 var ksActiveWord = null;
 
-/* ── KLIKSYSTEEM: DOM prep ── */
 document.body.classList.add('interlin-analysis');
 (function ksPrep(){
   document.querySelectorAll('.lat-word').forEach(function(w){
@@ -781,7 +690,6 @@ function ksStepWord(w){
 }
 function stepActiveWord(){if(!ksActiveWord) ksFocusFirstInWg(); if(ksActiveWord) ksStepWord(ksActiveWord);}
 
-/* Replace lat-word listeners (clone to strip old) */
 document.querySelectorAll('.lat-word').forEach(function(w){
   var clone=w.cloneNode(true);
   w.parentNode.replaceChild(clone,w);
@@ -796,7 +704,6 @@ document.addEventListener('click',function(e){
   }
 });
 
-/* ── Woordgroep-navigatie ── */
 function ksCurrentWg(){
   if(S.reveal&&S.revIdx>=0&&ksWgroups[S.revIdx]) return ksWgroups[S.revIdx];
   if(ksActiveWord) return ksActiveWord.closest('.wg');
@@ -819,22 +726,16 @@ function focusPrevWord(){
 function clearCurrentWgAnalysis(){ksWordsInWg().forEach(function(w){ksSetStage(w,0);});}
 function clearAllAnalysis(){document.querySelectorAll('.lat-word').forEach(function(w){ksSetStage(w,0);});ksSetActive(null);}
 
-/* ── POPUP ── */
 var popup = document.getElementById('popup');
 function showPopup(el, click) {
   var wl = lookupWL(el.dataset.l);
   document.getElementById('ppWord').textContent = el.dataset.w;
   document.getElementById('ppLemma').textContent = el.dataset.l || '';
-
   var info = click === 1 ? el.dataset.d : el.dataset.s;
   var tagClass = click === 1 ? 'tg' : 'to';
   var tagLabel = click === 1 ? 'Det.' : 'Funct.';
   var html = '<div class="wp-row"><span class="wp-tag ' + tagClass + '">' + tagLabel + '</span><span class="wp-val">' + info + '</span></div>';
-
-  // Add NL from data-n
   html += '<div class="wp-row" style="margin-top:.25rem"><span class="wp-tag tp">NL</span><span class="wp-val">' + el.dataset.n + '</span></div>';
-
-  // Add woordenlijst entry if found — weergave conform woordjestrainer
   if (wl) {
     html += '<hr class="wp-sep">';
     var isBasis = wl.b;
@@ -845,12 +746,9 @@ function showPopup(el, click) {
     html += '<div style="font-size:.78rem;color:var(--ink-mid);margin-top:.15rem;">' + wl.v + '</div>';
     html += '</div></div>';
   }
-
   document.getElementById('ppContent').innerHTML = html;
   document.getElementById('ppSep').style.display = 'none';
   document.getElementById('ppHint').innerHTML = '';
-
-  // Position
   var rect = el.getBoundingClientRect();
   var top = rect.bottom + window.scrollY + 6;
   var left = rect.left;
@@ -884,9 +782,6 @@ function updatePanel(w) {
     wlHtml;
 }
 
-/* ══════════════════════════════════════════
-   REVEAL PER WOORDGROEP
-══════════════════════════════════════════ */
 function toggleReveal() {
   S.reveal = !S.reveal;
   document.getElementById('btnReveal').classList.toggle('active', S.reveal);
@@ -931,9 +826,6 @@ function updCount() {
   document.getElementById('revCount').textContent = done + ' / ' + ksWgroups.length;
 }
 
-/* ══════════════════════════════════════════
-   TOGGLE FUNCTIES
-══════════════════════════════════════════ */
 function toggleLines() {
   S.lines = !S.lines;
   document.getElementById('btnLines').classList.toggle('active', S.lines);
@@ -957,8 +849,7 @@ function toggleTwocol() {
 function renderVertaling() {
   var el = document.getElementById('vertaalTekst');
   if (!el) return;
-  el.innerHTML = `<p>Hij gaf het burgerrecht aan alle inwoners van Italië, breidde het uit tot bijna aan de Alpen, verdeelde de akkers, verbood dat een burger meer dan 500 morgen land [= 125 ha] had, wat in het verleden vastgelegd was in de Licinische wet, hij stelde nieuwe belastingen in, vulde de provincies met nieuwe kolonies, bracht de rechterlijke machten van de senaat naar de ridders over, hij bepaalde dat er graan aan het volk moest gegeven worden.</p>
-<p>Niets liet hij ongestoord, niets liet hij vredig, niets liet hij rustig achter, kortom niets liet hij in dezelfde toestand achter.</p>`;
+  el.innerHTML = '<p>Hij gaf het burgerrecht aan alle inwoners van Italië, breidde het uit tot bijna aan de Alpen, verdeelde de akkers, verbood dat een burger meer dan 500 morgen land had, wat in het verleden vastgelegd was in de Licinische wet, hij stelde nieuwe belastingen in, vulde de provincies met nieuwe kolonies, bracht de rechterlijke machten van de senaat naar de ridders over, hij bepaalde dat er graan aan het volk moest gegeven worden.</p><p>Niets liet hij ongestoord, niets liet hij vredig, niets liet hij rustig achter, kortom niets liet hij in dezelfde toestand achter.</p>';
 }
 function toggleFont() {
   S.font = !S.font;
@@ -966,11 +857,7 @@ function toggleFont() {
   document.body.classList.toggle('font-lg', S.font);
 }
 
-/* ══════════════════════════════════════════
-   DIDACTIEK TOGGLE SYSTEEM
-══════════════════════════════════════════ */
 var D = { bs: false, lpd: false };
-
 function toggleLayer(layer) {
   D[layer] = !D[layer];
   var btnId = layer === 'bs' ? 'btnBs' : 'btnLpd';
@@ -981,8 +868,6 @@ function toggleLayer(layer) {
   });
 }
 
-
-/* GRAMMATICALE NOTEN TOGGLE */
 function toggleNoten() {
   var blk = document.getElementById('notenBlock');
   var btn = document.getElementById('btnNoten');
@@ -992,75 +877,42 @@ function toggleNoten() {
   if (open) blk.scrollIntoView({behavior:'smooth', block:'start'});
 }
 
-/* TOOLTIPS OP DIDACTIEK-BADGES — contextspecifiek per locatie + bouwsteen/LPD */
 (function annotateBadges(){
-  // Key = parent-id van .d-badges container + '|' + badge-tekst
   var TIPS = {
-    // ── CONTEXT-BLOK ────────────────────────────────────────────
-    'badges-context|① Voorkennis activeren':
-      '① Voorkennis activeren: de context situeert de hervormingen van Gaius Gracchus na de dood van Tiberius, zodat leerlingen de politieke spanning achter de tekst al begrijpen.',
-    'badges-context|BO1_03.06 – situeren in tijd & ruimte':
-      'BO1_03.06 situeren in tijd & ruimte: leerlingen plaatsen de tekst in Rome van ca. 123-122 v.Chr., de periode van het volkstribunaat van Gaius Gracchus.',
-
-    // ── EXTRA\'S (kaart + woordenlijst-icoon) ─────────────────
-    'badges-kaart|④ Dual coding':
-      '④ Dual coding: een kaart van het Italiaanse schiereiland met de regio\'s van Romeins burgerrecht en kolonies verankert de geografische dimensie van Gaius\' beleid.',
-    'badges-kaart|BO1_03.06 – situeren in tijd & ruimte':
-      'BO1_03.06 situeren in tijd & ruimte: de kaart maakt de geografische reikwijdte van de burgerrechtsuitbreiding (paene usque Alpes) visueel concreet.',
-
-    // ── REVEAL-BAR ─────────────────────────────────────────────
-    'badges-reveal|⑤ Actieve verwerking':
-      '⑤ Actieve verwerking: leerlingen onthullen de reeks van acht imperfecta één voor één en proberen telkens de maatregel te benoemen vóór de volgende verschijnt.',
-    'badges-reveal|⑦ Scaffolding':
-      '⑦ Scaffolding: de woordgroep-aanpak verlaagt de drempel bij de ACI-constructies na vetabat en instituebat, die in hun volle zinslengte moeilijk te overzien zijn.',
-    'badges-reveal|BO1_03.05 – tekst begrijpen via lectuurmethode':
-      'BO1_03.05 tekst begrijpen via lectuurmethode: het lineair lezen per kolon helpt leerlingen de parallelle structuur van de acht imperfecta te herkennen en te benoemen.',
-    'badges-reveal|BO1_03.04 – lectuurstrategieën':
-      'BO1_03.04 lectuurstrategieën: de strategie \'zoek het werkwoord eerst\' is hier bijzonder productief door de opeenvolging van historische imperfecta als ruggengraat van de zin.',
-
-    // ── GRAMMATICALE NOTEN ─────────────────────────────────────
-    'badges-noten|⑦ Scaffolding':
-      '⑦ Scaffolding: de noten lichten precies de ACI na vetabat/instituebat, het onpers. PPP cautum erat en de anafoor nihil toe — de drie puntjes waar leerlingen op vastlopen.',
-    'badges-noten|⑪ Feedback die denken aanzet':
-      '⑪ Feedback die denken aanzet: de noot over de stilistische anafoor vraagt leerlingen te verklaren waarom Velleius vier keer nihil herhaalt in plaats van één keer te samenvatten.',
-    'badges-noten|BO1_03.03 – morfologie & syntaxis':
-      'BO1_03.03 morfologie & syntaxis: aandacht voor het historisch imperfectum, ACI na vetare/instituere, en het onpersoonlijk passief plusquamperfectum (cautum erat).',
-
-    // ── WOORDENLIJST ───────────────────────────────────────────
-    'badges-wl|① Voorkennis activeren':
-      '① Voorkennis activeren: woorden als civis, lex, provincia en senatus behoren tot het Repertorium en bieden een herkenbaar kader vóór de lectuur van de tekst.',
-    'badges-wl|⑧ Gespreide oefening':
-      '⑧ Gespreide oefening: basiswoorden als dare, habere, relinquere en novus keren in meerdere teksten terug en worden hier opnieuw geconfronteerd.',
-    'badges-wl|BO1_03.01 – basiswoordenschat':
-      'BO1_03.01 basiswoordenschat: ruim de helft van de 41 woorden behoort tot het Repertorium en wordt magenta gemarkeerd als actief te kennen woordenschat.',
-    'badges-wl|BO1_03.02 – woordenschatstrategieën':
-      'BO1_03.02 woordenschatstrategieën: woorden als portorium, iugerum en immotus oefenen de strategie om onbekende vormen te analyseren via stam en uitgang.'
+    'badges-context|① Voorkennis activeren': '① Voorkennis activeren: de context situeert de hervormingen van Gaius Gracchus na de dood van Tiberius, zodat leerlingen de politieke spanning achter de tekst al begrijpen.',
+    'badges-context|BO1_03.06 – situeren in tijd & ruimte': 'BO1_03.06 situeren in tijd & ruimte: leerlingen plaatsen de tekst in Rome van ca. 123-122 v.Chr., de periode van het volkstribunaat van Gaius Gracchus.',
+    'badges-kaart|④ Dual coding': '④ Dual coding: een kaart van het Italiaanse schiereiland met de regio\'s van Romeins burgerrecht en kolonies verankert de geografische dimensie van Gaius\' beleid.',
+    'badges-kaart|BO1_03.06 – situeren in tijd & ruimte': 'BO1_03.06 situeren in tijd & ruimte: de kaart maakt de geografische reikwijdte van de burgerrechtsuitbreiding (paene usque Alpes) visueel concreet.',
+    'badges-reveal|⑤ Actieve verwerking': '⑤ Actieve verwerking: leerlingen onthullen de reeks van acht imperfecta één voor één en proberen telkens de maatregel te benoemen vóór de volgende verschijnt.',
+    'badges-reveal|⑦ Scaffolding': '⑦ Scaffolding: de woordgroep-aanpak verlaagt de drempel bij de ACI-constructies na vetabat en instituebat, die in hun volle zinslengte moeilijk te overzien zijn.',
+    'badges-reveal|BO1_03.05 – tekst begrijpen via lectuurmethode': 'BO1_03.05 tekst begrijpen via lectuurmethode: het lineair lezen per kolon helpt leerlingen de parallelle structuur van de acht imperfecta te herkennen en te benoemen.',
+    'badges-reveal|BO1_03.04 – lectuurstrategieën': 'BO1_03.04 lectuurstrategieën: de strategie \'zoek het werkwoord eerst\' is hier bijzonder productief door de opeenvolging van historische imperfecta als ruggengraat van de zin.',
+    'badges-noten|⑦ Scaffolding': '⑦ Scaffolding: de noten lichten precies de ACI na vetabat/instituebat, het onpers. PPP cautum erat en de anafoor nihil toe — de drie puntjes waar leerlingen op vastlopen.',
+    'badges-noten|⑪ Feedback die denken aanzet': '⑪ Feedback die denken aanzet: de noot over de stilistische anafoor vraagt leerlingen te verklaren waarom Velleius vier keer nihil herhaalt in plaats van één keer te samenvatten.',
+    'badges-noten|BO1_03.03 – morfologie & syntaxis': 'BO1_03.03 morfologie & syntaxis: aandacht voor het historisch imperfectum, ACI na vetare/instituere, en het onpersoonlijk passief plusquamperfectum (cautum erat).',
+    'badges-wl|① Voorkennis activeren': '① Voorkennis activeren: woorden als civis, lex, provincia en senatus behoren tot het Repertorium en bieden een herkenbaar kader vóór de lectuur van de tekst.',
+    'badges-wl|⑧ Gespreide oefening': '⑧ Gespreide oefening: basiswoorden als dare, habere, relinquere en novus keren in meerdere teksten terug en worden hier opnieuw geconfronteerd.',
+    'badges-wl|BO1_03.01 – basiswoordenschat': 'BO1_03.01 basiswoordenschat: ruim de helft van de 41 woorden behoort tot het Repertorium en wordt magenta gemarkeerd als actief te kennen woordenschat.',
+    'badges-wl|BO1_03.02 – woordenschatstrategieën': 'BO1_03.02 woordenschatstrategieën: woorden als portorium, iugerum en immotus oefenen de strategie om onbekende vormen te analyseren via stam en uitgang.'
   };
-
-  // Zorg voor één globale tooltip-node
   var tip = document.createElement('div');
   tip.className = 'd-tooltip';
   document.body.appendChild(tip);
-
   function show(badge, text) {
     tip.textContent = text;
     tip.classList.add('vis');
     var r = badge.getBoundingClientRect();
-    var tw = tip.offsetWidth;
-    var th = tip.offsetHeight;
-    var pad = 10;
+    var tw = tip.offsetWidth, th = tip.offsetHeight, pad = 10;
     var left = r.left + r.width/2 - tw/2;
     left = Math.max(8, Math.min(window.innerWidth - tw - 8, left));
     var top = r.top - th - pad;
-    if (top < 8) top = r.bottom + pad; // klap onder als bovenaan
+    if (top < 8) top = r.bottom + pad;
     tip.style.left = (left + window.scrollX) + 'px';
     tip.style.top  = (top  + window.scrollY) + 'px';
   }
   function hide() { tip.classList.remove('vis'); }
-
   document.querySelectorAll('.d-badges').forEach(function(container){
-    var pid = container.id;
-    if (!pid) return;
+    var pid = container.id; if (!pid) return;
     container.querySelectorAll('.d-badge').forEach(function(b){
       var key = pid + '|' + b.textContent.trim();
       var text = TIPS[key];
@@ -1073,11 +925,9 @@ function toggleNoten() {
   });
 })();
 
-/* KAART MODAL */
 function openKaartModal()  { document.getElementById('kaartModalOverlay').classList.add('open'); }
 function closeKaartModal() { document.getElementById('kaartModalOverlay').classList.remove('open'); }
 
-/* WEERGAVE DROPDOWN */
 function toggleWeergaveMenu(e) {
   e.stopPropagation();
   var menu = document.getElementById('weergaveMenu');
@@ -1094,7 +944,6 @@ document.addEventListener('click', function(e) {
   }
 });
 
-/* Scroll */
 window.addEventListener('scroll', function() {
   var d = document.documentElement;
   var pct = d.scrollTop / (d.scrollHeight - d.clientHeight);
@@ -1102,7 +951,6 @@ window.addEventListener('scroll', function() {
   document.getElementById('scrollTop').classList.toggle('on', d.scrollTop > 280);
 });
 
-/* KOLOM-RESIZER */
 (function(){
   var resizer = document.getElementById('colResizer');
   if (!resizer) return;
@@ -1144,7 +992,6 @@ window.addEventListener('scroll', function() {
   document.addEventListener('touchend',function(){dragging=false;resizer.classList.remove('dragging');});
 })();
 
-/* ══ LECTUURANALYSE MODAL ══ */
 var laSectieIdx = 0;
 var LA_SECTIES = [
   {
@@ -1155,27 +1002,27 @@ var LA_SECTIES = [
       + '<div class="la-antwoord">Het <em>historisch imperfectum</em> geeft de handelingen een duratieve, voortdurende kwaliteit: Gaius was continu bezig. De staccato-opeenvolging van acht werkwoorden zonder verbinding (<em>asyndeton</em>) versterkt de indruk van een onstuitbare hervormingsdrang.</div></div></div>'
       + '<div class="la-vraag"><div class="la-vraag-tekst">2. Hoe bouwt de zin <em>Nihil immotum, nihil tranquillum, nihil quietum, nihil denique in eodem statu relinquebat</em> zijn effect op? Welk stijlmiddel herkent u?</div>'
       + '<div class="la-antwoord-wrap"><button class="la-toggle-btn" onclick="toggleAntwoord(this)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg> Toon antwoord</button>'
-      + '<div class="la-antwoord"><em>Anafoor</em>: viermaal <em>nihil</em> aan het begin van elk lid. De drie synoniemen (<em>immotum, tranquillum, quietum</em>) vormen een climax, afgesloten door <em>denique</em> als slotaccent. Velleius vat hier heel Gaius’ politiek samen in één vernietigende zin.</div></div></div>'
+      + '<div class="la-antwoord"><em>Anafoor</em>: viermaal <em>nihil</em> aan het begin van elk lid. De drie synoniemen (<em>immotum, tranquillum, quietum</em>) vormen een climax, afgesloten door <em>denique</em> als slotaccent. Velleius vat hier heel Gaius\' politiek samen in één vernietigende zin.</div></div></div>'
   },
   {
     titel: '2. Syntaxis in context — ACI en PPP',
     html: '<div class="la-sectie-titel">2. Syntaxis in context — ACI en PPP</div>'
       + '<div class="la-vraag"><div class="la-vraag-tekst">3. <em>Vetabat quemquam civem plus quingentis iugeribus habere</em> bevat een ACI. Wijs elk element aan: accusativus-subjectum, infinitief, aanstuurder.</div>'
       + '<div class="la-antwoord-wrap"><button class="la-toggle-btn" onclick="toggleAntwoord(this)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg> Toon antwoord</button>'
-      + '<div class="la-antwoord">Aanstuurder: <em>vetabat</em>. Accusativus-subjectum: <em>quemquam civem</em>. Infinitief: <em>habere</em>. BWB van hoeveelheid: <em>plus quingentis iugeribus</em>. Samenvatting: Gaius verbood dat <strong>iemand</strong> (acc.) meer dan 500 morgen (BWB) <strong>bezat</strong> (inf.).</div></div></div>'
-      + '<div class="la-vraag"><div class="la-vraag-tekst">4. Verklaar <em>quod aliquando lege Licinia cautum erat</em>. Welke vorm is <em>cautum erat</em> en wat is het bijzonder aan dit werkwoord?</div>'
+      + '<div class="la-antwoord">Aanstuurder: <em>vetabat</em>. Accusativus-subjectum: <em>quemquam civem</em>. Infinitief: <em>habere</em>. BWB van hoeveelheid: <em>plus quingentis iugeribus</em>.</div></div></div>'
+      + '<div class="la-vraag"><div class="la-vraag-tekst">4. Verklaar <em>quod aliquando lege Licinia cautum erat</em>. Welke vorm is <em>cautum erat</em>?</div>'
       + '<div class="la-antwoord-wrap"><button class="la-toggle-btn" onclick="toggleAntwoord(this)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg> Toon antwoord</button>'
-      + '<div class="la-antwoord"><em>Cautum erat</em> = PPP van <em>cavere</em> + <em>erat</em>: <strong>passief plusquamperfectum</strong>, onpersoonlijk gebruikt. <em>Cautum erat</em> = "was vastgelegd". Dit onpers. passief is typisch voor wetsbepalingen in het Latijn. <em>Lege Licinia</em> = ablativus auctoris/instrumenti.</div></div></div>'
+      + '<div class="la-antwoord"><em>Cautum erat</em> = PPP van <em>cavere</em> + <em>erat</em>: <strong>passief plusquamperfectum</strong>, onpersoonlijk gebruikt. <em>Lege Licinia</em> = ablativus instrumenti.</div></div></div>'
   },
   {
-    titel: '3. Velleius als bron — perspectief en betrouwbaarheid',
+    titel: '3. Velleius als bron — perspectief',
     html: '<div class="la-sectie-titel">3. Velleius als bron — perspectief en betrouwbaarheid</div>'
       + '<div class="la-vraag"><div class="la-vraag-tekst">5. Velleius Paterculus schreef onder keizer Tiberius. Hoe kan dat zijn oordeel over de Gracchen gekleurd hebben?</div>'
       + '<div class="la-antwoord-wrap"><button class="la-toggle-btn" onclick="toggleAntwoord(this)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg> Toon antwoord</button>'
-      + '<div class="la-antwoord">Als loyale Augusteïsche-Tiberische schrijver had Velleius belang bij een negatief beeld van populistische hervormers die de senaat ondermijnden. Zijn toon (<em>nihil … relinquebat</em>) is eerder kritisch dan bewonderend. Vergelijk met de pro-Gracchische traditie bij Plutarchus.</div></div></div>'
-      + '<div class="la-vraag"><div class="la-vraag-tekst">6. Discussievraag: Was Gaius Gracchus een vernieuwer of een omverwerper? Gebruik minimaal twee concrete maatregelen uit de tekst als argument.</div>'
+      + '<div class="la-antwoord">Als loyale Augusteïsche-Tiberische schrijver had Velleius belang bij een negatief beeld van populistische hervormers die de senaat ondermijnden. Vergelijk met de pro-Gracchische traditie bij Plutarchus.</div></div></div>'
+      + '<div class="la-vraag"><div class="la-vraag-tekst">6. Discussie: Was Gaius Gracchus een vernieuwer of een omverwerper? Gebruik twee concrete maatregelen uit de tekst.</div>'
       + '<div class="la-antwoord-wrap"><button class="la-toggle-btn" onclick="toggleAntwoord(this)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg> Toon antwoord</button>'
-      + '<div class="la-antwoord">Mogelijke argumenten: <strong>vernieuwer</strong> — graanwet (<em>frumentum plebi dari</em>) = sociale bescherming; burgerrecht voor Italiërs (<em>dabat civitatem omnibus Italicis</em>) = inclusieve politiek. <strong>Omverwerper</strong> — overdracht van rechtsbevoegdheid (<em>iudicia a senatu ad equites</em>) = aantasting van senatoriale macht; negatie van Licinische wet = minachting van precedent.</div></div></div>'
+      + '<div class="la-antwoord"><strong>Vernieuwer</strong>: graanwet (<em>frumentum plebi dari</em>); burgerrecht voor Italiërs (<em>dabat civitatem omnibus Italicis</em>). <strong>Omverwerper</strong>: overdracht rechtsbevoegdheid (<em>iudicia a senatu ad equites</em>); negatie van Licinische wet.</div></div></div>'
   }
 ];
 
@@ -1206,12 +1053,11 @@ function toggleAntwoord(btn){
   btn.querySelector('svg').style.transform=open?'rotate(180deg)':'';
 }
 
-/* ══ INKTLAAG ══ */
 var inkCanvas=document.getElementById('inkCanvas');
 var inkCtx=inkCanvas.getContext('2d');
 var inkMode=null,isDrawing=false,lastPt=null,inkPointerId=null;
-var penColors=['#FF3B1D','#13427f','#0d7a3e','#E6007E','#f3f1ef','#111111'];
-var highlightColors=['rgba(255,234,61,.45)','rgba(19,66,127,.20)','rgba(13,122,62,.22)','rgba(230,0,126,.22)','rgba(255,59,29,.20)','rgba(255,255,255,.20)'];
+var penColors=['#E6007E','#13427f','#0d7a3e','#FF3B1D','#f3f1ef','#111111'];
+var highlightColors=['rgba(230,0,126,.35)','rgba(255,234,61,.45)','rgba(19,66,127,.20)','rgba(13,122,62,.22)','rgba(255,59,29,.20)','rgba(255,255,255,.20)'];
 var currentPenColor=penColors[0], currentHighlightColor=highlightColors[0];
 
 function buildPalette(elId,colors,type){
@@ -1283,14 +1129,11 @@ function stopInk(e){
 inkCanvas.addEventListener('pointerup',stopInk);
 inkCanvas.addEventListener('pointercancel',stopInk);
 
-/* ══ TOOLBAR SENTINEL ══ */
 (function(){
-  /* Toolbar verschijnt zodra de Latijnse tekst in beeld scrollt */
   var s=document.getElementById('textStartSentinel');
   if(!s){document.body.classList.add('show-lesson-toolbar');return;}
   function upd(){
     var rect=s.getBoundingClientRect();
-    /* top < viewport-hoogte = sentinel is in of voorbij het scherm */
     document.body.classList.toggle('show-lesson-toolbar', rect.top < window.innerHeight);
   }
   upd();
@@ -1298,7 +1141,6 @@ inkCanvas.addEventListener('pointercancel',stopInk);
   window.addEventListener('resize',upd);
 })();
 
-/* ══ SNELTOETSEN / R400 ══ */
 document.addEventListener('keydown',function(e){
   if(document.getElementById('lectuurOverlay').classList.contains('open')) return;
   var key=e.key,code=e.code;
@@ -1318,12 +1160,10 @@ document.addEventListener('keydown',function(e){
   }
 });
 
-/* ══ INIT ══ */
 (function(){
   var bi=document.getElementById('btnInterlin');
   if(bi) bi.classList.add('active');
 })();
-
 </script>
 
 <!-- LECTUURANALYSE MODAL -->
@@ -1344,77 +1184,59 @@ document.addEventListener('keydown',function(e){
   </div>
 </div>
 
-<!-- LES-TOOLBAR (horizontaal, onderaan, centred) -->
+<!-- LES-TOOLBAR -->
 <div class="lesson-toolbar-wrap" id="lessonToolbarWrap">
   <div class="lesson-toolbar">
 
-    <!-- Groep 1: Woordgroep-onthulling -->
     <button class="lesson-btn" type="button" onclick="revealPrev()" data-tip="Vorige woordgroep" aria-label="Vorige woordgroep">
-      <!-- Pijl-links in ballon -->
       <svg viewBox="0 0 20 20" stroke-width="1.8"><polyline points="13,4 7,10 13,16"/><rect x="2" y="2" width="16" height="16" rx="4" stroke-opacity=".18" fill="none"/></svg>
     </button>
     <button class="lesson-btn" type="button" onclick="revealNext()" data-tip="Volgende woordgroep" aria-label="Volgende woordgroep">
-      <!-- Pijl-rechts in ballon -->
       <svg viewBox="0 0 20 20" stroke-width="1.8"><polyline points="7,4 13,10 7,16"/><rect x="2" y="2" width="16" height="16" rx="4" stroke-opacity=".18" fill="none"/></svg>
     </button>
     <button class="lesson-btn" type="button" onclick="toggleReveal()" id="lessonRevealBtn" data-tip="Onthulmodus aan/uit" aria-label="Onthulmodus">
-      <!-- Oog met strepen = reveal -->
       <svg viewBox="0 0 20 20" stroke-width="1.8"><path d="M2 10s3-6 8-6 8 6 8 6-3 6-8 6-8-6-8-6z"/><circle cx="10" cy="10" r="2.5"/><line x1="4" y1="4" x2="16" y2="16" stroke-opacity=".35"/></svg>
     </button>
 
     <div class="lesson-toolbar-divider"></div>
 
-    <!-- Groep 2: Woord-analyse (stapsgewijs) -->
     <button class="lesson-btn" type="button" onclick="focusPrevWord()" data-tip="Vorig woord" aria-label="Vorig woord">
-      <!-- Kleine pijl-links -->
       <svg viewBox="0 0 20 20" stroke-width="1.8"><polyline points="12,6 8,10 12,14"/></svg>
     </button>
     <button class="lesson-btn" type="button" onclick="stepActiveWord()" data-tip="Analyseer woord (stap)" aria-label="Analyseer woord">
-      <!-- Cursor + plusje = stap vooruit -->
       <svg viewBox="0 0 20 20" stroke-width="1.8"><path d="M5 15L9 5l2 5 3-3"/><circle cx="14" cy="6" r="2.2"/></svg>
     </button>
     <button class="lesson-btn" type="button" onclick="focusNextWord()" data-tip="Volgend woord" aria-label="Volgend woord">
-      <!-- Kleine pijl-rechts -->
       <svg viewBox="0 0 20 20" stroke-width="1.8"><polyline points="8,6 12,10 8,14"/></svg>
     </button>
 
     <div class="lesson-toolbar-divider"></div>
 
-    <!-- Groep 3: Wissen -->
     <button class="lesson-btn danger" type="button" onclick="clearCurrentWgAnalysis()" data-tip="Wis huidige woordgroep" aria-label="Wis huidige woordgroep">
-      <!-- Gum op één vlak = lokaal wissen -->
       <svg viewBox="0 0 20 20" stroke-width="1.8"><path d="M5 14l7-9 4 3-7 9H5z"/><line x1="9" y1="14" x2="18" y2="14"/></svg>
     </button>
     <button class="lesson-btn danger" type="button" onclick="clearAllAnalysis()" data-tip="Wis alle analyse" aria-label="Wis alle analyse">
-      <!-- Prullenbak = alles wissen -->
       <svg viewBox="0 0 20 20" stroke-width="1.8"><polyline points="4,6 16,6"/><path d="M7 6V4h6v2"/><rect x="5" y="6" width="10" height="10" rx="1"/><line x1="8" y1="9" x2="8" y2="14"/><line x1="12" y1="9" x2="12" y2="14"/></svg>
     </button>
 
     <div class="lesson-toolbar-divider"></div>
 
-    <!-- Groep 4: Annotatie -->
     <button class="lesson-btn" type="button" id="inkPenBtn" onclick="setInkMode('pen')" data-tip="Pen (p)" aria-label="Pen">
-      <!-- Vulpen-penpunt -->
       <svg viewBox="0 0 20 20" stroke-width="1.8"><path d="M4 16l3.5-.7L15 8l-3-3-7.5 7.5L4 16z"/><path d="M12 5l3 3"/><path d="M4 16l1.5-1.5"/></svg>
     </button>
     <button class="lesson-btn" type="button" id="inkHighBtn" onclick="setInkMode('highlight')" data-tip="Markeerstift (h)" aria-label="Markeerstift">
-      <!-- Brede marker-streep -->
       <svg viewBox="0 0 20 20" stroke-width="1.8"><rect x="3" y="8" width="14" height="5" rx="2"/><line x1="10" y1="13" x2="10" y2="17"/><line x1="8" y1="17" x2="12" y2="17"/></svg>
     </button>
     <button class="lesson-btn" type="button" id="inkEraseBtn" onclick="setInkMode('erase')" data-tip="Gum (e)" aria-label="Gum">
-      <!-- Klassieke gum-blok -->
       <svg viewBox="0 0 20 20" stroke-width="1.8"><rect x="2" y="11" width="16" height="6" rx="1.5"/><path d="M6 11L11 4l5 4-5 3H6z"/></svg>
     </button>
     <button class="lesson-btn" type="button" onclick="clearInk()" data-tip="Wis annotaties" aria-label="Wis annotaties">
-      <!-- Spons/vlak wissen -->
       <svg viewBox="0 0 20 20" stroke-width="1.8"><path d="M3 16h14"/><path d="M6 12l5-8 5 5-5 3H6z"/></svg>
     </button>
 
     <div class="lesson-toolbar-divider"></div>
 
-    <!-- Groep 5: Lectuuranalyse -->
     <button class="lesson-btn" type="button" onclick="openLectuurModal()" data-tip="Lectuuranalyse" aria-label="Lectuuranalyse openen">
-      <!-- Boek met zoeklens -->
       <svg viewBox="0 0 20 20" stroke-width="1.8"><path d="M4 4h7v12H4z"/><path d="M11 4h5v12h-5z"/><circle cx="14.5" cy="9.5" r="2"/><line x1="16" y1="11" x2="18" y2="13"/></svg>
     </button>
 
